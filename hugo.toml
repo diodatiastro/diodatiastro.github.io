@@ -1,0 +1,8 @@
+baseURL = 'http://localhost:1313/'
+locale = 'it-it'
+title = 'Le stelle più affascinanti del cielo'
+
+theme = 'hugo-book'
+
+[params]
+  BookSection = '*'
