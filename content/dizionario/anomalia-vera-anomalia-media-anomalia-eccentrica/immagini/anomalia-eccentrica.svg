@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 800 600"
+   width="100%"
+   height="100%"
+   version="1.1"
+   id="svg17"
+   sodipodi:docname="anomalia-eccentrica.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   inkscape:export-filename="anoeccentrica.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.9833334"
+     inkscape:cx="352.29049"
+     inkscape:cy="282.56983"
+     inkscape:window-width="3840"
+     inkscape:window-height="2120"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg17" />
+  <rect
+     width="800"
+     height="600"
+     fill="#111424"
+     id="rect1"
+     style="fill:#ffffff"
+     x="1.6184683"
+     y="-0.057511665" />
+  <line
+     x1="100"
+     y1="300"
+     x2="700"
+     y2="300"
+     stroke="#333b5c"
+     stroke-width="1"
+     stroke-dasharray="4,4"
+     id="line1" />
+  <line
+     x1="400.02347"
+     y1="81.22905"
+     x2="400.02347"
+     y2="519.60895"
+     stroke="#333b5c"
+     stroke-width="1.04687"
+     stroke-dasharray="4, 4"
+     id="line2" />
+  <circle
+     cx="400"
+     cy="300"
+     r="220"
+     fill="none"
+     stroke="#6b7c96"
+     stroke-width="1.5"
+     stroke-dasharray="6,4"
+     id="circle2" />
+  <ellipse
+     cx="400"
+     cy="300"
+     rx="220.11934"
+     ry="164.88116"
+     fill="none"
+     stroke="#3a86ff"
+     stroke-width="2.26132"
+     id="ellipse2" />
+  <line
+     x1="400"
+     y1="300"
+     x2="680"
+     y2="300"
+     stroke="#ff0055"
+     stroke-width="1.5"
+     marker-end="url(#arrow)"
+     id="line3" />
+  <path
+     d="m 447.37266,299.83488 c -0.50279,-22.44682 -9.32571,-42.21741 -32.97163,-49.25471"
+     fill="none"
+     stroke="#ffbe0b"
+     stroke-width="3"
+     id="path3"
+     style="stroke:#7cdb9b;stroke-opacity:1"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="m 570.30053,300.37785 c 4.99207,-38.72417 -30.46454,-78.9282 -80.97647,-65.4061"
+     fill="none"
+     stroke="#ffbe0b"
+     stroke-width="3"
+     id="path3-9"
+     style="stroke:#0b77ff;stroke-opacity:1"
+     sodipodi:nodetypes="cc" />
+  <line
+     x1="398.6076"
+     y1="302.08655"
+     x2="460.05099"
+     y2="90.840919"
+     stroke="#ffbe0b"
+     stroke-width="1.5"
+     stroke-dasharray="3, 3"
+     id="line4"
+     style="stroke:#fd6b62;stroke-opacity:0.97058821;fill:#aa0000" />
+  <line
+     x1="508.28677"
+     y1="294.98782"
+     x2="459.47241"
+     y2="138.60179"
+     stroke="#3a86ff"
+     stroke-width="0.800812"
+     id="line5"
+     style="stroke-width:2.201;stroke-dasharray:none" />
+  <line
+     x1="459.98148"
+     y1="91.493042"
+     x2="459.98148"
+     y2="298.4653"
+     stroke="#ffffff"
+     stroke-width="1.02565"
+     stroke-dasharray="2, 2"
+     id="line6"
+     style="fill:#c87137;stroke:#582e18;stroke-opacity:1;stroke-width:1.526;stroke-dasharray:2.97567369,2.97567369;stroke-dashoffset:0" />
+  <circle
+     cx="400"
+     cy="300"
+     r="4"
+     fill="#ffffff"
+     id="circle6"
+     style="fill:#000000" />
+  <circle
+     cx="509.67386"
+     cy="300"
+     r="12"
+     fill="#ff0055"
+     opacity="0.3"
+     id="circle7"
+     style="fill:#ffcc00" />
+  <circle
+     cx="509.67386"
+     cy="300"
+     r="7"
+     fill="#ffbe0b"
+     id="circle8" />
+  <circle
+     cx="460.45551"
+     cy="141.05571"
+     r="6"
+     fill="#3a86ff"
+     id="circle10" />
+  <circle
+     cx="460.37753"
+     cy="88.981041"
+     r="6"
+     fill="#3a86ff"
+     id="circle10-9"
+     style="fill:#ff0000" />
+  <text
+     x="416.54965"
+     y="324.55197"
+     fill="#ffffff"
+     font-family="sans-serif"
+     font-size="24.6776px"
+     text-anchor="middle"
+     id="text10"
+     style="fill:#1a1a1a;stroke-width:1.963;stroke-dasharray:none;-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal" />
+  <text
+     x="630"
+     y="290"
+     fill="#ff0055"
+     font-family="sans-serif"
+     font-size="14"
+     id="text12"
+     style="-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal">Perielio</text>
+  <text
+     x="15.982733"
+     y="453.03433"
+     fill="#ffbe0b"
+     font-family="sans-serif"
+     font-size="17.2426px"
+     id="text13"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#000080;stroke-width:1.23162"><tspan
+       sodipodi:role="line"
+       x="15.982733"
+       y="453.03433"
+       id="tspan6"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.23162">LEGENDA:</tspan></text>
+  <text
+     x="16.824938"
+     y="506.98404"
+     fill="#ffbe0b"
+     font-family="sans-serif"
+     font-size="12.6047px"
+     id="text13-4"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#000080;stroke-width:0.900337"><tspan
+       sodipodi:role="line"
+       x="16.824938"
+       y="506.98404"
+       id="tspan6-2">E - Anomalia eccentrica</tspan><tspan
+       sodipodi:role="line"
+       x="16.824938"
+       y="522.73993"
+       id="tspan10">ν - Anomalia vera</tspan><tspan
+       sodipodi:role="line"
+       x="16.824938"
+       y="538.49579"
+       id="tspan11">P - Posizione pianeta reale</tspan><tspan
+       sodipodi:role="line"
+       x="16.824938"
+       y="554.25165"
+       id="tspan1">P' - Proiezione del pianeta reale</tspan><tspan
+       sodipodi:role="line"
+       x="16.824938"
+       y="570.00757"
+       id="tspan2" /></text>
+  <text
+     x="39.832409"
+     y="570.76654"
+     fill="#ffbe0b"
+     font-family="sans-serif"
+     font-size="12.6047px"
+     id="text13-4-9"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#000080;stroke-width:0.900337"><tspan
+       sodipodi:role="line"
+       x="39.832409"
+       y="570.76654"
+       id="tspan14">sulla circonferenza ausiliaria</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-weight:bold;font-size:29.4517px;font-family:Georgia, 'Times New Roman', serif;-inkscape-font-specification:'Georgia, Times New Roman, serif Bold Italic';writing-mode:lr-tb;direction:ltr;fill:#216778;stroke:#c87137;stroke-width:0.109339;stroke-dasharray:none;stroke-opacity:0.970588"
+     x="202.80887"
+     y="47.982349"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1-9"
+       x="202.80887"
+       y="47.982349"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:29.4517px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#216778;stroke-width:0.109339;stroke-dasharray:none">ANOMALIA ECCENTRICA</tspan></text>
+  <text
+     x="16.540022"
+     y="474.77734"
+     fill="#ffbe0b"
+     font-family="sans-serif"
+     font-size="12.6047px"
+     id="text13-7"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#000080;stroke-width:0.900337"><tspan
+       sodipodi:role="line"
+       x="16.540022"
+       y="474.77734"
+       id="tspan6-6">C - Centro della cironferenza ausiliaria</tspan><tspan
+       sodipodi:role="line"
+       x="16.540022"
+       y="490.5332"
+       id="tspan9">F - Fuoco occupato dal corpo centrale</tspan></text>
+  <text
+     x="465.90692"
+     y="135.13049"
+     fill="#3a86ff"
+     font-family="sans-serif"
+     font-size="20.254px"
+     id="text14"
+     style="stroke-width:1.44672;-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal">P</text>
+  <text
+     x="373.85834"
+     y="326.60727"
+     fill="#3a86ff"
+     font-family="sans-serif"
+     font-size="25.796px"
+     id="text14-4"
+     style="stroke-width:1.84258;-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal"><tspan
+       style="fill:#782121;-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal"
+       id="tspan3">C</tspan></text>
+  <text
+     x="499.01581"
+     y="334.83548"
+     fill="#3a86ff"
+     font-family="sans-serif"
+     font-size="25.796px"
+     id="text14-4-5"
+     style="stroke-width:1.84258;-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal"><tspan
+       style="fill:#782121;-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal"
+       id="tspan3-1">F</tspan></text>
+  <text
+     x="467.30139"
+     y="83.463112"
+     fill="#3a86ff"
+     font-family="sans-serif"
+     font-size="20.254px"
+     id="text14-88"
+     style="stroke-width:1.44672;fill:#ff2a2a;-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal">P'</text>
+  <text
+     x="618.5426"
+     y="235.35173"
+     fill="#3a86ff"
+     font-family="sans-serif"
+     font-size="12.4164px"
+     id="text14-8"
+     style="stroke-width:0.886887;-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal" />
+  <text
+     x="412.99524"
+     y="290.44312"
+     fill="#ffbe0b"
+     font-family="sans-serif"
+     font-size="23.1708px"
+     font-weight="bold"
+     id="text15"
+     style="fill:#aa00d4;stroke-width:1.44817;-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal">E</text>
+  <defs
+     id="defs17">
+    <marker
+       id="arrow"
+       viewBox="0 0 10 10"
+       refX="5"
+       refY="5"
+       markerWidth="6"
+       heightWidth="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0 0 L 10 5 L 0 10 z"
+         fill="#ff0055"
+         id="path17" />
+    </marker>
+  </defs>
+  <path
+     style="fill:#ffcc00;stroke:#0b77ff;stroke-width:2.201;stroke-dasharray:none;stroke-opacity:1"
+     d="m 289.16322,432.11532 c 3.06472,3.39241 4.59013,7.11988 6.22205,12.88796 0.0108,0.038 -0.0125,0.081 0,0.11851 0.009,0.0265 0.0504,0.0328 0.0592,0.0593 0.0519,0.15557 -0.005,0.11851 0.17777,0.11851 0.0395,0 4.18731,1.06759 0.11851,0 -7.93091,1.40298 -9.70993,2.22017 -14.75449,0.47403"
+     id="path19"
+     sodipodi:nodetypes="csccscc" />
+  <text
+     xml:space="preserve"
+     style="writing-mode:lr-tb;direction:ltr;fill:#ff0000;stroke:#0b77ff;stroke-width:2.201;stroke-dasharray:none;stroke-opacity:1"
+     x="620.51581"
+     y="222.32385"
+     id="text21"><tspan
+       sodipodi:role="line"
+       id="tspan21"
+       x="620.51581"
+       y="222.32385" /></text>
+  <text
+     xml:space="preserve"
+     style="font-size:20.6665px;writing-mode:lr-tb;direction:ltr;fill:#dd55ff;stroke:#fd6b62;stroke-width:3.38069;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.970588"
+     x="551.36987"
+     y="242.30791"
+     id="text4"><tspan
+       sodipodi:role="line"
+       id="tspan4"
+       x="551.36987"
+       y="242.30791"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#5a2ca0;stroke-width:3.38069">ν</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-weight:bold;font-family:Georgia, 'Times New Roman', serif;-inkscape-font-specification:'Georgia, Times New Roman, serif Bold Italic';writing-mode:lr-tb;direction:ltr;fill:#d40000;stroke:#c87137;stroke-width:1.699;stroke-opacity:0.970588"
+     x="88.156425"
+     y="135.7542"
+     id="text5"><tspan
+       sodipodi:role="line"
+       id="tspan5"
+       x="88.156425"
+       y="135.7542" /></text>
+</svg>

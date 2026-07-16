@@ -1,3 +1,15 @@
 public/
 resources/
 .hugo_build.lock
+
+# Obsidian
+.obsidian/
+
+# Materiale di lavoro
+materiali/
+
+# Documentazione privata
+documentazione/
+
+# Strumenti locali di conversione e lavoro
+tools/

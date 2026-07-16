@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 600 400"
+   width="600"
+   height="400"
+   version="1.1"
+   id="svg17"
+   sodipodi:docname="traiettoria-iperbolica.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="4.53"
+     inkscape:cx="183.88521"
+     inkscape:cy="172.62693"
+     inkscape:window-width="3840"
+     inkscape:window-height="2120"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg17" />
+  <defs
+     id="defs2">
+    <!-- Freccia per indicare il verso del moto (Blu scuro) -->
+    <marker
+       id="arrowhead"
+       markerWidth="8"
+       markerHeight="6"
+       refX="8"
+       refY="3"
+       orient="auto">
+      <polygon
+         points="0 0, 8 3, 0 6"
+         fill="#005f99"
+         id="polygon1" />
+    </marker>
+    <!-- Freccia per il vettore velocità (Rosso scuro) -->
+    <marker
+       id="arrowVel"
+       markerWidth="8"
+       markerHeight="6"
+       refX="8"
+       refY="3"
+       orient="auto">
+      <polygon
+         points="0 0, 8 3, 0 6"
+         fill="#c0392b"
+         id="polygon2" />
+    </marker>
+  </defs>
+  <!-- Sfondo bianco con bordo leggero -->
+  <rect
+     width="600"
+     height="400"
+     fill="#ffffff"
+     stroke="#e0e0e0"
+     stroke-width="1"
+     id="rect2" />
+  <!-- Asintoti (linee tratteggiate grigie) -->
+  <line
+     x1="0"
+     y1="90"
+     x2="600"
+     y2="-460"
+     stroke="#b0b0b0"
+     stroke-width="1"
+     stroke-dasharray="6,6"
+     id="line2" />
+  <line
+     x1="0"
+     y1="310"
+     x2="600"
+     y2="860"
+     stroke="#b0b0b0"
+     stroke-width="1"
+     stroke-dasharray="6,6"
+     id="line3" />
+  <!-- Traiettoria Iperbolica -->
+  <path
+     d="m 260.81073,395.69882 -27.16949,-38.94294 -21.73559,-32.60339 -16.3017,-27.16949 -13.58474,-23.54689 -9.0565,-19.9243 -7.2452,-18.11299 -3.6226,-17.20735 -0.90565,-16.30169 0.90565,-17.20735 3.6226,-16.30169 7.2452,-19.01865 9.0565,-19.92429 13.58474,-23.54689 16.3017,-27.169491 21.73559,-32.60339 27.16949,-38.037289"
+     fill="none"
+     stroke="#005f99"
+     stroke-width="2.26412"
+     stroke-dasharray="10, 5"
+     marker-end="url(#arrowhead)"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path3" />
+  <!-- Corpo centrale (Stella/Pianeta) al Fuoco -->
+  <circle
+     cx="200"
+     cy="200"
+     r="14"
+     fill="#f39c12"
+     stroke="#e67e22"
+     stroke-width="2"
+     id="circle3" />
+  <circle
+     cx="200"
+     cy="200"
+     r="5"
+     fill="#ffffff"
+     id="circle4" />
+  <!-- Corpo in orbita -->
+  <circle
+     cx="175.24377"
+     cy="143.3268"
+     r="5"
+     fill="#2c3e50"
+     id="circle5"
+     style="fill:#d40000" />
+  <!-- Vettore Velocità (tangente alla traiettoria) -->
+  <line
+     x1="177.19495"
+     y1="138.25374"
+     x2="196.19495"
+     y2="92.253738"
+     stroke="#c0392b"
+     stroke-width="2"
+     marker-end="url(#arrowVel)"
+     stroke-linecap="round"
+     id="line5" />
+  <!-- Linee guida per le etichette -->
+  <!-- ETICHETTE -->
+  <!-- Corpo Centrale -->
+  <text
+     x="204.82339"
+     y="180.49669"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#333333"
+     font-style="italic"
+     id="text9">Corpo centrale</text>
+  <text
+     x="219.82339"
+     y="195.49669"
+     font-family="Arial, sans-serif"
+     font-size="11px"
+     fill="#666666"
+     id="text10">(Fuoco)</text>
+  <!-- Pericentro -->
+  <text
+     x="93.345772"
+     y="201.71083"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#333333"
+     font-style="italic"
+     id="text11">Pericentro</text>
+  <!-- Traiettoria -->
+  <text
+     x="233.96568"
+     y="309.97867"
+     font-family="Arial, sans-serif"
+     font-size="16.8535px"
+     fill="#005f99"
+     font-weight="bold"
+     id="text13"
+     style="stroke-width:1.29643">Traiettoria</text>
+  <text
+     x="233.96568"
+     y="330.7215"
+     font-family="Arial, sans-serif"
+     font-size="16.8535px"
+     fill="#005f99"
+     font-weight="bold"
+     id="text14"
+     style="stroke-width:1.29643">iperbolica</text>
+  <!-- Asintoti -->
+  <text
+     x="74.315804"
+     y="39.782532"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#555555"
+     font-style="italic"
+     id="text15">Asintoto</text>
+  <text
+     x="74.104836"
+     y="368.30878"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#555555"
+     font-style="italic"
+     id="text15-9">Asintoto</text>
+  <!-- Velocità -->
+  <text
+     x="99.481239"
+     y="133.26711"
+     font-family="Arial, sans-serif"
+     font-size="13px"
+     fill="#c0392b"
+     font-weight="bold"
+     id="text16">Velocità (v)</text>
+  <text
+     x="103.6755"
+     y="145.83885"
+     font-family="Arial, sans-serif"
+     font-size="10px"
+     fill="#666666"
+     id="text17">&gt; v di fuga</text>
+</svg>

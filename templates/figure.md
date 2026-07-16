@@ -1,0 +1,1 @@
+{{< figura src="immagini/nome-file.svg" alt="Descrizione dell'immagine" caption="Descrizione della figura." >}}

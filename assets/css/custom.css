@@ -1,0 +1,19 @@
+.markdown figure.scientific-figure {
+    text-align: center;
+    margin: 1.8rem auto;
+}
+
+.scientific-figure img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+}
+
+.markdown figure.scientific-figure figcaption {
+    margin-top: 0.25rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-style: italic;
+    text-align: center;
+}
