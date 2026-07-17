@@ -71,19 +71,19 @@ Otteniamo anche in questo caso un valore di $e$ perfettamente in linea con il da
 Il valore di $e$ determina univocamente il tipo di traiettoria di un corpo nello spazio:
 
 - **$e = 0$: orbita circolare perfetta**. Non ci sono due fuochi separati, ma un unico centro.
-{{< figura src="orbita-circolare.svg" alt="Un'orbita perfettamente circolare" caption="In un'orbita circolare non sono distinguibili né il pericentro né l'apocentro." >}}
+{{< figura src="immagini/orbita-circolare.svg" alt="Un'orbita perfettamente circolare" caption="In un'orbita circolare non sono distinguibili né il pericentro né l'apocentro." >}}
     
 - **$0 < e < 1$: orbita ellittica**. È il caso di tutti i pianeti del Sistema Solare, dei pianeti nani e delle comete periodiche. Più _e_ si avvicina a 1, più l’ellisse è “schiacciata”.
  
-{{< figura src="orbita-ellittica.svg" alt="Orbita ellittica con il Sole in uno dei fuochi, pericentro e apocentro" caption="Orbita ellittica: il corpo centrale occupa uno dei fuochi e l'eccentricità è compresa tra 0 e 1." >}}
+{{< figura src="immagini/orbita-ellittica.svg" alt="Orbita ellittica con il Sole in uno dei fuochi, pericentro e apocentro" caption="Orbita ellittica: il corpo centrale occupa uno dei fuochi e l'eccentricità è compresa tra 0 e 1." >}}
 
 - **$e = 1$: traiettoria parabolica**. È un’orbita aperta di fuga: il corpo ha esattamente la velocità di fuga necessaria per sottrarsi all’attrazione del corpo centrale.
  
-  {{< figura src="traiettoria-parabolica.svg" alt="Un corpo su un'orbita parabolica non rimane vincolato al corpo che lo attrae, ma dopo il passaggio al pericentro si allontana indefinitamente." caption="Un corpo su un'orbita parabolica non rimane vincolato al corpo che lo attrae, ma dopo il passaggio al pericentro si allontana indefinitamente." >}}  
+  {{< figura src="immagini/traiettoria-parabolica.svg" alt="Un corpo su un'orbita parabolica non rimane vincolato al corpo che lo attrae, ma dopo il passaggio al pericentro si allontana indefinitamente." caption="Un corpo su un'orbita parabolica non rimane vincolato al corpo che lo attrae, ma dopo il passaggio al pericentro si allontana indefinitamente." >}}  
  
 - **$e > 1$: traiettoria iperbolica**. È un’orbita aperta tipica degli oggetti interstellari come _‘Oumuamua_ e _Borisov_. È il tipo di traiettoria seguita da corpi che attraversano il Sistema Solare ad una velocità talmente elevata che la gravità solare non è in grado di catturarli.
 
-{{< figura src="traiettoria-iperbolica.svg" alt="Un oggetto in allontanamento dal corpo centrale lungo una traiettoria iperbolica" caption="Un esempio reale di traiettoria iperbolica è stata quella seguita dall'oggetto interstellare 1I/2017 U1 ('Oumuamua), scoperto nel 2017, che attraversò il Sistema Solare con un'eccentricità di circa $1,19$ prima di allontanarsi per sempre verso lo spazio interstellare." >}}
+{{< figura src="immagini/traiettoria-iperbolica.svg" alt="Un oggetto in allontanamento dal corpo centrale lungo una traiettoria iperbolica" caption="Un esempio reale di traiettoria iperbolica è stata quella seguita dall'oggetto interstellare 1I/2017 U1 ('Oumuamua), scoperto nel 2017, che attraversò il Sistema Solare con un'eccentricità di circa $1,19$ prima di allontanarsi per sempre verso lo spazio interstellare." >}}
 
 Dal punto di vista fisico, l’eccentricità è strettamente legata all’_energia orbitale specifica_ $\varepsilon$ (epsilon) e al _momento angolare specifico_ $h$ del corpo orbitante. La relazione è:
 
