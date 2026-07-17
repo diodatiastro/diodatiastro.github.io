@@ -1,5 +1,5 @@
 +++
-title = "Un catalogo di stelle"
+title = "Catalogo delle stelle"
 date = "2026-07-14"
 draft = false
 +++
