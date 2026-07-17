@@ -4,5 +4,5 @@ Un viaggio nell'universo per conoscere da "vicino" le stelle più belle e intere
 
 ## Esplora il sito
 
-- [Dizionario di astronomia e astrofisica](dizionario/)
+- [Dizionario pratico di astronomia e astrofisica](dizionario/)
 - [Un catalogo di stelle](stelle/)
