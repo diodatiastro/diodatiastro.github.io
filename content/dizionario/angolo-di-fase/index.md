@@ -119,7 +119,7 @@ $$
 T_\text{sin} = \frac{1}{0{,}00128220} \approx \mathbf{779{,}9 \text{ giorni}}
 $$
 
-Per Marte, dunque, l'intervallo tra due successive opposizioni è circa $780$ giorni terrestri. Per Giove, eseguendo lo stesso tipo di calcolo fatto sopra, otteniamo un periodo sinodico di circa **$399$ giorni**, mentre per Saturno di circa **$378$ giorni**. Per Urano e Nettuno, che orbitano lentissimamente intorno al Sole rispetto alla Terra, il periodo sinodico è appena superiore all'anno siderale terrestre, poiché la Terra riesce a "doppiare" il pianeta quasi subito dopo l'inizio di un nuovo anno.
+Per Marte, dunque, l'intervallo tra due successive opposizioni è circa $780$ giorni terrestri. Per Giove, eseguendo lo stesso tipo di calcolo fatto sopra, otteniamo un periodo sinodico di circa $399$ giorni, mentre per Saturno di circa $378$ giorni. Per Urano e Nettuno, che orbitano lentissimamente intorno al Sole rispetto alla Terra, il periodo sinodico è appena superiore all'anno siderale terrestre, poiché la Terra riesce a "doppiare" il pianeta quasi subito dopo l'inizio di un nuovo anno.
 
 ## Configurazioni notevoli dei pianeti esterni
 
