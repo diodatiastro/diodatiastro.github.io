@@ -6,7 +6,11 @@ draft = false
 
 {{< katex />}}
 
-In meccanica celeste e geometria, l’eccentricità, indicata generalmente con la lettera $e$, è un parametro _adimensionale_ che determina quanto l’orbita di un corpo celeste devia dalla forma circolare. In termini più semplici, essa misura quanto l'ellisse orbitale è 'schiacciata' rispetto a una circonferenza perfetta. La parola deriva dal latino tardo _eccentricus_, a sua volta dal greco ἔκκεντρος (_ékkentros_, "fuori dal centro"), composto da ἐκ- ("fuori da") e κέντρον ("centro").
+La parola deriva dal latino tardo _eccentricus_, a sua volta dal greco ἔκκεντρος (_ékkentros_, "fuori dal centro"), composto da ἐκ- ("fuori da") e κέντρον ("centro").
+
+## Definizione e calcolo
+
+In meccanica celeste e geometria, l’eccentricità, indicata generalmente con la lettera $e$, è un parametro _adimensionale_ che determina quanto l’orbita di un corpo celeste devia dalla forma circolare. In termini più semplici, essa misura quanto l'ellisse orbitale è 'schiacciata' rispetto a una circonferenza perfetta. 
 
 L'eccentricità nasce nello studio delle sezioni coniche, cioè delle curve ottenute dall'intersezione di un piano con un cono. Per un'ellisse essa è legata al semiasse maggiore $a$ e al semiasse minore $b$ dalla relazione:
 
@@ -23,6 +27,8 @@ $$
 Il risultato ottenuto è in ottimo accordo con il valore canonico di **$0,0167$**.
 
 Un dato rimarchevole che emerge dai dati usati per questo calcolo è che l’orbita terrestre è una circonferenza quasi perfetta: la differenza tra i due semiassi, lunghi quasi 150 milioni di km, è infatti di appena **$21.000\;\mathrm{km}$**.
+
+## Dalla distanza focale all'eccentricità
 
 Un altro modo di calcolare l’eccentricità di un’orbita ellittica è calcolare il rapporto tra la **distanza focale** $c$ (la distanza dal centro a ciascun fuoco dell’ellisse) e il semiasse maggiore $a$, secondo la relazione:
 
@@ -54,6 +60,8 @@ r_{\text{perielio}}=149.598.000-2.507.000=147.091.000\;\mathrm{km}
 \end{aligned}
 $$
 
+## Se si conoscono già periastro e apoastro
+
 Dai precedenti rapporti deriva anche un altro metodo di calcolare l’eccentricità $e$ di un’orbita ellittica, se si conoscono già le distanze dal corpo centrale all’apoastro e al periastro (o all’afelio e al perielio nel caso del Sole):
 
 $$
@@ -70,20 +78,30 @@ Otteniamo anche in questo caso un valore di $e$ perfettamente in linea con il da
 
 Il valore di $e$ determina univocamente il tipo di traiettoria di un corpo nello spazio:
 
-- **$e = 0$: orbita circolare perfetta**. Non ci sono due fuochi separati, ma un unico centro.
+## Orbita circolare
+
+**$e = 0$: orbita circolare perfetta**. Non ci sono due fuochi separati, ma un unico centro.
 {{< figura src="immagini/orbita-circolare.svg" alt="Un'orbita perfettamente circolare" caption="In un'orbita circolare non sono distinguibili né il pericentro né l'apocentro." >}}
     
-- **$0 < e < 1$: orbita ellittica**. È il caso di tutti i pianeti del Sistema Solare, dei pianeti nani e delle comete periodiche. Più _e_ si avvicina a 1, più l’ellisse è “schiacciata”.
+## Orbita ellittica
+
+**$0 < e < 1$: orbita ellittica**. È il caso di tutti i pianeti del Sistema Solare, dei pianeti nani e delle comete periodiche. Più _e_ si avvicina a 1, più l’ellisse è “schiacciata”.
  
 {{< figura src="immagini/orbita-ellittica.svg" alt="Orbita ellittica con il Sole in uno dei fuochi, pericentro e apocentro" caption="Orbita ellittica: il corpo centrale occupa uno dei fuochi e l'eccentricità è compresa tra 0 e 1." >}}
 
-- **$e = 1$: traiettoria parabolica**. È un’orbita aperta di fuga: il corpo ha esattamente la velocità di fuga necessaria per sottrarsi all’attrazione del corpo centrale.
+## Traiettoria parabolica
+
+**$e = 1$: traiettoria parabolica**. È un’orbita aperta di fuga: il corpo ha esattamente la velocità di fuga necessaria per sottrarsi all’attrazione del corpo centrale.
  
   {{< figura src="immagini/traiettoria-parabolica.svg" alt="Un corpo su un'orbita parabolica non rimane vincolato al corpo che lo attrae, ma dopo il passaggio al pericentro si allontana indefinitamente." caption="Un corpo su un'orbita parabolica non rimane vincolato al corpo che lo attrae, ma dopo il passaggio al pericentro si allontana indefinitamente." >}}  
  
-- **$e > 1$: traiettoria iperbolica**. È un’orbita aperta tipica degli oggetti interstellari come _‘Oumuamua_ e _Borisov_. È il tipo di traiettoria seguita da corpi che attraversano il Sistema Solare ad una velocità talmente elevata che la gravità solare non è in grado di catturarli.
+## Traiettoria iperbolica
+
+**$e > 1$: traiettoria iperbolica**. È un’orbita aperta tipica degli oggetti interstellari come _‘Oumuamua_ e _Borisov_. È il tipo di traiettoria seguita da corpi che attraversano il Sistema Solare ad una velocità talmente elevata che la gravità solare non è in grado di catturarli.
 
 {{< figura src="immagini/traiettoria-iperbolica.svg" alt="Un oggetto in allontanamento dal corpo centrale lungo una traiettoria iperbolica" caption="Un esempio reale di traiettoria iperbolica è stata quella seguita dall'oggetto interstellare 1I/2017 U1 ('Oumuamua), scoperto nel 2017, che attraversò il Sistema Solare con un'eccentricità di circa $1,19$ prima di allontanarsi per sempre verso lo spazio interstellare." >}}
+
+## I vincoli fisici dell'eccentricità
 
 Dal punto di vista fisico, l’eccentricità è strettamente legata all’_energia orbitale specifica_ $\varepsilon$ (epsilon) e al _momento angolare specifico_ $h$ del corpo orbitante. La relazione è:
 
