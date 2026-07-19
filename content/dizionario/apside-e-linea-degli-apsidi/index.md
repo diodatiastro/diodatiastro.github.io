@@ -27,7 +27,7 @@ La **linea degli apsidi** (chiamata talvolta anche *linea absidale*) è la retta
 
 {{< figura src="immagini/linea-degli-apsidi.jpg" alt="Orbita ellittica con linea degli apsidi" caption="Orbita ellittica con linea degli apsidi." >}}
 
-Esiste una linea degli apsidi anche per le traiettorie aperte (**paraboliche** e **iperboliche**), intendendo in questo caso la retta che passa per il fuoco occupato dal corpo centrale e per il periapside, anche se non esiste un apoapside.
+Esiste una linea degli apsidi anche per le traiettorie aperte ([paraboliche]({{< relref "/dizionario/eccentricita/#traiettoria-parabolica" >}}) e [iperboliche]({{< relref "/dizionario/eccentricita/#traiettoria-iperbolica" >}})), intendendo in questo caso la retta che passa per il fuoco occupato dal corpo centrale e per il periapside, anche se non esiste un apoapside.
 
 Ritornando alle orbite ellittiche, se indichiamo con $a$ il semiasse maggiore dell'orbita, la lunghezza della linea degli apsidi è:
 

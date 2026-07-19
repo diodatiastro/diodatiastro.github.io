@@ -40,6 +40,10 @@ html, body {
     min-height: 100vh;
 }
 
+.book-page a {
+    font-weight: 700;
+}
+
 .book-menu {
     min-height: 100vh;
 }
