@@ -6,6 +6,10 @@ draft = false
 
 {{< katex />}}
 
+## Etimologia
+
+Il termine "magnete" deriva dal latino *magnes*, a sua volta dal greco *Μάγνης λίθος* ("pietra di Magnesia"), dal nome di una località dell'Asia Minore (l'odierna Manisa, in Turchia) presso cui si trovavano abbondanti giacimenti di magnetite, il minerale di ferro capace di attrarre altro ferro. Dalla stessa radice derivano anche "magnetite" e "magnetismo". Il concetto di *campo*, invece, è molto più tardo: viene introdotto nell'Ottocento da Faraday per descrivere l'azione a distanza delle forze elettriche e magnetiche senza dover ricorrere a un mezzo meccanico intermedio.
+
 ## Definizione
 
 Un campo magnetico è una "perturbazione" dello spazio creata da cariche elettriche in movimento (cioè da correnti elettriche) o da materiali magnetici, in grado di esercitare una forza su *altre* cariche in movimento. Si tratta di un campo **vettoriale**, il che significa che in ogni suo punto è definito da un'intensità, una direzione e un verso.
@@ -30,14 +34,10 @@ Essa ci dice tre cose:
 
 Un campo magnetico può essere generato dalle seguenti sorgenti:
 
-1. **Cariche elettriche in movimento (correnti elettriche).** Un filo percorso da corrente genera un campo magnetico circolare intorno a sé. Questo è il principio alla base degli elettromagneti.
+1. **Cariche elettriche in movimento (correnti elettriche).** Un filo percorso da corrente genera un campo magnetico circolare intorno a sé. Questo è il principio alla base degli elettromagneti. In astrofisica, questo stesso meccanismo è alla base dell'**effetto dinamo**: nei pianeti e nelle stelle, il plasma conduttore si muove per convezione ed è soggetto alla rotazione del corpo celeste. Il moto ordinato di innumerevoli cariche agisce come una gigantesca corrente elettrica, capace di generare e autoalimentare campi magnetici su scale colossali.
 2. **Momenti magnetici intrinseci delle particelle (lo spin).** Elettroni, protoni e neutroni possiedono una proprietà quantistica chiamata "spin", che li fa comportare come minuscoli magneti. Nei materiali ferromagnetici (come il ferro), gli spin di molti elettroni si allineano, generando un campo macroscopico (la calamita).
-3. **Variazioni dei campi elettrici nel tempo (Corrente di spostamento).** Se in una regione dello spazio il campo elettrico cambia la sua intensità o direzione nel tempo, questa variazione produce un campo magnetico nell'area circostante, anche in totale assenza di cariche elettriche reali o di fili conduttori.
-4. **Onde Elettromagnetiche (Auto-propagazione).** Come diretta conseguenza del punto precedente, i campi magnetici possono generarsi continuamente nello spazio profondo attraverso il meccanismo delle onde elettromagnetiche (come la luce, le onde radio o i raggi X). In un'onda elettromagnetica che viaggia nel vuoto:
-   - Il campo elettrico variabile genera un campo magnetico variabile.
-   - A sua volta, questo campo magnetico variabile genera un campo elettrico variabile.
-   
-   Questo processo di rigenerazione reciproca permette all'onda (e quindi al campo magnetico) di propagarsi all'infinito nel cosmo senza il supporto di alcuna materia o corrente elettrica circostante.
+3. **Variazioni del campo elettrico nel tempo (corrente di spostamento).** Per la legge di Ampère-Maxwell, un campo elettrico che cambia intensità o direzione nel tempo genera un campo magnetico nella regione circostante, anche in totale assenza di cariche reali o di fili conduttori. È un meccanismo di induzione *locale*: non richiede propagazione né si stacca dalla regione in cui il campo elettrico varia.
+4. **Onde elettromagnetiche (auto-propagazione).** Il quadro cambia quando l'induzione descritta al punto precedente diventa *reciproca*: il campo magnetico variabile così generato induce a sua volta un nuovo campo elettrico variabile, che a sua volta induce un nuovo campo magnetico, e così via. Questo ciclo di rigenerazione reciproca si autoalimenta e si stacca dalla sorgente che lo ha originato: nasce così un'onda elettromagnetica (luce, onde radio, raggi X), capace di propagarsi indefinitamente nello spazio vuoto senza il supporto di alcuna materia o corrente elettrica circostante.
 
 ## Linee di campo
 
@@ -63,9 +63,9 @@ Nel Sistema Internazionale (SI), l'**unità di misura** del campo magnetico è i
 | Magnete da frigo | $\approx 5\;\mathrm{mT}$ ($50\;\mathrm{G}$) |
 | Magnete al neodimio | $\approx 1$–$1{,}4\;\mathrm{T}$  (tra $10^4$ e $1{,}4 \times 10^4\;\mathrm{G}$) |
 | Campo magnetico solare (macchie) | $\approx 0{,}1$–$0{,}3\;\mathrm{T}$ (tra $10^3$ e $3 \times 10^3\;\mathrm{G}$) |
+| Buco nero supermassiccio (M87\*, Sgr A\*; stime EHT presso l'orizzonte) | $\approx 10^{-4}$–$10^{-2}\;\mathrm{T}$ (tra $1$ e $100\;\mathrm{G}$) |
 | Campo magnetico di una stella di neutroni tipica | $\approx 10^8\;\mathrm{T}$ ($10^{12}\;\mathrm{G}$) |
 | Campo magnetico di una magnetar | $\approx 10^{11}\;\mathrm{T}$ ($10^{15}\:\mathrm{G}$) |
-| Campo magnetico di un buco nero (estremo teorico) | $\approx 10^{14}\:\mathrm{T}$ |
 
 ## Ruolo nell'astrofisica
 
@@ -77,4 +77,4 @@ Lo studio dei campi magnetici ha un ruolo fondamentale nell'astrofisica moderna,
 - **Getti relativistici.** I campi magnetici intensi attorno ai buchi neri supermassicci collimano e accelerano il plasma in getti che si estendono anche per milioni di anni luce.
 - **Radiazione di sincrotrone.** Le cariche elettriche che spiraleggiano a velocità relativistiche intorno alle linee di campo magnetico emettono radiazione di sincrotrone, osservabile nelle onde radio e nei raggi X. Ciò permette di mappare i campi magnetici in oggetti come resti di supernova, pulsar e radiogalassie.
 
-[^1]: Questa asimmetria è uno dei grandi misteri irrisolti della fisica.
+[^1]: La non osservazione di tali particelle, sebbene previste da alcune teorie di unificazione delle forze fondamentali, è un tema ancora aperto nella fisica teorica.
