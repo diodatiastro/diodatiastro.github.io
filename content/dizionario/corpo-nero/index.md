@@ -8,7 +8,7 @@ draft = false
 
 ## Etimologia
 
-Il termine "corpo nero" (dal tedesco *schwarzer Körper*) fu introdotto da Kirchhoff nel 1860, nell'ambito dei suoi studi sulla relazione tra potere emissivo e potere assorbente dei corpi in equilibrio termico.
+Il termine "corpo nero" (dal tedesco schwarzer Körper) fu introdotto dal fisico tedesco Gustav Robert Kirchhoff nel 1860, nell'ambito dei suoi studi sulla relazione tra potere emissivo e potere assorbente dei corpi in equilibrio termico.
 
 ## Definizione
 
@@ -72,7 +72,13 @@ $$
 L = 4\pi R^2 \sigma T^4
 $$
 
-Applicando la prima formula alla temperatura superficiale del Sole ($T \approx 5\,778\;\mathrm{K}$) si ottiene un flusso $j^* \approx 6{,}3 \times 10^7\;\mathrm{W/m^2}$. 
+Applicando la prima formula alla temperatura superficiale del Sole ($T \approx 5\,778\;\mathrm{K}$) si ottiene un flusso $j^* \approx 6{,}3 \times 10^7\;\mathrm{W/m^2}$. Applicando poi la seconda formula, con il raggio solare $R_\odot \approx 6{,}957 \times 10^8\;\mathrm{m}$, si ottiene la luminosità totale del Sole:
+
+$$
+L_\odot = 4\pi R_\odot^2 \sigma T^4 \approx 3{,}83 \times 10^{26}\;\mathrm{W},
+$$
+
+un valore in ottimo accordo con il valore nominale adottato dalla IAU ($3{,}828 \times 10^{26}\;\mathrm{W}$).
 
 Mentre la legge di Wien fissa *dove* si trova il picco dello spettro, la legge di Stefan-Boltzmann fissa *quanta* energia complessiva viene irraggiata: insieme, le due leggi permettono di ricostruire le due informazioni più importanti sull'emissione termica di un corpo a partire dalla sola temperatura.
 
