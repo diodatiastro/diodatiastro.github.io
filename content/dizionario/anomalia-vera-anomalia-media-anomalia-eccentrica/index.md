@@ -216,8 +216,6 @@ Dietro la pulsantiera di un moderno telescopio automatico, c’è un microcontro
 
 C’è da rimanere pieni di reverente ammirazione quando pensiamo che giganti dell’astronomia del passato come William e John Herschel facevano gran parte di questo lavoro a mano, con carta e penna, guidati da semplici dati tabellari e dal loro genio fisico e matematico.
 
-* * *
-
 [^1]: Un caso limite è quando l’eccentricità è $e = 0$, cioè l’orbita è perfettamente circolare. Qui la “distorsione” $e \sin E$ scompare e l’equazione collassa in $M=E$. Sul cerchio, l’anomalia media e l’anomalia eccentrica coincidono in ogni istante. Al contrario, maggiore è lo schiacciamento dell’orbita, maggiore sarà la discrepanza numerica tra $M$ ed $E$.
 
 [^2]: Un **dato cruciale** di cui tenere conto nel calcolare l’anomalia vera è che, quando un software o una calcolatrice calcola l’arcotangente standard, restituisce sempre un angolo compreso tra $-90^{\circ}$ e $+90^{\circ}$ (o tra $-\frac{\pi}{2}$ e $+\frac{\pi}{2} $ radianti). Tuttavia, l’angolo $\nu \over 2$ può spaziare da $0^{\circ}$ a $180^{\circ}$ (poiché l’anomalia vera reale $\nu$ va da $0^{\circ}$ a $360^{\circ}$). Se il risultato del blocco dentro la parentesi quadra è **positivo**, l’angolo si trova nel primo quadrante e il calcolo è diretto. Se, invece, il corpo celeste ha superato l’**afelio** (la seconda metà dell’orbita) e il blocco dentro la parentesi diventa **negativo**, l’arcotangente restituirà un angolo negativo. In quel caso, per ottenere il valore corretto della coordinata astronomica, occorre sommare geometricamente $360^{\circ}$ (o $2 \pi$ radianti) al risultato finale di $\nu$. Se, per esempio, si ottiene $\nu=-60^{\circ}$, sommando $360^{\circ}$ otteniamo $\nu=-60^{\circ}+360^{\circ}=300^{\circ}$.
