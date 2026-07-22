@@ -47,8 +47,11 @@ Per capire $E$ cosa rappresenta, dobbiamo immaginare l’orbita ellittica reale 
 Ma a cosa serve, tutto sommato, introdurre quest’ulteriore complicazione? Serve, perché l’anomalia eccentrica è il “ponte quantitativo” che lega la circonferenza ausiliaria su cui “scorre” l’anomalia media e l’ellisse reale su cui orbita il corpo celeste. Dal punto di vista **geometrico**, si relaziona all’anomalia vera tramite i rapporti geometrici elementari tra un’ellisse e il suo cerchio circoscritto. Dal punto di vista dinamico, invece, si lega all’anomalia media attraverso il termine $e \sin E$. Questo termine corregge la linearità del tempo medio “circolare”, introducendo la distorsione causata dallo spostamento del Sole dal centro dell’orbita al fuoco (la cui distanza dal centro è pari ad $a \times e$).
 
 Ma attenzione! Se vogliamo generare una rappresentazione geometrica dell’anomalia eccentrica come quella nell’immagine riportata più sopra, dobbiamo partire dalla **posizione istantanea** $P$ del corpo celeste sull’orbita ellittica. Ed in realtà è proprio quella posizione che noi non conosciamo. Ci serve infatti l’anomalia vera per determinarla. Non possiamo perciò partire da $P$ per arrivare a $P'$. In realtà, si ragiona al contrario: si parte dall’anomalia media $M$ per calcolare il valore dell’anomalia eccentrica $E$, e da quella si ricava infine l’anomalia vera $\nu$. Lo strumento di partenza è la celebre equazione di Keplero:
+<span id="eq-keplero"></span>
 
-$$M=E-e \sin E{,}$$
+$$
+M=E-e \sin E{,}
+$$
 
 per risolvere la quale dobbiamo conoscere preventivamente il valore di $M$ e l’eccentricità orbitale $e$. A complicare un po’ le cose, c’è il fatto che si tratta di un’equazione **trascendente**: la presenza della funzione seno rende l’equazione di Keplero **non algebrica**. Significa che non esiste una formula diretta e semplice per esprimere l’anomalia eccentrica $E$ in termini di $M$ ed $e$ utilizzando solo le operazioni algebriche fondamentali. Per arrivare a definire il valore di $E$ abbiamo bisogno di **calcoli iterativi**, che, partendo da un valore ipotetico di $E$, si avvicinino sempre più al suo valore effettivo per via di successive approssimazioni. Vedremo fra poco un esempio pratico che mostra come si procede in questi casi (o meglio come procedono i computer) [^1].
 
