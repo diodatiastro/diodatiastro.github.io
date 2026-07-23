@@ -53,7 +53,7 @@ In astronomia e astrofisica si usa una notazione speciale per indicare lo stato 
 - **IV** = atomo **triplamente** ionizzato ($3$ elettroni persi), e così via.
 
 Le energie in gioco nei fenomeni astrofisici possono essere così alte da produrre specie atomiche con un gran numero di elettroni sottratti all'atomo neutro. Un esempio è il ferro ionizzato con $13$ elettroni in meno (**Fe XIV**), che si trova nelle atmosfere stellari calde, in particolare nella corona solare, e indica temperature nell'ordine dei milioni di gradi. 
-Secondo [NIST](https://physics.nist.gov/cgi-bin/ASD/ie.pl?spectra=Fe+XIV&submit=Retrieve+Data&units=1&format=0&order=0&at_num_out=on&sp_name_out=on&ion_charge_out=on&el_name_out=on&seq_out=on&shells_out=on&level_out=on&ion_conf_out=on&e_out=0&unc_out=on&biblio=on), l'energia di ionizzazione del Fe XIV è di $392,2\,\mathrm{eV}$ ed è associata a fotoni X molli con lunghezza d'onda di $3{,}16\,\mathrm{nm}$
+Secondo [NIST](https://physics.nist.gov/cgi-bin/ASD/ie.pl?spectra=Fe+XIV&submit=Retrieve+Data&units=1&format=0&order=0&at_num_out=on&sp_name_out=on&ion_charge_out=on&el_name_out=on&seq_out=on&shells_out=on&level_out=on&ion_conf_out=on&e_out=0&unc_out=on&biblio=on), l'energia di ionizzazione del Fe XIV è di $392,2\,\mathrm{eV}$ ed è associata a fotoni X molli con lunghezza d'onda di $3{,}16\,\mathrm{nm}$.
 
 La Nebulosa di Orione, distante circa $1340$ anni luce da noi, è il più classico esempio di fotoionizzazione in astrofisica. È formata da una grande nube di idrogeno ionizzato (una cosiddetta **regione H II**), in cui l'energia di ionizzazione è fornita dalle luminosissime stelle del Trapezio, in particolare Theta-1 Orionis C[^2].
 
