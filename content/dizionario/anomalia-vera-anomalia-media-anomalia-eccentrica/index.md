@@ -6,6 +6,10 @@ draft = false
 
 {{< katex />}}
 
+## Etimologia
+
+Il termine deriva dal greco ἀνωμαλία (da *an-* privativo + ὁμαλός, «uguale, regolare»), cioè «mancanza di regolarità». Già gli astronomi greci lo usavano per indicare la non circolarità, ovvero l'apparente irregolarità, del moto dei pianeti. Fu Keplero, nel risolvere il problema di calcolare la posizione di un corpo lungo un'orbita ellittica, a fissarne l'uso moderno, distinguendo le tre anomalie (media, eccentrica e vera) oggi impiegate in meccanica celeste.
+
 ## L'anomalia vera
 
 L’**anomalia vera** $ \nu $ (*nu*) rappresenta l’angolo formato tra il pericentro e la posizione istantanea di un corpo celeste orbitante, misurato sul piano orbitale nella direzione del moto, con il vertice nel corpo centrale.
