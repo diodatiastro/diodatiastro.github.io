@@ -73,10 +73,10 @@ Ecco alcuni dati numerici concreti, relativi a un asteroide di albedo medio-bass
 
 | α (gradi) | Φ(α) | Correzione (mag) | H(α) |
 |:---------:|:----:|:-----------------:|:----:|
-| 0  | 1,000 | 0,00 | 15,0 |
-| 10 | 0,552 | 0,65 | 15,7 |
-| 20 | 0,399 | 1,00 | 16,0 |
-| 30 | 0,302 | 1,30 | 16,3 |
+| $0$  | $1{,}000$ | $0{,}00$ | $15{,}0$ |
+| $10$ | $0{,}552$ | $0{,}65$ | $15{,}7$ |
+| $20$ | $0{,}399$ | $1{,}00$ | $16{,}0$ |
+| $30$ | $0{,}302$ | $1{,}30$ | $16{,}3$ |
 
 Come si vede, più aumenta l'angolo di fase, più la funzione di fase e la luminosità apparente dell'asteroide diminuiscono.
 

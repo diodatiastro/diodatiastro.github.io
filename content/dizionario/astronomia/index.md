@@ -10,7 +10,5 @@ Il nome deriva dall’unione delle parole greche ἄστρον *(ástron, «ast
 
 Storicamente considerata la disciplina madre dello studio dello spazio, oggi si avvale costantemente della fisica e della chimica (vedi [Astrofisica]({{< relref "/dizionario/astrofisica" >}})) per interpretare i dati raccolti attraverso telescopi e altri strumenti di rilevazione.
 
-L'eccentricità determina la [forma dell'orbita]({{< relref "/dizionario/eccentricita/" >}}#orbita-ellittica).
-
 
 

@@ -1,3 +1,7 @@
 <footer class="site-footer">
-  <p>© {{ now.Format "2006" }} Michele Diodati. Tutti i diritti riservati.</p>
+  <p>
+    © {{ now.Format "2006" }}
+    {{ with site.GetPage "/autore" }}<a href="{{ .RelPermalink }}">Michele Diodati</a>{{ else }}Michele Diodati{{ end }}.
+    Tutti i diritti riservati.
+  </p>
 </footer>

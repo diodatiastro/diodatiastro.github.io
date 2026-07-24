@@ -116,7 +116,7 @@ alt="Facole (latino faculae) sulla fotosfera solare."
 caption="Facole (latino *faculae*) sulla fotosfera solare. Crediti: Pete Lawrence"
 >}}
 
-### Oscuramento al bordo (*limb darkening*)
+### Oscuramento al bordo *(limb darkening)*
 
 La fotosfera appare più brillante al centro del disco solare e progressivamente più scura verso il bordo. Questo effetto riflette la sua struttura **tridimensionale**: quando si osserva il centro del disco si guardano strati più profondi e più caldi, mentre verso il bordo la linea di vista, quasi tangenziale alla superficie solare, attraversa solo strati superficiali più freddi e meno luminosi. L'effetto è più marcato nel blu che nel rosso, perché la maggiore opacità della fotosfera alle lunghezze d'onda corte fa sì che già a inclinazioni intermedie si vedano esclusivamente gli strati alti e freddi. Con le dovute differenze di meccanismi fisici sottostanti, l'oscuramento al bordo della fotosfera è paragonabile all'arrossamento dell'atmosfera terrestre al tramonto, dovuto al fatto che la luce solare attraversa uno spessore maggiore di atmosfera lungo una linea di vista obliqua.
 

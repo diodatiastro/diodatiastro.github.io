@@ -6,6 +6,8 @@ title = 'Le stelle più affascinanti del cielo'
 theme = 'hugo-book'
 
 [params]
+  BookTheme = 'dark'
+  BookLogo = 'logo.svg'
   BookSection = '*'
   math = true
 

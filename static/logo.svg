@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 100 100"
+   width="100"
+   height="100"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="18.12"
+     inkscape:cx="50.027594"
+     inkscape:cy="50.110375"
+     inkscape:window-width="3840"
+     inkscape:window-height="2120"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="starGrad"
+       x1="25"
+       y1="35"
+       x2="63"
+       y2="73"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5402579,0,0,1.5402579,-27.027419,-25.807482)">
+      <stop
+         offset="0%"
+         stop-color="#8fb8ff"
+         id="stop1" />
+      <stop
+         offset="100%"
+         stop-color="#f0b84f"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <!-- Anello orbitale tratteggiato -->
+  <circle
+     cx="49.996658"
+     cy="50.004108"
+     r="47.41114"
+     fill="none"
+     stroke="#8fb8ff"
+     stroke-width="2.49532"
+     stroke-opacity="0.5"
+     stroke-dasharray="3, 5"
+     id="circle2"
+     style="stroke:#47ecff;stroke-opacity:0.93186301" />
+  <!-- Stella maggiore -->
+  <path
+     d="M 70.008831,57.366447 46.412079,63.034596 40.74393,86.631348 35.075781,63.034596 11.479029,57.366447 35.075781,51.698298 40.74393,28.101546 46.412079,51.698298 Z"
+     fill="url(#starGrad)"
+     id="path2"
+     style="fill:url(#starGrad);stroke-width:1.54026" />
+  <!-- Stella compagna -->
+  <path
+     d="M 83.716336,32.690948 69.96948,36.260869 66.39956,50.007727 62.829639,36.260869 49.082781,32.690948 62.829639,29.121028 66.39956,15.374172 69.96948,29.121028 Z"
+     fill="#f0b84f"
+     opacity="0.85"
+     id="path3"
+     style="stroke-width:2.66411" />
+</svg>

@@ -23,14 +23,22 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="2.265"
-     inkscape:cx="426.04856"
-     inkscape:cy="78.145695"
+     inkscape:cx="417.43929"
+     inkscape:cy="3.9735099"
      inkscape:window-width="3840"
      inkscape:window-height="2120"
      inkscape:window-x="-12"
      inkscape:window-y="-12"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4" />
+  <rect
+     style="fill:#ffffff;fill-opacity:1;stroke:#faff47;stroke-width:0;stroke-dasharray:none;stroke-opacity:0"
+     id="rect3"
+     width="695.43616"
+     height="397.3158"
+     x="1.3245035"
+     y="1.3596869"
+     ry="0" />
   <circle
      cx="347.01987"
      cy="216.40176"
@@ -126,4 +134,18 @@
      fill="#ff0000"
      id="circle3"
      style="stroke-width:1.26708" />
+  <rect
+     style="fill:#ffffff;fill-opacity:0;stroke:#faff47;stroke-width:0;stroke-opacity:0;stroke-dasharray:none"
+     id="rect1"
+     width="695.81372"
+     height="401.33249"
+     x="1.762005"
+     y="-1.3285028" />
+  <rect
+     style="fill:#ffffff;fill-opacity:0;stroke:#faff47;stroke-width:0;stroke-dasharray:none;stroke-opacity:0"
+     id="rect2"
+     width="102.42825"
+     height="89.624725"
+     x="36.203091"
+     y="29.139072" />
 </svg>

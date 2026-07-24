@@ -39,4 +39,5 @@ $$
 Una frequenza di $1\,\mathrm{GHz}$, ad esempio, corrisponde a $10^9$ oscillazioni al secondo e a un periodo di $10^{-9}\,\mathrm{s}$. Una stazione radio FM che trasmette a $100\,\mathrm{MHz}$ produce un'onda elettromagnetica il cui campo elettrico oscilla $100$ milioni di volte al secondo. In breve, mentre la lunghezza d’onda è una misura dello **spazio**, la frequenza è una misura del **tempo**.
 
 ## La grandezza fondamentale della radiazione elettromagnetica
+
 La frequenza è la grandezza fisica fondamentale per descrivere la radiazione elettromagnetica: infatti, a differenza della lunghezza d’onda, che cambia quando l’onda passa da un mezzo a un altro, la **frequenza rimane invariata** al variare del mezzo di propagazione, perché dipende esclusivamente dalla sorgente che ha generato la radiazione.
