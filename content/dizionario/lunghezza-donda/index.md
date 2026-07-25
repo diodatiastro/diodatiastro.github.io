@@ -13,7 +13,7 @@ La distanza fisica tra due punti consecutivi di un'onda che si trovano nella ste
 {{< figura 
 src="immagini/lunghezza-d-onda.svg" 
 alt="Rappresentazione grafica della propagazione di un'onda elettromagnetica con creste e minimi." 
-caption="Rappresentazione grafica della propagazione di un'onda elettromagnetica con creste e minimi che rappresentano la lunghezza d'onda. L'immagine è accompagnata da tre formule fondamentali legate alla lunghezza d'onda della radiazione."
+caption="Rappresentazione grafica della propagazione di un'onda elettromagnetica con creste e minimi che rappresentano la lunghezza d'onda. L'immagine è accompagnata da tre formule fondamentali."
 >}}
 
 ## Unità di misura
