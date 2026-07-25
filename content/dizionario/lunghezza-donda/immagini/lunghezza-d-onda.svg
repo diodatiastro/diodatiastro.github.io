@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1500"
+   viewBox="0 0 1500 1248"
+   role="img"
+   version="1.1"
+   id="svg76"
+   sodipodi:docname="lunghezza-d-onda.svg"
+   height="1248"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview76"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:clip-to-page="true"
+     inkscape:zoom="0.87758733"
+     inkscape:cx="261.51244"
+     inkscape:cy="879.68454"
+     inkscape:window-width="3840"
+     inkscape:window-height="2120"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg76" />
+  <title
+     id="title1">Lunghezza d'onda</title>
+  <desc
+     id="desc1">Infografica sulla lunghezza d'onda, con grafico dell'onda, formule e esempi. Versione con &quot;minimo/minimi&quot; al posto di &quot;ventre/ventri&quot;.</desc>
+  <defs
+     id="defs8">
+    <marker
+       id="arrowB"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="7"
+       markerHeight="7"
+       orient="auto-start-reverse">
+      <path
+         d="M 1,1 9,5 1,9"
+         fill="none"
+         stroke="#222222"
+         stroke-width="1.6"
+         id="path1" />
+    </marker>
+    <marker
+       id="arrowG"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="7"
+       markerHeight="7"
+       orient="auto-start-reverse">
+      <path
+         d="M 1,1 9,5 1,9"
+         fill="none"
+         stroke="#2e7d32"
+         stroke-width="1.6"
+         id="path2" />
+    </marker>
+    <marker
+       id="arrowNavy"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="7"
+       markerHeight="7"
+       orient="auto-start-reverse">
+      <path
+         d="M 1,1 9,5 1,9"
+         fill="none"
+         stroke="#1a56c4"
+         stroke-width="1.8"
+         id="path3" />
+    </marker>
+    <linearGradient
+       id="spectrumGrad"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0">
+      <stop
+         offset="0%"
+         stop-color="#e02424"
+         id="stop3" />
+      <stop
+         offset="20%"
+         stop-color="#f2a70a"
+         id="stop4" />
+      <stop
+         offset="40%"
+         stop-color="#f2e00a"
+         id="stop5" />
+      <stop
+         offset="55%"
+         stop-color="#3fae4a"
+         id="stop6" />
+      <stop
+         offset="75%"
+         stop-color="#2f6fed"
+         id="stop7" />
+      <stop
+         offset="100%"
+         stop-color="#7a2fc9"
+         id="stop8" />
+    </linearGradient>
+  </defs>
+  <rect
+     x="2.8487267"
+     y="-17.092318"
+     width="1500"
+     height="1269.7056"
+     fill="#ffffff"
+     id="rect8"
+     style="stroke-width:0.932556" />
+  <rect
+     x="60"
+     y="770.29803"
+     width="440"
+     height="440"
+     rx="14"
+     fill="#fff3d9"
+     stroke="#e8a33d"
+     stroke-width="1.5"
+     id="rect33" />
+  <rect
+     x="540"
+     y="770.29803"
+     width="440"
+     height="440"
+     rx="14"
+     fill="#dbeeff"
+     stroke="#5b9bd5"
+     stroke-width="1.5"
+     id="rect42" />
+  <rect
+     x="1020"
+     y="770.29803"
+     width="440"
+     height="440"
+     rx="14"
+     fill="#f0e6fa"
+     stroke="#9b6fc9"
+     stroke-width="1.5"
+     id="rect51" />
+  <text
+     x="750"
+     y="61.043045"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="44px"
+     font-weight="bold"
+     fill="#14305c"
+     id="text8">LUNGHEZZA D'ONDA (λ)</text>
+  <rect
+     x="280"
+     y="90"
+     width="940"
+     height="90"
+     rx="14"
+     fill="#eaf3fb"
+     stroke="#a9cbe8"
+     stroke-width="1.5"
+     id="rect9" />
+  <text
+     x="749.94135"
+     y="126.69704"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="23.8116px"
+     fill="#111111"
+     id="text9"
+     style="stroke-width:1.19058">La lunghezza d'onda (λ) è la distanza tra due punti consecutivi di un'onda</text>
+  <text
+     x="749.94135"
+     y="160.03322"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="23.8116px"
+     fill="#111111"
+     id="text10"
+     style="stroke-width:1.19058">che si trovano nella <tspan
+   font-weight="bold"
+   fill="#1a56c4"
+   id="tspan9"
+   style="stroke-width:1.19058">stessa fase</tspan> di oscillazione.</text>
+  <text
+     x="99.84201"
+     y="223.59357"
+     font-family="Arial, sans-serif"
+     font-size="23.1358px"
+     fill="#111111"
+     id="text11"
+     style="stroke-width:1.28532">spostamento</text>
+  <line
+     x1="90"
+     y1="530"
+     x2="90"
+     y2="180"
+     stroke="#222222"
+     stroke-width="2"
+     marker-end="url(#arrowB)"
+     id="line11" />
+  <line
+     x1="90"
+     y1="520"
+     x2="1210"
+     y2="520"
+     stroke="#222222"
+     stroke-width="2"
+     marker-end="url(#arrowB)"
+     id="line12" />
+  <text
+     x="1149.5258"
+     y="555.15033"
+     font-family="Arial, sans-serif"
+     font-size="25.195px"
+     fill="#111111"
+     id="text12"
+     style="stroke-width:1.39972">posizione</text>
+  <text
+     x="62.765942"
+     y="538.40344"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="29.6917px"
+     fill="#111111"
+     id="text13"
+     style="stroke-width:1.64954">0</text>
+  <path
+     d="m 170,520 q 95,-320 190,0 95,320 190,0 95,-320 190,0 95,320 190,0 95,-320 190,0 95,320 160,80"
+     fill="none"
+     stroke="#2f6fed"
+     stroke-width="4"
+     id="path13" />
+  <text
+     x="260.50049"
+     y="287.22592"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="21.6324px"
+     font-weight="bold"
+     fill="#1a56c4"
+     id="text14"
+     style="fill:#aa0000;stroke-width:1.08162">cresta</text>
+  <text
+     x="641.88934"
+     y="287.22592"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="21.6324px"
+     font-weight="bold"
+     fill="#1a56c4"
+     id="text15"
+     style="fill:#aa0000;stroke-width:1.08162">cresta</text>
+  <text
+     x="1024.9155"
+     y="336.1524"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="21.6324px"
+     font-weight="bold"
+     fill="#1a56c4"
+     id="text16"
+     style="fill:#aa0000;stroke-width:1.08162">cresta</text>
+  <text
+     x="455"
+     y="295"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="24px"
+     font-weight="bold"
+     fill="#2e7d32"
+     id="text17">λ</text>
+  <line
+     x1="265"
+     y1="310"
+     x2="645"
+     y2="310"
+     stroke="#2e7d32"
+     stroke-width="2"
+     stroke-dasharray="6, 6"
+     marker-start="url(#arrowG)"
+     marker-end="url(#arrowG)"
+     id="line17" />
+  <line
+     x1="265"
+     y1="310"
+     x2="265"
+     y2="350"
+     stroke="#2e7d32"
+     stroke-width="1.5"
+     stroke-dasharray="4, 4"
+     id="line18" />
+  <line
+     x1="645"
+     y1="310"
+     x2="645"
+     y2="350"
+     stroke="#2e7d32"
+     stroke-width="1.5"
+     stroke-dasharray="4, 4"
+     id="line19" />
+  <circle
+     cx="265"
+     cy="360"
+     r="9"
+     fill="#1a56c4"
+     id="circle19" />
+  <circle
+     cx="645"
+     cy="360"
+     r="9"
+     fill="#1a56c4"
+     id="circle20" />
+  <circle
+     cx="1025"
+     cy="360"
+     r="9"
+     fill="#1a56c4"
+     id="circle21" />
+  <circle
+     cx="455"
+     cy="680.40289"
+     r="9"
+     fill="#c0392b"
+     id="circle22" />
+  <circle
+     cx="835"
+     cy="680.40289"
+     r="9"
+     fill="#c0392b"
+     id="circle23" />
+  <text
+     x="638.16309"
+     y="629.05078"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="24px"
+     font-weight="bold"
+     fill="#2e7d32"
+     id="text23">λ</text>
+  <line
+     x1="455"
+     y1="640.40289"
+     x2="835"
+     y2="640.40289"
+     stroke="#2e7d32"
+     stroke-width="2"
+     stroke-dasharray="6, 6"
+     marker-start="url(#arrowG)"
+     marker-end="url(#arrowG)"
+     id="line23" />
+  <line
+     x1="455"
+     y1="642.41724"
+     x2="455"
+     y2="672.41724"
+     stroke="#2e7d32"
+     stroke-width="1.5"
+     stroke-dasharray="4, 4"
+     id="line24" />
+  <line
+     x1="835"
+     y1="642.41724"
+     x2="835"
+     y2="672.41724"
+     stroke="#2e7d32"
+     stroke-width="1.5"
+     stroke-dasharray="4, 4"
+     id="line25" />
+  <text
+     x="454.72009"
+     y="715.12842"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="21.6324px"
+     font-weight="bold"
+     fill="#c0392b"
+     id="text25"
+     style="stroke-width:1.08162">minimo</text>
+  <text
+     x="834.72009"
+     y="715.12842"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="21.6324px"
+     font-weight="bold"
+     fill="#c0392b"
+     id="text26"
+     style="stroke-width:1.08162">minimo</text>
+  <rect
+     x="1238.3844"
+     y="194.65157"
+     width="227.90709"
+     height="190.18607"
+     rx="14.503179"
+     fill="#eaf5df"
+     stroke="#7fae4a"
+     stroke-width="1.56932"
+     id="rect26" />
+  <text
+     x="1289.7744"
+     y="247.99425"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="20.3571px"
+     fill="#2f6b1f"
+     id="text27"
+     transform="scale(1.0494208,0.9529066)"
+     style="stroke-width:1.13095">La distanza tra due</text>
+  <text
+     x="1289.7744"
+     y="278.52985"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="20.3571px"
+     fill="#2f6b1f"
+     id="text28"
+     transform="scale(1.0494208,0.9529066)"
+     style="stroke-width:1.13095"><tspan
+   style="fill:#d40000;stroke-width:1.13095"
+   id="tspan76">creste</tspan> consecutive</text>
+  <text
+     x="1289.7744"
+     y="309.06546"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="20.3571px"
+     fill="#2f6b1f"
+     id="text29"
+     transform="scale(1.0494208,0.9529066)"
+     style="stroke-width:1.13095">(o tra due <tspan
+   style="fill:#d40000;stroke-width:1.13095"
+   id="tspan77">minimi</tspan></text>
+  <text
+     x="1289.7744"
+     y="339.60107"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="20.3571px"
+     fill="#2f6b1f"
+     id="text30"
+     transform="scale(1.0494208,0.9529066)"
+     style="stroke-width:1.13095">consecutivi) è</text>
+  <text
+     x="1289.7744"
+     y="370.13669"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="20.3571px"
+     fill="#2f6b1f"
+     id="text31"
+     transform="scale(1.0494208,0.9529066)"
+     style="stroke-width:1.13095">la lunghezza d'onda <tspan
+   font-weight="bold"
+   id="tspan30"
+   style="stroke-width:1.13095">λ</tspan>.</text>
+  <line
+     x1="1290"
+     y1="430"
+     x2="1440"
+     y2="430"
+     stroke="#1a56c4"
+     stroke-width="6"
+     marker-end="url(#arrowNavy)"
+     id="line31" />
+  <text
+     x="1348.9817"
+     y="463.83643"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="21.3595px"
+     fill="#111111"
+     id="text32"
+     style="stroke-width:1.33497">direzione di</text>
+  <text
+     x="1348.9817"
+     y="490.53577"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="21.3595px"
+     fill="#111111"
+     id="text33"
+     style="stroke-width:1.33497">propagazione</text>
+  <text
+     x="280"
+     y="815.29803"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="22px"
+     font-weight="bold"
+     fill="#b5651d"
+     id="text34">RELAZIONE TRA LE GRANDEZZE</text>
+  <text
+     x="99.577782"
+     y="855.60541"
+     font-family="Arial, sans-serif"
+     font-size="20.9453px"
+     fill="#111111"
+     id="text35"
+     style="stroke-width:1.16363">La velocità di propagazione dell'onda (v)</text>
+  <text
+     x="99.577782"
+     y="885.8598"
+     font-family="Arial, sans-serif"
+     font-size="20.9453px"
+     fill="#111111"
+     id="text36"
+     style="stroke-width:1.16363">è legata alla lunghezza d'onda (λ)</text>
+  <text
+     x="99.577782"
+     y="916.1142"
+     font-family="Arial, sans-serif"
+     font-size="20.9453px"
+     fill="#111111"
+     id="text37"
+     style="stroke-width:1.16363">e alla frequenza (f) dalla relazione:</text>
+  <rect
+     x="148.34973"
+     y="951.69293"
+     width="220"
+     height="60"
+     rx="10"
+     fill="#ffffff"
+     stroke="#e8a33d"
+     stroke-width="1.5"
+     id="rect37" />
+  <text
+     x="258.34973"
+     y="989.69293"
+     text-anchor="middle"
+     font-family="Georgia, serif"
+     font-style="italic"
+     font-size="26px"
+     fill="#111111"
+     id="text38">v = λ f</text>
+  <text
+     x="99.658295"
+     y="1048.8031"
+     font-family="Arial, sans-serif"
+     font-size="20.9479px"
+     fill="#111111"
+     id="text39"
+     style="stroke-width:1.16377">dove:</text>
+  <text
+     x="99.658295"
+     y="1083.7162"
+     font-family="Arial, sans-serif"
+     font-size="20.9479px"
+     fill="#111111"
+     id="text40"
+     style="stroke-width:1.16377">v = velocità dell'onda (m/s)</text>
+  <text
+     x="99.658295"
+     y="1116.3018"
+     font-family="Arial, sans-serif"
+     font-size="20.9479px"
+     fill="#111111"
+     id="text41"
+     style="stroke-width:1.16377">λ = lunghezza d'onda (m)</text>
+  <text
+     x="99.658295"
+     y="1148.8875"
+     font-family="Arial, sans-serif"
+     font-size="20.9479px"
+     fill="#111111"
+     id="text42"
+     style="stroke-width:1.16377">f = frequenza (Hz)</text>
+  <text
+     x="760"
+     y="815.29803"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="22px"
+     font-weight="bold"
+     fill="#1f4e8c"
+     id="text43">FREQUENZA E PERIODO</text>
+  <text
+     x="569.87872"
+     y="858.00098"
+     font-family="Arial, sans-serif"
+     font-size="21.1054px"
+     fill="#111111"
+     id="text44"
+     style="stroke-width:1.17252">La frequenza (f) è il numero di oscillazioni</text>
+  <text
+     x="569.87872"
+     y="888.48657"
+     font-family="Arial, sans-serif"
+     font-size="21.1054px"
+     fill="#111111"
+     id="text45"
+     style="stroke-width:1.17252">compiute in un secondo.</text>
+  <text
+     x="569.87872"
+     y="930.69745"
+     font-family="Arial, sans-serif"
+     font-size="21.1054px"
+     fill="#111111"
+     id="text46"
+     style="stroke-width:1.17252">Il periodo (T) è il tempo necessario</text>
+  <text
+     x="569.87872"
+     y="961.18304"
+     font-family="Arial, sans-serif"
+     font-size="21.1054px"
+     fill="#111111"
+     id="text47"
+     style="stroke-width:1.17252">per compiere un'oscillazione.</text>
+  <rect
+     x="643.16309"
+     y="995.11139"
+     width="220"
+     height="60"
+     rx="10"
+     fill="#ffffff"
+     stroke="#5b9bd5"
+     stroke-width="1.5"
+     id="rect47" />
+  <text
+     x="753.16309"
+     y="1033.1113"
+     text-anchor="middle"
+     font-family="Georgia, serif"
+     font-style="italic"
+     font-size="26px"
+     fill="#111111"
+     id="text48">f = 1/T</text>
+  <text
+     x="571.66949"
+     y="1093.7452"
+     font-family="Arial, sans-serif"
+     font-size="22.2807px"
+     fill="#111111"
+     id="text49"
+     style="stroke-width:1.23781">dove:</text>
+  <text
+     x="571.66949"
+     y="1130.8796"
+     font-family="Arial, sans-serif"
+     font-size="22.2807px"
+     fill="#111111"
+     id="text50"
+     style="stroke-width:1.23781">f = frequenza (Hz)</text>
+  <text
+     x="571.66949"
+     y="1165.5385"
+     font-family="Arial, sans-serif"
+     font-size="22.2807px"
+     fill="#111111"
+     id="text51"
+     style="stroke-width:1.23781">T = periodo (s)</text>
+  <text
+     x="1240"
+     y="815.29803"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="22px"
+     font-weight="bold"
+     fill="#5b2d8e"
+     id="text52">ESEMPIO NUMERICO</text>
+  <text
+     x="1058.4016"
+     y="853.87585"
+     font-family="Arial, sans-serif"
+     font-size="21.7px"
+     fill="#111111"
+     id="text53"
+     style="stroke-width:1.20556">Un'onda si propaga a v = 20 m/s</text>
+  <text
+     x="1058.4016"
+     y="885.2204"
+     font-family="Arial, sans-serif"
+     font-size="21.7px"
+     fill="#111111"
+     id="text54"
+     style="stroke-width:1.20556">con frequenza f = 4 Hz.</text>
+  <text
+     x="1058.4016"
+     y="916.56488"
+     font-family="Arial, sans-serif"
+     font-size="21.7px"
+     fill="#111111"
+     id="text55"
+     style="stroke-width:1.20556">Qual è la sua lunghezza d'onda?</text>
+  <text
+     x="1060.0107"
+     y="1008.6354"
+     font-family="Arial, sans-serif"
+     font-size="23.508px"
+     fill="#111111"
+     id="text56"
+     style="stroke-width:1.30601">Usiamo la formula:</text>
+  <text
+     x="1224.1309"
+     y="958.68274"
+     text-anchor="middle"
+     font-family="Georgia, serif"
+     font-style="italic"
+     font-size="30.4361px"
+     fill="#111111"
+     id="text57"
+     style="stroke-width:1.38346">λ = v / f</text>
+  <text
+     x="1100"
+     y="1065.4354"
+     text-anchor="middle"
+     font-family="Georgia, serif"
+     font-style="italic"
+     font-size="28px"
+     fill="#111111"
+     id="text58">λ =</text>
+  <text
+     x="1210"
+     y="1045.4355"
+     text-anchor="middle"
+     font-family="Georgia, serif"
+     font-size="22px"
+     fill="#111111"
+     id="text59">20 m/s</text>
+  <line
+     x1="1150"
+     y1="1055.4354"
+     x2="1270"
+     y2="1055.4354"
+     stroke="#111111"
+     stroke-width="1.5"
+     id="line59" />
+  <text
+     x="1210"
+     y="1078.4354"
+     text-anchor="middle"
+     font-family="Georgia, serif"
+     font-size="22px"
+     fill="#111111"
+     id="text60">4 Hz</text>
+  <text
+     x="1330"
+     y="1065.4354"
+     text-anchor="middle"
+     font-family="Georgia, serif"
+     font-style="italic"
+     font-size="28px"
+     fill="#111111"
+     id="text61">= 5 m</text>
+  <rect
+     x="1050"
+     y="1108.7262"
+     width="380"
+     height="65"
+     rx="10"
+     fill="#e6d9f5"
+     stroke="#9b6fc9"
+     stroke-width="1.5"
+     id="rect61" />
+  <text
+     x="1240"
+     y="1148.7262"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="20px"
+     font-weight="bold"
+     fill="#5b2d8e"
+     id="text62">La lunghezza d'onda è 5 metri.</text>
+  <metadata
+     id="metadata77">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Lunghezza d'onda</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
