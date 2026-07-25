@@ -6,6 +6,10 @@ draft = false
 
 {{< katex />}}
 
+## Etimologia
+
+*Magnitudine* deriva dal latino *magnitudo* ("grandezza"), da *magnus* ("grande"). L'uso astronomico del termine risale a Ipparco (II secolo a.C.), che classificò le stelle visibili a occhio nudo in sei classi di grandezza apparente (in greco *méghethos*), dalla $1^a$ classe, riservata alle stelle più brillanti, alla $6^a$, al limite della visibilità a occhio nudo. Questo sistema di classificazione, sostanzialmente invariato nella sua logica ordinale per quasi duemila anni, fu poi formalizzato matematicamente da Norman Pogson nel 1856 nella scala logaritmica tuttora in uso.
+
 ## Definizione
 
 Misura della luminosità con cui un corpo celeste appare a un osservatore sulla Terra. Essa dipende sia dalla quantità di radiazione emessa dall'oggetto sia dalla sua distanza dall'osservatore. In alcuni casi, dipende anche dalla presenza, lungo il percorso dalla sorgente all'osservatore, di materia interposta (per es. gas o polveri), che assorbe parzialmente la radiazione emessa dalla sorgente.
