@@ -25,9 +25,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:clip-to-page="true"
-     inkscape:zoom="0.87758733"
-     inkscape:cx="261.51244"
-     inkscape:cy="879.68454"
+     inkscape:zoom="1.2410959"
+     inkscape:cx="618.40507"
+     inkscape:cy="627.67107"
      inkscape:window-width="3840"
      inkscape:window-height="2120"
      inkscape:window-x="-12"
@@ -118,13 +118,14 @@
     </linearGradient>
   </defs>
   <rect
-     x="2.8487267"
-     y="-17.092318"
-     width="1500"
+     x="-3.5971975"
+     y="-15.488535"
+     width="1506.4493"
      height="1269.7056"
      fill="#ffffff"
      id="rect8"
-     style="stroke-width:0.932556" />
+     style="fill:#afdde9;stroke-width:0.934559"
+     transform="matrix(0.99999771,-0.00213944,0,1,0,0)" />
   <rect
      x="60"
      y="770.29803"

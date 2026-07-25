@@ -12,7 +12,7 @@ draft = false
 
 ## Definizione
 
-Misura della luminosità con cui un corpo celeste appare a un osservatore sulla Terra. Essa dipende sia dalla quantità di radiazione emessa dall'oggetto sia dalla sua distanza dall'osservatore. In alcuni casi, dipende anche dalla presenza, lungo il percorso dalla sorgente all'osservatore, di materia interposta (per es. gas o polveri), che assorbe parzialmente la radiazione emessa dalla sorgente.
+La magnitudine apparente è una misura della luminosità con cui un corpo celeste appare a un osservatore sulla Terra. Essa dipende sia dalla quantità di radiazione emessa dall'oggetto sia dalla sua distanza dall'osservatore. In alcuni casi, dipende anche dalla presenza, lungo il percorso dalla sorgente all'osservatore, di materia interposta (per es. gas o polveri), che assorbe parzialmente la radiazione emessa dalla sorgente.
 
 La scala delle magnitudini è **logaritmica e inversa**: a valori più piccoli corrispondono oggetti apparentemente più luminosi, mentre a valori più grandi corrispondono oggetti più deboli. La magnitudine apparente permette quindi di confrontare la brillantezza osservata di stelle, pianeti, galassie e altri corpi celesti, ma non rappresenta la loro [luminosità]({{< relref "/dizionario/luminosita/" >}}) intrinseca, che è invece descritta dalla magnitudine assoluta.
 
