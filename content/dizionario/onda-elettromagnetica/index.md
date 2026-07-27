@@ -8,7 +8,7 @@ draft = false
 
 ## Etimologia
 
-Il termine nasce dalla combinazione degli aggettivi _elettrico_ e _magnetico_: fu James Clerk Maxwell, tra il 1861 e il 1865, a mostrare per primo che le proprie equazioni del campo elettromagnetico ammettono soluzioni ondulatorie capaci di propagarsi anche nel vuoto, a una velocità coincidente con quella già nota per la luce. Da qui la sua congettura che la luce stessa fosse un fenomeno elettromagnetico. La conferma sperimentale arrivò solo nel 1887, quando Heinrich Hertz generò e rilevò in laboratorio onde di questo tipo, dando realtà fisico a una previsione fino ad allora solo teorica.
+Il termine nasce dalla combinazione degli aggettivi *elettrico* e *magnetico*. fu James Clerk Maxwell, tra il 1861 e il 1865, a mostrare per primo che le proprie equazioni del campo elettromagnetico ammettono soluzioni ondulatorie capaci di propagarsi anche nel vuoto, a una velocità coincidente con quella già nota per la luce. Da qui la sua congettura che la luce stessa fosse un fenomeno elettromagnetico. La conferma sperimentale arrivò solo nel 1887, quando Heinrich Hertz generò e rilevò in laboratorio onde di questo tipo, dando realtà fisica a una previsione fino ad allora solo teorica.
 
 ## Definizione
 
