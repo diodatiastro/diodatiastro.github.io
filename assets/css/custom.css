@@ -19,6 +19,7 @@
   --line:           #1e2740; /* bordi e separatori sottili */
   --surface:        #1c2542; /* sfondo elementi interattivi, più chiaro del pannello laterale */
   --surface-line:   #34406e; /* bordo ben visibile per gli elementi su --surface */
+  --halpha-pink:    #ff6fa8; /* colore delle formule KaTeX nel testo — emissione H-alfa */
 
   /* Override delle variabili del tema Hugo Book */
   --body-background:       var(--night);
@@ -93,6 +94,12 @@ body {
    ========================================================================== */
 
 .katex {
+  color: var(--halpha-pink);
+}
+
+/* Nelle note a piè di pagina il contrasto attuale (chiaro su testo smorzato)
+   va già bene così: qui si mantiene il colore originale, non quello nuovo */
+.markdown .footnotes .katex {
   color: var(--starlight);
 }
 
@@ -301,6 +308,44 @@ body {
   text-align: center;
   color: var(--muted);
   border-top: 1px solid var(--line);
+}
+
+/* ==========================================================================
+   Link "torna all'inizio" a fine pagina
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.back-to-top {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--line);
+  text-align: center;
+}
+
+.back-to-top a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  color: var(--stellar-gold);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.back-to-top a:hover {
+  color: var(--nebula-blue);
+  transform: translateY(-3px);
+}
+
+.back-to-top a span {
+  font-size: 1.15em;
+  line-height: 1;
 }
 
 /* ==========================================================================
