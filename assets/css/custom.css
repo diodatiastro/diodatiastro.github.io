@@ -338,6 +338,10 @@ html {
   transition: color 0.15s ease, transform 0.15s ease;
 }
 
+.back-to-top a:visited {
+  color: var(--stellar-gold);
+}
+
 .back-to-top a:hover {
   color: var(--nebula-blue);
   transform: translateY(-3px);
