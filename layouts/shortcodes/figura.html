@@ -14,7 +14,7 @@
   {{ if ne (.Get "label") "false" }}
     <strong>Figura {{ $counter }}</strong> — 
   {{ end }}
-  {{ .Get "caption" }}
+  {{ .Get "caption" | markdownify }}
 </figcaption>
 
 </figure>
