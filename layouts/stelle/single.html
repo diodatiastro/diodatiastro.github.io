@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="markdown book-post">
+
+  {{ if .Params.subtitle }}
+    <p class="book-subtitle">{{ .Params.subtitle }}</p>
+  {{ end }}
+
+  {{ partial "docs/post-meta" . }}
+
+  <div class="book-post-content markdown-inner">
+    {{- .Content -}}
+  </div>
+
+</article>
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/toc" . }}
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "docs/post-prev-next" . }}
+{{ end }}

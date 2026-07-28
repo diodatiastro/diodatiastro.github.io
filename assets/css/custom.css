@@ -61,6 +61,18 @@ body {
   margin-bottom: var(--space-16);
 }
 
+/* Sottotitolo della sezione Stelle */
+.book-subtitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: var(--color-link);
+  margin-top: -1rem !important;
+  margin-bottom: 1.5rem;
+}
+
 /* Triangolo-freccia che punta verso il titolo, con gradiente blu→oro:
    un richiamo discreto alle righe spettrali */
 .markdown h2,
