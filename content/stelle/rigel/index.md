@@ -101,11 +101,11 @@ caption="La posizione di Rigel nel diagramma di Hertzsprung-Russell, che mette i
 
 ## Destino finale
 
-In ogni caso, il destino finale di Rigel sarà quasi certamente quello di esplodere come una **supernova**, un fenomeno di devastante potenza, che s'innesca quando una stella di grande massa non ha più alcun combustibile nucleare da fondere per contrastare la spinta centripeta della gravità. A quel punto gli strati esterni collassano verso il nucleo con eccezionale rapidità. Al collasso segue un altrettanto veloce rimbalzo verso l'esterno, una potentissima esplosione che scaglia quasi tutto ciò che rimane della materia stellare nello spazio, producendo allo stesso tempo un'immensa quantità di neutrini e di energia radiante. Nel caso di Rigel, ciò che rimarrà dopo l'esplosione sarà una stella di neutroni o un buco nero.
+In ogni caso, il destino finale di Rigel sarà quasi certamente quello di esplodere come una **supernova**, un fenomeno di devastante potenza, che s'innesca quando una stella di grande massa non ha più alcun combustibile nucleare da fondere per contrastare la spinta della gravità. A quel punto gli strati esterni collassano verso il nucleo con eccezionale rapidità. Al collasso segue un altrettanto veloce rimbalzo verso l'esterno, una potentissima esplosione che scaglia quasi tutto ciò che rimane della materia stellare nello spazio, producendo allo stesso tempo un'immensa quantità di neutrini e di energia radiante. Nel caso di Rigel, ciò che rimarrà dopo l'esplosione sarà una stella di neutroni o un buco nero.
 
 Non sappiamo se Rigel passerà prima per la fase di supergigante rossa (o se vi è già passata). Sotto le opportune condizioni, l'esplosione di supernova può avvenire anche quando una stella è ancora nella fase di supergigante blu. Lo sappiamo dallo studio della supernova più vicina e più studiata degli ultimi decenni, cioè SN 1987A. Dall'analisi delle lastre fotografiche precedenti l'esplosione, si vide che la stella progenitrice, Sanduleak -69° 202, era una supergigante blu proprio come Rigel.
 
-Quel che è certo è che l'esplosione di supernova di Rigel fornirà a noi umani, se saremo ancora qui per testimoniarlo, uno spettacolo memorabile. La supernova sarà visibile almeno per qualche settimana anche in pieno giorno e avrà, nel cielo notturno, una luminosità pari a una frazione significativa di quella della Luna piena (con una magnitudine apparente stimata di $-11$).
+Quel che è certo è che l'esplosione di supernova di Rigel fornirà a noi umani, se saremo ancora qui per testimoniarlo, uno spettacolo memorabile. La supernova sarà visibile almeno per qualche settimana anche in pieno giorno e avrà, nel cielo notturno, una luminosità pari all'incirca a quella della Luna piena (con una magnitudine apparente stimata, a seconda delle fonti, tra $-11$ e $-17$).
 
 ## Il sistema stellare di Rigel
 
@@ -135,13 +135,13 @@ Rigel Ba, Rigel Bb e Rigel C sono classificate tutte e tre come stelle di sequen
 
 Le osservazioni del sistema contenute in [un catalogo](https://cdsarc.cds.unistra.fr/viz-bin/nph-Cat/html?J/A+AS/124/75/systems.dat.gz) aggiornato al 1999 riportano per Rigel Ba, Rigel Bb e Rigel C una magnitudine visuale di $6{,}7$, che, alla distanza dalla Terra che abbiamo finora assunto, corrisponderebbe a una luminosità intrinseca, per ciascuna di queste stelle, pari a circa $70$ volte la luminosità del Sole.
 
-Nello stesso catalogo, la massa di Rigel Ba e Rigel C è stimata in $3{,}84$ masse solari, mentre quella di Rigel Bb in $2{,}94$ masse solari.
+Nello stesso catalogo, la massa di Rigel Ba e Rigel C è stimata in $3{,}84$ masse solari, mentre quella di Rigel Bb in $2{,}94$ masse solari[^1].
 
 Le due binarie spettroscopiche hanno, dunque, una massa combinata di poco meno di $7$ masse solari, ragion per cui il baricentro del sistema che esse formano con Rigel C è molto più vicino alla coppia binaria. Si stima che l'orbita di Rigel C intorno al centro di massa comune sia di $63$ anni. Tutte e tre queste stelle, poi, orbitano intorno alla supergigante Rigel A, lontana tra $2.200$ e $3.000\,\text{au}$, a seconda della distanza dalla Terra presa come riferimento. Il periodo stimato di una loro orbita intorno a Rigel A sarebbe di circa $24.000$ anni.
 
-Va riportato per completezza che, nel 1878, Burnham scoprì una quinta stella appartenente probabilmente al sistema di Rigel. Secondo i dati forniti dal satellite Gaia, **Rigel D**, come è stata chiamata questa quinta stella, si troverebbe a una distanza compatibile con quella della supergigante. Si tratta di una **nana arancione**, cioè una stella di sequenza principale di classe spettrale K, con magnitudine visuale pari a circa $12$. Data la separazione angolare da Rigel A di $44{,}5$ secondi d'arco misurata nel 2017, la distanza di Rigel D dalla supergigante blu potrebbe essere compresa tra $11.500$ e $13.500\,\text{au}$, cioè più o meno $0,2$ anni luce. Se è davvero legata gravitazionalmente al sistema, un'orbita completa della nana arancione intorno a Rigel A potrebbe durare qualcosa come $250.000$ anni.
+Va riportato per completezza che, nel 1878, Burnham scoprì una quinta stella appartenente probabilmente al sistema di Rigel. Secondo i dati forniti dal satellite Gaia, **Rigel D**, come è stata chiamata questa quinta stella, si troverebbe a una distanza compatibile con quella della supergigante. Si tratta probabilmente di una **nana arancione**, cioè una stella di sequenza principale di classe spettrale K, con magnitudine visuale pari a circa $12$. Data la separazione angolare da Rigel A di $44{,}5$ secondi d'arco misurata nel 2017, la distanza di Rigel D dalla supergigante blu potrebbe essere compresa tra $11.500$ e $13.500\,\text{au}$, cioè più o meno $0,2$ anni luce. Se è davvero legata gravitazionalmente al sistema, un'orbita completa della nana arancione intorno a Rigel A potrebbe durare qualcosa come $250.000$ anni.
 
-## Inabitabilità del sistema stellare
+## Inospitalità del sistema stellare
 
 Le condizioni intorno a Rigel A sono talmente estreme da rendere difficile anche solo immaginare la possibilità che la supergigante possa avere pianeti abitati o abitabili, anche considerando il poco tempo che avrebbero avuto per formarsi (ricordiamo che la stella è già uscita dalla sequenza principale a un'età stimata di appena $7-9$ milioni di anni).
 
@@ -167,7 +167,7 @@ Ciò che resterebbe dopo qualche decennio, una volta passata l'onda d'urto della
 
 ## Se Rigel fosse al posto del Sole
 
-Quanto abbiamo appena descritto è uno scenario reale - chissà quanto ancora lontano nel tempo - destinato a verificarsi quando Rigel esploderà come supernova. Ma la stessa stella può metterci di fronte a un secondo tipo di **catastrofe**, di natura completamente diversa: non un evento futuro innescato dalla sua morte, ma la semplice conseguenza della sua esistenza attuale, se solo si trovasse più vicina a noi. Proviamo dunque un puro **esperimento mentale**: cosa accadrebbe se Rigel, così com'è oggi, prendesse il posto del Sole?
+Quanto abbiamo appena descritto è uno scenario reale - chissà quanto ancora lontano nel tempo - destinato a verificarsi quando Rigel esploderà come supernova. Ma la stessa stella può metterci di fronte a un secondo scenario catastrofico, stavolta per fortuna puramente **ipotetico**. Non un evento futuro innescato dalla sua morte, ma la semplice conseguenza della sua natura fisica attuale, se solo si trovasse più vicina a noi. Proviamo dunque a immergerci in un **esperimento mentale**: cosa accadrebbe se Rigel, così com'è oggi, prendesse il posto del Sole?
 
 L'energia solare che raggiunge la sommità dell'atmosfera terrestre – detta [costante solare]({{< relref "/dizionario/costante-solare/" >}}) – è intorno a:
 
@@ -210,3 +210,5 @@ Per inciso, l’anno di una Terra distante $412\,\text{au}$ da Rigel, assumendo 
 In ogni caso, sarebbe difficilissimo per la vita adattarsi alla radiazione di Rigel. La Terra, infatti, sarebbe investita da un **diluvio di raggi ultravioletti.** Con la sua temperatura di $12.100\,\text{K}$ a fronte dei $5.800\,\text{K}$ del Sole, Rigel emette la stragrande maggioranza della sua energia non sotto forma di luce visibile, come il Sole, ma sotto forma di **radiazione UV**. Di conseguenza, anche se il termometro sul pianeta segnasse temperature miti e “terrestri”, l’indice UV sarebbe talmente alto e distruttivo da richiedere uno strato enorme di ozono o un’atmosfera spessa svariate volte quella della Terra attuale per impedire la sterilizzazione completa della superficie.
 
 Insomma, non occorre aspettare che Rigel esploda come supernova per concludere che questa stella, per quanto sia splendida e affascinante, è in tutto e per tutto ostile alla vita, almeno nelle forme in cui noi la conosciamo.
+
+[^1]: Bisogna precisare che i valori di massa e luminosità delle tre stelle compagne di Rigel A sono per ora tutt'altro che certi.
