@@ -375,3 +375,62 @@ html, body {
 .book-page {
   min-height: 100vh;
 }
+
+
+/* ==========================================================================
+   Box informativi (definizione rapida / approfondimento)
+   ========================================================================== */
+
+.info-box {
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem 1.15rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent, var(--nebula-blue));
+  border-radius: var(--border-radius);
+  background: color-mix(in srgb, var(--accent, var(--nebula-blue)) 7%, var(--surface));
+}
+
+.info-box__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent, var(--nebula-blue));
+}
+
+.info-box__label::before {
+  content: "●";
+  font-size: 0.9em;
+}
+
+.info-box__body {
+  color: var(--starlight);
+}
+
+.info-box__body p:first-child { margin-top: 0; }
+.info-box__body p:last-child { margin-bottom: 0; }
+
+/* Variante: definizione rapida, in apertura d'articolo — oro,
+   lo stesso accento riservato al Sole (stella tipo G) nella palette */
+.info-box--definizione {
+  --accent: var(--stellar-gold);
+}
+
+.info-box--definizione .info-box__label::before {
+  content: "☉";
+}
+
+/* Variante: approfondimento, nel corpo del testo — blu, lo stesso
+   accento dei link, per un effetto "nota" riconoscibile ma non invasivo */
+.info-box--approfondimento {
+  --accent: var(--nebula-blue);
+}
+
+.info-box--approfondimento .info-box__label::before {
+  content: "✦";
+}

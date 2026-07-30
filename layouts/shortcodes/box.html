@@ -1,0 +1,9 @@
+{{- $tipo := .Get "tipo" | default "approfondimento" -}}
+{{- $etichette := dict "definizione" "Definizione" "approfondimento" "Approfondimento" -}}
+{{- $etichetta := .Get "titolo" | default (index $etichette $tipo) -}}
+<div class="info-box info-box--{{ $tipo }}">
+  <div class="info-box__label">{{ $etichetta }}</div>
+  <div class="info-box__body">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

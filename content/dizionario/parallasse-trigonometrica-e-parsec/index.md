@@ -201,6 +201,7 @@ caption="Al centro dell’immagine la nana rossa TRAPPIST-1 ripresa nell’ambit
 >}}
 
 ## Un po' di storia
+
 ### La sfida quasi impossibile di misurare le parallassi stellari
 
 Benché l’idea di ricavare le distanze stellari dagli angoli di parallasse si possa far risalire indietro nel tempo fino ad Aristarco, l’effettiva misurazione di una parallasse stellare con valori attendibili non fu possibile prima del 19° secolo, cioè oltre due millenni più tardi.

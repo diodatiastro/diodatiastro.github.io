@@ -5,3 +5,79 @@
     Tutti i diritti riservati.
   </p>
 </footer>
+
+<script>
+(function () {
+  function slugify(text) {
+    return text
+      .toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  }
+
+  function run() {
+    var toc = document.querySelector('.book-toc');
+    if (!toc) return;
+
+    var tocList = toc.querySelector('ul');
+    if (!tocList) return;
+
+    var content = document.querySelector('.book-page .markdown');
+    if (!content) return;
+
+    var headingLis = {};
+    tocList.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      headingLis[a.getAttribute('href').slice(1)] = a.closest('li');
+    });
+
+    var usedIds = {};
+
+    content.querySelectorAll('.info-box').forEach(function (box) {
+      var label = box.querySelector('.info-box__label');
+      var testo = label ? label.textContent.trim() : 'Approfondimento';
+      var tipoMatch = box.className.match(/info-box--(\S+)/);
+      var tipo = tipoMatch ? tipoMatch[1] : 'approfondimento';
+
+      var baseId = 'box-' + slugify(testo);
+      var id = baseId, i = 1;
+      while (usedIds[id] || document.getElementById(id)) {
+        id = baseId + '-' + (++i);
+      }
+      usedIds[id] = true;
+      box.id = id;
+
+      var heading = null, el = box;
+      while (el && !heading) {
+        el = el.previousElementSibling;
+        if (el && /^H[1-6]$/.test(el.tagName) && el.id) heading = el;
+      }
+
+      var newLi = document.createElement('li');
+      newLi.className = 'toc-box-entry toc-box-entry--' + tipo;
+      var newA = document.createElement('a');
+      newA.href = '#' + id;
+      newA.textContent = testo;
+      newLi.appendChild(newA);
+
+      if (heading && headingLis[heading.id]) {
+        var parentLi = headingLis[heading.id];
+        var subUl = parentLi.querySelector('ul');
+        if (!subUl) {
+          subUl = document.createElement('ul');
+          parentLi.appendChild(subUl);
+        }
+        subUl.appendChild(newLi);
+      } else {
+        tocList.insertBefore(newLi, tocList.firstChild);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
