@@ -14,9 +14,11 @@ $$p = \frac{E}{c}$$
 
 Ogni fotone, insomma, è in grado di impartire una minuscola spinta alle particelle con cui interagisce attraverso assorbimento, diffusione o riflessione, e questa spinta è tanto maggiore quanto più il fotone è energetico.
 
-## Cos'è la pressione di radiazione
+Possiamo estendere questo concetto a un flusso di fotoni, ovvero di radiazione elettromagnetica (data la duplice natura corpuscolare e ondulatoria della luce). 
 
-Possiamo estendere questo concetto a un flusso di fotoni, ovvero di radiazione elettromagnetica (data la duplice natura corpuscolare e ondulatoria della luce). La pressione di radiazione è *la forza esercitata per unità di area* su una superficie da onde elettromagnetiche (o, equivalentemente, da un flusso di fotoni), tramite assorbimento, diffusione o riflessione. Possiamo immaginarla come la somma di tutte le spinte impartite da ciascun fotone del flusso all'area del corpo colpita. Quando un fotone viene assorbito o riflesso da una superficie, trasferisce la sua quantità di moto, esercitando una forza. Su scala macroscopica, un flusso continuo di fotoni produce una **pressione netta**.
+{{% box tipo="definizione" titolo="" %}} 
+La **pressione di radiazione** è *la forza esercitata per unità di area* su una superficie da onde elettromagnetiche (o, equivalentemente, da un flusso di fotoni), tramite assorbimento, diffusione o riflessione. Possiamo immaginarla come la somma di tutte le spinte impartite da ciascun fotone del flusso all'area del corpo colpita. Quando un fotone viene assorbito o riflesso da una superficie, trasferisce la sua quantità di moto, esercitando una forza. Su scala macroscopica, un flusso continuo di fotoni produce una **pressione netta**.
+{{% /box %}}
 
 ## Formula fondamentale ed esempio numerico
 

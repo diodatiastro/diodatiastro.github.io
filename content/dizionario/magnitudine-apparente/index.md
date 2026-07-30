@@ -10,11 +10,11 @@ draft = false
 
 *Magnitudine* deriva dal latino *magnitudo* ("grandezza"), da *magnus* ("grande"). L'uso astronomico del termine risale a Ipparco (II secolo a.C.), che classificò le stelle visibili a occhio nudo in sei classi di grandezza apparente (in greco *méghethos*), dalla $1^a$ classe, riservata alle stelle più brillanti, alla $6^a$, al limite della visibilità a occhio nudo. Questo sistema di classificazione, sostanzialmente invariato nella sua logica ordinale per quasi duemila anni, fu poi formalizzato matematicamente da Norman Pogson nel 1856 nella scala logaritmica tuttora in uso.
 
-## Definizione
+{{% box tipo="definizione" titolo="" %}} 
+La magnitudine apparente è una misura della luminosità con cui un corpo celeste appare a un osservatore sulla Terra. Essa dipende sia dalla quantità di radiazione emessa dall'oggetto sia dalla sua distanza dall'osservatore. In alcuni casi, dipende anche dalla presenza, lungo il percorso dalla sorgente all'osservatore, di materia interposta (per es. gas o polveri), che assorbe parzialmente la radiazione emessa dalla sorgente. La scala delle magnitudini è **logaritmica e inversa**: a valori più piccoli corrispondono oggetti apparentemente più luminosi, mentre a valori più grandi corrispondono oggetti più deboli. 
+{{% /box %}}
 
-La magnitudine apparente è una misura della luminosità con cui un corpo celeste appare a un osservatore sulla Terra. Essa dipende sia dalla quantità di radiazione emessa dall'oggetto sia dalla sua distanza dall'osservatore. In alcuni casi, dipende anche dalla presenza, lungo il percorso dalla sorgente all'osservatore, di materia interposta (per es. gas o polveri), che assorbe parzialmente la radiazione emessa dalla sorgente.
-
-La scala delle magnitudini è **logaritmica e inversa**: a valori più piccoli corrispondono oggetti apparentemente più luminosi, mentre a valori più grandi corrispondono oggetti più deboli. La magnitudine apparente permette quindi di confrontare la brillantezza osservata di stelle, pianeti, galassie e altri corpi celesti, ma non rappresenta la loro [luminosità]({{< relref "/dizionario/luminosita/" >}}) intrinseca, che è invece descritta dalla magnitudine assoluta.
+La magnitudine apparente permette quindi di confrontare la brillantezza osservata di stelle, pianeti, galassie e altri corpi celesti, ma non rappresenta la loro [luminosità]({{< relref "/dizionario/luminosita/" >}}) intrinseca, che è invece descritta dalla [magnitudine assoluta]({{< relref "/dizionario/magnitudine-assoluta/" >}}).
 
 Ad esempio, il Sole ha una magnitudine apparente di $-26{,}74$, la Luna piena di circa $-12{,}7$, Venere una magnitudine che oscilla tra $-3{,}8$ e $-4{,}9$ a seconda della fase. Gli oggetti visibili a occhio nudo in un cielo buio arrivano in genere fino a una magnitudine di $+6$ o giù di lì.
 

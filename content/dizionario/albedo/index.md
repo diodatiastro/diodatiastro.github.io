@@ -7,8 +7,10 @@ draft = false
 {{< katex />}}
 
 Il termine deriva dal latino *albedo*, "bianchezza", a sua volta derivato da *albus*, "bianco". Fu introdotto in astronomia da Johann Heinrich Lambert nel XVIII secolo.
-## Definizione
+
+{{% box tipo="definizione" titolo="" %}} 
 L'**albedo** è il rapporto tra la quantità di radiazione elettromagnetica riflessa da un corpo celeste che non emette luce propria e la quantità di radiazione incidente sulla sua superficie o sulla sua atmosfera. Misura l'efficienza con cui un pianeta, un satellite, un asteroide, una cometa o un altro corpo celeste riflette la luce ricevuta, generalmente quella proveniente dalla propria stella.
+{{% /box %}}
 
 Dal punto di vista fisico, si tratta di una *grandezza adimensionale*: non possiede unità di misura perché è il rapporto tra due flussi radiativi espressi nella stessa unità. Si definisce come un valore decimale compreso tra $0$ e $1$ oppure in **percentuale** (da $0\%$ a $100\%$).
 

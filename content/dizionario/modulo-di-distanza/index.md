@@ -14,7 +14,11 @@ $$
 \mu = m - M = 5 \cdot \log_{10}\left(\frac{d}{10\,\text{pc}}\right)
 $$
 
-Per chiarire il concetto, il modulo di distanza rappresenta la differenza tra ciò che si osserva, la magnitudine apparente, e ciò che si osserverebbe a $10$ parsec dall'osservatore: quanto più un oggetto è lontano (cioè quanto più $d$ è grande), tanto maggiore è questa differenza. Dalla formula precedente si ottiene la formula diretta per calcolare la magnitudine assoluta $M$:
+{{% box tipo="definizione" titolo="" %}} 
+Per chiarire il senso della formula, il **modulo di distanza** rappresenta la differenza tra ciò che si osserva, la magnitudine apparente, e ciò che si osserverebbe a $10$ parsec dall'osservatore: quanto più un oggetto è lontano (cioè quanto più $d$ è grande), tanto maggiore è questa differenza. 
+{{% /box %}}
+
+Dalla formula precedente si ottiene la formula diretta per calcolare la magnitudine assoluta $M$:
 
 $$
 M = m - 5 \cdot \log_{10}(d) + 5

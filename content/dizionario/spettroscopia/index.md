@@ -6,13 +6,16 @@ draft = false
 
 {{< katex />}}
 
-## Etimologia
+## Etimologia e storia
 
 Il termine spettroscopia deriva dal latino *spectrum* ("immagine, apparizione") e dal greco σκοπεῖν (skopeîn, "osservare"). L'analisi spettrale come disciplina scientifica fu fondata tra il 1859 e il 1860 da Gustav Kirchhoff e Robert Bunsen, che per primi utilizzarono sistematicamente lo spettroscopio per identificare gli elementi chimici a partire dalle loro righe spettrali.
 
-## Definizione
+{{% box tipo="definizione" titolo="" %}} 
+La spettroscopia è la branca della scienza che studia il modo in cui la luce, e più in generale ogni tipo di [radiazione elettromagnetica]({{< relref "/dizionario/luce-radiazione-elettromagnetica/" >}}), viene emessa, assorbita o riflessa dalla materia, scomponendola nelle sue singole lunghezze d'onda (i suoi colori, per la luce visibile).
+{{% /box %}}
 
-La spettroscopia è la branca della scienza che studia il modo in cui la luce (e più in generale ogni tipo di [radiazione elettromagnetica]({{< relref "/dizionario/luce-radiazione-elettromagnetica/" >}})) viene emessa, assorbita o riflessa dalla materia, scomponendola nelle sue singole lunghezze d'onda (i suoi colori, per la luce visibile).
+
+## Uno strumento d'indagine fondamentale
 
 In [astrofisica]({{< relref "/dizionario/astrofisica/" >}}) è uno strumento di indagine fondamentale. La radiazione emessa da una stella o da un'altra sorgente viene raccolta da un telescopio e scomposta per mezzo di un prisma o un reticolo di diffrazione. Si ottiene così una sorta di arcobaleno molto dettagliato, lo [spettro]({{< relref "/dizionario/spettro-elettromagnetico/" >}}), che può contenere righe nere, dette **righe di assorbimento**, e righe luminose, dette **righe di emissione**. Ogni riga di assorbimento o di emissione è come l'"impronta digitale" di un elemento chimico in condizioni fisiche specifiche.
 

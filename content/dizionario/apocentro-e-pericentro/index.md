@@ -6,13 +6,15 @@ draft = false
 
 {{< katex />}}
 
-## Definizione ed etimologia
+## Etimologia e sinonimi
 
 Il termine **apocentro** deriva da *apó* ("lontano da") e *kéntron* e indica il punto di un'orbita ellittica in cui la distanza dal fuoco occupato dal corpo centrale è massima. Il termine **pericentro** deriva invece dal greco *perí* ("vicino a", "intorno a") e *kéntron* ("centro") e indica il punto di minima distanza.
 
 Sono sinonimi pienamente equivalenti, e altrettanto diffusi in letteratura, **apoapside** e **periapside**, costruiti sulla radice greca *hápsis* ("arco", "volta", nel senso di "punto dell'arco orbitale"), da cui derivano anche gli inglesi *periapsis* e *apoapsis*.
 
-Per un'orbita ellittica kepleriana, pericentro e apocentro sono i due estremi dell'asse maggiore dell'ellisse, situati sulla linea degli apsidi, che congiunge i due punti passando per il fuoco occupato dal baricentro del sistema, che nei sistemi planetari coincide praticamente con il centro del corpo centrale. Sono quindi gli unici due punti dell'orbita in cui il vettore velocità del corpo orbitante è *perpendicolare* al raggio vettore che lo separa dal fuoco.
+{{% box tipo="definizione" titolo="" %}} 
+Per un'orbita ellittica kepleriana, pericentro e apocentro sono i due estremi dell'asse maggiore dell'ellisse, situati sulla linea degli apsidi, che congiunge i due punti passando per il fuoco occupato dal baricentro del sistema, che nei sistemi planetari coincide praticamente con il centro del corpo centrale. Sono quindi gli unici due punti dell'orbita in cui il vettore velocità del corpo orbitante è *perpendicolare* al raggio vettore che lo separa dal fuoco occupato dal corpo centrale.
+{{% /box %}}
 
 {{< figura src="immagini/apocentro-e-pericentro.jpg" alt="In rosso i vettori velocità del corpo orbitante al pericentro e all'apocentro di un'orbita ellittica e in blu i raggi vettori che congiungono il fuoco occupato dal corpo centrale al corpo orbitante nei due rispettivi apsidi. Crediti: Michele Diodati" caption="In rosso i vettori velocità del corpo orbitante al pericentro e all'apocentro di un'orbita ellittica e in blu i raggi vettori che congiungono il fuoco occupato dal corpo centrale al corpo orbitante nei due rispettivi apsidi. Crediti: Michele Diodati" >}}
 

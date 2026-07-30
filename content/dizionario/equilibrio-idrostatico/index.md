@@ -6,11 +6,11 @@ draft = false
 
 {{< katex />}}
 
-## Definizione
-
 L'**idrostatica** è il ramo della fisica che descrive i fluidi in quiete soggetti alla gravità, come l'acqua e l'atmosfera terrestre. Più precisamente, è la condizione fisica in cui un fluido (liquido, gas o plasma) si trova in uno stato di equilibrio macroscopico, in cui la forza di gravità è esattamente controbilanciata da una forza uguale e contraria, generata dal gradiente di pressione del fluido. Se questo equilibrio si rompe, il corpo inizia a contrarsi o a espandersi macroscopicamente.
 
-In astrofisica, l'equilibrio idrostatico è il meccanismo che spiega e garantisce la **stabilità stellare**, cioè il fatto che le stelle riescano a mantenere forma e dimensione praticamente invariate per milioni o miliardi di anni senza collassare sotto la spinta della propria stessa gravità. Ciò che consente il mantenimento di tale equilibrio è l'azione combinata della pressione del gas caldo e, in misura variabile, della pressione di radiazione [^1]. Queste due pressioni, sommandosi, generano una spinta netta verso l'esterno, che contrasta la forza di gravità e impedisce alla stella di collassare su se stessa.
+{{% box tipo="definizione" titolo="" %}} 
+In astrofisica, l'equilibrio idrostatico è il meccanismo che spiega e garantisce la **stabilità stellare**, cioè il fatto che le stelle riescano a mantenere forma e dimensione praticamente invariate per milioni o miliardi di anni senza collassare sotto la spinta della propria stessa gravità. Ciò che consente il mantenimento di tale equilibrio è l'azione combinata della pressione del gas caldo e, in misura variabile, della [pressione di radiazione]({{< relref "/dizionario/pressione-di-radiazione/" >}}) [^1]. Queste due pressioni, sommandosi, generano una spinta netta verso l'esterno, che contrasta la forza di gravità e impedisce alla stella di collassare su se stessa.
+{{% /box %}}
 
 ## Funziona come un meccanismo di *feedback*
 

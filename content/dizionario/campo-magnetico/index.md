@@ -10,9 +10,9 @@ draft = false
 
 Il termine "magnete" deriva dal latino *magnes*, a sua volta dal greco *Μάγνης λίθος* ("pietra di Magnesia"), dal nome di una località dell'Asia Minore (l'odierna Manisa, in Turchia) presso cui si trovavano abbondanti giacimenti di magnetite, il minerale di ferro capace di attrarre altro ferro. Dalla stessa radice derivano anche "magnetite" e "magnetismo". Il concetto di *campo*, invece, è molto più tardo: viene introdotto nell'Ottocento da Faraday per descrivere l'azione a distanza delle forze elettriche e magnetiche senza dover ricorrere a un mezzo meccanico intermedio.
 
-## Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 Un campo magnetico è una "perturbazione" dello spazio creata da cariche elettriche in movimento (cioè da correnti elettriche) o da materiali magnetici, in grado di esercitare una forza su *altre* cariche in movimento. Si tratta di un campo **vettoriale**, il che significa che in ogni suo punto è definito da un'intensità, una direzione e un verso.
+{{% /box %}}
 
 Campo elettrico e campo magnetico non sono entità indipendenti: sono le due facce di un'unica realtà, il **campo elettromagnetico**. Un campo puramente elettrico per un osservatore fermo appare parzialmente magnetico per un osservatore in moto, e viceversa, un fatto che la relatività speciale di Einstein ha chiarito definitivamente.
 

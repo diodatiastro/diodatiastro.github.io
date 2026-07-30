@@ -6,11 +6,13 @@ draft = false
 
 {{< katex />}}
 
+## Etimologia e storia
+
 Il termine *plasma* deriva dal greco πλάσμα (*plásma*), "cosa modellata, forma", dal verbo πλάσσειν (*plássein*), "modellare, plasmare". Da questa radice greca deriva *plasma sanguigno*, già in uso in medicina dall'Ottocento per indicare la componente liquida del sangue. Fu Irving Langmuir a introdurre il termine in fisica nel 1928, in un articolo sulle oscillazioni nei gas ionizzati: l'analogia è che, così come il plasma sanguigno trasporta globuli e altre particelle in sospensione, il gas ionizzato "trasporta" al suo interno ioni, elettroni e particelle neutre.
 
-## Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 Il plasma è un gas quasi totalmente o parzialmente ionizzato, composto da una miscela macroscopicamente neutra di particelle libere cariche (ioni positivi ed elettroni) ed eventualmente atomi neutri. 
+{{% /box %}}
 
 Viene universalmente definito come il **quarto stato della materia** (dopo gli stati solido, liquido e gassoso). Si tratta tuttavia di una definizione fuorviante, perché quasi tutta la materia dell'Universo visibile, circa il $99\%$, si trova in realtà allo stato di plasma. Le stelle sono plasma, il mezzo interstellare ionizzato è plasma, il mezzo intergalattico è plasma, i getti relativistici dei nuclei galattici attivi sono plasma. 
 

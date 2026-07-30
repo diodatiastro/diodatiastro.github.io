@@ -6,6 +6,12 @@ draft = false
 
 {{< katex />}}
 
+{{% box tipo="definizione" titolo="Definizioni" %}} 
+La **parallasse** è lo spostamento angolare *apparente* di un oggetto, quando viene osservato da due punti di vista diversi. 
+
+Il **parsec**, abbreviato in $\text{pc}$, è la distanza alla quale l’[unità astronomica]({{< relref "/dizionario/unita-astronomica/" >}}), cioè il raggio dell’orbita terrestre, sottende un angolo di $1$ secondo d’arco. Corrisponde a $206.265$ unità astronomiche o $3{,}262$ anni luce.
+{{% /box %}}
+
 In questo articolo vedremo come il semplice concetto di parallasse[^par] – lo stesso che sperimentiamo guardando il nostro pollice con un occhio alla volta – sia lo strumento che permette di misurare con precisione la distanza delle stelle. Partiremo da un esempio concreto, Alfa Centauri, per introdurre parsec e anni luce, le unità di misura usate dagli astronomi. Infine ripercorreremo la lunga storia delle osservazioni che hanno portato alla misurazione delle prime parallassi stellari, per finire con le misure ultra–precise ottenute dal satellite Gaia.
 
 {{< figura 

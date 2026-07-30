@@ -6,9 +6,9 @@ draft = false
 
 {{< katex />}}
 
-## Definizione
-
-La distanza fisica tra due punti consecutivi di un'onda che si trovano nella stessa fase di oscillazione, come ad esempio due creste (i punti più alti) o due minimi (i punti più bassi) successivi. In termini più semplici, rappresenta l'effettiva estensione spaziale di un singolo ciclo completo dell'onda. Viene tradizionalmente indicata in fisica e in astronomia con la lettera greca *lambda* ($\lambda$).
+{{% box tipo="definizione" titolo="" %}} 
+La distanza fisica tra due punti consecutivi di un'[onda]({{< relref "/dizionario/onda-elettromagnetica/" >}}) che si trovano nella stessa fase di oscillazione, come ad esempio due creste (i punti più alti) o due minimi (i punti più bassi) successivi. In termini più semplici, rappresenta l'effettiva estensione spaziale di un singolo ciclo completo dell'onda. Viene tradizionalmente indicata in fisica e in astronomia con la lettera greca *lambda* ($\lambda$).
+{{% /box %}}
 
 {{< figura 
 src="immagini/lunghezza-d-onda.svg" 

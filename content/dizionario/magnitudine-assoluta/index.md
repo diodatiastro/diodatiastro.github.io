@@ -6,11 +6,9 @@ draft = false
 
 {{< katex />}}
 
-## Definizione
-
-Misura della luminosità intrinseca di un corpo celeste (stella, galassia o asteroide), ovvero della quantità reale di luce che esso emette nello spazio, indipendentemente dalla sua distanza dalla Terra.
-
-Per convenzione astrofisica, la magnitudine assoluta di una stella o di una galassia viene definita come la [magnitudine apparente]({{< relref "/dizionario/magnitudine-apparente/" >}}) che l'oggetto mostrerebbe se si trovasse a una distanza standard fissa di esattamente $10$ parsec (pari a $32{,}6$ anni luce) dall'osservatore [^1], in assenza di estinzione interstellare.
+{{% box tipo="definizione" titolo="" %}} 
+Misura della luminosità intrinseca di un corpo celeste (stella, galassia o asteroide), ovvero della quantità reale di luce che esso emette nello spazio, indipendentemente dalla sua distanza dalla Terra. Per convenzione astrofisica, la magnitudine assoluta di una stella o di una galassia viene definita come la [magnitudine apparente]({{< relref "/dizionario/magnitudine-apparente/" >}}) che l'oggetto mostrerebbe se si trovasse a una distanza standard fissa di esattamente $10$ parsec (pari a $32{,}6$ anni luce) dall'osservatore [^1], in assenza di estinzione interstellare.
+{{% /box %}}
 
 ## Formalismo matematico
 

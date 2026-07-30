@@ -10,11 +10,13 @@ draft = false
 
 Il termine **fotoionizzazione** unisce il prefisso *foto-* (dal greco *phôs, phôtós*, "luce") al sostantivo **ionizzazione**, a sua volta derivato da **ione** (dal greco *ión*, participio presente di *iénai*, "andare"), termine coniato da Michael Faraday intorno al 1830 per indicare le particelle cariche che "vanno" verso gli elettrodi in una soluzione elettrolitica.
 
-## Definizione
+## Fotoni che vincono l'energia di legame
 
-È possibile che un elettrone sia strappato a un atomo e venga proiettato nello spazio come **elettrone libero**, se viene colpito da un fotone dotato di un'energia uguale o maggiore all'**energia di legame** che tiene quell'elettrone vincolato al nucleo atomico[^1]. L'atomo a cui l'elettrone è stato strappato diventa uno **ione** dotato di carica elettrica positiva, detto **catione**. Fotoni dotati della giusta energia possono agire allo stesso modo anche sui cationi, strappando loro ulteriori elettroni e rendendo così la loro carica positiva ancora maggiore.
+È possibile che un elettrone sia strappato a un atomo e venga proiettato nello spazio come **elettrone libero**, se viene colpito da un fotone dotato di un'energia uguale o maggiore all'**energia di legame** che tiene quell'elettrone vincolato al nucleo atomico[^1]. L'atomo a cui l'elettrone è stato strappato diventa uno **ione** dotato di carica elettrica positiva. Fotoni dotati della giusta energia possono agire allo stesso modo anche sugli ioni positivi, strappando loro ulteriori elettroni e rendendo così la loro carica positiva ancora maggiore.
 
-Si dice **fotoionizzazione** il processo mediante il quale un atomo o uno ione assorbe un fotone dotato di energia sufficiente a strappare elettroni dal proprio guscio elettronico. La radiazione elettromagnetica, attraverso la fotoionizzazione, crea un plasma di **cariche elettriche libere**, positive (ioni) e negative (elettroni).
+{{% box tipo="definizione" titolo="" %}} 
+Si dice **fotoionizzazione** il processo mediante il quale un atomo o uno ione assorbe un fotone dotato di energia sufficiente a strappare elettroni dal proprio guscio elettronico. La radiazione elettromagnetica, attraverso la fotoionizzazione, crea un [plasma]({{< relref "/dizionario/plasma/" >}}) di **cariche elettriche libere**, positive (ioni) e negative (elettroni).
+{{% /box %}}
 
 ## Potenziale di ionizzazione
 

@@ -10,7 +10,9 @@ draft = false
 
 Una stella è il risultato di un equilibrio tra forze opposte, e lo stesso vale per un oggetto in fase di accrescimento come l'intorno di un buco nero o una stella di neutroni. La gravità tende a comprimere la materia verso il centro; la pressione interna, dovuta al calore e in parte alla radiazione, si oppone alla compressione. Ne consegue una condizione chiamata [equilibrio idrostatico]({{< relref "/dizionario/equilibrio-idrostatico/" >}}), in cui un corpo luminoso rimane stabile perché gravità e pressione interna si bilanciano più o meno perfettamente. In una stella molto luminosa entra in gioco, tuttavia, un terzo fattore: la **pressione di radiazione**, che può alterare quell'equilibrio. Infatti, i fotoni che fluiscono verso l'esterno, benché privi di massa, trasportano **momento**, cioè quantità di moto. Interagendo con il plasma, esercitano una **forza netta** diretta verso l'esterno.
 
+{{% box tipo="definizione" titolo="Pressione di radiazione e limite di Eddington" %}} 
 La domanda è: esiste una luminosità massima oltre la quale questa forza *supera* la gravità, rendendo impossibile il confinamento della materia? La risposta è sì, e quella soglia si chiama limite di Eddington (o **luminosità di Eddington**), dal nome dell'astrofisico britannico Arthur Stanley Eddington che lo derivò nei primi decenni del Novecento.
+{{% /box %}}
 
 ## La lotta tra gravità e pressione di radiazione
 

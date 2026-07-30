@@ -6,9 +6,9 @@ draft = false
 
 {{< katex />}}
 
-## Definizione
-
-Quando la misura della magnitudine assoluta include *tutta* la radiazione emessa a tutte le lunghezze d'onda, e non solo quella nella banda visibile, si parla di magnitudine bolometrica assoluta, grandezza che esprime la **luminosità totale** di un oggetto ed è direttamente collegata alla sua **luminosità intrinseca** espressa in watt o in unità di luminosità solare $(L_{\odot})$.
+{{% box tipo="definizione" titolo="" %}} 
+Quando la misura della [magnitudine assoluta]({{< relref "/dizionario/magnitudine-assoluta/" >}}) include *tutta* la radiazione emessa a tutte le [lunghezze d'onda]({{< relref "/dizionario/lunghezza-donda/" >}}), e non solo quella nella banda visibile, si parla di magnitudine bolometrica assoluta, grandezza che esprime la **luminosità totale** di un oggetto ed è direttamente collegata alla sua **[luminosità]({{< relref "/dizionario/luminosita/" >}}) intrinseca** espressa in watt o in unità di luminosità solare $(L_{\odot})$.
+{{% /box %}}
 
 ## L'esempio di Betelgeuse
 

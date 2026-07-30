@@ -1,3 +1,3 @@
-{{< box tipo="approfondimento" titolo="" >}} 
+{{% box tipo="approfondimento" titolo="" %}} 
 <% tp.file.cursor() %>
-{{< /box >}}
+{{% /box %}}

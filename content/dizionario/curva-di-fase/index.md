@@ -6,9 +6,9 @@ draft = false
 
 {{< katex />}}
 
-## Definizione
-
-In astronomia, la curva di fase è un **grafico** che mostra come varia la luminosità osservata di un corpo celeste al variare del suo [angolo di fase]({{< relref "/dizionario/angolo-di-fase/" >}}). Nel Sistema Solare viene utilizzata soprattutto per lo studio di pianeti, satelliti, asteroidi e comete. La curva di fase rappresenta il risultato diretto delle osservazioni fotometriche, mentre la funzione di fase è il modello matematico che ne descrive l'andamento e permette di interpretare il modo in cui la luce viene riflessa o diffusa dal corpo osservato a diversi angoli di fase.
+{{% box tipo="definizione" titolo="" %}} 
+In astronomia, la curva di fase è un **grafico** che mostra come varia la [luminosità]({{< relref "/dizionario/luminosita/" >}}) osservata di un corpo celeste al variare del suo [angolo di fase]({{< relref "/dizionario/angolo-di-fase/" >}}). Nel Sistema Solare viene utilizzata soprattutto per lo studio di pianeti, satelliti, asteroidi e comete. La curva di fase rappresenta il risultato diretto delle osservazioni fotometriche, mentre la [funzione di fase]({{< relref "/dizionario/funzione-di-fase/" >}}) è il modello matematico che ne descrive l'andamento e permette di interpretare il modo in cui la luce viene riflessa o diffusa dal corpo osservato a diversi angoli di fase.
+{{% /box %}}
 
 ## Struttura del grafico
 
@@ -17,9 +17,13 @@ Nei grafici che mostrano curve di fase, in genere:
 - **L'asse delle ascisse** ($x$) riporta l'angolo di fase, che può variare da circa $0^{\circ}$, quando il corpo è pienamente illuminato[^1], a circa $180^{\circ}$, quando il corpo si trova esattamente sulla linea che congiunge Sole e osservatore (congiunzione inferiore), mostrando la faccia in ombra. I corpi esterni del Sistema Solare non raggiungono mai angoli di fase prossimi a $180^{\circ}$: il loro angolo massimo dipende dal rapporto tra la distanza orbitale e quella della Terra dal Sole.
 - **L'asse delle ordinate ($y$)** riporta la luminosità apparente del corpo, espressa solitamente in magnitudini apparenti ridotte.
 
-## Definizione di magnitudine ridotta
+## La magnitudine ridotta
 
-La **magnitudine ridotta** è la magnitudine che l'oggetto illuminato presenterebbe se si trovasse simultaneamente a $1\;\mathrm{au}$ dal Sole e a $1\;\mathrm{au}$ dall'osservatore, a un dato angolo di fase $\alpha$. Se prendiamo un insieme di misure fotometriche raccolte a distanza eliocentrica $r$ e distanza geocentrica $\Delta$, espresse entrambe in $\mathrm{au}$, la correzione di distanza per ottenere la magnitudine apparente è:
+{{% box tipo="definizione" titolo="" %}} 
+La **magnitudine ridotta** è la magnitudine che un oggetto illuminato presenterebbe se si trovasse simultaneamente a $1\;\mathrm{au}$ dal Sole e a $1\;\mathrm{au}$ dall'osservatore, a un dato angolo di fase $\alpha$.
+{{% /box %}}
+
+Se prendiamo un insieme di misure fotometriche raccolte a distanza eliocentrica $r$ e distanza geocentrica $\Delta$, espresse entrambe in $\mathrm{au}$, la correzione di distanza per ottenere la magnitudine apparente è:
 
 $$
 m_{ridotta} = m_{apparente} - 5\log_{10}(r\cdot\Delta)

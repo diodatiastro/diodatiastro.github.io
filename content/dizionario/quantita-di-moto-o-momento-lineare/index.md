@@ -6,21 +6,26 @@ draft = false
 
 {{< katex />}}
 
-## Etimologia
+## Etimologia e storia
 
 Il termine italiano **quantità di moto** traduce alla lettera il latino *quantitas motus*, l'espressione con cui la grandezza fu introdotta nella fisica moderna. La denominazione alternativa **momento lineare** è invece un calco dall'inglese *linear momentum*, dove *momentum*, contrazione di *movimentum*, dal verbo *movēre*, indicava il movimento e la spinta.
 
 Il concetto nasce con René Descartes, che nei *Principia philosophiae* (1644) definisce la *quantitas motus* come prodotto della "grandezza" di un corpo per la sua velocità e ne afferma la conservazione nell'universo. L'intuizione è corretta, la formulazione no: Descartes tratta la grandezza come uno *scalare*, tenendo conto della sola rapidità e non della direzione, e applicata agli urti la sua legge produce previsioni sbagliate. La correzione arriva negli anni Sessanta del Seicento con John Wallis e Christiaan Huygens, che riconoscono la quantità di moto come grandezza *orientata*. Newton la eredita già emendata e la colloca in posizione fondativa nei *Principia* (1687): la *Definizione II* la introduce come misura che nasce congiuntamente dalla velocità e dalla quantità di materia, e la seconda legge del moto è enunciata proprio come proporzionalità tra la forza impressa e la *variazione* di questa grandezza, non nella forma $F = ma$ dei manuali scolastici, ma in quella che vedremo nel prossimo paragrafo.
 
-## Definizione e unità di misura
-
-Il momento lineare è una grandezza fisica *vettoriale* che misura la **quantità di moto** posseduta da un corpo: quanto moto, cioè, quel corpo può trasferire ad altri corpi in un'interazione. Per un corpo puntiforme di massa $m$ che si muove con velocità $\vec{v}$, è definito come:
+{{% box tipo="definizione" titolo="" %}} 
+Il **momento lineare** è una grandezza fisica *vettoriale* che misura la **quantità di moto** posseduta da un corpo: quanto moto, cioè, quel corpo può trasferire ad altri corpi in un'interazione. Per un corpo puntiforme di massa $m$ che si muove con velocità $\vec{v}$, è definito come:
 
 $$
 \vec{p} = m\vec{v}
 $$
 
-La formula ci dice che il momento è il prodotto della **massa** per la **velocità**. Poiché è un vettore, ha la stessa direzione e lo stesso verso del vettore velocità, e le sue unità di misura nel Sistema Internazionale sono:
+Il senso della formula è che la quantità di moto è il prodotto della **massa** per la **velocità**. 
+{{% /box %}}
+
+
+## Unità di misura
+
+Poiché il momento lineare è un vettore, ha la stessa direzione e lo stesso verso del vettore velocità, e le sue unità di misura nel Sistema Internazionale sono:
 
 $$
 \text{kg}\;\text{m}\;\text{s}^{-1}

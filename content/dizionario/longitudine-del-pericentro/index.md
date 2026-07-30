@@ -10,13 +10,14 @@ draft = false
 
 "Longitudine del pericentro" deriva per metà dal latino (*longitudo*, "lunghezza", nel senso astronomico di "posizione angolare lungo un percorso") e per metà dal greco (*pericentro*, composto da περί, "attorno, nei pressi di", e κέντρον, "centro", propriamente "pungolo, punta del compasso").
 
-## Definizione
+## Un angolo composto
 
+{{% box tipo="definizione" titolo="" %}} 
 In astronomia, la longitudine del pericentro è la somma algebrica di due angoli misurati su piani diversi. Si definisce geometricamente come:
 
 $$\varpi=\Omega+\omega$$
-
 in cui il simbolo $\varpi$, variante corsiva della lettera $\pi$ (pur ricordando nell'aspetto una $\omega$), è usato per convenzione consolidata nella letteratura di meccanica celeste per segnalare che si tratta di una **quantità composita** e non di un angolo elementare.
+{{% /box %}}
 
 I due angoli sommati sono $\Omega$, la **longitudine del nodo ascendente**, misurato nel piano di riferimento dal punto vernale al nodo ascendente, e $\omega$, l'**argomento del pericentro**, misurato nel piano orbitale dal nodo ascendente al pericentro.
 

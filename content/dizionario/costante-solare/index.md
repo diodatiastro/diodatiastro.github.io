@@ -6,9 +6,12 @@ draft = false
 
 {{< katex />}}
 
-## Definizione
 
-La costante solare, il cui simbolo standard è $S_{\odot}$ (talvolta semplicemente $S$), è il flusso di radiazione solare integrata su tutte le lunghezze d'onda, misurato fuori dall'atmosfera terrestre, che investe una superficie orientata perpendicolarmente ai raggi solari, alla distanza media Terra-Sole di una unità astronomica ($1\; \mathrm{au}$ o $149{,}6$ milioni di chilometri). Detto più semplicemente, rappresenta la **potenza** con cui il Sole irraggia la Terra per unità di superficie, misurata prima che l'atmosfera e le nuvole possano diffondere, riflettere o attutire la radiazione. A differenza di molte grandezze astrofisiche, non viene dedotta da altre proprietà del Sole, ma è una quantità **misurata direttamente**: anzi, è il dato osservativo iniziale da cui si risale, tramite la legge dell'inverso del quadrato, alla luminosità bolometrica del Sole.
+{{% box tipo="definizione" titolo="" %}} 
+La costante solare, il cui simbolo standard è $S_{\odot}$ (talvolta semplicemente $S$), è il [flusso di radiazione]({{< relref "/dizionario/flusso-di-radiazione/" >}}) solare integrata su tutte le [lunghezze d'onda]({{< relref "/dizionario/lunghezza-donda/" >}}), misurato fuori dall'atmosfera terrestre, che investe una superficie orientata perpendicolarmente ai raggi solari, alla distanza media Terra-Sole di una [unità astronomica]({{< relref "/dizionario/unita-astronomica/" >}}) ($1\; \mathrm{au}$ o $149{,}6$ milioni di chilometri). 
+{{% /box %}}
+
+Detto più semplicemente, rappresenta la **potenza** con cui il Sole irraggia la Terra per unità di superficie, misurata prima che l'atmosfera e le nuvole possano diffondere, riflettere o attutire la radiazione. A differenza di molte grandezze astrofisiche, non viene dedotta da altre proprietà del Sole, ma è una quantità **misurata direttamente**: anzi, è il dato osservativo iniziale da cui si risale, tramite la legge dell'inverso del quadrato, alla luminosità bolometrica del Sole.
 
 ## Storia e misurazione
 

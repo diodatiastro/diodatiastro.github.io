@@ -6,9 +6,9 @@ draft = false
 
 {{< katex />}}
 
-## Etimologia e definizione
-
-La *fotosfera* (dal greco *φῶς*, *phōs*, «luce», e *σφαῖρα*, *sphaira*, «sfera») è la regione più interna dell'atmosfera stellare e quella dalla quale proviene la quasi totalità della luce e della radiazione termica emessa da un astro. Per questa particolarità, rappresenta la **superficie visibile** di una stella, anche se non si tratta di una superficie in senso stretto, ma di uno strato fluido, essendo le stelle costituite di plasma.
+{{% box tipo="definizione" titolo="" %}} 
+La *fotosfera* (dal greco *φῶς*, *phōs*, «luce», e *σφαῖρα*, *sphaira*, «sfera») è la regione più interna dell'atmosfera stellare e quella dalla quale proviene la quasi totalità della luce e della radiazione termica emessa da un astro. Per questa particolarità, rappresenta la **superficie visibile** di una stella, anche se non si tratta di una superficie in senso stretto, ma di uno strato fluido, essendo le stelle costituite di [plasma]({{< relref "/dizionario/plasma/" >}}).
+{{% /box %}}
 
 ## Lo scattering e la profondità ottica
 

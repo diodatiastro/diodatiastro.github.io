@@ -10,9 +10,11 @@ draft = false
 
 Il termine deriva dal greco *enérgeia* (ἐνέργεια) e fu coniato dal filosofo Aristotele a partire da *en* ("dentro") ed *ergon* ("opera", "lavoro", "azione"). Il significato originario era quello di **attività**, **azione** o **capacità di produrre un effetto**, un'idea che conserva ancora oggi un forte legame con il concetto fisico di energia.
 
-## Definizione e legge di conservazione
-
+{{% box tipo="definizione" titolo="" %}} 
 L'**energia** è la misura della capacità di un sistema di compiere lavoro o creare un cambiamento. Non si tratta di una sostanza materiale, di un oggetto fisico, ma di una proprietà fondamentale posseduta dai corpi e dai campi (come quello elettromagnetico o gravitazionale), legata alla loro struttura, alla loro massa o al loro stato di movimento.
+{{% /box %}}
+
+## Legge di conservazione
 
 L'energia può trasformarsi da una forma all'altra, e lo fa di continuo, ma deve rispettare un principio cardine, la **legge di conservazione**: l'energia totale di un sistema isolato rimane costante nel tempo. Non può essere né creata né distrutta, ma solo trasformata da una forma a un'altra o trasferita da un corpo a un altro.
 

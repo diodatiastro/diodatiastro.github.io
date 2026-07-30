@@ -6,13 +6,13 @@ draft = false
 
 {{< katex />}}
 
-## Etimologia
+## Etimologia e storia
 
 Il termine nasce dalla combinazione degli aggettivi *elettrico* e *magnetico*. fu James Clerk Maxwell, tra il 1861 e il 1865, a mostrare per primo che le proprie equazioni del campo elettromagnetico ammettono soluzioni ondulatorie capaci di propagarsi anche nel vuoto, a una velocità coincidente con quella già nota per la luce. Da qui la sua congettura che la luce stessa fosse un fenomeno elettromagnetico. La conferma sperimentale arrivò solo nel 1887, quando Heinrich Hertz generò e rilevò in laboratorio onde di questo tipo, dando realtà fisica a una previsione fino ad allora solo teorica.
 
-## Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 Un'onda elettromagnetica è una **perturbazione** che si propaga nello spazio trasportando energia e informazione, generata dall'oscillazione accelerata di cariche elettriche (ad esempio, elettroni in movimento). È costituita da un **campo elettrico** ($E$) e un **campo magnetico** ($B$) - due grandezze vettoriali - che oscillano in modo sinusoidale e coordinato, mantenendosi sempre **perpendicolari** tra loro e **ortogonali** rispetto alla direzione di propagazione dell'onda: per questo si dice che l'onda è _trasversale_.
+{{% /box %}}
 
 {{< figura src="immagini/onda-elettromagnetica.png" 
 alt="Rappresentazione di un'onda elettromagnetica" 

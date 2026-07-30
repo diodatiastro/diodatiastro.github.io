@@ -12,7 +12,9 @@ Il termine deriva dal greco ἀνωμαλία (da *an-* privativo + ὁμαλό�
 
 ## L'anomalia vera
 
+{{% box tipo="definizione" titolo="" %}} 
 L’**anomalia vera** $ \nu $ (*nu*) rappresenta l’angolo formato tra il pericentro e la posizione istantanea di un corpo celeste orbitante, misurato sul piano orbitale nella direzione del moto, con il vertice nel corpo centrale.
+{{% /box %}}
 
 Dei sei parametri orbitali classici o elementi kepleriani - semiasse maggiore dell’orbita $ a $ , eccentricità $ e $ , inclinazione $ i $ , longitudine del nodo ascendente $\Omega$, argomento del pericentro $\omega$ e anomalia media all'epoca $ M_0 $ \- l'ultimo, l'anomalia media, è quello che si usa come base di partenza per determinare l'anomalia vera.
 
@@ -20,7 +22,11 @@ Il tratto caratteristico dell’anomalia vera è che *cambia continuamente*, in 
 
 ## L'anomalia media
 
-Ecco dove entra in gioco l’anomalia media $M$, un angolo *fittizio*, un ente puramente matematico, che fa “girare” l’oggetto celeste su un’orbita perfettamente circolare, detta **circonferenza ausiliaria**, circoscritta all’orbita ellittica. Le due orbite coincidono al pericentro e all’apocentro (o al perielio e all’afelio, nel caso di corpi che orbitano intorno al Sole).
+Ecco dove entra in gioco l’anomalia media.
+
+{{% box tipo="definizione" titolo="" %}} 
+L'anomalia media $M$ è un angolo *fittizio*, un ente puramente matematico, che fa “girare” l’oggetto celeste su un’orbita perfettamente circolare, detta **circonferenza ausiliaria**, circoscritta all’orbita ellittica. Le due orbite coincidono al pericentro e all’apocentro (o al perielio e all’afelio, nel caso di corpi che orbitano intorno al Sole).
+{{% /box %}}
 
 Per capire come funziona il meccanismo, immaginiamo un corpo celeste fittizio che percorre un’orbita circolare ($e = 0$) attorno al Sole nello stesso identico tempo impiegato da un corpo reale sulla sua orbita ellittica ($0 < e < 1$). I due oggetti, quello reale e quello fittizio, hanno lo *stesso periodo orbitale*. L’anomalia media è l’angolo con vertice nel Sole, formato dalla posizione del corpo immaginario con la posizione del perielio.
 
@@ -42,7 +48,11 @@ $$M=n\times(t-t_p)$$
 
 Giunti a questo punto, siamo però solo a metà strada. Non basta, infatti, conoscere l’anomalia media per arrivare all’anomalia vera. Occorre ancora un passaggio intermedio, che si basa su una terza anomalia, detta **Anomalia Eccentrica**, indicata con il simbolo $E$.
 
-Per capire $E$ cosa rappresenta, dobbiamo immaginare l’orbita ellittica reale di un corpo celeste e fare riferimento alla **circonferenza ausiliaria** che la circoscrive, quella che abbiamo già usato per definire l’anomalia media. Il raggio di questa circonferenza è pari al semiasse maggiore $a$ dell’ellisse. Ora partiamo dal punto $P$, che indica la **posizione reale** del corpo sull’ellisse orbitale. Da $P$ innalziamo una linea verticale perpendicolare all’asse maggiore dell’ellisse, che interseca la circonferenza ausiliaria nel punto $P'$. Quindi tracciamo un segmento che unisce il centro geometrico della circonferenza ausiliaria al punto proiettato $P'$. L’anomalia Eccentrica $E$ è l’angolo formato tra l’asse maggiore nella direzione del perielio e la linea che unisce il centro della circonferenza al punto proiettato $P'$.
+Per capire $E$ cosa rappresenta, dobbiamo immaginare l’orbita ellittica reale di un corpo celeste e fare riferimento alla **circonferenza ausiliaria** che la circoscrive, quella che abbiamo già usato per definire l’anomalia media. Il raggio di questa circonferenza è pari al semiasse maggiore $a$ dell’ellisse. Ora partiamo dal punto $P$, che indica la **posizione reale** del corpo sull’ellisse orbitale. Da $P$ innalziamo una linea verticale perpendicolare all’asse maggiore dell’ellisse, che interseca la circonferenza ausiliaria nel punto $P'$. Quindi tracciamo un segmento che unisce il centro geometrico della circonferenza ausiliaria al punto proiettato $P'$. 
+
+{{% box tipo="definizione" titolo="" %}} 
+L’anomalia Eccentrica $E$ è l’angolo formato tra l’asse maggiore nella direzione del perielio e la linea che unisce il centro della circonferenza al punto proiettato $P'$.
+{{% /box %}}
 
 {{< figura src="immagini/anomalia-eccentrica.svg" alt="Descrizione dell'immagine" caption="L’anomalia eccentrica $E$ rappresenta geometricamente l’angolo $E$ in figura. Quest’angolo ha il vertice nel centro della circonferenza ausiliaria ed è formato dal semiasse maggiore dell’ellisse in direzione del perielio e dal raggio che unisce il centro della circonferenza ausiliaria alla proiezione $P'$ sulla circonferenza medesima. Crediti: Michele Diodati" >}}
 

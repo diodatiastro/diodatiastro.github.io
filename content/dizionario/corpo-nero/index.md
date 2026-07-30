@@ -10,9 +10,9 @@ draft = false
 
 Il termine "corpo nero" (dal tedesco schwarzer Körper) fu introdotto dal fisico tedesco Gustav Robert Kirchhoff nel 1860, nell'ambito dei suoi studi sulla relazione tra potere emissivo e potere assorbente dei corpi in equilibrio termico.
 
-## Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 Un corpo nero è un oggetto ideale che assorbe *tutta* la radiazione elettromagnetica incidente, indipendentemente dalla frequenza e dall'angolo di incidenza. Non riflette né trasmette nulla. Se potessimo vederlo, ci apparirebbe completamente nero: da qui il nome.
+{{% /box %}}
 
 ## La legge di Kirchhoff
 

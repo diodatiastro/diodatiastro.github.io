@@ -8,9 +8,9 @@ draft = false
 
 Il termine deriva dal latino *solidus*, "tridimensionale", mentre il concetto risale alla geometria euclidea.
 
-## Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 In geometria e in fisica, un **angolo solido**, indicato con la lettera greca omega maiuscola ($\Omega$), è l'estensione tridimensionale del concetto di angolo piano. Mentre un angolo piano descrive l'apertura tra due linee che si intersecano in un punto, l'angolo solido descrive un insieme di direzioni nello spazio tridimensionale che si estendono a partire da un **vertice**. La sua ampiezza è determinata dall'area della superficie sferica intercettata da tali direzioni.
+{{% /box %}}
 
 In termini matematici, l'angolo solido $\Omega$ sotteso da una regione $A$ della superficie di una sfera di raggio $r$ e centro $O$ è definito come il rapporto tra l'area $A$ di quella regione e il quadrato del raggio $r$ della sfera stessa:
 

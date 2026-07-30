@@ -6,13 +6,13 @@ draft = false
 
 {{< katex />}}
 
-## Etimologia e definizione
-
 Il termine *fotometria* deriva dal greco φῶς, φωτός (*phôs*, *phôtós*, «luce») più μέτρον (*métron*, «misura»).
 
-È la branca dell'astronomia che si occupa della misura precisa dell'intensità del flusso luminoso, o **brillanza**, proveniente da oggetti celesti come stelle, pianeti, galassie, nebulose e fenomeni transitori (cosiddetti transienti).
+{{% box tipo="definizione" titolo="" %}} 
+È la branca dell'astronomia che si occupa della misura precisa dell'intensità del [flusso luminoso]({{< relref "/dizionario/flusso-di-radiazione/" >}}), o **brillanza**, proveniente da oggetti celesti come stelle, pianeti, galassie, nebulose e fenomeni transitori (cosiddetti transienti).
 
-In astrofisica, la fotometria è il complemento perfetto della spettroscopia. Mentre la spettroscopia studia *come* la luce è distribuita nelle diverse lunghezze d'onda (i colori e le righe spettrali), la fotometria misura *quanta* luce totale arriva da un oggetto, spesso attraverso filtri ottici specifici. Più precisamente, è la tecnica di misura dell'intensità della radiazione elettromagnetica emessa, riflessa o assorbita dai corpi celesti, con lo scopo di determinarne la luminosità e le sue variazioni nel tempo in funzione della lunghezza d'onda.
+In astrofisica, la fotometria è il complemento perfetto della [spettroscopia]({{< relref "/dizionario/spettroscopia/" >}}). Mentre la spettroscopia studia *come* la luce è distribuita nelle diverse lunghezze d'onda (i colori e le righe spettrali), la fotometria misura *quanta* luce totale arriva da un oggetto, spesso attraverso filtri ottici specifici. Più precisamente, è la tecnica di misura dell'intensità della radiazione elettromagnetica emessa, riflessa o assorbita dai corpi celesti, con lo scopo di determinarne la luminosità e le sue variazioni nel tempo in funzione della lunghezza d'onda.
+{{% /box %}}
 
 ## Filtri e sensori
 

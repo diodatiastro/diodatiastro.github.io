@@ -8,7 +8,13 @@ draft = false
 
 Entrambi i termini derivano dal greco. *Afelio* (ἀφήλιον) unisce *apo-* ("lontano da") e *hḕlios* ("Sole"); *perielio* (περιήλιον) unisce *peri-* ("vicino, intorno a") e *hḕlios*. Keplero introdusse questi termini nell’opera *Mysterium Cosmographicum* del 1596, sul modello dei termini analoghi già in uso per l'orbita lunare (apogeo e perigeo).
 
-I corpi celesti legati gravitazionalmente al Sole, come pianeti, pianeti nani, asteroidi e la maggior parte delle comete, percorrono orbite ellittiche, con il Sole situato in uno dei due fuochi dell'ellisse. L’**afelio** è il punto di *massima distanza* dal Sole nel corso di un’orbita ellittica ed è anche il punto in cui un corpo celeste tocca la sua velocità orbitale minima, in accordo con la seconda legge di Keplero[^1]. Viceversa, il **perielio** è il punto di *massima vicinanza* al Sole nel corso di un’orbita ellittica ed è anche il punto in cui un corpo celeste tocca la sua velocità orbitale *massima*, sempre per la seconda legge di Keplero. Insieme, questi due punti estremi - afelio e perielio - vengono chiamati **apsidi** e la linea immaginaria che li congiunge è detta *linea degli apsidi*.
+I corpi celesti legati gravitazionalmente al Sole, come pianeti, pianeti nani, asteroidi e la maggior parte delle comete, percorrono orbite ellittiche, con il Sole situato in uno dei due fuochi dell'ellisse. 
+
+{{% box tipo="definizione" titolo="" %}} 
+L’**afelio** è il punto di *massima distanza* dal Sole nel corso di un’orbita ellittica ed è anche il punto in cui un corpo celeste tocca la sua velocità orbitale minima, in accordo con la seconda legge di Keplero[^1]. Viceversa, il **perielio** è il punto di *massima vicinanza* al Sole nel corso di un’orbita ellittica ed è anche il punto in cui un corpo celeste tocca la sua velocità orbitale *massima*, sempre per la seconda legge di Keplero.
+{{% /box %}}
+
+Insieme, questi due punti estremi - afelio e perielio - vengono chiamati **apsidi** e la linea immaginaria che li congiunge è detta *linea degli apsidi*.
 
 {{< figura src="immagini/afelio-e-perielio.jpg" alt="Descrizione dell'immagine" caption="Una rappresentazione grafica della posizione di afelio e perielio con il Sole in uno dei due fuochi dell'ellisse." >}}
 

@@ -6,9 +6,11 @@ draft = false
 
 {{< katex />}}
 
-## Definizione ed etimologia di apside
+## Apside
 
-**Apside** (dal greco antico ἁψίς, hapsís, «arco», «volta»; plurale apsidi) è, in meccanica celeste, ciascuno dei due punti di un'orbita ellittica in cui la distanza tra il corpo orbitante e il corpo centrale raggiunge un valore estremo (minimo o massimo). L'origine del termine risale all'astronomia greca, in particolare al sistema tolemaico degli epicicli, dove indicava i punti estremi del moto apparente. Fu poi ripreso da Keplero nella descrizione delle orbite ellittiche.
+{{% box tipo="definizione" titolo="" %}} 
+**Apside** (dal greco antico ἁψίς, hapsís, «arco», «volta»; plurale apsidi) è, in meccanica celeste, ciascuno dei due punti di un'orbita ellittica in cui la distanza tra il corpo orbitante e il corpo centrale raggiunge un valore estremo (minimo o massimo) [^eti].
+{{% /box %}}
 
 La nozione di apside è generale e si applica a qualunque orbita kepleriana a due corpi (pianeti, comete, satelliti naturali e artificiali, stelle in sistemi binari, esopianeti). Il caso Sole/pianeta nel Sistema Solare è solo uno dei numerosi casi possibili.
 
@@ -23,7 +25,9 @@ Nelle traiettorie **paraboliche** e **iperboliche** esiste un solo apside, il *p
 
 ## La linea degli apsidi e la sua funzione
 
+{{% box tipo="definizione" titolo="linea degli apsidi" %}} 
 La **linea degli apsidi** (chiamata talvolta anche *linea absidale*) è la retta immaginaria che congiunge i due apsidi di un'orbita ellittica. Poiché il periapside e l'apoapside sono i due vertici dell'ellisse più distanti tra loro, la linea degli apsidi coincide geometricamente con l'**asse maggiore** dell'ellisse orbitale, e passa per il centro dell'ellisse e per il fuoco occupato dal corpo centrale.
+{{% /box %}}
 
 {{< figura src="immagini/linea-degli-apsidi.jpg" alt="Orbita ellittica con linea degli apsidi" caption="Orbita ellittica con linea degli apsidi." >}}
 
@@ -55,3 +59,5 @@ relazioni già incontrate nella voce [Apocentro e pericentro]({{< relref "/dizio
 La linea degli apsidi individua l'**orientazione** dell'orbita all'interno del suo piano, poiché identifica la direzione lungo la quale si trovano il pericentro e l'apocentro. Tale orientazione è descritta da uno dei sei elementi orbitali kepleriani classici: l'**argomento del pericentro** $\boldsymbol{\omega}$ (omega), definito come l'angolo tra il nodo ascendente e la direzione del pericentro, misurato nel piano orbitale nel verso del moto.
 
 Per orbite non perturbate, tipiche di un sistema ideale a due corpi puro, la linea degli apsidi è **fissa** nello spazio. Nel mondo reale, tuttavia, vi sono sempre effetti perturbanti (schiacciamento del corpo centrale, interazioni con altri corpi, effetti relativistici). Ciò fa sì che la linea degli apsidi non sia fissa, ma ruoti lentamente nel tempo, un fenomeno noto come **precessione apsidale** (o precessione del pericentro). L'esempio storicamente più celebre è l'anomala precessione del perielio di Mercurio, spiegata solo parzialmente dalle perturbazioni basate sulla gravità newtoniana e risolta da Einstein con la relatività generale.
+
+[^eti]: L'origine del termine risale all'astronomia greca, in particolare al sistema tolemaico degli epicicli, dove indicava i punti estremi del moto apparente. Fu poi ripreso da Keplero nella descrizione delle orbite ellittiche.

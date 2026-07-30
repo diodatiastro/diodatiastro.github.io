@@ -6,9 +6,9 @@ draft = false
 
 {{< katex />}}
 
-## Definizione
-
-La **frequenza** di un'onda elettromagnetica è il numero di oscillazioni complete (o **cicli**) dei campi elettrico e magnetico che avvengono in un’unità di tempo, solitamente $1$ secondo. Nel contesto della radiazione elettromagnetica, può essere interpretata come il numero di creste d'onda che passano per un punto fisso dello spazio nel corso di un secondo.
+{{% box tipo="definizione" titolo="" %}} 
+La **frequenza** di un'[onda elettromagnetica]({{< relref "/dizionario/onda-elettromagnetica/" >}}) è il numero di oscillazioni complete (o **cicli**) dei campi elettrico e magnetico che avvengono in un’unità di tempo, solitamente $1$ secondo. Nel contesto della radiazione elettromagnetica, può essere interpretata come il numero di creste d'onda che passano per un punto fisso dello spazio nel corso di un secondo.
+{{% /box %}}
 
 ## Unità di misura
 

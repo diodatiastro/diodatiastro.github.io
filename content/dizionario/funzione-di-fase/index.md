@@ -6,9 +6,9 @@ draft = false
 
 {{< katex />}}
 
-## Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 Indicata convenzionalmente con $\Phi(\alpha)$, descrive come varia la luminosità apparente di un corpo illuminato al cambiare del suo [angolo di fase]({{< relref "/dizionario/angolo-di-fase/" >}}), cioè dell'angolo formato dalla sorgente di luce, dal corpo osservato e dall'osservatore. Essa esprime il *rapporto* tra la luce che il corpo riflette o diffonde verso l'osservatore a un determinato angolo di fase e quella che rifletterebbe se fosse osservato completamente illuminato, cioè con angolo di fase nullo ($\alpha$ = $0\,^\circ$).
+{{% /box %}}
 
 La funzione si applica a corpi celesti che non emettono luce propria, come un pianeta, un satellite, un asteroide o un granello di polvere interplanetaria.
 

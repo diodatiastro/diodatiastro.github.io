@@ -6,13 +6,13 @@ draft = false
 
 {{< katex />}}
 
-# Etimologia
-
 *Luminosità* deriva dal latino *luminosus*, a sua volta da *lumen* ("luce"). Per l'etimologia completa si rimanda alla voce [luce]({{< relref "/dizionario/luce-radiazione-elettromagnetica/" >}}).
 
-# Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 In astronomia e astrofisica, la *luminosità*, indicata con $L$, è la quantità totale di energia radiante emessa nello spazio da un corpo celeste (come una stella, una galassia o un quasar) nell'unità di tempo. Si tratta di una grandezza fisica *intrinseca* dell'oggetto, che dipende esclusivamente dalle sue proprietà strutturali e non dalla sua distanza dall'osservatore.
+{{% /box %}}
+
+## Luminosità bolometrica e luminosità di banda
 
 La luminosità può essere riferita all'intero spettro elettromagnetico oppure a una specifica regione spettrale. Nel primo caso si parla di **luminosità bolometrica**, definita come la potenza totale irradiata dalla sorgente a *tutte* le lunghezze d'onda. Poiché molte sorgenti astronomiche emettono una parte significativa della loro energia al di fuori della banda visibile (ad esempio nell'infrarosso, nell'ultravioletto o nei raggi X), la luminosità bolometrica fornisce la misura più completa dell'emissione energetica di un oggetto[^1].
 

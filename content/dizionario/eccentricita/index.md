@@ -8,9 +8,11 @@ draft = false
 
 La parola deriva dal latino tardo _eccentricus_, a sua volta dal greco ἔκκεντρος (_ékkentros_, "fuori dal centro"), composto da ἐκ- ("fuori da") e κέντρον ("centro").
 
-## Definizione e calcolo
+{{% box tipo="definizione" titolo="" %}} 
+In meccanica celeste e geometria, l’eccentricità, indicata generalmente con la lettera $e$, è un parametro _adimensionale_ che determina quanto l’orbita di un corpo celeste devia dalla forma circolare. In termini più semplici, essa misura quanto l'ellisse orbitale è 'schiacciata' rispetto a una circonferenza perfetta.
+{{% /box %}} 
 
-In meccanica celeste e geometria, l’eccentricità, indicata generalmente con la lettera $e$, è un parametro _adimensionale_ che determina quanto l’orbita di un corpo celeste devia dalla forma circolare. In termini più semplici, essa misura quanto l'ellisse orbitale è 'schiacciata' rispetto a una circonferenza perfetta. 
+## Calcolo dell'eccentricità
 
 L'eccentricità nasce nello studio delle sezioni coniche, cioè delle curve ottenute dall'intersezione di un piano con un cono. Per un'ellisse essa è legata al semiasse maggiore $a$ e al semiasse minore $b$ dalla relazione:
 

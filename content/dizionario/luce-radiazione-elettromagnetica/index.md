@@ -6,11 +6,11 @@ draft = false
 
 {{< katex />}}
 
-## Etimologia e definizione
-
 Il termine deriva dal latino _lux, lucis_, a sua volta dalla radice indoeuropea _leuk-_ ("splendere", "essere luminoso").
 
+{{% box tipo="definizione" titolo="" %}} 
 In senso stretto, la **luce** è la porzione dello spettro elettromagnetico che l'occhio umano è in grado di rilevare attraverso i fotorecettori della retina e che ci permette di vedere il mondo intorno a noi. Questa banda estremamente ristretta dello spettro si colloca approssimativamente tra le lunghezze d'onda di $380$ nanometri (limite del viola) e $750$ nanometri (limite del rosso). Comprende [frequenze]({{< relref "/dizionario/frequenza/" >}}) che vanno da circa $400\,\mathrm{THz}$ (rosso) a circa $790\,\mathrm{THz}$ (violetto)[^1], associate a un'energia dei fotoni compresa tra $1{,}65\,\mathrm{eV}$ per il rosso e $3{,}26\,\mathrm{eV}$ per il violetto.
+{{% /box %}}
 
 ## I colori della luce visibile
 

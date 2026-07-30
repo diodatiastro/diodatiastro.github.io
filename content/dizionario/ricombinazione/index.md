@@ -6,11 +6,11 @@ draft = false
 
 {{< katex />}}
 
-## Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 Se la [fotoionizzazione]({{< relref "/dizionario/fotoionizzazione/" >}}) è il processo che distrugge l'integrità degli atomi creando un [plasma]({{< relref "/dizionario/plasma/" >}}) di particelle cariche positive e negative, la **ricombinazione** è il processo opposto, in cui ioni positivi catturano elettroni per cercare di ritornare in una condizione di equilibrio, così da diminuire la loro carica positiva o, meglio ancora, riacquistare lo stato neutro originario[^1].
 
 Durante questo fenomeno, l'elettrone libero transita da uno **stato libero**, in cui è dotato di una certa quantità di energia cinetica, a uno **stato legato**, in cui è vincolato all'interno dei livelli energetici quantizzati dell'atomo. Per soddisfare la legge di conservazione dell'energia, l'energia in eccesso dell'elettrone deve essere liberata. Nella forma più comune in astrofisica, la **ricombinazione radiativa**, questa energia viene espulsa sotto forma di uno o più fotoni.
+{{% /box %}}
 
 ## La cattura elettronica
 

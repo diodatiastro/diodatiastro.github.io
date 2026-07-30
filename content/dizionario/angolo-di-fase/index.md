@@ -5,10 +5,10 @@ draft = false
 +++
 
 {{< katex />}}
-## Definizione
-In astronomia, grandezza geometrica che quantifica l'angolo formato al vertice di un corpo celeste illuminato (un pianeta, un satellite, un asteroide, una cometa) tra la direzione della sorgente di luce, solitamente il Sole, e quella dell'osservatore terrestre.
 
-Si indica con la lettera greca $\alpha$ e traduce l'inglese *phase angle*, voce entrata nell'uso tecnico nella seconda metà dell'Ottocento con il consolidarsi della fotometria planetaria.
+{{% box tipo="definizione" titolo="" %}} 
+In astronomia, grandezza geometrica che quantifica l'angolo formato al vertice di un corpo celeste illuminato (un pianeta, un satellite, un asteroide, una cometa) tra la direzione della sorgente di luce, solitamente il Sole, e quella dell'osservatore terrestre. Si indica con la lettera greca $\alpha$ e traduce l'inglese *phase angle*, voce entrata nell'uso tecnico nella seconda metà dell'Ottocento con il consolidarsi della fotometria planetaria.
+{{% /box %}}
 
 L'angolo di fase determina direttamente la percentuale di superficie illuminata di un corpo celeste, ovvero la sua "**fase**". Il caso tipico è quello delle **fasi lunari**, in cui la Luna occupa il vertice dell'angolo e il Sole e la Terra giacciono sui suoi lati.
 

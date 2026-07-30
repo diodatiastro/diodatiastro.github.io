@@ -6,13 +6,13 @@ draft = false
 
 {{< katex />}}
 
-Come accennato nella voce Luminosità, nessun rilevatore è in grado di misurare il flusso totale di una stella, poiché l'atmosfera terrestre e gli stessi strumenti pongono dei limiti fisici. I telescopi campionano la luce attraverso filtri fotometrici (come il filtro $V$, centrato sul verde-giallo a circa 550 nanometri), che rappresentano solo una frazione delle lunghezze d'onda possibili.
+Come accennato nella voce [Luminosità]({{< relref "/dizionario/luminosita/" >}}), nessun rilevatore è in grado di misurare il [flusso]({{< relref "/dizionario/flusso-di-radiazione/" >}}) totale di una stella, poiché l'atmosfera terrestre e gli stessi strumenti pongono dei limiti fisici. I telescopi campionano la luce attraverso filtri fotometrici (come il filtro $V$, centrato sul verde-giallo a circa $550$ nanometri), che rappresentano solo una frazione delle lunghezze d'onda possibili.
 
-## Definizione
+Ma la radiazione emessa dalle stelle non è limitata a ciò che i nostri filtri fotometrici (le bande dello spettro) possono registrare. Ad esempio, una supergigante blu molto calda come Rigel irradia gran parte della sua energia nell'ultravioletto, mentre una nana rossa ultrafredda la disperde quasi interamente nell'infrarosso. 
 
-Ma la radiazione emessa dalle stelle non è limitata a ciò che i nostri filtri fotometrici (le bande dello spettro) possono registrare. Ad esempio, una supergigante blu molto calda come Rigel irradia gran parte della sua energia nell'ultravioletto, mentre una nana rossa ultrafredda la disperde quasi interamente nell'infrarosso. La **correzione bolometrica**[^1] (indicata comunemente con la sigla $BC$, dall'inglese *Bolometric Correction*) è lo strumento teorico che gli astronomi usano per "recuperare" quella quota di radiazione *invisibile* ai filtri adoperati per misurare la radiazione stellare.
-
-Tale correzione si basa sui modelli teorici di atmosfera stellare più aggiornati e consiste in un fattore numerico che varia a seconda del tipo di stella e che va a integrare le magnitudini stellari misurate, sia apparenti sia assolute, in modo da convertirle in magnitudini bolometriche.
+{{% box tipo="definizione" titolo="" %}} 
+La **correzione bolometrica**[^1] (indicata comunemente con la sigla $BC$, dall'inglese *Bolometric Correction*) è lo strumento teorico che gli astronomi usano per "recuperare" la quota di radiazione *invisibile* ai filtri adoperati per misurare la radiazione stellare. Tale correzione si basa su dati empirici e sui modelli teorici di atmosfera stellare più aggiornati. Consiste in un fattore numerico che varia a seconda del tipo di stella e che va a integrare le magnitudini stellari misurate, sia apparenti sia assolute, in modo da convertirle in magnitudini bolometriche.
+{{% /box %}}
 
 Riferite alle magnitudini visuali apparenti e assolute, le formule fondamentali (nella convenzione standard adottata dall'Unione Astronomica Internazionale) sono:
 

@@ -10,9 +10,11 @@ draft = false
 
 Il termine **flusso** deriva dal latino _fluxus_, participio passato di _fluere_ ("scorrere"). Il vocabolo entra nel lessico scientifico europeo a partire dal XVII secolo per indicare, in senso generale, il "flusso" di una grandezza fisica (calore, fluido, e in seguito luce) attraverso una superficie.
 
-## Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 Il flusso di radiazione, o semplicemente flusso (indicato con $F$), è la misura dell'energia radiante ricevuta per unità di superficie in un dato tempo da un rilevatore orientato perpendicolarmente alla direzione di propagazione della radiazione. Dipende dalla distanza $d$ dalla sorgente luminosa. Si tratta dunque di una misura della **luminosità apparente** della sorgente, non di una misura della sua luminosità intrinseca.
+{{% /box %}}
+
+## Flusso bolometrico
 
 Quando $F$ integra tutte le lunghezze d'onda si parla di **flusso bolometrico**. Nella pratica, tuttavia, ogni strumento di misura registra solo una porzione dello spettro, cioè una cosiddetta **banda** ($U, B, V, R, I$, ecc.); si parla in tal caso di **flusso in banda** o densità di flusso spettrale $F_\nu$ (per unità di **frequenza**) o $F_\lambda$ (per unità di lunghezza d'onda).
 

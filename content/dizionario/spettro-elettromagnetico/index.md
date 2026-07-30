@@ -6,13 +6,13 @@ draft = false
 
 {{< katex />}}
 
-## Etimologia
+## Etimologia e storia
 
 Il termine *spectrum*, dal latino "apparizione, immagine" (*specere*, "guardare"), fu impiegato da Isaac Newton intorno al 1670 per indicare la banda colorata prodotta dalla scomposizione della luce solare attraverso un prisma, descritta nei suoi esperimenti di ottica poi confluiti nell'opera *Opticks* (1704).
 
-## Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 Lo spettro è l'insieme ordinato di tutte le forme di radiazione elettromagnetica, distribuite in sequenza continua secondo la loro [frequenza]({{< relref "/dizionario/frequenza/" >}}), [lunghezza d'onda]({{< relref "/dizionario/lunghezza-donda/" >}}) o [energia]({{< relref "/dizionario/energia/" >}}) dei [fotoni]({{< relref "/dizionario/fotone/" >}}). La [luce]({{< relref "/dizionario/luce-radiazione-elettromagnetica/" >}}) visibile è solo una piccola frazione di questo continuo, che si estende dalle frequenze più basse e lunghezze d'onda più grandi fino alle frequenze più alte e lunghezze d'onda più piccole.
+{{% /box %}}
 
 {{< figura src="immagini/spettro.png" alt="Una rappresentazione grafica dello spettro elettromagnetico, dalle onde radio fino ai raggi gamma." caption="Una rappresentazione grafica dello spettro elettromagnetico, dalle onde radio fino ai raggi gamma. La parte visibile dello spettro, cioè la luce che i nostri occhi sono in grado di vedere, rappresenta solo una piccola parte dell'intero spettro elettromagnetico."
 >}}

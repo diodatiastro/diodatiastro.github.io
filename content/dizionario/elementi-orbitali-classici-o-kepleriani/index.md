@@ -6,9 +6,9 @@ draft = false
 
 {{< katex />}}
 
-## Definizione
-
+{{% box tipo="definizione" titolo="" %}} 
 Gli elementi orbitali classici (detti anche *elementi kepleriani*) sono **sei quantità** che, nell'ambito del problema dei due corpi, individuano in modo *univoco* l'**orbita** di un oggetto celeste e la sua **posizione** lungo di essa in un dato istante, detto **epoca** $t_0$. I primi **cinque** elementi descrivono completamente l'orbita come oggetto geometrico nello spazio; il **sesto** stabilisce dove si trova il corpo su di essa in un determinato istante.
+{{% /box %}}
 
 Questi parametri rappresentano una soluzione ideale: descrivono un'orbita kepleriana perfetta (non perturbata) e costituiscono quindi un'approssimazione della realtà. Nella pratica, gli elementi variano nel tempo a causa delle perturbazioni gravitazionali di altri corpi, per cui si parla spesso di **elementi osculatori** (validi in un istante preciso).
 
