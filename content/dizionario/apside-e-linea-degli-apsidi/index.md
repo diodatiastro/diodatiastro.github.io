@@ -25,7 +25,7 @@ Nelle traiettorie **paraboliche** e **iperboliche** esiste un solo apside, il *p
 
 ## La linea degli apsidi e la sua funzione
 
-{{% box tipo="definizione" titolo="linea degli apsidi" %}} 
+{{% box tipo="definizione" titolo="Linea degli apsidi" %}} 
 La **linea degli apsidi** (chiamata talvolta anche *linea absidale*) è la retta immaginaria che congiunge i due apsidi di un'orbita ellittica. Poiché il periapside e l'apoapside sono i due vertici dell'ellisse più distanti tra loro, la linea degli apsidi coincide geometricamente con l'**asse maggiore** dell'ellisse orbitale, e passa per il centro dell'ellisse e per il fuoco occupato dal corpo centrale.
 {{% /box %}}
 
