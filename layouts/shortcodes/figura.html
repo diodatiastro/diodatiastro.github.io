@@ -1,20 +1,17 @@
 {{- $counter := .Page.Store.Get "figureCounter" | default 0 -}}
 {{- $counter = add $counter 1 -}}
 {{- .Page.Store.Set "figureCounter" $counter -}}
-
 <figure class="scientific-figure">
-
   <img 
     src="{{ .Get "src" }}" 
     alt="{{ .Get "alt" }}"
     loading="lazy"
+    {{ with .Get "width" }}style="max-width: {{ . }};"{{ end }}
   >
-
 <figcaption>
   {{ if ne (.Get "label") "false" }}
     <strong>Figura {{ $counter }}</strong> — 
   {{ end }}
   {{ .Get "caption" | markdownify }}
 </figcaption>
-
 </figure>

@@ -16,6 +16,21 @@
       .replace(/(^-|-$)/g, '');
   }
 
+  // Inserisce newLi in ul, subito prima del primo <li> "nativo"
+  // (generato da Hugo per un titolo reale). Se non ce n'è, lo
+  // aggiunge in fondo. Preserva l'ordine tra più box consecutivi
+  // che finiscono nella stessa sotto-lista.
+  function insertBoxEntry(ul, newLi) {
+    var nativeSibling = null;
+    for (var i = 0; i < ul.children.length; i++) {
+      if (!ul.children[i].classList.contains('toc-box-entry')) {
+        nativeSibling = ul.children[i];
+        break;
+      }
+    }
+    ul.insertBefore(newLi, nativeSibling);
+  }
+
   function run() {
     var toc = document.querySelector('.book-toc');
     if (!toc) return;
@@ -47,6 +62,7 @@
       usedIds[id] = true;
       box.id = id;
 
+      // titolo di qualsiasi livello (H2-H6) che precede il box
       var heading = null, el = box;
       while (el && !heading) {
         el = el.previousElementSibling;
@@ -62,14 +78,14 @@
 
       if (heading && headingLis[heading.id]) {
         var parentLi = headingLis[heading.id];
-        var subUl = parentLi.querySelector('ul');
+        var subUl = parentLi.querySelector(':scope > ul');
         if (!subUl) {
           subUl = document.createElement('ul');
           parentLi.appendChild(subUl);
         }
-        subUl.appendChild(newLi);
+        insertBoxEntry(subUl, newLi);
       } else {
-        tocList.insertBefore(newLi, tocList.firstChild);
+        insertBoxEntry(tocList, newLi);
       }
     });
   }
