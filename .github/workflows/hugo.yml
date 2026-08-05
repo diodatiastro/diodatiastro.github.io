@@ -40,13 +40,43 @@ jobs:
 
       - name: Notify IndexNow
         run: |
-          curl -X POST "https://api.indexnow.org/indexnow" \
-          -H "Content-Type: application/json; charset=utf-8" \
-          -d '{
-            "host": "diodatiastro.github.io",
-            "key": "5c3cbe8d8d274d45a7d5b7c74d6d8b77",
-            "keyLocation": "https://diodatiastro.github.io/5c3cbe8d8d274d45a7d5b7c74d6d8b77.txt",
-            "urlList": [
-              "https://diodatiastro.github.io/"
-            ]
-          }'
+          python3 <<'EOF'
+          import xml.etree.ElementTree as ET
+          import json
+          import urllib.request
+
+          sitemap = "public/sitemap.xml"
+
+          tree = ET.parse(sitemap)
+          root = tree.getroot()
+
+          namespace = {
+              "sm": "http://www.sitemaps.org/schemas/sitemap/0.9"
+          }
+
+          urls = []
+
+          for url in root.findall("sm:url", namespace):
+              loc = url.find("sm:loc", namespace)
+              if loc is not None:
+                  urls.append(loc.text)
+
+          data = {
+              "host": "diodatiastro.github.io",
+              "key": "5c3cbe8d8d274d45a7d5b7c74d6d8b77",
+              "keyLocation": "https://diodatiastro.github.io/5c3cbe8d8d274d45a7d5b7c74d6d8b77.txt",
+              "urlList": urls
+          }
+
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(data).encode("utf-8"),
+              headers={
+                  "Content-Type": "application/json; charset=utf-8"
+              }
+          )
+
+          with urllib.request.urlopen(request) as response:
+              print("IndexNow response:", response.status)
+              print("URLs submitted:", len(urls))
+          EOF
