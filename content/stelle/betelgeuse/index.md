@@ -708,7 +708,7 @@ su Betelgeuse.
 >tra le foglie d’oro di Betelgeuse.  
 
 {{< figura 
-src="immagini/orione2.jpg" 
+src="immagini/orione.jpg" 
 width="85%"
 alt="La costellazione di Orione in un’immagine tratta dalla survey DSS2. Betelgeuse è la luminosa stella arancione in alto a sinistra." 
 caption="La costellazione di Orione in un’immagine tratta dalla survey DSS2. Betelgeuse è la luminosa stella arancione in alto a sinistra."
