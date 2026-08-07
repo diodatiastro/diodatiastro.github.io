@@ -16,7 +16,7 @@ Il fotone è il mediatore della forza elettromagnetica e il veicolo con cui luce
 Il concetto fu introdotto da Max Planck nel 1900 per spiegare lo spettro del [corpo nero]({{< relref "/dizionario/corpo-nero/" >}}), e sviluppato da Albert Einstein nel 1905 per spiegare l'effetto fotoelettrico, lavoro che gli valse il Premio Nobel nel 1921.
 
 ## Massa, energia e momento
-I fotoni possiedono alcune caratteristiche peculiari: hanno massa a riposo pari a zero, non hanno carica elettrica e sono incredibilmente stabili (non decadono spontaneamente in altre particelle). Nel vuoto ogni fotone si muove alla velocità della luce $c$ ($299.792\,\mathrm{km/s}$). Pur non avendo massa, i fotoni trasportano [energia]({{< relref "/dizionario/energia/" >}}) e quantità di moto, che dipendono direttamente dalla frequenza dell'onda elettromagnetica a cui sono associati.
+I fotoni possiedono alcune caratteristiche peculiari: hanno massa a riposo pari a zero, non hanno carica elettrica e sono incredibilmente stabili (non decadono spontaneamente in altre particelle). Nel vuoto ogni fotone si muove alla velocità della luce $c$ ($299\,792\,\mathrm{km/s}$). Pur non avendo massa, i fotoni trasportano [energia]({{< relref "/dizionario/energia/" >}}) e quantità di moto, che dipendono direttamente dalla frequenza dell'onda elettromagnetica a cui sono associati.
 
 L'energia ($E$) di un singolo fotone è regolata dalla celebre **equazione di Planck**:
 $$

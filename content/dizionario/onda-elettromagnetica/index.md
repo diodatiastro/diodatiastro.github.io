@@ -25,7 +25,7 @@ A differenza delle onde meccaniche (suono, onde sismiche), l'onda elettromagneti
 
 Tutte le onde elettromagnetiche, dalle onde radio ai raggi gamma, viaggiano nello spazio vuoto alla stessa velocità, la velocità della luce $c$. Dal 1983 $c$ non è più una grandezza misurata sperimentalmente, ma una costante _definita_ con valore esatto, legato indissolubilmente alla definizione di metro:
 
-$$c = 299.792{,}458\ \mathrm{km/s}$$
+$$c = 299\,792{,}458\ \mathrm{km/s}$$
 
 ## Formalismo matematico
 
@@ -56,7 +56,7 @@ $$B = \frac{E}{c}$$
 
 Per un'onda elettromagnetica nel vuoto con campo elettrico di ampiezza $E = 1000\ \mathrm{V/m}$ (ordine di grandezza tipico della luce solare diretta in prossimità della superficie terrestre), l'ampiezza del campo magnetico associato è
 
-$$B = \frac{E}{c} = \frac{1000\ \mathrm{V/m}}{299.792.458\ \mathrm{m/s}} \approx 3{,}34\times10^{-6}\ \mathrm{T}$$
+$$B = \frac{E}{c} = \frac{1000\ \mathrm{V/m}}{299\,792\,458\ \mathrm{m/s}} \approx 3{,}34\times10^{-6}\ \mathrm{T}$$
 
 un valore paragonabile, per ordine di grandezza, al campo magnetico terrestre in superficie.
 
@@ -64,7 +64,7 @@ un valore paragonabile, per ordine di grandezza, al campo magnetico terrestre in
 
 Dalla relazione $c = \lambda\nu$, un'onda radio FM a $\nu = 100\ \mathrm{MHz}$ ha lunghezza d'onda
 
-$$\lambda = \frac{c}{\nu} = \frac{299.792.458\ \mathrm{m/s}}{100\times10^{6}\ \mathrm{Hz}} \approx 3\ \mathrm{m}$$
+$$\lambda = \frac{c}{\nu} = \frac{299\,792\,458\ \mathrm{m/s}}{100\times10^{6}\ \mathrm{Hz}} \approx 3\ \mathrm{m}$$
 
 [^permeabilita]: Grandezza fisica che esprime la capacità di un mezzo (nel vuoto, la costante $\mu_0$) di sostenere la formazione di un campo magnetico al proprio interno; compare, ad esempio, nella legge di Biot-Savart e nella legge di Ampère, dove lega l'intensità di una corrente elettrica al campo magnetico da essa generato.
 

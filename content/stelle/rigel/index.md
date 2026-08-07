@@ -21,9 +21,9 @@ caption="La costellazione di Orione. Sulla sinistra è visibile Betelgeuse; al c
 
 ## Distanza
 
-La distanza di Rigel non è nota con precisione, un problema comune a molte altre stelle brillanti e lontane. Nei decenni scorsi due satelliti, Hipparcos e poi Gaia, hanno calcolato la distanza di migliaia, e poi milioni, addirittura miliardi di stelle, usando il metodo della **parallasse**, che consiste nel misurare il minuscolo spostamento angolare di una stella nel cielo a distanza di sei mesi (cioè quando la Terra si trova in due punti opposti della sua orbita intorno al Sole). Ma questo metodo non funziona bene con Rigel, perché è troppo luminosa, tanto da saturare i sensori dei telescopi. Ciò rende molto difficile misurare il suo spostamento angolare periodico, compreso all'incirca tra tre e quattro millesimi di secondo d'arco. Per capire quanto sia piccolo tale angolo, occorre pensare che ci vogliono ben $3.600.000$ millesimi di secondo d'arco per fare un solo grado, cioè la $360$esima parte di una circonferenza.
+La distanza di Rigel non è nota con precisione, un problema comune a molte altre stelle brillanti e lontane. Nei decenni scorsi due satelliti, Hipparcos e poi Gaia, hanno calcolato la distanza di migliaia, e poi milioni, addirittura miliardi di stelle, usando il metodo della **parallasse**, che consiste nel misurare il minuscolo spostamento angolare di una stella nel cielo a distanza di sei mesi (cioè quando la Terra si trova in due punti opposti della sua orbita intorno al Sole). Ma questo metodo non funziona bene con Rigel, perché è troppo luminosa, tanto da saturare i sensori dei telescopi. Ciò rende molto difficile misurare il suo spostamento angolare periodico, compreso all'incirca tra tre e quattro millesimi di secondo d'arco. Per capire quanto sia piccolo tale angolo, occorre pensare che ci vogliono ben $3\,600\,000$ millesimi di secondo d'arco per fare un solo grado, cioè la $360$esima parte di una circonferenza.
 
-La stima della distanza di Rigel fornita da Hipparcos fu di circa $860$ anni luce. Gaia la rivide al rialzo, portandola a qualcosa in più di $1.000$ anni luce. Questi dati concordano approssimativamente con altri metodi di misurazione indiretta. Uno di questi consiste nella misurazione della distanza di alcune stelle, molto meno luminose di Rigel, contenute nella Nebulosa Testa di Strega (IC 2118), una nebulosa a riflessione illuminata proprio da Rigel, che si trova, dal nostro punto di osservazione, a circa quaranta anni luce dalla supergigante. La distanza dalla Terra di IC 2118 è stata calcolata in circa $950$ anni luce, un valore in linea con la distanza di Rigel ricavata da Gaia.
+La stima della distanza di Rigel fornita da Hipparcos fu di circa $860$ anni luce. Gaia la rivide al rialzo, portandola a qualcosa in più di $1\,000$ anni luce. Questi dati concordano approssimativamente con altri metodi di misurazione indiretta. Uno di questi consiste nella misurazione della distanza di alcune stelle, molto meno luminose di Rigel, contenute nella Nebulosa Testa di Strega (IC 2118), una nebulosa a riflessione illuminata proprio da Rigel, che si trova, dal nostro punto di osservazione, a circa quaranta anni luce dalla supergigante. La distanza dalla Terra di IC 2118 è stata calcolata in circa $950$ anni luce, un valore in linea con la distanza di Rigel ricavata da Gaia.
 
 {{< figura 
 src="immagini/rigel-and-ic-2118.jpg" 
@@ -31,11 +31,11 @@ alt="Rigel, luminosissima, in basso a sinistra, e la nebulosa Testa di Strega (I
 caption="Rigel, luminosissima, in basso a sinistra, e la nebulosa Testa di Strega (IC 2118) sulla destra. Immagine di [Giuseppe Donatiello](https://www.flickr.com/people/133259498@N05)."
 >}}
 
-In conclusione, possiamo affermare che Rigel dista grosso modo tra $850$ e $1.000$ anni luce dalla Terra. La differenza non è indifferente, perché con la distanza variano molti  parametri stellari, tra cui il raggio e la luminosità intrinseca.
+In conclusione, possiamo affermare che Rigel dista grosso modo tra $850$ e $1\,000$ anni luce dalla Terra. La differenza non è indifferente, perché con la distanza variano molti  parametri stellari, tra cui il raggio e la luminosità intrinseca.
 
 ## Luminosità
 
-Nel caso di Rigel, il valore più spesso citato per la luminosità bolometrica – cioè l'energia emessa in tutte le lunghezze d'onda – è $120.000$ volte la luminosità solare. Questo dato è basato sulla distanza calcolata da Hipparcos. Se invece usiamo la parallasse ricavata da Gaia osservando i microspostamenti di deboli stelle compagne di Rigel, la luminosità sale fino a $160-170.000$ volte quella del Sole. Entrambi i dati, tuttavia, non sono del tutto affidabili, per i motivi di saturazione dei sensori detti in precedenza. Usando come criterio dei modelli teorici basati sullo studio delle atmosfere stellari, si ottengono valori che vanno da $83.000$ fino addirittura a $363.000$ volte la luminosità del Sole.
+Nel caso di Rigel, il valore più spesso citato per la luminosità bolometrica – cioè l'energia emessa in tutte le lunghezze d'onda – è $120\,000$ volte la luminosità solare. Questo dato è basato sulla distanza calcolata da Hipparcos. Se invece usiamo la parallasse ricavata da Gaia osservando i microspostamenti di deboli stelle compagne di Rigel, la luminosità sale fino a $160-170\,000$ volte quella del Sole. Entrambi i dati, tuttavia, non sono del tutto affidabili, per i motivi di saturazione dei sensori detti in precedenza. Usando come criterio dei modelli teorici basati sullo studio delle atmosfere stellari, si ottengono valori che vanno da $83\,000$ fino addirittura a $363\,000$ volte la luminosità del Sole.
 
 {{< figura 
 src="immagini/rigel-dss2.png" 
@@ -45,11 +45,11 @@ caption="La luminosità abbagliante di Rigel in un'immagine tratta dalla survey 
 
 ## Tipo spettrale e temperatura
 
-Rigel è classificata come una supergigante blu di tipo spettrale **B8 Ia**, tipo del quale è considerata uno standard di riferimento. Dallo spettro e dal colore si ricava una temperatura efficace di $12.100 \pm 150$ gradi kelvin, circa il doppio della temperatura solare. Ma in passato la stella è stata molto più calda di così. Prima di diventare una supergigante, cioè quando era ancora una stella di sequenza principale, i modelli stellari suggeriscono che la sua temperatura efficace fosse intorno a $30.000\,\text{K}$, oltre sei volte la temperatura della fotosfera solare.
+Rigel è classificata come una supergigante blu di tipo spettrale **B8 Ia**, tipo del quale è considerata uno standard di riferimento. Dallo spettro e dal colore si ricava una temperatura efficace di $12\,100 \pm 150$ gradi kelvin, circa il doppio della temperatura solare. Ma in passato la stella è stata molto più calda di così. Prima di diventare una supergigante, cioè quando era ancora una stella di sequenza principale, i modelli stellari suggeriscono che la sua temperatura efficace fosse intorno a $30\,000\,\text{K}$, oltre sei volte la temperatura della fotosfera solare.
 
 ## Raggio
 
-Il raggio di Rigel è tra $70$ e $80$ volte quello del Sole (che è di circa $696.000\,\text{km}$). In uno studio del 2018, la grandezza angolare del disco di Rigel fu misurata con una tecnica chiamata interferometria, che consente di combinare il potere risolutivo di più telescopi, così da poter "vedere" direttamente il disco della stella. Il dato ottenuto attraverso questa misurazione fu correlato alla distanza di $265$ parsec, cioè $864$ anni luce, fornita da Hipparcos. Da ciò, i ricercatori ottennero un raggio di $74{,}1$ raggi solari con un margine di errore di circa il $10\%$. Tale dato corrisponde a un raggio medio di $51{,}6$ milioni di $\text{km}$, cioè più di un terzo della distanza tra la Terra e il Sole e poco meno dell'orbita di Mercurio. Impressionante!
+Il raggio di Rigel è tra $70$ e $80$ volte quello del Sole (che è di circa $696\,000\,\text{km}$). In uno studio del 2018, la grandezza angolare del disco di Rigel fu misurata con una tecnica chiamata interferometria, che consente di combinare il potere risolutivo di più telescopi, così da poter "vedere" direttamente il disco della stella. Il dato ottenuto attraverso questa misurazione fu correlato alla distanza di $265$ parsec, cioè $864$ anni luce, fornita da Hipparcos. Da ciò, i ricercatori ottennero un raggio di $74{,}1$ raggi solari con un margine di errore di circa il $10\%$. Tale dato corrisponde a un raggio medio di $51{,}6$ milioni di $\text{km}$, cioè più di un terzo della distanza tra la Terra e il Sole e poco meno dell'orbita di Mercurio. Impressionante!
 
 ## Massa
 
@@ -57,7 +57,7 @@ La massa di Rigel è un altro elemento piuttosto incerto. I modelli di evoluzion
 
 $$1{,}988 \times 10^{30}\ \text{kg}$$
 
-cioè quasi duemila miliardi di miliardi di miliardi di $\text{kg}$. Detto diversamente, possiamo dire che occorrono quasi $333.000$ Terre per fare una sola massa solare. In confronto, Rigel è così massiccia da contenere materia equivalente a sette o otto milioni di pianeti come la Terra!
+cioè quasi duemila miliardi di miliardi di miliardi di $\text{kg}$. Detto diversamente, possiamo dire che occorrono quasi $333\,000$ Terre per fare una sola massa solare. In confronto, Rigel è così massiccia da contenere materia equivalente a sette o otto milioni di pianeti come la Terra!
 
 ## Vento stellare e massa iniziale
 
@@ -113,11 +113,11 @@ Rigel non è sola. Quella che inizialmente sembrava una stella solitaria si è r
 
 Il merito della scoperta visiva di una compagna, chiamata **Rigel B**, va al celebre astronomo britannico di origine tedesca William Herschel, che la individuò il 1° ottobre 1781, lo stesso anno in cui scoprì anche il pianeta Urano. Riuscire a scorgere Rigel B fu una vera impresa per l'epoca: sebbene la compagna sia a sua volta una stella piuttosto luminosa, si trova talmente vicina a Rigel A, da finire letteralmente annegata nel suo abbagliante splendore.
 
-Nel 1822 l'astronomo russo-tedesco Friedrich Georg Wilhelm von Struve compì la prima misurazione micrometrica precisa e sistematica della separazione angolare della compagna rispetto alla stella principale, trovando un valore di $9{,}5$ secondi d'arco. Se prendiamo per buona la distanza di circa $1.000$ anni luce dalla Terra ricavata dai dati di Gaia, la separazione angolare misurata da von Struve corrisponde a poco meno di $3.000$ unità astronomiche $(\text{au})$, cioè circa $100$ volte la distanza di Nettuno dal Sole.
+Nel 1822 l'astronomo russo-tedesco Friedrich Georg Wilhelm von Struve compì la prima misurazione micrometrica precisa e sistematica della separazione angolare della compagna rispetto alla stella principale, trovando un valore di $9{,}5$ secondi d'arco. Se prendiamo per buona la distanza di circa $1\,000$ anni luce dalla Terra ricavata dai dati di Gaia, la separazione angolare misurata da von Struve corrisponde a poco meno di $3\,000$ unità astronomiche $(\text{au})$, cioè circa $100$ volte la distanza di Nettuno dal Sole.
 
-Nel 1871 l'astronomo statunitense Sherburne Wesley Burnham (uno dei più grandi cacciatori di stelle doppie della storia), osservando Rigel B con un telescopio rifrattore da $15\,\text{cm}$, si accorse che la compagna era a sua volta "allungata". Fu il primo indizio che anche Rigel B non era una stella singola, ma aveva una compagna vicinissima. Questa fu effettivamente risolta da Burnham come stella separata nel 1878 e battezzata **Rigel C**. Oggi sappiamo che la separazione angolare tra Rigel B e Rigel C è minuscola. Nel 2009 fu misurata con una tecnica chiamata interferometria a macchie (*speckle interpherometry* in inglese) e si trovò un valore di $0{,}124$ secondi d'arco. Proiettata sulla distanza di $1.000$ anni luce, questa separazione angolare corrisponde a circa $38\,\text{au}$, più o meno la distanza di Plutone dal Sole.
+Nel 1871 l'astronomo statunitense Sherburne Wesley Burnham (uno dei più grandi cacciatori di stelle doppie della storia), osservando Rigel B con un telescopio rifrattore da $15\,\text{cm}$, si accorse che la compagna era a sua volta "allungata". Fu il primo indizio che anche Rigel B non era una stella singola, ma aveva una compagna vicinissima. Questa fu effettivamente risolta da Burnham come stella separata nel 1878 e battezzata **Rigel C**. Oggi sappiamo che la separazione angolare tra Rigel B e Rigel C è minuscola. Nel 2009 fu misurata con una tecnica chiamata interferometria a macchie (*speckle interpherometry* in inglese) e si trovò un valore di $0{,}124$ secondi d'arco. Proiettata sulla distanza di $1\,000$ anni luce, questa separazione angolare corrisponde a circa $38\,\text{au}$, più o meno la distanza di Plutone dal Sole.
 
-Successivi studi spettroscopici hanno dimostrato, infine, che Rigel B è in realtà una **binaria spettroscopica**. È formata, cioè, da due stelle molto simili tra loro (chiamate poi **Rigel Ba** e **Rigel Bb**), che orbitano intorno al comune centro di massa in appena $9{,}86$ giorni. Nessun telescopio, per quanto potente, è in grado di separare visivamente le due stelle. Dall'analisi spettroscopica è stata desunta una separazione angolare di appena $0{,}58$ millesimi di secondo d'arco. Alla distanza di circa $1.000$ anni luce dalla Terra, ciò vuol dire che Rigel Ba e Rigel Bb orbitano a non più di $25$ milioni di $\text{km}$ l'una dall'altra, la metà circa della distanza di Mercurio dal Sole.
+Successivi studi spettroscopici hanno dimostrato, infine, che Rigel B è in realtà una **binaria spettroscopica**. È formata, cioè, da due stelle molto simili tra loro (chiamate poi **Rigel Ba** e **Rigel Bb**), che orbitano intorno al comune centro di massa in appena $9{,}86$ giorni. Nessun telescopio, per quanto potente, è in grado di separare visivamente le due stelle. Dall'analisi spettroscopica è stata desunta una separazione angolare di appena $0{,}58$ millesimi di secondo d'arco. Alla distanza di circa $1\,000$ anni luce dalla Terra, ciò vuol dire che Rigel Ba e Rigel Bb orbitano a non più di $25$ milioni di $\text{km}$ l'una dall'altra, la metà circa della distanza di Mercurio dal Sole.
 
 {{< figura 
 src="immagini/rigel-a-b.png" 
@@ -129,7 +129,7 @@ caption="Rigel A, sulla destra, e le sue tre compagne racchiuse in un unico punt
 
 Rigel Ba, Rigel Bb e Rigel C sono classificate tutte e tre come stelle di sequenza principale appartenenti alla classe spettrale **B9V**. Le caratteristiche tipiche di questa classe sono:
 
-- **temperatura** di circa $10.300\,\text{K}$;
+- **temperatura** di circa $10\,300\,\text{K}$;
 - **colore** bianco-azzurro;
 - **raggio** compreso tra $2$ e $2{,}4$ volte il raggio solare.
 
@@ -137,9 +137,9 @@ Le osservazioni del sistema contenute in [un catalogo](https://cdsarc.cds.unistr
 
 Nello stesso catalogo, la massa di Rigel Ba e Rigel C è stimata in $3{,}84$ masse solari, mentre quella di Rigel Bb in $2{,}94$ masse solari[^1].
 
-Le due binarie spettroscopiche hanno, dunque, una massa combinata di poco meno di $7$ masse solari, ragion per cui il baricentro del sistema che esse formano con Rigel C è molto più vicino alla coppia binaria. Si stima che l'orbita di Rigel C intorno al centro di massa comune sia di $63$ anni. Tutte e tre queste stelle, poi, orbitano intorno alla supergigante Rigel A, lontana tra $2.200$ e $3.000\,\text{au}$, a seconda della distanza dalla Terra presa come riferimento. Il periodo stimato di una loro orbita intorno a Rigel A sarebbe di circa $24.000$ anni.
+Le due binarie spettroscopiche hanno, dunque, una massa combinata di poco meno di $7$ masse solari, ragion per cui il baricentro del sistema che esse formano con Rigel C è molto più vicino alla coppia binaria. Si stima che l'orbita di Rigel C intorno al centro di massa comune sia di $63$ anni. Tutte e tre queste stelle, poi, orbitano intorno alla supergigante Rigel A, lontana tra $2\,200$ e $3\,000\,\text{au}$, a seconda della distanza dalla Terra presa come riferimento. Il periodo stimato di una loro orbita intorno a Rigel A sarebbe di circa $24\,000$ anni.
 
-Va riportato per completezza che, nel 1878, Burnham scoprì una quinta stella appartenente probabilmente al sistema di Rigel. Secondo i dati forniti dal satellite Gaia, **Rigel D**, come è stata chiamata questa quinta stella, si troverebbe a una distanza compatibile con quella della supergigante. Si tratta probabilmente di una **nana arancione**, cioè una stella di sequenza principale di classe spettrale K, con magnitudine visuale pari a circa $12$. Data la separazione angolare da Rigel A di $44{,}5$ secondi d'arco misurata nel 2017, la distanza di Rigel D dalla supergigante blu potrebbe essere compresa tra $11.500$ e $13.500\,\text{au}$, cioè più o meno $0,2$ anni luce. Se è davvero legata gravitazionalmente al sistema, un'orbita completa della nana arancione intorno a Rigel A potrebbe durare qualcosa come $250.000$ anni.
+Va riportato per completezza che, nel 1878, Burnham scoprì una quinta stella appartenente probabilmente al sistema di Rigel. Secondo i dati forniti dal satellite Gaia, **Rigel D**, come è stata chiamata questa quinta stella, si troverebbe a una distanza compatibile con quella della supergigante. Si tratta probabilmente di una **nana arancione**, cioè una stella di sequenza principale di classe spettrale K, con magnitudine visuale pari a circa $12$. Data la separazione angolare da Rigel A di $44{,}5$ secondi d'arco misurata nel 2017, la distanza di Rigel D dalla supergigante blu potrebbe essere compresa tra $11\,500$ e $13\,500\,\text{au}$, cioè più o meno $0,2$ anni luce. Se è davvero legata gravitazionalmente al sistema, un'orbita completa della nana arancione intorno a Rigel A potrebbe durare qualcosa come $250\,000$ anni.
 
 ## Inospitalità del sistema stellare
 
@@ -150,7 +150,7 @@ Le condizioni intorno alle tre stelle di classe B9V sarebbero di gran lunga migl
 {{< figura 
 src="immagini/ipotetico-paesaggio-pianeta-rigel-c.png" 
 alt="Rappresentazione immaginaria di un ipotetico pianeta roccioso in orbita intorno a Rigel C." 
-caption="Rappresentazione immaginaria di un ipotetico pianeta roccioso in orbita intorno a Rigel C. L'immagine mostra il cielo notturno del pianeta, in cui la stella orbitata dal pianeta, Rigel C, non è visibile. La luminosità combinata della vicina coppia binaria Rigel Ba/Rigel Bb (visibile in alto a sinistra) renderebbe la notte su quel pianeta simile al giorno. Sulla destra si vede anche la supergigante Rigel A, brillantissima nonostante sia distante oltre $2.000\,\text{au}$"
+caption="Rappresentazione immaginaria di un ipotetico pianeta roccioso in orbita intorno a Rigel C. L'immagine mostra il cielo notturno del pianeta, in cui la stella orbitata dal pianeta, Rigel C, non è visibile. La luminosità combinata della vicina coppia binaria Rigel Ba/Rigel Bb (visibile in alto a sinistra) renderebbe la notte su quel pianeta simile al giorno. Sulla destra si vede anche la supergigante Rigel A, brillantissima nonostante sia distante oltre $2\,000\,\text{au}$"
 >}}
 
 Le condizioni di abitabilità migliori si avrebbero su Rigel D, la nana arancione, se fa parte realmente del sistema. Una stella di classe K ha infatti una sequenza principale più lunga di quella del Sole ed è abbastanza tranquilla da rendere possibile la vita su pianeti dotati delle giuste condizioni.
@@ -159,7 +159,7 @@ Ma tutto il sistema di Rigel, compresa la nana arancione, è sotto una minaccia 
 
 Quando si scatenerà questo cataclisma, le stelle e gli eventuali pianeti del sistema saranno investiti innanzitutto da un micidiale e potentissimo flusso di [radiazioni ionizzanti]({{< relref "/dizionario/fotoionizzazione/" >}}) (raggi ultravioletti, raggi X e raggi gamma). L'atmosfera di un pianeta come la Terra verrebbe letteralmente spazzata via in pochi secondi. Gli oceani bollirebbero all'istante e la crosta rocciosa rivolta verso la stella si fonderebbe, trasformando la superficie del pianeta in un oceano globale di magma liquido. Difficile immaginare che qualche organismo vivente possa sopravvivere a una simile apocalisse.
 
-Ma il peggio arriverebbe in seguito, quando la materia fisica espulsa dalla stella (i resti di idrogeno, elio e gli elementi pesanti come ferro e silicio sintetizzati nell'esplosione) raggiungerà le altre stelle del sistema. Questo guscio in espansione si muoverà a una velocità compresa tra i $10.000$ e i $20.000\,\text{km/s}$ e impiegherebbe dai $3$ ai $6$ anni per investire un pianeta di tipo terrestre in orbita intorno a Rigel D.
+Ma il peggio arriverebbe in seguito, quando la materia fisica espulsa dalla stella (i resti di idrogeno, elio e gli elementi pesanti come ferro e silicio sintetizzati nell'esplosione) raggiungerà le altre stelle del sistema. Questo guscio in espansione si muoverà a una velocità compresa tra i $10\,000$ e i $20\,000\,\text{km/s}$ e impiegherebbe dai $3$ ai $6$ anni per investire un pianeta di tipo terrestre in orbita intorno a Rigel D.
 
 Il pianeta, già devastato dal bombardamento di radiazioni arrivato alla velocità della luce, verrebbe ora flagellato da un **vento supersonico** di gas densissimo e plasma ad altissima energia. Questo fronte d'urto eroderebbe meccanicamente gli strati esterni del pianeta. I gas vaporizzati e parte del mantello fuso verrebbero letteralmente strappati via e trascinati nel flusso del resto di supernova in espansione. Il pianeta perderebbe una percentuale significativa della sua massa esterna per abrasione termica e dinamica.
 
@@ -175,13 +175,13 @@ $$
 1361\;\text{W/m}^2.
 $$
 
-Se Rigel sostituisse improvvisamente il Sole, la Terra sarebbe investita da un'energia radiante circa $170.000$ volte maggiore. L'irradiazione alla sommità dell'atmosfera diventerebbe di colpo nell'ordine dei:
+Se Rigel sostituisse improvvisamente il Sole, la Terra sarebbe investita da un'energia radiante circa $170\,000$ volte maggiore. L'irradiazione alla sommità dell'atmosfera diventerebbe di colpo nell'ordine dei:
 
 $$
-230.000.000\;\text{W/m}^2,
+230\,000\,000\;\text{W/m}^2,
 $$
 
-cioè $230$ Megawatt per metro quadro. Se consideriamo che una grande centrale nucleare di ultima generazione produce circa $1.000$ Megawatt di potenza elettrica, sotto il cielo di Rigel l'energia che colpirebbe appena $4$ metri quadrati di superficie terrestre (le dimensioni di un piccolo tavolo da giardino) sarebbe pari all'intera produzione energetica di quella centrale nucleare, concentrata e continua.
+cioè $230$ Megawatt per metro quadro. Se consideriamo che una grande centrale nucleare di ultima generazione produce circa $1\,000$ Megawatt di potenza elettrica, sotto il cielo di Rigel l'energia che colpirebbe appena $4$ metri quadrati di superficie terrestre (le dimensioni di un piccolo tavolo da giardino) sarebbe pari all'intera produzione energetica di quella centrale nucleare, concentrata e continua.
 
 L'effetto sulla Terra sarebbe ovviamente catastrofico. *In meno di un secondo*, l'intera atmosfera terrestre verrebbe ionizzata e trasformata in plasma incandescente, per poi essere letteralmente soffiata via nello spazio. *In pochi minuti*, tutti gli oceani del pianeta evaporerebbero simultaneamente in un boato planetario di super-vapore. *Nel giro di qualche ora*, l'intera crosta rocciosa della Terra inizierebbe a liquefarsi, trasformando la superficie del nostro bel pianeta azzurro in un oceano di lava fusa, che brilla di luce propria a causa dell'immenso calore assorbito.
 
@@ -207,7 +207,7 @@ caption="A $412\,\text{au}$ di distanza, Rigel è un punto minuscolo, bianco-azz
 
 Per inciso, l’anno di una Terra distante $412\,\text{au}$ da Rigel, assumendo una stazza di $24$ masse solari per la stella, durerebbe ben $1707$ degli attuali anni terrestri. Ciò è dovuto al fatto che, anche se Rigel è molto più massiccia del Sole, la **velocità orbitale** della Terra, a quella distanza, sarebbe molto minore della velocità attuale: $7{,}2\,\text{km/s}$ invece di $29{,}8\,\text{km/s}$. Avremmo pertanto delle stagioni plurisecolari, ognuna delle quali durerebbe più di $426$ dei nostri anni di $365$ giorni. Tutti i cicli biologici che conosciamo subirebbero alterazioni enormi e largamente imprevedibili.
 
-In ogni caso, sarebbe difficilissimo per la vita adattarsi alla radiazione di Rigel. La Terra, infatti, sarebbe investita da un **diluvio di raggi ultravioletti.** Con la sua temperatura di $12.100\,\text{K}$ a fronte dei $5.800\,\text{K}$ del Sole, Rigel emette la stragrande maggioranza della sua energia non sotto forma di luce visibile, come il Sole, ma sotto forma di **radiazione UV**. Di conseguenza, anche se il termometro sul pianeta segnasse temperature miti e “terrestri”, l’indice UV sarebbe talmente alto e distruttivo da richiedere uno strato enorme di ozono o un’atmosfera spessa svariate volte quella della Terra attuale per impedire la sterilizzazione completa della superficie.
+In ogni caso, sarebbe difficilissimo per la vita adattarsi alla radiazione di Rigel. La Terra, infatti, sarebbe investita da un **diluvio di raggi ultravioletti.** Con la sua temperatura di $12\,100\,\text{K}$ a fronte dei $5\,800\,\text{K}$ del Sole, Rigel emette la stragrande maggioranza della sua energia non sotto forma di luce visibile, come il Sole, ma sotto forma di **radiazione UV**. Di conseguenza, anche se il termometro sul pianeta segnasse temperature miti e “terrestri”, l’indice UV sarebbe talmente alto e distruttivo da richiedere uno strato enorme di ozono o un’atmosfera spessa svariate volte quella della Terra attuale per impedire la sterilizzazione completa della superficie.
 
 Insomma, non occorre aspettare che Rigel esploda come supernova per concludere che questa stella, per quanto sia splendida e affascinante, è in tutto e per tutto ostile alla vita, almeno nelle forme in cui noi la conosciamo.
 

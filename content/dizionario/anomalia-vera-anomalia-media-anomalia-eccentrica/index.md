@@ -218,7 +218,7 @@ Ciò fatto, bisogna correggere **l’obliquità,** cioè tener conto dell’incl
 
 Ma ancora non abbiamo finito. Mancano le correzioni dovute al fatto che la Terra è una piattaforma di osservazione tutt’altro che stabile. C’è ancora da tener conto dei seguenti fattori:
 
-*   **precessione e nutazione:** l’asse terrestre oscilla come una trottola a causa dell’attrazione di Luna e Sole. La precessione, un ciclo di circa $26.000$ anni, e la nutazione, una serie di oscillazioni della precessione, spostano continuamente la griglia dell’Ascensione Retta e della Declinazione. Le coordinate vanno aggiornate all’*Epoca* *del momento esatto dell’osservazione* (le coordinate cosiddette *of-date*).
+*   **precessione e nutazione:** l’asse terrestre oscilla come una trottola a causa dell’attrazione di Luna e Sole. La precessione, un ciclo di circa $26\,000$ anni, e la nutazione, una serie di oscillazioni della precessione, spostano continuamente la griglia dell’Ascensione Retta e della Declinazione. Le coordinate vanno aggiornate all’*Epoca* *del momento esatto dell’osservazione* (le coordinate cosiddette *of-date*).
     
 *   **L’aberrazione e il tempo di volo della luce:** Plutone è talmente lontano che la sua luce impiega più di $4$ ore a raggiungerci. In qualsiasi momento dato, vediamo Plutone non dov’è ora, ma dove si trovava $4$ ore fa (è il tempo di volo della luce). Inoltre, poiché la Terra si muove a $30\; \text{km/s}$ intorno al Sole, la luce di Plutone subisce un piccolissimo spostamento d’angolo apparente dovuto al moto del telescopio, che si muove in modo solidale con la superficie terrestre. Questa distorsione è detta aberrazione.
     

@@ -30,7 +30,7 @@ $$
 L_\odot \approx 3,828 \times 10^{26} \text{ W} = 3,828 \times 10^{33} \text{ erg/s}
 $$
 
-Si tratta di una quantità di energia enorme. Scritta per esteso, una luminosità solare equivale a $382.800.000.000.000.000.000.000.000\,\mathrm{W}$, cioè $382,8$ milioni di miliardi di miliardi di watt. Quasi incomprensibile per la mente umana, questo numero ci permette tuttavia di intuire quanto sia immensa l'energia irradiata da una stella come il Sole ogni secondo.
+Si tratta di una quantità di energia enorme. Scritta per esteso, una luminosità solare equivale a $382\,800\,000\,000\,000\,000\,000\,000\,000\,\mathrm{W}$, cioè $382,8$ milioni di miliardi di miliardi di watt. Quasi incomprensibile per la mente umana, questo numero ci permette tuttavia di intuire quanto sia immensa l'energia irradiata da una stella come il Sole ogni secondo.
 
 ## Relazione tra luminosità e massa stellare
 
@@ -65,7 +65,7 @@ $$
 
 ## Un esempio pratico: calcoliamo la luminosità di Sirio
 
-Facciamo un esempio concreto, applicando questa formula a Sirio, di cui conosciamo esattamente il raggio ($1{,}711$ raggi solari) e la temperatura ($9.900\,\mathrm{K}$). Calcoliamo prima il quadrato del rapporto tra i raggi:
+Facciamo un esempio concreto, applicando questa formula a Sirio, di cui conosciamo esattamente il raggio ($1{,}711$ raggi solari) e la temperatura ($9\,900\,\mathrm{K}$). Calcoliamo prima il quadrato del rapporto tra i raggi:
 
 $$
 \left(\frac{R}{R_\odot}\right)^2 = (1{,}711)^2 = 2{,}928
@@ -103,7 +103,7 @@ $$
 
 Possiamo applicare la legge del quadrato della distanza a Sirio, per cercare una conferma osservativa del valore calcolato con la legge di Stefan-Boltzmann.
 
-Sirio ha una magnitudine apparente visuale di $-1{,}46$. In base al tipo spettrale (A1V) e alla temperatura $(T_{eff} \approx 9.900\,\mathrm{K})$, la correzione bolometrica $BC$ da applicare è approssimativamente $−0,30$. Sommando i due valori, si ottiene una magnitudine bolometrica apparente di $-1,76$. Da questo dato, attraverso calcoli che esulano dallo scopo di questo articolo, si ottiene il flusso di radiazione ricevuto da Sirio sulla Terra, che è:
+Sirio ha una magnitudine apparente visuale di $-1{,}46$. In base al tipo spettrale (A1V) e alla temperatura $(T_{eff} \approx 9\,900\,\mathrm{K})$, la correzione bolometrica $BC$ da applicare è approssimativamente $−0,30$. Sommando i due valori, si ottiene una magnitudine bolometrica apparente di $-1,76$. Da questo dato, attraverso calcoli che esulano dallo scopo di questo articolo, si ottiene il flusso di radiazione ricevuto da Sirio sulla Terra, che è:
 
 $$\approx 1{,}27 \times 10^{-7} \, \text{W/m}^2.$$
 

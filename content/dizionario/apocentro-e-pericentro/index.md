@@ -40,19 +40,19 @@ Vediamo qualche esempio numerico, a partire dal sistema **Terra-Luna**, in cui p
 
 $$
 \begin{aligned}
-a &= 384.400\, \text{km,}\qquad e = 0{,}0549:\\
-r_{\text{perigeo}} &= 384.400\,\text{km} \times (1-0{,}0549) \approx 363.300\,\text{km} \\
-r_{\text{apogeo}} &= 384.400\,\text{km} \times (1+0{,}0549) \approx 405.500\,\text{km}
+a &= 384\,400\, \text{km,}\qquad e = 0{,}0549:\\
+r_{\text{perigeo}} &= 384\,400\,\text{km} \times (1-0{,}0549) \approx 363\,300\,\text{km} \\
+r_{\text{apogeo}} &= 384\,400\,\text{km} \times (1+0{,}0549) \approx 405\,500\,\text{km}
 \end{aligned}
 $$
 
-Il calcolo mostra che c'è una differenza di circa $42.000\;\text{km}$ tra la minima e la massima distanza della Luna dalla Terra, cioè tra perigeo e apogeo. 
+Il calcolo mostra che c'è una differenza di circa $42\,000\;\text{km}$ tra la minima e la massima distanza della Luna dalla Terra, cioè tra perigeo e apogeo. 
 
 Nel sistema **Terra-Sole** abbiamo invece (senza eseguire esplicitamente i calcoli):
 
 $$
 \begin{aligned}
-a &= 1\, \text{au} = 149.597.870\, \text{km,} \\
+a &= 1\, \text{au} = 149\,597\,870\, \text{km,} \\
 e &= 0{,}0167: \\
 r_{\text{perielio}} &\approx 147{,}1 \times 10^{6}\,\text{km} \\
 r_{\text{afelio}} &\approx 152{,}1 \times 10^{6}\,\text{km} 

@@ -48,7 +48,7 @@ Il plasma ha alcune proprietà fondamentali:
 
 | Oggetto                 | Temperatura del plasma  | Caratteristiche                                    |
 | ----------------------- | ----------------------- | -------------------------------------------------- |
-| Fotosfera solare        | $\sim5.800\,\text{K}$   | Parzialmente ionizzato                             |
+| Fotosfera solare        | $\sim5\,800\,\text{K}$   | Parzialmente ionizzato                             |
 | Corona solare           | $10^6 - 10^7\,\text{K}$ | Completamente ionizzato                            |
 | Regioni H II            | $10^4\,\text{K}$       | Idrogeno ionizzato; metalli parzialmente ionizzati |
 | Interno stellare        | $10^7 - 10^8\,\text{K}$ | Completamente ionizzato                            |

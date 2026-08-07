@@ -18,9 +18,9 @@ $$
 \frac{L_1}{L_2} = 100^{\frac{M_2 - M_1}{5}} = 10^{\frac{2(M_2 - M_1)}{5}}
 $$
 
-in cui $M_1$ e $L_1$ si riferiscono a Betelgeuse e $M_2$ e $L_2$ al Sole, otteniamo che Betelgeuse è circa $18.000$ volte più luminosa del Sole. Ma questo dato è ingannevole e sottostimato.
+in cui $M_1$ e $L_1$ si riferiscono a Betelgeuse e $M_2$ e $L_2$ al Sole, otteniamo che Betelgeuse è circa $18\,000$ volte più luminosa del Sole. Ma questo dato è ingannevole e sottostimato.
 
-Betelgeuse, infatti, è una supergigante rossa con una temperatura stimata di $3.500-3.700 \,\mathrm{K}$, molto più fredda del Sole. Ciò vuol dire che la maggior parte della sua radiazione viene emessa nell'infrarosso, non nel visibile. Se applichiamo la necessaria [correzione bolometrica]({{< relref "/dizionario/correzione-bolometrica/" >}}), avremo per il Sole una magnitudine assoluta di $+4{,}74$ e per Betelgeuse, fatte salve le incertezze, di $-7{,}2$. Rifacendo i calcoli con questi nuovi valori, otteniamo che Betelgeuse ha una luminosità totale, considerate tutte le frequenze d'onda, *almeno* $60.000$ volte maggiore di quella del Sole.
+Betelgeuse, infatti, è una supergigante rossa con una temperatura stimata di $3\,500-3\,700 \,\mathrm{K}$, molto più fredda del Sole. Ciò vuol dire che la maggior parte della sua radiazione viene emessa nell'infrarosso, non nel visibile. Se applichiamo la necessaria [correzione bolometrica]({{< relref "/dizionario/correzione-bolometrica/" >}}), avremo per il Sole una magnitudine assoluta di $+4{,}74$ e per Betelgeuse, fatte salve le incertezze, di $-7{,}2$. Rifacendo i calcoli con questi nuovi valori, otteniamo che Betelgeuse ha una luminosità totale, considerate tutte le frequenze d'onda, *almeno* $60\,000$ volte maggiore di quella del Sole.
 
 ## Il punto zero della scala
 

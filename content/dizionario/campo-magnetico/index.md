@@ -55,7 +55,7 @@ caption="Un magnete con le linee di campo rese visibili da limatura di ferro."
 
 ## Unità di misura del campo magnetico
 
-Nel Sistema Internazionale (SI), l'**unità di misura** del campo magnetico è il **Tesla** ($\mathrm{T}$). Un'altra unità molto usata, soprattutto in astrofisica e geofisica, è il **Gauss** ($\mathrm{G}$). $1$ Tesla vale $10.000$ Gauss ($10^4\;\mathrm{G}$ ).
+Nel Sistema Internazionale (SI), l'**unità di misura** del campo magnetico è il **Tesla** ($\mathrm{T}$). Un'altra unità molto usata, soprattutto in astrofisica e geofisica, è il **Gauss** ($\mathrm{G}$). $1$ Tesla vale $10\,000$ Gauss ($10^4\;\mathrm{G}$ ).
 
 | Sorgente | Intensità del campo magnetico |
 |---|---|

@@ -57,7 +57,7 @@ alt="Due foto a confronto che mostrano l’evidente diminuzione della luminosit�
 caption="Due foto a confronto che mostrano l’evidente diminuzione della luminosità di Betelgeuse. Nella metà sinistra dell’immagine, la supergigante rossa fotografata a febbraio 2016; nella metà destra, Betelgeuse fotografata il 31 dicembre 2019. Come si può notare, la luminosità delle stelle di sfondo è rimasta uguale, mentre Betelgeuse appare visibilmente affievolita. Crediti: Brian Ottum / EarthSky"
 >}}
 
-Molti pensarono, anzi sperarono, che quella repentina perdita di luminosità fosse il preludio all’esplosione di supernova di Betelgeuse. Si tratta infatti di una stella massiccia e altamente evoluta, che sappiamo essere giunta alle fasi finali della sua esistenza. Un giorno esploderà come una **supernova di tipo II**, diventando per qualche tempo più luminosa della Luna; così luminosa da poter essere ammirata anche in pieno giorno. Tuttavia quel momento fatidico è presumibilmente ancora lontano. Le previsioni più attendibili indicano in circa $100.000$ anni il tempo che deve ancora trascorrere prima che Betelgeuse deflagri come supernova.
+Molti pensarono, anzi sperarono, che quella repentina perdita di luminosità fosse il preludio all’esplosione di supernova di Betelgeuse. Si tratta infatti di una stella massiccia e altamente evoluta, che sappiamo essere giunta alle fasi finali della sua esistenza. Un giorno esploderà come una **supernova di tipo II**, diventando per qualche tempo più luminosa della Luna; così luminosa da poter essere ammirata anche in pieno giorno. Tuttavia quel momento fatidico è presumibilmente ancora lontano. Le previsioni più attendibili indicano in circa $100\,000$ anni il tempo che deve ancora trascorrere prima che Betelgeuse deflagri come supernova.
 
 Comunque sia, a distanza di oltre cinque anni dal cosiddetto *Great Dimming* di Betelgeuse, il quadro che gli astronomi hanno ricostruito è diventato piuttosto solido, anche se restano alcuni dettagli aperti.
 
@@ -113,7 +113,7 @@ Questa carrellata di numeri non fa che rinforzare la curiosità iniziale: quanto
 
 ### La difficile scienza della distanza di Betelgeuse
 
-Nell’agosto del 1989, un razzo Ariane 4 portò in orbita il [satellite Hipparcos](http://www.esa.int/Our_Activities/Space_Science/Hipparcos_overview) dell’Agenzia Spaziale Europea (ESA). Nel corso di una missione durata quattro anni, Hipparcos compì la più accurata serie di osservazioni astrometriche mai realizzata fino a quel momento, misurando con alta precisione, al riparo dalle distorsioni prodotte dall’atmosfera terrestre, angolo di parallasse e moto proprio di quasi $120.000$ stelle. Nel 1997 furono finalmente pubblicati i risultati scientifici della missione. Si seppe allora che l’angolo di parallasse di Betelgeuse [^1] misurato dal satellite era pari a $7{,}63\,\text{mas}$ (millesimi di secondo d’arco). A un tale angolo corrisponde una distanza di $131$ parsec, cioè $427$ anni luce (il valore riportato da alcune delle fonti citate più sopra).
+Nell’agosto del 1989, un razzo Ariane 4 portò in orbita il [satellite Hipparcos](http://www.esa.int/Our_Activities/Space_Science/Hipparcos_overview) dell’Agenzia Spaziale Europea (ESA). Nel corso di una missione durata quattro anni, Hipparcos compì la più accurata serie di osservazioni astrometriche mai realizzata fino a quel momento, misurando con alta precisione, al riparo dalle distorsioni prodotte dall’atmosfera terrestre, angolo di parallasse e moto proprio di quasi $120\,000$ stelle. Nel 1997 furono finalmente pubblicati i risultati scientifici della missione. Si seppe allora che l’angolo di parallasse di Betelgeuse [^1] misurato dal satellite era pari a $7{,}63\,\text{mas}$ (millesimi di secondo d’arco). A un tale angolo corrisponde una distanza di $131$ parsec, cioè $427$ anni luce (il valore riportato da alcune delle fonti citate più sopra).
 
 Data per buona quella misura dell’angolo di parallasse, dobbiamo però considerare anche il **margine d’errore** riportato nel catalogo di Hipparcos, risultato pari a $\pm1{,}64\, \text{mas}$ [^2]. Facendo i calcoli, ne deduciamo che Betelgeuse potrebbe trovarsi a una qualsiasi distanza compresa tra $108$ parsec e $167$ parsec, cioè tra $352$ e $544$ anni luce: una differenza non proprio trascurabile.
 
@@ -206,12 +206,12 @@ Osservato con l’interferometro di Michelson e Pease, il disco di *Alfa Orioni
 
 Col senno di poi, possiamo dire che Michelson e Pease sottostimarono notevolmente la grandezza effettiva di Betelgeuse, perché la misura dell’angolo di parallasse da essi adottata, $18\,\text{mas}$, era nettamente maggiore rispetto al valore misurato dal satellite Hipparcos settanta anni dopo. Da quell’angolo si ricava una distanza di $55$ parsec, cioè appena $181$ anni luce. È una distanza quattro volte minore di [quella ritenuta oggi più attendibile](https://iopscience.iop.org/article/10.3847/1538-3881/aa6ff9), che è di $724$ anni luce, ed è stata ricavata usando tecnologie molto più avanzate di quelle disponibili ai tempi di Michelson e Pease. 
 
-Se ripetiamo il calcolo basandoci su questa nuova distanza, per un diametro angolare di $47$ secondi d’arco otteniamo un diametro lineare di $1{,}56$ miliardi di $\text{km}$. E se aggiungiamo un ulteriore $17\%$ per tenere conto dell’oscuramento al bordo, arriviamo a $1{,}83$ miliardi di $\text{km}$: un diametro veramente colossale, l’equivalente di oltre $1.300$ diametri solari!
+Se ripetiamo il calcolo basandoci su questa nuova distanza, per un diametro angolare di $47$ secondi d’arco otteniamo un diametro lineare di $1{,}56$ miliardi di $\text{km}$. E se aggiungiamo un ulteriore $17\%$ per tenere conto dell’oscuramento al bordo, arriviamo a $1{,}83$ miliardi di $\text{km}$: un diametro veramente colossale, l’equivalente di oltre $1\,300$ diametri solari!
 
 {{< figura 
 src="immagini/orbite.jpg" 
-alt="Betelgeuse osservata con l’Atacama Large Millimeter / submillimeter Array (ALMA). Nel continuum millimetrico, la stella è circa $1.400$ volte più grande del nostro Sole." 
-caption="Betelgeuse osservata con l’Atacama Large Millimeter / submillimeter Array (ALMA). Nel continuum millimetrico, la stella è circa $1.400$ volte più grande del nostro Sole. Crediti: ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella"
+alt="Betelgeuse osservata con l’Atacama Large Millimeter / submillimeter Array (ALMA). Nel continuum millimetrico, la stella è circa $1\,400$ volte più grande del nostro Sole." 
+caption="Betelgeuse osservata con l’Atacama Large Millimeter / submillimeter Array (ALMA). Nel continuum millimetrico, la stella è circa $1\,400$ volte più grande del nostro Sole. Crediti: ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella"
 >}}
 
 Se questo, dunque, era il diametro di Betelgeuse un secolo fa, è interessante confrontarlo con il diametro che si ricava dagli studi interferometrici più recenti. Per quanto, infatti, un secolo sia praticamente nulla nella vita di una stella, Betelgeuse è una stella particolare, sottoposta a cicli di pulsazione che fanno variare le sue dimensioni molto rapidamente.
@@ -269,7 +269,7 @@ Betelgeuse continua naturalmente a essere tenuta sotto stretta sorveglianza. Le 
 | $43{,}15 \pm 0{,}50\,\text{mas}$ | [Montargès et al., 2016](https://www.aanda.org/articles/aa/abs/2016/04/aa27028-15/aa27028-15.html) |
 
 
-Se si dà per buona la distanza di $724$ anni luce proposta da Harper e colleghi, il diametro angolare attuale di Betelgeuse corrisponde a un diametro lineare di $1{,}44$ miliardi di $\text{km}$, pari a $1.038$ volte il diametro solare. Se Betelgeuse si trovasse al posto del Sole, la sua fotosfera arriverebbe quasi a lambire Giove!
+Se si dà per buona la distanza di $724$ anni luce proposta da Harper e colleghi, il diametro angolare attuale di Betelgeuse corrisponde a un diametro lineare di $1{,}44$ miliardi di $\text{km}$, pari a $1\,038$ volte il diametro solare. Se Betelgeuse si trovasse al posto del Sole, la sua fotosfera arriverebbe quasi a lambire Giove!
 
 {{< figura 
 src="immagini/townes.jpg" 
@@ -313,7 +313,7 @@ La scelta di Betelgeuse per una simile, storica osservazione fu tutt’altro che
 src="immagini/hubble.jpg" 
 width="60%"
 alt="La prima immagine diretta del disco di una stella diversa dal Sole, Betelgeuse, fu acquisita con la Faint Object Camera del telescopio spaziale Hubble il 3 marzo 1995." 
-caption="La prima immagine diretta del disco di una stella diversa dal Sole, Betelgeuse, fu acquisita con la Faint Object Camera del telescopio spaziale Hubble il 3 marzo 1995. Il diametro angolare del disco di Betelgeuse visto dalla Terra è circa $20.000$ volte minore di quello della Luna. Crediti: Andrea Dupree (Harvard-Smithsonian CfA), Ronald Gilliland (STScI), NASA, ESA"
+caption="La prima immagine diretta del disco di una stella diversa dal Sole, Betelgeuse, fu acquisita con la Faint Object Camera del telescopio spaziale Hubble il 3 marzo 1995. Il diametro angolare del disco di Betelgeuse visto dalla Terra è circa $20\,000$ volte minore di quello della Luna. Crediti: Andrea Dupree (Harvard-Smithsonian CfA), Ronald Gilliland (STScI), NASA, ESA"
 >}}
 
 Grazie alla potenza di Hubble, fu possibile rilevare intorno a Betelgeuse la presenza di una cromosfera molto estesa, di cui era indizio il fatto che il diametro del disco stellare, misurato nell’ultravioletto, era circa il doppio del diametro osservato nella luce visibile (nella quale si osserva la [fotosfera]({{< relref "/dizionario/fotosfera/" >}}). Poi i due autori, Gilliland e Dupree, concentrarono la loro attenzione sulla regione brillante (*the Bright Region*), chiaramente visibile nell’immagine prodotta da Hubble:
@@ -347,7 +347,7 @@ L’asimmetria riscontrata da tali studi fu confermata anche da altre ricerche. 
 
 ### Un “hot spot” a passeggio sulla fotosfera
 
-Come si può notare dall’immagine seguente, tratta dallo studio in questione, sulla superficie di Betelgeuse appare una gigantesca “macchia” luminosa, decentrata rispetto al centro fisico del disco stellare. È un punto caldo _(hot spot)_ che si sposta nel tempo e che interferisce con la precisa determinazione del diametro angolare della stella. Questo punto caldo aveva una temperatura locale di circa $1.000$ gradi più elevata della temperatura efficace media di Betelgeuse.
+Come si può notare dall’immagine seguente, tratta dallo studio in questione, sulla superficie di Betelgeuse appare una gigantesca “macchia” luminosa, decentrata rispetto al centro fisico del disco stellare. È un punto caldo _(hot spot)_ che si sposta nel tempo e che interferisce con la precisa determinazione del diametro angolare della stella. Questo punto caldo aveva una temperatura locale di circa $1\,000$ gradi più elevata della temperatura efficace media di Betelgeuse.
 
 {{< figura 
 src="immagini/pionier.jpg" 
@@ -356,7 +356,7 @@ alt="La macchia luminosa, probabilmente un’enorme cella di convezione, che app
 caption="La macchia luminosa, probabilmente un’enorme cella di convezione, che appare sulla fotosfera di Betelgeuse nelle osservazioni interferometriche compiute con lo strumento PIONIER del VLTI. Crediti: A&A, 588, A130"
 >}}
 
-Gli autori dello studio interpretarono la macchia luminosa come lo sbocco alla superficie stellare di un’enorme **cella di convezione**, cioè una massa di plasma ad alta temperatura, che, per la minore densità, emerge verso la fotosfera dall’interno della stella. Anche la fotosfera solare, del resto, è ricoperta da celle di convezione, i cosiddetti [granuli]({{< relref "/dizionario/fotosfera/" >}}#granulazione). Ma le strutture visibili sulla superficie del Sole hanno diametri intorno a $1.000–1.500\,\text{km}$: nulla a che vedere con la mostruosa bolla che “occhieggia” sulla superficie di Betelgeuse, grande all’incirca quanto l’orbita di Marte.
+Gli autori dello studio interpretarono la macchia luminosa come lo sbocco alla superficie stellare di un’enorme **cella di convezione**, cioè una massa di plasma ad alta temperatura, che, per la minore densità, emerge verso la fotosfera dall’interno della stella. Anche la fotosfera solare, del resto, è ricoperta da celle di convezione, i cosiddetti [granuli]({{< relref "/dizionario/fotosfera/" >}}#granulazione). Ma le strutture visibili sulla superficie del Sole hanno diametri intorno a $1\,000–1\,500\,\text{km}$: nulla a che vedere con la mostruosa bolla che “occhieggia” sulla superficie di Betelgeuse, grande all’incirca quanto l’orbita di Marte.
 
 È come se la supergigante rossa fosse un’enorme “pentola” in perenne ebollizione, senza una forma ben definita, a causa della continua evoluzione delle grandi **bolle** di plasma che emergono alla sua superficie. Una simile evidente asimmetria, che contrasta fortemente con la quasi perfetta sfericità del Sole, apparve in forma ancora più pronunciata nelle osservazioni compiute con l’interferometro ALMA, descritto da [un altro studio](https://www.aanda.org/articles/aa/abs/2017/06/aa31171-17/aa31171-17.html) pubblicato nel 2017 su _Astronomy & Astrophysics_.
 
@@ -373,13 +373,13 @@ caption="Betelgeuse osservata nelle lunghezze d’onda submillimetriche con l’
 
 ALMA aveva ripreso l’**atmosfera estesa** della supergigante rossa, cioè il livello esterno alla fotosfera, comprendente la cromosfera.
 
-Sono visibili evidenti asimmetrie. Una appare nell’immagine come una macchia luminosa, localizzata nel quadrante superiore sinistro. Un’altra è la protuberanza che si vede emergere a metà del disco, dallo stesso lato. Entrambe le caratteristiche presentano temperature di circa $1.000\,\text{K}$ più elevate della temperatura media a $1{,}3$ raggi stellari, che è di $2.760\,\text{K}$ (quasi $1.000$ gradi in meno della temperatura al livello della fotosfera).
+Sono visibili evidenti asimmetrie. Una appare nell’immagine come una macchia luminosa, localizzata nel quadrante superiore sinistro. Un’altra è la protuberanza che si vede emergere a metà del disco, dallo stesso lato. Entrambe le caratteristiche presentano temperature di circa $1\,000\,\text{K}$ più elevate della temperatura media a $1{,}3$ raggi stellari, che è di $2\,760\,\text{K}$ (quasi $1\,000$ gradi in meno della temperatura al livello della fotosfera).
 
-Queste due zone calde dell’atmosfera stellare furono interpretate come effetti di una più intensa **attività magnetica** locale, prodotta dai giganteschi moti convettivi che raggiungono la fotosfera di Betelgeuse. Un altro elemento interessante emerso dall’osservazione eseguita con ALMA era l’**inversione** di temperatura che avviene nell’atmosfera della stella. Mentre a $1{,}3$ raggi stellari la temperatura della cromosfera è di $2.760\,\text{K}$, a $2$ raggi stellari la temperatura sale a $3.600\,\text{K}$ (simile a quella della fotosfera), per scendere infine a $1.400\,\text{K}$ alla distanza di $6$ raggi stellari.
+Queste due zone calde dell’atmosfera stellare furono interpretate come effetti di una più intensa **attività magnetica** locale, prodotta dai giganteschi moti convettivi che raggiungono la fotosfera di Betelgeuse. Un altro elemento interessante emerso dall’osservazione eseguita con ALMA era l’**inversione** di temperatura che avviene nell’atmosfera della stella. Mentre a $1{,}3$ raggi stellari la temperatura della cromosfera è di $2\,760\,\text{K}$, a $2$ raggi stellari la temperatura sale a $3\,600\,\text{K}$ (simile a quella della fotosfera), per scendere infine a $1\,400\,\text{K}$ alla distanza di $6$ raggi stellari.
 
 Insomma, l’atmosfera di Betelgeuse è tutt’altro che uniforme e omogenea. La sua struttura asimmetrica e l’inversione di temperatura dimostrano che i fenomeni fisici che la influenzano sono ben diversi da quelli che possiamo osservare sul Sole.
 
-Il diametro dell’atmosfera estesa di Betelgeuse, così come appare nell’immagine prodotta da ALMA, equivale a circa $1.400$ diametri solari, poco meno di $2$ miliardi di $\text{km}$: abbastanza per arrivare a metà strada tra Giove e Saturno, se Betelgeuse si trovasse al posto del Sole.
+Il diametro dell’atmosfera estesa di Betelgeuse, così come appare nell’immagine prodotta da ALMA, equivale a circa $1\,400$ diametri solari, poco meno di $2$ miliardi di $\text{km}$: abbastanza per arrivare a metà strada tra Giove e Saturno, se Betelgeuse si trovasse al posto del Sole.
 
 ## Betelgeuse, meno grande e più vicina di quanto si pensasse
 
@@ -415,7 +415,7 @@ Uno dei dati più attendibili ricavati dalle simulazioni descritte nello studio 
 
 Altri dati ricavati dalle simulazioni erano le stime della **massa iniziale** e **attuale** di Betelgeuse. La prima è compresa tra $18$ e $21$ masse solari, mentre la seconda tra $16{,}5$ e $19$ masse solari [^8]. Di queste, circa $6-7$ masse solari sono contenute nel nucleo di elio. Si tratta di valori sostanzialmente in buon accordo con i dati forniti da studi precedenti.
 
-Per quanto riguarda il **raggio** di Betelgeuse, le stime ricavate dalla vasta letteratura scientifica esistente variano - come abbiamo visto sopra - tra un minimo di $500$ e un massimo di $1.100$ raggi solari. Le simulazioni astrosismiche eseguite da Joyce e colleghi posero, invece, un limite più stringente al raggio di Betelgeuse, che stimarono, con una precisione pari a $3\, \sigma$, in $764$ raggi solari, con un margine d’incertezza di $116$ raggi solari in più e $62$ in meno [^9]. Dato che il raggio solare misura $695.700\,\text{km}$, $764$ raggi solari corrispondono a $531{,}5$ milioni di $\text{km}$ o $3{,}6$ volte la distanza media tra la Terra e il Sole. In altre parole, se Betelgeuse fosse al posto del Sole, il nostro pianeta si troverebbe nelle viscere della stella, e così anche Marte.
+Per quanto riguarda il **raggio** di Betelgeuse, le stime ricavate dalla vasta letteratura scientifica esistente variano - come abbiamo visto sopra - tra un minimo di $500$ e un massimo di $1\,100$ raggi solari. Le simulazioni astrosismiche eseguite da Joyce e colleghi posero, invece, un limite più stringente al raggio di Betelgeuse, che stimarono, con una precisione pari a $3\, \sigma$, in $764$ raggi solari, con un margine d’incertezza di $116$ raggi solari in più e $62$ in meno [^9]. Dato che il raggio solare misura $695\,700\,\text{km}$, $764$ raggi solari corrispondono a $531{,}5$ milioni di $\text{km}$ o $3{,}6$ volte la distanza media tra la Terra e il Sole. In altre parole, se Betelgeuse fosse al posto del Sole, il nostro pianeta si troverebbe nelle viscere della stella, e così anche Marte.
 
 {{< figura 
 src="immagini/parametri.jpg" 
@@ -431,7 +431,7 @@ Il valore calcolato fu di $5{,}95\,\text{mas}$ con un’incertezza di $+0{,}58
 
 ### Luminosità e velocità di rotazione
 
-Dal nuovo calcolo della distanza di Betelgeuse si ricavava anche una stima aggiornata della sua **luminosità**, che Joyce e colleghi calcolarono pari a $87.000$ volte la luminosità solare [^11].
+Dal nuovo calcolo della distanza di Betelgeuse si ricavava anche una stima aggiornata della sua **luminosità**, che Joyce e colleghi calcolarono pari a $87\,000$ volte la luminosità solare [^11].
 
 Resta un unico parametro che rimane inconciliabile con qualsiasi simulazione e modello stellare: la **velocità di rotazione**. I dati spettroscopici indicano, infatti, che Betelgeuse ruota a una velocità di almeno $5\,\text{km}$ al secondo, incredibilmente elevata per una supergigante, la cui velocità di rotazione tipica non dovrebbe superare $0{,}1\,\text{km}$ al secondo. Per ora, l’unica spiegazione plausibile è che Betelgeuse abbia accresciuto la propria velocità di rotazione in seguito a un trasferimento di momento angolare, causato dalla fusione con un’ipotetica compagna binaria, impietosamente **inghiottita** dalla supergigante rossa.
 
@@ -441,14 +441,14 @@ Data la sua notevole massa, il destino finale che attende Betelgeuse è già scr
 
 {{< figura 
 src="immagini/cas-a.jpg" 
-alt="Immagine composita (raggi X, luce visibile, infrarosso, onde radio) del resto di supernova Cassiopeia A, distante circa $11.000$ anni luce dalla Terra." 
-caption="Immagine composita (raggi X, luce visibile, infrarosso, onde radio) del resto di supernova Cassiopeia A, distante circa $11.000$ anni luce dalla Terra. Lo spettro indica che si tratta di una supernova di tipo IIb, prodotta dall’esplosione di una stella massiccia, probabilmente una supergigante rossa con un nucleo di elio, che aveva perso già prima dell’esplosione gran parte del suo involucro di idrogeno. L’esplosione di supernova di Betelgeuse creerà un resto simile a questo. Crediti: NASA/DOE/Fermi LAT Collaboration, CXC/SAO/JPL-Caltech/Steward/O. Krause et al., and NRAO/AUI"
+alt="Immagine composita (raggi X, luce visibile, infrarosso, onde radio) del resto di supernova Cassiopeia A, distante circa $11\,000$ anni luce dalla Terra." 
+caption="Immagine composita (raggi X, luce visibile, infrarosso, onde radio) del resto di supernova Cassiopeia A, distante circa $11\,000$ anni luce dalla Terra. Lo spettro indica che si tratta di una supernova di tipo IIb, prodotta dall’esplosione di una stella massiccia, probabilmente una supergigante rossa con un nucleo di elio, che aveva perso già prima dell’esplosione gran parte del suo involucro di idrogeno. L’esplosione di supernova di Betelgeuse creerà un resto simile a questo. Crediti: NASA/DOE/Fermi LAT Collaboration, CXC/SAO/JPL-Caltech/Steward/O. Krause et al., and NRAO/AUI"
 >}}
 
 ## Live fast, die young
 
 {{% box tipo="approfondimento" titolo="L'argomento in breve" %}} 
-Betelgeuse sta attraversando le fasi finali della sua esistenza. In un tempo che non possiamo prevedere con certezza, la supergigante andrà incontro a una fatale esplosione di supernova che la disintegrerà, lasciando dietro di sé solo una minuscola e ultradensa stella di neutroni. In attesa di quel grande spettacolo celeste, molte domande rimangono ancora senza risposta. Una di esse riguarda l’elevata velocità di rotazione di Betelgeuse, che un gruppo di ricercatori ha provato a spiegare con una suggestiva ipotesi: un atto di cannibalismo stellare avvenuto intorno a $100.000$ anni fa.
+Betelgeuse sta attraversando le fasi finali della sua esistenza. In un tempo che non possiamo prevedere con certezza, la supergigante andrà incontro a una fatale esplosione di supernova che la disintegrerà, lasciando dietro di sé solo una minuscola e ultradensa stella di neutroni. In attesa di quel grande spettacolo celeste, molte domande rimangono ancora senza risposta. Una di esse riguarda l’elevata velocità di rotazione di Betelgeuse, che un gruppo di ricercatori ha provato a spiegare con una suggestiva ipotesi: un atto di cannibalismo stellare avvenuto intorno a $100\,000$ anni fa.
 {{% /box %}}
 
 ### I parametri fisici di Betelgeuse
@@ -478,7 +478,7 @@ Di seguito l’elenco dei **principali parametri** di Betelgeuse definiti in que
 | distanza              | $197 \pm 45\,\text{pc}$                                                            |
 | velocità radiale      | $21{,}91 \pm 0{,}51\,\text{km/s}$                                                  |
 | diametro              | $887 \pm 203$ diametri solari, pari a $(1{,}23 \pm 0{,}28)\times10^{9}\,\text{km}$ |
-| luminosità            | $125.900\,L_{\odot}$  ($4{,}845\times10^{31}\,\text{W}$ ) [^12]                    |
+| luminosità            | $125\,900\,L_{\odot}$  ($4{,}845\times10^{31}\,\text{W}$ ) [^12]                    |
 | temperatura efficace  | $3500 \pm 200\,\text{K}$                                                           |
 | velocità di rotazione | $5\,\text{km/s}$  (angolo d'inclinazione: $20°$)                                   |
 | periodo di rotazione  | $8{,}4$ anni                                                                       |
@@ -489,7 +489,7 @@ Di seguito l’elenco dei **principali parametri** di Betelgeuse definiti in que
 | età                   | $8-8{,}5$ milioni di anni                                                          |
 | fine prevista         | supernova di tipo II-P                                                             |
 
-L'elemento che risalta di più da questa tabella è la differenza di luminosità tra il valore calcolato nello studio pubblicato a ottobre 2020 da Joyce e colleghi, pari a $87.000$ volte la luminosità solare, e quello molto più alto (circa $126.000\, L_{\odot}$) ricavato da Dolan e colleghi. Un'ennesima dimostrazione di quanto siano imprecise e fluttuanti le informazioni che abbiamo su una stella così luminosa come Betelgeuse.
+L'elemento che risalta di più da questa tabella è la differenza di luminosità tra il valore calcolato nello studio pubblicato a ottobre 2020 da Joyce e colleghi, pari a $87\,000$ volte la luminosità solare, e quello molto più alto (circa $126\,000\, L_{\odot}$) ricavato da Dolan e colleghi. Un'ennesima dimostrazione di quanto siano imprecise e fluttuanti le informazioni che abbiamo su una stella così luminosa come Betelgeuse.
 
 {{< figura 
 src="immagini/dr1.jpg" 
@@ -497,7 +497,7 @@ alt="Betelgeuse in un’immagine tratta dalla survey Pan-STARRS DR1."
 caption="Betelgeuse in un’immagine tratta dalla survey Pan-STARRS DR1. Il campo ripreso misura circa $7{,}3$ per $6{,}7$ minuti d’arco. Il disco della stella, invisibile al centro esatto dell’immagine, occupa una superficie pari ad appena $2{,}2$ miliardesimi dell’area osservata. Eppure Betelgeuse è così luminosa da saturare completamente i sensori della fotocamera, nascondendo le stelle di sfondo e trasformando l’immagine in una specie di quadro astratto."
 >}}
 
-In ogni caso, i parametri stellari riportati nella tabella precedente ci fanno comprendere che razza di “mostro” sia Betelgeuse. Con un diametro compreso tra $1$ e $1{,}5$ miliardi di chilometri, se si trovasse al posto del Sole, la sua fotosfera raggiungerebbe quasi l’orbita di Giove. Con una luminosità oltre $125.000$ volte maggiore di quella del Sole, la Terra dovrebbe trovarsi a $55$ miliardi di chilometri da Betelgeuse, cioè a una distanza di quasi $370$ unità astronomiche [^13], per ricevere la stessa quantità di radiazione che riceve attualmente dal Sole.
+In ogni caso, i parametri stellari riportati nella tabella precedente ci fanno comprendere che razza di “mostro” sia Betelgeuse. Con un diametro compreso tra $1$ e $1{,}5$ miliardi di chilometri, se si trovasse al posto del Sole, la sua fotosfera raggiungerebbe quasi l’orbita di Giove. Con una luminosità oltre $125\,000$ volte maggiore di quella del Sole, la Terra dovrebbe trovarsi a $55$ miliardi di chilometri da Betelgeuse, cioè a una distanza di quasi $370$ unità astronomiche [^13], per ricevere la stessa quantità di radiazione che riceve attualmente dal Sole.
 
 Anche la perdita di massa annuale di Betelgeuse è impressionante, intorno a otto ordini di grandezza maggiore di quella del Sole. La supergigante rossa disperde attraverso il suo vento stellare circa $2$ milionesimi di massa solare all’anno. Questo valore, espresso in milionesimi, può dare l’impressione che si tratti di una quantità trascurabile, ma due milionesimi di massa solare corrispondono a poco meno di $4\times10^{24}\,\text{kg}$, cioè al $66\%$ della massa del nostro pianeta. Vuol dire che in soli tre anni Betelgeuse disperde nello spazio circumstellare una quantità di materia pari a due pianeti come la Terra!
 
@@ -511,7 +511,7 @@ caption="Betelgeuse in un’immagine nell’infrarosso acquisita nell’ambito d
 
 ### La fine di Betelgeuse
 
-Nel nucleo di Betelgeuse si stanno accumulando grandi quantità di carbonio e ossigeno, cioè i prodotti della fusione dell’elio. In base ai modelli di evoluzione stellare, la frazione di **carbonio** e **ossigeno** assomma attualmente al $40–50\%$ della massa del nucleo, di cui occupa la parte più interna, corrispondente a circa tre masse solari. Qui la densità ha raggiunto il livello di $1.000\,\text{g/cm}^3$, a fronte dei $150\,\text{g/cm}^3$ al centro del Sole. La temperatura del nucleo è nell’ordine dei $100$ milioni di $\text{K}$, contro i $15{,}6$ milioni di $\text{K}$ del nucleo solare. 
+Nel nucleo di Betelgeuse si stanno accumulando grandi quantità di carbonio e ossigeno, cioè i prodotti della fusione dell’elio. In base ai modelli di evoluzione stellare, la frazione di **carbonio** e **ossigeno** assomma attualmente al $40–50\%$ della massa del nucleo, di cui occupa la parte più interna, corrispondente a circa tre masse solari. Qui la densità ha raggiunto il livello di $1\,000\,\text{g/cm}^3$, a fronte dei $150\,\text{g/cm}^3$ al centro del Sole. La temperatura del nucleo è nell’ordine dei $100$ milioni di $\text{K}$, contro i $15{,}6$ milioni di $\text{K}$ del nucleo solare. 
 
 La regione più esterna del nucleo è occupata invece dalla frazione di **elio** residua, che incide per altre **tre** masse solari. Quando anche quest’elio sarà stato consumato e convertito in carbonio e ossigeno, Betelgeuse sarà allora davvero a un passo dalla fine. Avrà inizio a quel punto un breve periodo, della durata di qualche migliaio di anni al massimo, in cui l’enorme pressione e temperatura del nucleo innescheranno la fusione del **carbonio**, poi quella del **neon**, dell’**ossigeno** e infine del **silicio**.
 
@@ -529,7 +529,7 @@ caption="Un giorno un’esplosione di supernova disintegrerà Betelgeuse, genera
 
 L’onda d’urto si diffonderà invece molto più lentamente e raggiungerà il Sistema Solare solo $6$ milioni di anni dopo l’esplosione. Le particelle di plasma provenienti da Betelgeuse comprimeranno allora l’**eliosfera**, ma non riusciranno ad aprirsi un varco fino alla Terra: i calcoli indicano che raggiungeranno un punto di stagnazione con il vento solare all’incirca a $2,5$ unità astronomiche dal Sole, cioè ben oltre l’orbita terrestre.
 
-Insomma, la fine violenta di Betelgeuse _non costituirà un pericolo_ per la vita sul nostro pianeta. Vista da qui sarà solo un grandioso spettacolo celeste e un’incredibile fonte di conoscenza per gli astronomi di un futuro piuttosto lontano. Già, perché l’esplosione di Betelgeuse non sembra affatto imminente, nonostante l’improvvisa perdita di luminosità avvenuta tra la fine del 2019 e l'inizio del 2020. Secondo la previsione di Dolan e colleghi, la supergigante rossa esploderà fra circa $100.000$ anni, millennio più millennio meno. Non è una buona notizia per chi sperava di assistere in diretta a un grande spettacolo naturale, ma in termini astronomici si tratta di un’inezia, quasi un battito di ciglia.
+Insomma, la fine violenta di Betelgeuse _non costituirà un pericolo_ per la vita sul nostro pianeta. Vista da qui sarà solo un grandioso spettacolo celeste e un’incredibile fonte di conoscenza per gli astronomi di un futuro piuttosto lontano. Già, perché l’esplosione di Betelgeuse non sembra affatto imminente, nonostante l’improvvisa perdita di luminosità avvenuta tra la fine del 2019 e l'inizio del 2020. Secondo la previsione di Dolan e colleghi, la supergigante rossa esploderà fra circa $100\,000$ anni, millennio più millennio meno. Non è una buona notizia per chi sperava di assistere in diretta a un grande spettacolo naturale, ma in termini astronomici si tratta di un’inezia, quasi un battito di ciglia.
 
 {{< figura 
 src="immagini/supernova.jpg" 
@@ -572,7 +572,7 @@ caption="L’inclinazione e il verso di rotazione di Betelgeuse rispetto a un os
 
 Il lettore o la lettrice attenti avranno notato che il periodo di rotazione di Betelgeuse torna in questo racconto più volte e con valori molto diversi tra loro: $8{,}4$ anni nella tabella di Dolan, $17$ anni nelle stime ricavate dalle osservazioni di Hubble del 1995, $36 \pm 8$ anni secondo Kervella e colleghi. 
 
-Il fatto è che il periodo di rotazione non è mai una misura diretta: si ricava dalla formula $P = 2\pi R / v_{eq}$​, combinando due grandezze — il raggio $R$ della stella e la sua velocità equatoriale $v_{eq}$​ — che sono esse stesse tra i parametri più incerti di tutta l'astrofisica di Betelgeuse (come abbiamo visto, il solo raggio oscilla, a seconda degli studi, tra $500$ e oltre $1.100$ raggi solari). 
+Il fatto è che il periodo di rotazione non è mai una misura diretta: si ricava dalla formula $P = 2\pi R / v_{eq}$​, combinando due grandezze — il raggio $R$ della stella e la sua velocità equatoriale $v_{eq}$​ — che sono esse stesse tra i parametri più incerti di tutta l'astrofisica di Betelgeuse (come abbiamo visto, il solo raggio oscilla, a seconda degli studi, tra $500$ e oltre $1\,100$ raggi solari). 
 
 A complicare ulteriormente le cose, la velocità equatoriale non è quasi mai misurata direttamente: la spettroscopia classica fornisce solo la componente proiettata lungo la linea di vista, $v \sin i$, e per risalire alla velocità equatoriale reale occorre assumere un angolo d'inclinazione $i$ dell'asse di rotazione, un'assunzione che cambia da uno studio all'altro. 
 
@@ -597,9 +597,9 @@ alt="L'onda d'urto che precede il moto di Betelegeuse nell'ambiente circumstella
 caption="L'onda d'urto che precede il moto di Betelegeuse nell'ambiente circumstellare. Crediti: ESA/Herschel/PACS/L. Decin et al."
 >}}
 
-L’arco è stato interpretato finora come un’**onda d’urto** prodotta dal **vento stellare** di Betelgeuse, che comprime il gas e le polveri diffuse nel mezzo interstellare mentre la stella avanza percorrendo la sua orbita galattica. Ma Wheeler e il suo team proposero un’ipotesi alternativa: l’arco potrebbe essere piuttosto l’effetto visibile del “pasto” compiuto da Betelgeuse ai danni di una sfortunata compagna binaria. Quell'arco sarebbe formato, cioè, dalla materia degli strati esterni stellari sparata via all’atto della fusione, materia allontanatasi nel frattempo fino a raggiungere la distanza alla quale l’arco è stato osservato dal telescopio spaziale Herschel. Ipotizzando una velocità di espulsione intorno a $10\,\text{km/s}$, l’arco di detriti si troverebbe nella posizione attuale, se la fusione tra le due stelle fosse avvenuta circa $100.000$ anni fa.
+L’arco è stato interpretato finora come un’**onda d’urto** prodotta dal **vento stellare** di Betelgeuse, che comprime il gas e le polveri diffuse nel mezzo interstellare mentre la stella avanza percorrendo la sua orbita galattica. Ma Wheeler e il suo team proposero un’ipotesi alternativa: l’arco potrebbe essere piuttosto l’effetto visibile del “pasto” compiuto da Betelgeuse ai danni di una sfortunata compagna binaria. Quell'arco sarebbe formato, cioè, dalla materia degli strati esterni stellari sparata via all’atto della fusione, materia allontanatasi nel frattempo fino a raggiungere la distanza alla quale l’arco è stato osservato dal telescopio spaziale Herschel. Ipotizzando una velocità di espulsione intorno a $10\,\text{km/s}$, l’arco di detriti si troverebbe nella posizione attuale, se la fusione tra le due stelle fosse avvenuta circa $100\,000$ anni fa.
 
-Più internamente all’arco visibile sulla sinistra, l’immagine mostra anche un anello di materia a soli $4$ minuti d’arco da Betelgeuse. Se fosse invece questo anello interno la testimonianza dell’ipotetico banchetto stellare, l’evento di fusione dovrebbe allora essere post-datato a soli $24.000$ anni fa.
+Più internamente all’arco visibile sulla sinistra, l’immagine mostra anche un anello di materia a soli $4$ minuti d’arco da Betelgeuse. Se fosse invece questo anello interno la testimonianza dell’ipotetico banchetto stellare, l’evento di fusione dovrebbe allora essere post-datato a soli $24\,000$ anni fa.
 
 {{< figura 
 src="immagini/cannibale.gif" 
@@ -620,7 +620,7 @@ Da molti anni si sospettava che Betelgeuse avesse una compagna binaria, ma nessu
 
 ### Due stelle o tre stelle?
 
-In apertura di questa parte dedicata alla candidata compagna binaria di Betelgeuse, vale la pena di chiarire il rapporto tra l'ipotesi del **cannibalismo stellare** descritta più sopra e la compagna binaria di cui parleremo in questa sezione: non si tratta della stessa stella, né le due ipotesi sono automaticamente equivalenti. Wheeler e colleghi immaginavano una terza stella, di massa simile a quella del Sole, letteralmente inghiottita e fusa con Betelgeuse circa $100.000$ anni fa, un evento che, per definizione, non avrebbe lasciato alcuna compagna superstite.
+In apertura di questa parte dedicata alla candidata compagna binaria di Betelgeuse, vale la pena di chiarire il rapporto tra l'ipotesi del **cannibalismo stellare** descritta più sopra e la compagna binaria di cui parleremo in questa sezione: non si tratta della stessa stella, né le due ipotesi sono automaticamente equivalenti. Wheeler e colleghi immaginavano una terza stella, di massa simile a quella del Sole, letteralmente inghiottita e fusa con Betelgeuse circa $100\,000$ anni fa, un evento che, per definizione, non avrebbe lasciato alcuna compagna superstite.
 
 Betelgeuse B, al contrario, la stella vicina a Betelgeuse appena scoperta, è un oggetto realmente esistente, con un'orbita apparentemente stabile di circa sei anni e una massa ben maggiore di quella ipotizzata da Wheeler per la stella "divorata". Le due ipotesi restano dunque logicamente distinte, e in linea di principio potrebbero perfino coesistere: un sistema inizialmente triplo, in cui una componente sia stata inghiottita mentre un'altra sopravvive tuttora, non è impossibile. 
 
@@ -643,7 +643,7 @@ caption="Un grafico in colori arbitrari che mostra Betelgeuse al centro e la pos
 
 ### Una prova più chiara, quasi innegabile
 
-La massima elongazione dell'ipotetica compagna di Betelgeuse era prevista per dicembre 2024 come risultato dell'analisi del cosiddetto LSP (*long secondary period*), un periodo di pulsazione di Betelgeuse della durata di oltre $2.000$ giorni, difficile da spiegare con meccanismi fisici interni alla stella. 
+La massima elongazione dell'ipotetica compagna di Betelgeuse era prevista per dicembre 2024 come risultato dell'analisi del cosiddetto LSP (*long secondary period*), un periodo di pulsazione di Betelgeuse della durata di oltre $2\,000$ giorni, difficile da spiegare con meccanismi fisici interni alla stella. 
 
 Altri gruppi di ricerca, dunque, si preparano a sfruttare quella finestra osservativa per cogliere un'immagine diretta della compagna. La massima elongazione è infatti il punto in cui un oggetto orbitante intorno a un corpo centrale raggiunge la massima distanza angolare rispetto all'osservatore terrestre. Pertanto, nel caso di una stella brillantissima come Betelgeuse, la maggiore distanza angolare favorisce la possibilità di mascherare nei limiti del possibile il bagliore della supergigante, alimentando la speranza di cogliere la luce diretta dell'eventuale compagna binaria.
 
@@ -657,7 +657,7 @@ Per sciogliere questo dubbio, come spiegano gli autori dello studio, bisognerà 
 
 Quello che si può affermare per ora è che, dopo un minuzioso lavoro di elaborazione delle immagini per sottrarre la luminosità abbagliante di Betelgeuse, è stata vista con chiarezza una stella, chiamata provvisoriamente **Betelgeuse B**, che si trova a $52{,}32 \pm 0{,}18\,\text{mas}$ dalla supergigante, con un angolo di posizione di $117,12 \pm 0,60^{\circ}$. Non si tratta, tra l'altro, di una stella insignificante. Ha una massa stimata compresa tra $2,6$ e $3{,}1\,M_{\odot}$ ed è classificata tentativamente con un tipo spettrale tra B8,5V e B9,5V, tipico di stelle calde e molto luminose. Se è coeva della supergigante, è una giovane stella approdata da poco sulla sequenza principale. Un dato curioso è che Betelgeuse B, appena scoperta, ha già ricevuto un nome ufficiale, **Siwarha**, che richiama l'etimologia[^siwarha] della "sorella" maggiore.
 
-Dando per buona una distanza di $168$ parsec, in accordo con lo studio di Joyce del 2020 citato più sopra, Betelgeuse B, o Siwarha, disterebbe dalla supergigante circa $8{,}80$ unità astronomiche, cioè poco meno di Saturno dal Sole. Il periodo orbitale dovrebbe essere di $6{,}02$ anni, se corrisponde al periodo di pulsazione di Betelgeuse di circa $2.200$ giorni. 
+Dando per buona una distanza di $168$ parsec, in accordo con lo studio di Joyce del 2020 citato più sopra, Betelgeuse B, o Siwarha, disterebbe dalla supergigante circa $8{,}80$ unità astronomiche, cioè poco meno di Saturno dal Sole. Il periodo orbitale dovrebbe essere di $6{,}02$ anni, se corrisponde al periodo di pulsazione di Betelgeuse di circa $2\,200$ giorni. 
 
 {{< figura 
 src="immagini/bet-b.jpg" 
@@ -733,15 +733,15 @@ caption="La costellazione di Orione in un’immagine tratta dalla survey DSS2. B
 
 [^7]: Elio prodotto dalla fusione nucleare dell’idrogeno, che ha sostenuto la luminosità di Betelgeuse durante la sequenza principale, ormai terminata.
 
-[^8]: $1$ massa solare corrisponde a $1,989\times10^{30}\,\text{kg}$, equivalente all’incirca a $333.000$ volte la massa della Terra.
+[^8]: $1$ massa solare corrisponde a $1,989\times10^{30}\,\text{kg}$, equivalente all’incirca a $333\,000$ volte la massa della Terra.
 
 [^9]: I valori più probabili per il raggio di Betelgeuse sono compresi cioè, per questi autori, tra $702$ e $880$ raggi solari.
 
 [^10]: $168$ parsec equivalgono a $548$ anni luce (o $5,184\times 10^{15}\,\text{km}$).
 
-[^11]: Il valore esatto riportato nello studio è $\log_{10}(4{,}94)$, cioè $87.096$ luminosità solari. Dato che una luminosità solare corrisponde a $3{,}83\times10^{26}$ watt, la luminosità di Betelgeuse equivale a circa $3{,}33\times 10^{31}$ watt ($33.300$ miliardi di miliardi di miliardi di watt).
+[^11]: Il valore esatto riportato nello studio è $\log_{10}(4{,}94)$, cioè $87\,096$ luminosità solari. Dato che una luminosità solare corrisponde a $3{,}83\times10^{26}$ watt, la luminosità di Betelgeuse equivale a circa $3{,}33\times 10^{31}$ watt ($33\,300$ miliardi di miliardi di miliardi di watt).
 
-[^12]: La luminosità di $125.900$ luminosità solari è desunta in base alla distanza di $197$ parsec adottata dal team di Dolan. Se Betelgeuse fosse invece più lontana, e precisamente distante $222$ parsec come sostenuto da Harper e colleghi in già citato studio del 2017, allora la luminosità scalerebbe di conseguenza. È possibile calcolare di quanto Betelgeuse sarebbe più luminosa, partendo dal flusso di radiazione che raggiunge la Terra. Tale flusso è pari a $1{,}15\times 10^{-11}\,\text{W/cm}^2$, secondo quanto riporta Mike Edmunds in [un articolo](https://academic.oup.com/astrogeo/article/38/6/27/194843) del 1997 pubblicato su _Astronomy & Geophysics_. Dando per scontato che la radiazione sia emessa isotropicamente, cioè con la stessa intensità in tutte le direzioni, moltiplichiamo tale flusso per l’area di una sfera di $222$ parsec di raggio, cioè la distanza di Betelgeuse proposta dal gruppo di Harper. L’area che otteniamo è di $5{,}897\times 10^{42}\,\text{cm}^2$. Eseguendo la moltiplicazione, ricaviamo il flusso totale emesso da Betelgeuse: $6{,}78\times 10^{31}\,\text{W}$. Dividendo questo valore per la luminosità solare, che è pari a $3{,}83\times10^{26}\,\text{W}$, otteniamo infine il valore della luminosità aggiornato alla nuova distanza: $176.236$ luminosità solari.
+[^12]: La luminosità di $125\,900$ luminosità solari è desunta in base alla distanza di $197$ parsec adottata dal team di Dolan. Se Betelgeuse fosse invece più lontana, e precisamente distante $222$ parsec come sostenuto da Harper e colleghi in già citato studio del 2017, allora la luminosità scalerebbe di conseguenza. È possibile calcolare di quanto Betelgeuse sarebbe più luminosa, partendo dal flusso di radiazione che raggiunge la Terra. Tale flusso è pari a $1{,}15\times 10^{-11}\,\text{W/cm}^2$, secondo quanto riporta Mike Edmunds in [un articolo](https://academic.oup.com/astrogeo/article/38/6/27/194843) del 1997 pubblicato su _Astronomy & Geophysics_. Dando per scontato che la radiazione sia emessa isotropicamente, cioè con la stessa intensità in tutte le direzioni, moltiplichiamo tale flusso per l’area di una sfera di $222$ parsec di raggio, cioè la distanza di Betelgeuse proposta dal gruppo di Harper. L’area che otteniamo è di $5{,}897\times 10^{42}\,\text{cm}^2$. Eseguendo la moltiplicazione, ricaviamo il flusso totale emesso da Betelgeuse: $6{,}78\times 10^{31}\,\text{W}$. Dividendo questo valore per la luminosità solare, che è pari a $3{,}83\times10^{26}\,\text{W}$, otteniamo infine il valore della luminosità aggiornato alla nuova distanza: $176\,236$ luminosità solari.
 
 [^13]: Un’[unità astronomica]({{< relref "/dizionario/unita-astronomica/" >}}) equivale a poco meno di $150$ milioni di chilometri e rappresenta la distanza media tra la Terra e il Sole.
 

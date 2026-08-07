@@ -42,4 +42,4 @@ $$
 
 In conclusione, è proprio grazie alla ricombinazione che possiamo vedere la splendida nebulosa di Orione e altre regioni H II ad essa simili. La luce che vediamo è il prodotto dell'emissione di fotoni dominata dalla riga rossa H-alfa, la più intensa tra le molte righe di emissione generate dalla ricombinazione. Essa è il frutto di atomi di idrogeno che hanno catturato un elettrone libero e devono restituire all'Universo l'energia in eccesso.
 
-[^1]: Su scala cosmologica si è verificato un fenomeno analogo, la *ricombinazione cosmica*: circa $380.000$ anni dopo il Big Bang, elettroni e protoni si combinarono per la prima volta in idrogeno neutro, rendendo l'Universo trasparente e dando origine alla radiazione cosmica di fondo.
+[^1]: Su scala cosmologica si è verificato un fenomeno analogo, la *ricombinazione cosmica*: circa $380\,000$ anni dopo il Big Bang, elettroni e protoni si combinarono per la prima volta in idrogeno neutro, rendendo l'Universo trasparente e dando origine alla radiazione cosmica di fondo.

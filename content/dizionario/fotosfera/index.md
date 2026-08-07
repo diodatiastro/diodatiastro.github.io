@@ -16,7 +16,7 @@ Per capire perché la luce stellare proviene proprio dalla fotosfera, bisogna in
 
 Partiamo dal fatto che, all'interno di una stella, la materia è tanto più densa e calda quanto più ci si avvicina al nucleo. I [fotoni]({{< relref "/dizionario/fotone/" >}}) (i "pacchetti" di radiazione) prodotti dalle reazioni di fusione nucleare non viaggiano liberamente. Al contrario, interagiscono di continuo con le particelle cariche (elettroni, protoni, ioni) che incontrano sul loro cammino e vengono deviati, assorbiti e riemessi altrettanto di continuo. Questo processo si chiama **scattering**.
 
-Per essere più precisi, nel nucleo, le reazioni di fusione nucleare producono fotoni ad altissima energia (**raggi gamma**), ma questi, interagendo con la materia circostante, vengono rapidamente assorbiti e riemessi innumerevoli volte, trasferendo progressivamente la loro energia al plasma. A causa di questo processo di **termalizzazione**, l'energia originaria della fusione si trasforma in un flusso di fotoni con uno spettro che, alla fotosfera, corrisponde a quello di un corpo nero a circa $5.700\; \mathrm{K}$.
+Per essere più precisi, nel nucleo, le reazioni di fusione nucleare producono fotoni ad altissima energia (**raggi gamma**), ma questi, interagendo con la materia circostante, vengono rapidamente assorbiti e riemessi innumerevoli volte, trasferendo progressivamente la loro energia al plasma. A causa di questo processo di **termalizzazione**, l'energia originaria della fusione si trasforma in un flusso di fotoni con uno spettro che, alla fotosfera, corrisponde a quello di un corpo nero a circa $5\,700\; \mathrm{K}$.
 
 In pratica, all'interno del Sole o di un altra stella, un fotone *non* viaggia in linea retta dal nucleo alla superficie. Fa un percorso a zig-zag, rimbalzando da una particella all'altra, come un ubriaco che tenta di uscire da un bar affollato. Possono volerci migliaia di anni, o addirittura milioni secondo alcuni calcoli, perché un fotone prodotto nel nucleo riesca a farsi strada fino alla superficie stellare. In realtà non è mai lo *stesso* fotone a compiere l'intero viaggio: è l'energia che, attraverso continui assorbimenti e riemissioni, si trasferisce gradualmente verso l'esterno, emergendo infine come luce visibile a energie molto inferiori rispetto ai raggi gamma originari.
 
@@ -58,7 +58,7 @@ In sintesi, la profondità ottica è la grandezza che determina dove si trova, i
 
 Il Sole, essendo di gran lunga la stella più vicina alla Terra e l'unica di cui possiamo osservare la superficie con grandissimo dettaglio, è la palestra di studio ideale per analizzare la struttura della fotosfera.
 
-Questo strato fondamentale dell'atmosfera è estremamente sottile nella nostra stella. Ha una **profondità** di non più di $400-500\;\mathrm{km}$, una frazione di poco superiore allo $0{,}07\%$ del raggio solare, che è di circa $696.000\;\mathrm{km}$. Il passaggio dalla zona di opacità a quella di trasparenza avviene, dunque, in modo netto in uno spazio ridottissimo rispetto alla grandezza totale della stella.
+Questo strato fondamentale dell'atmosfera è estremamente sottile nella nostra stella. Ha una **profondità** di non più di $400-500\;\mathrm{km}$, una frazione di poco superiore allo $0{,}07\%$ del raggio solare, che è di circa $696\,000\;\mathrm{km}$. Il passaggio dalla zona di opacità a quella di trasparenza avviene, dunque, in modo netto in uno spazio ridottissimo rispetto alla grandezza totale della stella.
 
 Un altro dato notevole è che la **densità** della fotosfera solare è bassissima rispetto a quella dell'atmosfera terrestre. I valori tipici sono riportati nella seguente tabella.
 
@@ -73,7 +73,7 @@ Un altro dato notevole è che la **densità** della fotosfera solare è bassissi
 
 ## Perché un mezzo così rarefatto è opaco
 
-La base della fotosfera solare è circa $4.000$ volte più rarefatta dell'atmosfera terrestre. La sommità è addirittura $1{,}2$ milioni di volte più rarefatta. Viene naturale chiedersi come sia possibile che la fotosfera solare sia in parte opaca alla radiazione con una densità così bassa. La risposta sta nel fatto che il cammino libero medio dei fotoni non dipende soltanto dalla densità del gas, ma anche dalla sua composizione e dalle interazioni radiative. Nella fotosfera, gli ioni, e soprattutto gli ioni idrogeno negativi $(H^−)$, assorbono e diffondono la luce visibile in modo molto efficiente, rendendo opaco un gas che, in termini di densità, sarebbe considerato un vuoto quasi perfetto secondo gli standard terrestri. La "superficie" del Sole è costituita, dunque, da un plasma che è *migliaia di volte meno denso dell'aria che respiriamo*, ma che risulta comunque sufficientemente opaco da impedire di vedere gli strati più profondi della stella.
+La base della fotosfera solare è circa $4\,000$ volte più rarefatta dell'atmosfera terrestre. La sommità è addirittura $1{,}2$ milioni di volte più rarefatta. Viene naturale chiedersi come sia possibile che la fotosfera solare sia in parte opaca alla radiazione con una densità così bassa. La risposta sta nel fatto che il cammino libero medio dei fotoni non dipende soltanto dalla densità del gas, ma anche dalla sua composizione e dalle interazioni radiative. Nella fotosfera, gli ioni, e soprattutto gli ioni idrogeno negativi $(H^−)$, assorbono e diffondono la luce visibile in modo molto efficiente, rendendo opaco un gas che, in termini di densità, sarebbe considerato un vuoto quasi perfetto secondo gli standard terrestri. La "superficie" del Sole è costituita, dunque, da un plasma che è *migliaia di volte meno denso dell'aria che respiriamo*, ma che risulta comunque sufficientemente opaco da impedire di vedere gli strati più profondi della stella.
 
 {{< figura 
 src="immagini/fotosfera-solare.jpg" 
@@ -87,7 +87,7 @@ La fotosfera del Sole ha diverse caratteristiche di rilievo dal punto di vista a
 
 ### Temperatura
 
-Alla base della fotosfera la temperatura è di circa $6.600\,\mathrm{K}$. Scende rapidamente intorno a $4.400\,\mathrm{K}$ alla sommità, cioè $500\,\mathrm{km}$ più in alto. La temperatura efficace del Sole $T_\text{eff}$, calcolata alla profondità ottica $\tau \approx 2/3$, è di circa $5.770\,\mathrm{K}$ (con alcune fonti che riportano $5.772\,\mathrm{K}$, altre $5.777\,\mathrm{K}$ e altre ancora $5.778\,\mathrm{K}$).
+Alla base della fotosfera la temperatura è di circa $6\,600\,\mathrm{K}$. Scende rapidamente intorno a $4\,400\,\mathrm{K}$ alla sommità, cioè $500\,\mathrm{km}$ più in alto. La temperatura efficace del Sole $T_\text{eff}$, calcolata alla profondità ottica $\tau \approx 2/3$, è di circa $5\,770\,\mathrm{K}$ (con alcune fonti che riportano $5\,772\,\mathrm{K}$, altre $5\,777\,\mathrm{K}$ e altre ancora $5\,778\,\mathrm{K}$).
 
 ### Granulazione
 
@@ -96,14 +96,14 @@ La fotosfera appare coperta da celle convettive dette *granuli*, larghe tipicame
 {{< figura 
 src="immagini/granulazione.jpg" 
 alt="Immagine ad altissima risoluzione di granuli sulla fotosfera solare ripresa dal Daniel K. Inouye Solar Telescope." 
-caption="Immagine ad altissima risoluzione di granuli sulla fotosfera solare ripresa dal Daniel K. Inouye Solar Telescope alla lunghezza d'onda di $789\,\mathrm{nm}$. L'immagine copre un'area di $36.500 \times 36.500\,\mathrm{km}$. Ogni lato è circa tre volte il diametro della Terra. Crediti: NSO/NSF/AURA"
+caption="Immagine ad altissima risoluzione di granuli sulla fotosfera solare ripresa dal Daniel K. Inouye Solar Telescope alla lunghezza d'onda di $789\,\mathrm{nm}$. L'immagine copre un'area di $36\,500 \times 36\,500\,\mathrm{km}$. Ogni lato è circa tre volte il diametro della Terra. Crediti: NSO/NSF/AURA"
 >}}
 
 ### Supergranulazione
-Consiste in una rete di celle convettive molto più grandi, con diametro di $20.000\; -\; 40.000\,\mathrm{km}$ ognuna, la cui durata totale è di circa uno o due giorni. Il fenomeno fu scoperto negli anni Cinquanta grazie a misure dell'effetto Doppler sulla superficie solare. Benché il meccanismo non sia ancora pienamente compreso, si ritiene che la supergranulazione sia fondamentale per il trasporto del plasma e per l'organizzazione del campo magnetico sulla superficie del Sole.
+Consiste in una rete di celle convettive molto più grandi, con diametro di $20\,000\; -\; 40\,000\,\mathrm{km}$ ognuna, la cui durata totale è di circa uno o due giorni. Il fenomeno fu scoperto negli anni Cinquanta grazie a misure dell'effetto Doppler sulla superficie solare. Benché il meccanismo non sia ancora pienamente compreso, si ritiene che la supergranulazione sia fondamentale per il trasporto del plasma e per l'organizzazione del campo magnetico sulla superficie del Sole.
 
 ### Macchie solari
-Sono regioni più fredde della fotosfera circostante, con temperatura media di circa $3.500\; -\; 4.500\,\mathrm{K}$. La loro minore luminosità è dovuta alla minore temperatura, che a sua volta dipende dalla presenza di intensi [campi magnetici]({{< relref "/dizionario/campo-magnetico/" >}}) locali che inibiscono il trasporto convettivo di [energia]({{< relref "/dizionario/energia/" >}}). La loro apparizione e scomparsa sulla fotosfera è soggetta a un ciclo di undici anni.
+Sono regioni più fredde della fotosfera circostante, con temperatura media di circa $3\,500\; -\; 4\,500\,\mathrm{K}$. La loro minore luminosità è dovuta alla minore temperatura, che a sua volta dipende dalla presenza di intensi [campi magnetici]({{< relref "/dizionario/campo-magnetico/" >}}) locali che inibiscono il trasporto convettivo di [energia]({{< relref "/dizionario/energia/" >}}). La loro apparizione e scomparsa sulla fotosfera è soggetta a un ciclo di undici anni.
 
 ### Facole
 Sono regioni relativamente brillanti, associate a concentrazioni intense di campo magnetico. Appaiono come aree più luminose rispetto alla fotosfera circostante e sono spesso osservate in prossimità delle macchie solari, anche se possono esistere indipendentemente da esse. Sono particolarmente evidenti vicino al bordo del disco solare (il cosiddetto *limbo*), dove la geometria della visione permette di osservare meglio il contrasto tra le facole e la fotosfera circostante. 
@@ -180,17 +180,17 @@ In linea generale, per **qualsiasi stella**, la fotosfera è definita in modo an
 
 ### Stelle di sequenza principale
 
-**Stelle calde e massicce** di tipo O, B: hanno fotosfere con temperature $>\; 30.000\,\mathrm{K}$, densità molto basse (gas rarefatto) ma pressioni elevate per via dell'altissima temperatura, spesso paragonabili o superiori a quella della fotosfera solare.
+**Stelle calde e massicce** di tipo O, B: hanno fotosfere con temperature $>\; 30\,000\,\mathrm{K}$, densità molto basse (gas rarefatto) ma pressioni elevate per via dell'altissima temperatura, spesso paragonabili o superiori a quella della fotosfera solare.
 
-**Stelle come il Sole** (tipo G): $T\sim 5.000 - 6.000\,\mathrm{K}$, densità e pressione paragonabili a quelle del Sole.
+**Stelle come il Sole** (tipo G): $T\sim 5\,000 - 6\,000\,\mathrm{K}$, densità e pressione paragonabili a quelle del Sole.
 
-**Stelle fredde rosse** di tipo M: hanno $T\sim 2.500 - 3.500\,\mathrm{K}$ e fotosfere più estese e dense, spesso con molecole stabili come l'ossido di titanio (TiO) e l'ossido di vanadio (VO), che dominano lo spettro visibile.
+**Stelle fredde rosse** di tipo M: hanno $T\sim 2\,500 - 3\,500\,\mathrm{K}$ e fotosfere più estese e dense, spesso con molecole stabili come l'ossido di titanio (TiO) e l'ossido di vanadio (VO), che dominano lo spettro visibile.
 
 ### Giganti e supergiganti
 Hanno fotosfere molto estese e rarefatte con raggi che possono essere enormi (nell'ordine dei milioni di $\mathrm{km}$). Hanno bassa gravità superficiale, con temperature simili a quelle di stelle più piccole. La definizione di fotosfera diventa più sfumata a causa di estese regioni di transizione.
 
 ### Nane bianche
-Hanno fotosfere estremamente sottili, con temperature superficiali anche maggiori di $100.000\,\mathrm{K}$; la gravità è altissima e comprime lo strato fotosferico in uno spessore compreso tra qualche decina di metri e qualche centinaio di metri, raramente superiore a circa $1\,\mathrm{km}$.
+Hanno fotosfere estremamente sottili, con temperature superficiali anche maggiori di $100\,000\,\mathrm{K}$; la gravità è altissima e comprime lo strato fotosferico in uno spessore compreso tra qualche decina di metri e qualche centinaio di metri, raramente superiore a circa $1\,\mathrm{km}$.
 
 ### Stelle di neutroni
 

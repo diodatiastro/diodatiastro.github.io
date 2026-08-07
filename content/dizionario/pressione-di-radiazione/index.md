@@ -36,7 +36,7 @@ $$
 P_{\text{rad}} = \frac{F}{c} = \frac{1361\ \mathrm{W\,m^{-2}}}{3{,}00 \times 10^{8}\ \mathrm{m\,s^{-1}}} \approx 4{,}54 \times 10^{-6}\ \mathrm{Pa}
 $$
 
-È un valore minuscolo, se lo paragoniamo alla pressione atmosferica che è $P_{atm} \approx 101.325\ \mathrm{Pa}$:
+È un valore minuscolo, se lo paragoniamo alla pressione atmosferica che è $P_{atm} \approx 101\,325\ \mathrm{Pa}$:
 
 $$\frac{P_{\text{rad}}}{P_{\text{atm}}} \approx 4{,}5 \times 10^{-11}$$
 

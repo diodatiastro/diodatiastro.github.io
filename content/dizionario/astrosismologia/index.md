@@ -167,7 +167,7 @@ Nel Sole i modi *g* non sono mai stati rilevati con certezza in superficie, perc
 
 ## Un paio di esempi numerici
 
-Nel Sole i valori di riferimento più comunemente adottati sono $\Delta\nu_\odot \approx 134{,}9\,\mu\text{Hz}$ e $\nu_{\text{max},\odot}\approx 3.090\,\mu\text{Hz}$. In una gigante rossa evoluta l’espansione del raggio e la diminuzione della gravità superficiale spostano lo spettro verso frequenze molto più basse: nella gigante rossa [KIC 10001167](https://www.aanda.org/articles/aa/full_html/2025/07/aa53347-24/aa53347-24.html) ($R \approx 13\,R_{\odot}$) si misura $\nu_\text{max} \approx 19{,}8\,\mu\text{Hz}$, circa $155$ volte inferiore a quello solare. Tale differenza mostra come la frequenza di oscillazione sia un eccellente indicatore delle dimensioni stellari.
+Nel Sole i valori di riferimento più comunemente adottati sono $\Delta\nu_\odot \approx 134{,}9\,\mu\text{Hz}$ e $\nu_{\text{max},\odot}\approx 3\,090\,\mu\text{Hz}$. In una gigante rossa evoluta l’espansione del raggio e la diminuzione della gravità superficiale spostano lo spettro verso frequenze molto più basse: nella gigante rossa [KIC 10001167](https://www.aanda.org/articles/aa/full_html/2025/07/aa53347-24/aa53347-24.html) ($R \approx 13\,R_{\odot}$) si misura $\nu_\text{max} \approx 19{,}8\,\mu\text{Hz}$, circa $155$ volte inferiore a quello solare. Tale differenza mostra come la frequenza di oscillazione sia un eccellente indicatore delle dimensioni stellari.
 
 
 [^nasce]: La disciplina nasce negli anni '70 con le osservazioni eliosismologiche; il salto verso le stelle diverse dal Sole arriva con il satellite CoRoT, nel 2006, e soprattutto con il telescopio spaziale Kepler, nel 2009.

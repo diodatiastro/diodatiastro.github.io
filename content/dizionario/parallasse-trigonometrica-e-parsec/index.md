@@ -9,7 +9,7 @@ draft = false
 {{% box tipo="definizione" titolo="Definizioni" %}} 
 La **parallasse** è lo spostamento angolare *apparente* di un oggetto, quando viene osservato da due punti di vista diversi. 
 
-Il **parsec**, abbreviato in $\text{pc}$, è la distanza alla quale l’[unità astronomica]({{< relref "/dizionario/unita-astronomica/" >}}), cioè il raggio dell’orbita terrestre, sottende un angolo di $1$ secondo d’arco. Corrisponde a $206.265$ unità astronomiche o $3{,}262$ anni luce.
+Il **parsec**, abbreviato in $\text{pc}$, è la distanza alla quale l’[unità astronomica]({{< relref "/dizionario/unita-astronomica/" >}}), cioè il raggio dell’orbita terrestre, sottende un angolo di $1$ secondo d’arco. Corrisponde a $206\,265$ unità astronomiche o $3{,}262$ anni luce.
 {{% /box %}}
 
 In questo articolo vedremo come il semplice concetto di parallasse[^par] – lo stesso che sperimentiamo guardando il nostro pollice con un occhio alla volta – sia lo strumento che permette di misurare con precisione la distanza delle stelle. Partiremo da un esempio concreto, Alfa Centauri, per introdurre parsec e anni luce, le unità di misura usate dagli astronomi. Infine ripercorreremo la lunga storia delle osservazioni che hanno portato alla misurazione delle prime parallassi stellari, per finire con le misure ultra–precise ottenute dal satellite Gaia.
@@ -69,7 +69,7 @@ Nell’esempio del pollice sollevato ad altezza di braccio, possiamo ricavare la
 
 Ma cosa c’entra tutto ciò con la distanza delle stelle? Vediamo. Se osserviamo la Luna da due punti della superficie terrestre separati tra loro da migliaia di chilometri, possiamo misurare un discreto spostamento angolare della Luna nel cielo, cioè un angolo di parallasse. Ciò perché la Luna, astronomicamente parlando, è molto vicina alla Terra. Conoscendo dunque la distanza esatta tra i due punti da cui sono state fatte le osservazioni e usando l’operazione descritta al numero $(3)$, possiamo ricavare facilmente la distanza della Luna dalla Terra.
 
-Ma le stelle sono lontanissime, molto più lontane della Luna. Se anche si usasse come linea di base per la misurazione dell’angolo di parallasse l’intero diametro terrestre (circa $12.700\,\text{km}$), non noteremmo il benché minimo spostamento angolare. Per sperare di misurare la parallasse di una stella, anche della più vicina, occorre una linea di base *molto* più grande del diametro terrestre. E la linea di base più grande in assoluto, che, come abitanti di questo pianeta, possiamo utilizzare per un simile calcolo è l'**unità astronomica**, cioè il raggio medio dell’orbita che la Terra descrive annualmente intorno al Sole. È una grandezza che conosciamo con assoluta precisione, grazie a misurazioni effettuate con il radar a partire dalla seconda metà del secolo scorso: $149.597.870.700\,\text{m}$, cioè, approssimando un po’, $149{,}6$ milioni di $\text{km}$ [^1].
+Ma le stelle sono lontanissime, molto più lontane della Luna. Se anche si usasse come linea di base per la misurazione dell’angolo di parallasse l’intero diametro terrestre (circa $12\,700\,\text{km}$), non noteremmo il benché minimo spostamento angolare. Per sperare di misurare la parallasse di una stella, anche della più vicina, occorre una linea di base *molto* più grande del diametro terrestre. E la linea di base più grande in assoluto, che, come abitanti di questo pianeta, possiamo utilizzare per un simile calcolo è l'**unità astronomica**, cioè il raggio medio dell’orbita che la Terra descrive annualmente intorno al Sole. È una grandezza che conosciamo con assoluta precisione, grazie a misurazioni effettuate con il radar a partire dalla seconda metà del secolo scorso: $149\,597\,870\,700\,\text{m}$, cioè, approssimando un po’, $149{,}6$ milioni di $\text{km}$ [^1].
 
 Immaginiamo, dunque, di misurare la posizione esatta di una stella nel cielo a marzo, confrontandola con quella di oggetti immobili sulla volta celeste come per esempio galassie o quasar. Lasciamo passare poi sei mesi e misuriamo nuovamente la posizione della stessa stella a settembre, confrontandola con i medesimi oggetti fissi adoperati nella misurazione precedente. In quei sei mesi la Terra si sarà spostata nel punto opposto della sua orbita intorno al Sole. Le due misurazioni, pertanto, saranno avvenute da due punti separati da una linea di base pari al diametro dell’orbita terrestre, che corrisponde a $2$ unità astronomiche, cioè circa $300$ milioni di $\text{km}$. Questa doppia misurazione ci fornisce le migliori condizioni possibili per riuscire a registrare dalla Terra uno spostamento angolare discreto della stella osservata, a misurare cioè la sua parallasse.
 
@@ -97,11 +97,11 @@ alt="descrizione immagine"
 caption="Un angolo di $1$ radiante corrisponde approssimativamente a $57,3^{\circ}$. Fonte: Wikimedia"
 >}}
 
-Il risultato è $277.624$ unità astronomiche: la coppia binaria formata da Alfa Centauri A e B dista da noi quasi $280.000$ volte la distanza media tra la Terra e il Sole. È un abisso di spazio che equivale a $4{,}153 \times 10^{13}\,\text{km}$, cioè poco più di $41.500$ miliardi di chilometri!
+Il risultato è $277\,624$ unità astronomiche: la coppia binaria formata da Alfa Centauri A e B dista da noi quasi $280\,000$ volte la distanza media tra la Terra e il Sole. È un abisso di spazio che equivale a $4{,}153 \times 10^{13}\,\text{km}$, cioè poco più di $41\,500$ miliardi di chilometri!
 
 ## L'anno luce
 
-Poiché maneggiare numeri così grandi è poco pratico, si usa solitamente esprimere simili distanze in anni luce. Un **anno luce** è la distanza percorsa dalla luce nel vuoto in un anno e corrisponde a $63.241$ unità astronomiche o $9,461 \times 10^{12}\,\text{km}$, cioè $9.461$ miliardi di $\text{km}$. Trasformando le unità astronomiche in anni luce, otteniamo infine che Alfa Centauri dista $4{,}39$ anni luce dalla Terra. Ed ecco come, dalla misura dell’angolo di parallasse di una stella, siamo arrivati rapidamente a ricavare la sua distanza.
+Poiché maneggiare numeri così grandi è poco pratico, si usa solitamente esprimere simili distanze in anni luce. Un **anno luce** è la distanza percorsa dalla luce nel vuoto in un anno e corrisponde a $63\,241$ unità astronomiche o $9,461 \times 10^{12}\,\text{km}$, cioè $9\,461$ miliardi di $\text{km}$. Trasformando le unità astronomiche in anni luce, otteniamo infine che Alfa Centauri dista $4{,}39$ anni luce dalla Terra. Ed ecco come, dalla misura dell’angolo di parallasse di una stella, siamo arrivati rapidamente a ricavare la sua distanza.
 
 ## Il peso delle incertezze
 
@@ -116,7 +116,7 @@ $$
 \end{aligned} \tag{6}
 $$
 
-Otteniamo una distanza minima di $277.123$ unità astronomiche ($4{,}382$ anni luce) e una distanza massima di $278.094$ unità astronomiche ($4{,}397$ anni luce). È una differenza di $971$ unità astronomiche, pari a oltre $145$ miliardi di $\text{km}$. Può sembrare poco, ma è un’incertezza notevole, considerando che Alfa Centauri è il sistema stellare più vicino alla Terra.
+Otteniamo una distanza minima di $277\,123$ unità astronomiche ($4{,}382$ anni luce) e una distanza massima di $278\,094$ unità astronomiche ($4{,}397$ anni luce). È una differenza di $971$ unità astronomiche, pari a oltre $145$ miliardi di $\text{km}$. Può sembrare poco, ma è un’incertezza notevole, considerando che Alfa Centauri è il sistema stellare più vicino alla Terra.
 
 {{< figura 
 src="immagini/alfacentauri-ab.jpg" 
@@ -126,7 +126,7 @@ caption="Alfa Centauri A e B riprese dal telescopio spaziale Hubble. La separazi
 
 ## Calcolare le distanze stellari in parsec
 
-Come abbiamo visto nell’esempio precedente, le parallassi stellari sono angoli minuscoli, sempre inferiori a $1$ secondo d’arco, che è di per sé un angolo piccolissimo: ci vogliono ben $3.600$ secondi d’arco per fare un solo grado, che è a sua volta la $360^a$ parte di una circonferenza.
+Come abbiamo visto nell’esempio precedente, le parallassi stellari sono angoli minuscoli, sempre inferiori a $1$ secondo d’arco, che è di per sé un angolo piccolissimo: ci vogliono ben $3\,600$ secondi d’arco per fare un solo grado, che è a sua volta la $360^a$ parte di una circonferenza.
 
 In sostanza, le parallassi stellari sono angoli così piccoli che è possibile usare nei calcoli delle distanze stellari un’utile semplificazione, in virtù della quale possiamo eliminare l’uso della tangente e dividere direttamente l’unità astronomica per l’angolo di parallasse espresso in radianti. Ciò perché, per [angoli sufficientemente piccoli](https://en.wikipedia.org/wiki/Small-angle_approximation), la tangente di un angolo è *approssimativamente* uguale all’angolo medesimo:
 
@@ -136,7 +136,7 @@ Per avere un errore dell’$1\%$ usando una simile approssimazione, occorre che 
 
 $$ \text{Distanza Alfa Centauri} = \frac{1\ \text{au}}{3,602 \times 10^{-6}} \tag{8} $$
 
-Eseguendo la divisione, otteniamo $277.624$ unità astronomiche, cioè esattamente lo stesso valore ottenuto con l’operazione $(5)$, in cui l’unità astronomica era stata divisa per la tangente all’angolo di parallasse.
+Eseguendo la divisione, otteniamo $277\,624$ unità astronomiche, cioè esattamente lo stesso valore ottenuto con l’operazione $(5)$, in cui l’unità astronomica era stata divisa per la tangente all’angolo di parallasse.
 
 Vediamo adesso un modo per semplificare ulteriormente i calcoli, eliminando la necessità di convertire gli angoli di parallasse in radianti. Dalla formula $(1)$ sappiamo che la tangente all’angolo di parallasse è uguale al lato opposto dell’immaginario triangolo rettangolo formato da Terra, Sole e stella di cui vogliamo misurare la distanza, diviso per il lato adiacente. Applicando l’approssimazione della formula $(7)$, eliminiamo la tangente e otteniamo che il rapporto tra i due lati del triangolo è direttamente uguale all’angolo di parallasse:
 
@@ -154,9 +154,9 @@ $$ \text{lato adiacente} = \frac{(\text{lato opposto})(57,2958^\circ)} {\alpha} 
 
 Poniamo ora il caso che l’angolo di parallasse $\alpha$ sia esattamente uguale a $1$ secondo d’arco. Poiché il lato opposto di questo immaginario triangolo rettangolo spaziale è il raggio dell’orbita terrestre, cioè l’unità astronomica, e poiché $1$ secondo d’arco è pari a $1/3600$ di grado, possiamo riscrivere la $(11)$ nel modo seguente:
 
-$$ \text{lato adiacente} = \frac{(149.600.000\ \text{km})(57,29578^\circ)} {(1/3600)^\circ} \tag{12} $$
+$$ \text{lato adiacente} = \frac{(149\,600\,000\ \text{km})(57,29578^\circ)} {(1/3600)^\circ} \tag{12} $$
 
-La misura del lato adiacente del triangolo, cioè la distanza che otteniamo svolgendo i calcoli, è pari, approssimando un po’, a $3,086 \times 10^{13}\,\text{km}$, cioè $30.860$ miliardi di km. È l’equivalente di $206.265$ unità astronomiche o $3,262$ anni luce.
+La misura del lato adiacente del triangolo, cioè la distanza che otteniamo svolgendo i calcoli, è pari, approssimando un po’, a $3,086 \times 10^{13}\,\text{km}$, cioè $30\,860$ miliardi di km. È l’equivalente di $206\,265$ unità astronomiche o $3,262$ anni luce.
 
 {{< figura 
 src="immagini/un-parsec.png" 
@@ -178,7 +178,7 @@ $$ \text{Distanza Alfa Centauri} = \frac{1}{0,743} \tag{14} $$
 
 Il risultato della divisione, leggermente arrotondato, è $1{,}346$ parsec.
 
-Vediamo adesso se la distanza così ottenuta corrisponde a quella che avevamo calcolato in precedenza usando le formule $(5)$ e $(8)$. Poiché $1$ parsec è uguale a $206.265\,\text{au}$, $1{,}346$ parsec corrispondono a $277.633\,\text{au}$. Possiamo concludere pertanto che la distanza di Alfa Centauri ottenuta con la formula $(14)$ è in ottimo accordo con il valore ottenuto usando le altre due formule $(277.624 \,\text{au})$: la differenza di $9\,\text{au}$ dipende semplicemente dai piccoli arrotondamenti fatti.
+Vediamo adesso se la distanza così ottenuta corrisponde a quella che avevamo calcolato in precedenza usando le formule $(5)$ e $(8)$. Poiché $1$ parsec è uguale a $206\,265\,\text{au}$, $1{,}346$ parsec corrispondono a $277\,633\,\text{au}$. Possiamo concludere pertanto che la distanza di Alfa Centauri ottenuta con la formula $(14)$ è in ottimo accordo con il valore ottenuto usando le altre due formule $(277\,624 \,\text{au})$: la differenza di $9\,\text{au}$ dipende semplicemente dai piccoli arrotondamenti fatti.
 
 Se vogliamo infine conoscere la distanza di una stella in anni luce, basta moltiplicare la distanza in parsec per il fattore di conversione $3{,}262$:
 
@@ -214,7 +214,7 @@ Benché l’idea di ricavare le distanze stellari dagli angoli di parallasse si 
 
 L’ostacolo principale, come è facile immaginare data l’estrema piccolezza di quegli angoli, era di natura tecnologica. A occhio nudo era ovviamente impossibile misurare parallassi stellari. Si dovette attendere l’invenzione del telescopio, grazie alla quale si ottennero rapidamente formidabili progressi nelle conoscenze astronomiche. Ma i primi telescopi erano assolutamente inadeguati a un compito di estrema precisione, come quello di misurare i minuscoli spostamenti angolari delle stelle, dovuti al riflesso del moto orbitale terrestre. Ai tempi di Galileo, per esempio, i telescopi erano così rudimentali da non consentire di rilevare spostamenti angolari nell’ordine di $1$ minuto d’arco: un margine d’incertezza enorme, considerando che tutte le parallassi stellari sono più piccole di $1$ secondo d’arco (la $60^a$ parte di un minuto).
 
-L’unica cosa che si poteva affermare, data la mancanza di parallassi stellari misurabili, era che le stelle dovessero essere tutte più lontane della massima distanza ricavabile dagli spostamenti angolari che i telescopi dell’epoca erano in grado di registrare. Newton, per esempio, concluse che le distanze stellari dovessero essere tutte maggiori di $20.000$ unità astronomiche. E aveva ragione: oggi sappiamo che anche le stelle più vicine, come Alfa Centauri, distano molto più di $20.000$ unità astronomiche.
+L’unica cosa che si poteva affermare, data la mancanza di parallassi stellari misurabili, era che le stelle dovessero essere tutte più lontane della massima distanza ricavabile dagli spostamenti angolari che i telescopi dell’epoca erano in grado di registrare. Newton, per esempio, concluse che le distanze stellari dovessero essere tutte maggiori di $20\,000$ unità astronomiche. E aveva ragione: oggi sappiamo che anche le stelle più vicine, come Alfa Centauri, distano molto più di $20\,000$ unità astronomiche.
 
 Per tutto il 18° secolo, nonostante gli indiscutibili progressi tecnologici, i telescopi non furono ancora all’altezza del compito. Ai tempi di Halley persino con gli strumenti più precisi non era possibile misurare spostamenti angolari minori di $15$ secondi d’arco, un valore ancora immenso, se comparato alla piccolezza delle parallassi stellari.
 
@@ -279,7 +279,7 @@ alt="I valori delle parallassi stellari pubblicati da Struve, Henderson e Bessel
 caption="I valori delle parallassi stellari pubblicati da Struve, Henderson e Bessel tra il 1838 e il 1839."
 >}}
 
-L’invenzione della fotografia determinò, intorno alla fine del 19° secolo, un netto progresso nella precisione e nel numero delle parallassi stellari misurate. Nel 1910 erano note le parallassi di $365$ stelle. Nel 1935 il numero era già salito a $7.534$. Ma il vero salto, sia dal punto di vista qualitativo che quantitativo, si è avuto con la messa in orbita di satelliti dedicati specificamente a misurazioni astrometriche. Il primo fu Hipparcos, la cui missione durò dal 1989 al 1993. In quei quattro anni il satellite misurò la parallasse di $118.000$ stelle con alta precisione (cioè con errori non superiori generalmente al $10–20\%$) e quella di $2{,}5$ milioni di altre stelle con precisione leggermente inferiore.
+L’invenzione della fotografia determinò, intorno alla fine del 19° secolo, un netto progresso nella precisione e nel numero delle parallassi stellari misurate. Nel 1910 erano note le parallassi di $365$ stelle. Nel 1935 il numero era già salito a $7\,534$. Ma il vero salto, sia dal punto di vista qualitativo che quantitativo, si è avuto con la messa in orbita di satelliti dedicati specificamente a misurazioni astrometriche. Il primo fu Hipparcos, la cui missione durò dal 1989 al 1993. In quei quattro anni il satellite misurò la parallasse di $118\,000$ stelle con alta precisione (cioè con errori non superiori generalmente al $10–20\%$) e quella di $2{,}5$ milioni di altre stelle con precisione leggermente inferiore.
 
 Dal 2013 al 2025 è durata la missione del successore di Hipparcos, il **satellite Gaia** dell'agenzia spaziale europea ESA: lanciato il 19 dicembre 2013, ha concluso la fase di scansione del cielo il 15 gennaio 2025. Nei suoi undici anni di attività, Gaia ha misurato le parallassi di oltre un miliardo di stelle, con errori inferiori al millesimo di secondo d'arco. È un'eredità enorme per gli astronomi di oggi e del futuro, che possono conoscere finalmente, grazie a Gaia, la distanza delle stelle.
 
@@ -299,6 +299,6 @@ caption="La luminosa stella al centro dell’immagine è 61 Cygni, la prima di c
 
 [^4]: Il nome è un neologismo derivato dalla contrazione di “**par**allasse di 1 **sec**ondo d’arco”. Fu coniato dall’astronomo britannico Herbert Hall Turner. La parola **parsec** comparve per la prima volta in una [pubblicazione scientifica](https://academic.oup.com/mnras/article/73/5/334/972786) nel 1913.
 
-[^5]: Per distanze maggiori si adoperano i suoi multipli: il **kiloparsec** ($1\,\text{kpc} = 1.000\,\text{pc}$), il **megaparsec** ($1\,\text{Mpc} = 1.000.000\,\text{pc}$) e il **gigaparsec** ($1\,\text{Gpc} = 1.000.000.000\,\text{pc}$).
+[^5]: Per distanze maggiori si adoperano i suoi multipli: il **kiloparsec** ($1\,\text{kpc} = 1\,000\,\text{pc}$), il **megaparsec** ($1\,\text{Mpc} = 1\,000\,000\,\text{pc}$) e il **gigaparsec** ($1\,\text{Gpc} = 1\,000\,000\,000\,\text{pc}$).
 
 [^6]: Ma le parallassi delle stelle più luminose (Sirio, Vega ecc.) non sono disponibili nell’archivio di Gaia, perché la luce abbagliante di quelle stelle satura completamente i delicati sensori del telescopio spaziale.

@@ -70,7 +70,7 @@ La formula ha una conseguenza pratica di enorme importanza, che è il tema del p
 Per capire l'importanza del *tempo* nel determinare il tasso di trasferimento del momento, possiamo fare l'esempio di un incidente stradale. Un conducente di $80\,\mathrm{kg}$ finisce contro un muro di cemento viaggiando a $30\,\mathrm{m/s}$ $(108\,\mathrm{km/h})$. La variazione di momento, in modulo, è:
 
 $$
-\Delta p = 80 \times 30 = 2.400 \; \text{kg}\;\text{m}\;\text{s}^{-1}
+\Delta p = 80 \times 30 = 2\,400 \; \text{kg}\;\text{m}\;\text{s}^{-1}
 $$
 
 Contro una struttura rigida il tempo di arresto è brevissimo:
@@ -82,25 +82,25 @@ $$
 Ne consegue un urto violentissimo, che sprigiona un'enorme forza media:
 
 $$
-F = \frac{2.400}{0{,}01} = 240.000 \; \text{N}
+F = \frac{2\,400}{0{,}01} = 240\,000 \; \text{N}
 $$
 
-Per farsi un'idea della potenza di un simile impatto, $240.000$ newton corrispondono al peso di circa $24{,}5$ tonnellate. Ma il dato più eloquente è l'accelerazione (in questo caso una decelerazione) subita dal corpo:
+Per farsi un'idea della potenza di un simile impatto, $240\,000$ newton corrispondono al peso di circa $24{,}5$ tonnellate. Ma il dato più eloquente è l'accelerazione (in questo caso una decelerazione) subita dal corpo:
 
 $$
-a = \frac{F}{m} = \frac{240.000}{80} = 3.000\;\text{m}\,\text{s}^{-2} \approx 306\,g
+a = \frac{F}{m} = \frac{240\,000}{80} = 3\,000\;\text{m}\,\text{s}^{-2} \approx 306\,g
 $$
 
 cioè oltre *trecento* volte l'accelerazione di gravità terrestre: un valore a cui nessun organismo può sopravvivere. Poniamo ora il caso che l'urto contro il muro sia attutito da un grande airbag, che aumenta di dieci volte il tempo di arresto ($0{,}1$ secondi, invece di $0{,}01$):
 
 $$
-F = \frac{2.400}{0{,}1} = 24.000 \; \text{N}
+F = \frac{2\,400}{0{,}1} = 24\,000 \; \text{N}
 $$
 
 Si ottiene stavolta una forza pari al peso di $2{,}45$ tonnellate, corrispondente per un uomo di $80\,\mathrm{kg}$ a un'accelerazione di
 
 $$
-a = \frac{24.000}{80} = 300\;\text{m}\,\text{s}^{-2} \approx 30{,}6\,g
+a = \frac{24\,000}{80} = 300\;\text{m}\,\text{s}^{-2} \approx 30{,}6\,g
 $$
 
 Trenta volte la gravità terrestre resta un valore elevatissimo, ma non necessariamente letale: nelle corse automobilistiche si sopravvive regolarmente a picchi di questa entità e a volte superiori. Va però chiarito che la sopravvivenza non dipende dall'allenamento del pilota, come si sente talvolta ripetere, bensì dalla *distribuzione del carico* sul corpo: cinture a sei punti, sedile avvolgente e vari dispositivi dedicati a produrre un assorbimento progressivo dell'impatto ripartiscono la forza su ampie superfici e su tempi ancora più lunghi, evitando che si concentri su punti fragili.
@@ -192,13 +192,13 @@ Va anche detto, per evitare un errore frequente, che le due grandezze *non sono 
 Nell'esempio precedente il proiettile e il fucile hanno lo stesso momento lineare in modulo, $8\;\text{kg}\,\text{m}\,\text{s}^{-1}$, ma energie cinetiche molto differenti:
 
 $$\begin{aligned}
-E_{k,\text{proiettile}} &= \frac{1}{2}mv^2 = \frac{1}{2}(0{,}01)(800)^2 = 3.200\,\text{J} \\
+E_{k,\text{proiettile}} &= \frac{1}{2}mv^2 = \frac{1}{2}(0{,}01)(800)^2 = 3\,200\,\text{J} \\
 E_{k,\text{fucile}} &= \frac{1}{2}MV^2 = \frac{1}{2}(4)(2)^2 = 8\,\text{J}
 \end{aligned}$$
 
 Il rapporto è di $400$ a $1$, ed è esattamente il rapporto inverso fra le due masse ($4\,\text{kg}$ contro $0{,}01\,\text{kg}$), come prevede la formula $E_k = p^2/2m$.
 
-La spinta impartita dal calcio del fucile, con i suoi $8\,\text{J}$ di energia cinetica, può dare alla spalla di chi preme il grilletto una "botta" chiaramente avvertibile, ma tutto sommato modesta, facile da assorbire. Viceversa, il proiettile, con la sua energia cinetica di $3.200\,\text{J}$, può produrre danni devastanti in un essere vivente. Infatti, quell'energia cinetica si trasformerebbe istantaneamente in altre forme di **lavoro** dagli effetti potenzialmente letali, tra cui:
+La spinta impartita dal calcio del fucile, con i suoi $8\,\text{J}$ di energia cinetica, può dare alla spalla di chi preme il grilletto una "botta" chiaramente avvertibile, ma tutto sommato modesta, facile da assorbire. Viceversa, il proiettile, con la sua energia cinetica di $3\,200\,\text{J}$, può produrre danni devastanti in un essere vivente. Infatti, quell'energia cinetica si trasformerebbe istantaneamente in altre forme di **lavoro** dagli effetti potenzialmente letali, tra cui:
 
 - **cavitazione temporanea.** L'energia cinetica compie il lavoro meccanico di lacerare i tessuti. L'onda d'urto generata dall'energia espande violentemente i tessuti circostanti creando una cavità temporanea enorme, che distrugge organi e strutture anche lontano dal piccolo foro di passaggio del proiettile;
 - **frammentazione e deformazione**. Una parte dell'energia viene spesa per deformare il proiettile stesso (o per frantumarlo), aumentando la superficie d'impatto e massimizzando il rilascio di energia residua all'interno del bersaglio;
@@ -228,7 +228,7 @@ In breve, nel determinare l'energia cinetica di un corpo la **velocità** conta 
 
 ## La conservazione del momento lineare a velocità relativistiche
 
-E, a proposito di velocità, un ultimo caso da considerare circa la conservazione del momento lineare è cosa accade quando un corpo si muove a **velocità relativistiche**, cioè prossime a quella della luce (quasi $300.000\,\text{km/s}$).
+E, a proposito di velocità, un ultimo caso da considerare circa la conservazione del momento lineare è cosa accade quando un corpo si muove a **velocità relativistiche**, cioè prossime a quella della luce (quasi $300\,000\,\text{km/s}$).
 
 Il momento lineare di un sistema isolato si conserva anche in queste condizioni estreme, ma, in base alla **relatività ristretta** di Einstein, la formula comunemente usata per calcolare il momento lineare a velocità "normali" viene modificata con l'introduzione del cosiddetto **fattore di Lorentz**[^2], indicato in fisica con la lettera greca $\gamma$ (gamma). Quindi la quantità di moto $p$ non è più il prodotto solo di massa per velocità, ma diventa:
 
@@ -244,7 +244,7 @@ $$
 
 in cui $c$ è la velocità della luce. Se si svolgono i calcoli, si nota che alle *basse velocità* (per esempio quella di un'auto o di un aereo) il valore di $v$ è piccolissimo rispetto a $c$, quindi $\gamma \approx 1$. Ciò significa che $\gamma$ è *ininfluente* alle basse velocità, ragion per cui la formula per il calcolo del momento lineare torna a essere $p = m_0 v$, perfettamente equivalente a quella valida nella fisica classica.
 
-La situazione cambia radicalmente quando ci avviciniamo alla velocità della luce. Prendiamo un protone accelerato al $99{,}999999\%$ della velocità della luce nel Large Hadron Collider (LHC) del CERN di Ginevra. Svolgendo i calcoli, otteniamo un fattore $\gamma \approx 7.071$[^3]. Ciò significa che il momento lineare di quel protone è circa settemila volte maggiore di quello che si otterrebbe applicando *alla stessa velocità* la formula classica $p = m_0 v$. Gli enormi e potentissimi magneti installati lungo l'anello dell'LHC servono proprio a questo: a esercitare forze adeguate a mantenere confinate particelle dotate di una quantità di moto gigantesca.
+La situazione cambia radicalmente quando ci avviciniamo alla velocità della luce. Prendiamo un protone accelerato al $99{,}999999\%$ della velocità della luce nel Large Hadron Collider (LHC) del CERN di Ginevra. Svolgendo i calcoli, otteniamo un fattore $\gamma \approx 7\,071$[^3]. Ciò significa che il momento lineare di quel protone è circa settemila volte maggiore di quello che si otterrebbe applicando *alla stessa velocità* la formula classica $p = m_0 v$. Gli enormi e potentissimi magneti installati lungo l'anello dell'LHC servono proprio a questo: a esercitare forze adeguate a mantenere confinate particelle dotate di una quantità di moto gigantesca.
 
 Va precisato che, con l'aumentare di $\gamma$, ciò che cresce non è la *massa*. La massa $m_0$ è per definizione un invariante, uguale in ogni sistema di riferimento; a crescere senza limite all'avvicinarsi di $v$ a $c$ sono il **momento** e l'**energia**. Parlare di "massa che aumenta" è fuorviante anche per una ragione tecnica: la resistenza che un corpo relativistico oppone a essere accelerato non è la stessa lungo la direzione del moto e trasversalmente a essa, quindi non esiste alcuna singola grandezza che possa fungere da "massa inerziale" relativistica. Il limite della velocità della luce rimane in ogni caso irraggiungibile per qualsiasi corpo dotato di massa[^4].
 
@@ -386,7 +386,7 @@ In conclusione, il momento lineare è un pilastro della fisica, un concetto unif
 
 [^2]: Il fattore di Lorentz descrive in che modo intervalli di tempo e di spazio misurati su un corpo in moto si modificano rispetto a quelli misurati da un osservatore che vede il corpo muoversi: più la velocità si avvicina a $c$, più il tempo si dilata e le distanze si contraggono. È importante sottolineare che si tratta di relazioni *fra sistemi di riferimento*, non di proprietà intrinseche del corpo: nel proprio sistema di riferimento il corpo non misura alcuna dilatazione o contrazione.
 
-[^3]: Per $v/c = 0{,}99999999$ si ha $1 - v^2/c^2 = (1 - v/c)(1 + v/c) \approx 2 \times 10^{-8}$, la cui radice quadrata vale circa $1{,}414 \times 10^{-4}$; il reciproco è $\gamma \approx 7.071$. Una verifica indipendente: poiché l'energia totale è $E = \gamma m_0 c^2$ e la massa a riposo del protone equivale a $0{,}938\,\text{GeV}$, si ottiene $E \approx 6{,}6\,\text{TeV}$, in buon accordo con l'energia di fascio effettivamente raggiunta dall'LHC.
+[^3]: Per $v/c = 0{,}99999999$ si ha $1 - v^2/c^2 = (1 - v/c)(1 + v/c) \approx 2 \times 10^{-8}$, la cui radice quadrata vale circa $1{,}414 \times 10^{-4}$; il reciproco è $\gamma \approx 7\,071$. Una verifica indipendente: poiché l'energia totale è $E = \gamma m_0 c^2$ e la massa a riposo del protone equivale a $0{,}938\,\text{GeV}$, si ottiene $E \approx 6{,}6\,\text{TeV}$, in buon accordo con l'energia di fascio effettivamente raggiunta dall'LHC.
 
 [^4]: Se si raggiungesse esattamente la velocità della luce ($v = c$), il denominatore della frazione con cui si calcola il fattore di Lorentz diventerebbe zero, quindi $\gamma$ tenderebbe all'infinito. Ecco perché nessun oggetto dotato di massa può raggiungere la velocità della luce: servirebbe un'energia infinita per spingerlo.
 

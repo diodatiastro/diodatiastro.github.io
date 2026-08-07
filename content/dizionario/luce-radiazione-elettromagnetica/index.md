@@ -34,7 +34,7 @@ La luce, o più precisamente la radiazione elettromagnetica, ha alcune propriet�
 
 - **Non ha bisogno di un mezzo per propagarsi.** A differenza del suono, viaggia perfettamente nel vuoto.
 
-- **Velocità fissa.** Nel vuoto si propaga a circa $300.000\,\mathrm{km/s}$ (più precisamente $299.792.458\,\mathrm{m/s}$). È la massima velocità possibile nell'universo e si indica solitamente con $c$.
+- **Velocità fissa.** Nel vuoto si propaga a circa $300\,000\,\mathrm{km/s}$ (più precisamente $299\,792\,458\,\mathrm{m/s}$). È la massima velocità possibile nell'universo e si indica solitamente con $c$.
 
 - **Si propaga in linea retta.** In un mezzo omogeneo la luce viaggia in linea retta; tuttavia, su scala cosmica, la traiettoria della luce viene deflessa dalla gravità dei corpi massicci (lenti gravitazionali), in accordo con la relatività generale.
 

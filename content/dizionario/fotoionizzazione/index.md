@@ -61,4 +61,4 @@ La Nebulosa di Orione, distante circa $1340$ anni luce da noi, è il più classi
 
 [^1]: Se l'energia trasportata dal fotone è maggiore dell'energia di legame necessaria a strappare l'elettrone dall'atomo, il surplus di energia non scompare. Per la legge di conservazione, quel surplus viene trasformato istantaneamente nell'energia cinetica con la quale l'elettrone liberato si muove nello spazio.
 
-[^2]: Una gigantesca stella di classe O con una temperatura superiore a $39.000$ Kelvin e una luminosità oltre $200.000$ volte maggiore di quella del Sole, che bombarda la nebulosa di Orione con un'immensa quantità di raggi ultravioletti.
+[^2]: Una gigantesca stella di classe O con una temperatura superiore a $39\,000$ Kelvin e una luminosità oltre $200\,000$ volte maggiore di quella del Sole, che bombarda la nebulosa di Orione con un'immensa quantità di raggi ultravioletti.

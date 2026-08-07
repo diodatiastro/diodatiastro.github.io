@@ -16,7 +16,7 @@ La domanda è: esiste una luminosità massima oltre la quale questa forza *super
 
 ## La lotta tra gravità e pressione di radiazione
 
-Per capire l'origine del fenomeno, consideriamo del plasma nella [fotosfera]({{< relref "/dizionario/fotosfera/" >}}) di una stella di massa $M$ e luminosità $L$, a distanza $r$ dal centro. Il plasma è composto essenzialmente da protoni ed elettroni (idrogeno completamente ionizzato). La massa dominante è quella del protone ($m_p$); l'elettrone, infatti, è circa $1.836$ volte più leggero e contribuisce in modo trascurabile. La **forza gravitazionale** sentita dal protone sarà dunque:
+Per capire l'origine del fenomeno, consideriamo del plasma nella [fotosfera]({{< relref "/dizionario/fotosfera/" >}}) di una stella di massa $M$ e luminosità $L$, a distanza $r$ dal centro. Il plasma è composto essenzialmente da protoni ed elettroni (idrogeno completamente ionizzato). La massa dominante è quella del protone ($m_p$); l'elettrone, infatti, è circa $1\,836$ volte più leggero e contribuisce in modo trascurabile. La **forza gravitazionale** sentita dal protone sarà dunque:
 
 $$
 F_{\text{grav}} = \frac{GMm_p}{r^2}
@@ -65,7 +65,7 @@ L_{\text{Edd}} & \simeq 1{,}26 \times 10^{38} \left(\frac{M}{M_\odot}\right)\,\t
 \end{aligned}
 $$
 
-Notiamo subito che, nel caso del Sole, in cui la frazione tra parentesi dà come risultato $1$, il limite di Eddington è circa $32.000$ volte maggiore della luminosità solare. Significa che la pressione di radiazione del Sole svolge un ruolo davvero trascurabile nel contrastare la gravità solare. Il Sole, in altre parole, è ben lontano dal limite di Eddington per una stella della sua massa.
+Notiamo subito che, nel caso del Sole, in cui la frazione tra parentesi dà come risultato $1$, il limite di Eddington è circa $32\,000$ volte maggiore della luminosità solare. Significa che la pressione di radiazione del Sole svolge un ruolo davvero trascurabile nel contrastare la gravità solare. Il Sole, in altre parole, è ben lontano dal limite di Eddington per una stella della sua massa.
 
 In linea generale, la formula ci dice che il limite di Eddington scala linearmente con la massa: una stella da $10$ masse solari ha
 
@@ -73,13 +73,13 @@ $$
 L_{\text{Edd}} \simeq 3{,}2 \times 10^5 \, L_\odot
 $$
 
-cioè $320.000$ luminosità solari. Un buco nero da cento milioni di masse solari, tipico di un nucleo galattico attivo (o AGN), ha un limite di Eddington di
+cioè $320\,000$ luminosità solari. Un buco nero da cento milioni di masse solari, tipico di un nucleo galattico attivo (o AGN), ha un limite di Eddington di
 
 $$
 L_{\text{Edd}} \simeq 3{,}2 \times 10^{12} \, L_\odot
 $$
 
-cioè circa $3.200$ miliardi di luminosità solari!
+cioè circa $3\,200$ miliardi di luminosità solari!
 
 ## Massa, luminosità e limite di Eddington
 

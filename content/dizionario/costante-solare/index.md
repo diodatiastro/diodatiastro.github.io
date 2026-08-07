@@ -87,7 +87,7 @@ Un altro dato importante che possiamo ricavare dalla costante solare è la **pot
 
 In realtà non è così. La radiazione solare viaggia in raggi paralleli, data la distanza che ci separa dal Sole. La superficie curva della Terra riceve quantità variabili di energia a seconda dell'angolo con cui quei raggi arrivano. I raggi che colpiscono la superficie terrestre con angoli obliqui (vicino ai poli o al terminatore) distribuiscono la stessa energia della costante solare su un'area molto più grande, riducendone l'intensità per metro quadrato. Per ottenere un valore corrispondente alla costante solare su tutta la superficie esposta al Sole, dobbiamo proiettare lo sferoide terrestre su un **disco** di raggio $R$ pari a quello della Terra. Ogni metro quadrato di questo disco immaginario riceve esattamente la costante solare $1361\;\mathrm{W/m}^2$, dato che è perfettamente perpendicolare al Sole.
 
-Calcoliamo dunque l'area $\pi R^2$ di questo disco immaginario, sapendo che il raggio terrestre medio $R$ è circa $6.371\;\mathrm{km}$; quindi, poiché conosciamo anche la costante solare, possiamo infine calcolare la **potenza** $P$ che la Terra intercetta dal Sole ogni secondo, moltiplicando la costante solare per l'area del disco:
+Calcoliamo dunque l'area $\pi R^2$ di questo disco immaginario, sapendo che il raggio terrestre medio $R$ è circa $6\,371\;\mathrm{km}$; quindi, poiché conosciamo anche la costante solare, possiamo infine calcolare la **potenza** $P$ che la Terra intercetta dal Sole ogni secondo, moltiplicando la costante solare per l'area del disco:
 
 $$
 \begin{aligned}
@@ -97,7 +97,7 @@ P &\approx 1361 \times 1{,}274 \times 10^{14} \approx 1{,}735 \times 10^{17} \, 
 \end{aligned}
 $$
 
-Dai calcoli ricaviamo un numero enorme, intorno ai $173$ milioni di miliardi di watt, ma se lo moltiplichiamo per un'ora, cioè $3.600$ secondi, otteniamo un valore davvero impressionante, circa $624$ *miliardi di miliardi* di joule:
+Dai calcoli ricaviamo un numero enorme, intorno ai $173$ milioni di miliardi di watt, ma se lo moltiplichiamo per un'ora, cioè $3\,600$ secondi, otteniamo un valore davvero impressionante, circa $624$ *miliardi di miliardi* di joule:
 
 $$
 {\text{Energia}\cdot \text{ora}} \approx 1{,}734 \times 10^{17} \times 3600 \approx 6{,}24 \times 10^{20} \, \text{J}

@@ -91,7 +91,7 @@ L = m\,v\,r &= (5{,}972\times10^{24})\times(2{,}978\times10^{4})\times(1{,}496\t
 &\approx 2{,}66\times10^{40}\,\text{kg}\,\text{m}^2\,\text{s}^{-1} 
 \end{aligned}
 $$
-Il risultato è circa $26.600$ miliardi di miliardi di miliardi di miliardi di $\text{kg}$ *per metro quadrato* al secondo.
+Il risultato è circa $26\,600$ miliardi di miliardi di miliardi di miliardi di $\text{kg}$ *per metro quadrato* al secondo.
 
 ## Il momento angolare si conserva
 
