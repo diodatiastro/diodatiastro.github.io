@@ -14,6 +14,13 @@ Quanto più la massa è distribuita lontano dall’asse, tanto maggiore è il mo
 Il momento d’inerzia non ha però un valore unico per un determinato corpo: dipende dalla distribuzione della massa e dall’asse rispetto al quale viene calcolato. Uno stesso corpo può quindi avere valori diversi del momento d’inerzia rispetto ad assi diversi. La descrizione complessiva dell’inerzia rotazionale rispetto a tutte le direzioni è fornita dal **tensore d’inerzia**, una grandezza tensoriale[^tens].
 {{% /box %}}
 
+{{< figura 
+src="immagini/momento.png" 
+width="80%" 
+alt="Le sfere blu e le rosse hanno la stessa massa, ma le blu sono più lontane dall'asse di rotazione (il perno verticale). Per questo è più difficile cambiare la velocità di rotazione del sistema a destra che di quello a sinistra." 
+caption="Le sfere blu e le rosse hanno la stessa massa, ma le blu sono più lontane dall'asse di rotazione (il perno verticale). Per questo è più difficile cambiare la velocità di rotazione del sistema a destra che di quello a sinistra."
+>}}
+
 ## Etimologia
 
 **Momento** deriva dal latino *momentum* (contrazione di *movimentum*, da *movēre*, «muovere»), con il significato originario di «spostamento, impulso, quantità che produce rotazione». **Inerzia**, termine anch'esso di ascendenza latina, deriva da *inertia* («inattività, indolenza»), derivato da *iners, inertis* («privo di abilità, inoperoso»). 
@@ -88,6 +95,13 @@ La tabella seguente elenca alcuni momenti d'inerzia **notevoli**, con indicazion
 | Sfera piena (raggio $R$, massa $M$)                   | Diametro                               | $I = \frac{2}{5}MR^{2}$  | $M = 5\,\mathrm{kg}$, $R = 0{,}1\,\mathrm{m}$ → $I = 0{,}02\,\mathrm{kg \cdot m^{2}}$        |
 | Sfera cava con guscio sottile (raggio $R$, massa $M$) | Diametro                               | $I = \frac{2}{3}MR^{2}$  | $M = 5\,\mathrm{kg}$, $R = 0{,}1\,\mathrm{m}$ → $I \approx 0{,}033\,\mathrm{kg \cdot m^{2}}$ |
 
+{{< figura 
+src="immagini/dipende.png" 
+width="" 
+alt="Nella sua essenza, il momento di inerzia è la resistenza di un corpo a cambiare il suo stato di rotazione e dipende dalla distribuzione della massa intorno all'asse di rotazione considerato." 
+caption="Nella sua essenza, il momento di inerzia è la resistenza di un corpo a cambiare il suo stato di rotazione e dipende dalla distribuzione della massa intorno all'asse di rotazione considerato."
+>}}
+
 ## Alcuni esempi numerici
 
 Per dare un connotato pratico alle formule elencate fin qui, calcoliamo il momento d'inerzia di un'**asta sottile omogenea** ($M = 3\text{ kg}$, $L = 2\text{ m}$), ruotata attorno all'asse perpendicolare passante per il centro di massa:
@@ -120,7 +134,7 @@ Nel caso del **Sole** lo scarto è ancora più drastico, e di molto. [Modelli st
 $$
 I_\odot = 0{,}059 \times M_\odot R_\odot^2 \approx 5{,}7\times10^{46}\,\text{kg}\,\text{m}^2
 $$
-contro i $3{,}9\times10^{47}\,\text{kg}\,\text{m}^2$ dell'approssimazione a sfera omogenea: quasi sette volte di più, in quest'ultimo caso! La ragione di una differenza così grande è che circa metà della massa del Sole è concentrata in una regione molto piccola rispetto al raggio solare e quindi a distanze relativamente piccole dall'asse di rotazione: un esempio efficace di quanto l'approssimazione a densità uniforme sia generalmente[^3] inadatta per un corpo stellare.
+contro i $3{,}9\times10^{47}\,\text{kg}\,\text{m}^2$ dell'approssimazione a sfera omogenea. Il momento d'inerzia del Sole è circa $6,8$ volte minore del valore calcolato se fosse una sfera omogenea! La ragione di una differenza così grande è che circa metà della massa del Sole è concentrata in una regione molto piccola rispetto al raggio solare e quindi si trova a distanze relativamente piccole dall'asse di rotazione: un esempio efficace di quanto l'approssimazione a densità uniforme sia generalmente[^3] inadatta per un corpo stellare.
 
 ## Campi di applicazione
 
