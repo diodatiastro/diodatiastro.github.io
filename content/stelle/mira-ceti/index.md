@@ -48,7 +48,7 @@ In un tempo imprecisato del passato, Mira è stata una stella simile al Sole. Po
 
 Se paragonata ad altre giganti, Mira sta viaggiando a velocità insolitamente alta, forse a causa di spinte gravitazionali ricevute da altre stelle con le quali ha interagito in passato. Fende i cieli a $130$ chilometri al secondo, vale a dire $468\,000$ chilometri orari. Insieme con la gigante morente viaggia una piccola e distante compagna, [quasi certamente una nana bianca](https://arxiv.org/abs/1009.2509) (e, secondo gli studi più recenti, una nana bianca [insolitamente leggera](https://academic.oup.com/mnras/article/547/2/stag321/8488770)). La coppia, nota come **Mira A** (la gigante) e **Mira B** (la nana bianca), ruota lentamente intorno al proprio centro di gravità: il periodo orbitale, non ancora determinato con sicurezza, è stimato tra i $500$ e i quasi $1\,000$ anni a seconda dello studio. 
 
-La coppia sta attraversando la costellazione della Balena (_Cetus_), a una distanza stimata tra $300$ e $400$ anni luce dalla Terra, anche se le misure più recenti convergono verso l'estremo inferiore di questo intervallo, circa $300$ anni luce, ma restano meno precise del solito per una stella pulsante come Mira A. 
+La coppia sta attraversando la costellazione della Balena (_Cetus_) a una distanza stimata tra $300$ e $400$ anni luce dalla Terra, anche se le misure più recenti convergono verso l'estremo inferiore di questo intervallo, circa $300$ anni luce. Le stime restano tuttavia incerte, dato che Mira A è una stella con ampie pulsazioni, un fattore che rende difficile la misurazione precisa dell'[angolo di parallasse]({{< relref "/dizionario/parallasse-trigonometrica-e-parsec/" >}}). 
 
 {{< figura 
 src="immagini/mira07.jpg" 
