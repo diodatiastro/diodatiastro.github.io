@@ -10,7 +10,7 @@
     <input type="range" id="altalena-progress" min="0" max="100" value="0" step="1" style="flex:1;" />
   </div>
   <div style="display:flex; gap:22px; margin-bottom:6px; font-size:13px; color:#b5b5b5;">
-    <span>Angolo del piano: <strong id="altalena-theta" style="color:#e6e6e6;">33&deg;</strong></span>
+    <span>Angolo &theta; (fra braccio e forza): <strong id="altalena-theta" style="color:#e6e6e6;">123&deg;</strong></span>
     <span>Braccio della forza: <strong id="altalena-braccio" style="color:#e6e6e6;">1.85 m</strong></span>
   </div>
   <div style="margin-bottom:10px; font-size:13px; color:#b5b5b5;">
@@ -37,6 +37,9 @@
     <rect id="altalena-right-angle" x="513" y="228" width="12" height="12" fill="none" stroke="#2bb693" stroke-width="1.5" />
     <text id="altalena-b-label" x="432" y="228" text-anchor="middle" font-size="15" font-weight="600" fill="#2bb693">b</text>
     <circle cx="340" cy="240" r="4" fill="#e6e6e6" />
+    <line id="altalena-ref" x1="340" y1="240" x2="340" y2="278" stroke="#8a8f98" stroke-width="1.5" stroke-dasharray="3 3" />
+    <path id="altalena-theta-arc" fill="none" stroke="#f2c14e" stroke-width="2" />
+    <text id="altalena-theta-arc-label" font-size="14" font-weight="600" fill="#f2c14e" text-anchor="middle" dominant-baseline="middle">&theta;</text>
   </svg>
 </div>
 <script>
@@ -54,6 +57,8 @@
   var arm=document.getElementById('altalena-arm');
   var rightAngle=document.getElementById('altalena-right-angle');
   var bLabel=document.getElementById('altalena-b-label');
+  var thetaArc=document.getElementById('altalena-theta-arc');
+  var thetaArcLabel=document.getElementById('altalena-theta-arc-label');
   var thetaOut=document.getElementById('altalena-theta');
   var braccioOut=document.getElementById('altalena-braccio');
   var bInFormula=document.getElementById('altalena-b-in-formula');
@@ -93,7 +98,27 @@
     arm.setAttribute('x2',seatX);
     rightAngle.setAttribute('x',seatX-12);
     bLabel.setAttribute('x',(pivot.x+seatX)/2);
-    thetaOut.textContent=Math.round(thetaDeg)+'°';
+
+    // Arco dell'angolo theta della formula (fra il braccio r, cioè il piano dell'altalena,
+    // e la forza F, verticale verso il basso), non l'inclinazione del piano rispetto
+    // all'orizzontale: theta_formula = theta_piano + 90°.
+    var thetaRef=-Math.PI/2;
+    var arcR=38, steps=24;
+    var arcPath='M '+(pivot.x+arcR*Math.cos(thetaRef)).toFixed(2)+' '+(pivot.y-arcR*Math.sin(thetaRef)).toFixed(2);
+    for(var i=1;i<=steps;i++){
+      var a=thetaRef+(theta-thetaRef)*(i/steps);
+      var ax=pivot.x+arcR*Math.cos(a);
+      var ay=pivot.y-arcR*Math.sin(a);
+      arcPath+=' L '+ax.toFixed(2)+' '+ay.toFixed(2);
+    }
+    thetaArc.setAttribute('d',arcPath);
+    var midA=(thetaRef+theta)/2;
+    var labelR=arcR+16;
+    thetaArcLabel.setAttribute('x',(pivot.x+labelR*Math.cos(midA)).toFixed(2));
+    thetaArcLabel.setAttribute('y',(pivot.y-labelR*Math.sin(midA)).toFixed(2));
+
+    var thetaFormulaDeg=thetaDeg+90;
+    thetaOut.textContent=Math.round(thetaFormulaDeg)+'°';
     braccioOut.textContent=braccioM.toFixed(2)+' m';
     bInFormula.textContent=braccioM.toFixed(2);
     torqueOut.textContent=Math.round(peso*braccioM);
