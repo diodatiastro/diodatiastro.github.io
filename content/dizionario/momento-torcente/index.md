@@ -51,7 +51,7 @@ $$
 $$
 dove $\theta$ è l'angolo compreso fra il vettore posizione $\vec r$ e la forza $\vec F$; il prodotto $b = r\sin\theta$ è, per definizione, il braccio della forza[^5]. Il momento torcente è massimo quando la forza è applicata *perpendicolarmente* al vettore posizione $\vec{r}$ ($\theta = 90°$, $\sin\theta = 1$), ed è nullo quando la forza è applicata *parallelamente* a esso ($\theta = 0°$), come accade, per esempio, spingendo una porta verso i cardini invece che verso la maniglia.
 
-Il verso del momento torcente è dato dalla [regola della mano destra]({{< relref "/dizionario/momento-angolare/" >}}#formalismo-matematico-minimo) e si considera positivo per convenzione quando la rotazione avviene in senso antiorario (se si specifica il piano di riferimento e la convenzione del verso dell’asse).
+Il verso del momento torcente è dato dalla [regola della mano destra]({{< relref "/dizionario/momento-angolare/" >}}#formalismo-matematico-minimo) e si considera positivo per convenzione quando la rotazione avviene in senso antiorario (se si specifica il piano di riferimento e il verso dell’asse).
 
 Per un sistema di forze, il momento torcente vale:
 
