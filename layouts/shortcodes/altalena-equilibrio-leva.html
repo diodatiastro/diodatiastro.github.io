@@ -1,0 +1,157 @@
+{{- $width := .Get "width" -}}
+{{- $caption := .Get "caption" -}}
+{{- $label := .Get "label" -}}
+<figure class="scientific-figure">
+<div style="margin:1.5rem auto; padding:1rem; border:1px solid #3a3a3a; border-radius:8px; background:#212631; text-align:left;{{ with $width }} max-width: {{ . }};{{ end }}">
+  <div style="display:flex; align-items:center; gap:14px; margin-bottom:10px;">
+    <button type="button" id="leva-find" style="cursor:pointer; background:#2a2a2a; color:#e6e6e6; border:1px solid #4a4a4a; border-radius:6px; padding:6px 14px; font-size:14px;">Mostra l'equilibrio</button>
+    <label for="leva-b2" style="font-size:13px; color:#b5b5b5;">Distanza del figlio dal perno (b&#8322;)</label>
+    <input type="range" id="leva-b2" min="50" max="300" value="150" step="5" style="flex:1;" />
+  </div>
+  <div style="display:flex; gap:22px; margin-bottom:4px; font-size:13px; color:#b5b5b5;">
+    <span>Pap&agrave;: F&#8321; = 736 N &middot; b&#8321; = 0,90 m (fisso)</span>
+    <span>Figlio: F&#8322; = 294 N &middot; b&#8322; = <strong id="leva-b2out" style="color:#e6e6e6;">1,50 m</strong></span>
+  </div>
+  <div style="margin-bottom:10px; font-size:13px; color:#b5b5b5;">
+    <span>F&#8321;&middot;b&#8321; = 662 N&middot;m &nbsp; F&#8322;&middot;b&#8322; = <strong id="leva-prod2" style="color:#e6e6e6;">441</strong> N&middot;m &nbsp; <strong id="leva-status" style="color:#e2703a;">il lato del pap&agrave; scende</strong></span>
+  </div>
+  <svg viewBox="0 0 680 400" width="100%" role="img" aria-label="Animazione di un'altalena a bilico con un padre vicino al perno e un figlio pi&ugrave; lontano, che mostra la condizione di equilibrio F1 b1 uguale F2 b2">
+    <defs>
+      <marker id="leva-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5L0 10Z" fill="#e2703a" />
+      </marker>
+    </defs>
+    <line x1="40" y1="360" x2="640" y2="360" stroke="#8a8f98" stroke-width="2" />
+    <polygon points="310,360 370,360 340,240" fill="#5a5f66" />
+    <line id="leva-plank" x1="250" y1="240" x2="490" y2="240" stroke="#a97c50" stroke-width="10" stroke-linecap="round" />
+
+    <g id="leva-father">
+      <line x1="0" y1="0" x2="0" y2="-42" stroke="#cfd3d8" stroke-width="7" stroke-linecap="round" />
+      <circle cx="0" cy="-56" r="13" fill="#cfd3d8" />
+    </g>
+    <g id="leva-son">
+      <line x1="0" y1="0" x2="0" y2="-26" stroke="#a7ccb8" stroke-width="5" stroke-linecap="round" />
+      <circle cx="0" cy="-35" r="8" fill="#a7ccb8" />
+    </g>
+
+    <line id="leva-force1" x1="250" y1="240" x2="250" y2="290" stroke="#e2703a" stroke-width="3.5" marker-end="url(#leva-arrow)" />
+    <text id="leva-f1-label" x="258" y="270" font-size="14" font-weight="600" fill="#e2703a">F&#8321;</text>
+    <line id="leva-force2" x1="490" y1="240" x2="490" y2="270" stroke="#e2703a" stroke-width="2.5" marker-end="url(#leva-arrow)" />
+    <text id="leva-f2-label" x="497" y="258" font-size="14" font-weight="600" fill="#e2703a">F&#8322;</text>
+
+    <line id="leva-arm1" x1="340" y1="240" x2="250" y2="240" stroke="#2bb693" stroke-width="3" />
+    <text id="leva-b1-label" x="295" y="255" text-anchor="middle" font-size="13" font-weight="600" fill="#2bb693">b&#8321;</text>
+    <line id="leva-arm2" x1="340" y1="240" x2="490" y2="240" stroke="#2bb693" stroke-width="3" />
+    <text id="leva-b2-label" x="415" y="255" text-anchor="middle" font-size="13" font-weight="600" fill="#2bb693">b&#8322;</text>
+
+    <circle cx="340" cy="240" r="4" fill="#e6e6e6" />
+  </svg>
+</div>
+<script>
+(function(){
+  var pivot={x:340,y:240};
+  var b1px=90, F1=736, F2=294;
+  var maxTiltDeg=20;
+  var kdeg=20/520;
+
+  var plank=document.getElementById('leva-plank');
+  var father=document.getElementById('leva-father');
+  var son=document.getElementById('leva-son');
+  var force1=document.getElementById('leva-force1');
+  var force2=document.getElementById('leva-force2');
+  var f1Label=document.getElementById('leva-f1-label');
+  var f2Label=document.getElementById('leva-f2-label');
+  var arm1=document.getElementById('leva-arm1');
+  var arm2=document.getElementById('leva-arm2');
+  var b1Label=document.getElementById('leva-b1-label');
+  var b2Label=document.getElementById('leva-b2-label');
+  var b2out=document.getElementById('leva-b2out');
+  var prod2=document.getElementById('leva-prod2');
+  var statusEl=document.getElementById('leva-status');
+  var slider=document.getElementById('leva-b2');
+  var findBtn=document.getElementById('leva-find');
+
+  var arrow1Len=50, arrow2Len=Math.round(50*F2/F1);
+
+  function render(b2px){
+    var b2m=b2px/100;
+    var netTorque=F2*b2m-F1*(b1px/100);
+    var thetaDeg=Math.max(-maxTiltDeg,Math.min(maxTiltDeg,-kdeg*netTorque));
+    var theta=thetaDeg*Math.PI/180;
+    var ux=Math.cos(theta), uy=-Math.sin(theta);
+
+    var sonX=pivot.x+b2px*ux, sonY=pivot.y+b2px*uy;
+    var fatherX=pivot.x-b1px*ux, fatherY=pivot.y-b1px*uy;
+
+    plank.setAttribute('x1',fatherX); plank.setAttribute('y1',fatherY);
+    plank.setAttribute('x2',sonX); plank.setAttribute('y2',sonY);
+
+    father.setAttribute('transform','translate('+fatherX+','+fatherY+')');
+    son.setAttribute('transform','translate('+sonX+','+sonY+')');
+
+    force1.setAttribute('x1',fatherX); force1.setAttribute('y1',fatherY);
+    force1.setAttribute('x2',fatherX); force1.setAttribute('y2',fatherY+arrow1Len);
+    f1Label.setAttribute('x',fatherX+8); f1Label.setAttribute('y',fatherY+arrow1Len-10);
+
+    force2.setAttribute('x1',sonX); force2.setAttribute('y1',sonY);
+    force2.setAttribute('x2',sonX); force2.setAttribute('y2',sonY+arrow2Len);
+    f2Label.setAttribute('x',sonX+8); f2Label.setAttribute('y',sonY+arrow2Len-6);
+
+    arm1.setAttribute('x2',fatherX);
+    b1Label.setAttribute('x',(pivot.x+fatherX)/2);
+    arm2.setAttribute('x2',sonX);
+    b2Label.setAttribute('x',(pivot.x+sonX)/2);
+
+    b2out.textContent=b2m.toFixed(2).replace('.',',')+' m';
+    var prod2val=Math.round(F2*b2m);
+    prod2.textContent=prod2val;
+
+    if(Math.abs(netTorque)<8){
+      statusEl.textContent='✓ in equilibrio';
+      statusEl.style.color='#5ecfa3';
+    } else if(netTorque<0){
+      statusEl.textContent='il lato del papà scende';
+      statusEl.style.color='#e2703a';
+    } else {
+      statusEl.textContent='il lato del figlio scende';
+      statusEl.style.color='#e2703a';
+    }
+  }
+
+  slider.addEventListener('input',function(){ render(Number(this.value)); });
+
+  findBtn.addEventListener('click',function(){
+    var start=Number(slider.value);
+    var target=(F1*(b1px/100)/F2)*100;
+    target=Math.max(50,Math.min(300,target));
+    var duration=1200, startTs=null;
+    function step(ts){
+      if(startTs===null) startTs=ts;
+      var p=Math.min((ts-startTs)/duration,1);
+      var val=start+(target-start)*p;
+      slider.value=val;
+      render(val);
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+
+  render(Number(slider.value));
+})();
+</script>
+{{ with $caption }}
+<figcaption>
+  {{ if ne $label "false" }}
+    {{- $key := printf "figcounter-%v" $.Position -}}
+    {{- $counter := $.Page.Store.Get $key -}}
+    {{- if not $counter -}}
+      {{- $counter = add ($.Page.Store.Get "figureCounter" | default 0) 1 -}}
+      {{- $.Page.Store.Set "figureCounter" $counter -}}
+      {{- $.Page.Store.Set $key $counter -}}
+    {{- end -}}
+    <strong>Figura {{ $counter }}</strong> —
+  {{ end }}
+  {{ . | markdownify }}
+</figcaption>
+{{ end }}
+</figure>

@@ -1,6 +1,10 @@
-{{- $counter := .Page.Store.Get "figureCounter" | default 0 -}}
-{{- $counter = add $counter 1 -}}
-{{- .Page.Store.Set "figureCounter" $counter -}}
+{{- $key := printf "figcounter-%v" .Position -}}
+{{- $counter := .Page.Store.Get $key -}}
+{{- if not $counter -}}
+  {{- $counter = add (.Page.Store.Get "figureCounter" | default 0) 1 -}}
+  {{- .Page.Store.Set "figureCounter" $counter -}}
+  {{- .Page.Store.Set $key $counter -}}
+{{- end -}}
 <figure class="scientific-figure">
   <img 
     src="{{ .Get "src" }}" 

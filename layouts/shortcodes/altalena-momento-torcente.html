@@ -1,0 +1,153 @@
+{{- $width := .Get "width" -}}
+{{- $caption := .Get "caption" -}}
+{{- $label := .Get "label" -}}
+<figure class="scientific-figure">
+<div style="margin:1.5rem auto; padding:1rem; border:1px solid #3a3a3a; border-radius:8px; background:#212631; text-align:left;{{ with $width }} max-width: {{ . }};{{ end }}">
+  <div style="display:flex; align-items:center; gap:14px; margin-bottom:10px;">
+    <button type="button" id="altalena-play" style="cursor:pointer; background:#2a2a2a; color:#e6e6e6; border:1px solid #4a4a4a; border-radius:6px; padding:6px 14px; font-size:14px;">
+      <span id="altalena-play-label">&#9654; Riproduci</span>
+    </button>
+    <input type="range" id="altalena-progress" min="0" max="100" value="0" step="1" style="flex:1;" />
+  </div>
+  <div style="display:flex; gap:22px; margin-bottom:6px; font-size:13px; color:#b5b5b5;">
+    <span>Angolo del piano: <strong id="altalena-theta" style="color:#e6e6e6;">33&deg;</strong></span>
+    <span>Braccio della forza: <strong id="altalena-braccio" style="color:#e6e6e6;">1.85 m</strong></span>
+  </div>
+  <div style="margin-bottom:10px; font-size:13px; color:#b5b5b5;">
+    <span>Momento torcente (persona di 75&nbsp;kg, peso <strong id="altalena-peso" style="color:#e6e6e6;">736 N</strong>): <strong style="color:#e6e6e6;">&tau; = P&middot;b = 736 &times; <span id="altalena-b-in-formula">1.85</span> &approx; <span id="altalena-torque">1361</span> N&middot;m</strong></span>
+  </div>
+  <svg viewBox="0 0 680 400" width="100%" role="img" aria-label="Animazione di un'altalena a bilico che mostra come cambiano la retta d'azione del peso e il braccio della forza durante la discesa">
+    <defs>
+      <marker id="altalena-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5L0 10Z" fill="#e2703a" />
+      </marker>
+    </defs>
+    <line x1="40" y1="360" x2="640" y2="360" stroke="#8a8f98" stroke-width="2" />
+    <polygon points="310,360 370,360 340,240" fill="#5a5f66" />
+    <line id="altalena-plank" x1="155" y1="360" x2="525" y2="120" stroke="#a97c50" stroke-width="10" stroke-linecap="round" />
+    <g id="altalena-person">
+      <line x1="0" y1="0" x2="0" y2="-34" stroke="#cfd3d8" stroke-width="6" stroke-linecap="round" />
+      <circle cx="0" cy="-46" r="11" fill="#cfd3d8" />
+    </g>
+    <line id="altalena-loa" x1="525" y1="50" x2="525" y2="380" stroke="#e2703a" stroke-width="1.5" stroke-dasharray="5 4" />
+    <text id="altalena-loa-label" x="531" y="62" font-size="12" fill="#e2703a">retta d'azione</text>
+    <line id="altalena-force" x1="525" y1="120" x2="525" y2="172" stroke="#e2703a" stroke-width="3" marker-end="url(#altalena-arrow)" />
+    <text id="altalena-p-label" x="533" y="168" font-size="15" font-weight="600" fill="#e2703a">P</text>
+    <line id="altalena-arm" x1="340" y1="240" x2="525" y2="240" stroke="#2bb693" stroke-width="3.5" />
+    <rect id="altalena-right-angle" x="513" y="228" width="12" height="12" fill="none" stroke="#2bb693" stroke-width="1.5" />
+    <text id="altalena-b-label" x="432" y="228" text-anchor="middle" font-size="15" font-weight="600" fill="#2bb693">b</text>
+    <circle cx="340" cy="240" r="4" fill="#e6e6e6" />
+  </svg>
+</div>
+<script>
+(function(){
+  var pivot={x:340,y:240};
+  var L=220;
+  var thetaMax=Math.asin(120/220);
+
+  var plank=document.getElementById('altalena-plank');
+  var person=document.getElementById('altalena-person');
+  var loa=document.getElementById('altalena-loa');
+  var loaLabel=document.getElementById('altalena-loa-label');
+  var force=document.getElementById('altalena-force');
+  var pLabel=document.getElementById('altalena-p-label');
+  var arm=document.getElementById('altalena-arm');
+  var rightAngle=document.getElementById('altalena-right-angle');
+  var bLabel=document.getElementById('altalena-b-label');
+  var thetaOut=document.getElementById('altalena-theta');
+  var braccioOut=document.getElementById('altalena-braccio');
+  var bInFormula=document.getElementById('altalena-b-in-formula');
+  var torqueOut=document.getElementById('altalena-torque');
+  var progress=document.getElementById('altalena-progress');
+
+  var massa=75;
+  var g=9.81;
+  var peso=Math.round(massa*g);
+  document.getElementById('altalena-peso').textContent=peso+' N';
+  var playBtn=document.getElementById('altalena-play');
+  var playLabel=document.getElementById('altalena-play-label');
+
+  function render(p){
+    var theta=thetaMax*(1-2*p);
+    var seatX=pivot.x+L*Math.cos(theta);
+    var seatY=pivot.y-L*Math.sin(theta);
+    var otherX=pivot.x-L*Math.cos(theta);
+    var otherY=pivot.y+L*Math.sin(theta);
+    var braccioM=Math.abs(seatX-pivot.x)/100;
+    var thetaDeg=theta*180/Math.PI;
+
+    plank.setAttribute('x1',otherX);
+    plank.setAttribute('y1',otherY);
+    plank.setAttribute('x2',seatX);
+    plank.setAttribute('y2',seatY);
+    person.setAttribute('transform','translate('+seatX+','+seatY+')');
+    loa.setAttribute('x1',seatX);
+    loa.setAttribute('x2',seatX);
+    loaLabel.setAttribute('x',seatX+6);
+    force.setAttribute('x1',seatX);
+    force.setAttribute('y1',seatY);
+    force.setAttribute('x2',seatX);
+    force.setAttribute('y2',seatY+52);
+    pLabel.setAttribute('x',seatX+8);
+    pLabel.setAttribute('y',seatY+48);
+    arm.setAttribute('x2',seatX);
+    rightAngle.setAttribute('x',seatX-12);
+    bLabel.setAttribute('x',(pivot.x+seatX)/2);
+    thetaOut.textContent=Math.round(thetaDeg)+'°';
+    braccioOut.textContent=braccioM.toFixed(2)+' m';
+    bInFormula.textContent=braccioM.toFixed(2);
+    torqueOut.textContent=Math.round(peso*braccioM);
+  }
+
+  var playing=false, startTs=null, duration=3500;
+
+  progress.addEventListener('input',function(){
+    playing=false; startTs=null;
+    playLabel.innerHTML='&#9654; Riproduci';
+    render(this.value/100);
+  });
+
+  function step(ts){
+    if(!playing) return;
+    if(startTs===null) startTs=ts-(Number(progress.value)/100)*duration;
+    var p=Math.min((ts-startTs)/duration,1);
+    progress.value=Math.round(p*100);
+    render(p);
+    if(p<1 && playing){
+      requestAnimationFrame(step);
+    } else if(p>=1){
+      playing=false;
+      playLabel.innerHTML='&#9654; Riproduci';
+    }
+  }
+  playBtn.addEventListener('click',function(){
+    if(playing){
+      playing=false; startTs=null;
+      playLabel.innerHTML='&#9654; Riproduci';
+      return;
+    }
+    if(Number(progress.value)>=100) progress.value=0;
+    playing=true; startTs=null;
+    playLabel.innerHTML='&#10074;&#10074; Pausa';
+    requestAnimationFrame(step);
+  });
+
+  render(0);
+})();
+</script>
+{{ with $caption }}
+<figcaption>
+  {{ if ne $label "false" }}
+    {{- $key := printf "figcounter-%v" $.Position -}}
+    {{- $counter := $.Page.Store.Get $key -}}
+    {{- if not $counter -}}
+      {{- $counter = add ($.Page.Store.Get "figureCounter" | default 0) 1 -}}
+      {{- $.Page.Store.Set "figureCounter" $counter -}}
+      {{- $.Page.Store.Set $key $counter -}}
+    {{- end -}}
+    <strong>Figura {{ $counter }}</strong> —
+  {{ end }}
+  {{ . | markdownify }}
+</figcaption>
+{{ end }}
+</figure>
