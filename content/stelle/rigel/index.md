@@ -3,6 +3,7 @@ title = "Rigel"
 subtitle = "La stella più luminosa entro 1.000 anni luce dalla Terra"
 date = "2026-07-28"
 draft = false
+tags = ["supergigante blu", "classe B8 Ia", "sistema multiplo"]
 +++
 
 {{< katex />}}

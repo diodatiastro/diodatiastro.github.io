@@ -5,6 +5,9 @@ title = 'Le stelle più affascinanti del cielo'
 
 theme = 'hugo-book'
 
+[taxonomies]
+  tag = 'tags'
+
 [params]
   BookTheme = 'dark'
   BookLogo = 'logo.svg'

@@ -3,6 +3,7 @@ title = "Betelgeuse"
 subtitle = "Vita morte e «miracoli» della supergigante rossa in Orione"
 date = "2026-08-01"
 draft = false
+tags = ["supergigante rossa", "classe M1-M2Ia-Iab", "variabile semiregolare"]
 +++
 
 {{< katex />}}
