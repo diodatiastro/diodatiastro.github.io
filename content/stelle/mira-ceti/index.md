@@ -67,7 +67,7 @@ La soluzione ha un nome tecnico inglese di non facile memorizzazione, *Wind Roch
 Non è dunque la nana bianca a "rubare" attivamente il materiale con la propria gravità: è piuttosto Mira A stessa, con il suo vento eccezionalmente lento, a lasciarselo sfuggire di mano in direzione della compagna. In realtà la cattura riguarda solo una piccola parte delle particelle emesse da Mira — circa l'$1\%$ o meno secondo le stime più recenti — ma è sufficiente ad alimentare il disco di accrescimento e a rendere Mira AB uno dei sistemi binari interagenti meglio studiati del cielo.
 
 {{< figura 
-src="immagini/windmira.PNG" 
+src="immagini/windmira.png" 
 width="" 
 alt="Schema del trasferimento di massa da Mira A a Mira B attraverso il punto di Lagrange L1" 
 caption="Il meccanismo detto *Wind Roche Lobe Overflow*: il vento lento di Mira A, non riuscendo a sfuggire liberamente al confine gravitazionale condiviso con la compagna (il lobo di Roche), viene in parte incanalato attraverso il punto L1 e cade verso Mira B, formando il disco di accrescimento osservato attorno alla nana bianca."
