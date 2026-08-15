@@ -3,6 +3,7 @@ const titolo = await tp.system.prompt("Titolo della voce");
 
 if (!titolo) {
     new Notice("Creazione annullata");
+    await app.vault.trash(app.workspace.getActiveFile(), true);
     return;
 }
 
@@ -10,45 +11,37 @@ if (!titolo) {
 const slug = titolo
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9\s-]/g, "")
     .trim()
     .replace(/\s+/g, "-");
 
 // Percorso della nuova voce
 const cartella = `content/dizionario/${slug}`;
-const filePath = `${cartella}/index.md`;
+const percorsoFile = `${cartella}/index`;
 
 // Controllo se esiste già
-if (await app.vault.adapter.exists(filePath)) {
+if (await app.vault.adapter.exists(percorsoFile + ".md")) {
     new Notice("La voce esiste già: " + slug);
+    await app.vault.trash(app.workspace.getActiveFile(), true);
     return;
 }
 
-// Crea la cartella
+// Crea la cartella e la sottocartella immagini
 await app.vault.createFolder(cartella);
 await app.vault.createFolder(`${cartella}/immagini`);
 
 // Data odierna
 const oggi = tp.date.now("YYYY-MM-DD");
 
-// Contenuto del file
-const contenuto = `+++
-title = "${titolo}"
-date = "${oggi}"
+// Sposta la nota già creata da Templater nel percorso definitivo
+await tp.file.move(percorsoFile);
+-%>
++++
+title = "<% titolo %>"
+date = "<% oggi %>"
 draft = false
 +++
 
 {{< katex />}}
 
-`;
-
-// Crea index.md
-const file = await app.vault.create(
-    filePath,
-    contenuto
-);
-
-// Apri il nuovo file
-await app.workspace.getLeaf(false).openFile(file);
-%>
