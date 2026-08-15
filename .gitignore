@@ -13,3 +13,5 @@ documentazione/
 
 # Strumenti locali di conversione e lavoro
 tools/
+# File temporanei da eliminare manualmente
+_to_delete/
