@@ -3,7 +3,7 @@ title = "Vega"
 subtitle = "La stella zero"
 date = "2026-08-12"
 draft = false
-tags = ["sequenza principale", "classe A0", "rotatore veloce"]
+tags = ["sequenza principale", "classe A0V", "rotatore veloce", "oscuramento gravitazionale"]
 +++
 
 {{< katex />}}
@@ -21,7 +21,7 @@ Vega, la quinta stella più brillante del cielo, usata in passato come riferimen
 
 ## Una stella oblata
 
-*Alfa Lyrae*, la brillantissima Vega, dista $25$ anni luce ($7{,}68$ parsec) dal Sistema Solare. Di un bel colore bianco, appartiene alla classe spettrale A0 e si trova sulla sequenza principale come il Sole. Ben visibile dall’emisfero settentrionale, forma insieme a [Deneb]({{< relref "/stelle/deneb/" >}}) e Altair il cosiddetto Triangolo estivo, un asterismo facile da individuare a occhio nudo anche per gli osservatori più inesperti. 
+*Alfa Lyrae*, la brillantissima Vega, dista $25$ anni luce ($7{,}68$ parsec) dal Sistema Solare. Di un bel colore bianco, appartiene alla classe spettrale A0 e si trova sulla sequenza principale come il Sole. Ben visibile dall’emisfero settentrionale, forma insieme a [Deneb]({{< relref "/stelle/deneb/" >}}) e [Altair]({{< relref "/stelle/altair/" >}}) il cosiddetto Triangolo estivo, un asterismo facile da individuare a occhio nudo anche per gli osservatori più inesperti. 
 
 Per la sua luminosità e il colore, Vega è stata utilizzata per molto tempo come riferimento standard nella scala logaritmica delle magnitudini, cioè come la stella sulla quale tarare il valore $0$ della scala.
 
@@ -72,7 +72,6 @@ caption="Un diagramma di Hertzsprung-Russell modificato in modo da mettere in re
 >}}
 
 I parametri stellari proposti dal gruppo di Monnier per Vega sono riportati integralmente nella tabella più sotto: dall'angolo di inclinazione alla luminosità bolometrica, fino ai raggi polare ed equatoriale, che misurano insieme quanto la stella sia effettivamente "schiacciata" dalla propria rotazione. Tradotto in chilometri, il raggio equatoriale di Vega misura $1\,896\,000\,\text{km}$ ed è ben $214\,000\,\text{km}$ più lungo del raggio polare. Una differenza enorme rispetto al Sole, che appare, per contrasto, come una sfera quasi perfetta (superato in ciò, tuttavia, dalla stella KIC 11145123, che è l'oggetto naturale più sferico attualmente noto).
-
 
 ## Parametri stellari
 
@@ -131,7 +130,6 @@ caption="Immagine del disco che circonda Vega, ripresa a $25{,}5\ \mu\text{m}$ d
 >}}
 
 Quel che è certo è che, con una luminosità oltre $47$ volte maggiore di quella solare, Vega trasformerebbe in un inferno inabitabile qualsiasi pianeta situato entro una distanza corrispondente al raggio del sistema solare interno. Per avere un’irradiazione paragonabile a quella che la Terra riceve dal Sole, un pianeta orbitante intorno a Vega dovrebbe trovarsi a quasi $7$ unità astronomiche dalla stella, cioè a circa $1$ miliardo di $\text{km}$ di distanza (più o meno a metà strada tra Giove e Saturno, prendendo come riferimento il Sistema Solare).
-
 
 ## La prima stella fotografata dopo il Sole
 
