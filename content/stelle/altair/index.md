@@ -166,9 +166,9 @@ Il modello aggiunge anche un dato che lo studio del 2007 non forniva, cioè l'**
 
 {{< figura 
 src="immagini/altair11.jpg" 
-width="80%" 
+width="70%" 
 alt="Mappa superficiale della temperatura efficace del miglior modello ESTER tratto dallo studio Kevin Bouchaud e colleghi. La linea tratteggiata indica l'equatore. I valori sono espressi in Kelvin." 
-caption="Mappa superficiale della temperatura efficace del miglior modello ESTER tratto dallo studio di Kevin Bouchaud e colleghi. La linea tratteggiata indica l'equatore. I valori sono espressi in Kelvin."
+caption="Mappa superficiale della temperatura efficace del miglior modello ESTER tratto dallo studio di Kevin Bouchaud e colleghi. La linea tratteggiata indica l'equatore. I valori di temperatura sono espressi in gradi Kelvin."
 >}}
 
 Infine, un dettaglio che *non* è cambiato: la distanza di Altair. Il nuovo studio la fissava a $5{,}13 \pm 0{,}02$ parsec, un valore che confermava, entro i limiti d'incertezza, la stima di $5{,}143$ parsec ricavata dal satellite Hipparcos e già citata in apertura di questo articolo.
