@@ -166,7 +166,7 @@ Il modello aggiunge anche un dato che lo studio del 2007 non forniva, cioè l'**
 
 {{< figura 
 src="immagini/altair11.jpg" 
-width="" 
+width="80%" 
 alt="Mappa superficiale della temperatura efficace del miglior modello ESTER tratto dallo studio Kevin Bouchaud e colleghi. La linea tratteggiata indica l'equatore. I valori sono espressi in Kelvin." 
 caption="Mappa superficiale della temperatura efficace del miglior modello ESTER tratto dallo studio di Kevin Bouchaud e colleghi. La linea tratteggiata indica l'equatore. I valori sono espressi in Kelvin."
 >}}
