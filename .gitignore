@@ -15,3 +15,6 @@ documentazione/
 tools/
 # File temporanei da eliminare manualmente
 _to_delete/
+
+# File di sistema Windows (creato automaticamente, es. da Mega)
+desktop.ini

@@ -1,0 +1,7 @@
+-:*.crdownload
+-:*.tmp
+-:.hugo_build.lock
+-d:libri
+-d:.git
+-d:public
+-d:resources
