@@ -1,0 +1,60 @@
+{{- $key := printf "figcounter-%v" .Position -}}
+{{- $counter := .Page.Store.Get $key -}}
+{{- if not $counter -}}
+  {{- $counter = add (.Page.Store.Get "figureCounter" | default 0) 1 -}}
+  {{- .Page.Store.Set "figureCounter" $counter -}}
+  {{- .Page.Store.Set $key $counter -}}
+{{- end -}}
+{{- $youtube := .Get "youtube" -}}
+{{- $vimeo := .Get "vimeo" -}}
+{{- $embed := .Get "embed" -}}
+<figure class="scientific-figure">
+  {{ if $youtube }}
+  <div class="video-embed" {{ with .Get "width" }}style="max-width: {{ . }};"{{ end }}>
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ $youtube }}"
+      title="{{ .Get "caption" | plainify | default "Video" }}"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+  {{ else if $vimeo }}
+  <div class="video-embed" {{ with .Get "width" }}style="max-width: {{ . }};"{{ end }}>
+    <iframe
+      src="https://player.vimeo.com/video/{{ $vimeo }}"
+      title="{{ .Get "caption" | plainify | default "Video" }}"
+      loading="lazy"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+  {{ else if $embed }}
+  <div class="video-embed" {{ with .Get "width" }}style="max-width: {{ . }};"{{ end }}>
+    <iframe
+      src="{{ $embed }}"
+      title="{{ .Get "caption" | plainify | default "Video" }}"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+  {{ else }}
+  <video
+    {{ with .Get "poster" }}poster="{{ . }}"{{ end }}
+    {{ if ne (.Get "controls") "false" }}controls{{ end }}
+    {{ if eq (.Get "autoplay") "true" }}autoplay{{ end }}
+    loop muted playsinline
+    {{ with .Get "width" }}style="max-width: {{ . }};"{{ end }}
+  >
+    {{ with .Get "webm" }}<source src="{{ . }}" type="video/webm">{{ end }}
+    <source src="{{ .Get "src" }}" type="video/mp4">
+  </video>
+  {{ end }}
+<figcaption>
+  {{ if ne (.Get "label") "false" }}
+    <strong>Figura {{ $counter }}</strong> —
+  {{ end }}
+  {{ .Get "caption" | markdownify }}
+</figcaption>
+</figure>
