@@ -54,13 +54,21 @@
       var tipoMatch = box.className.match(/info-box--(\S+)/);
       var tipo = tipoMatch ? tipoMatch[1] : 'approfondimento';
 
-      var baseId = 'box-' + slugify(testo);
-      var id = baseId, i = 1;
-      while (usedIds[id] || document.getElementById(id)) {
-        id = baseId + '-' + (++i);
+      // L'id è ormai generato lato server da box.html (via anchorize),
+      // stabile e utilizzabile anche da link esterni alla pagina.
+      // Il fallback qui sotto copre solo box senza id (caso non
+      // dovrebbe più verificarsi dopo la modifica a box.html).
+      var id = box.id;
+      if (!id) {
+        var baseId = 'box-' + slugify(testo);
+        id = baseId;
+        var i = 1;
+        while (usedIds[id] || document.getElementById(id)) {
+          id = baseId + '-' + (++i);
+        }
+        box.id = id;
       }
       usedIds[id] = true;
-      box.id = id;
 
       // titolo di qualsiasi livello (H2-H6) che precede il box
       var heading = null, el = box;

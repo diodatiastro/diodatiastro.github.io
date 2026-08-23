@@ -16,6 +16,7 @@
   --nebula-blue:    #8fb8ff; /* accento primario — stella calda tipo B */
   --stellar-gold:   #f0b84f; /* accento di enfasi — stella tipo G, come il Sole */
   --stellar-red:    #e0483f; /* accento freddo — stella tipo M */
+  --stellar-orange: #ea8d4d; /* colore dei titoli — stella tipo K, tra oro (G) e rosso (M) */
   --line:           #1e2740; /* bordi e separatori sottili */
   --surface:        #1c2542; /* sfondo elementi interattivi, più chiaro del pannello laterale */
   --surface-line:   #34406e; /* bordo ben visibile per gli elementi su --surface */
@@ -50,6 +51,7 @@ body {
   font-family: 'Source Serif 4', Georgia, serif;
   font-weight: 600;
   letter-spacing: -0.01em;
+  color: var(--stellar-orange);
 }
 
 .markdown h1 {
