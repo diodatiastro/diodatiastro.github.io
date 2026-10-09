@@ -245,7 +245,9 @@ body {
   padding-top: var(--space-16);
   border-top: 1px dashed var(--line);
   font-size: 0.9rem;
-  color: var(--muted);
+  /* Grigio-azzurro schiarito: 60% del colore smorzato (--muted, #8c93ab)
+     e 40% del testo principale (--starlight), circa #b1b4bf */
+  color: color-mix(in srgb, var(--muted) 60%, var(--starlight) 40%);
 }
 
 /* ==========================================================================
