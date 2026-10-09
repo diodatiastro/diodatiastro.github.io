@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magnetar – magnetosfera attorcigliata e cilindro della luce</title>
+  <style>
+    :root {
+      --bg: #04060b;
+      --fg: #dce8ff;
+      --muted: #8ea4c7;
+      --accent: #7dd3fc;
+      --panel: rgba(7, 12, 22, 0.74);
+      --border: rgba(125, 211, 252, 0.22);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      overflow: hidden;
+    }
+    .stage { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    #scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: crosshair; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    .title-card {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      max-width: min(560px, calc(100% - 32px));
+      padding: 12px 14px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    h1 { margin: 0 0 6px; font-size: clamp(15px, 2vw, 21px); line-height: 1.15; }
+    .muted { margin: 0; color: var(--muted); font-size: clamp(11px, 1.2vw, 13px); line-height: 1.4; }
+    .controls {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 13px;
+      align-items: center;
+      padding: 10px 12px;
+      max-width: calc(100% - 32px);
+      z-index: 3;
+    }
+    button {
+      appearance: none;
+      border: 1px solid rgba(125, 211, 252, 0.28);
+      background: rgba(125, 211, 252, 0.09);
+      color: #e8f3ff;
+      border-radius: 10px;
+      padding: 7px 10px;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    button:hover { background: rgba(125, 211, 252, 0.16); border-color: rgba(125, 211, 252, 0.45); }
+    label.ctl { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #b9cbe6; }
+    input[type="range"] { width: 110px; accent-color: var(--accent); }
+    .chk { display: flex; gap: 6px; align-items: center; font-size: 12px; color: #b9cbe6; cursor: pointer; }
+    .legend {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      width: min(300px, calc(100% - 32px));
+      padding: 12px 14px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .legend b { display: block; margin-bottom: 8px; font-size: 13px; color: #e5f0ff; }
+    .legend ul { margin: 0; padding: 0; list-style: none; color: #b7c8e3; font-size: 12px; line-height: 1.45; }
+    .legend li { display: flex; gap: 8px; align-items: baseline; margin-bottom: 4px; }
+    .sw { flex: 0 0 auto; display: inline-block; width: 16px; height: 3px; border-radius: 2px; transform: translateY(-3px); }
+    .dot { flex: 0 0 auto; display: inline-block; width: 8px; height: 8px; border-radius: 50%; box-shadow: 0 0 8px currentColor; }
+    @media (max-width: 760px) {
+      .legend { display: none; }
+      input[type="range"] { width: 80px; }
+    }
+    @media (max-height: 460px), (max-width: 600px) {
+      .title-card .muted { display: none; }
+      .title-card { padding: 7px 10px; top: 8px; left: 8px; }
+      .controls { left: 8px; bottom: 8px; padding: 6px 8px; gap: 6px 10px; }
+      .ctl-speed { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <canvas id="scene" aria-label="Animazione della magnetosfera attorcigliata di una magnetar fino al cilindro della luce"></canvas>
+
+
+    <div class="controls card">
+      <button id="btnPause" type="button">⏸ Pausa</button>
+      <label class="ctl">Torsione
+        <input id="twist" type="range" min="0" max="1" step="0.01" value="0.75" />
+      </label>
+      <label class="ctl ctl-speed">Velocità
+        <input id="speed" type="range" min="0.2" max="2.5" step="0.05" value="1" />
+        <span id="speedVal">1.00×</span>
+      </label>
+      <label class="chk"><input id="toggleLabels" type="checkbox" checked /> Etichette</label>
+    </div>
+
+    <div class="legend card">
+      <b>Cosa vedi</b>
+      <ul>
+        <li><span class="sw" style="background:linear-gradient(90deg,#60a5fa,#c084fc)"></span><span>Linee chiuse: ruotano con la stella; quelle più vicine sono attorcigliate (più violette dove la torsione è maggiore)</span></li>
+        <li><span class="dot" style="color:#67e8f9;background:#67e8f9"></span><span>Cariche che scorrono lungo le linee attorcigliate: le correnti che sostengono la torsione</span></li>
+        <li><span class="sw" style="background:#fbbf24"></span><span>Linee aperte: partono dalle calotte polari, oltrepassano il cilindro della luce e si avvolgono a spirale</span></li>
+        <li><span class="dot" style="color:#fb923c;background:#fb923c"></span><span>Plasma che sfugge lungo le linee aperte e forma il vento</span></li>
+        <li><span class="sw" style="background:rgba(125,211,252,.7)"></span><span>Cilindro della luce: qui la corotazione richiederebbe la velocità della luce</span></li>
+      </ul>
+    </div>
+  </div>
+
+<script>
+(() => {
+  "use strict";
+
+  // ---------- Parametri del modello (unità: raggio della stella = 1) ----------
+  const RS = 1;                 // raggio della stella
+  const RLC = 9;                // raggio del cilindro della luce (compresso: non in scala)
+  const ROT_PERIOD = 16;        // periodo di rotazione nell'animazione, in secondi
+  const OMEGA = 2 * Math.PI / ROT_PERIOD;
+  const ELEV = 0.30;            // inclinazione della vista (radianti)
+  const CE = Math.cos(ELEV), SE = Math.sin(ELEV);
+  const N_AZ_CLOSED = 7;
+  const CLOSED_L = [1.7, 2.4, 3.5, 5.2];   // l'ultima linea chiusa è aggiunta a parte
+  const N_AZ_OPEN = 5;
+  const OPEN_THETA = [26, 52, 76].map(d => d * Math.PI / 180);
+  const TWIST_MAX = 2.6;        // torsione massima (radianti fra i due piedi della linea)
+
+  const canvas = document.getElementById("scene");
+  const ctx = canvas.getContext("2d");
+  const btnPause = document.getElementById("btnPause");
+  const twistInput = document.getElementById("twist");
+  const speedInput = document.getElementById("speed");
+  const speedVal = document.getElementById("speedVal");
+  const toggleLabels = document.getElementById("toggleLabels");
+
+  let W = 0, H = 0, DPR = 1, S = 40, CX = 0, CY = 0;
+  let running = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let visible = true;
+  let simTime = 0;         // tempo simulato (scalato dalla velocità)
+  let rot = 0;             // angolo di rotazione della stella
+  let twistNow = 0;        // torsione effettiva, cresce all'avvio
+  let pointer = null;
+  let lastTs = null;
+
+  function updatePauseLabel() { btnPause.textContent = running ? "⏸ Pausa" : "▶ Avvia"; }
+  updatePauseLabel();
+
+  // ---------- Dimensionamento ----------
+  function resize() {
+    const r = canvas.getBoundingClientRect();
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = r.width; H = r.height;
+    canvas.width = Math.round(W * DPR);
+    canvas.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    S = Math.min(W / (2 * 1.28 * RLC), H / (2 * 0.92 * RLC));
+    CX = W / 2;
+    CY = H * 0.5;
+    draw();
+  }
+  new ResizeObserver(resize).observe(canvas);
+
+  // ---------- Proiezione ----------
+  // x, y nel piano equatoriale, z lungo l'asse di rotazione; l'osservatore guarda da -y, leggermente dall'alto.
+  function proj(x, y, z) {
+    const vx = x;
+    const vy = z * CE + y * SE;
+    const depth = -y * CE + z * SE;
+    const hidden = depth < 0 && (vx * vx + vy * vy) < RS * RS * 0.995;
+    return { sx: CX + vx * S, sy: CY - vy * S, depth, hidden };
+  }
+
+  function sph(r, th, ph) {
+    const st = Math.sin(th);
+    return [r * st * Math.cos(ph), r * st * Math.sin(ph), r * Math.cos(th)];
+  }
+
+  const smooth = (a, b, x) => {
+    const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+    return t * t * (3 - 2 * t);
+  };
+
+  // ---------- Geometria ----------
+  // Ultima linea chiusa: la torsione "gonfia" la magnetosfera e la zona chiusa si ritira un poco dentro il cilindro della luce.
+  function lastClosedL() { return RLC * (1 - 0.14 * twistNow); }
+
+  function twistOf(L) { return TWIST_MAX * twistNow * Math.exp(-(L - CLOSED_L[0]) / 1.6); }
+
+  // Punto su una linea chiusa dipolare attorcigliata; u in [0,1] dal piede nord al piede sud.
+  function closedPoint(L, phi0, u) {
+    const th0 = Math.asin(Math.sqrt(RS / L));
+    const th = th0 + u * (Math.PI - 2 * th0);
+    const r = L * Math.sin(th) ** 2;
+    const psi = twistOf(L);
+    const ph = phi0 + rot + psi * (u - 0.5);
+    return sph(r, th, ph);
+  }
+
+  // Linea aperta: vicino alla stella segue un dipolo, poi si raddrizza verso la direzione asintotica THinf
+  // e oltre il cilindro della luce si avvolge a spirale, in ritardo rispetto alla rotazione.
+  function openPoint(THinf, phi0, r, north) {
+    const Lm = lastClosedL();
+    const Leff = Lm / Math.sin(THinf) ** 2;
+    const thd = Math.asin(Math.sqrt(Math.min(1, r / Leff)));
+    const w = smooth(0.3 * Lm, Lm, r);
+    let th = (1 - w) * thd + w * THinf;
+    const rho = r * Math.sin(th);
+    const wind = (rho / RLC) * smooth(0.35, 1.05, rho / RLC) * 0.75;
+    const ph = phi0 + rot - wind;
+    if (!north) th = Math.PI - th;
+    return sph(r, th, ph);
+  }
+
+  // ---------- Particelle ----------
+  const currents = [];
+  for (let i = 0; i < 70; i++) {
+    currents.push({
+      li: Math.floor(Math.random() * 2),                // solo le tre linee più interne, le più attorcigliate
+      az: Math.floor(Math.random() * N_AZ_CLOSED),
+      u: Math.random(),
+      v: (0.10 + Math.random() * 0.10) * (Math.random() < 0.5 ? 1 : -1)
+    });
+  }
+
+  const wind = [];
+  function spawnWind(p, fresh) {
+    p.north = Math.random() < 0.5;
+    p.th = (20 + Math.random() * 64) * Math.PI / 180;
+    p.phi0 = Math.random() * Math.PI * 2;
+    p.r = fresh ? 1.05 + Math.random() * 2.0 * RLC : 1.05;
+    return p;
+  }
+  for (let i = 0; i < 140; i++) wind.push(spawnWind({}, true));
+
+  // ---------- Disegno ----------
+  const buckets = new Map();
+  function addSeg(key, a, b) {
+    let arr = buckets.get(key);
+    if (!arr) { arr = []; buckets.set(key, arr); }
+    arr.push(a.sx, a.sy, b.sx, b.sy);
+  }
+  function flush(filterFront) {
+    for (const [key, arr] of buckets) {
+      const [front, color, width] = key.split("|");
+      if ((front === "1") !== filterFront) continue;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = +width;
+      ctx.beginPath();
+      for (let i = 0; i < arr.length; i += 4) {
+        ctx.moveTo(arr[i], arr[i + 1]);
+        ctx.lineTo(arr[i + 2], arr[i + 3]);
+      }
+      ctx.stroke();
+    }
+  }
+
+  function strokePolyline(pts, colorFn, width) {
+    for (let i = 1; i < pts.length; i++) {
+      const a = pts[i - 1], b = pts[i];
+      if (a.hidden || b.hidden) continue;
+      const d = (a.depth + b.depth) / 2;
+      const front = d >= 0 ? 1 : 0;
+      const col = colorFn(front, i / pts.length);
+      if (col) addSeg(front + "|" + col + "|" + width, a, b);
+    }
+  }
+
+  function closedColor(L) {
+    // dal blu (poca torsione) al viola (molta torsione)
+    const k = Math.min(1, twistOf(L) / TWIST_MAX);
+    const r = Math.round(96 + (192 - 96) * k);
+    const g = Math.round(165 + (132 - 165) * k);
+    const b = Math.round(250 + (252 - 250) * k);
+    return (front) => `rgba(${r},${g},${b},${front ? 0.8 + 0.15 * k : 0.22})`;
+  }
+
+  function drawBackground() {
+    ctx.fillStyle = "#04060b";
+    ctx.fillRect(0, 0, W, H);
+    // campo stellare fisso
+    if (!drawBackground.stars) {
+      drawBackground.stars = Array.from({ length: 160 }, () => [Math.random(), Math.random(), Math.random()]);
+    }
+    for (const [x, y, m] of drawBackground.stars) {
+      ctx.fillStyle = `rgba(200,215,255,${0.12 + m * 0.35})`;
+      ctx.fillRect(x * W, y * H, m > 0.85 ? 1.6 : 1, m > 0.85 ? 1.6 : 1);
+    }
+  }
+
+  function drawLightCylinder(front) {
+    const hC = 0.86 * RLC;
+    ctx.save();
+    if (!front) {
+      // fascia traslucida
+      const left = proj(-RLC, 0, 0), right = proj(RLC, 0, 0);
+      const grd = ctx.createLinearGradient(left.sx, 0, right.sx, 0);
+      grd.addColorStop(0, "rgba(125,211,252,0.07)");
+      grd.addColorStop(0.08, "rgba(125,211,252,0.015)");
+      grd.addColorStop(0.92, "rgba(125,211,252,0.015)");
+      grd.addColorStop(1, "rgba(125,211,252,0.07)");
+      ctx.fillStyle = grd;
+      const top = proj(0, 0, hC).sy, bot = proj(0, 0, -hC).sy;
+      ctx.fillRect(left.sx, top, right.sx - left.sx, bot - top);
+    }
+    // ellissi superiore e inferiore (metà posteriore o anteriore)
+    ctx.strokeStyle = front ? "rgba(125,211,252,0.55)" : "rgba(125,211,252,0.22)";
+    ctx.lineWidth = 1.2;
+    ctx.setLineDash(front ? [] : [4, 5]);
+    for (const z of [hC, -hC]) {
+      ctx.beginPath();
+      let started = false;
+      for (let k = 0; k <= 90; k++) {
+        const a = Math.PI * (front ? 1 + k / 90 : k / 90); // y>0 dietro, y<0 davanti
+        const p = proj(RLC * Math.cos(a), RLC * Math.sin(a), z);
+        if (!started) { ctx.moveTo(p.sx, p.sy); started = true; } else ctx.lineTo(p.sx, p.sy);
+      }
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    if (front) {
+      // bordi verticali
+      ctx.strokeStyle = "rgba(125,211,252,0.6)";
+      for (const x of [-RLC, RLC]) {
+        const a = proj(x, 0, hC), b = proj(x, 0, -hC);
+        ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke();
+      }
+    }
+    ctx.restore();
+  }
+
+  function drawAxis() {
+    const a = proj(0, 0, 0.82 * RLC), b = proj(0, 0, -0.82 * RLC);
+    ctx.save();
+    ctx.strokeStyle = "rgba(220,232,255,0.28)";
+    ctx.setLineDash([3, 6]);
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke();
+    ctx.setLineDash([]);
+    // freccia di rotazione attorno all'asse
+    const z = 0.62 * RLC, rr = 0.9;
+    ctx.strokeStyle = "rgba(220,232,255,0.6)";
+    ctx.lineWidth = 1.4;
+    ctx.beginPath();
+    let last = null, prev = null;
+    for (let k = 0; k <= 40; k++) {
+      const ang = -Math.PI * 0.15 + k / 40 * Math.PI * 1.45;
+      const p = proj(rr * Math.cos(ang), rr * Math.sin(ang), z);
+      if (k === 0) ctx.moveTo(p.sx, p.sy); else ctx.lineTo(p.sx, p.sy);
+      prev = last; last = p;
+    }
+    ctx.stroke();
+    const ang = Math.atan2(last.sy - prev.sy, last.sx - prev.sx);
+    ctx.fillStyle = "rgba(220,232,255,0.7)";
+    ctx.beginPath();
+    ctx.moveTo(last.sx + Math.cos(ang) * 7, last.sy + Math.sin(ang) * 7);
+    ctx.lineTo(last.sx + Math.cos(ang + 2.5) * 7, last.sy + Math.sin(ang + 2.5) * 7);
+    ctx.lineTo(last.sx + Math.cos(ang - 2.5) * 7, last.sy + Math.sin(ang - 2.5) * 7);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawStar() {
+    const c = proj(0, 0, 0);
+    const R = RS * S;
+    const glow = ctx.createRadialGradient(c.sx, c.sy, R * 0.6, c.sx, c.sy, R * 3.2);
+    glow.addColorStop(0, "rgba(160,200,255,0.35)");
+    glow.addColorStop(1, "rgba(160,200,255,0)");
+    ctx.fillStyle = glow;
+    ctx.beginPath(); ctx.arc(c.sx, c.sy, R * 3.2, 0, Math.PI * 2); ctx.fill();
+    const g = ctx.createRadialGradient(c.sx - R * 0.35, c.sy - R * 0.4, R * 0.1, c.sx, c.sy, R);
+    g.addColorStop(0, "#ffffff");
+    g.addColorStop(0.45, "#cfe0ff");
+    g.addColorStop(1, "#5b7bb8");
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(c.sx, c.sy, R, 0, Math.PI * 2); ctx.fill();
+    // meridiani che ruotano con la stella (solo emisfero visibile)
+    ctx.save();
+    ctx.beginPath(); ctx.arc(c.sx, c.sy, R, 0, Math.PI * 2); ctx.clip();
+    ctx.strokeStyle = "rgba(40,60,110,0.35)";
+    ctx.lineWidth = 1;
+    for (let m = 0; m < 6; m++) {
+      const ph = rot + m * Math.PI / 3;
+      ctx.beginPath();
+      let started = false;
+      for (let k = 0; k <= 30; k++) {
+        const th = k / 30 * Math.PI;
+        const [x, y, z] = sph(RS, th, ph);
+        const p = proj(x, y, z);
+        if (p.depth < 0) { started = false; continue; }
+        if (!started) { ctx.moveTo(p.sx, p.sy); started = true; } else ctx.lineTo(p.sx, p.sy);
+      }
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function label(text, x, y, align, color) {
+    ctx.save();
+    ctx.font = "12px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif";
+    ctx.textAlign = align || "left";
+    ctx.textBaseline = "middle";
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = "rgba(4,6,11,0.85)";
+    ctx.strokeText(text, x, y);
+    ctx.fillStyle = color || "#dce8ff";
+    ctx.fillText(text, x, y);
+    ctx.restore();
+  }
+
+  function leader(x1, y1, x2, y2) {
+    ctx.save();
+    ctx.strokeStyle = "rgba(220,232,255,0.45)";
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawLabels() {
+    const lc = proj(RLC, 0, 0.62 * RLC);
+    label("cilindro della luce", lc.sx - 8, lc.sy, "right", "#7dd3fc");
+    label("v = c", lc.sx + 8, lc.sy, "left", "#7dd3fc");
+
+    const Lm = lastClosedL();
+    const yp = proj(-Lm, 0, 0);
+    ctx.save();
+    ctx.fillStyle = "rgba(253,230,138,0.9)";
+    ctx.beginPath(); ctx.arc(yp.sx, yp.sy, 3, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+    leader(yp.sx, yp.sy, yp.sx + 26, yp.sy + 34);
+    label("punto Y: fine della zona chiusa", yp.sx + 30, yp.sy + 40, "left", "#fde68a");
+
+    const cl = proj(0, 0, 0);
+    leader(cl.sx + 1.6 * S, cl.sy - 0.9 * S, cl.sx + 3.4 * S, cl.sy - 2.6 * S);
+    label("linee chiuse attorcigliate", cl.sx + 3.5 * S, cl.sy - 2.75 * S, "left", "#c4b5fd");
+
+    const inner = proj(-RLC * 0.55, 0, -0.1 * RLC);
+    label("zona chiusa: corotazione", inner.sx, inner.sy + 1.6 * S, "center", "#93c5fd");
+
+    const op = proj(0.42 * RLC, 0, 0.74 * RLC);
+    label("linee aperte e vento di plasma", op.sx, op.sy, "left", "#fbbf24");
+
+    const st = proj(0, 0, -1);
+    label("stella di neutroni", st.sx, st.sy + 16, "center", "#cfe0ff");
+  }
+
+  function drawPointer() {
+    if (!pointer) return;
+    const x = (pointer.x - CX) / S;
+    const rho = Math.abs(x);
+    if (rho < RS) return;
+    const beta = rho / RLC;
+    ctx.save();
+    ctx.strokeStyle = beta < 1 ? "rgba(147,197,253,0.35)" : "rgba(251,146,60,0.45)";
+    ctx.setLineDash([2, 4]);
+    ctx.beginPath(); ctx.moveTo(pointer.x, 0); ctx.lineTo(pointer.x, H); ctx.stroke();
+    ctx.restore();
+    const txt = beta < 1
+      ? `corotazione: v = Ωr ≈ ${beta.toFixed(2).replace(".", ",")} c`
+      : `corotazione impossibile: servirebbe v ≈ ${beta.toFixed(2).replace(".", ",")} c`;
+    ctx.save();
+    ctx.font = "12px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif";
+    const w = ctx.measureText(txt).width + 16;
+    let bx = pointer.x + 12, by = pointer.y - 30;
+    if (bx + w > W - 8) bx = pointer.x - 12 - w;
+    if (by < 8) by = pointer.y + 12;
+    ctx.fillStyle = "rgba(7,12,22,0.85)";
+    ctx.strokeStyle = beta < 1 ? "rgba(125,211,252,0.35)" : "rgba(251,146,60,0.5)";
+    ctx.beginPath(); ctx.roundRect(bx, by, w, 22, 8); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = beta < 1 ? "#dce8ff" : "#fed7aa";
+    ctx.textBaseline = "middle";
+    ctx.fillText(txt, bx + 8, by + 11);
+    ctx.restore();
+  }
+
+  function draw() {
+    if (!W) return;
+    buckets.clear();
+    drawBackground();
+
+    // Linee chiuse
+    const Ls = CLOSED_L.concat([lastClosedL() * 0.995]);
+    for (let li = 0; li < Ls.length; li++) {
+      const L = Ls[li];
+      const cf = closedColor(L);
+      const n = 40 + Math.round(L * 8);
+      for (let a = 0; a < N_AZ_CLOSED; a++) {
+        const phi0 = a * 2 * Math.PI / N_AZ_CLOSED;
+        const pts = [];
+        for (let k = 0; k <= n; k++) {
+          const [x, y, z] = closedPoint(L, phi0, k / n);
+          pts.push(proj(x, y, z));
+        }
+        strokePolyline(pts, cf, li < 2 ? 1.7 : (li === Ls.length - 1 ? 1.0 : 1.2));
+      }
+    }
+
+    // Linee aperte
+    const rMax = 2.2 * RLC;
+    for (const north of [true, false]) {
+      for (const TH of OPEN_THETA) {
+        for (let a = 0; a < N_AZ_OPEN; a++) {
+          const phi0 = (a + 0.5) * 2 * Math.PI / N_AZ_OPEN;
+          const pts = [];
+          for (let k = 0; k <= 110; k++) {
+            const r = RS * Math.pow(rMax / RS, k / 110);
+            const [x, y, z] = openPoint(TH, phi0, r, north);
+            pts.push(proj(x, y, z));
+          }
+          strokePolyline(pts, (front, f) => {
+            const r = RS * Math.pow(rMax / RS, f);
+            const fade = 1 - smooth(1.15 * RLC, 2.1 * RLC, r);
+            const al = Math.round((front ? 0.62 : 0.2) * fade * 20) / 20;
+            return al > 0 ? `rgba(251,191,36,${al})` : null;
+          }, 1.1);
+        }
+      }
+    }
+
+    drawLightCylinder(false);
+    flush(false);          // segmenti dietro la stella
+    drawAxis();
+
+    // particelle dietro
+    drawParticles(false);
+    drawStar();
+    flush(true);           // segmenti davanti
+    drawParticles(true);
+    drawLightCylinder(true);
+
+    if (toggleLabels.checked && W >= 600) drawLabels();
+    drawPointer();
+  }
+
+  function drawParticles(front) {
+    // correnti sulle linee chiuse attorcigliate
+    const nCur = Math.round(currents.length * Math.min(1, twistNow / 0.6));
+    for (let i = 0; i < nCur; i++) {
+      const p = currents[i];
+      const L = CLOSED_L[p.li];
+      const [x, y, z] = closedPoint(L, p.az * 2 * Math.PI / N_AZ_CLOSED, p.u);
+      const q = proj(x, y, z);
+      if (q.hidden || (q.depth >= 0) !== front) continue;
+      ctx.fillStyle = front ? "rgba(103,232,249,0.95)" : "rgba(103,232,249,0.35)";
+      ctx.beginPath(); ctx.arc(q.sx, q.sy, front ? 1.9 : 1.4, 0, Math.PI * 2); ctx.fill();
+    }
+    // vento
+    for (const p of wind) {
+      const [x, y, z] = openPoint(p.th, p.phi0, p.r, p.north);
+      const q = proj(x, y, z);
+      if (q.hidden || (q.depth >= 0) !== front) continue;
+      const rho = Math.hypot(x, y);
+      const out = rho > RLC;
+      const fade = 1 - smooth(1.5 * RLC, 2.1 * RLC, p.r);
+      const alpha = (front ? 1 : 0.4) * fade * (out ? 1 : 0.55);
+      if (out) {
+        // scia
+        const [x2, y2, z2] = openPoint(p.th, p.phi0, p.r * 0.94, p.north);
+        const q2 = proj(x2, y2, z2);
+        ctx.strokeStyle = `rgba(251,146,60,${alpha * 0.6})`;
+        ctx.lineWidth = 1.6;
+        ctx.beginPath(); ctx.moveTo(q2.sx, q2.sy); ctx.lineTo(q.sx, q.sy); ctx.stroke();
+      }
+      ctx.fillStyle = out ? `rgba(253,186,116,${alpha})` : `rgba(251,146,60,${alpha})`;
+      ctx.beginPath(); ctx.arc(q.sx, q.sy, out ? 2.1 : 1.5, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+
+  // ---------- Aggiornamento ----------
+  function step(dt) {
+    simTime += dt;
+    rot += OMEGA * dt;
+    const target = +twistInput.value;
+    const ramp = smooth(0, 6, simTime);                  // la torsione si accumula nei primi secondi
+    twistNow += (target * ramp - twistNow) * Math.min(1, dt * 1.5);
+    for (const p of currents) {
+      p.u += p.v * dt;
+      if (p.u > 1) p.u -= 1;
+      if (p.u < 0) p.u += 1;
+    }
+    for (const p of wind) {
+      p.r += dt * (0.5 + 2.2 * p.r / RLC);
+      if (p.r > 2.1 * RLC) spawnWind(p, false);
+    }
+  }
+
+  function frame(ts) {
+    if (lastTs === null) lastTs = ts;
+    const dt = Math.min(0.05, (ts - lastTs) / 1000) * (+speedInput.value);
+    lastTs = ts;
+    if (running && visible) step(dt);
+    draw();
+    requestAnimationFrame(frame);
+  }
+
+  // ---------- Controlli ----------
+  btnPause.addEventListener("click", () => {
+    running = !running;
+    if (running && simTime === 0) twistNow = 0;
+    updatePauseLabel();
+  });
+  speedInput.addEventListener("input", () => {
+    speedVal.textContent = (+speedInput.value).toFixed(2) + "×";
+  });
+  twistInput.addEventListener("input", () => {
+    if (!running) twistNow = +twistInput.value;
+  });
+  canvas.addEventListener("pointermove", (e) => {
+    const r = canvas.getBoundingClientRect();
+    pointer = { x: e.clientX - r.left, y: e.clientY - r.top };
+  });
+  canvas.addEventListener("pointerleave", () => { pointer = null; });
+  document.addEventListener("visibilitychange", () => { visible = !document.hidden; });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver((entries) => {
+      for (const en of entries) visible = en.isIntersecting && !document.hidden;
+    }).observe(canvas);
+  }
+
+  if (!running) twistNow = +twistInput.value;   // con movimento ridotto: stato finale statico
+  resize();
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

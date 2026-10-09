@@ -8,9 +8,13 @@
 {{- $youtube := .Get "youtube" -}}
 {{- $vimeo := .Get "vimeo" -}}
 {{- $embed := .Get "embed" -}}
+{{- $ratio := .Get "ratio" -}}
+{{- $embedStyle := "" -}}
+{{- with .Get "width" }}{{ $embedStyle = printf "%smax-width: %s;" $embedStyle . }}{{ end -}}
+{{- with $ratio }}{{ $embedStyle = printf "%saspect-ratio: %s;" $embedStyle . }}{{ end -}}
 <figure class="scientific-figure">
   {{ if $youtube }}
-  <div class="video-embed" {{ with .Get "width" }}style="max-width: {{ . }};"{{ end }}>
+  <div class="video-embed"{{ with $embedStyle }} style="{{ . | safeCSS }}"{{ end }}>
     <iframe
       src="https://www.youtube-nocookie.com/embed/{{ $youtube }}"
       title="{{ .Get "caption" | plainify | default "Video" }}"
@@ -20,7 +24,7 @@
     ></iframe>
   </div>
   {{ else if $vimeo }}
-  <div class="video-embed" {{ with .Get "width" }}style="max-width: {{ . }};"{{ end }}>
+  <div class="video-embed"{{ with $embedStyle }} style="{{ . | safeCSS }}"{{ end }}>
     <iframe
       src="https://player.vimeo.com/video/{{ $vimeo }}"
       title="{{ .Get "caption" | plainify | default "Video" }}"
@@ -30,7 +34,7 @@
     ></iframe>
   </div>
   {{ else if $embed }}
-  <div class="video-embed" {{ with .Get "width" }}style="max-width: {{ . }};"{{ end }}>
+  <div class="video-embed"{{ with $embedStyle }} style="{{ . | safeCSS }}"{{ end }}>
     <iframe
       src="{{ $embed }}"
       title="{{ .Get "caption" | plainify | default "Video" }}"

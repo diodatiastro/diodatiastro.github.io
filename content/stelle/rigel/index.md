@@ -70,7 +70,7 @@ $$
 1{,}5 \times 10^{-14} \; M_{\odot}/\text{anno}
 $$
 
-cioè $1,5$ centomillesimi di miliardesimo di massa solare all'anno. Sembra poco, ma si tratta di $30$ o $40$ milioni di miliardi di $\text{kg}$ all'anno, cioè l'equivalente di una massa terrestre ogni $140$ milioni di anni circa.
+cioè $1{,}5$ centomillesimi di miliardesimo di massa solare all'anno. Sembra poco, ma si tratta di $30$ o $40$ milioni di miliardi di $\text{kg}$ all'anno, cioè l'equivalente di una massa terrestre ogni $140$ milioni di anni circa.
 
 Nel caso di Rigel siamo su un altro livello. Studi effettuati tra il 2006 e il 2010 hanno stimato perdite di massa variabili, comprese tra:
 
@@ -140,7 +140,7 @@ Nello stesso catalogo, la massa di Rigel Ba e Rigel C è stimata in $3{,}84$ mas
 
 Le due binarie spettroscopiche hanno, dunque, una massa combinata di poco meno di $7$ masse solari, ragion per cui il baricentro del sistema che esse formano con Rigel C è molto più vicino alla coppia binaria. Si stima che l'orbita di Rigel C intorno al centro di massa comune sia di $63$ anni. Tutte e tre queste stelle, poi, orbitano intorno alla supergigante Rigel A, lontana tra $2\,200$ e $3\,000\,\text{au}$, a seconda della distanza dalla Terra presa come riferimento. Il periodo stimato di una loro orbita intorno a Rigel A sarebbe di circa $24\,000$ anni.
 
-Va riportato per completezza che, nel 1878, Burnham scoprì una quinta stella appartenente probabilmente al sistema di Rigel. Secondo i dati forniti dal satellite Gaia, **Rigel D**, come è stata chiamata questa quinta stella, si troverebbe a una distanza compatibile con quella della supergigante. Si tratta probabilmente di una **nana arancione**, cioè una stella di sequenza principale di classe spettrale K, con magnitudine visuale pari a circa $12$. Data la separazione angolare da Rigel A di $44{,}5$ secondi d'arco misurata nel 2017, la distanza di Rigel D dalla supergigante blu potrebbe essere compresa tra $11\,500$ e $13\,500\,\text{au}$, cioè più o meno $0,2$ anni luce. Se è davvero legata gravitazionalmente al sistema, un'orbita completa della nana arancione intorno a Rigel A potrebbe durare qualcosa come $250\,000$ anni.
+Va riportato per completezza che, nel 1878, Burnham scoprì una quinta stella appartenente probabilmente al sistema di Rigel. Secondo i dati forniti dal satellite Gaia, **Rigel D**, come è stata chiamata questa quinta stella, si troverebbe a una distanza compatibile con quella della supergigante. Si tratta probabilmente di una **nana arancione**, cioè una stella di sequenza principale di classe spettrale K, con magnitudine visuale pari a circa $12$. Data la separazione angolare da Rigel A di $44{,}5$ secondi d'arco misurata nel 2017, la distanza di Rigel D dalla supergigante blu potrebbe essere compresa tra $11\,500$ e $13\,500\,\text{au}$, cioè più o meno $0{,}2$ anni luce. Se è davvero legata gravitazionalmente al sistema, un'orbita completa della nana arancione intorno a Rigel A potrebbe durare qualcosa come $250\,000$ anni.
 
 ## Inospitalità del sistema stellare
 

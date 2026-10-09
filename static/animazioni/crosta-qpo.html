@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SGR 1806-20 – moto torsionale della crosta, 92.5 Hz</title>
+  <style>
+    :root {
+      --bg: #04060b;
+      --fg: #dce8ff;
+      --muted: #8ea4c7;
+      --accent: #7dd3fc;
+      --panel: rgba(7, 12, 22, 0.74);
+      --border: rgba(125, 211, 252, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      overflow: hidden;
+    }
+
+    .stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #scene {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .controls {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 13px;
+      align-items: center;
+      padding: 10px 12px;
+      pointer-events: auto;
+      max-width: calc(100% - 32px);
+      z-index: 3;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid rgba(125, 211, 252, 0.28);
+      background: rgba(125, 211, 252, 0.09);
+      color: #e8f3ff;
+      border-radius: 10px;
+      padding: 7px 10px;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: rgba(125, 211, 252, 0.16);
+      border-color: rgba(125, 211, 252, 0.45);
+    }
+
+    label.ctl {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #b9cbe6;
+    }
+
+    input[type="range"] {
+      width: 110px;
+      accent-color: var(--accent);
+    }
+
+    .chk {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      font-size: 12px;
+      color: #b9cbe6;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 620px) {
+      .controls {
+        gap: 8px 10px;
+        padding: 8px 10px;
+      }
+
+      input[type="range"] {
+        width: 86px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <canvas id="scene"></canvas>
+
+    <div class="controls card">
+      <button id="btnReplay">↻ Riavvia</button>
+      <button id="btnPause">⏸ Pausa</button>
+
+      <label class="ctl">
+        Velocità
+        <input id="speed" type="range" min="0.2" max="3" step="0.05" value="1" />
+        <span id="speedVal">1.00×</span>
+      </label>
+
+      <label class="chk"><input id="toggleLabels" type="checkbox" checked /> Etichetta</label>
+      <label class="chk"><input id="toggleArrows" type="checkbox" checked /> Frecce</label>
+      <label class="chk"><input id="toggleGrid" type="checkbox" checked /> Griglia</label>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const canvas = document.getElementById("scene");
+      const ctx = canvas.getContext("2d", { alpha: false });
+
+      const TAU = Math.PI * 2;
+
+      /*
+       * Modo scelto: QPO a 92.5 Hz, interpretata come modo torsionale
+       * toroidale della crosta, approssimativamente l = 7, n = 0.
+       *
+       * La frequenza reale è 92.5 Hz. Qui è rallentata per essere visibile.
+       */
+      const MODE = {
+        name: "92.5 Hz",
+        freqHz: 92.5,
+        l: 7,
+        visualFreqHz: 0.62,
+        amplitude: 0.245
+      };
+
+      let W = 0, H = 0, DPR = 1;
+      let cx = 0, cy = 0, R = 120;
+
+      let stars = [];
+
+      let t = 0;
+      let last = 0;
+      let paused = false;
+      let speed = 1;
+
+      let showLabels = true;
+      let showArrows = true;
+      let showGrid = true;
+
+      const quality = {
+        latBands: 64,
+        lonSteps: 96,
+        meridians: 36,
+        thetaSteps: 128
+      };
+
+      const el = id => document.getElementById(id);
+
+      const btnReplay = el("btnReplay");
+      const btnPause = el("btnPause");
+      const speedInput = el("speed");
+      const speedVal = el("speedVal");
+      const labelsToggle = el("toggleLabels");
+      const arrowsToggle = el("toggleArrows");
+      const gridToggle = el("toggleGrid");
+
+      function clamp(v, a, b) {
+        return Math.max(a, Math.min(b, v));
+      }
+
+      function roundRectPath(x, y, w, h, r) {
+        r = Math.min(r, w / 2, h / 2);
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.arcTo(x + w, y, x + w, y + h, r);
+        ctx.arcTo(x + w, y + h, x, y + h, r);
+        ctx.arcTo(x, y + h, x, y, r);
+        ctx.arcTo(x, y, x + w, y, r);
+        ctx.closePath();
+      }
+
+      function setQuality() {
+        if (W < 760 || H < 430) {
+          quality.latBands = 46;
+          quality.lonSteps = 72;
+          quality.meridians = 24;
+          quality.thetaSteps = 96;
+        } else {
+          quality.latBands = 64;
+          quality.lonSteps = 96;
+          quality.meridians = 36;
+          quality.thetaSteps = 128;
+        }
+      }
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        W = Math.max(320, rect.width);
+        H = Math.max(240, rect.height);
+        DPR = Math.min(2, window.devicePixelRatio || 1);
+
+        canvas.width = Math.floor(W * DPR);
+        canvas.height = Math.floor(H * DPR);
+        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+        // Vista ravvicinata della crosta: la sfera occupa gran parte dell'inquadratura.
+        R = clamp(Math.min(W * 0.39, H * 0.49), 90, 560);
+        cx = W * 0.50;
+        cy = H * 0.52;
+
+        setQuality();
+        makeStars();
+      }
+
+      function makeStars() {
+        stars = [];
+        const n = Math.round((W * H) / 7000);
+        for (let i = 0; i < n; i++) {
+          const z = Math.random();
+          stars.push({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            r: 0.25 + z * 1.25,
+            a: 0.08 + z * 0.42,
+            tw: 0.3 + Math.random() * 1.8,
+            phase: Math.random() * TAU,
+            c: 145 + Math.floor(Math.random() * 95)
+          });
+        }
+      }
+
+      function reset() {
+        t = 0;
+      }
+
+      function phase() {
+        return TAU * MODE.visualFreqHz * t;
+      }
+
+      /*
+       * Spostamento azimutale del modo torsionale.
+       *
+       * theta = colatitudine, da 0 al polo nord a PI al polo sud.
+       * phi   = longitudine nella cornice della crosta non deformata.
+       *
+       * sin(l * theta) crea fasce alternate in senso opposto.
+       */
+      function crustDisplacement(theta, ph) {
+        return MODE.amplitude * Math.sin(MODE.l * theta) * Math.cos(ph);
+      }
+
+      function crustVelocity(theta, ph) {
+        return -MODE.amplitude *
+               Math.sin(MODE.l * theta) *
+               Math.sin(ph) *
+               TAU *
+               MODE.visualFreqHz;
+      }
+
+      /*
+       * Proiezione ortografica.
+       *
+       * Si guarda la stella dall'equatore.
+       * Il semicerchio visibile corrisponde a phi da 0 a PI.
+       */
+      function project(theta, phi) {
+        const sinT = Math.sin(theta);
+        const cosT = Math.cos(theta);
+
+        return {
+          x: cx + R * sinT * Math.cos(phi),
+          y: cy - R * cosT,
+          z: sinT * Math.sin(phi)
+        };
+      }
+
+      function drawBackground() {
+        const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(W, H) * 0.95);
+        g.addColorStop(0, "#09111f");
+        g.addColorStop(0.42, "#05080f");
+        g.addColorStop(1, "#020307");
+        ctx.fillStyle = g;
+        ctx.fillRect(0, 0, W, H);
+      }
+
+      function drawStars() {
+        const ph = phase();
+
+        for (const s of stars) {
+          const tw = 0.62 + 0.38 * Math.sin(t * s.tw + s.phase);
+          const a = s.a * tw;
+          ctx.fillStyle = `rgba(${s.c}, ${Math.min(255, s.c + 18)}, 255, ${a})`;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, TAU);
+          ctx.fill();
+        }
+      }
+
+      function drawHalo(ph) {
+        // Leggera modulazione dell'alone, per suggerire che la vibrazione
+        // modula l'emissione, senza distrarre dal moto della crosta.
+        const kinetic = 0.5 + 0.5 * Math.abs(Math.sin(ph));
+
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+
+        const rad = R * (1.55 + 0.22 * kinetic);
+        const g = ctx.createRadialGradient(cx, cy, R * 0.35, cx, cy, rad);
+        g.addColorStop(0, `rgba(120, 205, 255, ${0.09 + 0.045 * kinetic})`);
+        g.addColorStop(0.34, `rgba(90, 145, 255, ${0.035 + 0.02 * kinetic})`);
+        g.addColorStop(1, "rgba(0, 0, 0, 0)");
+
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(cx, cy, rad, 0, TAU);
+        ctx.fill();
+
+        ctx.restore();
+      }
+
+      function drawStarBody() {
+        const body = ctx.createRadialGradient(
+          cx - R * 0.26,
+          cy - R * 0.30,
+          R * 0.04,
+          cx,
+          cy,
+          R
+        );
+        body.addColorStop(0, "#f7fbff");
+        body.addColorStop(0.16, "#c7e8ff");
+        body.addColorStop(0.42, "#4d9bce");
+        body.addColorStop(0.74, "#14365d");
+        body.addColorStop(1, "#050b14");
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, TAU);
+        ctx.fillStyle = body;
+        ctx.fill();
+      }
+
+      function drawCrustBands(ph) {
+        const NL = quality.latBands;
+        const steps = quality.lonSteps;
+
+        for (let i = 0; i < NL; i++) {
+          const th0 = Math.PI * i / NL;
+          const th1 = Math.PI * (i + 1) / NL;
+          const mid = 0.5 * (th0 + th1);
+
+          const s = Math.sin(MODE.l * mid);
+          const absS = Math.abs(s);
+          const speedNorm = Math.abs(Math.sin(ph));
+
+          let r, g, b;
+
+          if (s >= 0) {
+            // Fasce che in questa semioscillazione tendono a scorrere in un verso.
+            r = 62 + 42 * absS;
+            g = 188 + 38 * absS;
+            b = 255;
+          } else {
+            // Fasce adiacenti scorrono in verso opposto.
+            r = 255;
+            g = 164 + 44 * absS;
+            b = 62 + 34 * absS;
+          }
+
+          const alpha = 0.11 + 0.20 * absS + 0.08 * absS * speedNorm;
+
+          ctx.beginPath();
+
+          for (let k = 0; k <= steps; k++) {
+            const phi = Math.PI * k / steps;
+            const p = project(th0, phi + crustDisplacement(th0, ph));
+            if (k === 0) ctx.moveTo(p.x, p.y);
+            else ctx.lineTo(p.x, p.y);
+          }
+
+          for (let k = steps; k >= 0; k--) {
+            const phi = Math.PI * k / steps;
+            const p = project(th1, phi + crustDisplacement(th1, ph));
+            ctx.lineTo(p.x, p.y);
+          }
+
+          ctx.closePath();
+          ctx.fillStyle = `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${alpha})`;
+          ctx.fill();
+        }
+      }
+
+      function drawMeridians(ph) {
+        const NM = quality.meridians;
+        const TS = quality.thetaSteps;
+
+        for (let j = 0; j <= NM; j++) {
+          const phi0 = Math.PI * j / NM;
+
+          ctx.beginPath();
+
+          for (let i = 0; i <= TS; i++) {
+            const theta = Math.PI * i / TS;
+            const phi = phi0 + crustDisplacement(theta, ph);
+            const p = project(theta, phi);
+
+            if (i === 0) ctx.moveTo(p.x, p.y);
+            else ctx.lineTo(p.x, p.y);
+          }
+
+          const major = j % 6 === 0;
+          ctx.strokeStyle = major
+            ? "rgba(220, 245, 255, 0.28)"
+            : "rgba(160, 210, 255, 0.12)";
+          ctx.lineWidth = major ? 1.25 : 0.75;
+          ctx.stroke();
+        }
+      }
+
+      function drawNodeLines(ph) {
+        /*
+         * Linee nodali: latitudini dove sin(l theta) = 0.
+         * Lì la crosta non scorre lateralmente; separano fasce
+         * in moto opposto, come faglie.
+         */
+        const steps = quality.lonSteps;
+
+        ctx.save();
+        ctx.setLineDash([5, 5]);
+
+        for (let k = 1; k < MODE.l; k++) {
+          const theta = Math.PI * k / MODE.l;
+
+          ctx.beginPath();
+
+          for (let i = 0; i <= steps; i++) {
+            const phi = Math.PI * i / steps;
+            const p = project(theta, phi + crustDisplacement(theta, ph));
+            if (i === 0) ctx.moveTo(p.x, p.y);
+            else ctx.lineTo(p.x, p.y);
+          }
+
+          ctx.strokeStyle = "rgba(255, 255, 255, 0.24)";
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+
+        ctx.restore();
+      }
+
+      function drawShading() {
+        // Ombreggiatura sferica, per mantenere l'idea di superficie curva.
+        const shade = ctx.createRadialGradient(
+          cx - R * 0.24,
+          cy - R * 0.30,
+          R * 0.08,
+          cx,
+          cy,
+          R
+        );
+        shade.addColorStop(0, "rgba(255, 255, 255, 0.10)");
+        shade.addColorStop(0.48, "rgba(255, 255, 255, 0.00)");
+        shade.addColorStop(1, "rgba(0, 0, 0, 0.46)");
+
+        ctx.fillStyle = shade;
+        ctx.fillRect(cx - R, cy - R, 2 * R, 2 * R);
+      }
+
+      function drawMotionArrows(ph) {
+        const maxVel = MODE.amplitude * TAU * MODE.visualFreqHz;
+
+        for (let k = 0; k < MODE.l; k++) {
+          const theta = (k + 0.5) * Math.PI / MODE.l;
+          const s = Math.sin(MODE.l * theta);
+          const v = crustVelocity(theta, ph);
+          const vn = Math.abs(v) / maxVel;
+
+          if (vn < 0.08) continue;
+
+          const phiC = Math.PI / 2 + crustDisplacement(theta, ph);
+          const p = project(theta, phiC);
+
+          // Verso sullo schermo: derivata di x rispetto a phi nel meridiano centrale.
+          const dir = -Math.sign(v);
+          const len = R * 0.23 * vn * Math.max(0.22, Math.sin(theta));
+
+          if (len < 8) continue;
+
+          const x1 = p.x - dir * len * 0.44;
+          const x2 = p.x + dir * len * 0.56;
+          const y = p.y;
+
+          const color = s > 0 ? "103, 232, 249" : "251, 191, 36";
+          const alpha = 0.52 + 0.38 * vn;
+
+          ctx.strokeStyle = `rgba(${color}, ${alpha})`;
+          ctx.fillStyle = `rgba(${color}, ${alpha})`;
+          ctx.lineWidth = 2.6;
+          ctx.lineCap = "round";
+
+          ctx.beginPath();
+          ctx.moveTo(x1, y);
+          ctx.lineTo(x2, y);
+          ctx.stroke();
+
+          const head = clamp(len * 0.24, 5, 10);
+          ctx.beginPath();
+          ctx.moveTo(x2, y);
+          ctx.lineTo(x2 - dir * head, y - head * 0.56);
+          ctx.lineTo(x2 - dir * head, y + head * 0.56);
+          ctx.closePath();
+          ctx.fill();
+        }
+      }
+
+      function drawLimb() {
+        ctx.strokeStyle = "rgba(190, 235, 255, 0.24)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, TAU);
+        ctx.stroke();
+
+        ctx.strokeStyle = "rgba(120, 200, 255, 0.08)";
+        ctx.lineWidth = 6;
+        ctx.beginPath();
+        ctx.arc(cx, cy, R + 2, 0, TAU);
+        ctx.stroke();
+      }
+
+      function drawBadge() {
+        if (!showLabels || W < 620) return;
+
+        const text = "92.5 Hz · moto torsionale della crosta (schema rallentato)";
+
+        ctx.save();
+        ctx.font = "600 12px ui-sans-serif, system-ui, -apple-system, sans-serif";
+
+        const tw = ctx.measureText(text).width;
+        const padX = 10;
+        const padY = 7;
+        const bw = tw + padX * 2;
+        const bh = 28;
+        const x = W - bw - 16;
+        const y = 16;
+
+        roundRectPath(x, y, bw, bh, 10);
+        ctx.fillStyle = "rgba(7, 12, 22, 0.74)";
+        ctx.fill();
+        ctx.strokeStyle = "rgba(125, 211, 252, 0.22)";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.fillStyle = "#dce8ff";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+        ctx.fillText(text, x + padX, y + bh / 2);
+
+        ctx.restore();
+      }
+
+      function draw() {
+        const ph = phase();
+
+        drawBackground();
+        drawStars();
+        drawHalo(ph);
+
+        drawStarBody();
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, TAU);
+        ctx.clip();
+
+        drawCrustBands(ph);
+
+        if (showGrid) {
+          drawMeridians(ph);
+        }
+
+        drawNodeLines(ph);
+        drawShading();
+
+        if (showArrows) {
+          drawMotionArrows(ph);
+        }
+
+        ctx.restore();
+
+        drawLimb();
+        drawBadge();
+      }
+
+      function frame(now) {
+        if (!last) last = now;
+
+        let dt = (now - last) / 1000;
+        last = now;
+        dt = Math.min(dt, 0.05);
+
+        if (!paused) {
+          t += dt * speed;
+        }
+
+        draw();
+        requestAnimationFrame(frame);
+      }
+
+      btnReplay.addEventListener("click", () => {
+        reset();
+        paused = false;
+        btnPause.textContent = "⏸ Pausa";
+      });
+
+      btnPause.addEventListener("click", () => {
+        paused = !paused;
+        btnPause.textContent = paused ? "▶ Riprendi" : "⏸ Pausa";
+      });
+
+      speedInput.addEventListener("input", () => {
+        speed = parseFloat(speedInput.value);
+        speedVal.textContent = speed.toFixed(2) + "×";
+      });
+
+      labelsToggle.addEventListener("change", e => {
+        showLabels = e.target.checked;
+      });
+
+      arrowsToggle.addEventListener("change", e => {
+        showArrows = e.target.checked;
+      });
+
+      gridToggle.addEventListener("change", e => {
+        showGrid = e.target.checked;
+      });
+
+      window.addEventListener("resize", resize);
+
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        speed = 0.55;
+        speedInput.value = "0.55";
+        speedVal.textContent = "0.55×";
+      }
+
+      resize();
+      requestAnimationFrame(frame);
+    })();
+  </script>
+</body>
+</html>

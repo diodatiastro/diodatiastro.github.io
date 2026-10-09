@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magnetar — geometrie del campo magnetico</title>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+    "three/addons/controls/OrbitControls.js": "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+    "three/addons/exporters/OBJExporter.js": "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js",
+    "three/addons/exporters/GLTFExporter.js": "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js"
+  },
+  "integrity": {
+    "https://unpkg.com/three@0.184.0/build/three.module.js": "sha384-8FCZ1eVO6it4+pbec2aDtnTrwjWXZLJRC+MAGCIPDgsYnUrl/E0A2YlF8ioMKI/J",
+    "https://unpkg.com/three@0.184.0/build/three.core.js": "sha384-dw2ooPewaEIrAgl6oFDBmmBWCE9oW9LxRGcfwZ0hLvEprzo202wXl7vCYHRlSnOT",
+    "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js": "sha384-4rziNxOBZKQ69i+w+f89KJ55TCYquwchVbByQwmaOeIOXdOU2PLDn3kOfXHwIJC9",
+    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js": "sha384-nbwtoZENJD3Vq+ACK0CuGQdPMuDWHkamC2KJD70EV5nfg6jQjfppKOea07YJN+N3",
+    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js": "sha384-VofkvpG6HERhFCYbsUOHeNXBCqID2nfqkQqnVzE1jc/oPcz+qJ13ADdXH08hE+cQ"
+  }
+}
+</script>
+<link rel="stylesheet" href="modernist.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; background: var(--color-bg, #f3f2f2); color: var(--color-text, #201e1d); font-family: var(--font-body, Archivo, sans-serif); }
+  a { color: var(--color-accent-700, #a8200b); } a:hover { color: var(--color-accent, #ec3013); }
+  figure { margin: 0; }
+  .viewer { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #06070b; }
+  three-d-stage:not(:defined) { visibility: hidden; }
+  three-d-stage { position: absolute; inset: 0; height: 100%; }
+  .seg { position: absolute; top: 16px; left: 16px; display: flex; border: 2px solid #f3f2f2; font-family: Archivo, sans-serif; z-index: 2; }
+  .seg button { appearance: none; border: 0; border-right: 2px solid #f3f2f2; background: rgba(6,7,11,0.6); color: #f3f2f2; font: 500 14px/1 Archivo, sans-serif; padding: 10px 16px 10px 12px; text-align: left; display: flex; gap: 10px; cursor: pointer; }
+  .seg button:last-child { border-right: 0; }
+  .seg button span { font-weight: 600; opacity: 0.6; }
+  .seg button:hover { background: rgba(236,48,19,0.25); }
+  .seg button[aria-pressed="true"] { background: #ec3013; color: #fff; }
+  .seg button[aria-pressed="true"] span { opacity: 1; }
+  .seg button:focus-visible { outline: 2px solid #ec3013; outline-offset: 2px; }
+  .hint { position: absolute; left: 16px; bottom: 14px; font: 400 12px/1.4 Archivo, sans-serif; color: rgba(243,242,242,0.55); z-index: 2; pointer-events: none; white-space: nowrap; }
+  body.no-ui .seg { display: none; }
+</style>
+</head>
+<body>
+<figure>
+<div class="viewer">
+<three-d-stage name="magnetar" background="#06070b" no-ground hide-ui autorotate></three-d-stage>
+<nav class="seg" aria-label="Geometria del campo">
+  <button type="button" data-p="1" aria-pressed="true"><span>1</span>Poloidale</button>
+  <button type="button" data-p="2" aria-pressed="false"><span>2</span>Toroidale</button>
+  <button type="button" data-p="3" aria-pressed="false"><span>3</span>Effetto Ω</button>
+</nav>
+<div class="hint">Trascina per ruotare · rotella per lo zoom</div>
+</div>
+
+</figure>
+<script src="three-d-stage.js"></script>
+<script type="module">
+const stage = document.querySelector('three-d-stage');
+const { THREE } = await stage.ready;
+const TAU = Math.PI * 2;
+const CORAL = new THREE.Color(0xd95f43), TEAL = new THREE.Color(0x2a9d8f);
+
+// ---------- materials ----------
+const matStar = new THREE.MeshStandardMaterial({ name: 'stella', color: 0xe9a13b, emissive: 0x8a4f12, emissiveIntensity: 0.7, roughness: 0.55, transparent: true, opacity: 0.18, depthWrite: false });
+const matStarIn = matStar.clone(); matStarIn.name = 'stella_interno'; matStarIn.side = THREE.BackSide; matStarIn.opacity = 0.1;
+const mkLine = (name, c) => new THREE.MeshStandardMaterial({ name, color: c, emissive: c, emissiveIntensity: 0.55, roughness: 0.4 });
+const matPol = mkLine('campo_poloidale', 0xd95f43);
+const matTor = mkLine('campo_toroidale', 0x2a9d8f);
+const matWind = mkLine('campo_avvolto', 0xd95f43); matWind.transparent = true;
+const matAxis = new THREE.MeshStandardMaterial({ name: 'asse', color: 0xa7acb6, emissive: 0x3a3e48, roughness: 0.8 });
+const dotMat = (name, c) => new THREE.MeshStandardMaterial({ name, color: c, emissive: c, emissiveIntensity: 0.6, roughness: 0.4 });
+
+// ---------- helpers ----------
+function tube(points, closed, mat, name, r = 0.013) {
+  const curve = new THREE.CatmullRomCurve3(points, closed, 'centripetal');
+  const m = new THREE.Mesh(new THREE.TubeGeometry(curve, Math.max(64, points.length * 2), r, 8, closed), mat);
+  m.name = name; m.userData.curve = curve;
+  return m;
+}
+function makeAxis(half) {
+  const g = new THREE.Group(); g.name = 'asse_rotazione';
+  const dash = 0.09, gap = 0.07, geo = new THREE.CylinderGeometry(0.007, 0.007, dash, 8);
+  let i = 0;
+  for (let y = -half; y + dash <= half; y += dash + gap) {
+    const m = new THREE.Mesh(geo, matAxis); m.name = 'asse_' + (i++); m.position.y = y + dash / 2; g.add(m);
+  }
+  return g;
+}
+// small arrowheads that travel along closed curves to show field direction
+function makeFlow(meshes, mat, name, spacing, speed, size) {
+  const tracks = meshes.map(m => {
+    const c = m.userData.curve, len = c.getLength();
+    const n = Math.max(2, Math.round(len / spacing));
+    return { pts: c.getSpacedPoints(600), len, n, off: Math.random() };
+  });
+  const total = tracks.reduce((a, t) => a + t.n, 0);
+  const cone = new THREE.ConeGeometry(size * 0.34, size, 16); // tip along +y
+  const inst = new THREE.InstancedMesh(cone, mat, total);
+  inst.name = name; inst.frustumCulled = false;
+  const M = new THREE.Matrix4(), Q = new THREE.Quaternion(), UP = new THREE.Vector3(0, 1, 0), T = new THREE.Vector3(), S = new THREE.Vector3(1, 1, 1);
+  let t = 0;
+  inst.userData.update = (dt) => {
+    t += dt; let k = 0;
+    for (const tr of tracks) {
+      for (let j = 0; j < tr.n; j++) {
+        const u = ((tr.off + j / tr.n + t * speed / tr.len) % 1 + 1) % 1;
+        const i = Math.floor(u * 600), p = tr.pts[i], nx = tr.pts[Math.min(600, i + 1)];
+        T.subVectors(nx, p).normalize(); Q.setFromUnitVectors(UP, T);
+        M.compose(p, Q, S); inst.setMatrixAt(k++, M);
+      }
+    }
+    inst.instanceMatrix.needsUpdate = true;
+  };
+  inst.userData.update(0);
+  return inst;
+}
+
+// ---------- star (shared) ----------
+const root = new THREE.Group(); root.name = 'magnetar';
+const star = new THREE.Group(); star.name = 'stella_di_neutroni';
+const shell = new THREE.Mesh(new THREE.SphereGeometry(1, 96, 64), matStar); shell.name = 'superficie'; shell.renderOrder = 3;
+const shellIn = new THREE.Mesh(new THREE.SphereGeometry(0.999, 96, 64), matStarIn); shellIn.name = 'superficie_interna'; shellIn.renderOrder = 2;
+star.add(shellIn, shell); root.add(star);
+const axisLong = makeAxis(2.7), axisShort = makeAxis(1.6);
+root.add(axisLong, axisShort);
+
+// ---------- 1 · poloidal (dipole) ----------
+const pol = new THREE.Group(); pol.name = 'pannello_1_poloidale';
+const polLines = [];
+[1.5, 2.15, 3.1].forEach((L, li) => {
+  const th0 = Math.asin(Math.sqrt(1 / L)), s0 = Math.sin(th0), y0 = Math.cos(th0);
+  for (let k = 0; k < 4; k++) {
+    const phi = k * TAU / 4 + li * TAU / 12;
+    const cx = Math.cos(phi), cz = Math.sin(phi), pts = [];
+    const N = 90;
+    for (let i = 0; i <= N; i++) {       // outside: north foot → south foot (r = L sin²θ)
+      const th = th0 + (Math.PI - 2 * th0) * i / N, r = L * Math.sin(th) ** 2;
+      pts.push(new THREE.Vector3(r * Math.sin(th) * cx, r * Math.cos(th), r * Math.sin(th) * cz));
+    }
+    const M = 24;
+    for (let j = 1; j < M; j++) {         // inside: back up, parallel to the axis
+      pts.push(new THREE.Vector3(s0 * cx, -y0 + 2 * y0 * j / M, s0 * cz));
+    }
+    const m = tube(pts, true, matPol, `linea_poloidale_L${li}_${k}`);
+    pol.add(m); polLines.push(m);
+  }
+});
+const polFlow = makeFlow(polLines, dotMat('freccia_poloidale', 0xffc2b2), 'frecce_poloidali', 2.8, 0.3, 0.16);
+pol.add(polFlow);
+root.add(pol);
+
+// ---------- 2 · toroidal (nested rings in an equatorial torus) ----------
+const tor = new THREE.Group(); tor.name = 'pannello_2_toroidale';
+const rings = [[0.6, 0]];
+for (let i = 0; i < 4; i++) { const a = 0.17, p = TAU * (i + 0.5) / 4; rings.push([0.6 + a * Math.cos(p), a * Math.sin(p)]); }
+for (let i = 0; i < 6; i++) { const a = 0.33, p = TAU * i / 6; rings.push([0.6 + a * Math.cos(p), a * Math.sin(p)]); }
+const torLines = rings.map(([s, y], i) => {
+  const pts = [];
+  for (let j = 0; j < 128; j++) { const f = -TAU * j / 128; pts.push(new THREE.Vector3(s * Math.cos(f), y, s * Math.sin(f))); }
+  const m = tube(pts, true, matTor, 'anello_toroidale_' + i, 0.012);
+  tor.add(m); return m;
+});
+const torFlow = makeFlow(torLines, dotMat('freccia_toroidale', 0xb5f5ea), 'frecce_toroidali', 1.9, 0.2, 0.085);
+tor.add(torFlow);
+root.add(tor);
+
+// ---------- 3 · Ω effect (differential rotation winds poloidal into toroidal) ----------
+const om = new THREE.Group(); om.name = 'pannello_3_effetto_omega';
+const seeds = [];
+[0.42, 0.78].forEach((A, ai) => { for (let k = 0; k < 3; k++) seeds.push({ A, phi0: k * TAU / 3 + ai * TAU / 6 }); });
+const omMeshes = seeds.map((sd, i) => { const m = new THREE.Mesh(new THREE.BufferGeometry(), matWind); m.name = 'linea_avvolta_' + i; om.add(m); return m; });
+const WIND = 3.5 * TAU;                      // extra turns at the axis at full winding
+function buildWound(p) {
+  seeds.forEach((sd, i) => {
+    const pts = [], N = 220;
+    for (let j = 0; j <= N; j++) {
+      const y = 0.985 - 1.97 * j / N, s = sd.A * Math.sqrt(Math.max(0, 1 - y * y)) + 0.004;
+      const f = sd.phi0 + WIND * p * (1 - s);   // Ω(s) decreases outward: inner layers faster
+      pts.push(new THREE.Vector3(s * Math.cos(f), y, s * Math.sin(f)));
+    }
+    const curve = new THREE.CatmullRomCurve3(pts, false, 'centripetal');
+    omMeshes[i].geometry.dispose();
+    omMeshes[i].geometry = new THREE.TubeGeometry(curve, 440, 0.013, 8, false);
+  });
+}
+buildWound(0);
+root.add(om);
+
+// ---------- scene extras (not part of the object) ----------
+const halo = (() => {
+  const c = document.createElement('canvas'); c.width = c.height = 256;
+  const g = c.getContext('2d'), gr = g.createRadialGradient(128, 128, 40, 128, 128, 128);
+  gr.addColorStop(0, 'rgba(233,161,59,0.28)'); gr.addColorStop(0.5, 'rgba(233,161,59,0.08)'); gr.addColorStop(1, 'rgba(233,161,59,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 256, 256);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(c), blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }));
+  sp.scale.set(3.4, 3.4, 1); sp.renderOrder = 1; return sp;
+})();
+stage.scene.add(halo);
+{
+  const n = 900, pos = new Float32Array(n * 3);
+  for (let i = 0; i < n; i++) {
+    const v = new THREE.Vector3().randomDirection().multiplyScalar(60 + Math.random() * 40);
+    pos.set([v.x, v.y, v.z], i * 3);
+  }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  stage.scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: 0xc9d1e3, size: 1.3, sizeAttenuation: false, transparent: true, opacity: 0.55 })));
+}
+
+stage.setObject(root);
+
+// ---------- camera, panels, animation ----------
+const cam = stage.camera, ctl = stage.controls;
+cam.near = 0.05; cam.far = 400; cam.updateProjectionMatrix();
+ctl.target.set(0, 0, 0); ctl.minDistance = 1.6; ctl.maxDistance = 14; ctl.autoRotateSpeed = 0.9;
+let idle;
+ctl.addEventListener('start', () => clearTimeout(idle));
+ctl.addEventListener('end', () => { clearTimeout(idle); idle = setTimeout(() => (ctl.autoRotate = true), 5000); });
+
+const DIST = { 1: 7.2, 2: 3.5, 3: 3.5 };
+cam.position.set(1, 0.32, 1.35).normalize().multiplyScalar(DIST[1]);
+
+let panel = 1, camT = 0, omT = 0;
+const buttons = [...document.querySelectorAll('.seg button')];
+function setPanel(n) {
+  n = Math.min(3, Math.max(1, n | 0)); panel = n;
+  matStar.opacity = n === 1 ? 0.42 : 0.18; matStarIn.opacity = n === 1 ? 0.2 : 0.1;
+  matStar.emissiveIntensity = n === 1 ? 1.1 : 0.7;
+  pol.visible = n === 1; tor.visible = n === 2; om.visible = n === 3;
+  axisLong.visible = n === 1; axisShort.visible = n !== 1;
+  buttons.forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.p === n)));
+  camT = 1.6; omT = 0;
+  try { parent !== window && parent.postMessage({ type: 'magnetar:panel', panel: n }, '*'); } catch (e) {}
+}
+buttons.forEach(b => b.addEventListener('click', () => setPanel(+b.dataset.p)));
+window.addEventListener('message', e => { if (e.data && e.data.type === 'magnetar:set-panel') setPanel(e.data.panel); });
+const q = new URLSearchParams(location.search);
+if (q.get('ui') === '0') document.body.classList.add('no-ui');
+setPanel(+q.get('pannello') || 1);
+// let the host page size the iframe to its content
+const postHeight = () => { try { parent !== window && parent.postMessage({ type: 'magnetar:height', height: Math.ceil(document.documentElement.scrollHeight) }, '*'); } catch (e) {} };
+new ResizeObserver(postHeight).observe(document.body); postHeight();
+
+const ease = x => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const tmp = new THREE.Vector3();
+stage.onFrame = (dt) => {
+  if (camT > 0) {                               // glide to the panel's framing
+    camT -= dt;
+    tmp.copy(cam.position).sub(ctl.target);
+    const len = tmp.length(), want = DIST[panel];
+    tmp.setLength(len + (want - len) * Math.min(1, dt * 3.5));
+    cam.position.copy(ctl.target).add(tmp);
+  }
+  if (panel === 1) polFlow.userData.update(dt);
+  if (panel === 2) torFlow.userData.update(dt);
+  if (panel === 3) {
+    omT = (omT + dt) % 14;                      // hold · wind · hold · fade
+    const p = omT < 1.5 ? 0 : omT < 10 ? ease((omT - 1.5) / 8.5) : 1;
+    buildWound(p);
+    matWind.color.copy(CORAL).lerp(TEAL, p); matWind.emissive.copy(matWind.color);
+    matWind.opacity = omT > 13 ? 1 - (omT - 13) : omT < 0.4 ? omT / 0.4 : 1;
+  }
+};
+</script>
+</body>
+</html>

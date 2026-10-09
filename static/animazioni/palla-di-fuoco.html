@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palla di fuoco intrappolata</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; padding: 0; background: #03050b; }
+  .pf-wrap { position: relative; width: 100%; margin: 0 auto; line-height: 0; }
+  .pf-wrap canvas {
+    display: block; width: 100%; height: auto;
+    aspect-ratio: 1100 / 700; border-radius: 8px; background: #03050b;
+  }
+  .pf-bar { position: absolute; top: 12px; right: 14px; display: flex; gap: 8px; }
+  .pf-btn {
+    font: 600 14px/1 "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    color: #e4efff; background: rgba(8, 14, 30, .55);
+    border: 1px solid rgba(200, 225, 255, .35); border-radius: 999px;
+    padding: 7px 14px; cursor: pointer; letter-spacing: .02em;
+    backdrop-filter: blur(3px); transition: background .15s, border-color .15s;
+  }
+  .pf-btn:hover { background: rgba(30, 50, 95, .75); border-color: rgba(200, 225, 255, .7); }
+  .pf-btn[hidden] { display: none; }
+  .pf-wrap:fullscreen { display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: #03050b; }
+  .pf-wrap:-webkit-full-screen { display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: #03050b; }
+  .pf-wrap:fullscreen canvas { width: min(100vw, calc(100vh * 1100 / 700)); border-radius: 0; }
+  .pf-wrap:-webkit-full-screen canvas { width: min(100vw, calc(100vh * 1100 / 700)); border-radius: 0; }
+</style>
+</head>
+<body>
+<div class="pf-wrap" id="pf-wrap">
+  <canvas id="pf" width="1100" height="700" role="img"
+    aria-label="Animazione schematica della palla di fuoco intrappolata di SGR 1806-20. Dopo il lampo iniziale, una sfera di plasma e radiazione resta confinata dalle linee chiuse del campo magnetico, appoggiata alla superficie della magnetar. Ruota con la stella, apparendo ora più esposta ora in parte nascosta, mentre si rimpicciolisce e si affievolisce fino a scomparire. In basso, la curva di luce vista da un osservatore lontano mostra il picco iniziale fuori scala e poi una serie di impulsi, uno per rotazione, sempre più deboli."></canvas>
+  <div class="pf-bar">
+    <button class="pf-btn" id="pf-toggle" type="button">Pausa</button>
+    <button class="pf-btn" id="pf-full" type="button" hidden>Schermo intero</button>
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+  var cv = document.getElementById('pf');
+  var ctx = cv.getContext('2d');
+  var btn = document.getElementById('pf-toggle');
+
+  // ---------------- spazio logico ----------------
+  var W = 1100, H = 700;
+  var CX = 550, CY = 286;       // centro della stella
+  var S = 84;                   // raggio della stella in pixel
+  var dpr = 1;
+  // la risoluzione interna segue le dimensioni reali del riquadro (anche a schermo intero)
+  function fit() {
+    var shown = cv.getBoundingClientRect().width || W;
+    dpr = Math.max(1, Math.min(3, (shown / W) * (window.devicePixelRatio || 1)));
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+  }
+  fit(); window.addEventListener('resize', fit);
+
+  // schermo intero
+  var wrap = document.getElementById('pf-wrap');
+  var fullBtn = document.getElementById('pf-full');
+  var canFull = !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
+  if (canFull) fullBtn.hidden = false;
+  function isFull() { return !!(document.fullscreenElement || document.webkitFullscreenElement); }
+  fullBtn.addEventListener('click', function () {
+    if (isFull()) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    } else {
+      (wrap.requestFullscreen || wrap.webkitRequestFullscreen).call(wrap);
+    }
+  });
+  function onFull() {
+    fullBtn.textContent = isFull() ? 'Esci dallo schermo intero' : 'Schermo intero';
+    setTimeout(fit, 60);
+  }
+  document.addEventListener('fullscreenchange', onFull);
+  document.addEventListener('webkitfullscreenchange', onFull);
+
+  // ---------------- tempi ----------------
+  // Coda reale: 382 s e 51 rotazioni da 7,56 s. Qui: 14 rotazioni, rallentate e compresse.
+  var P_ROT = 3.2;               // periodo di rotazione nell'animazione (s)
+  var T_EVAP = 14 * P_ROT;       // durata della coda nell'animazione (s)
+  var T0 = 0.6;                  // fine del lampo iniziale, inizio della coda
+  var PAUSE = 3.0;               // buio prima di ricominciare
+  var CYCLE = T0 + T_EVAP + PAUSE;
+  var A_EVAP = 0.606;            // Hurley et al. 2005
+  var EXP_L = A_EVAP / (1 - A_EVAP);          // ~1,54
+  var EXP_R = 1 / (3 * (1 - A_EVAP));         // ~0,85 (sfera omogenea: E ~ R^3)
+
+  // ---------------- vettori ----------------
+  function v(x, y, z) { return { x: x, y: y, z: z }; }
+  function add(a, b) { return v(a.x + b.x, a.y + b.y, a.z + b.z); }
+  function mul(a, s) { return v(a.x * s, a.y * s, a.z * s); }
+  function dot(a, b) { return a.x * b.x + a.y * b.y + a.z * b.z; }
+  function cross(a, b) { return v(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x); }
+  function norm(a) { var l = Math.sqrt(dot(a, a)); return mul(a, 1 / l); }
+
+  // Orientamento dell'asse di rotazione rispetto all'osservatore
+  var BETA = 0.30, GAMMA = 0.17;
+  var cb = Math.cos(BETA), sb = Math.sin(BETA), cg = Math.cos(GAMMA), sg = Math.sin(GAMMA);
+  var rot = 0;
+  function toWorld(b) {
+    var c = Math.cos(rot), s = Math.sin(rot);
+    var x1 = b.x * c - b.y * s, y1 = b.x * s + b.y * c, z1 = b.z;
+    var wx = x1, wy = z1, wz = -y1;                       // asse di rotazione -> alto
+    var y2 = wy * cb - wz * sb, z2 = wy * sb + wz * cb;     // inclinazione verso l'osservatore
+    return v(wx * cg - y2 * sg, wx * sg + y2 * cg, z2);     // inclinazione nel piano del cielo
+  }
+  function sx(p) { return CX + p.x * S; }
+  function sy(p) { return CY - p.y * S; }
+
+  // Posizione della palla di fuoco (sistema della stella) e asse magnetico
+  var THF = 75 * Math.PI / 180;
+  var rF = v(Math.sin(THF), 0, Math.cos(THF));                 // direzione radiale della palla
+  var eTh = v(Math.cos(THF), 0, -Math.sin(THF));
+  var ePh = v(0, 1, 0);
+  var CHI = 50 * Math.PI / 180;
+  var mAx = norm(add(mul(eTh, -Math.cos(CHI)), mul(ePh, Math.sin(CHI))));   // asse magnetico, perpendicolare a rF
+  var uAx = rF, wAx = norm(cross(mAx, uAx));
+
+  var RF0 = 1.25;               // raggio iniziale della fotosfera, in raggi stellari (Boggs et al. 2007: ~11 km in media sulla coda)
+  function fireballRadius(tau) {
+    if (tau <= 0) return RF0;
+    var x = 1 - tau / T_EVAP; if (x <= 0) return 0;
+    return RF0 * Math.pow(x, EXP_R);
+  }
+  function fireballLum(tau) {
+    if (tau <= 0) return 1;
+    var x = 1 - tau / T_EVAP; if (x <= 0) return 0;
+    return Math.pow(x, EXP_L);
+  }
+
+  // ---------------- linee di campo (dipolo) ----------------
+  function dipoleLoop(L, phi, n) {
+    var pts = [], th0 = Math.asin(Math.sqrt(1 / L));
+    var dir = add(mul(uAx, Math.cos(phi)), mul(wAx, Math.sin(phi)));
+    for (var i = 0; i <= n; i++) {
+      var th = th0 + (Math.PI - 2 * th0) * i / n;
+      var r = L * Math.sin(th) * Math.sin(th);
+      pts.push(mul(add(mul(dir, Math.sin(th)), mul(mAx, Math.cos(th))), r));
+    }
+    return pts;
+  }
+  function openLine(L, phi, north, n) {        // tratto iniziale di linee quasi aperte
+    var pts = [], th0 = Math.asin(Math.sqrt(1 / L)), th1 = Math.asin(Math.sqrt(9 / L));
+    var dir = add(mul(uAx, Math.cos(phi)), mul(wAx, Math.sin(phi)));
+    for (var i = 0; i <= n; i++) {
+      var th = th0 + (th1 - th0) * i / n;
+      if (!north) th = Math.PI - th;
+      var r = L * Math.sin(th) * Math.sin(th);
+      pts.push(mul(add(mul(dir, Math.sin(th)), mul(mAx, Math.cos(th))), r));
+    }
+    return pts;
+  }
+  var loops = [];
+  [-0.75, -0.38, 0, 0.38, 0.75].forEach(function (ph) {
+    loops.push({ pts: dipoleLoop(3.9, ph, 110), a: 0.34, cage: true });
+    loops.push({ pts: dipoleLoop(4.5, ph, 110), a: 0.26, cage: true });
+  });
+  for (var k = 0; k < 12; k++) {
+    var ph = k * Math.PI / 6 + 0.26;
+    loops.push({ pts: dipoleLoop(1.75, ph, 60), a: 0.16 });
+    if (k % 2 === 0) loops.push({ pts: dipoleLoop(2.5, ph + 0.26, 70), a: 0.12 });
+    if (k % 3 === 0) loops.push({ pts: dipoleLoop(3.2, ph + 0.5, 90), a: 0.10 });
+  }
+  var opens = [];
+  for (var j = 0; j < 8; j++) {
+    var p2 = j * Math.PI / 4 + 0.2;
+    opens.push(openLine(22, p2, true, 40));
+    opens.push(openLine(22, p2 + 0.4, false, 40));
+  }
+
+  // ---------------- macchie superficiali e cellule della fotosfera ----------------
+  var seed = 20041227;
+  function rnd() { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; }
+  function rndSphere() {
+    var z = rnd() * 2 - 1, t = rnd() * 2 * Math.PI, r = Math.sqrt(1 - z * z);
+    return v(r * Math.cos(t), r * Math.sin(t), z);
+  }
+  var spots = [];
+  for (var i = 0; i < 70; i++) spots.push({ p: rndSphere(), s: 0.05 + rnd() * 0.13, d: rnd() < 0.55 });
+  var cells = [];
+  for (var i2 = 0; i2 < 34; i2++) cells.push({ p: rndSphere(), s: 0.16 + rnd() * 0.2, ph: rnd() * 6.28, f: 0.6 + rnd() * 1.2 });
+  var bg = [];
+  for (var i3 = 0; i3 < 260; i3++) bg.push({ x: rnd() * W, y: rnd() * 560, r: rnd() * 1.1 + 0.25, a: rnd() * 0.5 + 0.12, tw: rnd() * 6.28 });
+
+  // particelle del lampo iniziale lungo le linee aperte
+  var jets = [];
+  function spawnJets() {
+    jets = [];
+    for (var i = 0; i < 90; i++) {
+      var line = opens[Math.floor(rnd() * opens.length)];
+      jets.push({ line: line, u: rnd() * 0.15, sp: 0.9 + rnd() * 1.6, d: rnd() * 0.25 });
+    }
+  }
+
+  // ---------------- curva di luce ----------------
+  var LC = { x0: 70, x1: 1030, y0: 668, h: 92 };
+  var lc = [];
+
+  // ---------------- stato ----------------
+  var T = 0, playing = true, last = null, cycleIdx = -1;
+
+  function smooth(a, b, x) { var t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); }
+
+  // frazione visibile del disco della palla (occultazione da parte della stella)
+  function visibleFraction(c, R) {
+    if (R <= 0) return 0;
+    if (c.z >= 0) return 1;
+    var n = 0, tot = 0;
+    for (var i = -6; i <= 6; i++) for (var j = -6; j <= 6; j++) {
+      var dx = i / 6, dy = j / 6; if (dx * dx + dy * dy > 1) continue;
+      tot++;
+      var px = c.x + dx * R, py = c.y + dy * R;
+      if (px * px + py * py > 1) n++;
+    }
+    return n / tot;
+  }
+
+  // ---------------- disegno ----------------
+  function drawBackground(t) {
+    var g = ctx.createRadialGradient(CX, CY, 40, CX, CY, 700);
+    g.addColorStop(0, '#0a1224'); g.addColorStop(0.55, '#050914'); g.addColorStop(1, '#020309');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    for (var i = 0; i < bg.length; i++) {
+      var s = bg[i], a = s.a * (0.75 + 0.25 * Math.sin(t * 0.7 + s.tw));
+      ctx.fillStyle = 'rgba(210,225,255,' + a.toFixed(3) + ')';
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.2832); ctx.fill();
+    }
+  }
+
+  function segmentsOf(pts, alpha, fbC, fbR, cage) {
+    var back = [], front = [];
+    var wp = pts.map(toWorld);
+    for (var i = 0; i < wp.length - 1; i++) {
+      var a = wp[i], b = wp[i + 1];
+      var m = mul(add(a, b), 0.5);
+      if (m.z < 0 && m.x * m.x + m.y * m.y < 1) continue;                 // dietro la stella
+      if (fbR > 0) {
+        var d = add(m, mul(fbC, -1));
+        if (dot(d, d) < fbR * fbR * 1.04) continue;                        // dentro la palla
+      }
+      var depth = 0.55 + 0.45 * Math.max(-1, Math.min(1, m.z / 2.5));
+      var seg = { a: a, b: b, al: alpha * depth, cage: cage };
+      if (fbR > 0 && m.z < fbC.z) back.push(seg); else front.push(seg);
+    }
+    return { back: back, front: front };
+  }
+  function strokeSegs(segs, glow) {
+    ctx.lineCap = 'butt';
+    for (var i = 0; i < segs.length; i++) {
+      var s = segs[i];
+      var col = s.cage ? '165,200,255' : '140,160,235';
+      ctx.strokeStyle = 'rgba(' + col + ',' + Math.min(1, s.al * (1 + glow * (s.cage ? 0.8 : 0.3))).toFixed(3) + ')';
+      ctx.lineWidth = s.cage ? 1.4 : 1.0;
+      ctx.beginPath(); ctx.moveTo(sx(s.a), sy(s.a)); ctx.lineTo(sx(s.b), sy(s.b)); ctx.stroke();
+    }
+  }
+
+  function drawStar(fbC, lum, fbR) {
+    // corpo della stella
+    var g = ctx.createRadialGradient(CX - 0.35 * S, CY - 0.4 * S, 4, CX, CY, S);
+    g.addColorStop(0, '#2a3852'); g.addColorStop(0.55, '#141d2f'); g.addColorStop(1, '#070b14');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(CX, CY, S, 0, 6.2832); ctx.fill();
+
+    ctx.save();
+    ctx.beginPath(); ctx.arc(CX, CY, S, 0, 6.2832); ctx.clip();
+    // macchie superficiali (ruotano con la stella)
+    for (var i = 0; i < spots.length; i++) {
+      var p = toWorld(spots[i].p);
+      if (p.z <= 0.02) continue;
+      var r = spots[i].s * S, fore = p.z;
+      var ang = Math.atan2(p.y, p.x);
+      ctx.save();
+      ctx.translate(sx(p), sy(p)); ctx.rotate(-ang);
+      ctx.scale(Math.max(0.15, fore), 1);
+      ctx.fillStyle = spots[i].d ? 'rgba(4,7,14,' + (0.35 * fore).toFixed(3) + ')' : 'rgba(120,145,190,' + (0.10 * fore).toFixed(3) + ')';
+      ctx.beginPath(); ctx.arc(0, 0, r, 0, 6.2832); ctx.fill();
+      ctx.restore();
+    }
+    // emisfero illuminato dalla palla di fuoco
+    if (lum > 0.001 && fbR > 0) {
+      var dir = norm(fbC);
+      var lx = CX + dir.x * S * 0.95, ly = CY - dir.y * S * 0.95;
+      var k = lum * (0.35 + 0.65 * (0.5 + 0.5 * dir.z));
+      var lg = ctx.createRadialGradient(lx, ly, 0, lx, ly, S * 1.6);
+      lg.addColorStop(0, 'rgba(170,215,255,' + (0.75 * k).toFixed(3) + ')');
+      lg.addColorStop(0.35, 'rgba(90,150,235,' + (0.35 * k).toFixed(3) + ')');
+      lg.addColorStop(1, 'rgba(40,70,140,0)');
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.fillStyle = lg; ctx.fillRect(CX - S, CY - S, 2 * S, 2 * S);
+      ctx.globalCompositeOperation = 'source-over';
+    }
+    ctx.restore();
+    // bordo
+    ctx.strokeStyle = 'rgba(150,180,235,0.22)'; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.arc(CX, CY, S, 0, 6.2832); ctx.stroke();
+  }
+
+  function drawFireball(c, R, lum, beam, t, appear) {
+    if (R <= 0.002 || appear <= 0) return;
+    var X = sx(c), Y = sy(c), r = R * S;
+    var bright = Math.pow(lum, 0.3) * appear;
+    var face = 0.45 + 0.55 * beam;
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    // bagliore diffuso sull'intera scena
+    var gb = ctx.createRadialGradient(X, Y, r, X, Y, 620);
+    gb.addColorStop(0, 'rgba(120,185,255,' + (0.30 * bright * face).toFixed(3) + ')');
+    gb.addColorStop(0.35, 'rgba(70,120,220,' + (0.10 * bright * face).toFixed(3) + ')');
+    gb.addColorStop(1, 'rgba(30,60,140,0)');
+    ctx.fillStyle = gb; ctx.fillRect(0, 0, W, H);
+    // alone vicino
+    var hr = r * (2.2 + 0.9 * beam);
+    var h = ctx.createRadialGradient(X, Y, r * 0.9, X, Y, hr);
+    h.addColorStop(0, 'rgba(190,225,255,' + (0.85 * bright * face).toFixed(3) + ')');
+    h.addColorStop(0.3, 'rgba(110,175,255,' + (0.35 * bright * face).toFixed(3) + ')');
+    h.addColorStop(1, 'rgba(50,90,200,0)');
+    ctx.fillStyle = h; ctx.beginPath(); ctx.arc(X, Y, hr, 0, 6.2832); ctx.fill();
+    // riverbero a croce, tenue
+    var sl = r * (3.4 + 2.2 * beam), sw = Math.max(2, r * 0.07);
+    [0, Math.PI / 2].forEach(function (ang) {
+      ctx.save(); ctx.translate(X, Y); ctx.rotate(ang + 0.35);
+      var lg = ctx.createLinearGradient(-sl, 0, sl, 0);
+      lg.addColorStop(0, 'rgba(160,210,255,0)');
+      lg.addColorStop(0.5, 'rgba(225,242,255,' + (0.22 * bright * face).toFixed(3) + ')');
+      lg.addColorStop(1, 'rgba(160,210,255,0)');
+      ctx.fillStyle = lg; ctx.fillRect(-sl, -sw, 2 * sl, 2 * sw);
+      ctx.restore();
+    });
+    ctx.restore();
+
+    // fotosfera: disco dal bordo netto, quasi bianco
+    ctx.save();
+    var a = Math.min(1, 0.35 + 0.8 * bright);
+    var g = ctx.createRadialGradient(X - r * 0.1, Y - r * 0.1, 0, X, Y, r);
+    g.addColorStop(0, 'rgba(255,255,255,' + a.toFixed(3) + ')');
+    g.addColorStop(0.7, 'rgba(240,249,255,' + a.toFixed(3) + ')');
+    g.addColorStop(0.93, 'rgba(190,228,255,' + a.toFixed(3) + ')');
+    g.addColorStop(1, 'rgba(140,200,255,' + a.toFixed(3) + ')');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(X, Y, r, 0, 6.2832); ctx.fill();
+    // granulazione appena percettibile
+    ctx.beginPath(); ctx.arc(X, Y, r, 0, 6.2832); ctx.clip();
+    for (var i = 0; i < cells.length; i++) {
+      var q = toWorld(cells[i].p);
+      if (q.z < 0) continue;
+      var cxp = X + q.x * r * 0.97, cyp = Y - q.y * r * 0.97;
+      var pulse = 0.5 + 0.5 * Math.sin(t * cells[i].f + cells[i].ph);
+      var cr = cells[i].s * r * (0.8 + 0.4 * pulse);
+      var cg2 = ctx.createRadialGradient(cxp, cyp, 0, cxp, cyp, cr);
+      cg2.addColorStop(0, 'rgba(120,175,240,' + (0.10 * q.z * (0.5 + pulse * 0.5)).toFixed(3) + ')');
+      cg2.addColorStop(1, 'rgba(120,175,240,0)');
+      ctx.fillStyle = cg2; ctx.fillRect(cxp - cr, cyp - cr, 2 * cr, 2 * cr);
+    }
+    ctx.restore();
+    // nucleo abbagliante
+    ctx.save(); ctx.globalCompositeOperation = 'lighter';
+    var core = ctx.createRadialGradient(X, Y, 0, X, Y, r * 0.95);
+    core.addColorStop(0, 'rgba(255,255,255,' + (0.55 * bright * face).toFixed(3) + ')');
+    core.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = core; ctx.beginPath(); ctx.arc(X, Y, r, 0, 6.2832); ctx.fill();
+    ctx.restore();
+  }
+
+  // controluce sul bordo della stella quando la palla le sta dietro
+  function drawRim(c, lum, R) {
+    if (c.z >= 0 || R <= 0) return;
+    var dir = norm(v(c.x, c.y, 0));
+    var k = lum * Math.min(1, -c.z * 1.2);
+    ctx.save(); ctx.globalCompositeOperation = 'lighter';
+    var ang = Math.atan2(-dir.y, dir.x);
+    for (var i = 0; i < 3; i++) {
+      ctx.strokeStyle = 'rgba(200,232,255,' + (0.35 * k / (i + 1)).toFixed(3) + ')';
+      ctx.lineWidth = 2 + i * 3;
+      ctx.beginPath(); ctx.arc(CX, CY, S + 0.5, ang - 1.4, ang + 1.4); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawFlash(tc) {
+    if (tc > 2.2) return;
+    var F = tc < 0.05 ? tc / 0.05 : Math.exp(-(tc - 0.05) / 0.22);
+    // guscio in espansione
+    var R = S * (1.1 + tc * 9.5);
+    var sa = 0.85 * Math.exp(-tc / 0.45);
+    ctx.save(); ctx.globalCompositeOperation = 'lighter';
+    var sg2 = ctx.createRadialGradient(CX, CY, R * 0.82, CX, CY, R);
+    sg2.addColorStop(0, 'rgba(120,190,255,0)');
+    sg2.addColorStop(0.85, 'rgba(160,215,255,' + (0.35 * sa).toFixed(3) + ')');
+    sg2.addColorStop(1, 'rgba(160,215,255,0)');
+    ctx.fillStyle = sg2; ctx.beginPath(); ctx.arc(CX, CY, R, 0, 6.2832); ctx.fill();
+    // particelle lungo le linee aperte
+    for (var i = 0; i < jets.length; i++) {
+      var j = jets[i], u = j.u + (tc - j.d) * j.sp;
+      if (tc < j.d || u <= 0 || u >= 1) continue;
+      var idx = u * (j.line.length - 1), i0 = Math.floor(idx), f = idx - i0;
+      var p = add(mul(j.line[i0], 1 - f), mul(j.line[Math.min(j.line.length - 1, i0 + 1)], f));
+      var w = toWorld(p);
+      if (w.z < 0 && w.x * w.x + w.y * w.y < 1) continue;
+      var al = (1 - u) * Math.exp(-tc / 0.8);
+      ctx.fillStyle = 'rgba(200,230,255,' + al.toFixed(3) + ')';
+      ctx.beginPath(); ctx.arc(sx(w), sy(w), 1.8, 0, 6.2832); ctx.fill();
+    }
+    // bagliore complessivo
+    var fg = ctx.createRadialGradient(CX, CY, 0, CX, CY, 900);
+    fg.addColorStop(0, 'rgba(235,245,255,' + (0.95 * F).toFixed(3) + ')');
+    fg.addColorStop(0.25, 'rgba(160,210,255,' + (0.55 * F).toFixed(3) + ')');
+    fg.addColorStop(1, 'rgba(60,110,200,' + (0.12 * F).toFixed(3) + ')');
+    ctx.fillStyle = fg; ctx.fillRect(0, 0, W, H);
+    ctx.restore();
+  }
+
+  function drawLightCurve(tc) {
+    var x0 = LC.x0, x1 = LC.x1, y0 = LC.y0, h = LC.h;
+    ctx.save();
+    // fondo della fascia
+    var g = ctx.createLinearGradient(0, y0 - h - 24, 0, H);
+    g.addColorStop(0, 'rgba(10,18,36,0)'); g.addColorStop(1, 'rgba(10,18,36,0.45)');
+    ctx.fillStyle = g; ctx.fillRect(0, y0 - h - 24, W, H - (y0 - h - 24));
+    ctx.strokeStyle = 'rgba(150,180,235,0.28)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x0, y0 + 0.5); ctx.lineTo(x1, y0 + 0.5); ctx.stroke();
+    if (lc.length > 1) {
+      var span = T0 + T_EVAP + 0.8;
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      for (var i = 0; i < lc.length; i++) {
+        var X = x0 + (lc[i].t / span) * (x1 - x0);
+        var Y = y0 - Math.min(lc[i].v, 1.28) * h;
+        if (i === 0) ctx.moveTo(X, Y); else ctx.lineTo(X, Y);
+      }
+      ctx.shadowColor = 'rgba(120,190,255,0.9)'; ctx.shadowBlur = 8;
+      ctx.strokeStyle = 'rgba(170,220,255,0.95)'; ctx.lineWidth = 1.8; ctx.stroke();
+      ctx.shadowBlur = 0;
+      var lastp = lc[lc.length - 1];
+      if (tc < T0 + T_EVAP + 0.3) {
+        var Xl = x0 + (lastp.t / span) * (x1 - x0), Yl = y0 - Math.min(lastp.v, 1.28) * h;
+        ctx.fillStyle = 'rgba(235,248,255,0.95)';
+        ctx.beginPath(); ctx.arc(Xl, Yl, 2.6, 0, 6.2832); ctx.fill();
+      }
+    }
+    ctx.restore();
+  }
+
+  function frame(now) {
+    if (last === null) last = now;
+    var dt = Math.min(0.05, (now - last) / 1000); last = now;
+    if (playing) { T += dt; rot += dt * 2 * Math.PI / P_ROT; }
+
+    var ci = Math.floor(T / CYCLE), tc = T - ci * CYCLE;
+    if (ci !== cycleIdx) { cycleIdx = ci; lc = []; spawnJets(); }
+
+    var tau = tc - T0;
+    var appear = smooth(0.04, 0.55, tc);
+    var R = fireballRadius(tau);
+    var lum = tau > T_EVAP ? 0 : fireballLum(tau);
+    // la palla resta appoggiata alla superficie mentre si contrae
+    var cBody = mul(rF, 1 + R * 0.9);
+    var c = toWorld(cBody);
+    var nView = toWorld(rF);
+    var beam = 0.5 + 0.5 * nView.z;          // emissione più intensa verso l'esterno della palla
+
+    // curva di luce vista da lontano
+    if (playing && tc <= T0 + T_EVAP + 0.8) {
+      var F = tc < 0.05 ? tc / 0.05 : Math.exp(-(tc - 0.05) / 0.12);
+      var obs = lum * appear * visibleFraction(c, R) * (0.18 + 0.82 * Math.pow(beam, 1.5)) * 0.62 + 9 * F * (tc < 0.9 ? 1 : 0);
+      if (!lc.length || tc - lc[lc.length - 1].t > 0.02) lc.push({ t: tc, v: obs });
+    }
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drawBackground(T);
+
+    var R3 = R * appear;
+    var segBack = [], segFront = [], outBack = [], outFront = [];
+    for (var i = 0; i < loops.length; i++) {
+      var s = segmentsOf(loops[i].pts, loops[i].a, c, R3, !!loops[i].cage);
+      segBack = segBack.concat(s.back); segFront = segFront.concat(s.front);
+    }
+    var oa = 0.10 + 0.5 * Math.exp(-Math.max(0, tc) / 0.6);
+    for (var j = 0; j < opens.length; j++) {
+      var o = segmentsOf(opens[j], oa, c, R3, false);
+      outBack = outBack.concat(o.back); outFront = outFront.concat(o.front);
+    }
+    var glow = lum * appear;
+
+    strokeSegs(outBack, 0); strokeSegs(segBack, glow);
+    if (c.z < 0) {
+      drawFireball(c, R3, lum, beam, T, appear);
+      drawStar(c, glow, R3);
+      drawRim(c, glow, R3);
+    } else {
+      drawStar(c, glow, R3);
+      drawFireball(c, R3, lum, beam, T, appear);
+    }
+    strokeSegs(outFront, 0); strokeSegs(segFront, glow);
+
+    drawFlash(tc);
+    drawLightCurve(tc);
+    requestAnimationFrame(frame);
+  }
+
+  btn.addEventListener('click', function () {
+    playing = !playing;
+    btn.textContent = playing ? 'Pausa' : 'Riprendi';
+  });
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

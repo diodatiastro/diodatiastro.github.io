@@ -1,0 +1,7 @@
+{{/* Elenco dei capitoli di un saggio diviso in più pagine, in ordine di peso */}}
+<h2 id="indice-dei-capitoli">Indice dei capitoli</h2>
+<ol class="saggio-indice">
+  {{ range .Pages.ByWeight }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ol>

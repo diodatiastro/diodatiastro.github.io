@@ -5,7 +5,9 @@
     {{ if .Page.Content }}
       {{ .Scratch.Add "BookPages" (slice .Page) }}
     {{ end }}
-    {{ range .Page.Pages.ByTitle }}
+    {{ $pagine := .Page.Pages.ByTitle }}
+    {{ if .Page.Params.ordinePerPeso }}{{ $pagine = .Page.Pages.ByWeight }}{{ end }}
+    {{ range $pagine }}
       {{ template "book-menu-recurse" (dict "Scratch" $.Scratch "Page" .) }}
     {{ end }}
   {{ end }}

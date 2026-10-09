@@ -3,10 +3,12 @@
 {{ end }}
 
 {{ define "book-section-children" }}{{/* (dict "Section" .Section "CurrentPage" .CurrentPage) */}}
+  {{ $pagine := .Section.Pages.ByTitle }}
+  {{ if .Section.Params.ordinePerPeso }}{{ $pagine = .Section.Pages.ByWeight }}{{ end }}
   <ul>
-    {{ range (where .Section.Pages.ByTitle "Params.bookHidden" "ne" true) }}
+    {{ range (where $pagine "Params.bookHidden" "ne" true) }}
       {{ if .IsSection }}
-        <li {{- if .Params.BookFlatSection }} class="book-section-flat" {{ end -}}>
+        <li {{- if .Params.BookFlatSection }} class="book-section-flat" {{ else if .Params.ordinePerPeso }} class="menu-saggio" {{ end -}}>
           {{ template "book-page-link" (dict "Page" . "CurrentPage" $.CurrentPage) }}
           {{ template "book-section-children" (dict "Section" . "CurrentPage" $.CurrentPage) }}
         </li>

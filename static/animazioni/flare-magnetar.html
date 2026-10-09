@@ -1,0 +1,1356 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magnetar GRB – riconnessione magnetica</title>
+  <style>
+    :root {
+      --bg: #05070d;
+      --fg: #dce8ff;
+      --muted: #8ea4c7;
+      --accent: #7dd3fc;
+      --panel: rgba(8, 13, 24, 0.72);
+      --border: rgba(125, 211, 252, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      overflow: hidden;
+    }
+
+    .stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #scene {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .controls {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: center;
+      padding: 10px 12px;
+      pointer-events: auto;
+      max-width: calc(100% - 32px);
+      z-index: 3;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid rgba(125, 211, 252, 0.28);
+      background: rgba(125, 211, 252, 0.09);
+      color: #e8f3ff;
+      border-radius: 10px;
+      padding: 7px 10px;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: rgba(125, 211, 252, 0.16);
+      border-color: rgba(125, 211, 252, 0.45);
+    }
+
+    label.ctl {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #b9cbe6;
+    }
+
+    input[type="range"] {
+      width: 120px;
+      accent-color: var(--accent);
+    }
+
+    .chk {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      font-size: 12px;
+      color: #b9cbe6;
+      cursor: pointer;
+    }
+
+    .legend {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      width: min(310px, calc(100% - 32px));
+      padding: 12px 14px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .legend b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: #e5f0ff;
+    }
+
+    .legend ul {
+      margin: 0;
+      padding-left: 16px;
+      color: #b7c8e3;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      margin-right: 7px;
+      box-shadow: 0 0 10px currentColor;
+    }
+
+    .blue {
+      color: #67e8f9;
+      background: #67e8f9;
+    }
+
+    .white {
+      color: #ffffff;
+      background: #ffffff;
+    }
+
+    .violet {
+      color: #c084fc;
+      background: #c084fc;
+    }
+
+    .yellow {
+      color: #fde68a;
+      background: #fde68a;
+    }
+
+    @media (max-width: 760px) {
+      .legend {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <canvas id="scene"></canvas>
+
+    <div class="controls card">
+      <button id="btnReplay">↻ Riavvia</button>
+      <button id="btnPause">⏸ Pausa</button>
+      <label class="ctl">
+        Velocità
+        <input id="speed" type="range" min="0.2" max="3" step="0.05" value="1" />
+        <span id="speedVal">1.00×</span>
+      </label>
+      <label class="chk"><input id="toggleLabels" type="checkbox" checked /> Etichette</label>
+      <label class="chk"><input id="toggleFields" type="checkbox" checked /> Campo</label>
+      <label class="chk"><input id="toggleTrails" type="checkbox" checked /> Scie</label>
+    </div>
+
+    <div class="legend card">
+      <b>Cosa vedi</b>
+      <ul>
+        <li><span class="dot blue"></span>Campo dipolare e loop magnetico attorcigliato</li>
+        <li><span class="dot white"></span>X-point e riconnessione improvvisa</li>
+        <li><span class="dot violet"></span>Nube/fireball di plasma espulso</li>
+        <li><span class="dot yellow"></span>Lampo gamma e curva di luce schematica</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const canvas = document.getElementById("scene");
+      const ctx = canvas.getContext("2d", { alpha: false });
+
+      const TAU = Math.PI * 2;
+
+      // Direzione visiva del getto/ejecta: verso l'alto-destra.
+      const EJ = -0.62;
+
+      // Tempi visivi, non fisici.
+      const BUILDUP = 2.35;
+      const RESET_AFTER = 12.8;
+
+      let W = 0, H = 0, DPR = 1;
+      let cx = 0, cy = 0, R = 40;
+
+      let stars = [];
+      let particles = [];
+      let photons = [];
+      let sparks = [];
+      let waves = [];
+
+      let t = 0;
+      let last = 0;
+      let emitted = false;
+      let paused = false;
+      let speed = 1;
+
+      let showLabels = true;
+      let showFields = true;
+      let showTrails = true;
+
+      let currentPhase = "";
+
+      const el = id => document.getElementById(id);
+
+      // Elemento opzionale: se non presente, lo script non va in errore.
+      const phaseEl = el("phase");
+
+      const btnReplay = el("btnReplay");
+      const btnPause = el("btnPause");
+      const speedInput = el("speed");
+      const speedVal = el("speedVal");
+      const labelsToggle = el("toggleLabels");
+      const fieldsToggle = el("toggleFields");
+      const trailsToggle = el("toggleTrails");
+
+      function clamp(v, a, b) {
+        return Math.max(a, Math.min(b, v));
+      }
+
+      function gauss() {
+        let u = 0, v = 0;
+        while (u === 0) u = Math.random();
+        while (v === 0) v = Math.random();
+        return Math.sqrt(-2 * Math.log(u)) * Math.cos(TAU * v);
+      }
+
+      function hsla(h, s, l, a) {
+        return `hsla(${h}, ${s}%, ${l}%, ${a})`;
+      }
+
+      function roundRectPath(x, y, w, h, r) {
+        r = Math.min(r, w / 2, h / 2);
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.arcTo(x + w, y, x + w, y + h, r);
+        ctx.arcTo(x + w, y + h, x, y + h, r);
+        ctx.arcTo(x, y + h, x, y, r);
+        ctx.arcTo(x, y, x + w, y, r);
+        ctx.closePath();
+      }
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        W = Math.max(320, rect.width);
+        H = Math.max(240, rect.height);
+        DPR = Math.min(2, window.devicePixelRatio || 1);
+
+        canvas.width = Math.floor(W * DPR);
+        canvas.height = Math.floor(H * DPR);
+        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+        // La magnetar è spostata verso sinistra/basso per lasciare spazio all'ejecta.
+        cx = W * 0.30;
+        cy = H * 0.62;
+        R = Math.max(22, Math.min(W, H) * 0.058);
+
+        makeStars();
+      }
+
+      function makeStars() {
+        stars = [];
+        const n = Math.round((W * H) / 5500);
+        for (let i = 0; i < n; i++) {
+          const z = Math.random();
+          stars.push({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            r: 0.3 + z * 1.4,
+            a: 0.12 + z * 0.55,
+            tw: 0.4 + Math.random() * 2.2,
+            phase: Math.random() * TAU,
+            c: 155 + Math.floor(Math.random() * 85)
+          });
+        }
+      }
+
+      function reset() {
+        t = 0;
+        emitted = false;
+        particles = [];
+        photons = [];
+        sparks = [];
+        waves = [];
+      }
+
+      function loopGeometry(strain) {
+        const spread = 0.48 + 0.10 * strain;
+        const a1 = EJ - spread;
+        const a2 = EJ + spread;
+
+        const p1 = {
+          x: cx + Math.cos(a1) * R,
+          y: cy + Math.sin(a1) * R
+        };
+
+        const p2 = {
+          x: cx + Math.cos(a2) * R,
+          y: cy + Math.sin(a2) * R
+        };
+
+        const height = R * (1.25 + 1.35 * strain);
+        const mid = {
+          x: cx + Math.cos(EJ) * (R + height),
+          y: cy + Math.sin(EJ) * (R + height)
+        };
+
+        return { p1, p2, mid, height, spread };
+      }
+
+      function quadPoint(p0, p1, p2, u) {
+        const m = 1 - u;
+        return {
+          x: m * m * p0.x + 2 * m * u * p1.x + u * u * p2.x,
+          y: m * m * p0.y + 2 * m * u * p1.y + u * u * p2.y
+        };
+      }
+
+      function quadTangent(p0, p1, p2, u) {
+        return {
+          x: 2 * (1 - u) * (p1.x - p0.x) + 2 * u * (p2.x - p1.x),
+          y: 2 * (1 - u) * (p1.y - p0.y) + 2 * u * (p2.y - p1.y)
+        };
+      }
+
+      function getStrain() {
+        if (t < BUILDUP) {
+          return Math.pow(clamp(t / BUILDUP, 0, 1), 1.55);
+        }
+        return Math.max(0.07, 1 - (t - BUILDUP) / 0.85);
+      }
+
+      function fireballState() {
+        const dt = Math.max(0, t - BUILDUP);
+        const base = Math.min(W, H);
+
+        // Espansione rapida iniziale, poi quasi costanza/raffreddamento.
+        const dist = R * 1.15 + base * (0.085 * Math.log(1 + dt * 4.0) + 0.055 * dt);
+
+        const x = cx + Math.cos(EJ) * dist;
+        const y = cy + Math.sin(EJ) * dist;
+
+        const length = R * (0.65 + 1.55 * Math.pow(dt, 0.82));
+        const width = R * (0.42 + 0.85 * Math.pow(dt, 0.68));
+        const alpha = Math.exp(-dt / 3.4) * 0.72;
+
+        return { x, y, length, width, alpha, dt };
+      }
+
+      function gammaFlux(dt) {
+        if (dt < 0) return 0;
+
+        // Spike duro rapido + coda più soft.
+        const rise = 1 - Math.exp(-dt / 0.018);
+        const raw =
+          Math.exp(-dt / 0.065) +
+          0.42 * Math.exp(-dt / 0.42) +
+          0.16 * Math.exp(-dt / 1.45);
+
+        return clamp(rise * raw * 1.12, 0, 1);
+      }
+
+      function trigger() {
+        emitted = true;
+
+        const g = loopGeometry(1);
+        const base = Math.min(W, H);
+
+        // Onda sulla superficie / magnetosfera interna.
+        waves.push({
+          type: "star",
+          age: 0,
+          life: 1.05,
+          speed: R * 1.9,
+          start: R * 0.85,
+          max: R * 2.7,
+          angle: EJ
+        });
+
+        // Onda d'urto/blast wave nel plasma circostante.
+        waves.push({
+          type: "shock",
+          x: g.mid.x,
+          y: g.mid.y,
+          age: 0,
+          life: 2.1,
+          speed: base * 0.17,
+          start: R * 0.15,
+          max: base * 0.55
+        });
+
+        // Scintille alla X-point.
+        for (let i = 0; i < 300; i++) {
+          const ang = Math.random() * TAU;
+          const sp = base * (0.05 + 0.25 * Math.pow(Math.random(), 1.6));
+          sparks.push({
+            x: g.mid.x,
+            y: g.mid.y,
+            ox: g.mid.x,
+            oy: g.mid.y,
+            vx: Math.cos(ang) * sp,
+            vy: Math.sin(ang) * sp,
+            age: 0,
+            life: 0.18 + Math.random() * 0.62,
+            size: 0.7 + Math.random() * 2.0,
+            hue: 185 + Math.random() * 90
+          });
+        }
+
+        // Fotoni gamma: beam stretto e veloce.
+        for (let i = 0; i < 380; i++) {
+          const dir = EJ + gauss() * 0.12;
+          const sp = base * (0.85 + 1.0 * Math.random());
+          const fromApex = Math.random() < 0.62;
+
+          const ox = fromApex ? g.mid.x : cx + Math.cos(dir) * R * 1.04;
+          const oy = fromApex ? g.mid.y : cy + Math.sin(dir) * R * 1.04;
+
+          photons.push({
+            x: ox,
+            y: oy,
+            ox,
+            oy,
+            vx: Math.cos(dir) * sp,
+            vy: Math.sin(dir) * sp,
+            age: 0,
+            life: 0.22 + Math.random() * 0.75,
+            size: 0.65 + Math.random() * 1.7
+          });
+        }
+
+        // Nube di materia ionizzata / plasma strappato alla superficie.
+        const N = clamp(Math.round((W * H) / 780), 650, 1600);
+
+        for (let i = 0; i < N; i++) {
+          const kr = Math.random();
+
+          // Origine da una patch polare/attiva sulla superficie.
+          const a = EJ + gauss() * 0.30;
+          const rr = R * (0.88 + Math.random() * 0.18);
+          const x = cx + Math.cos(a) * rr;
+          const y = cy + Math.sin(a) * rr;
+
+          // Direzione prevalentemente lungo il getto, con spread.
+          const dir = EJ + gauss() * 0.27 + (a - EJ) * 0.12;
+          const baseSpeed = base * 0.165;
+
+          let v, kind, hue, size, life, accel;
+
+          if (kr < 0.22) {
+            // Componente ionica più lenta, più "materia".
+            v = baseSpeed * (0.22 + 0.30 * Math.random());
+            kind = "ion";
+            hue = 15 + Math.random() * 35;
+            size = 1.8 + Math.random() * 3.2;
+            life = 5.0 + Math.random() * 5.5;
+            accel = 0.25;
+          } else if (kr < 0.76) {
+            // Coppie/plasma intermedio.
+            v = baseSpeed * (0.62 + 0.65 * Math.random());
+            kind = "pair";
+            hue = 195 + Math.random() * 70;
+            size = 0.9 + Math.random() * 2.2;
+            life = 4.2 + Math.random() * 5.0;
+            accel = 1.0;
+          } else {
+            // Halo veloce, più collimato.
+            v = baseSpeed * (1.25 + 1.05 * Math.random());
+            kind = "pair";
+            hue = 230 + Math.random() * 60;
+            size = 0.7 + Math.random() * 1.6;
+            life = 3.2 + Math.random() * 4.0;
+            accel = 1.35;
+          }
+
+          let vx = Math.cos(dir) * v;
+          let vy = Math.sin(dir) * v;
+
+          // Piccola componente tangenziale da tensione magnetica.
+          vx += -Math.sin(dir) * gauss() * v * 0.11;
+          vy += Math.cos(dir) * gauss() * v * 0.11;
+
+          particles.push({
+            x,
+            y,
+            vx,
+            vy,
+            dir,
+            age: 0,
+            life,
+            size,
+            hue,
+            kind,
+            accel
+          });
+        }
+      }
+
+      function updateParticles(dt) {
+        const base = Math.min(W, H);
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+          const p = particles[i];
+          p.age += dt;
+
+          if (
+            p.age >= p.life ||
+            p.x < -150 || p.x > W + 150 ||
+            p.y < -150 || p.y > H + 150
+          ) {
+            particles.splice(i, 1);
+            continue;
+          }
+
+          // Accelerazione iniziale da pressione magnetica/riconnessione.
+          if (p.age < 0.7 && p.accel > 0) {
+            const k = 1 - p.age / 0.7;
+            const acc = base * 1.55 * p.accel * k;
+            p.vx += Math.cos(p.dir) * acc * dt;
+            p.vy += Math.sin(p.dir) * acc * dt;
+          }
+
+          // Drag radiativo/espansione: non è vuoto perfetto, ma effetto visivo.
+          const drag = p.kind === "ion" ? 0.42 : 0.14;
+          const f = Math.exp(-drag * dt);
+          p.vx *= f;
+          p.vy *= f;
+
+          p.x += p.vx * dt;
+          p.y += p.vy * dt;
+        }
+      }
+
+      function updatePhotons(dt) {
+        for (let i = photons.length - 1; i >= 0; i--) {
+          const p = photons[i];
+          p.ox = p.x;
+          p.oy = p.y;
+          p.x += p.vx * dt;
+          p.y += p.vy * dt;
+          p.age += dt;
+
+          if (
+            p.age >= p.life ||
+            p.x < -200 || p.x > W + 200 ||
+            p.y < -200 || p.y > H + 200
+          ) {
+            photons.splice(i, 1);
+          }
+        }
+      }
+
+      function updateSparks(dt) {
+        for (let i = sparks.length - 1; i >= 0; i--) {
+          const p = sparks[i];
+          p.ox = p.x;
+          p.oy = p.y;
+          p.x += p.vx * dt;
+          p.y += p.vy * dt;
+          p.age += dt;
+
+          const f = Math.exp(-2.2 * dt);
+          p.vx *= f;
+          p.vy *= f;
+
+          if (p.age >= p.life) sparks.splice(i, 1);
+        }
+      }
+
+      function updateWaves(dt) {
+        for (let i = waves.length - 1; i >= 0; i--) {
+          waves[i].age += dt;
+          if (waves[i].age >= waves[i].life) waves.splice(i, 1);
+        }
+      }
+
+      function update(dt) {
+        if (dt <= 0) return;
+        updateParticles(dt);
+        updatePhotons(dt);
+        updateSparks(dt);
+        updateWaves(dt);
+      }
+
+      function drawBackground() {
+        const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(W, H) * 0.95);
+        g.addColorStop(0, "#0b1426");
+        g.addColorStop(0.45, "#060912");
+        g.addColorStop(1, "#03040a");
+        ctx.fillStyle = g;
+        ctx.fillRect(0, 0, W, H);
+      }
+
+      function drawStars() {
+        for (const s of stars) {
+          const tw = 0.65 + 0.35 * Math.sin(t * s.tw + s.phase);
+          const a = s.a * tw;
+          ctx.fillStyle = `rgba(${s.c}, ${Math.min(255, s.c + 15)}, 255, ${a})`;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, TAU);
+          ctx.fill();
+        }
+      }
+
+      function drawDipoleField() {
+        const Ls = [1.35, 1.6, 1.95, 2.45, 3.1, 4.0];
+        const stress = Math.max(0, 1 - Math.abs(t - BUILDUP) / 1.1);
+
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+        ctx.lineCap = "round";
+
+        for (let li = 0; li < Ls.length; li++) {
+          const L = Ls[li];
+          const thMin = Math.asin(1 / Math.sqrt(L));
+          const steps = 100;
+
+          for (const side of [1, -1]) {
+            ctx.beginPath();
+
+            for (let i = 0; i <= steps; i++) {
+              const th = thMin + (Math.PI - 2 * thMin) * (i / steps);
+              const sinTh = Math.sin(th);
+              const r = L * R * sinTh * sinTh;
+              const x = cx + side * r * sinTh;
+              const y = cy - r * Math.cos(th);
+
+              if (i === 0) ctx.moveTo(x, y);
+              else ctx.lineTo(x, y);
+            }
+
+            const pulse = 0.6 + 0.25 * Math.sin(t * 1.05 + li * 0.9 + side);
+            const baseAlpha = Math.max(0.025, 0.15 - li * 0.018);
+            const localStress = (li >= 2 && li <= 4 && side === 1) ? stress * 0.55 : stress * 0.12;
+
+            ctx.strokeStyle = `rgba(${Math.round(85 + 130 * localStress)}, ${Math.round(185 + 40 * localStress)}, 255, ${baseAlpha * pulse + localStress * 0.20})`;
+            ctx.lineWidth = 1 + localStress * 1.3;
+            ctx.stroke();
+          }
+        }
+
+        ctx.restore();
+      }
+
+      function drawStar() {
+        // Alone esterno.
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+
+        const halo = ctx.createRadialGradient(cx, cy, R * 0.4, cx, cy, R * 4.2);
+        halo.addColorStop(0, "rgba(150, 220, 255, 0.26)");
+        halo.addColorStop(0.25, "rgba(90, 150, 255, 0.10)");
+        halo.addColorStop(1, "rgba(0, 0, 0, 0)");
+
+        ctx.fillStyle = halo;
+        ctx.beginPath();
+        ctx.arc(cx, cy, R * 4.2, 0, TAU);
+        ctx.fill();
+        ctx.restore();
+
+        // Corpo della stella di neutroni.
+        const body = ctx.createRadialGradient(
+          cx - R * 0.28, cy - R * 0.28, R * 0.05,
+          cx, cy, R
+        );
+        body.addColorStop(0, "#ffffff");
+        body.addColorStop(0.22, "#d6f0ff");
+        body.addColorStop(0.55, "#5aa8d8");
+        body.addColorStop(0.82, "#19406b");
+        body.addColorStop(1, "#07111f");
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, TAU);
+        ctx.fillStyle = body;
+        ctx.fill();
+
+        // Bande superficiali, accenno di rotazione/crosta.
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, TAU);
+        ctx.clip();
+
+        ctx.strokeStyle = "rgba(190, 235, 255, 0.07)";
+        ctx.lineWidth = 1;
+
+        for (let i = -2; i <= 2; i++) {
+          const yy = cy + i * R * 0.33 + Math.sin(t * 0.45 + i * 1.7) * R * 0.035;
+          ctx.beginPath();
+          ctx.ellipse(cx, yy, R * 0.98, R * 0.10, 0, 0, TAU);
+          ctx.stroke();
+        }
+
+        ctx.restore();
+
+        // Regione polare attiva dove avviene la riconnessione.
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+
+        const hx = cx + Math.cos(EJ) * R * 0.82;
+        const hy = cy + Math.sin(EJ) * R * 0.82;
+        const stress = Math.max(0, 1 - Math.abs(t - BUILDUP) / 1.2);
+        const arRadius = R * (0.45 + 0.25 * stress);
+
+        const ar = ctx.createRadialGradient(hx, hy, 0, hx, hy, arRadius);
+        ar.addColorStop(0, `rgba(255, 255, 255, ${0.55 + 0.35 * stress})`);
+        ar.addColorStop(0.35, `rgba(140, 220, 255, ${0.28 + 0.25 * stress})`);
+        ar.addColorStop(1, "rgba(80, 120, 255, 0)");
+
+        ctx.fillStyle = ar;
+        ctx.beginPath();
+        ctx.arc(hx, hy, arRadius, 0, TAU);
+        ctx.fill();
+        ctx.restore();
+
+        // Bordo.
+        ctx.strokeStyle = "rgba(190, 235, 255, 0.28)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, TAU);
+        ctx.stroke();
+      }
+
+      function drawMagneticLoop() {
+        const strain = getStrain();
+        const g = loopGeometry(strain);
+
+        // Dopo la riconnessione il loop si spezza vicino all'apice.
+        const segments = t < BUILDUP
+          ? [[0, 1]]
+          : [[0, 0.42], [0.58, 1]];
+
+        const strands = 5;
+
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+        ctx.lineCap = "round";
+
+        for (let s = 0; s < strands; s++) {
+          const off = s - (strands - 1) / 2;
+
+          for (const seg of segments) {
+            ctx.beginPath();
+
+            const steps = 60;
+            for (let i = 0; i <= steps; i++) {
+              const u = seg[0] + (seg[1] - seg[0]) * (i / steps);
+              const pt = quadPoint(g.p1, g.mid, g.p2, u);
+              const tan = quadTangent(g.p1, g.mid, g.p2, u);
+              const len = Math.hypot(tan.x, tan.y) || 1;
+
+              const nx = -tan.y / len;
+              const ny = tan.x / len;
+
+              const envelope = Math.sin(u * Math.PI);
+              const twist =
+                Math.sin(u * Math.PI * (2.5 + strain * 5.0) + t * 7 + s * 0.8) *
+                R * 0.13 * (0.22 + strain) * envelope;
+
+              const bundle = off * R * 0.055 * envelope;
+
+              const x = pt.x + nx * (twist + bundle);
+              const y = pt.y + ny * (twist + bundle);
+
+              if (i === 0) ctx.moveTo(x, y);
+              else ctx.lineTo(x, y);
+            }
+
+            const alpha = 0.16 + 0.42 * strain;
+            ctx.strokeStyle = `rgba(${Math.round(120 + 90 * strain)}, ${Math.round(215 - 25 * strain)}, 255, ${alpha})`;
+            ctx.lineWidth = 1 + 1.3 * strain;
+            ctx.stroke();
+          }
+        }
+
+        ctx.restore();
+      }
+
+      function drawWaves() {
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+
+        for (const w of waves) {
+          const lr = w.age / w.life;
+          const alpha = (1 - lr) * 0.45;
+          if (alpha <= 0) continue;
+
+          if (w.type === "star") {
+            const r = clamp(w.start + w.age * w.speed, 0, w.max);
+            ctx.strokeStyle = `rgba(160, 230, 255, ${alpha})`;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(cx, cy, r, w.angle - 0.95, w.angle + 0.95);
+            ctx.stroke();
+          } else {
+            const r = Math.min(w.max, w.start + w.age * w.speed);
+            ctx.strokeStyle = `rgba(190, 130, 255, ${alpha * 0.7})`;
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.arc(w.x, w.y, r, 0, TAU);
+            ctx.stroke();
+          }
+        }
+
+        ctx.restore();
+      }
+
+      function drawFireball() {
+        if (t < BUILDUP) return;
+
+        const f = fireballState();
+        if (f.alpha <= 0.004) return;
+
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+        ctx.translate(f.x, f.y);
+        ctx.rotate(EJ);
+
+        const rad = Math.max(f.length, f.width);
+        ctx.scale(f.length / rad, f.width / rad);
+
+        const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, rad);
+        grad.addColorStop(0, `rgba(255, 255, 255, ${f.alpha})`);
+        grad.addColorStop(0.12, `rgba(205, 240, 255, ${f.alpha * 0.78})`);
+        grad.addColorStop(0.34, `rgba(145, 105, 255, ${f.alpha * 0.42})`);
+        grad.addColorStop(0.68, `rgba(255, 90, 180, ${f.alpha * 0.16})`);
+        grad.addColorStop(1, "rgba(255, 60, 120, 0)");
+
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(0, 0, rad, 0, TAU);
+        ctx.fill();
+
+        ctx.restore();
+      }
+
+      function drawParticles() {
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+
+        const base = Math.min(W, H);
+
+        for (const p of particles) {
+          const lr = p.age / p.life;
+          let alpha = lr < 0.04 ? lr / 0.04 : Math.pow(1 - lr, 1.25);
+          alpha *= p.kind === "ion" ? 0.48 : 0.72;
+          if (alpha <= 0.003) continue;
+
+          const spd = Math.hypot(p.vx, p.vy);
+          const heat = clamp(spd / (base * 0.35), 0, 1);
+
+          const hue = p.kind === "ion"
+            ? 18 + 28 * (1 - heat)
+            : 205 + 70 * heat - 35 * lr;
+
+          const light = p.kind === "ion"
+            ? 52 + 20 * heat
+            : 62 + 28 * heat;
+
+          const size = p.size * (1 + lr * 0.9);
+
+          if (showTrails && spd > base * 0.08) {
+            const trail = 0.028;
+            ctx.strokeStyle = hsla(hue, 95, light, alpha * 0.55);
+            ctx.lineWidth = size * 0.75;
+            ctx.beginPath();
+            ctx.moveTo(p.x - p.vx * trail, p.y - p.vy * trail);
+            ctx.lineTo(p.x, p.y);
+            ctx.stroke();
+          }
+
+          ctx.fillStyle = hsla(hue, 95, light, alpha);
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, size, 0, TAU);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+
+      function drawPhotons() {
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+
+        for (const p of photons) {
+          const lr = p.age / p.life;
+          const alpha = (1 - lr) * 0.92;
+          if (alpha <= 0.003) continue;
+
+          ctx.strokeStyle = `rgba(255, 250, 255, ${alpha * 0.85})`;
+          ctx.lineWidth = p.size;
+          ctx.beginPath();
+          ctx.moveTo(p.ox, p.oy);
+          ctx.lineTo(p.x, p.y);
+          ctx.stroke();
+
+          ctx.fillStyle = `rgba(210, 235, 255, ${alpha * 0.55})`;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size * 1.1, 0, TAU);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+
+      function drawSparks() {
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+
+        for (const p of sparks) {
+          const lr = p.age / p.life;
+          const alpha = (1 - lr) * 0.85;
+          if (alpha <= 0.003) continue;
+
+          ctx.strokeStyle = hsla(p.hue, 100, 78, alpha * 0.7);
+          ctx.lineWidth = p.size * 0.8;
+          ctx.beginPath();
+          ctx.moveTo(p.ox, p.oy);
+          ctx.lineTo(p.x, p.y);
+          ctx.stroke();
+
+          ctx.fillStyle = hsla(p.hue, 100, 88, alpha);
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size * 0.75, 0, TAU);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+
+      function drawReconnection() {
+        const dt = t - BUILDUP;
+        if (dt < -0.35 || dt > 0.75) return;
+
+        const intensity = dt < 0
+          ? Math.exp(dt / 0.16)
+          : Math.exp(-dt / 0.20);
+
+        const g = loopGeometry(clamp(1 - dt * 0.4, 0.5, 1));
+        const x = g.mid.x;
+        const y = g.mid.y;
+
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+
+        const rad = R * (0.9 + 3.2 * Math.max(0, dt));
+        const grad = ctx.createRadialGradient(x, y, 0, x, y, rad);
+        grad.addColorStop(0, `rgba(255, 255, 255, ${0.95 * intensity})`);
+        grad.addColorStop(0.16, `rgba(180, 240, 255, ${0.62 * intensity})`);
+        grad.addColorStop(0.45, `rgba(140, 90, 255, ${0.25 * intensity})`);
+        grad.addColorStop(1, "rgba(255, 0, 120, 0)");
+
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(x, y, rad, 0, TAU);
+        ctx.fill();
+
+        // Getti di riconnessione lungo/perpendicolari alla linea di campo.
+        const jet = R * (0.8 + 3.0 * Math.max(0, dt)) * intensity;
+        ctx.strokeStyle = `rgba(255, 255, 255, ${0.75 * intensity})`;
+        ctx.lineWidth = 1.8;
+
+        ctx.beginPath();
+        ctx.moveTo(x - Math.cos(EJ) * jet, y - Math.sin(EJ) * jet);
+        ctx.lineTo(x + Math.cos(EJ) * jet, y + Math.sin(EJ) * jet);
+        ctx.stroke();
+
+        const perp = EJ + Math.PI / 2;
+        ctx.beginPath();
+        ctx.moveTo(x - Math.cos(perp) * jet * 0.55, y - Math.sin(perp) * jet * 0.55);
+        ctx.lineTo(x + Math.cos(perp) * jet * 0.55, y + Math.sin(perp) * jet * 0.55);
+        ctx.stroke();
+
+        ctx.restore();
+      }
+
+      function drawGammaFlash() {
+        const dt = t - BUILDUP;
+        const F = gammaFlux(dt);
+        if (F <= 0.002) return;
+
+        const f = fireballState();
+
+        // Beam conico.
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+        ctx.translate(f.x, f.y);
+        ctx.rotate(EJ);
+
+        const len = Math.max(W, H) * 1.1;
+        const half = len * 0.11;
+
+        const beam = ctx.createLinearGradient(0, 0, len, 0);
+        beam.addColorStop(0, `rgba(255, 255, 255, ${0.30 * F})`);
+        beam.addColorStop(0.08, `rgba(205, 235, 255, ${0.18 * F})`);
+        beam.addColorStop(0.28, `rgba(150, 100, 255, ${0.08 * F})`);
+        beam.addColorStop(1, "rgba(120, 60, 255, 0)");
+
+        ctx.fillStyle = beam;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(len, -half);
+        ctx.lineTo(len, half);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+
+        // Flash globale.
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+
+        const grad = ctx.createRadialGradient(
+          f.x, f.y, 0,
+          f.x, f.y, Math.max(W, H) * 0.75
+        );
+        grad.addColorStop(0, `rgba(255, 255, 255, ${0.20 * F})`);
+        grad.addColorStop(0.12, `rgba(190, 225, 255, ${0.10 * F})`);
+        grad.addColorStop(0.35, `rgba(130, 80, 255, ${0.045 * F})`);
+        grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, W, H);
+        ctx.restore();
+      }
+
+      function drawLightCurve() {
+        if (W < 430 || H < 250) return;
+
+        const w = clamp(W * 0.28, 170, 285);
+        const h = clamp(H * 0.17, 74, 96);
+        const x = W - w - 14;
+        const y = 14;
+
+        ctx.save();
+
+        roundRectPath(x, y, w, h, 12);
+        ctx.fillStyle = "rgba(7, 12, 22, 0.78)";
+        ctx.fill();
+        ctx.strokeStyle = "rgba(125, 211, 252, 0.22)";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        const small = w < 220;
+
+        ctx.fillStyle = "#9fb7d9";
+        ctx.font = `600 ${small ? 10 : 12}px ui-sans-serif, system-ui, -apple-system, sans-serif`;
+        ctx.textAlign = "left";
+        ctx.textBaseline = "alphabetic";
+        ctx.fillText(
+          small ? "Curva di luce γ" : "Curva di luce gamma (schematica)",
+          x + 10,
+          y + (small ? 16 : 19)
+        );
+
+        const gx = x + (small ? 26 : 34);
+        const gy = y + (small ? 24 : 30);
+        const gw = w - (small ? 38 : 50);
+        const gh = h - (small ? 38 : 48);
+
+        // Assi.
+        ctx.strokeStyle = "rgba(160, 190, 230, 0.22)";
+        ctx.beginPath();
+        ctx.moveTo(gx, gy);
+        ctx.lineTo(gx, gy + gh);
+        ctx.lineTo(gx + gw, gy + gh);
+        ctx.stroke();
+
+        ctx.fillStyle = "rgba(160, 190, 230, 0.55)";
+        ctx.font = `${small ? 9 : 10}px ui-sans-serif, system-ui, sans-serif`;
+        ctx.fillText("F", gx - (small ? 12 : 14), gy + 8);
+        ctx.fillText("t", gx + gw - 4, gy + gh + (small ? 12 : 14));
+
+        // Curva.
+        ctx.beginPath();
+        for (let i = 0; i <= gw; i++) {
+          const tt = (i / gw) * 6.0;
+          const F = gammaFlux(tt);
+          const px = gx + i;
+          const py = gy + gh - F * gh;
+          if (i === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        }
+
+        ctx.strokeStyle = "#c4b5fd";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Riempimento sotto la curva.
+        ctx.lineTo(gx + gw, gy + gh);
+        ctx.lineTo(gx, gy + gh);
+        ctx.closePath();
+        ctx.fillStyle = "rgba(167, 139, 250, 0.13)";
+        ctx.fill();
+
+        // Indicatore temporale.
+        const ct = t - BUILDUP;
+        if (ct >= 0 && ct <= 6) {
+          const px = gx + (ct / 6) * gw;
+
+          ctx.strokeStyle = "rgba(250, 204, 21, 0.75)";
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(px, gy);
+          ctx.lineTo(px, gy + gh);
+          ctx.stroke();
+
+          const F = gammaFlux(ct);
+          ctx.fillStyle = "#fde68a";
+          ctx.beginPath();
+          ctx.arc(px, gy + gh - F * gh, 3, 0, TAU);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+
+      function drawLabel(ax, ay, text, dx, dy) {
+        ctx.save();
+        ctx.font = "600 12px ui-sans-serif, system-ui, -apple-system, sans-serif";
+
+        const metrics = ctx.measureText(text);
+        const padX = 9;
+        const padY = 7;
+        const bw = metrics.width + padX * 2;
+        const bh = 22;
+
+        const minX = bw / 2 + 10;
+        const maxX = Math.max(minX, W - bw / 2 - 10);
+
+        // Lascia spazio al grafico in alto a destra.
+        const minY = bh / 2 + 120;
+        const maxY = Math.max(minY, H - bh / 2 - 16);
+
+        const lx = clamp(ax + dx, minX, maxX);
+        const ly = clamp(ay + dy, minY, maxY);
+
+        // Linea guida.
+        ctx.strokeStyle = "rgba(167, 215, 255, 0.35)";
+        ctx.setLineDash([4, 4]);
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(ax, ay);
+        ctx.lineTo(lx, ly);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Punto di ancoraggio.
+        ctx.fillStyle = "rgba(186, 230, 253, 0.9)";
+        ctx.beginPath();
+        ctx.arc(ax, ay, 2.6, 0, TAU);
+        ctx.fill();
+
+        // Box etichetta.
+        roundRectPath(lx - bw / 2, ly - bh / 2, bw, bh, 9);
+        ctx.fillStyle = "rgba(5, 10, 18, 0.78)";
+        ctx.fill();
+        ctx.strokeStyle = "rgba(125, 211, 252, 0.25)";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.fillStyle = "#dce8ff";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(text, lx, ly);
+
+        ctx.restore();
+      }
+
+      function drawLabels() {
+        if (!showLabels || W < 520) return;
+
+        const strain = getStrain();
+        const g = loopGeometry(strain);
+        const f = fireballState();
+
+        drawLabel(
+          cx,
+          cy + R * 0.35,
+          "Magnetar: B ~ 10^14–10^15 G",
+          -R * 2.7,
+          R * 2.4
+        );
+
+        drawLabel(
+          cx + R * 1.45,
+          cy - R * 1.05,
+          "Campo dipolare attorcigliato",
+          R * 1.9,
+          -R * 1.7
+        );
+
+        if (t > BUILDUP - 1.0 && t < BUILDUP + 0.55) {
+          drawLabel(
+            g.mid.x,
+            g.mid.y,
+            "Riconnessione / X-point",
+            R * 2.3,
+            -R * 1.7
+          );
+        }
+
+        if (t >= BUILDUP + 0.05) {
+          drawLabel(
+            f.x,
+            f.y,
+            "Nube di plasma strappata ed espulsa",
+            R * 1.7,
+            R * 2.1
+          );
+        }
+
+        if (t >= BUILDUP && t < BUILDUP + 1.2) {
+          const bx = f.x + Math.cos(EJ) * Math.min(W, H) * 0.17;
+          const by = f.y + Math.sin(EJ) * Math.min(W, H) * 0.17;
+          drawLabel(bx, by, "Lampo gamma", R * 1.4, -R * 1.1);
+        }
+      }
+
+      function setPhase() {
+        let txt;
+
+        if (t < BUILDUP - 1.1) {
+          txt = "1) Attorcigliamento del campo magnetico e accumulo di energia";
+        } else if (t < BUILDUP - 0.08) {
+          txt = "2) Current sheet e instabilità della riconnessione";
+        } else if (t < BUILDUP + 0.16) {
+          txt = "3) Riconnessione improvvisa: rilascio di energia e lampo gamma";
+        } else if (t < BUILDUP + 1.2) {
+          txt = "4) Plasma di coppie/ioni strappato alla superficie e accelerato";
+        } else {
+          txt = "5) Fireball in espansione, raffreddamento e coda del burst";
+        }
+
+        if (txt !== currentPhase) {
+          currentPhase = txt;
+          if (phaseEl) phaseEl.textContent = txt;
+        }
+      }
+
+      function draw() {
+        drawBackground();
+        drawStars();
+
+        if (showFields) drawDipoleField();
+
+        drawStar();
+        drawMagneticLoop();
+        drawWaves();
+        drawFireball();
+        drawParticles();
+        drawPhotons();
+        drawSparks();
+        drawReconnection();
+        drawGammaFlash();
+        drawLightCurve();
+        drawLabels();
+      }
+
+      function frame(now) {
+        if (!last) last = now;
+
+        let dt = (now - last) / 1000;
+        last = now;
+        dt = Math.min(dt, 0.05);
+
+        const sdt = paused ? 0 : dt * speed;
+
+        t += sdt;
+
+        if (t >= RESET_AFTER) {
+          reset();
+        }
+
+        if (!emitted && t >= BUILDUP) {
+          trigger();
+        }
+
+        update(sdt);
+        draw();
+        setPhase();
+
+        requestAnimationFrame(frame);
+      }
+
+      // UI
+      btnReplay.addEventListener("click", () => {
+        reset();
+        paused = false;
+        btnPause.textContent = "⏸ Pausa";
+      });
+
+      btnPause.addEventListener("click", () => {
+        paused = !paused;
+        btnPause.textContent = paused ? "▶ Riprendi" : "⏸ Pausa";
+      });
+
+      speedInput.addEventListener("input", () => {
+        speed = parseFloat(speedInput.value);
+        speedVal.textContent = speed.toFixed(2) + "×";
+      });
+
+      labelsToggle.addEventListener("change", e => {
+        showLabels = e.target.checked;
+      });
+
+      fieldsToggle.addEventListener("change", e => {
+        showFields = e.target.checked;
+      });
+
+      trailsToggle.addEventListener("change", e => {
+        showTrails = e.target.checked;
+      });
+
+      window.addEventListener("resize", resize);
+
+      // Rispetta parzialmente le preferenze di movimento ridotto rallentando l'animazione.
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        speed = 0.55;
+        speedInput.value = "0.55";
+        speedVal.textContent = "0.55×";
+      }
+
+      resize();
+      requestAnimationFrame(frame);
+    })();
+  </script>
+</body>
+</html>

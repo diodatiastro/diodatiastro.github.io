@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="markdown book-post">
+
+  {{ with .Parent }}
+    <p class="book-subtitle saggio-capitolo">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a> · Capitolo {{ $.Weight }} di {{ len .Pages }}
+    </p>
+  {{ end }}
+
+  <div class="book-post-content markdown-inner">
+    {{- .Content -}}
+  </div>
+
+</article>
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/toc" . }}
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "docs/saggio-nav" . }}
+{{ end }}

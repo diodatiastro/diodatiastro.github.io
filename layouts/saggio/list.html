@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="markdown book-post">
+
+  {{ with .Params.subtitle }}
+    <p class="book-subtitle">{{ . }}</p>
+  {{ end }}
+
+  {{ partial "docs/post-meta" . }}
+
+  <div class="book-post-content markdown-inner">
+    {{/* L'indice dei capitoli va dopo l'introduzione ma prima delle note */}}
+    {{- $indice := partial "docs/saggio-indice" . -}}
+    {{- $note := "<div class=\"footnotes\"" -}}
+    {{- if strings.Contains .Content $note -}}
+      {{- replace .Content $note (print $indice $note) | safeHTML -}}
+    {{- else -}}
+      {{- .Content -}}
+      {{- $indice -}}
+    {{- end }}
+  </div>
+
+</article>
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/toc" . }}
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "docs/saggio-nav" . }}
+{{ end }}

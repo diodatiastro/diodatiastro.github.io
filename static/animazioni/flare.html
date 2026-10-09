@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+  }
+  #scene {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+</style>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script>
+(() => {
+  const canvas = document.getElementById('scene');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x000008, 1);
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x000010, 0.008);
+
+  const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 2000);
+  camera.position.set(0, 1.2, 6);
+  camera.lookAt(0, 0, 0);
+
+  // Starfield
+  const starGeo = new THREE.BufferGeometry();
+  const starCount = 2500;
+  const starPos = new Float32Array(starCount * 3);
+  const starCol = new Float32Array(starCount * 3);
+  for (let i = 0; i < starCount; i++) {
+    const r = 200 + Math.random() * 600;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    starPos[i*3]   = r * Math.sin(phi) * Math.cos(theta);
+    starPos[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
+    starPos[i*3+2] = r * Math.cos(phi);
+    const c = 0.5 + Math.random() * 0.5;
+    const tint = Math.random();
+    starCol[i*3]   = tint < 0.3 ? c*0.8 : c;
+    starCol[i*3+1] = c;
+    starCol[i*3+2] = tint > 0.7 ? c*0.8 : c;
+  }
+  starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+  starGeo.setAttribute('color', new THREE.BufferAttribute(starCol, 3));
+  const starMat = new THREE.PointsMaterial({ size: 1.2, vertexColors: true, sizeAttenuation: true, transparent: true, opacity: 0.9 });
+  const stars = new THREE.Points(starGeo, starMat);
+  scene.add(stars);
+
+  // Magnetar surface shader
+  const magnetarVert = `
+    uniform float uTime;
+    uniform float uAmplitude;
+    varying vec3 vNormal;
+    varying vec3 vPosition;
+    varying vec2 vUv;
+    varying float vDisp;
+
+    // Spherical harmonic-ish radial displacement (l=2, m=0 + l=3 + radial fundamental)
+    float radialMode(vec3 p, float t) {
+      float r = length(p);
+      float theta = acos(clamp(p.y / r, -1.0, 1.0));
+      float phi = atan(p.z, p.x);
+      // Fundamental radial breathing
+      float fund = sin(t * 2.0) * 0.08;
+      // Quadrupolar spheroidal component (l=2)
+      float l2 = (3.0 * cos(theta) * cos(theta) - 1.0) * 0.5;
+      float quad = l2 * sin(t * 3.1 + 0.7) * 0.05;
+      // Higher harmonic (l=3)
+      float l3 = (5.0 * cos(theta)*cos(theta)*cos(theta) - 3.0 * cos(theta)) * 0.5;
+      float hex = l3 * sin(t * 5.3 + 1.3) * 0.03;
+      // Surface ripples (crustal texture)
+      float ripple = sin(theta * 8.0 + t * 1.5) * sin(phi * 6.0 - t * 0.8) * 0.015;
+      return (fund + quad + hex + ripple) * uAmplitude;
+    }
+
+    void main() {
+      vec3 n = normalize(position);
+      float disp = radialMode(position, uTime);
+      vDisp = disp;
+      vec3 newPos = position + n * disp;
+      vNormal = normalize(normalMatrix * n);
+      vPosition = (modelViewMatrix * vec4(newPos, 1.0)).xyz;
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(newPos, 1.0);
+    }
+  `;
+
+  const magnetarFrag = `
+    uniform float uTime;
+    varying vec3 vNormal;
+    varying vec3 vPosition;
+    varying vec2 vUv;
+    varying float vDisp;
+
+    // Simple hash noise
+    float hash(vec2 p) {
+      return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+    }
+    float noise(vec2 p) {
+      vec2 i = floor(p);
+      vec2 f = fract(p);
+      float a = hash(i);
+      float b = hash(i + vec2(1.0, 0.0));
+      float c = hash(i + vec2(0.0, 1.0));
+      float d = hash(i + vec2(1.0, 1.0));
+      vec2 u = f * f * (3.0 - 2.0 * f);
+      return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+    }
+    float fbm(vec2 p) {
+      float v = 0.0;
+      float a = 0.5;
+      for (int i = 0; i < 5; i++) {
+        v += a * noise(p);
+        p *= 2.1;
+        a *= 0.5;
+      }
+      return v;
+    }
+
+    void main() {
+      vec3 viewDir = normalize(-vPosition);
+      vec3 n = normalize(vNormal);
+      float fresnel = pow(1.0 - max(dot(n, viewDir), 0.0), 2.5);
+
+      // Crust texture: hot plasma / fractured crust
+      vec2 uv = vUv * 12.0;
+      float crust = fbm(uv + uTime * 0.05);
+      float cracks = smoothstep(0.55, 0.62, fbm(uv * 2.0 - uTime * 0.1));
+
+      // Base color: deep blue/purple magnetar crust
+      vec3 baseCol = mix(vec3(0.05, 0.08, 0.25), vec3(0.25, 0.1, 0.4), crust);
+      // Hot cracks: orange/white
+      vec3 hotCol = mix(vec3(1.0, 0.5, 0.1), vec3(1.0, 0.95, 0.8), cracks);
+      vec3 col = mix(baseCol, hotCol, cracks * 0.9);
+
+      // Displacement glow (X-ray emission at peaks)
+      float dispGlow = smoothstep(0.02, 0.1, abs(vDisp));
+      col += vec3(0.3, 0.5, 1.0) * dispGlow * 1.5;
+      col += vec3(1.0, 0.6, 0.2) * dispGlow * dispGlow * 2.0;
+
+      // Rim / atmospheric glow
+      col += vec3(0.4, 0.6, 1.0) * fresnel * 1.2;
+      col += vec3(1.0, 0.4, 0.7) * pow(fresnel, 4.0) * 0.8;
+
+      // Pulsing overall brightness tied to radial mode
+      float pulse = 0.5 + 0.5 * sin(uTime * 2.0);
+      col *= 0.85 + 0.25 * pulse;
+
+      gl_FragColor = vec4(col, 1.0);
+    }
+  `;
+
+  const magnetarUniforms = {
+    uTime: { value: 0 },
+    uAmplitude: { value: 1.0 }
+  };
+
+  const magnetarMat = new THREE.ShaderMaterial({
+    uniforms: magnetarUniforms,
+    vertexShader: magnetarVert,
+    fragmentShader: magnetarFrag
+  });
+
+  const magnetarGeo = new THREE.SphereGeometry(1, 160, 160);
+  const magnetar = new THREE.Mesh(magnetarGeo, magnetarMat);
+  scene.add(magnetar);
+
+  // Outer glow halo (atmosphere / magnetosphere)
+  const haloVert = `
+    varying vec3 vNormal;
+    varying vec3 vPosition;
+    void main() {
+      vNormal = normalize(normalMatrix * normal);
+      vPosition = (modelViewMatrix * vec4(position, 1.0)).xyz;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `;
+  const haloFrag = `
+    uniform float uTime;
+    varying vec3 vNormal;
+    varying vec3 vPosition;
+    void main() {
+      vec3 viewDir = normalize(-vPosition);
+      float f = pow(1.0 - max(dot(normalize(vNormal), viewDir), 0.0), 3.0);
+      float pulse = 0.7 + 0.3 * sin(uTime * 2.0);
+      vec3 col = mix(vec3(0.2, 0.4, 1.0), vec3(0.8, 0.3, 1.0), f) * f * pulse * 1.5;
+      gl_FragColor = vec4(col, f * 0.8);
+    }
+  `;
+  const haloMat = new THREE.ShaderMaterial({
+    uniforms: { uTime: magnetarUniforms.uTime },
+    vertexShader: haloVert,
+    fragmentShader: haloFrag,
+    transparent: true,
+    side: THREE.BackSide,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  });
+  const halo = new THREE.Mesh(new THREE.SphereGeometry(1.35, 64, 64), haloMat);
+  scene.add(halo);
+
+  // Magnetic field lines (dipole)
+  const fieldGroup = new THREE.Group();
+  scene.add(fieldGroup);
+
+  function createFieldLine(phiOffset, sign, scale) {
+    const points = [];
+    const N = 120;
+    for (let i = 0; i <= N; i++) {
+      const t = (i / N) * Math.PI; // 0..PI (theta)
+      // Dipole: r = R0 * sin^2(theta)
+      const R0 = scale;
+      const r = R0 * Math.sin(t) * Math.sin(t);
+      const x = r * Math.sin(t) * Math.cos(phiOffset);
+      const y = r * Math.cos(t) * sign;
+      const z = r * Math.sin(t) * Math.sin(phiOffset);
+      points.push(new THREE.Vector3(x, y, z));
+    }
+    const geo = new THREE.BufferGeometry().setFromPoints(points);
+    const mat = new THREE.LineBasicMaterial({
+      color: new THREE.Color(0.4, 0.6, 1.0),
+      transparent: true,
+      opacity: 0.55,
+      blending: THREE.AdditiveBlending
+    });
+    return new THREE.Line(geo, mat);
+  }
+
+  const phiCount = 8;
+  for (let i = 0; i < phiCount; i++) {
+    const phi = (i / phiCount) * Math.PI * 2;
+    const scale = 2.2 + (i % 2) * 0.6;
+    fieldGroup.add(createFieldLine(phi, 1, scale));
+    fieldGroup.add(createFieldLine(phi, -1, scale));
+  }
+
+  // Particle emission (X-ray / plasma jets along magnetic axis)
+  const particleCount = 800;
+  const particleGeo = new THREE.BufferGeometry();
+  const pPos = new Float32Array(particleCount * 3);
+  const pVel = new Float32Array(particleCount * 3);
+  const pLife = new Float32Array(particleCount);
+  const pSize = new Float32Array(particleCount);
+  const pCol = new Float32Array(particleCount * 3);
+
+  function resetParticle(i) {
+    // Emit from poles
+    const pole = Math.random() < 0.5 ? 1 : -1;
+    const spread = 0.15;
+    pPos[i*3]   = (Math.random() - 0.5) * spread;
+    pPos[i*3+1] = pole * (1.0 + Math.random() * 0.1);
+    pPos[i*3+2] = (Math.random() - 0.5) * spread;
+    const speed = 0.02 + Math.random() * 0.04;
+    pVel[i*3]   = (Math.random() - 0.5) * 0.005;
+    pVel[i*3+1] = pole * speed;
+    pVel[i*3+2] = (Math.random() - 0.5) * 0.005;
+    pLife[i] = Math.random();
+    pSize[i] = 0.03 + Math.random() * 0.06;
+    // Color: cyan/white for X-ray
+    const t = Math.random();
+    pCol[i*3]   = 0.6 + 0.4 * t;
+    pCol[i*3+1] = 0.8 + 0.2 * t;
+    pCol[i*3+2] = 1.0;
+  }
+  for (let i = 0; i < particleCount; i++) resetParticle(i);
+
+  particleGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+  particleGeo.setAttribute('aSize', new THREE.BufferAttribute(pSize, 1));
+  particleGeo.setAttribute('color', new THREE.BufferAttribute(pCol, 3));
+
+  const particleVert = `
+    attribute float aSize;
+    varying vec3 vColor;
+    void main() {
+      vColor = color;
+      vec4 mv = modelViewMatrix * vec4(position, 1.0);
+      gl_PointSize = aSize * (300.0 / -mv.z);
+      gl_Position = projectionMatrix * mv;
+    }
+  `;
+  const particleFrag = `
+    varying vec3 vColor;
+    void main() {
+      vec2 c = gl_PointCoord - 0.5;
+      float d = length(c);
+      if (d > 0.5) discard;
+      float a = smoothstep(0.5, 0.0, d);
+      gl_FragColor = vec4(vColor * 1.5, a);
+    }
+  `;
+  const particleMat = new THREE.ShaderMaterial({
+    vertexShader: particleVert,
+    fragmentShader: particleFrag,
+    transparent: true,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+    vertexColors: true
+  });
+  const particles = new THREE.Points(particleGeo, particleMat);
+  scene.add(particles);
+
+  // Shockwave rings emitted during peaks
+  const rings = [];
+  const ringGeo = new THREE.RingGeometry(1.0, 1.15, 64);
+  function spawnRing() {
+    const mat = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(0.5, 0.7, 1.0),
+      transparent: true,
+      opacity: 0.8,
+      side: THREE.DoubleSide,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+    const ring = new THREE.Mesh(ringGeo, mat);
+    ring.scale.set(1, 1, 1);
+    ring.userData = { age: 0, maxAge: 2.5 };
+    // Random orientation
+    ring.rotation.x = Math.random() * Math.PI;
+    ring.rotation.y = Math.random() * Math.PI;
+    scene.add(ring);
+    rings.push(ring);
+  }
+
+  // Lighting (subtle, shader does most work)
+  const ambient = new THREE.AmbientLight(0x202040, 0.3);
+  scene.add(ambient);
+
+  // Camera orbit
+  let camAngle = 0;
+  const camRadius = 6;
+  const camHeight = 1.4;
+
+  let lastTime = performance.now();
+  let lastRingTime = 0;
+
+  function animate(now) {
+    const dt = Math.min((now - lastTime) / 1000, 0.05);
+    lastTime = now;
+    const t = now * 0.001;
+
+    magnetarUniforms.uTime.value = t;
+
+    // Rotate magnetar slowly
+    magnetar.rotation.y += dt * 0.15;
+    halo.rotation.y = magnetar.rotation.y;
+
+    // Rotate field lines with star
+    fieldGroup.rotation.y = magnetar.rotation.y * 0.3;
+    fieldGroup.rotation.z = Math.sin(t * 0.2) * 0.1;
+
+    // Update particles
+    const posAttr = particleGeo.attributes.position;
+    for (let i = 0; i < particleCount; i++) {
+      pPos[i*3]   += pVel[i*3];
+      pPos[i*3+1] += pVel[i*3+1];
+      pPos[i*3+2] += pVel[i*3+2];
+      pLife[i] += dt * 0.5;
+      // Accelerate outward
+      pVel[i*3+1] *= 1.005;
+      if (pLife[i] > 1.0 || Math.abs(pPos[i*3+1]) > 8) {
+        resetParticle(i);
+      }
+    }
+    posAttr.needsUpdate = true;
+
+    // Shockwave rings on radial peaks
+    const pulsePhase = Math.sin(t * 2.0);
+    if (pulsePhase > 0.98 && t - lastRingTime > 1.5) {
+      spawnRing();
+      lastRingTime = t;
+    }
+    for (let i = rings.length - 1; i >= 0; i--) {
+      const r = rings[i];
+      r.userData.age += dt;
+      const k = r.userData.age / r.userData.maxAge;
+      const s = 1 + k * 6;
+      r.scale.set(s, s, s);
+      r.material.opacity = (1 - k) * 0.7;
+      if (k >= 1) {
+        scene.remove(r);
+        r.geometry.dispose && r.geometry.dispose();
+        r.material.dispose();
+        rings.splice(i, 1);
+      }
+    }
+
+    // Camera slow orbit
+    camAngle += dt * 0.1;
+    camera.position.x = Math.cos(camAngle) * camRadius;
+    camera.position.z = Math.sin(camAngle) * camRadius;
+    camera.position.y = camHeight + Math.sin(t * 0.3) * 0.3;
+    camera.lookAt(0, 0, 0);
+
+    // Stars subtle rotation
+    stars.rotation.y += dt * 0.005;
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+})();
+</script>
+</body>
+</html>
