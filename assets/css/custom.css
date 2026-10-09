@@ -545,7 +545,7 @@ html, body {
 }
 
 
-/* ── Commenti Disqus caricati su richiesta ─────────────────────────── */
+/* ── Commenti (Waline) caricati su richiesta ─────────────────────────── */
 .commenti {
   text-align: left;
   margin: 3rem 0 1.5rem;
@@ -591,10 +591,20 @@ html, body {
   cursor: pointer;
 }
 
-/* Il sito dichiara <meta name="color-scheme" content="light dark">: con il tema
-   scuro del sistema l'iframe di Disqus (documento "light") riceverebbe uno sfondo
-   bianco opaco, su cui il testo chiaro di Disqus diventa invisibile.
-   Allineare lo schema elimina lo sfondo e lascia Disqus trasparente. */
-#disqus_thread {
-  color-scheme: light;
+/* Colori di Waline adattati al tema scuro del sito */
+#waline {
+  --waline-theme-color: var(--nebula-blue);
+  --waline-active-color: var(--stellar-gold);
+  --waline-color: var(--starlight);
+  --waline-light-grey: var(--muted);
+  --waline-dark-grey: var(--muted);
+  --waline-white: var(--night);
+  --waline-bg-color: transparent;
+  --waline-bg-color-light: var(--surface);
+  --waline-bg-color-hover: var(--surface);
+  --waline-border-color: var(--surface-line);
+  --waline-info-bg-color: var(--surface);
+  --waline-info-color: var(--muted);
+  --waline-font-size: 1rem;
+  text-align: left;
 }

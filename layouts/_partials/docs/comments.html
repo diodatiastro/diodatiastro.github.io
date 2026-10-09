@@ -1,26 +1,32 @@
 {{- /*
-  Commenti Disqus caricati solo su richiesta del lettore.
-  Finché il lettore non preme il pulsante, nessuno script di Disqus
-  viene scaricato e non viene depositato alcun cookie di terze parti.
-  Attivi solo sulle pagine singole della sezione "stelle" (articoli e capitoli dei saggi);
-  si spengono su una singola pagina con bookComments = false.
+  Commenti Waline caricati solo su richiesta del lettore.
+  Il server dei commenti è https://diodatiastro-commenti.vercel.app (Vercel + database Neon).
+  Finché il lettore non preme il pulsante, non viene scaricato nulla da servizi esterni.
+  Attivi sulle pagine singole delle sezioni "stelle" e "dizionario" (articoli, capitoli
+  dei saggi, voci) e sulla pagina indice di ogni saggio (type = "saggio"); esclusi la home
+  e gli indici di sezione del catalogo e del dizionario;
+  si spengono su una singola pagina con bookComments = false nel front matter.
+  Il server si imposta in hugo.toml: [params] walineServer = '...'
 */ -}}
-{{- $short := site.Config.Services.Disqus.Shortname -}}
-{{- if and $short .IsPage (eq .Section "stelle") -}}
+{{- $server := site.Params.walineServer -}}
+{{- $pagina := and .IsPage (in (slice "stelle" "dizionario") .Section) -}}
+{{- $indiceSaggio := and .IsSection (eq .Type "saggio") -}}
+{{- if and $server (or $pagina $indiceSaggio) -}}
 <section class="commenti" id="commenti">
   <h2 class="commenti-titolo">Commenti</h2>
   <div class="commenti-consenso">
-    <p>I commenti sono gestiti da <a href="https://disqus.com/" rel="noopener">Disqus</a>, un servizio esterno che, una volta caricato, usa cookie propri e di terze parti, anche a fini pubblicitari. Per questo i commenti non vengono caricati automaticamente. Premendo il pulsante accetti di caricarli. Puoi leggere l'<a href="https://disqus.com/privacy-policy/" rel="noopener">informativa sulla privacy di Disqus</a>.</p>
+    <p>I commenti sono gestiti con Waline su un server dedicato a questo sito, senza pubblicità né cookie di tracciamento. Per mostrarli, però, il browser scarica alcuni file da servizi esterni (il programma da unpkg.com, le immagini del profilo da Gravatar), che ricevono il tuo indirizzo IP. Per questo i commenti si caricano solo se lo chiedi.</p>
+    <p>Chi scrive un commento può firmarsi con un nome di fantasia. Vengono conservati il nome, l'email se indicata (che non viene mai pubblicata) e l'indirizzo IP, usato solo contro lo spam. Ogni commento viene pubblicato dopo l'approvazione dell'autore del sito.</p>
     <p class="commenti-azioni">
       <button type="button" class="commenti-pulsante">Carica i commenti</button>
       <label class="commenti-ricorda"><input type="checkbox" class="commenti-ricorda-casella"> Ricorda la scelta su questo sito</label>
     </p>
   </div>
-  <div id="disqus_thread"></div>
+  <div id="waline"></div>
 </section>
 <script>
 (function () {
-  var CHIAVE = "diodatiastro-commenti-disqus";
+  var CHIAVE = "diodatiastro-commenti";
   var sezione = document.getElementById("commenti");
   if (!sezione) return;
   var consenso = sezione.querySelector(".commenti-consenso");
@@ -28,20 +34,93 @@
   var ricorda = sezione.querySelector(".commenti-ricorda-casella");
   var caricato = false;
 
+  var LOCALE_IT = {
+    nick: "Nome",
+    nickError: "Il nome deve avere almeno 3 caratteri.",
+    mail: "Email ",
+    mailError: "Controlla l'indirizzo email.",
+    link: "Sito web",
+    optional: "facoltativo",
+    placeholder: "Scrivi un commento…",
+    sofa: "Ancora nessun commento.",
+    submit: "Invia",
+    like: "Mi piace",
+    cancelLike: "Non mi piace più",
+    reply: "Rispondi",
+    cancelReply: "Annulla risposta",
+    comment: "Commenti",
+    refresh: "Aggiorna",
+    more: "Carica altri…",
+    preview: "Anteprima",
+    emoji: "Emoji",
+    uploadImage: "Carica un'immagine",
+    seconds: "secondi fa",
+    minutes: "minuti fa",
+    hours: "ore fa",
+    days: "giorni fa",
+    now: "adesso",
+    uploading: "Caricamento in corso…",
+    login: "Accedi",
+    logout: "Esci",
+    admin: "Autore",
+    sticky: "In evidenza",
+    word: "parole",
+    wordHint: "Il commento deve avere tra $0 e $1 parole.\nParole attuali: $2",
+    anonymous: "Anonimo",
+    level0: "Livello 0",
+    level1: "Livello 1",
+    level2: "Livello 2",
+    level3: "Livello 3",
+    level4: "Livello 4",
+    level5: "Livello 5",
+    gif: "GIF",
+    gifSearchPlaceholder: "Cerca GIF",
+    profile: "Profilo",
+    approved: "Approvato",
+    waiting: "In attesa",
+    spam: "Spam",
+    unsticky: "Togli dall'evidenza",
+    oldest: "Più vecchi",
+    latest: "Più recenti",
+    hottest: "Più apprezzati",
+    reactionTitle: "Che cosa ne pensi?",
+    commentUnderReview: "Il tuo commento è in attesa di approvazione: per ora lo vedi solo tu e sarà pubblicato dopo la revisione.",
+    subPostComment: "Ricevi i commenti a questa pagina",
+    subSiteComment: "Ricevi i commenti di tutto il sito",
+    subscribeToReplies: "Ricevi le risposte ai tuoi commenti"
+  };
+
   function carica() {
     if (caricato) return;
     caricato = true;
-    window.disqus_config = function () {
-      this.page.url = {{ .Permalink }};
-      this.page.identifier = {{ .RelPermalink }};
-      this.language = "it";
-    };
-    var s = document.createElement("script");
-    s.src = "https://" + {{ $short }} + ".disqus.com/embed.js";
-    s.setAttribute("data-timestamp", String(+new Date()));
-    s.async = true;
-    (document.head || document.body).appendChild(s);
     consenso.style.display = "none";
+
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "https://unpkg.com/@waline/client@v3/dist/waline.css";
+    document.head.appendChild(css);
+
+    import("https://unpkg.com/@waline/client@v3/dist/waline.js").then(function (Waline) {
+      Waline.init({
+        el: "#waline",
+        serverURL: {{ $server }},
+        path: {{ .RelPermalink }},
+        lang: "it",
+        locale: LOCALE_IT,
+        dark: true,
+        meta: ["nick", "mail"],
+        requiredMeta: ["nick"],
+        login: "enable",
+        reaction: false,
+        pageview: false,
+        comment: false,
+        search: false,
+        imageUploader: false
+      });
+    }).catch(function () {
+      document.getElementById("waline").textContent =
+        "Non è stato possibile caricare i commenti. Riprova più tardi.";
+    });
   }
 
   try {
