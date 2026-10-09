@@ -608,3 +608,16 @@ html, body {
   --waline-font-size: 1rem;
   text-align: left;
 }
+
+/* Waline: nome dell'autore nei commenti pubblicati più grande e in grassetto,
+   e campi Nome/Email del modulo leggibili (di serie erano a 10 px) */
+#waline .wl-card .wl-nick {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+#waline .wl-header input {
+  font-size: 0.95rem;
+}
+#waline .wl-header label {
+  font-size: 0.85rem;
+}
