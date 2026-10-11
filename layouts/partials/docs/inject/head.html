@@ -3,16 +3,6 @@
 {{ if $css }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ end }}
-{{- /*
-  Statistiche delle visite con GoatCounter (senza cookie).
-  Attivo solo nella build di produzione (GitHub Actions), non con hugo server.
-  Per non contare le proprie visite: aprire una volta il sito con
-  #toggle-goatcounter in fondo all'indirizzo, su ogni browser che si usa.
-  Pannello: https://diodatiastro.goatcounter.com
-*/ -}}
-{{ if hugo.IsProduction }}
-<script data-goatcounter="https://diodatiastro.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-{{ end }}
 
 {{- /*
   Contatore delle visite sul server Waline del sito (lo stesso dei commenti).
@@ -20,7 +10,7 @@
   non lo fermano. Conta una visita per pagina per sessione del browser.
   Attivo solo nella build di produzione.
   Per non contare le proprie visite: aprire una volta il sito con #non-contarmi
-  in fondo all'indirizzo (vale anche per GoatCounter); #contarmi annulla.
+  in fondo all'indirizzo; #contarmi annulla.
   I numeri si leggono nella pagina /statistiche/.
 */ -}}
 {{ with site.Params.walineServer }}{{ if hugo.IsProduction }}
