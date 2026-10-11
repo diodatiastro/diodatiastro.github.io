@@ -27,6 +27,9 @@
   td small { color:var(--muted); display:block; }
   .zero td { color:var(--muted); }
   #stato { color:var(--muted); }
+  .pagine { display:flex; align-items:center; justify-content:center; gap:14px; margin:1.2rem 0 0; color:var(--muted); }
+  .pagine button { font:inherit; background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:6px; padding:.35rem .9rem; cursor:pointer; }
+  .pagine button:disabled { opacity:.35; cursor:default; }
 </style>
 </head>
 <body>
@@ -44,67 +47,75 @@
     <thead><tr><th>Pagina</th><th style="text-align:right">Visite</th></tr></thead>
     <tbody id="righe"></tbody>
   </table>
+  <div class="pagine" id="pagine-nav" hidden>
+    <button type="button" id="prec">‹ Precedenti</button>
+    <span id="pagina-n"></span>
+    <button type="button" id="succ">Successive ›</button>
+  </div>
 </main>
 <script>
 (async function () {
   var SERVER = "https://diodatiastro-commenti.vercel.app/";
+  var PER_PAGINA = 50;
   var stato = document.getElementById("stato");
   try {
-    var xml = await (await fetch("/sitemap.xml", { cache: "no-store" })).text();
-    var percorsi = Array.from(new DOMParser().parseFromString(xml, "text/xml").getElementsByTagName("loc"))
-      .map(function (l) { return new URL(l.textContent.trim()).pathname; });
+    // elenco di percorsi e titoli generato da Hugo a ogni pubblicazione
+    var elenco = await (await fetch("/statistiche/pagine.json", { cache: "no-store" })).json();
     var conteggi = {};
-    for (var i = 0; i < percorsi.length; i += 20) {
-      var gruppo = percorsi.slice(i, i + 20);
+    for (var i = 0; i < elenco.length; i += 20) {
+      var gruppo = elenco.slice(i, i + 20).map(function (x) { return x.path; });
       var r = await fetch(SERVER + "api/article?path=" + encodeURIComponent(gruppo.join(",")) + "&type=time&lang=it");
       var dati = (await r.json()).data || [];
       gruppo.forEach(function (p, j) { conteggi[p] = (dati[j] && dati[j].time) || 0; });
     }
-    var righe = percorsi.map(function (p) {
+    var righe = elenco.map(function (x) {
+      var p = x.path;
       var sezione = p === "/" ? "home" : p.split("/")[1];
       if (/^\/stelle\/sgr-1806-20\//.test(p)) sezione = "saggio SGR 1806-20";
-      return { p: p, n: conteggi[p] || 0, sezione: sezione };
+      return { p: p, titolo: x.title, n: conteggi[p] || 0, sezione: sezione };
     }).sort(function (a, b) { return b.n - a.n || a.p.localeCompare(b.p); });
-    var totale = righe.reduce(function (s, x) { return s + x.n; }, 0);
-    document.getElementById("totale").textContent = totale;
+
+    document.getElementById("totale").textContent = righe.reduce(function (s, x) { return s + x.n; }, 0);
     document.getElementById("visitate").textContent = righe.filter(function (x) { return x.n > 0; }).length;
     document.getElementById("pagine").textContent = righe.length;
 
     var tbody = document.getElementById("righe");
-    righe.forEach(function (x) {
-      var tr = document.createElement("tr");
-      tr.dataset.sezione = x.sezione;
-      if (!x.n) tr.className = "zero";
-      tr.innerHTML = '<td><a href="' + x.p + '">' + x.p + '</a><small></small></td><td class="n">' + x.n + "</td>";
-      tbody.appendChild(tr);
-    });
+    var nav = document.getElementById("pagine-nav");
+    var prec = document.getElementById("prec"), succ = document.getElementById("succ");
+    var filtro = "tutte", pagina = 0;
+
+    function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+    function mostra() {
+      var scelte = righe.filter(function (x) { return filtro === "tutte" || x.sezione === filtro; });
+      var tot = Math.max(1, Math.ceil(scelte.length / PER_PAGINA));
+      if (pagina >= tot) pagina = tot - 1;
+      tbody.innerHTML = scelte.slice(pagina * PER_PAGINA, (pagina + 1) * PER_PAGINA).map(function (x) {
+        return '<tr' + (x.n ? '' : ' class="zero"') + '><td><a href="' + esc(x.p) + '">' + esc(x.p) + '</a><small>' + esc(x.titolo) + '</small></td><td class="n">' + x.n + '</td></tr>';
+      }).join("");
+      nav.hidden = tot < 2;
+      document.getElementById("pagina-n").textContent = "pagina " + (pagina + 1) + " di " + tot;
+      prec.disabled = pagina === 0;
+      succ.disabled = pagina >= tot - 1;
+    }
+    prec.onclick = function () { pagina--; mostra(); window.scrollTo(0, 0); };
+    succ.onclick = function () { pagina++; mostra(); window.scrollTo(0, 0); };
 
     var sezioni = ["tutte"].concat(Array.from(new Set(righe.map(function (x) { return x.sezione; }))));
     var filtri = document.getElementById("filtri");
     sezioni.forEach(function (s, k) {
       var b = document.createElement("button");
-      b.textContent = s; if (!k) b.className = "attivo";
+      b.type = "button"; b.textContent = s; if (!k) b.className = "attivo";
       b.onclick = function () {
         filtri.querySelectorAll("button").forEach(function (x) { x.className = ""; });
-        b.className = "attivo";
-        tbody.querySelectorAll("tr").forEach(function (tr) { tr.hidden = s !== "tutte" && tr.dataset.sezione !== s; });
+        b.className = "attivo"; filtro = s; pagina = 0; mostra();
       };
       filtri.appendChild(b);
     });
+
+    mostra();
     stato.hidden = true;
     document.getElementById("tabella").hidden = false;
-
-    // titoli delle pagine, caricati dopo i numeri
-    var trs = tbody.querySelectorAll("tr");
-    for (var t = 0; t < trs.length; t += 8) {
-      await Promise.all(Array.from(trs).slice(t, t + 8).map(async function (tr) {
-        try {
-          var html = await (await fetch(tr.querySelector("a").getAttribute("href"))).text();
-          var m = html.match(/<title>([^<]*)<\/title>/i);
-          if (m) tr.querySelector("small").textContent = m[1].replace(/\s*•\s*Le stelle più affascinanti del cielo\s*$/, "").replace(/&amp;/g, "&").replace(/&#39;|&rsquo;/g, "’");
-        } catch (e) {}
-      }));
-    }
   } catch (e) {
     stato.textContent = "Errore nel caricamento dei dati: " + e.message;
   }
