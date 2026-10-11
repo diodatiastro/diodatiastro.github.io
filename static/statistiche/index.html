@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Statistiche delle visite</title>
+<style>
+  :root { --bg:#0e1320; --panel:#161d2e; --line:#2a3550; --text:#f2ece0; --muted:#a8b0c2; --gold:#e8b04a; --blue:#8fb8e8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width:960px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:1.8rem; color:var(--gold); margin:0 0 .3rem; }
+  p.nota { color:var(--muted); margin:.2rem 0 1.2rem; }
+  .riepilogo { display:flex; flex-wrap:wrap; gap:12px; margin:1rem 0 1.4rem; }
+  .riepilogo div { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:.7rem 1rem; min-width:150px; }
+  .riepilogo b { display:block; font-size:1.6rem; color:var(--gold); }
+  .filtri { margin:0 0 1rem; display:flex; gap:8px; flex-wrap:wrap; }
+  .filtri button { font:inherit; background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:6px; padding:.35rem .8rem; cursor:pointer; }
+  .filtri button.attivo { border-color:var(--gold); color:var(--gold); }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:.95rem; }
+  td.n { text-align:right; font-variant-numeric:tabular-nums; font-weight:600; width:5rem; }
+  td a { color:var(--blue); text-decoration:none; }
+  td a:hover { text-decoration:underline; }
+  td small { color:var(--muted); display:block; }
+  .zero td { color:var(--muted); }
+  #stato { color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Statistiche delle visite</h1>
+  <p class="nota">Una visita per pagina per sessione del browser, escluse le tue (#non-contarmi). Conteggio dal server Waline del sito, a partire dall'attivazione del contatore.</p>
+  <div class="riepilogo">
+    <div><b id="totale">…</b>visite in tutto</div>
+    <div><b id="visitate">…</b>pagine con almeno una visita</div>
+    <div><b id="pagine">…</b>pagine nel sito</div>
+  </div>
+  <div class="filtri" id="filtri"></div>
+  <p id="stato">Caricamento…</p>
+  <table hidden id="tabella">
+    <thead><tr><th>Pagina</th><th style="text-align:right">Visite</th></tr></thead>
+    <tbody id="righe"></tbody>
+  </table>
+</main>
+<script>
+(async function () {
+  var SERVER = "https://diodatiastro-commenti.vercel.app/";
+  var stato = document.getElementById("stato");
+  try {
+    var xml = await (await fetch("/sitemap.xml", { cache: "no-store" })).text();
+    var percorsi = Array.from(new DOMParser().parseFromString(xml, "text/xml").getElementsByTagName("loc"))
+      .map(function (l) { return new URL(l.textContent.trim()).pathname; });
+    var conteggi = {};
+    for (var i = 0; i < percorsi.length; i += 20) {
+      var gruppo = percorsi.slice(i, i + 20);
+      var r = await fetch(SERVER + "api/article?path=" + encodeURIComponent(gruppo.join(",")) + "&type=time&lang=it");
+      var dati = (await r.json()).data || [];
+      gruppo.forEach(function (p, j) { conteggi[p] = (dati[j] && dati[j].time) || 0; });
+    }
+    var righe = percorsi.map(function (p) {
+      var sezione = p === "/" ? "home" : p.split("/")[1];
+      if (/^\/stelle\/sgr-1806-20\//.test(p)) sezione = "saggio SGR 1806-20";
+      return { p: p, n: conteggi[p] || 0, sezione: sezione };
+    }).sort(function (a, b) { return b.n - a.n || a.p.localeCompare(b.p); });
+    var totale = righe.reduce(function (s, x) { return s + x.n; }, 0);
+    document.getElementById("totale").textContent = totale;
+    document.getElementById("visitate").textContent = righe.filter(function (x) { return x.n > 0; }).length;
+    document.getElementById("pagine").textContent = righe.length;
+
+    var tbody = document.getElementById("righe");
+    righe.forEach(function (x) {
+      var tr = document.createElement("tr");
+      tr.dataset.sezione = x.sezione;
+      if (!x.n) tr.className = "zero";
+      tr.innerHTML = '<td><a href="' + x.p + '">' + x.p + '</a><small></small></td><td class="n">' + x.n + "</td>";
+      tbody.appendChild(tr);
+    });
+
+    var sezioni = ["tutte"].concat(Array.from(new Set(righe.map(function (x) { return x.sezione; }))));
+    var filtri = document.getElementById("filtri");
+    sezioni.forEach(function (s, k) {
+      var b = document.createElement("button");
+      b.textContent = s; if (!k) b.className = "attivo";
+      b.onclick = function () {
+        filtri.querySelectorAll("button").forEach(function (x) { x.className = ""; });
+        b.className = "attivo";
+        tbody.querySelectorAll("tr").forEach(function (tr) { tr.hidden = s !== "tutte" && tr.dataset.sezione !== s; });
+      };
+      filtri.appendChild(b);
+    });
+    stato.hidden = true;
+    document.getElementById("tabella").hidden = false;
+
+    // titoli delle pagine, caricati dopo i numeri
+    var trs = tbody.querySelectorAll("tr");
+    for (var t = 0; t < trs.length; t += 8) {
+      await Promise.all(Array.from(trs).slice(t, t + 8).map(async function (tr) {
+        try {
+          var html = await (await fetch(tr.querySelector("a").getAttribute("href"))).text();
+          var m = html.match(/<title>([^<]*)<\/title>/i);
+          if (m) tr.querySelector("small").textContent = m[1].replace(/\s*•\s*Le stelle più affascinanti del cielo\s*$/, "").replace(/&amp;/g, "&").replace(/&#39;|&rsquo;/g, "’");
+        } catch (e) {}
+      }));
+    }
+  } catch (e) {
+    stato.textContent = "Errore nel caricamento dei dati: " + e.message;
+  }
+})();
+</script>
+</body>
+</html>

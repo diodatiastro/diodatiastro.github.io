@@ -13,3 +13,53 @@
 {{ if hugo.IsProduction }}
 <script data-goatcounter="https://diodatiastro.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 {{ end }}
+
+{{- /*
+  Contatore delle visite sul server Waline del sito (lo stesso dei commenti).
+  Non scarica script da altri domini, quindi i blocchi dei tracker di solito
+  non lo fermano. Conta una visita per pagina per sessione del browser.
+  Attivo solo nella build di produzione.
+  Per non contare le proprie visite: aprire una volta il sito con #non-contarmi
+  in fondo all'indirizzo (vale anche per GoatCounter); #contarmi annulla.
+  I numeri si leggono nella pagina /statistiche/.
+*/ -}}
+{{ with site.Params.walineServer }}{{ if hugo.IsProduction }}
+<script>
+(function () {
+  var SERVER = {{ . }};
+  if (!window.fetch) return;
+  function avviso(testo) {
+    document.addEventListener("DOMContentLoaded", function () {
+      var d = document.createElement("div");
+      d.textContent = testo;
+      d.style.cssText = "position:fixed;top:1rem;left:50%;transform:translateX(-50%);z-index:9999;background:#1d2433;color:#f5f0e6;border:1px solid #e8b04a;padding:.8rem 1.2rem;border-radius:6px;font-size:1rem;box-shadow:0 4px 16px rgba(0,0,0,.5)";
+      document.body.appendChild(d);
+      setTimeout(function () { d.remove(); }, 6000);
+    });
+  }
+  try {
+    if (location.hash === "#non-contarmi") {
+      localStorage.setItem("skipgc", "t");
+      avviso("Le tue visite da questo browser non verranno più contate.");
+    } else if (location.hash === "#contarmi") {
+      localStorage.removeItem("skipgc");
+      avviso("Le tue visite da questo browser verranno di nuovo contate.");
+    }
+    if (localStorage.getItem("skipgc") === "t") return;
+  } catch (e) {}
+  if (navigator.webdriver || /bot|crawl|spider|slurp|preview|headless|lighthouse/i.test(navigator.userAgent)) return;
+  var path = location.pathname;
+  try {
+    var chiave = "visita-contata:" + path;
+    if (sessionStorage.getItem(chiave)) return;
+    sessionStorage.setItem(chiave, "1");
+  } catch (e) {}
+  fetch(SERVER.replace(/\/?$/, "/") + "api/article?lang=it", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ path: path, type: "time", action: "inc" }),
+    keepalive: true
+  }).catch(function () {});
+})();
+</script>
+{{ end }}{{ end }}
