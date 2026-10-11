@@ -1,7 +1,7 @@
 {{- $pagine := slice -}}
 {{- range site.Pages -}}
   {{- if and (in (slice "page" "section" "home") .Kind) (not .Sitemap.Disable) -}}
-    {{- $pagine = $pagine | append (dict "path" .RelPermalink "title" .Title) -}}
+    {{- $pagine = $pagine | append (dict "path" .RelPermalink "title" (.Title | default site.Title)) -}}
   {{- end -}}
 {{- end -}}
 {{- $pagine | jsonify -}}
