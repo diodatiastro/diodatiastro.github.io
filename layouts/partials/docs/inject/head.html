@@ -3,3 +3,13 @@
 {{ if $css }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ end }}
+{{- /*
+  Statistiche delle visite con GoatCounter (senza cookie).
+  Attivo solo nella build di produzione (GitHub Actions), non con hugo server.
+  Per non contare le proprie visite: aprire una volta il sito con
+  #toggle-goatcounter in fondo all'indirizzo, su ogni browser che si usa.
+  Pannello: https://diodatiastro.goatcounter.com
+*/ -}}
+{{ if hugo.IsProduction }}
+<script data-goatcounter="https://diodatiastro.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{{ end }}
