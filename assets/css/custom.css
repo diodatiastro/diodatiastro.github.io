@@ -1213,3 +1213,10 @@ h1.titolo-sezione {
   border-color: var(--stellar-gold);
   color: var(--night);
 }
+
+/* Freccina per tornare all'inizio della pagina alla fine di ogni lettera
+   del dizionario: stesso simbolo e stile del ritorno dalle note */
+.markdown .dz-su {
+  margin: 0.5rem 0 0;
+  text-align: right;
+}

@@ -1,7 +1,7 @@
 {{- /* Copia della partial del tema Hugo Book (themes/hugo-book/layouts/_partials/docs/prev-next.html)
      con una sola differenza: non mostra i link alla pagina precedente e successiva
-     sulla home e sull'indice del catalogo, dove sono superflui accanto ai riquadri. */ -}}
-{{- if not (or .IsHome (eq .Path "/stelle")) -}}
+     sulla home e sugli indici del catalogo e del dizionario, dove sono superflui accanto ai riquadri. */ -}}
+{{- if not (or .IsHome (eq .Path "/stelle") (eq .Path "/dizionario")) -}}
 {{- with (partialCached "docs/menu-section" .Site) -}}
   {{- $pages := partialCached "docs/menu-section-pages" . -}}
   {{- $prev := $pages.Next $ -}}
