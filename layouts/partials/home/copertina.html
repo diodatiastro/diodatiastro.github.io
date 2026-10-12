@@ -1,0 +1,43 @@
+{{- /*
+  Immagine di copertina per i riquadri della home page.
+  Ordine di ricerca:
+  1. parametro "copertina" nel front matter (percorso relativo alla
+     cartella dell'articolo, es. copertina = "immagini/magnetar.png");
+  2. prima immagine usata nel testo (attributo src o poster degli shortcode).
+  Se l'immagine è una risorsa della pagina, Hugo ne crea una miniatura leggera.
+*/ -}}
+{{- $p := . -}}
+{{- $src := $p.Params.copertina -}}
+{{- if not $src -}}
+  {{- $m := findRESubmatch `(?:src|poster)="([^"]+\.(?:jpe?g|JPE?G|png|PNG|webp|gif))"` $p.RawContent 1 -}}
+  {{- with $m -}}{{- $src = index (index . 0) 1 -}}{{- end -}}
+{{- end -}}
+{{- $url := "" -}}
+{{- with $src -}}
+  {{- $res := $p.Resources.Get . -}}
+  {{- if not $res -}}
+    {{- with $p.GetPage (path.Dir $src) -}}
+      {{- $res = .Resources.Get (path.Base $src) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if $res -}}
+    {{- if in (slice "jpeg" "png" "webp") $res.MediaType.SubType -}}
+      {{- /* Se il file non è leggibile da Hugo (es. estensione che non
+             corrisponde al formato reale) si usa l'originale */ -}}
+      {{- with try ($res.Fill "640x480 Center q82 webp") -}}
+        {{- if .Err -}}
+          {{- $url = $res.RelPermalink -}}
+        {{- else -}}
+          {{- $url = .Value.RelPermalink -}}
+        {{- end -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $url = $res.RelPermalink -}}
+    {{- end -}}
+  {{- else if hasPrefix $src "/" -}}
+    {{- $url = relURL $src -}}
+  {{- else -}}
+    {{- $url = path.Join $p.RelPermalink $src -}}
+  {{- end -}}
+{{- end -}}
+{{- return $url -}}

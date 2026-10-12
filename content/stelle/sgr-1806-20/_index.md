@@ -1,6 +1,7 @@
 +++
 title = "SGR 1806-20"
 subtitle = "La magnetar che brillò come migliaia di miliardi di Soli"
+copertina = "immagini/magnetar.png"
 date = "2026-10-09"
 draft = false
 tags = ["stella di neutroni", "magnetar", "soft gamma repeater (SGR)", "GRB"]

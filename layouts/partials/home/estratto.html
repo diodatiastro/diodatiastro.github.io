@@ -1,0 +1,30 @@
+{{- /*
+  Testo breve per i riquadri della home page.
+  Ordine di ricerca:
+  1. parametro "descrizione" nel front matter della pagina;
+  2. primo paragrafo del box tipo="definizione";
+  3. sommario automatico di Hugo.
+  Note a piè di pagina e link vengono tolti (il riquadro è già un link),
+  le formule $...$ restano e sono rese da KaTeX.
+*/ -}}
+{{- $p := . -}}
+{{- $testo := "" -}}
+{{- with $p.Params.descrizione -}}
+  {{- $testo = . -}}
+{{- else -}}
+  {{- $raw := replace $p.RawContent "\r" "" -}}
+  {{- $m := findRESubmatch `(?s)\{\{[<%]\s*box\s+tipo="definizione".*?[>%]\}\}(.*?)\{\{[<%]\s*/box\s*[>%]\}\}` $raw 1 -}}
+  {{- with $m -}}
+    {{- $box := strings.TrimSpace (index (index . 0) 1) -}}
+    {{- $box = replaceRE `\n[ \t]*\n` "\n\n" $box -}}
+    {{- $testo = index (split $box "\n\n") 0 -}}
+  {{- end -}}
+{{- end -}}
+{{- if $testo -}}
+  {{- $testo = replaceRE `\[\^[^\]]+\]` "" $testo -}}
+  {{- $testo = replaceRE `\[([^\]]+)\]\([^)]*\)` "$1" $testo -}}
+  {{- $testo = $testo | markdownify -}}
+{{- else -}}
+  {{- $testo = replaceRE `(?s)<sup.*?</sup>` "" (string $p.Summary) | plainify | truncate 320 -}}
+{{- end -}}
+{{- return $testo -}}
