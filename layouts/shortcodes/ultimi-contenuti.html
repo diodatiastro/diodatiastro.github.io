@@ -10,33 +10,13 @@
 {{- $voci := first $n (site.GetPage "/dizionario").Pages.ByDate.Reverse -}}
 {{- $righe := add $n 2 -}}
 
-{{- if not (.Page.Store.Get "katex") -}}
-  <link rel="stylesheet" href="{{ "katex/katex.min.css" | relURL }}" />
-  <script defer src="{{ "katex/katex.min.js" | relURL }}"></script>
-  {{- with resources.Get "katex.json" | minify -}}
-    <script defer src="{{ "katex/auto-render.min.js" | relURL }}" onload="renderMathInElement(document.body, {{ .Content | safeJS }});"></script>
-  {{- end -}}
-  {{- .Page.Store.Set "katex" true -}}
-{{- end }}
+{{- partial "home/katex.html" . }}
 
 <div class="hc-griglia">
   <section class="hc-colonna hc-colonna--catalogo" style="grid-row: span {{ $righe }};">
     <h3 class="hc-intestazione">Dal catalogo delle stelle</h3>
     {{- range $articoli }}
-    {{- $img := partial "home/copertina.html" . }}
-    <a class="hc-card hc-card--articolo" href="{{ .RelPermalink }}">
-      <span class="hc-thumb{{ if not $img }} hc-thumb--vuota{{ end }}" aria-hidden="true">
-        {{- with $img }}<img src="{{ . }}" alt="" loading="lazy">{{ end -}}
-      </span>
-      <span class="hc-corpo">
-        <span class="hc-data">{{ .Date | time.Format ":date_long" }}</span>
-        <span class="hc-titolo">{{ .Title }}</span>
-        {{- with .Params.subtitle }}
-        <span class="hc-sottotitolo">{{ . }}</span>
-        {{- end }}
-        <span class="hc-testo">{{ partial "home/estratto.html" . }}</span>
-      </span>
-    </a>
+    {{ partial "home/card-articolo.html" . }}
     {{- end }}
     <a class="hc-tutti" href="{{ (site.GetPage "/stelle").RelPermalink }}">Tutti gli articoli del catalogo →</a>
   </section>

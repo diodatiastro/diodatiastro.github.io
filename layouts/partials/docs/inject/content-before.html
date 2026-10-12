@@ -1,1 +1,6 @@
-<h1>{{ .Title }}</h1>
+{{- /* Titolo della pagina. Sugli indici del catalogo e del dizionario ha lo
+     stesso stile del titolo della home (classe titolo-sezione).
+     Niente titolo vuoto sulla home, che ha il suo nel testo. */ -}}
+{{- if .Title -}}
+<h1{{ if and .IsSection (in (slice "/stelle" "/dizionario") .Path) }} class="titolo-sezione"{{ end }}>{{ .Title }}</h1>
+{{- end -}}

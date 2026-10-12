@@ -1,0 +1,12 @@
+{{- /*
+  Indice completo del catalogo delle stelle, a riquadri su due colonne,
+  dal più recente al più vecchio (data di pubblicazione).
+  Uso in content/stelle/_index.md:   {{< indice-catalogo >}}
+  Un saggio diviso in capitoli conta come un solo articolo.
+*/ -}}
+{{- partial "home/katex.html" . }}
+<div class="hc-elenco hc-elenco--catalogo">
+  {{- range (site.GetPage "/stelle").Pages.ByDate.Reverse }}
+  {{ partial "home/card-articolo.html" . }}
+  {{- end }}
+</div>

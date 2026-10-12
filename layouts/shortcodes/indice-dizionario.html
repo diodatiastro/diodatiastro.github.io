@@ -1,0 +1,38 @@
+{{- /*
+  Indice completo del dizionario: voci in ordine alfabetico raggruppate per
+  lettera iniziale, con una fila di lettere cliccabili in cima.
+  Uso in content/dizionario/_index.md:   {{< indice-dizionario >}}
+*/ -}}
+{{- partial "home/katex.html" . }}
+{{- $voci := (site.GetPage "/dizionario").Pages.ByTitle -}}
+{{- $gruppi := slice -}}
+{{- $lettere := slice -}}
+{{- range $voci -}}
+  {{- $l := substr .Title 0 1 | upper -}}
+  {{- $l = replaceRE `[ÀÁ]` "A" $l | replaceRE `[ÈÉ]` "E" | replaceRE `[ÌÍ]` "I" | replaceRE `[ÒÓ]` "O" | replaceRE `[ÙÚ]` "U" -}}
+  {{- if not (in $lettere $l) -}}{{- $lettere = $lettere | append $l -}}{{- end -}}
+{{- end -}}
+
+<nav class="dz-lettere" aria-label="Lettere del dizionario">
+  {{- range $lettere }}
+  <a class="dz-salto" href="#lettera-{{ lower . }}">{{ . }}</a>
+  {{- end }}
+</nav>
+
+{{- range $lettere }}
+{{- $lettera := . }}
+<section class="dz-gruppo" id="lettera-{{ lower $lettera }}">
+  <div class="dz-intestazione"><span class="hc-iniziale">{{ $lettera }}</span></div>
+  <div class="dz-voci">
+    {{- range $voci }}
+    {{- $l := substr .Title 0 1 | upper | replaceRE `[ÀÁ]` "A" | replaceRE `[ÈÉ]` "E" | replaceRE `[ÌÍ]` "I" | replaceRE `[ÒÓ]` "O" | replaceRE `[ÙÚ]` "U" }}
+    {{- if eq $l $lettera }}
+    <a class="dz-voce" href="{{ .RelPermalink }}">
+      <span class="dz-titolo">{{ .Title }}</span>
+      <span class="dz-testo">{{ partial "home/estratto.html" . }}</span>
+    </a>
+    {{- end }}
+    {{- end }}
+  </div>
+</section>
+{{- end }}

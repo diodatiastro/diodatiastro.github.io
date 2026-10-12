@@ -1,0 +1,15 @@
+{{- /* Riquadro di un articolo del catalogo (usato dalla home e dall'indice del catalogo) */ -}}
+{{- $img := partial "home/copertina.html" . -}}
+<a class="hc-card hc-card--articolo" href="{{ .RelPermalink }}">
+  <span class="hc-thumb{{ if not $img }} hc-thumb--vuota{{ end }}" aria-hidden="true">
+    {{- with $img }}<img src="{{ . }}" alt="" loading="lazy">{{ end -}}
+  </span>
+  <span class="hc-corpo">
+    <span class="hc-data">{{ .Date | time.Format ":date_long" }}</span>
+    <span class="hc-titolo">{{ .Title }}</span>
+    {{- with .Params.subtitle }}
+    <span class="hc-sottotitolo">{{ . }}</span>
+    {{- end }}
+    <span class="hc-testo">{{ partial "home/estratto.html" . }}</span>
+  </span>
+</a>

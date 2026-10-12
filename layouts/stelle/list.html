@@ -1,0 +1,43 @@
+{{- /*
+  Indice del catalogo delle stelle: introduzione (testo di content/stelle/_index.md)
+  e riquadri di tutti gli articoli, dal più recente al più vecchio, con paginazione.
+  Articoli per pagina: parametro articoliPerPagina in hugo.toml (predefinito 12,
+  cioè sei righe di due riquadri). Un saggio diviso in capitoli conta come un solo
+  articolo. I saggi (type = "saggio") usano invece layouts/saggio/list.html.
+*/ -}}
+{{ define "main" }}
+{{- $perPagina := site.Params.articoliPerPagina | default 12 | int -}}
+{{- $pag := .Paginate .Pages.ByDate.Reverse $perPagina -}}
+<article class="markdown book-article">
+  {{- if eq $pag.PageNumber 1 }}
+  {{ .Content }}
+  {{- end }}
+  {{- partial "home/katex.html" . }}
+
+  <div class="hc-elenco hc-elenco--catalogo">
+    {{- range $pag.Pages }}
+    {{ partial "home/card-articolo.html" . }}
+    {{- end }}
+  </div>
+
+  {{- if gt $pag.TotalPages 1 }}
+  <nav class="hc-paginazione" aria-label="Pagine del catalogo">
+    <span class="hc-pag-lato">
+      {{- with $pag.Prev }}<a href="{{ .URL }}">← Più recenti</a>{{ end -}}
+    </span>
+    <span class="hc-pag-numeri">
+      {{- range $pag.Pagers }}
+        {{- if eq .PageNumber $pag.PageNumber }}
+        <span class="hc-pag-corrente" aria-current="page">{{ .PageNumber }}</span>
+        {{- else }}
+        <a href="{{ .URL }}">{{ .PageNumber }}</a>
+        {{- end }}
+      {{- end }}
+    </span>
+    <span class="hc-pag-lato hc-pag-lato--destra">
+      {{- with $pag.Next }}<a href="{{ .URL }}">Meno recenti →</a>{{ end -}}
+    </span>
+  </nav>
+  {{- end }}
+</article>
+{{ end }}
