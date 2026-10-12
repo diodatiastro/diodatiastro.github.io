@@ -680,6 +680,7 @@ html, body {
 
 .book-page a.hc-card:hover {
   color: var(--starlight);
+  text-decoration: none;
   border-color: var(--accento-colonna);
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
@@ -727,6 +728,15 @@ html, body {
   font-weight: 600;
   line-height: 1;
   color: var(--nebula-blue);
+}
+
+/* Al passaggio del mouse l'unica sottolineatura è quella dell'iniziale
+   delle voci del dizionario */
+.hc-card:hover .hc-iniziale {
+  text-decoration: underline;
+  text-decoration-color: var(--stellar-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.12em;
 }
 
 /* Testi del riquadro */
@@ -863,6 +873,7 @@ html, body {
 
 .book-page a.hc-card:hover {
   color: var(--starlight);
+  text-decoration: none;
   border-color: var(--accento-colonna);
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);

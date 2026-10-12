@@ -1,0 +1,32 @@
+{{- /* Copia della partial del tema Hugo Book (themes/hugo-book/layouts/_partials/docs/prev-next.html)
+     con una sola differenza: sulla home page non mostra il link alla pagina
+     successiva, superfluo accanto ai link dei riquadri degli ultimi contenuti. */ -}}
+{{- if not .IsHome -}}
+{{- with (partialCached "docs/menu-section" .Site) -}}
+  {{- $pages := partialCached "docs/menu-section-pages" . -}}
+  {{- $prev := $pages.Next $ -}}
+  {{- $next := $pages.Prev $ -}}
+
+  {{- if or $prev $next -}}
+  <div class="flex flex-wrap justify-between">
+    <span>
+    {{ with $prev }}
+      <a href="{{ .RelPermalink }}" class="flex align-center">
+        <img src="{{ partial "docs/icon" "backward" }}" class="book-icon" alt="{{ partial "docs/text/i18n" "Backward" }}" />
+        <span>{{ partial "docs/title" . }}</span>
+      </a>
+    {{ end }}
+    </span>
+    <span>
+    {{ with $next }}
+      <a href="{{ .RelPermalink }}" class="flex align-center">
+        <span>{{ partial "docs/title" . }}</span>
+        <img src="{{ partial "docs/icon" "forward" }}" class="book-icon" alt="{{ partial "docs/text/i18n" "Forward" }}" />
+      </a>
+    {{ end }}
+    </span>
+  </div>
+  {{- end -}}
+{{- end -}}
+
+{{- end -}}
