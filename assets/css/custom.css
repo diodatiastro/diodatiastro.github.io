@@ -648,6 +648,9 @@ html, body {
   row-gap: 1rem;
 }
 
+.hc-colonna--catalogo   { --accento-colonna: var(--stellar-gold); }
+.hc-colonna--dizionario { --accento-colonna: var(--nebula-blue); }
+
 .markdown .hc-intestazione {
   margin: 0;
   padding: 0 0 0.5rem;
@@ -658,8 +661,10 @@ html, body {
   color: var(--accento-colonna);
 }
 
-.hc-colonna--catalogo   { --accento-colonna: var(--stellar-gold); }
-.hc-colonna--dizionario { --accento-colonna: var(--nebula-blue); }
+/* Niente quadratino dei titoli di terzo livello sulle intestazioni delle colonne */
+.markdown .hc-intestazione::before {
+  content: none;
+}
 
 /* Riquadro */
 .book-page a.hc-card,
@@ -737,190 +742,6 @@ html, body {
   text-decoration-color: var(--stellar-gold);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.12em;
-}
-
-/* Testi del riquadro */
-.hc-corpo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  min-width: 0;
-}
-
-.hc-data {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.hc-titolo {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--stellar-orange);
-}
-
-.hc-sottotitolo {
-  font-size: 1rem;
-  line-height: 1.35;
-  color: var(--color-link);
-}
-
-.hc-testo {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--starlight);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-  overflow: hidden;
-}
-
-.hc-card--articolo .hc-testo {
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-}
-
-/* Il grassetto nel testo dei riquadri resta discreto */
-.hc-testo strong {
-  color: inherit;
-  font-weight: 600;
-}
-
-/* Link all'indice completo della sezione */
-.book-page a.hc-tutti,
-.book-page a.hc-tutti:visited {
-  justify-self: end;
-  align-self: start;
-  font-size: 1rem;
-  text-decoration: none;
-  color: var(--accento-colonna);
-}
-
-.book-page a.hc-tutti:hover {
-  text-decoration: underline;
-}
-
-/* Schermi stretti: una colonna sola, prima il catalogo poi il dizionario */
-@media screen and (max-width: 44rem) {
-  .hc-griglia {
-    grid-template-columns: 1fr;
-    row-gap: 2rem;
-  }
-
-  .hc-colonna {
-    grid-row: auto !important;
-    grid-template-rows: none;
-  }
-}
-
-
-/* ==========================================================================
-   Home page — riquadri con gli ultimi contenuti pubblicati
-   (shortcode ultimi-contenuti: colonna del catalogo e colonna del dizionario)
-   ========================================================================== */
-
-.hc-griglia {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1.5rem;
-  row-gap: 1rem;
-  margin: 1.25rem 0 2.5rem;
-}
-
-/* Le due colonne condividono le righe della griglia (subgrid):
-   i riquadri affiancati hanno sempre la stessa altezza */
-.hc-colonna {
-  display: grid;
-  grid-template-rows: subgrid;
-  row-gap: 1rem;
-}
-
-.hc-colonna--catalogo   { --accento-colonna: var(--stellar-gold); }
-.hc-colonna--dizionario { --accento-colonna: var(--nebula-blue); }
-
-.markdown .hc-intestazione {
-  margin: 0;
-  padding: 0 0 0.5rem;
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  border-bottom: 2px solid var(--accento-colonna);
-  color: var(--accento-colonna);
-}
-
-/* Niente quadratino dei titoli di terzo livello sulle intestazioni delle colonne */
-.markdown .hc-intestazione::before {
-  content: none;
-}
-
-/* Riquadro */
-.book-page a.hc-card,
-.book-page a.hc-card:visited {
-  display: flex;
-  gap: 1rem;
-  min-height: 9.5rem;
-  padding: 0.75rem;
-  border: 1px solid var(--surface-line);
-  border-radius: 10px;
-  background: var(--night-deep);
-  color: var(--starlight);
-  font-weight: 400;
-  text-decoration: none;
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.book-page a.hc-card:hover {
-  color: var(--starlight);
-  text-decoration: none;
-  border-color: var(--accento-colonna);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-}
-
-/* Miniatura degli articoli */
-.hc-thumb {
-  position: relative;
-  flex: 0 0 34%;
-  align-self: stretch;
-  min-height: 8rem;
-  overflow: hidden;
-  border-radius: 6px;
-  background: radial-gradient(circle at 35% 35%, #3a4a86 0%, var(--surface) 45%, var(--night) 100%);
-}
-
-.markdown .hc-thumb img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  margin: 0;
-  object-fit: cover;
-  border-radius: 0;
-  transition: transform 0.35s ease;
-}
-
-.hc-card:hover .hc-thumb img {
-  transform: scale(1.05);
-}
-
-/* Iniziale delle voci del dizionario */
-.hc-iniziale {
-  flex: 0 0 3.6rem;
-  height: 3.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--surface-line);
-  border-radius: 50%;
-  background: var(--surface);
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1;
-  color: var(--nebula-blue);
 }
 
 /* Testi del riquadro */

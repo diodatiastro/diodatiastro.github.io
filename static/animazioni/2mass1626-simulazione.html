@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2MASS 1626+3925 — simulazione</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #view { position: fixed; inset: 0; width: 100%; height: 100%; display: block;
+          touch-action: none; cursor: grab; }
+  #view.drag { cursor: grabbing; }
+  #veil { position: fixed; inset: 0; background: #000; opacity: 1;
+          pointer-events: none; transition: opacity 2.6s ease; }
+  #hint { position: fixed; left: 0; right: 0; bottom: 4.5vh; margin: 0; text-align: center;
+          font-family: Georgia, "Times New Roman", serif; font-weight: 500;
+          font-size: 11px; letter-spacing: .5em; text-indent: .5em; text-transform: uppercase;
+          color: rgba(255,222,192,.5); opacity: 0; pointer-events: none;
+          transition: opacity 1.8s ease; }
+  #hint.on  { opacity: 1; }
+  #hint.gone{ opacity: 0; }
+  #fallback { position: fixed; inset: 0; display: none; place-items: center;
+              color: rgba(235,210,190,.55); font-family: Georgia, serif;
+              font-size: 14px; letter-spacing: .08em; }
+</style>
+</head>
+<body>
+<canvas id="view" role="img" aria-label="Rappresentazione simulata di una subnana L antica e povera di metalli: una sfera rosso-arancio di circa 2100 kelvin, isolata nello spazio, con sullo sfondo una debole fascia della Via Lattea."></canvas>
+<p id="hint">trascina per ruotare&nbsp;&nbsp;·&nbsp;&nbsp;usa la rotellina per avvicinarti</p>
+<div id="veil"></div>
+<div id="fallback">questa simulazione richiede WebGL</div>
+
+<script>
+(function(){
+'use strict';
+const canvas = document.getElementById('view');
+const gl = canvas.getContext('webgl', { antialias:false, alpha:false, depth:false, stencil:false, powerPreference:'high-performance' });
+if(!gl){ document.getElementById('fallback').style.display = 'grid'; return; }
+
+const VERT = `
+attribute vec2 aP;
+void main(){ gl_Position = vec4(aP, 0.0, 1.0); }`;
+
+const FRAG = `
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+
+uniform vec2  uRes;
+uniform float uTime;
+uniform vec3  uCamPos;
+uniform vec3  uRight;
+uniform vec3  uUp;
+uniform vec3  uFwd;
+uniform float uF;      // tan(fov/2)
+uniform float uPx;     // radians per device pixel
+uniform float uEdge;   // limb softness, world units
+uniform float uExp;
+uniform vec2  uPP;     // principal point (sphere centre in NDC)
+uniform float uSpin;
+
+const vec3 MWn = vec3( 0.2180, 0.9703, 0.1029);  // Milky Way band plane normal
+const vec3 MWg = vec3(-0.9756, 0.2192, 0.0000);  // brighter end of the band
+const vec3 AX  = vec3( 0.1099, 0.9924, 0.0550);  // slightly tilted spin axis
+
+float hash13(vec3 p3){
+  p3 = fract(p3 * 0.1031);
+  p3 += dot(p3, p3.zyx + 31.76);
+  return fract((p3.x + p3.y) * p3.z);
+}
+float hash12(vec2 p){
+  vec3 q = fract(vec3(p.xyx) * 0.1031);
+  q += dot(q, q.yzx + 33.33);
+  return fract((q.x + q.y) * q.z);
+}
+vec2 hash22(vec2 p){
+  vec3 q = fract(vec3(p.xyx) * vec3(0.1031, 0.1030, 0.0973));
+  q += dot(q, q.yzx + 33.33);
+  return fract((q.xx + q.yz) * q.zy);
+}
+float noise3(vec3 p){
+  vec3 i = floor(p);
+  vec3 f = fract(p);
+  f = f * f * (3.0 - 2.0 * f);
+  float a  = hash13(i);
+  float b  = hash13(i + vec3(1.0, 0.0, 0.0));
+  float c  = hash13(i + vec3(0.0, 1.0, 0.0));
+  float d  = hash13(i + vec3(1.0, 1.0, 0.0));
+  float e  = hash13(i + vec3(0.0, 0.0, 1.0));
+  float f1 = hash13(i + vec3(1.0, 0.0, 1.0));
+  float g  = hash13(i + vec3(0.0, 1.0, 1.0));
+  float h  = hash13(i + vec3(1.0, 1.0, 1.0));
+  return mix(mix(mix(a, b, f.x), mix(c, d, f.x), f.y),
+             mix(mix(e, f1, f.x), mix(g, h, f.x), f.y), f.z);
+}
+float fbm3(vec3 p){
+  float s = 0.0;
+  float a = 0.5;
+  for(int i = 0; i < 4; i++){
+    s += a * noise3(p);
+    p = p * 2.02 + vec3(11.3, 7.7, 5.1);
+    a *= 0.5;
+  }
+  return s;
+}
+
+// Planck-locus approximation -> sRGB triple (valid ~1000-15000 K)
+vec3 blackbody(float t){
+  t = clamp(t, 1000.0, 15000.0);
+  vec3 c;
+  c.r = 56100000.0 * pow(t, -1.5) + 148.0;
+  c.g = t > 6500.0 ? 35200000.0 * pow(t, -0.6) + 184.0 : 100.04 * log(t) - 623.6;
+  c.b = 194.18 * log(t) - 1448.6;
+  return clamp(c, vec3(0.0), vec3(255.0)) / 255.0;
+}
+vec3 s2l(vec3 c){ return pow(c, vec3(2.2)); }
+vec3 aces(vec3 x){
+  return clamp((x * (2.51 * x + 0.03)) / (x * (2.43 * x + 0.59) + 0.14), vec3(0.0), vec3(1.0));
+}
+
+// Photosphere of the subdwarf.
+// Banding is expressed as a small temperature modulation (+/- ~45 K):
+// both the colour and the T^4 radiance then follow the Planck curve on their own.
+vec3 shadeDisk(vec3 N, float mu){
+  float slat = dot(N, AX);
+  // slow spin with weak differential rotation (equator leads)
+  float w = uSpin * (1.0 - 0.22 * slat * slat);
+  float ang = uTime * w;
+  float ca = cos(ang);
+  float sa = sin(ang);
+  vec3 N2 = N * ca + cross(AX, N) * sa + AX * slat * (1.0 - ca);
+  // zonal belts: latitude compressed, longitude stretched
+  float band = fbm3(vec3(N2.x * 1.35, N2.y * 6.5, N2.z * 1.35));
+  float mott = fbm3(N2 * 3.7 + vec3(0.0, uTime * 0.01, 13.0));
+  float T = 2100.0 + (band - 0.47) * 85.0 + (mott - 0.47) * 22.0;
+  // limb looks into cooler, redder layers
+  T *= mix(1.0, 0.80, pow(1.0 - mu, 1.4));
+  // quadratic limb-darkening law
+  float x = 1.0 - mu;
+  float ld = 1.0 - 0.52 * x - 0.24 * x * x;
+  return s2l(blackbody(T)) * (ld * pow(T / 2100.0, 4.0) * uExp);
+}
+
+vec3 milkyWay(vec3 rd){
+  float h0 = dot(rd, MWn);
+  if(abs(h0) > 0.5) return vec3(0.0);
+  float h = h0 + (fbm3(rd * 2.3 + 9.0) - 0.47) * 0.22;  // organic warp of the band
+  float band = exp(-h * h / 0.02);
+  if(band < 0.004) return vec3(0.0);
+  float stru = fbm3(rd * 3.1 + 2.0);
+  float dust = fbm3(rd * 7.3 + 4.2);
+  float lane = smoothstep(0.30, 0.72, dust);
+  float grad = 0.35 + 0.65 * smoothstep(-0.9, 0.9, dot(rd, MWg));
+  float mw = band * (0.30 + 0.85 * stru) * (0.30 + 0.70 * lane) * grad;
+  vec3 warm = vec3(1.0, 0.90, 0.78);
+  vec3 cool = vec3(0.78, 0.85, 1.0);
+  return mix(cool, warm, fbm3(rd * 1.7 + 6.0)) * (mw * 0.055);
+}
+
+// Hash-based star field on gnomonic coordinates of the ray direction:
+// stars are fixed in world space, so orbiting yields true parallax.
+vec3 starLayer(vec3 rd, vec2 guv, float cs, float kb, float km,
+               float ab, float ar, float sb, float sr, float seed){
+  vec3 acc = vec3(0.0);
+  vec2 base = floor(guv / cs);
+  for(int j = -1; j <= 1; j++){
+    for(int i = -1; i <= 1; i++){
+      vec2 cell = base + vec2(float(i), float(j));
+      vec2 h  = hash22(cell * 1.13 + seed);
+      vec2 h2 = hash22(cell * 2.71 + seed * 1.7 + 19.7);
+      vec2 spos = (cell + 0.12 + 0.76 * h) * cs;
+      vec3 sd = normalize(vec3(spos, -1.0));
+      float dd = dot(sd, MWn);
+      float mwF = exp(-dd * dd * 55.0);       // denser along the band
+      if(h2.x > kb + km * mwF) continue;
+      float c = dot(rd, sd);
+      if(c < 0.9993) continue;
+      float b = pow(h2.y, 8.0);               // heavy-tailed brightness
+      float sig = uPx * (sb + sr * b);        // resolution-aware gaussian
+      float g = exp(-(1.0 - c) / (sig * sig));
+      // old, metal-poor population: white / yellow / orange, rare blue-white
+      float r = fract(h.x * 7.31 + h.y * 3.17);
+      vec3 scol = r < 0.13 ? vec3(0.72, 0.81, 1.0)
+               : r < 0.54 ? vec3(1.0, 0.98, 0.95)
+               : r < 0.85 ? vec3(1.0, 0.89, 0.74)
+               : vec3(1.0, 0.62, 0.40);
+      acc += scol * ((ab + ar * b) * g);
+    }
+  }
+  return acc;
+}
+
+vec3 background(vec3 rd){
+  vec2 guv = rd.xy / (-rd.z);
+  vec3 col = starLayer(rd, guv, 0.032, 0.10, 0.34, 0.030, 0.34, 0.85, 1.00, 3.7);
+  col += starLayer(rd, guv, 0.055, 0.050, 0.12, 0.100, 2.80, 1.10, 2.30, 83.1);
+  col += milkyWay(rd);
+  return col;
+}
+
+void main(){
+  vec2 p = gl_FragCoord.xy / uRes * 2.0 - 1.0;
+  float aspect = uRes.x / uRes.y;
+  vec3 rd = normalize(uFwd
+      + uF * (p.x - uPP.x) * aspect * uRight
+      + uF * (p.y - uPP.y) * uUp);
+
+  // ray vs unit sphere (the subdwarf) at the origin
+  float Bq = dot(rd, uCamPos);
+  float rr = dot(uCamPos, uCamPos);
+  float disc = Bq * Bq - rr + 1.0;
+  float bImp = sqrt(max(rr - Bq * Bq, 0.0));
+
+  vec3 disk;
+  if(disc >= 0.0){
+    float t = -Bq - sqrt(disc);
+    vec3 P = uCamPos + t * rd;
+    vec3 N = normalize(P);
+    float mu = clamp(dot(N, normalize(uCamPos - P)), 0.0, 1.0);
+    disk = shadeDisk(N, mu);
+  } else {
+    // tone matching mu -> 0, used while blending the soft photospheric edge
+    disk = s2l(blackbody(1680.0)) * (0.098 * uExp);
+  }
+  float cover = 1.0 - smoothstep(1.0 - uEdge * 0.5, 1.0 + uEdge, bImp);
+
+  vec3 col;
+  if(cover > 0.9995){ col = disk; }
+  else { col = mix(background(rd), disk, cover); }
+
+  // faint photographic bloom hugging the limb
+  float hOut = max(bImp - 1.0, 0.0);
+  float bloom = exp(-hOut / 0.020) * 0.060 + exp(-hOut / 0.085) * 0.016;
+  col += s2l(blackbody(1900.0)) * (bloom * uExp * (1.0 - cover));
+
+  // gentle vignette, filmic tone curve, sRGB, grain/dither
+  col *= 1.0 - 0.30 * smoothstep(0.35, 2.1, dot(p, p));
+  col = aces(col);
+  col = pow(col, vec3(1.0 / 2.2));
+  col += vec3((hash12(gl_FragCoord.xy + fract(uTime * 0.37) * 291.0) - 0.5) * 0.011);
+  gl_FragColor = vec4(col, 1.0);
+}`;
+
+function sh(type, src){
+  const s = gl.createShader(type);
+  gl.shaderSource(s, src);
+  gl.compileShader(s);
+  if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)) console.error(gl.getShaderInfoLog(s));
+  return s;
+}
+const prog = gl.createProgram();
+gl.attachShader(prog, sh(gl.VERTEX_SHADER, VERT));
+gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FRAG));
+gl.linkProgram(prog);
+if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){
+  console.error(gl.getProgramInfoLog(prog));
+  document.getElementById('fallback').style.display = 'grid';
+  return;
+}
+gl.useProgram(prog);
+
+const buf = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+const aP = gl.getAttribLocation(prog, 'aP');
+gl.enableVertexAttribArray(aP);
+gl.vertexAttribPointer(aP, 2, gl.FLOAT, false, 0, 0);
+
+const U = {};
+['uRes','uTime','uCamPos','uRight','uUp','uFwd','uF','uPx','uEdge','uExp','uPP','uSpin']
+  .forEach(n => U[n] = gl.getUniformLocation(prog, n));
+
+// ---------- state ----------
+const FOV = 46 * Math.PI / 180;
+const F = Math.tan(FOV / 2);
+const DMIN = 2.45, DMAX = 7.2;
+const SPIN = 2 * Math.PI / 300;                       // one rotation ~ 5 minutes
+const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let yaw = 0, pitch = 0.015, tyaw = 0, tpitch = 0.015, vyaw = 0, vpitch = 0;
+let interacted = false, lastInteract = -10, driftA = 0;
+let time = 0, lastNow = performance.now();
+let aspect = 1, baseDist = 3.42, tdist = 3.42, dist = 6.0;
+
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const sstep = (a, b, x) => { x = clamp((x - a) / (b - a), 0, 1); return x * x * (3 - 2 * x); };
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+
+function resize(){
+  const dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+  const w = Math.max(2, Math.round(canvas.clientWidth * dpr));
+  const h = Math.max(2, Math.round(canvas.clientHeight * dpr));
+  if(canvas.width !== w || canvas.height !== h){
+    canvas.width = w; canvas.height = h;
+    gl.viewport(0, 0, w, h);
+  }
+  aspect = w / h;
+  if(!interacted){
+    baseDist = 3.42 * clamp(Math.pow(1.7 / Math.min(aspect, 1.7), 0.6), 1, 1.55);
+    tdist = baseDist;
+  }
+}
+window.addEventListener('resize', resize);
+resize();
+dist = baseDist * 1.78;
+if(reduced) dist = baseDist;
+
+// ---------- interaction ----------
+const pointers = new Map();
+let lastPinch = 0;
+
+const hint = document.getElementById('hint');
+const veil = document.getElementById('veil');
+let hintGone = false;
+function hideHint(){ if(hintGone) return; hintGone = true; hint.classList.add('gone'); }
+setTimeout(() => { if(!hintGone) hint.classList.add('on'); }, 1600);
+setTimeout(hideHint, 11000);
+
+function poke(){ interacted = true; lastInteract = time; hideHint(); }
+
+canvas.addEventListener('pointerdown', e => {
+  canvas.setPointerCapture(e.pointerId);
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  canvas.classList.add('drag');
+  poke();
+});
+canvas.addEventListener('pointermove', e => {
+  const pt = pointers.get(e.pointerId);
+  if(!pt) return;
+  const dx = e.clientX - pt.x, dy = e.clientY - pt.y;
+  pt.x = e.clientX; pt.y = e.clientY;
+  lastInteract = time;
+  if(pointers.size === 1){
+    tyaw   = clamp(tyaw - dx * 0.0021, -0.38, 0.38);
+    tpitch = clamp(tpitch + dy * 0.0016, -0.30, 0.30);
+    vyaw   = clamp(-dx * 0.0021, -0.02, 0.02);
+    vpitch = clamp( dy * 0.0016, -0.015, 0.015);
+  } else if(pointers.size === 2){
+    const arr = [...pointers.values()];
+    const d = Math.hypot(arr[0].x - arr[1].x, arr[0].y - arr[1].y);
+    if(lastPinch > 0) tdist = clamp(tdist * lastPinch / d, DMIN, DMAX);
+    lastPinch = d;
+  }
+});
+const lift = e => {
+  pointers.delete(e.pointerId);
+  if(pointers.size < 2) lastPinch = 0;
+  if(pointers.size === 0) canvas.classList.remove('drag');
+};
+['pointerup', 'pointercancel'].forEach(t => canvas.addEventListener(t, lift));
+
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  poke();
+  const d = e.deltaY * (e.deltaMode === 1 ? 33 : e.deltaMode === 2 ? 300 : 1);
+  tdist = clamp(tdist * Math.exp(d * 0.00095), DMIN, DMAX);
+}, { passive: false });
+
+// ---------- render loop ----------
+function frame(now){
+  const dt = Math.min(now - lastNow, 50) / 1000;
+  lastNow = now;
+  time += dt;
+
+  // opening dolly-in
+  if(!interacted){
+    if(reduced){ tdist = baseDist; }
+    else {
+      const start = baseDist * 1.78;
+      const k = clamp(time / 8.0, 0, 1);
+      tdist = start + (baseDist - start) * easeOut(k);
+    }
+  }
+  // inertia after release
+  if(pointers.size === 0){
+    tyaw = clamp(tyaw + vyaw, -0.38, 0.38);
+    tpitch = clamp(tpitch + vpitch, -0.30, 0.30);
+    vyaw *= 0.92; vpitch *= 0.92;
+  } else { vyaw *= 0.6; vpitch *= 0.6; }
+
+  // almost imperceptible idle drift keeps the frame breathing
+  const idle = (time - lastInteract) > 5;
+  driftA += ((idle ? 1 : 0) - driftA) * 0.02;
+  const dyaw = driftA * 0.020 * Math.sin(time * 0.043);
+  const dpit = driftA * 0.011 * Math.sin(time * 0.031 + 1.9);
+  yaw   += (tyaw + dyaw - yaw) * 0.06;
+  pitch += (tpitch + dpit - pitch) * 0.06;
+  dist  += (tdist - dist) * 0.05;
+
+  // camera basis
+  const cy = Math.cos(yaw), sy = Math.sin(yaw);
+  const cp = Math.cos(pitch), sp = Math.sin(pitch);
+  const px = dist * sy * cp, py = dist * sp, pz = dist * cy * cp;
+  let fx = -px, fy = -py, fz = -pz;
+  const fl = Math.hypot(fx, fy, fz); fx /= fl; fy /= fl; fz /= fl;
+  let rx = -fz, rz = fx;
+  const rl = Math.hypot(rx, rz) || 1; rx /= rl; rz /= rl;
+  const ux = -rz * fy, uy = rz * fx - rx * fz, uz = rx * fy;
+
+  // composition: off-centre at distance, recentres as you approach
+  const comp = 1 - sstep(2.70, 3.55, dist);
+  const ppx = 0.17 * (1 - comp) + 0.045 * comp;
+  const ppy = -0.13 * (1 - comp) - 0.035 * comp;
+  // slow convection "breathing" of the exposure
+  const ex = 0.47 * (1 + 0.022 * Math.sin(time * 0.31) + 0.016 * Math.sin(time * 0.13 + 1.7));
+  const pxsz = 2 * F / canvas.height;
+  const edge = Math.max(dist * 2 * F / canvas.height * 2.2, 0.0012);
+
+  gl.uniform2f(U.uRes, canvas.width, canvas.height);
+  gl.uniform1f(U.uTime, time);
+  gl.uniform3f(U.uCamPos, px, py, pz);
+  gl.uniform3f(U.uRight, rx, 0, rz);
+  gl.uniform3f(U.uUp, ux, uy, uz);
+  gl.uniform3f(U.uFwd, fx, fy, fz);
+  gl.uniform1f(U.uF, F);
+  gl.uniform1f(U.uPx, pxsz);
+  gl.uniform1f(U.uEdge, edge);
+  gl.uniform1f(U.uExp, ex);
+  gl.uniform2f(U.uPP, ppx, ppy);
+  gl.uniform1f(U.uSpin, SPIN * (reduced ? 0.3 : 1));
+
+  gl.drawArrays(gl.TRIANGLES, 0, 3);
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(now => { lastNow = now; requestAnimationFrame(frame); });
+setTimeout(() => { veil.style.opacity = '0'; }, 120);
+})();
+</script>
+</body>
+</html>
