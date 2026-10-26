@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pressione di degenerazione – animazione</title>
+<style>
+  :root {
+    --night: #0a0e1a;
+    --surface: #1c2542;
+    --surface-line: #34406e;
+    --starlight: #e9e6dc;
+    --muted: #8c93ab;
+    --blue: #8fb8ff;
+    --gold: #f0b84f;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--night); overflow: hidden;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  #scena { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .comandi { position: absolute; right: 1.2%; top: 2%; display: flex; gap: 8px; z-index: 2; }
+  button { appearance: none; background: var(--surface); color: var(--starlight);
+    border: 1px solid var(--surface-line); border-radius: 8px; padding: 7px 14px;
+    font: inherit; font-size: clamp(12px, 1.6vw, 16px); cursor: pointer; }
+  button:hover { border-color: var(--blue); }
+</style>
+</head>
+<body>
+<canvas id="scena" role="img" aria-label="Animazione schematica: una regione piena di elettroni viene compressa dalla gravità. Restringendosi, i livelli di energia disponibili si allontanano e gli elettroni, due per livello, sono costretti a occupare stati sempre più alti e a muoversi più velocemente. Cresce così una pressione verso l'esterno che alla fine bilancia la gravità."></canvas>
+<div class="comandi">
+  <button id="pausa" type="button">Pausa</button>
+  <button id="ricomincia" type="button">Ricomincia</button>
+</div>
+<script>
+(function () {
+'use strict';
+
+/* ---------- impostazioni generali ---------- */
+const W = 1100, H = 680;            // sistema di coordinate logiche
+const COL = {
+  night: '#0a0e1a', surface: '#1c2542', line: '#34406e',
+  text: '#e9e6dc', muted: '#8c93ab', blue: '#8fb8ff',
+  gold: '#f0b84f', orange: '#ea8d4d', red: '#e0483f', pink: '#ff6fa8'
+};
+const N_EL = 16;                    // elettroni (8 livelli pieni)
+const LIV_PIENI = N_EL / 2;
+const LIV_MOSTRATI = 13;            // livelli disegnati (gli ultimi vuoti)
+const X0 = 1.55;                    // dimensione iniziale, in unità di quella di equilibrio
+const L_EQ = 220;                   // lato della regione all'equilibrio (px logici)
+const K = 4.0, SMORZ = 0.9;         // dinamica della compressione
+
+const canvas = document.getElementById('scena');
+const ctx = canvas.getContext('2d');
+let scala = 1, offX = 0, offY = 0;
+
+function ridimensiona() {
+  const dpr = window.devicePixelRatio || 1;
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  canvas.width = Math.round(w * dpr);
+  canvas.height = Math.round(h * dpr);
+  scala = Math.min(w / W, h / H);
+  offX = (w - W * scala) / 2;
+  offY = (h - H * scala) / 2;
+  ctx.setTransform(dpr * scala, 0, 0, dpr * scala, dpr * offX, dpr * offY);
+}
+window.addEventListener('resize', ridimensiona);
+ridimensiona();
+
+/* ---------- colori per livello ---------- */
+function mescola(a, b, t) {
+  const pa = parseInt(a.slice(1), 16), pb = parseInt(b.slice(1), 16);
+  const r = ((pa >> 16) & 255) + (((pb >> 16) & 255) - ((pa >> 16) & 255)) * t;
+  const g = ((pa >> 8) & 255) + (((pb >> 8) & 255) - ((pa >> 8) & 255)) * t;
+  const bl = (pa & 255) + ((pb & 255) - (pa & 255)) * t;
+  return 'rgb(' + Math.round(r) + ',' + Math.round(g) + ',' + Math.round(bl) + ')';
+}
+function coloreLivello(n) {            // n = 1 .. LIV_PIENI
+  const t = (n - 1) / (LIV_PIENI - 1);
+  return t < 0.5 ? mescola(COL.blue, COL.gold, t * 2) : mescola(COL.gold, COL.orange, (t - 0.5) * 2);
+}
+
+/* ---------- stato ---------- */
+let x, v, tempo, elettroni, urti, fase, tFase, inPausa = false, tEquilibrio;
+
+function casuale(seme) {               // generatore riproducibile
+  let s = seme;
+  return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; };
+}
+
+function inizializza() {
+  x = X0; v = 0; tempo = 0; fase = 'riempimento'; tFase = 0; tEquilibrio = 0;
+  urti = [];
+  const rnd = casuale(12345);
+  elettroni = [];
+  for (let i = 0; i < N_EL; i++) {
+    const ang = rnd() * Math.PI * 2;
+    elettroni.push({
+      livello: Math.floor(i / 2) + 1,
+      spin: i % 2 === 0 ? 1 : -1,
+      u: 0.15 + 0.7 * rnd(), w: 0.15 + 0.7 * rnd(),
+      dx: Math.cos(ang), dy: Math.sin(ang),
+      visibile: false, comparsa: 0
+    });
+  }
+}
+inizializza();
+
+/* ---------- grandezze fisiche schematiche ----------
+   x = lato della regione / lato all'equilibrio
+   pressione di degenerazione  ∝ x^-5  (elettroni non relativistici)
+   pressione richiesta dalla gravità ∝ x^-4
+   le due curve si incrociano per x = 1                           */
+const pDeg = () => Math.pow(x, -5);
+const pGrav = () => Math.pow(x, -4);
+
+/* ---------- aggiornamento ---------- */
+function aggiorna(dt) {
+  tempo += dt; tFase += dt;
+
+  if (fase === 'riempimento') {
+    const quanti = Math.min(N_EL, Math.floor(tFase / 0.32) + 1);
+    for (let i = 0; i < quanti; i++) {
+      if (!elettroni[i].visibile) { elettroni[i].visibile = true; elettroni[i].comparsa = 0; }
+    }
+    if (tFase > N_EL * 0.32 + 2.2) { fase = 'compressione'; tFase = 0; }
+  } else if (fase === 'compressione') {
+    const sub = 10;
+    for (let k = 0; k < sub; k++) {
+      const h = dt / sub;
+      const a = K * (pDeg() - pGrav()) - SMORZ * v;
+      v += a * h; x += v * h;
+      if (x < 0.6) { x = 0.6; v = 0; }
+    }
+    if (Math.abs(x - 1) < 0.012 && Math.abs(v) < 0.02) tEquilibrio += dt; else tEquilibrio = 0;
+    if (tEquilibrio > 1.2) { fase = 'equilibrio'; tFase = 0; }
+  } else if (fase === 'equilibrio') {
+    const a = K * (pDeg() - pGrav()) - SMORZ * v;
+    v += a * dt; x += v * dt;
+    if (tFase > 9) { inizializza(); }
+  }
+
+  // moto degli elettroni nella regione: velocità ∝ n / L
+  const L = L_EQ * x;
+  for (const e of elettroni) {
+    if (!e.visibile) continue;
+    e.comparsa = Math.min(1, e.comparsa + dt * 3);
+    const vel = 26 * e.livello / x;                 // px logici al secondo
+    e.u += e.dx * vel * dt / L;
+    e.w += e.dy * vel * dt / L;
+    const m = 9 / L;                                // raggio della pallina in unità del lato
+    if (e.u < m) { e.u = m; e.dx = Math.abs(e.dx); urto('sx', e.w, e.livello); }
+    if (e.u > 1 - m) { e.u = 1 - m; e.dx = -Math.abs(e.dx); urto('dx', e.w, e.livello); }
+    if (e.w < m) { e.w = m; e.dy = Math.abs(e.dy); urto('su', e.u, e.livello); }
+    if (e.w > 1 - m) { e.w = 1 - m; e.dy = -Math.abs(e.dy); urto('giu', e.u, e.livello); }
+  }
+  for (const u of urti) u.vita -= dt;
+  urti = urti.filter(u => u.vita > 0);
+}
+function urto(lato, pos, livello) { urti.push({ lato, pos, livello, vita: 0.35 }); }
+
+/* ---------- disegno: utilità ---------- */
+function testo(t, px, py, size, colore, allinea, peso) {
+  ctx.font = (peso || '400') + ' ' + size + 'px ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+  ctx.fillStyle = colore; ctx.textAlign = allinea || 'left'; ctx.textBaseline = 'middle';
+  ctx.fillText(t, px, py);
+}
+function freccia(x1, y1, x2, y2, colore, spessore) {
+  const ang = Math.atan2(y2 - y1, x2 - x1), lung = Math.hypot(x2 - x1, y2 - y1);
+  if (lung < 4) return;
+  const p = Math.min(14, lung * 0.5);
+  ctx.strokeStyle = colore; ctx.fillStyle = colore; ctx.lineWidth = spessore; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(x1, y1);
+  ctx.lineTo(x2 - Math.cos(ang) * p * 0.8, y2 - Math.sin(ang) * p * 0.8); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - Math.cos(ang - 0.45) * p, y2 - Math.sin(ang - 0.45) * p);
+  ctx.lineTo(x2 - Math.cos(ang + 0.45) * p, y2 - Math.sin(ang + 0.45) * p);
+  ctx.closePath(); ctx.fill();
+}
+function avvolgi(t, larghezza, size) {
+  ctx.font = '400 ' + size + 'px ui-sans-serif, system-ui, sans-serif';
+  const parole = t.split(' '), righe = []; let r = '';
+  for (const p of parole) {
+    const prova = r ? r + ' ' + p : p;
+    if (ctx.measureText(prova).width > larghezza && r) { righe.push(r); r = p; } else r = prova;
+  }
+  if (r) righe.push(r);
+  return righe;
+}
+
+/* ---------- didascalia di fase ---------- */
+function didascalia() {
+  if (fase === 'riempimento')
+    return '1. Principio di esclusione: ogni livello di energia accoglie al massimo due elettroni, con spin opposti. Gli altri devono occupare i livelli più alti.';
+  if (fase === 'compressione')
+    return '2. La gravità comprime la regione: i livelli di energia si allontanano e gli elettroni, spinti verso stati più alti, si muovono più veloci. Cresce la pressione verso l’esterno.';
+  return '3. Equilibrio: la pressione di degenerazione bilancia la spinta della gravità. La regione smette di contrarsi, anche senza bisogno di calore.';
+}
+
+/* ---------- disegno ---------- */
+function disegna() {
+  ctx.fillStyle = COL.night; ctx.fillRect(-offX / scala, -offY / scala, W + 2 * offX / scala, H + 2 * offY / scala);
+
+  // titolo e didascalia
+  testo('Come nasce la pressione di degenerazione', 34, 34, 27, COL.orange, 'left', '600');
+  const righe = avvolgi(didascalia(), W - 68, 20);
+  righe.forEach((r, i) => testo(r, 34, 86 + i * 27, 20, COL.text));
+
+  /* --- pannello sinistro: la regione compressa --- */
+  const cx = 290, cy = 345;
+  const L = L_EQ * x;
+  const x1 = cx - L / 2, y1 = cy - L / 2;
+
+  // frecce della gravità (verso l'interno) e della pressione (verso l'esterno)
+  const scalaP = 38;
+  const lGrav = Math.max(12, Math.min(80, scalaP * pGrav()));
+  const lDeg = Math.max(12, Math.min(80, scalaP * pDeg()));
+  const latiF = [
+    { ax: 0, ay: -1 }, { ax: 0, ay: 1 }, { ax: -1, ay: 0 }, { ax: 1, ay: 0 }
+  ];
+  for (const s of latiF) {
+    for (const off of [-0.25, 0.25]) {
+      // punto sul lato
+      const px = cx + s.ax * L / 2 + (s.ay !== 0 ? off * L : 0);
+      const py = cy + s.ay * L / 2 + (s.ax !== 0 ? off * L : 0);
+      const gravita = off < 0;
+      if (gravita) {
+        freccia(px + s.ax * (lGrav + 10), py + s.ay * (lGrav + 10), px + s.ax * 6, py + s.ay * 6, COL.pink, 4);
+      } else {
+        freccia(px + s.ax * 4, py + s.ay * 4, px + s.ax * (lDeg + 6), py + s.ay * (lDeg + 6), COL.gold, 4);
+      }
+    }
+  }
+
+  // la regione
+  ctx.fillStyle = 'rgba(28,37,66,0.55)'; ctx.fillRect(x1, y1, L, L);
+  ctx.strokeStyle = COL.line; ctx.lineWidth = 3; ctx.strokeRect(x1, y1, L, L);
+
+  // lampi degli urti sulle pareti
+  for (const u of urti) {
+    const a = u.vita / 0.35;
+    ctx.strokeStyle = 'rgba(240,184,79,' + (0.85 * a).toFixed(3) + ')'; ctx.lineWidth = 4;
+    const lt = 10 + u.livello * 1.5;
+    ctx.beginPath();
+    if (u.lato === 'sx') { ctx.moveTo(x1, y1 + u.pos * L - lt); ctx.lineTo(x1, y1 + u.pos * L + lt); }
+    if (u.lato === 'dx') { ctx.moveTo(x1 + L, y1 + u.pos * L - lt); ctx.lineTo(x1 + L, y1 + u.pos * L + lt); }
+    if (u.lato === 'su') { ctx.moveTo(x1 + u.pos * L - lt, y1); ctx.lineTo(x1 + u.pos * L + lt, y1); }
+    if (u.lato === 'giu') { ctx.moveTo(x1 + u.pos * L - lt, y1 + L); ctx.lineTo(x1 + u.pos * L + lt, y1 + L); }
+    ctx.stroke();
+  }
+
+  // elettroni
+  for (const e of elettroni) {
+    if (!e.visibile) continue;
+    const ex = x1 + e.u * L, ey = y1 + e.w * L;
+    const col = coloreLivello(e.livello);
+    ctx.globalAlpha = e.comparsa;
+    // scia proporzionale alla velocità
+    const vel = 26 * e.livello / x;
+    ctx.strokeStyle = col; ctx.lineWidth = 3; ctx.globalAlpha = 0.35 * e.comparsa;
+    ctx.beginPath(); ctx.moveTo(ex, ey); ctx.lineTo(ex - e.dx * vel * 0.12, ey - e.dy * vel * 0.12); ctx.stroke();
+    ctx.globalAlpha = e.comparsa;
+    ctx.fillStyle = col; ctx.beginPath(); ctx.arc(ex, ey, 8, 0, Math.PI * 2); ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+
+  // etichette del pannello sinistro
+  testo('regione occupata dagli elettroni', cx, 556, 18, COL.muted, 'center');
+  // legenda frecce
+  freccia(100, 604, 142, 604, COL.pink, 4); testo('spinta della gravità', 154, 604, 19, COL.text);
+  freccia(100, 638, 142, 638, COL.gold, 4); testo('pressione di degenerazione degli elettroni', 154, 638, 19, COL.text);
+
+  /* --- pannello destro: i livelli di energia --- */
+  const lx = 660, lw = 250, base = 560, cima = 150;
+  testo('Livelli di energia', lx + lw / 2, cima - 18, 21, COL.orange, 'center', '600');
+  // asse
+  freccia(lx - 30, base, lx - 30, cima + 6, COL.muted, 2);
+  ctx.save(); ctx.translate(lx - 50, (base + cima) / 2); ctx.rotate(-Math.PI / 2);
+  testo('energia', 0, 0, 18, COL.muted, 'center'); ctx.restore();
+
+  const passo = 34 / x;                // distanza tra livelli: cresce quando la regione si stringe
+  ctx.save();
+  ctx.beginPath(); ctx.rect(lx - 20, cima, lw + 200, base - cima + 20); ctx.clip();
+  let yFermi = null;
+  for (let n = 1; n <= LIV_MOSTRATI; n++) {
+    const y = base - n * passo;
+    if (y < cima - 10) break;
+    const pieno = n <= LIV_PIENI;
+    ctx.strokeStyle = pieno ? 'rgba(233,230,220,0.55)' : 'rgba(140,147,171,0.35)';
+    ctx.lineWidth = 2; ctx.setLineDash(pieno ? [] : [6, 6]);
+    ctx.beginPath(); ctx.moveTo(lx, y); ctx.lineTo(lx + lw, y); ctx.stroke();
+    ctx.setLineDash([]);
+    // gli elettroni sul livello
+    for (const e of elettroni) {
+      if (!e.visibile || e.livello !== n) continue;
+      const pxs = lx + lw / 2 + (e.spin > 0 ? -34 : 34);
+      ctx.globalAlpha = e.comparsa;
+      ctx.fillStyle = coloreLivello(n);
+      ctx.beginPath(); ctx.arc(pxs, y, 8, 0, Math.PI * 2); ctx.fill();
+      // freccia dello spin
+      const len = Math.min(13, passo * 0.42);
+      freccia(pxs + 16, y + (e.spin > 0 ? len : -len), pxs + 16, y + (e.spin > 0 ? -len : len), coloreLivello(n), 2.5);
+      ctx.globalAlpha = 1;
+      if (n === LIV_PIENI) yFermi = y;
+    }
+  }
+  ctx.restore();
+  // energia di Fermi
+  if (yFermi !== null && yFermi > cima) {
+    ctx.strokeStyle = COL.gold; ctx.lineWidth = 1.5; ctx.setLineDash([4, 5]);
+    ctx.beginPath(); ctx.moveTo(lx + lw + 6, yFermi); ctx.lineTo(lx + lw + 26, yFermi); ctx.stroke();
+    ctx.setLineDash([]);
+    testo('energia di Fermi', lx + lw + 32, yFermi, 18, COL.gold);
+  }
+  testo('livelli vuoti', lx + lw + 32, Math.max(cima + 12, base - (LIV_PIENI + 2) * passo), 16, COL.muted);
+  testo('2 elettroni per livello (spin ↑ e ↓)', lx + lw / 2, base + 26, 17, COL.muted, 'center');
+
+  /* --- bilancio delle pressioni --- */
+  const bx = 700, by = 612, bw = 250;
+  testo('gravità', bx - 12, by, 17, COL.pink, 'right');
+  ctx.fillStyle = COL.pink; ctx.fillRect(bx, by - 8, bw * Math.min(1, pGrav() / 1.6), 16);
+  testo('pressione', bx - 12, by + 28, 17, COL.gold, 'right');
+  ctx.fillStyle = COL.gold; ctx.fillRect(bx, by + 20, bw * Math.min(1, pDeg() / 1.6), 16);
+  ctx.strokeStyle = COL.line; ctx.lineWidth = 1.5; ctx.strokeRect(bx, by - 8, bw, 44);
+  if (fase === 'equilibrio') testo('→ equilibrio', bx + bw + 14, by + 14, 18, COL.text, 'left', '600');
+
+  testo('Schema non in scala', W - 34, 664, 15, COL.muted, 'right');
+}
+
+/* ---------- ciclo ---------- */
+let ultimo = performance.now();
+function ciclo(ora) {
+  const dt = Math.min(0.05, (ora - ultimo) / 1000);
+  ultimo = ora;
+  if (!inPausa) aggiorna(dt);
+  disegna();
+  requestAnimationFrame(ciclo);
+}
+requestAnimationFrame(ciclo);
+
+const bPausa = document.getElementById('pausa');
+bPausa.addEventListener('click', () => { inPausa = !inPausa; bPausa.textContent = inPausa ? 'Riprendi' : 'Pausa'; });
+document.getElementById('ricomincia').addEventListener('click', () => {
+  inizializza(); inPausa = false; bPausa.textContent = 'Pausa';
+});
+})();
+</script>
+</body>
+</html>
