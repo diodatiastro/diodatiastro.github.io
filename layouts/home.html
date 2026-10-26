@@ -1,0 +1,70 @@
+{{- /*
+  Home page = catalogo delle stelle: introduzione (testo di content/_index.md)
+  e riquadri di tutti gli articoli della sezione /stelle, dal più recente al più vecchio,
+  con paginazione. Un saggio diviso in capitoli conta come un solo articolo.
+
+  Riquadro doppio in cima alla prima pagina:
+  - se un articolo ha nel front matter  inEvidenza = true  il riquadro doppio è suo
+    (etichetta "In evidenza") e l'articolo non compare una seconda volta nell'elenco;
+  - se nessun articolo ce l'ha, il riquadro doppio va all'articolo più recente
+    (etichetta "Ultimo articolo");
+  - l'articolo in evidenza può essere uno solo: se per errore sono più d'uno,
+    vince il più recente e Hugo lo segnala con un avviso durante la compilazione.
+
+  Articoli per pagina (escluso il riquadro doppio): parametro articoliPerPagina
+  in hugo.toml (predefinito 12). La vecchia pagina /stelle/ non viene più generata
+  e rimanda qui (alias in content/_index.md).
+*/ -}}
+{{ define "main" }}
+{{- $perPagina := site.Params.articoliPerPagina | default 12 | int -}}
+{{- $tutti := (site.GetPage "/stelle").Pages.ByDate.Reverse -}}
+{{- $scelti := where $tutti "Params.inevidenza" true -}}
+{{- if gt (len $scelti) 1 -}}
+  {{- $nomi := slice -}}
+  {{- range $scelti }}{{ $nomi = $nomi | append .Title }}{{ end -}}
+  {{- warnf "Home: più articoli hanno inEvidenza = true (%s); in evidenza va solo il più recente, %q." (delimit $nomi ", ") (index $scelti 0).Title -}}
+{{- end -}}
+{{- $evidenza := index $tutti 0 -}}
+{{- $etichetta := "Ultimo articolo" -}}
+{{- with $scelti -}}
+  {{- $evidenza = index . 0 -}}
+  {{- $etichetta = "In evidenza" -}}
+{{- end -}}
+{{- $resto := complement (slice $evidenza) $tutti -}}
+{{- $pag := .Paginate $resto $perPagina -}}
+<article class="markdown book-article">
+  {{- if eq $pag.PageNumber 1 }}
+  {{ .Content }}
+  {{- end }}
+  {{- partial "home/katex.html" . }}
+
+  <div class="hc-elenco hc-elenco--catalogo">
+    {{- if eq $pag.PageNumber 1 }}
+    {{ partial "home/card-articolo.html" (dict "pagina" $evidenza "evidenza" true "etichetta" $etichetta) }}
+    {{- end }}
+    {{- range $pag.Pages }}
+    {{ partial "home/card-articolo.html" . }}
+    {{- end }}
+  </div>
+
+  {{- if gt $pag.TotalPages 1 }}
+  <nav class="hc-paginazione" aria-label="Pagine del catalogo">
+    <span class="hc-pag-lato">
+      {{- with $pag.Prev }}<a href="{{ .URL }}">← Più recenti</a>{{ end -}}
+    </span>
+    <span class="hc-pag-numeri">
+      {{- range $pag.Pagers }}
+        {{- if eq .PageNumber $pag.PageNumber }}
+        <span class="hc-pag-corrente" aria-current="page">{{ .PageNumber }}</span>
+        {{- else }}
+        <a href="{{ .URL }}">{{ .PageNumber }}</a>
+        {{- end }}
+      {{- end }}
+    </span>
+    <span class="hc-pag-lato hc-pag-lato--destra">
+      {{- with $pag.Next }}<a href="{{ .URL }}">Meno recenti →</a>{{ end -}}
+    </span>
+  </nav>
+  {{- end }}
+</article>
+{{ end }}

@@ -4,6 +4,7 @@ subtitle = "La stella zero"
 date = "2026-08-12"
 draft = false
 tags = ["sequenza principale", "classe A0V", "rotatore veloce", "oscuramento gravitazionale"]
+inEvidenza = false
 +++
 
 {{< katex />}}

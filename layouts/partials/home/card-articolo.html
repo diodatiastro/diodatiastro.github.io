@@ -1,15 +1,29 @@
-{{- /* Riquadro di un articolo del catalogo (usato dalla home e dall'indice del catalogo) */ -}}
-{{- $img := partial "home/copertina.html" . -}}
-<a class="hc-card hc-card--articolo" href="{{ .RelPermalink }}">
+{{- /* Riquadro di un articolo del catalogo (usato dalla home e dallo shortcode ultimi-contenuti).
+     Riceve la pagina dell'articolo, oppure un dizionario (dict "pagina" $p "evidenza" true)
+     per il riquadro in evidenza, largo quanto due riquadri normali; in quel caso
+     "etichetta" è il testo sopra la data ("In evidenza" o "Ultimo articolo"). */ -}}
+{{- $p := . -}}
+{{- $evidenza := false -}}
+{{- $etichetta := "" -}}
+{{- if reflect.IsMap . -}}
+  {{- $p = .pagina -}}
+  {{- $evidenza = .evidenza | default false -}}
+  {{- $etichetta = .etichetta | default "Ultimo articolo" -}}
+{{- end -}}
+{{- $img := partial "home/copertina.html" $p -}}
+<a class="hc-card hc-card--articolo{{ if $evidenza }} hc-card--evidenza{{ end }}" href="{{ $p.RelPermalink }}">
   <span class="hc-thumb{{ if not $img }} hc-thumb--vuota{{ end }}" aria-hidden="true">
-    {{- with $img }}<img src="{{ . }}" alt="" loading="lazy">{{ end -}}
+    {{- with $img }}<img src="{{ . }}" alt="" loading="{{ if $evidenza }}eager{{ else }}lazy{{ end }}">{{ end -}}
   </span>
   <span class="hc-corpo">
-    <span class="hc-data">{{ .Date | time.Format ":date_long" }}</span>
-    <span class="hc-titolo">{{ .Title }}</span>
-    {{- with .Params.subtitle }}
+    {{- if $evidenza }}
+    <span class="hc-etichetta">{{ $etichetta }}</span>
+    {{- end }}
+    <span class="hc-data">{{ $p.Date | time.Format ":date_long" }}</span>
+    <span class="hc-titolo">{{ $p.Title }}</span>
+    {{- with $p.Params.subtitle }}
     <span class="hc-sottotitolo">{{ . }}</span>
     {{- end }}
-    <span class="hc-testo">{{ partial "home/estratto.html" . }}</span>
+    <span class="hc-testo">{{ partial "home/estratto.html" $p }}</span>
   </span>
 </a>

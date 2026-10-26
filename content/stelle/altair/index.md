@@ -4,6 +4,7 @@ subtitle = "La stella ovale"
 date = "2026-08-15"
 draft = false
 tags = ["sequenza principale", "classe A7V", "rotatore veloce", "oscuramento gravitazionale", "variabile delta scuti"]
+inEvidenza = false
 +++
 
 {{< katex />}}

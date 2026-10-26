@@ -4,6 +4,7 @@ subtitle = "Tutti i numeri della nostra stella"
 date = "2026-08-17"
 draft = false
 tags = ["sequenza principale", "classe G2V", "sistema planetario"]
+inEvidenza = false
 +++
 
 {{< katex />}}

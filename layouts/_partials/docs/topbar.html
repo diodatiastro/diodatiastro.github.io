@@ -1,0 +1,44 @@
+{{- /* Barra superiore, presente in tutte le pagine (richiamata da layouts/baseof.html):
+     logo del sito e link "Le stelle" (entrambi alla home,
+     cioè al catalogo delle stelle), link al dizionario (tranne che nelle pagine
+     del dizionario stesso) e casella di ricerca.
+     Sugli schermi stretti compare anche l'icona che apre il sommario della pagina. */ -}}
+{{- $nelDizionario := eq .Section "dizionario" -}}
+<header class="topbar">
+  <div class="topbar-interno">
+    <a class="topbar-logo" href="{{ site.Home.RelPermalink }}" title="{{ site.Title }}">
+      <img src="{{ site.Params.BookLogo | relURL }}" alt="{{ site.Title }}" />
+    </a>
+
+    <nav class="topbar-link" aria-label="Sezioni del sito">
+      <a href="{{ site.Home.RelPermalink }}">Le stelle</a>
+      {{- if not $nelDizionario }}
+      {{- with site.GetPage "/dizionario" }}
+      <span class="topbar-separatore" aria-hidden="true">|</span>
+      <a href="{{ .RelPermalink }}">Dizionario</a>
+      {{- end }}
+      {{- end }}
+    </nav>
+
+    <div class="topbar-ricerca">
+      {{ partial "docs/search" . }}
+    </div>
+
+    {{- if partial "docs/toc-show" . }}
+    <label class="topbar-sommario" for="toc-control" title="In questa pagina">
+      <img src="{{ partial "docs/icon" "toc" }}" class="book-icon" alt="In questa pagina" />
+    </label>
+    {{- end }}
+  </div>
+</header>
+{{- if partial "docs/toc-show" . }}
+<script>
+  /* Sugli schermi stretti il sommario si apre come un pannello sotto la barra:
+     si richiude da solo quando si sceglie un paragrafo */
+  document.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest(".book-header aside a")) {
+      document.getElementById("toc-control").checked = false;
+    }
+  });
+</script>
+{{- end }}

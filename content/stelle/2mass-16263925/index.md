@@ -5,6 +5,7 @@ date = "2026-10-13"
 draft = false
 tags = ["nana bruna", "subnana", "classe L", "alone galattico", "metallicità"]
 copertina = "immagini/2mass1626-rappresentazione-artistica.jpg"
+inEvidenza = false
 +++
 
 {{< katex />}}

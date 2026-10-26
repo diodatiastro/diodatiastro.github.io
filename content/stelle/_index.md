@@ -1,9 +1,18 @@
 +++
-title = "Catalogo delle stelle"
+title = "Le stelle più affascinanti del cielo"
 date = "2026-07-14"
 draft = false
 bookCollapseSection = true
 bookToC = false
+# Il titolo compare come sezione nei risultati della ricerca;
+# la pagina stessa, che non viene generata, resta fuori dalla ricerca.
+bookSearchExclude = true
+
+# L'indice del catalogo ora è la home page: questa pagina non viene generata
+# e l'indirizzo /stelle/ rimanda alla home (alias in content/_index.md).
+[build]
+  render = "never"
+  list = "always"
 +++
 
 {{< katex />}}

@@ -2,5 +2,5 @@
      stesso stile del titolo della home (classe titolo-sezione).
      Niente titolo vuoto sulla home, che ha il suo nel testo. */ -}}
 {{- if .Title -}}
-<h1{{ if and .IsSection (in (slice "/stelle" "/dizionario") .Path) }} class="titolo-sezione"{{ end }}>{{ .Title }}</h1>
+<h1{{ if or .IsHome (and .IsSection (in (slice "/stelle" "/dizionario") .Path)) }} class="titolo-sezione"{{ end }}>{{ .Title }}</h1>
 {{- end -}}

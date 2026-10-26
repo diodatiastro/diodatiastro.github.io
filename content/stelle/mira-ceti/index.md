@@ -4,6 +4,7 @@ subtitle = "La stella-proiettile dall’immensa scia"
 date = "2026-08-10"
 draft = false
 tags = ["gigante rossa", "classe M5e-M9e", "variabile Mira", "sistema binario", "nana bianca"]
+inEvidenza = false
 +++
 
 {{< katex />}}

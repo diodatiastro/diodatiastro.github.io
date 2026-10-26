@@ -8,6 +8,7 @@ tags = ["stella di neutroni", "magnetar", "soft gamma repeater (SGR)", "GRB"]
 type = "saggio"
 bookCollapseSection = true
 ordinePerPeso = true
+inEvidenza = true
 +++
 
 {{< katex />}}

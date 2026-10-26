@@ -1041,3 +1041,474 @@ h1.titolo-sezione {
   margin: 0.5rem 0 0;
   text-align: right;
 }
+
+
+/* ==========================================================================
+   Nuova veste (ottobre 2026): niente menu laterale, barra superiore
+   con logo, link e ricerca (layouts/_partials/docs/topbar.html)
+   ========================================================================== */
+
+:root {
+  --topbar-altezza: 3.5rem;
+}
+
+/* I paragrafi raggiunti con un'ancora non finiscono sotto la barra */
+html {
+  scroll-padding-top: calc(var(--topbar-altezza) + 1rem);
+}
+
+/* Senza il menu a sinistra la pagina si restringe, per righe di lettura comode */
+.container {
+  max-width: 76rem;
+}
+
+/* --- Barra superiore --- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--night-deep) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-interno {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 76rem;
+  height: var(--topbar-altezza);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.topbar-logo {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.topbar-logo img {
+  height: 2.4rem;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.topbar-logo:hover img {
+  transform: scale(1.06);
+}
+
+.topbar-link a,
+.topbar-link a:visited {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--stellar-gold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.topbar-link a:hover {
+  color: var(--nebula-blue);
+}
+
+.topbar-ricerca {
+  flex: 0 1 18rem;
+  margin-left: auto;
+  min-width: 0;
+}
+
+.topbar .book-search {
+  margin: 0;
+}
+
+.topbar .book-search input {
+  padding: 0.4rem 0.7rem;
+  font-size: 0.95rem;
+}
+
+/* Risultati della ricerca: un pannello che scende sotto la casella */
+.topbar #book-search-results {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  width: min(26rem, calc(100vw - 2rem));
+  max-height: 70vh;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--night-deep);
+  border: 1px solid var(--surface-line);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+}
+
+.topbar #book-search-results:empty {
+  display: none;
+}
+
+.topbar #book-search-results li {
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar #book-search-results li:last-child {
+  border-bottom: none;
+}
+
+.topbar #book-search-results a {
+  display: block;
+  color: var(--nebula-blue);
+  text-decoration: none;
+}
+
+.topbar #book-search-results a:hover {
+  color: var(--stellar-gold);
+}
+
+.topbar #book-search-results small {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  opacity: 1;
+}
+
+/* Icona del sommario: solo sugli schermi stretti */
+.topbar-sommario {
+  display: none;
+  flex: 0 0 auto;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.topbar-sommario img {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+/* Il sommario a destra comincia sotto la barra */
+.book-toc .book-toc-content {
+  top: var(--topbar-altezza);
+}
+
+@media screen and (min-width: 90rem) {
+  .book-toc .book-toc-content {
+    top: calc(var(--topbar-altezza) + 1rem);
+  }
+}
+
+@media screen and (max-width: 56rem) {
+  .topbar-sommario {
+    display: flex;
+  }
+
+  /* L'intestazione del tema ora contiene solo il sommario a scomparsa */
+  .book-header {
+    margin: 0;
+  }
+
+  /* Sommario aperto: pannello fisso sotto la barra superiore */
+  #toc-control:checked ~ main .book-header aside {
+    position: fixed;
+    z-index: 19;
+    top: var(--topbar-altezza);
+    right: 0;
+    left: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 0.75rem 1rem;
+    background: var(--night-deep);
+    border-bottom: 1px solid var(--surface-line);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 36rem) {
+  .topbar-interno {
+    gap: 0.75rem;
+    padding: 0 0.75rem;
+  }
+
+  .topbar-logo img {
+    height: 2rem;
+  }
+
+  .topbar-link a,
+  .topbar-link a:visited {
+    font-size: 0.95rem;
+  }
+}
+
+/* --- Home: riquadro in evidenza per l'articolo più recente --- */
+.hc-card--evidenza {
+  grid-column: 1 / -1;
+}
+
+.book-page a.hc-card--evidenza {
+  min-height: 17rem;
+  padding: 1rem;
+  gap: 1.5rem;
+  border-color: color-mix(in srgb, var(--stellar-gold) 45%, var(--surface-line));
+  background:
+    radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--stellar-gold) 9%, transparent) 0%, transparent 60%),
+    var(--night-deep);
+}
+
+.hc-card--evidenza .hc-thumb {
+  flex-basis: 48%;
+  min-height: 15rem;
+}
+
+.hc-card--evidenza .hc-corpo {
+  gap: 0.45rem;
+  padding: 0.5rem 0.25rem;
+}
+
+.hc-etichetta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--stellar-gold);
+}
+
+.hc-card--evidenza .hc-titolo {
+  font-size: 1.9rem;
+}
+
+.hc-card--evidenza .hc-sottotitolo {
+  font-size: 1.1rem;
+}
+
+.hc-card--evidenza .hc-testo {
+  font-size: 1rem;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+}
+
+@media screen and (max-width: 44rem) {
+  .book-page a.hc-card--evidenza {
+    flex-direction: column;
+  }
+
+  .hc-card--evidenza .hc-thumb {
+    flex-basis: auto;
+    width: 100%;
+    min-height: 12rem;
+  }
+
+  .hc-card--evidenza .hc-titolo {
+    font-size: 1.55rem;
+  }
+}
+
+/* Con html e body alti esattamente quanto la finestra la barra "sticky"
+   scorrerebbe via insieme al body: il body deve poter crescere col contenuto */
+body {
+  height: auto;
+  min-height: 100%;
+}
+
+/* Link testuali della barra: catalogo | dizionario */
+.topbar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.topbar-separatore {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 36rem) {
+  .topbar-link {
+    gap: 0.5rem;
+  }
+}
+
+/* Schermi stretti: la casella di ricerca scende su una seconda riga della barra */
+@media screen and (max-width: 36rem) {
+  :root {
+    --topbar-altezza: 5.9rem;
+  }
+
+  .topbar-interno {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: var(--topbar-altezza);
+    row-gap: 0.45rem;
+    padding: 0.5rem 0.75rem;
+    align-content: center;
+  }
+
+  .topbar-link {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .topbar-ricerca {
+    order: 3;
+    flex: 1 0 100%;
+    margin-left: 0;
+  }
+}
+
+/* Schermi stretti: logo e link sulla prima riga, ricerca e icona del sommario sulla seconda */
+@media screen and (max-width: 36rem) {
+  .topbar-link {
+    order: 2;
+    flex: 1 1 calc(100% - 2.75rem);
+  }
+
+  .topbar-ricerca {
+    order: 3;
+    flex: 1 1 0;
+  }
+
+  .topbar-sommario {
+    order: 4;
+  }
+}
+
+/* I link della barra occupano solo lo spazio del loro testo */
+.topbar-link a {
+  flex: 0 0 auto;
+}
+
+
+/* ==========================================================================
+   Prova: barra superiore bianca, per dare contrasto al resto della pagina
+   (per tornare alla barra scura basta cancellare questo blocco)
+   ========================================================================== */
+
+.topbar {
+  --topbar-testo: #16204a;
+  --topbar-accento: #c8601c;
+  background: #ffffff;
+  border-bottom: 1px solid #d9deea;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  backdrop-filter: none;
+}
+
+.topbar-link a,
+.topbar-link a:visited {
+  color: var(--topbar-testo);
+}
+
+.topbar-link a:hover {
+  color: var(--topbar-accento);
+}
+
+.topbar-separatore {
+  color: #a3aac0;
+}
+
+.topbar .book-search input {
+  background: #f1f3f8;
+  border: 1px solid #cfd5e3;
+  color: var(--topbar-testo);
+}
+
+.topbar .book-search input::placeholder {
+  color: #7a8299;
+}
+
+.topbar .book-search input:focus {
+  border-color: #4a6fd1;
+  box-shadow: 0 0 0 3px rgba(74, 111, 209, 0.2);
+}
+
+.topbar .book-search-spinner {
+  border-top-color: var(--topbar-testo);
+}
+
+/* Icona del sommario scura sul fondo bianco */
+.topbar-sommario img {
+  filter: none;
+}
+
+/* Pannello dei risultati della ricerca, bianco come la barra */
+.topbar #book-search-results {
+  background: #ffffff;
+  border-color: #d9deea;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.topbar #book-search-results li {
+  border-bottom-color: #e6e9f1;
+}
+
+.topbar #book-search-results a {
+  color: #2b4fb3;
+}
+
+.topbar #book-search-results a:hover {
+  color: var(--topbar-accento);
+}
+
+.topbar #book-search-results small {
+  color: #6b7390;
+}
+
+/* Link della barra bianca: blu meno cupo e caratteri più grandi */
+.topbar {
+  --topbar-testo: #3a4f96;
+}
+
+.topbar-link a,
+.topbar-link a:visited {
+  font-size: 1.3rem;
+}
+
+.topbar-separatore {
+  font-size: 1.3rem;
+}
+
+.topbar .book-search input {
+  color: #16204a;
+}
+
+@media screen and (max-width: 36rem) {
+  .topbar-link a,
+  .topbar-link a:visited,
+  .topbar-separatore {
+    font-size: 1.15rem;
+  }
+}
+
+/* Bordo inferiore della barra bianca: sfumatura di circa due millimetri
+   dal bianco al blu scuro della pagina, al posto del filo e dell'ombra */
+.topbar {
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.topbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--sfumatura);
+  background: linear-gradient(to bottom, #ffffff, var(--night));
+  pointer-events: none;
+}
+
+/* Spessore della sfumatura e ricentratura verticale del contenuto della barra:
+   lo spazio occupato dalla sfumatura in basso viene escluso dal centraggio,
+   così logo, link e ricerca salgono di metà del suo spessore */
+.topbar {
+  --sfumatura: 2mm;
+}
+
+.topbar-interno {
+  padding-bottom: var(--sfumatura);
+}
+
+@media screen and (max-width: 36rem) {
+  .topbar-interno {
+    padding-bottom: calc(0.5rem + var(--sfumatura));
+  }
+}

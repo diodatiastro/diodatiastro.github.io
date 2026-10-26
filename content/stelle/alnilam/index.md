@@ -4,6 +4,7 @@ subtitle = "La gemma più brillante della Cintura di Orione"
 date = "2026-08-04"
 draft = false
 tags = ["supergigante blu", "classe B0 Ia", "variabile Alfa Cygni"]
+inEvidenza = false
 +++
 
 {{< katex />}}
