@@ -20,7 +20,7 @@
   --line:           #1e2740; /* bordi e separatori sottili */
   --surface:        #1c2542; /* sfondo elementi interattivi, più chiaro del pannello laterale */
   --surface-line:   #34406e; /* bordo ben visibile per gli elementi su --surface */
-  --halpha-pink:    #ff6fa8; /* colore delle formule KaTeX nel testo — emissione H-alfa */
+  --halpha-pink:    #ff7aaf; /* colore delle formule KaTeX nel testo — emissione H-alfa (leggermente schiarito da #ff6fa8) */
 
   /* Override delle variabili del tema Hugo Book */
   --body-background:       var(--night);
