@@ -1,7 +1,12 @@
+{{- /* Foglio di stile del sito. fingerprint aggiunge al nome del file un'impronta
+     del contenuto (custom.<impronta>.css): a ogni modifica di assets/css/custom.css
+     il nome cambia e i browser dei visitatori scaricano subito la versione nuova,
+     invece di riusare quella vecchia rimasta in memoria. */ -}}
 {{ $css := resources.Get "css/custom.css" }}
 
 {{ if $css }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ $css = $css | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 {{ end }}
 
 {{- /*

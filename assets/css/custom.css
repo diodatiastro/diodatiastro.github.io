@@ -1406,7 +1406,7 @@ body {
 }
 
 .topbar .book-search input {
-  background: #f1f3f8;
+  background: #e5e8ef; /* prima #f1f3f8 */
   border: 1px solid #cfd5e3;
   color: var(--topbar-testo);
 }
@@ -1511,4 +1511,17 @@ body {
   .topbar-interno {
     padding-bottom: calc(0.5rem + var(--sfumatura));
   }
+}
+
+/* Pannello dei risultati della ricerca: comincia esattamente dove finisce la
+   barra (prima la sfumatura del bordo inferiore ne copriva gli angoli
+   arrotondati superiori) e i titoli dei risultati sono più marcati.
+   1rem = distanza tra il fondo della casella e il fondo della barra */
+.topbar #book-search-results {
+  top: calc(100% + 1rem);
+  z-index: 2;
+}
+
+.topbar #book-search-results a {
+  font-weight: 600;
 }

@@ -1,9 +1,8 @@
 {{- /* Barra superiore, presente in tutte le pagine (richiamata da layouts/baseof.html):
      logo del sito e link "Le stelle" (entrambi alla home,
-     cioè al catalogo delle stelle), link al dizionario (tranne che nelle pagine
-     del dizionario stesso) e casella di ricerca.
+     cioè al catalogo delle stelle), link "Dizionario" alla home del dizionario
+     (uguali in tutte le pagine) e casella di ricerca.
      Sugli schermi stretti compare anche l'icona che apre il sommario della pagina. */ -}}
-{{- $nelDizionario := eq .Section "dizionario" -}}
 <header class="topbar">
   <div class="topbar-interno">
     <a class="topbar-logo" href="{{ site.Home.RelPermalink }}" title="{{ site.Title }}">
@@ -12,11 +11,9 @@
 
     <nav class="topbar-link" aria-label="Sezioni del sito">
       <a href="{{ site.Home.RelPermalink }}">Le stelle</a>
-      {{- if not $nelDizionario }}
       {{- with site.GetPage "/dizionario" }}
       <span class="topbar-separatore" aria-hidden="true">|</span>
       <a href="{{ .RelPermalink }}">Dizionario</a>
-      {{- end }}
       {{- end }}
     </nav>
 
