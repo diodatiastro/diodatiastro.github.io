@@ -667,8 +667,9 @@ html, body {
 }
 
 /* Riquadro */
-.book-page a.hc-card,
+.book-page .hc-card,
 .book-page a.hc-card:visited {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -683,7 +684,7 @@ html, body {
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.book-page a.hc-card:hover {
+.book-page .hc-card:hover {
   color: var(--starlight);
   text-decoration: none;
   border-color: var(--accento-colonna);
@@ -1245,7 +1246,7 @@ html {
   grid-column: 1 / -1;
 }
 
-.book-page a.hc-card--evidenza {
+.book-page .hc-card--evidenza {
   min-height: 17rem;
   padding: 1rem;
   gap: 1.5rem;
@@ -1288,7 +1289,7 @@ html {
 }
 
 @media screen and (max-width: 44rem) {
-  .book-page a.hc-card--evidenza {
+  .book-page .hc-card--evidenza {
     flex-direction: column;
   }
 
@@ -1524,4 +1525,89 @@ body {
 
 .topbar #book-search-results a {
   font-weight: 600;
+}
+
+/* ==========================================================================
+   Riquadri degli articoli: il riquadro è un blocco, non più un unico link.
+   Il link vero è sul titolo e, con un livello trasparente (::after), copre
+   tutto il riquadro, che resta cliccabile ovunque; i tag in fondo sono link
+   indipendenti alle pagine dei tag, posti sopra quel livello.
+   ========================================================================== */
+
+.book-page a.hc-link,
+.book-page a.hc-link:visited,
+.book-page a.hc-link:hover {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.hc-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.hc-card:focus-within {
+  border-color: var(--accento-colonna);
+}
+
+.hc-card--articolo .hc-corpo {
+  align-self: stretch;
+}
+
+/* Tag in fondo al riquadro, al posto della data */
+.hc-tag {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+
+.book-page a.hc-tag-voce,
+.book-page a.hc-tag-voce:visited {
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--surface-line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--nebula-blue);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.book-page a.hc-tag-voce:hover {
+  color: var(--stellar-gold);
+  border-color: var(--stellar-gold);
+}
+
+/* Il tema dà ai link dentro un contenitore flex "flex: 1 1 auto": qui titolo
+   e tag devono occupare solo lo spazio del loro testo */
+.hc-corpo > a.hc-link,
+.hc-tag > a.hc-tag-voce {
+  flex: 0 0 auto;
+}
+
+/* Il titolo del riquadro, ora un link, mantiene il colore dei titoli */
+.book-page a.hc-titolo,
+.book-page a.hc-titolo:visited,
+.book-page a.hc-titolo:hover {
+  color: var(--stellar-orange);
+}
+
+.book-page a.hc-titolo {
+  font-weight: 600;
+}
+
+.book-page a.hc-tag-voce:hover,
+.book-page a.hc-tag-voce:focus {
+  text-decoration: none;
 }

@@ -3,15 +3,21 @@
   e riquadri di tutti gli articoli della sezione /stelle, dal più recente al più vecchio,
   con paginazione. Un saggio diviso in capitoli conta come un solo articolo.
 
-  Riquadro doppio in cima alla prima pagina:
-  - se un articolo ha nel front matter  inEvidenza = true  il riquadro doppio è suo
-    (etichetta "In evidenza") e l'articolo non compare una seconda volta nell'elenco;
-  - se nessun articolo ce l'ha, il riquadro doppio va all'articolo più recente
-    (etichetta "Ultimo articolo");
-  - l'articolo in evidenza può essere uno solo: se per errore sono più d'uno,
-    vince il più recente e Hugo lo segnala con un avviso durante la compilazione.
+  Riquadri doppi in cima alla prima pagina:
+  - ogni articolo con  inEvidenza = true  nel front matter ha un riquadro doppio
+    (etichetta "In evidenza") e non compare una seconda volta nell'elenco;
+  - l'ordine dei riquadri in evidenza si decide con  ordineEvidenza = 1, 2, 3...
+    (1 = più in alto); gli articoli in evidenza senza ordineEvidenza vengono dopo
+    quelli numerati, dal più recente al più vecchio; a parità di numero vince il più recente;
+  - il primo riquadro in evidenza apre la pagina; ciascuno dei successivi compare
+    dopo una riga di due riquadri normali (righeTraEvidenze in hugo.toml per
+    cambiare il numero di righe), alternandosi con la griglia; nel front matter di
+    un articolo in evidenza  righePrima = 0, 1, 2...  stabilisce quante righe lo
+    precedono (0 = subito sotto il riquadro in evidenza precedente);
+  - se nessun articolo è in evidenza, il riquadro doppio va all'articolo più recente
+    (etichetta "Ultimo articolo"), come prima.
 
-  Articoli per pagina (escluso il riquadro doppio): parametro articoliPerPagina
+  Articoli per pagina (esclusi i riquadri doppi): parametro articoliPerPagina
   in hugo.toml (predefinito 12). La vecchia pagina /stelle/ non viene più generata
   e rimanda qui (alias in content/_index.md).
 */ -}}
@@ -19,18 +25,16 @@
 {{- $perPagina := site.Params.articoliPerPagina | default 12 | int -}}
 {{- $tutti := (site.GetPage "/stelle").Pages.ByDate.Reverse -}}
 {{- $scelti := where $tutti "Params.inevidenza" true -}}
-{{- if gt (len $scelti) 1 -}}
-  {{- $nomi := slice -}}
-  {{- range $scelti }}{{ $nomi = $nomi | append .Title }}{{ end -}}
-  {{- warnf "Home: più articoli hanno inEvidenza = true (%s); in evidenza va solo il più recente, %q." (delimit $nomi ", ") (index $scelti 0).Title -}}
+{{- $numerati := where $scelti "Params.ordineevidenza" "!=" nil -}}
+{{- $numerati = sort $numerati "Params.ordineevidenza" -}}
+{{- $senzaNumero := complement $numerati $scelti -}}
+{{- $evidenza := $numerati | append $senzaNumero -}}
+{{- $etichetta := "In evidenza" -}}
+{{- if not $evidenza -}}
+  {{- $evidenza = first 1 $tutti -}}
+  {{- $etichetta = "Ultimo articolo" -}}
 {{- end -}}
-{{- $evidenza := index $tutti 0 -}}
-{{- $etichetta := "Ultimo articolo" -}}
-{{- with $scelti -}}
-  {{- $evidenza = index . 0 -}}
-  {{- $etichetta = "In evidenza" -}}
-{{- end -}}
-{{- $resto := complement (slice $evidenza) $tutti -}}
+{{- $resto := complement $evidenza $tutti -}}
 {{- $pag := .Paginate $resto $perPagina -}}
 <article class="markdown book-article">
   {{- if eq $pag.PageNumber 1 }}
@@ -39,10 +43,29 @@
   {{- partial "home/katex.html" . }}
 
   <div class="hc-elenco hc-elenco--catalogo">
+    {{- $normali := $pag.Pages }}
+    {{- $usati := 0 }}
     {{- if eq $pag.PageNumber 1 }}
-    {{ partial "home/card-articolo.html" (dict "pagina" $evidenza "evidenza" true "etichetta" $etichetta) }}
+      {{- /* Il primo riquadro in evidenza apre la pagina; ogni altro è preceduto
+           da una o più righe di riquadri normali (righeTraEvidenze in hugo.toml,
+           predefinito 1 riga = 2 riquadri), così la home non è un blocco uniforme */}}
+      {{- $righePredefinite := site.Params.righeTraEvidenze | default 1 | int }}
+      {{- range $i, $e := $evidenza }}
+        {{- if gt $i 0 }}
+          {{- /* righePrima nel front matter dell'articolo in evidenza vale più del
+               valore generale: righePrima = 0 lo mette subito sotto il precedente */}}
+          {{- $righe := $righePredefinite }}
+          {{- if isset $e.Params "righeprima" }}{{ $righe = int $e.Params.righeprima }}{{ end }}
+          {{- $passo := mul 2 $righe }}
+          {{- range first $passo (after $usati $normali) }}
+    {{ partial "home/card-articolo.html" . }}
+          {{- end }}
+          {{- $usati = add $usati $passo }}
+        {{- end }}
+    {{ partial "home/card-articolo.html" (dict "pagina" $e "evidenza" true "etichetta" $etichetta) }}
+      {{- end }}
     {{- end }}
-    {{- range $pag.Pages }}
+    {{- range after $usati $normali }}
     {{ partial "home/card-articolo.html" . }}
     {{- end }}
   </div>

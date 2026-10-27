@@ -9,6 +9,7 @@ type = "saggio"
 bookCollapseSection = true
 ordinePerPeso = true
 inEvidenza = true
+ordineEvidenza = 1
 +++
 
 {{< katex />}}
