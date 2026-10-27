@@ -1,0 +1,19 @@
+{{- /* Menu a tendina con tutti i tag del sito, in ordine alfabetico, ciascuno con
+     il numero di articoli. Scegliendo un tag si apre la sua pagina.
+     Usato da layouts/term.html (pagina di un tag).
+     Riceve la pagina corrente: se è la pagina di un tag, quel tag è già selezionato. */ -}}
+{{- $corrente := "" -}}
+{{- if eq .Kind "term" }}{{ $corrente = .RelPermalink }}{{ end -}}
+{{- with site.Taxonomies.tags }}
+<div class="scelta-tag">
+  <label for="scelta-tag">{{ if $corrente }}Altri tag{{ else }}Scegli un tag{{ end }}</label>
+  <select id="scelta-tag" onchange="if (this.value) window.location.href = this.value;">
+    {{- if not $corrente }}
+    <option value="" selected disabled>— {{ len . }} tag —</option>
+    {{- end }}
+    {{- range .Alphabetical }}
+    <option value="{{ .Page.RelPermalink }}"{{ if eq .Page.RelPermalink $corrente }} selected{{ end }}>{{ .Page.Data.Term }} ({{ .Count }})</option>
+    {{- end }}
+  </select>
+</div>
+{{- end }}

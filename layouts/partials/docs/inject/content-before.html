@@ -1,6 +1,14 @@
 {{- /* Titolo della pagina. Sugli indici del catalogo e del dizionario ha lo
      stesso stile del titolo della home (classe titolo-sezione).
      Niente titolo vuoto sulla home, che ha il suo nel testo. */ -}}
-{{- if .Title -}}
-<h1{{ if or .IsHome (and .IsSection (in (slice "/stelle" "/dizionario") .Path)) }} class="titolo-sezione"{{ end }}>{{ .Title }}</h1>
+{{- if eq .Kind "term" -}}
+{{- /* Pagina di un tag: il tag come è scritto nel front matter (non il titolo
+       automatico di Hugo, con le iniziali maiuscole) */ -}}
+{{- /* "Tag" sopra il nome è un link alla pagina con tutti i tag (/tags/) */ -}}
+<h1 class="titolo-sezione">{{ with site.GetPage "/tags" }}<a class="titolo-tag-etichetta" href="{{ .RelPermalink }}" title="Tutti i tag">Tag</a>{{ else }}<span class="titolo-tag-etichetta">Tag</span>{{ end }} {{ .Data.Term }}</h1>
+{{- else if .Title -}}
+{{- /* Home, indici e pagina dei tag: titolo-sezione (con il filo sotto).
+       Articoli, capitoli e voci: titolo-pagina, stesso carattere e colore;
+       il filo sotto c'è solo nelle voci del dizionario (vedi custom.css). */ -}}
+<h1 class="{{ if or .IsHome (eq .Kind "taxonomy") (and .IsSection (in (slice "/stelle" "/dizionario") .Path)) }}titolo-sezione{{ else }}titolo-pagina{{ end }}">{{ .Title }}</h1>
 {{- end -}}

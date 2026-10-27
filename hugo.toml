@@ -14,6 +14,8 @@ theme = 'hugo-book'
   BookSection = '*'
   math = true
   walineServer = 'https://diodatiastro-commenti.vercel.app'
+  # Data degli articoli all'italiana (es. 12 agosto 2026): :date_long segue la lingua del sito
+  BookDateFormat = ':date_long'
 
 [markup]
   [markup.goldmark]

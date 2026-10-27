@@ -1,23 +1,25 @@
+{{- /* Pagina di un tag (/tags/nome-del-tag/): menu a tendina per passare agli altri
+     tag e, per ogni articolo con quel tag, un riquadro grande come quelli degli
+     articoli in evidenza della home (senza etichetta), dal più recente al più
+     vecchio. Niente colonna a destra. */ -}}
 {{ define "main" }}
-<article class="markdown book-post">
-  <ul class="book-tag-index">
-  {{ range .Pages.ByTitle }}
-    <li>
-      <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>{{ with .Params.subtitle }} — {{ . }}{{ end }}
-    </li>
-  {{ end }}
-  </ul>
+<article class="markdown book-article">
+  {{ partial "docs/scelta-tag.html" . }}
+  {{- partial "home/katex.html" . }}
+
+  <p class="tag-conteggio">
+    {{- $n := len .Pages -}}
+    {{ $n }} {{ if eq $n 1 }}articolo{{ else }}articoli{{ end }} con questo tag
+  </p>
+
+  <div class="hc-elenco hc-elenco--catalogo">
+    {{- range .Pages.ByDate.Reverse }}
+    {{ partial "home/card-articolo.html" (dict "pagina" . "evidenza" true "etichetta" "") }}
+    {{- end }}
+  </div>
 </article>
 {{ end }}
 
-{{ define "toc-container" }}
-<aside class="book-toc">
-  <div class="book-toc-content">
-    {{ template "toc" . }}
-  </div>
-</aside>
-{{ end }}
-
-{{ define "toc" }}
-  {{ partial "docs/taxonomy" . }}
-{{ end }}
+{{- /* Niente colonna a destra (print "" serve solo a rendere non vuota la definizione,
+     altrimenti Go ignorerebbe la sostituzione) */ -}}
+{{ define "toc-container" }}{{ print "" }}{{ end }}

@@ -1,0 +1,137 @@
+{{- /* Indice a trattini, alla maniera di Medium, nelle pagine con il sommario
+     (articoli, capitoli del saggio, voci del dizionario):
+     - a destra del testo, un trattino per ogni paragrafo principale;
+     - il trattino del paragrafo che si sta leggendo è evidenziato;
+     - passando il mouse sui trattini (o toccandoli) si apre un pannello con i
+       titoli dei paragrafi e dei sottoparagrafi, tutti cliccabili.
+     Il pannello è costruito copiando il sommario generato da Hugo, che resta nella
+     pagina ma nascosto (custom.css). Sugli schermi stretti i trattini non ci sono
+     e resta il sommario che si apre dall'icona nella barra superiore. */ -}}
+{{- if partial "docs/toc-show" . }}
+<script>
+(function () {
+  // Parte dopo DOMContentLoaded, come lo script in docs/inject/footer.html che
+  // aggiunge al sommario le voci dei box ("L'argomento in breve" ecc.):
+  // registrato dopo, viene eseguito dopo, e trova il sommario completo.
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", avvia);
+  else avvia();
+
+  function avvia() {
+  var sorgente = document.querySelector(".book-toc nav#TableOfContents");
+  if (!sorgente || !sorgente.querySelector("a")) return;
+
+  // Paragrafi principali (primo livello del sommario)
+  var principali = Array.prototype.slice.call(sorgente.querySelectorAll(":scope > ul > li"));
+  if (!principali.length) return;
+
+  // Struttura: <nav class="indice-trattini"> trattini + pannello
+  var box = document.createElement("nav");
+  box.className = "indice-trattini";
+  box.setAttribute("aria-label", "Paragrafi dell'articolo");
+
+  var trattini = document.createElement("div");
+  trattini.className = "indice-trattini__barre";
+  trattini.setAttribute("aria-hidden", "true");
+  principali.forEach(function () {
+    var t = document.createElement("span");
+    trattini.appendChild(t);
+  });
+
+  var pannello = document.createElement("div");
+  pannello.className = "indice-trattini__pannello";
+  var copia = sorgente.cloneNode(true);
+  copia.removeAttribute("id");
+  pannello.appendChild(copia);
+
+  box.appendChild(trattini);
+  box.appendChild(pannello);
+  document.body.appendChild(box);
+
+  // All'apertura del pannello la voce evidenziata è in vista
+  function mostraAttiva() {
+    var a = pannello.querySelector("a.toc-attivo");
+    if (!a) return;
+    var p = pannello.getBoundingClientRect(), v = a.getBoundingClientRect();
+    if (v.top < p.top + 20 || v.bottom > p.bottom - 20) {
+      pannello.scrollTop += (v.top - p.top) - p.height / 3;
+    }
+  }
+  box.addEventListener("mouseenter", mostraAttiva);
+
+  // Su touch: un tocco sui trattini apre o chiude il pannello
+  trattini.addEventListener("click", function () { box.classList.toggle("aperto"); mostraAttiva(); });
+  document.addEventListener("click", function (e) {
+    if (!box.contains(e.target)) box.classList.remove("aperto");
+  });
+  // Clic su un titolo del pannello: salto diretto al paragrafo, poi due piccole
+  // correzioni, perché le immagini caricate solo all'arrivo possono spostare il
+  // testo (lo scorrimento animato si fermava prima, in un paragrafo precedente)
+  pannello.addEventListener("click", function (e) {
+    var a = e.target.closest("a");
+    if (!a) return;
+    box.classList.remove("aperto");
+    var id = decodeURIComponent((a.getAttribute("href") || "").slice(1));
+    var meta = document.getElementById(id);
+    if (!meta) return;
+    e.preventDefault();
+    history.pushState(null, "", "#" + id);
+    function vai() { meta.scrollIntoView({ behavior: "instant", block: "start" }); }
+    vai();
+    setTimeout(vai, 250);
+    setTimeout(vai, 900);
+  });
+
+  // Titoli nel testo, nell'ordine; per ognuno l'indice del paragrafo principale
+  var titoli = [];
+  principali.forEach(function (li, n) {
+    // Le voci dei box ("L'argomento in breve"...) non sono titoli: restano nel
+    // pannello, cliccabili, ma non decidono quale paragrafo è in lettura
+    li.querySelectorAll("a[href^='#']").forEach(function (a) {
+      if (a.closest("li.toc-box-entry")) return;
+      var id = decodeURIComponent(a.getAttribute("href").slice(1));
+      var h = document.getElementById(id);
+      if (h) titoli.push({ id: id, el: h, principale: n });
+    });
+  });
+  titoli.sort(function (a, b) {
+    return a.el.compareDocumentPosition(b.el) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+  });
+
+  var barre = trattini.children;
+  var attivo;
+  function aggiorna() {
+    var barra = document.querySelector(".topbar");
+    var limite = (barra ? barra.offsetHeight : 0) + 40;
+    var corrente = null;
+    for (var i = 0; i < titoli.length; i++) {
+      if (titoli[i].el.getBoundingClientRect().top <= limite) corrente = titoli[i];
+      else break;
+    }
+    if (titoli.length && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      corrente = titoli[titoli.length - 1];
+    }
+    var chiave = corrente ? corrente.id : "";
+    if (chiave === attivo) return;
+    attivo = chiave;
+    for (var j = 0; j < barre.length; j++) {
+      barre[j].classList.toggle("attivo", !!corrente && corrente.principale === j);
+    }
+    // Voce evidenziata nel pannello e nel sommario per smartphone
+    document.querySelectorAll(".indice-trattini__pannello a, .book-header nav#TableOfContents a").forEach(function (a) {
+      var id = decodeURIComponent((a.getAttribute("href") || "").slice(1));
+      a.classList.toggle("toc-attivo", !!corrente && id === corrente.id);
+    });
+  }
+
+  var inAttesa = false;
+  window.addEventListener("scroll", function () {
+    if (inAttesa) return;
+    inAttesa = true;
+    requestAnimationFrame(function () { inAttesa = false; aggiorna(); });
+  }, { passive: true });
+  window.addEventListener("resize", aggiorna);
+  aggiorna();
+  }
+})();
+</script>
+{{- end }}

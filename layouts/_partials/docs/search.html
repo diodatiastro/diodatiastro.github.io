@@ -1,0 +1,33 @@
+{{- /* Copia di themes/hugo-book/layouts/_partials/docs/search.html con in più il
+     pulsante × a destra nella casella: compare quando c'è del testo e, cliccato,
+     cancella la ricerca e chiude i risultati. Anche il tasto Esc cancella la ricerca. */ -}}
+{{ if default true .Site.Params.BookSearch }}
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="{{ partial "docs/text/i18n" "Search" }}"
+    aria-label="{{ partial "docs/text/i18n" "Search" }}"
+    maxlength="64" />
+  <button type="button" class="book-search-cancella" aria-label="Cancella la ricerca" title="Cancella la ricerca" hidden>&times;</button>
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>
+  (function () {
+    document.querySelector(".book-search").classList.remove("hidden");
+    var input = document.getElementById("book-search-input");
+    var cancella = document.querySelector(".book-search-cancella");
+    var risultati = document.getElementById("book-search-results");
+    function aggiorna() { cancella.hidden = !input.value; }
+    function svuota() {
+      input.value = "";
+      while (risultati.firstChild) { risultati.removeChild(risultati.firstChild); }
+      aggiorna();
+    }
+    input.addEventListener("input", aggiorna);
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && input.value) { e.preventDefault(); svuota(); }
+    });
+    cancella.addEventListener("click", function () { svuota(); input.focus(); });
+  })();
+</script>
+{{ end }}

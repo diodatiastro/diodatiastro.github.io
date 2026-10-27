@@ -1,0 +1,15 @@
+{{- /* Pagina /tags/: tutti i tag del sito come etichette cliccabili, con il
+     numero di articoli. Niente colonna a destra. */ -}}
+{{ define "main" }}
+<article class="markdown book-article">
+  <div class="tag-tutti">
+    {{- range .Data.Terms.Alphabetical }}
+    <a class="hc-tag-voce" href="{{ .Page.RelPermalink }}">{{ .Page.Data.Term }} <span class="tag-numero">{{ .Count }}</span></a>
+    {{- end }}
+  </div>
+</article>
+{{ end }}
+
+{{- /* Niente colonna a destra (print "" serve solo a rendere non vuota la definizione,
+     altrimenti Go ignorerebbe la sostituzione) */ -}}
+{{ define "toc-container" }}{{ print "" }}{{ end }}

@@ -60,6 +60,11 @@
       var tipoMatch = box.className.match(/info-box--(\S+)/);
       var tipo = tipoMatch ? tipoMatch[1] : 'approfondimento';
 
+      // I box "L'argomento in breve" stanno subito sotto il titolo che
+      // riassumono: nel sommario sarebbero un doppione, quindi non vi entrano.
+      // Gli altri box (definizioni, approfondimenti...) sì.
+      if (testo.toLowerCase().replace(/\u2019/g, "'") === "l'argomento in breve") return;
+
       // L'id è ormai generato lato server da box.html (via anchorize),
       // stabile e utilizzabile anche da link esterni alla pagina.
       // Il fallback qui sotto copre solo box senza id (caso non

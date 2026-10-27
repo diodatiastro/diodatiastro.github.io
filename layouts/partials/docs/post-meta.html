@@ -10,7 +10,7 @@
   <div class="text-small book-post-tags">
     <span class="book-post-tags__label">Tag:</span>
     {{ range $n, $term := $terms }}{{ if $n }}, {{ end }}
-      <a href="{{ $term.RelPermalink }}">{{ $term.Title }}</a>
+      <a href="{{ $term.RelPermalink }}">{{ $term.Data.Term }}</a>
     {{- end }}
   </div>
   {{ end }}

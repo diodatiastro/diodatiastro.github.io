@@ -3,14 +3,15 @@
      il riquadro (vedi .hc-link in custom.css); i tag in fondo sono link alle pagine dei tag.
      Riceve la pagina dell'articolo, oppure un dizionario (dict "pagina" $p "evidenza" true)
      per il riquadro in evidenza, largo quanto due riquadri normali; in quel caso
-     "etichetta" è il testo sopra il titolo ("In evidenza" o "Ultimo articolo"). */ -}}
+     "etichetta" è il testo sopra il titolo ("In evidenza", "Ultimo articolo"
+     oppure "" per nessuna etichetta, come nelle pagine dei tag). */ -}}
 {{- $p := . -}}
 {{- $evidenza := false -}}
 {{- $etichetta := "" -}}
 {{- if reflect.IsMap . -}}
   {{- $p = .pagina -}}
   {{- $evidenza = .evidenza | default false -}}
-  {{- $etichetta = .etichetta | default "Ultimo articolo" -}}
+  {{- if isset . "etichetta" }}{{ $etichetta = .etichetta }}{{ else }}{{ $etichetta = "Ultimo articolo" }}{{ end -}}
 {{- end -}}
 {{- $img := partial "home/copertina.html" $p -}}
 <div class="hc-card hc-card--articolo{{ if $evidenza }} hc-card--evidenza{{ end }}">
@@ -18,7 +19,7 @@
     {{- with $img }}<img src="{{ . }}" alt="" loading="{{ if $evidenza }}eager{{ else }}lazy{{ end }}">{{ end -}}
   </span>
   <span class="hc-corpo">
-    {{- if $evidenza }}
+    {{- if and $evidenza $etichetta }}
     <span class="hc-etichetta">{{ $etichetta }}</span>
     {{- end }}
     <a class="hc-titolo hc-link" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
@@ -26,16 +27,13 @@
     <span class="hc-sottotitolo">{{ . }}</span>
     {{- end }}
     <span class="hc-testo">{{ partial "home/estratto.html" $p }}</span>
-    {{- /* Tag con il link alla loro pagina. Il testo è quello del front matter
-         (minuscole), non il titolo della pagina del tag, che Hugo scrive con
-         le iniziali maiuscole; GetTerms restituisce i tag nello stesso ordine. */}}
+    {{- /* Tag con il link alla loro pagina. Il testo è il tag come scritto nel
+         front matter (.Data.Term), non il titolo della pagina del tag, che Hugo
+         scrive con le iniziali maiuscole. */}}
     {{- with $p.GetTerms "tags" }}
-    {{- $nomi := $p.Params.tags }}
     <span class="hc-tag">
-      {{- range $i, $t := . }}
-        {{- $nome := $t.LinkTitle }}
-        {{- if and (lt $i (len $nomi)) (eq (urlize (index $nomi $i)) (path.Base $t.RelPermalink)) }}{{ $nome = index $nomi $i }}{{ end }}
-        <a class="hc-tag-voce" href="{{ $t.RelPermalink }}">{{ $nome }}</a>
+      {{- range . }}
+        <a class="hc-tag-voce" href="{{ .RelPermalink }}">{{ .Data.Term }}</a>
       {{- end -}}
     </span>
     {{- end }}

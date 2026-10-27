@@ -1611,3 +1611,442 @@ body {
 .book-page a.hc-tag-voce:focus {
   text-decoration: none;
 }
+
+/* Pulsante × per cancellare la ricerca (layouts/_partials/docs/search.html) */
+.topbar .book-search input {
+  padding-right: 2.2rem;
+}
+
+.book-search-cancella {
+  position: absolute;
+  top: 50%;
+  right: 0.35rem;
+  transform: translateY(-50%);
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #6b7390;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.book-search-cancella:hover,
+.book-search-cancella:focus-visible {
+  background: #d3d8e4;
+  color: #16204a;
+  outline: none;
+}
+
+.book-search-cancella[hidden] {
+  display: none;
+}
+
+/* Testo digitato nella casella di ricerca in mezzo grassetto (Inter 500);
+   il suggerimento "Cerca" resta con il peso normale */
+.topbar .book-search input {
+  font-weight: 500;
+}
+
+.topbar .book-search input::placeholder {
+  font-weight: 400;
+}
+
+
+/* ==========================================================================
+   Pagine dei tag (layouts/term.html e layouts/taxonomy.html)
+   ========================================================================== */
+
+/* "Tag" in piccolo davanti al nome del tag nel titolo */
+.titolo-tag-etichetta {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stellar-gold);
+}
+
+/* Menu a tendina dei tag */
+.scelta-tag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0 0 1.25rem;
+}
+
+.scelta-tag label {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.scelta-tag select {
+  min-width: min(20rem, 100%);
+  max-width: 100%;
+  padding: 0.45rem 2.2rem 0.45rem 0.75rem;
+  border: 1px solid var(--surface-line);
+  border-radius: 8px;
+  background-color: var(--surface);
+  /* freccina disegnata in SVG, al posto di quella del sistema */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238fb8ff' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  color: var(--starlight);
+  font: inherit;
+  font-size: 0.95rem;
+  appearance: none;
+  cursor: pointer;
+}
+
+.scelta-tag select:focus {
+  outline: none;
+  border-color: var(--nebula-blue);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--nebula-blue) 25%, transparent);
+}
+
+.scelta-tag option {
+  background: var(--night-deep);
+  color: var(--starlight);
+}
+
+.tag-conteggio {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Pagina /tags/: tutti i tag come etichette */
+.tag-tutti {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem;
+}
+
+.tag-tutti > a.hc-tag-voce {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+  padding: 0.2rem 0.7rem;
+}
+
+.tag-numero {
+  margin-left: 0.25rem;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+/* "Tag" sopra il nome del tag: link alla pagina con tutti i tag */
+.book-page a.titolo-tag-etichetta,
+.book-page a.titolo-tag-etichetta:visited {
+  width: fit-content;
+  color: var(--stellar-gold);
+  text-decoration: none;
+}
+
+.book-page a.titolo-tag-etichetta:hover {
+  color: var(--nebula-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+
+/* Titolo di articoli, capitoli del saggio e voci del dizionario: stesso
+   carattere con le grazie e stesso arancio del titolo della home */
+h1.titolo-pagina {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: var(--stellar-orange);
+  margin-bottom: 1.25rem;
+}
+
+/* Solo nelle voci del dizionario, che non hanno sottotitolo, un filo sotto il
+   titolo lo stacca dal testo (negli articoli c'è già il sottotitolo) */
+.book-kind-page.book-type-dizionario h1.titolo-pagina {
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid var(--line);
+}
+
+
+/* ==========================================================================
+   Pagine con il sommario (body.con-indice): testo centrato su una larghezza
+   di lettura comoda e indice a trattini al posto della colonna di destra
+   (script in layouts/partials/docs/inject/body.html)
+   ========================================================================== */
+
+/* Niente colonna di destra: il sommario resta nella pagina solo come
+   sorgente dell'indice a trattini */
+.con-indice .book-toc {
+  display: none;
+}
+
+/* Colonna di testo centrata, come su Medium e Substack */
+.con-indice .book-page {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+/* Sugli schermi larghi figure e animazioni possono uscire un po' dalla colonna
+   di testo; le didascalie restano larghe quanto il testo */
+@media screen and (min-width: 80rem) {
+  .con-indice .markdown figure.scientific-figure {
+    margin-left: -6rem;
+    margin-right: -6rem;
+  }
+
+  .con-indice .markdown figure.scientific-figure figcaption {
+    max-width: 46rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Indice a trattini, fisso a destra del testo */
+.indice-trattini {
+  position: fixed;
+  z-index: 15;
+  top: calc(var(--topbar-altezza) + 7rem);
+  left: calc(50% + 26.5rem);
+}
+
+@media screen and (min-width: 80rem) {
+  .indice-trattini {
+    left: calc(50% + 32.5rem);
+  }
+}
+
+/* Sugli schermi stretti niente trattini: c'è l'icona nella barra superiore */
+@media screen and (max-width: 56rem) {
+  .indice-trattini {
+    display: none;
+  }
+}
+
+.indice-trattini__barre {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.5rem 0.4rem;
+  cursor: pointer;
+}
+
+.indice-trattini__barre span {
+  display: block;
+  width: 1rem;
+  height: 2px;
+  border-radius: 1px;
+  background: color-mix(in srgb, var(--muted) 55%, transparent);
+  transition: background 0.2s ease, width 0.2s ease;
+}
+
+.indice-trattini__barre span.attivo {
+  width: 1.4rem;
+  background: var(--stellar-gold);
+}
+
+/* Pannello con i titoli: compare a sinistra dei trattini, sopra il testo */
+.indice-trattini__pannello {
+  position: absolute;
+  top: -0.5rem;
+  right: 100%;
+  width: 22rem;
+  max-height: calc(100vh - var(--topbar-altezza) - 9rem);
+  overflow-y: auto;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--surface-line);
+  border-radius: 10px;
+  background: var(--night-deep);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(0.5rem);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+}
+
+.indice-trattini:hover .indice-trattini__pannello,
+.indice-trattini:focus-within .indice-trattini__pannello,
+.indice-trattini.aperto .indice-trattini__pannello {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.indice-trattini__pannello ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.indice-trattini__pannello li {
+  margin: 0;
+}
+
+.indice-trattini__pannello ul ul {
+  padding-left: 1rem;
+}
+
+.indice-trattini__pannello a,
+.indice-trattini__pannello a:visited {
+  display: block;
+  padding: 0.28rem 0;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: var(--nebula-blue);
+  text-decoration: none;
+}
+
+.indice-trattini__pannello ul ul a {
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--nebula-blue) 75%, var(--muted));
+}
+
+.indice-trattini__pannello a:hover {
+  color: var(--stellar-orange);
+}
+
+/* Paragrafo che si sta leggendo, nel pannello e nel sommario per smartphone */
+#TableOfContents a.toc-attivo,
+.indice-trattini__pannello a.toc-attivo {
+  color: var(--stellar-gold);
+  font-weight: 600;
+}
+
+/* Su smartphone il tocco sull'icona del sommario attiva una casella nascosta
+   (#toc-control) che stava in cima alla pagina: il browser vi saltava, e la
+   pagina tornava indietro. Tenendola fissa in alto, il tocco non sposta più la lettura. */
+#toc-control {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Pannello dell'indice a trattini in chiaro, come la barra superiore e i
+   risultati della ricerca: stacca dal fondo scuro e si legge meglio */
+.indice-trattini__pannello {
+  padding: 0.75rem 0.6rem;
+  border: 1px solid #d9deea;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
+}
+
+.indice-trattini__pannello a,
+.indice-trattini__pannello a:visited {
+  padding: 0.32rem 0.6rem;
+  border-left: 3px solid transparent;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #16204a;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.indice-trattini__pannello ul ul a,
+.indice-trattini__pannello ul ul a:visited {
+  padding-left: 1.4rem;
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: #3a4f96;
+}
+
+.indice-trattini__pannello ul ul {
+  padding-left: 0;
+}
+
+/* Voci dei riquadri ("L'argomento in breve"...) in corsivo, più discrete */
+.indice-trattini__pannello li.toc-box-entry > a {
+  font-style: italic;
+  color: #6b7390;
+}
+
+.indice-trattini__pannello a:hover {
+  background: #eef2fb;
+  color: #c8601c;
+}
+
+/* Paragrafo in lettura: barra arancio a sinistra e fondo dorato chiaro */
+.indice-trattini__pannello a.toc-attivo,
+.indice-trattini__pannello ul ul a.toc-attivo {
+  border-left-color: var(--stellar-orange);
+  background: #fdf1de;
+  color: #b4540f;
+}
+
+/* Barra di scorrimento del pannello, chiara */
+.indice-trattini__pannello {
+  scrollbar-color: #c3cad9 transparent;
+}
+
+/* Il tema schiarisce a metà i link dei menu al passaggio del mouse: nel
+   pannello il cambio di colore e di fondo basta, e il testo resta leggibile */
+.indice-trattini__pannello a[href]:hover {
+  opacity: 1;
+}
+
+/* Pannello: titoli di primo livello un po' meno spessi */
+.indice-trattini__pannello a,
+.indice-trattini__pannello a:visited {
+  font-weight: 500;
+}
+
+.indice-trattini__pannello ul ul a,
+.indice-trattini__pannello ul ul a:visited {
+  font-weight: 400;
+}
+
+/* Box nel pannello: la definizione, il blocco più importante di una voce,
+   è la riga più visibile; gli altri box hanno il simbolo dell'approfondimento */
+.indice-trattini__pannello li.toc-box-entry > a,
+.indice-trattini__pannello ul ul li.toc-box-entry > a {
+  font-style: normal;
+}
+
+.indice-trattini__pannello li.toc-box-entry--definizione > a,
+.indice-trattini__pannello ul ul li.toc-box-entry--definizione > a {
+  font-weight: 700;
+  color: #b4540f;
+}
+
+.indice-trattini__pannello li.toc-box-entry--definizione > a::before {
+  content: "☉ ";
+}
+
+.indice-trattini__pannello li.toc-box-entry:not(.toc-box-entry--definizione) > a,
+.indice-trattini__pannello ul ul li.toc-box-entry:not(.toc-box-entry--definizione) > a {
+  font-weight: 500;
+  color: #2b4fb3;
+}
+
+.indice-trattini__pannello li.toc-box-entry:not(.toc-box-entry--definizione) > a::before {
+  content: "✦ ";
+}
+
+/* Pannello dell'indice a trattini su fondo giallo chiaro (paglierino):
+   richiama l'oro dei titoli; la voce in lettura ha un dorato più intenso
+   per staccare dallo sfondo */
+.indice-trattini__pannello {
+  background: #fcf4d6;
+  border-color: #e3d6a6;
+}
+
+.indice-trattini__pannello a:hover {
+  background: #f1e6bb;
+}
+
+.indice-trattini__pannello a.toc-attivo,
+.indice-trattini__pannello ul ul a.toc-attivo {
+  background: #f9d9a8;
+}
+
+.indice-trattini__pannello {
+  scrollbar-color: #d8c98f transparent;
+}
