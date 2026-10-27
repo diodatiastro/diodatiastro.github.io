@@ -57,9 +57,14 @@
     }
   }
   box.addEventListener("mouseenter", mostraAttiva);
+  box.addEventListener("mouseleave", function () { box.classList.remove("chiuso"); });
 
   // Su touch: un tocco sui trattini apre o chiude il pannello
-  trattini.addEventListener("click", function () { box.classList.toggle("aperto"); mostraAttiva(); });
+  trattini.addEventListener("click", function () {
+    box.classList.remove("chiuso");
+    box.classList.toggle("aperto");
+    mostraAttiva();
+  });
   document.addEventListener("click", function (e) {
     if (!box.contains(e.target)) box.classList.remove("aperto");
   });
@@ -69,7 +74,11 @@
   pannello.addEventListener("click", function (e) {
     var a = e.target.closest("a");
     if (!a) return;
+    // Il pannello si richiude subito, anche se il mouse è ancora sopra:
+    // resta chiuso finché il mouse non esce dall'indice e non vi rientra
     box.classList.remove("aperto");
+    box.classList.add("chiuso");
+    a.blur();
     var id = decodeURIComponent((a.getAttribute("href") || "").slice(1));
     var meta = document.getElementById(id);
     if (!meta) return;

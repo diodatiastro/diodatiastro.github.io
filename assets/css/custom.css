@@ -2050,3 +2050,10 @@ h1.titolo-pagina {
 .indice-trattini__pannello {
   scrollbar-color: #d8c98f transparent;
 }
+
+/* Dopo il clic su un titolo il pannello si richiude, anche con il mouse sopra */
+.indice-trattini.chiuso .indice-trattini__pannello {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(0.5rem);
+}
