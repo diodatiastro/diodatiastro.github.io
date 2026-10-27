@@ -41,8 +41,15 @@
     var toc = document.querySelector('.book-toc');
     if (!toc) return;
 
+    // Nelle pagine senza titoli di paragrafo il sommario di Hugo è vuoto:
+    // si crea l'elenco, così i box (es. la "Definizione") vi entrano lo stesso
     var tocList = toc.querySelector('ul');
-    if (!tocList) return;
+    if (!tocList) {
+      var navToc = toc.querySelector('nav');
+      if (!navToc) return;
+      tocList = document.createElement('ul');
+      navToc.appendChild(tocList);
+    }
 
     var content = document.querySelector('.book-page .markdown');
     if (!content) return;

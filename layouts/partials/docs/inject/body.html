@@ -18,11 +18,16 @@
 
   function avvia() {
   var sorgente = document.querySelector(".book-toc nav#TableOfContents");
-  if (!sorgente || !sorgente.querySelector("a")) return;
+  if (!sorgente) return;
+  var conCommenti = !!document.getElementById("commenti");
+  // Serve almeno un titolo, un box o il riquadro dei commenti
+  if (!sorgente.querySelector("a") && !conCommenti) return;
+  if (!sorgente.querySelector(":scope > ul")) sorgente.appendChild(document.createElement("ul"));
 
-  // Paragrafi principali (primo livello del sommario)
+  // Paragrafi principali (primo livello del sommario); nelle voci senza
+  // titoli di paragrafo c'è comunque un trattino, per aprire il pannello
   var principali = Array.prototype.slice.call(sorgente.querySelectorAll(":scope > ul > li"));
-  if (!principali.length) return;
+  var numeroTrattini = Math.max(principali.length, 1);
 
   // Struttura: <nav class="indice-trattini"> trattini + pannello
   var box = document.createElement("nav");
@@ -32,10 +37,9 @@
   var trattini = document.createElement("div");
   trattini.className = "indice-trattini__barre";
   trattini.setAttribute("aria-hidden", "true");
-  principali.forEach(function () {
-    var t = document.createElement("span");
-    trattini.appendChild(t);
-  });
+  for (var k = 0; k < numeroTrattini; k++) {
+    trattini.appendChild(document.createElement("span"));
+  }
 
   var pannello = document.createElement("div");
   pannello.className = "indice-trattini__pannello";
@@ -45,7 +49,7 @@
 
   // In fondo al pannello (e al sommario per smartphone) il rimando ai
   // commenti, nelle pagine che li prevedono
-  if (document.getElementById("commenti")) {
+  if (conCommenti) {
     var aggiungiCommenti = function (ul) {
       if (!ul) return;
       var li = document.createElement("li");
@@ -57,7 +61,9 @@
       ul.appendChild(li);
     };
     aggiungiCommenti(copia.querySelector(":scope > ul"));
-    aggiungiCommenti(document.querySelector(".book-header nav#TableOfContents > ul"));
+    var navMobile = document.querySelector(".book-header nav#TableOfContents");
+    if (navMobile && !navMobile.querySelector(":scope > ul")) navMobile.appendChild(document.createElement("ul"));
+    aggiungiCommenti(navMobile && navMobile.querySelector(":scope > ul"));
   }
 
   box.appendChild(trattini);
