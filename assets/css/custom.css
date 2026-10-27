@@ -2057,3 +2057,35 @@ h1.titolo-pagina {
   visibility: hidden;
   transform: translateX(0.5rem);
 }
+
+/* "Lascia un commento" in fondo al pannello e al sommario per smartphone:
+   separato da un filo e in rosso, il colore che risalta di più */
+li.toc-commenti {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e3d6a6;
+}
+
+.indice-trattini__pannello li.toc-commenti > a,
+.indice-trattini__pannello li.toc-commenti > a:visited {
+  font-weight: 700;
+  color: #c62828;
+}
+
+.indice-trattini__pannello li.toc-commenti > a::before {
+  content: "✎ ";
+}
+
+.indice-trattini__pannello li.toc-commenti > a:hover {
+  color: #9b1c1c;
+}
+
+.book-header li.toc-commenti {
+  border-top-color: var(--surface-line);
+}
+
+.book-header li.toc-commenti > a,
+.book-header li.toc-commenti > a:visited {
+  font-weight: 600;
+  color: #ff7b7b;
+}

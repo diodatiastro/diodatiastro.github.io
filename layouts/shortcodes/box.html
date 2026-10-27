@@ -8,7 +8,14 @@
 {{- if gt $n 1 -}}
   {{- $id = printf "%s-%d" $baseId $n -}}
 {{- end -}}
-<div class="info-box info-box--{{ $tipo }}" id="{{ $id }}">
+{{- /* menu="sì" o menu="no": decide se il box compare nel menu dei paragrafi.
+     Senza il parametro vale la regola automatica (vedi docs/inject/footer.html). */ -}}
+{{- $menu := "" -}}
+{{- with .Get "menu" -}}
+  {{- $v := lower . -}}
+  {{- if in (slice "sì" "si" "yes" "true") $v }}{{ $menu = "si" }}{{ else if in (slice "no" "false") $v }}{{ $menu = "no" }}{{ end -}}
+{{- end -}}
+<div class="info-box info-box--{{ $tipo }}" id="{{ $id }}"{{ with $menu }} data-menu="{{ . }}"{{ end }}>
   <div class="info-box__label">{{ $etichetta }}</div>
   <div class="info-box__body">
     {{ .Inner }}

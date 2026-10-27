@@ -43,6 +43,23 @@
   copia.removeAttribute("id");
   pannello.appendChild(copia);
 
+  // In fondo al pannello (e al sommario per smartphone) il rimando ai
+  // commenti, nelle pagine che li prevedono
+  if (document.getElementById("commenti")) {
+    var aggiungiCommenti = function (ul) {
+      if (!ul) return;
+      var li = document.createElement("li");
+      li.className = "toc-commenti";
+      var a = document.createElement("a");
+      a.href = "#commenti";
+      a.textContent = "Lascia un commento";
+      li.appendChild(a);
+      ul.appendChild(li);
+    };
+    aggiungiCommenti(copia.querySelector(":scope > ul"));
+    aggiungiCommenti(document.querySelector(".book-header nav#TableOfContents > ul"));
+  }
+
   box.appendChild(trattini);
   box.appendChild(pannello);
   document.body.appendChild(box);
