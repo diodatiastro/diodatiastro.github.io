@@ -19,7 +19,7 @@ Quello che segue è un lungo percorso attraverso ciò che sappiamo e ciò che ig
 
 ## Il calo di luminosità più cospicuo da un secolo a questa parte
 
-{{% box tipo="definizione" titolo="L'argomento in breve" %}} 
+{{% box tipo="approfondimento" titolo="L'argomento in breve" menu="no" %}} 
 Tra la fine del 2019 e l'inizio del 2020, la supergigante rossa in Orione ha guadagnato circa una magnitudine, raggiungendo la stessa luminosità di Bellatrix. Nonostante questo notevole calo di luminosità, non c’è alcun indizio di un’imminente esplosione di supernova.
 {{% /box %}}
 
@@ -89,7 +89,7 @@ caption="Vista simulata di Betelgeuse che illumina la superficie di un suo dista
 
 ## Quanto è lontana?
 
-{{% box tipo="definizione" titolo="L'argomento in breve" %}} 
+{{% box tipo="approfondimento" titolo="L'argomento in breve" menu="no" %}} 
 Determinare la distanza esatta di Betelgeuse si è rivelato un compito estremamente difficile. Così difficile che, nonostante decenni di studi, conosciamo la distanza di questa supergigante solo con una certa approssimazione.
 {{% /box %}}
 
@@ -149,7 +149,7 @@ caption="Betelgeuse ripresa nell’infrarosso dal telescopio spaziale WISE della
 
 ## Quanto è grande davvero?
 
-{{% box tipo="definizione" titolo="L'argomento in breve" %}} 
+{{% box tipo="approfondimento" titolo="L'argomento in breve" menu="no" %}} 
 Grazie alle osservazioni interferometriche compiute fin dal lontano 1920, conosciamo con grande precisione il diametro angolare di Betelgeuse. La nostra conoscenza del diametro lineare è invece meno precisa, perché la distanza di Betelgeuse è nota solo approssimativamente. Le stime più accurate oggi disponibili ci dicono che il diametro della supergigante rossa è pari a circa $1,4$ miliardi di $\text{km}$.
 {{% /box %}}
 
@@ -282,7 +282,7 @@ caption="Il fisico Charles Townes fotografato nel 2008 mentre pulisce uno degli 
 
 ## Una stella ribollente e asimmetrica
 
-{{% box tipo="definizione" titolo="L'argomento in breve" %}} 
+{{% box tipo="approfondimento" titolo="L'argomento in breve" menu="no" %}} 
 Oltre trenta anni di osservazioni con i maggiori telescopi e interferometri del mondo ci hanno fornito un quadro dettagliato dell’aspetto della fotosfera e dell’atmosfera estesa di Betelgeuse. La supergigante rossa appare completamente diversa dal Sole. Priva di una simmetria sferica, è come una pentola in continua ebollizione, sulla cui superficie si formano immense bolle.
 {{% /box %}}
 
@@ -385,7 +385,7 @@ Il diametro dell’atmosfera estesa di Betelgeuse, così come appare nell’imma
 
 ## Betelgeuse, meno grande e più vicina di quanto si pensasse
 
-{{% box tipo="approfondimento" titolo="L'argomento in breve" %}} 
+{{% box tipo="approfondimento" titolo="L'argomento in breve" menu="no" %}} 
 Uno studio del 2020 ricalcolò tutti i parametri di Betelgeuse sulla base di una triplice serie di simulazioni astrofisiche. Il risultato fu che la supergigante rossa sembra essere un po’ meno grande di quanto indicato da calcoli precedenti e anche un po’ più vicina.
 {{% /box %}}
 
@@ -449,7 +449,7 @@ caption="Immagine composita (raggi X, luce visibile, infrarosso, onde radio) del
 
 ## Live fast, die young
 
-{{% box tipo="approfondimento" titolo="L'argomento in breve" %}} 
+{{% box tipo="approfondimento" titolo="L'argomento in breve" menu="no" %}} 
 Betelgeuse sta attraversando le fasi finali della sua esistenza. In un tempo che non possiamo prevedere con certezza, la supergigante andrà incontro a una fatale esplosione di supernova che la disintegrerà, lasciando dietro di sé solo una minuscola e ultradensa stella di neutroni. In attesa di quel grande spettacolo celeste, molte domande rimangono ancora senza risposta. Una di esse riguarda l’elevata velocità di rotazione di Betelgeuse, che un gruppo di ricercatori ha provato a spiegare con una suggestiva ipotesi: un atto di cannibalismo stellare avvenuto intorno a $100\,000$ anni fa.
 {{% /box %}}
 
@@ -541,7 +541,7 @@ caption="L’esplosione di supernova di Betelgeuse rilascerà circa $2{,}0\time
 
 ## Come fa a ruotare così velocemente?
 
-{{% box tipo="approfondimento" titolo="L'argomento in breve" %}} 
+{{% box tipo="approfondimento" titolo="L'argomento in breve" menu="no" %}} 
 Per essere una supergigante con un diametro di almeno un miliardo di chilometri, Betelgeuse ruota su se stessa a una velocità incredibilmente elevata. Per spiegare questo insolito fenomeno, gli astronomi hanno partorito numerose congetture, dalle più semplici alle più fantasiose.
 {{% /box %}}
 
@@ -615,7 +615,7 @@ Quel che è certo è che nessuna supergigante rossa può ruotare così velocemen
 
 ## Finalmente, la compagna binaria!
 
-{{% box tipo="approfondimento" titolo="L'argomento in breve" %}} 
+{{% box tipo="approfondimento" titolo="L'argomento in breve" menu="no" %}} 
 Da molti anni si sospettava che Betelgeuse avesse una compagna binaria, ma nessuno era mai riuscito a osservarla. Finalmente un gruppo di astronomi guidato da Miguel Montargès dell'Osservatorio di Parigi sembra essere riuscito nell'impresa.
 {{% /box %}}
 

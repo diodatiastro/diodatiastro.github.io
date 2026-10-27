@@ -61,19 +61,19 @@
       var tipo = tipoMatch ? tipoMatch[1] : 'approfondimento';
 
       // Quali box entrano nel menu dei paragrafi:
-      // 1. i box all'inizio della pagina, prima di qualsiasi titolo, sempre
-      //    (riassumono l'argomento: "Il Sole in breve" e simili);
-      // 2. gli altri secondo il parametro menu dello shortcode:
-      //    menu="sì" li mostra, menu="no" li nasconde;
-      // 3. senza il parametro, la regola automatica: restano fuori solo i box
-      //    "L'argomento in breve" di tipo approfondimento (azzurri), che stanno
-      //    subito sotto il titolo che riassumono; tutti gli altri entrano.
-      var primoTitolo = content.querySelector('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
-      var inTesta = !primoTitolo || (box.compareDocumentPosition(primoTitolo) & Node.DOCUMENT_POSITION_FOLLOWING);
-      if (!inTesta) {
-        var scelta = box.getAttribute('data-menu');
-        if (scelta === 'no') return;
-        if (scelta !== 'si' && tipo !== 'definizione' &&
+      // 1. menu="no" nello shortcode lo nasconde sempre, anche all'inizio della pagina;
+      // 2. menu="sì" lo mostra sempre;
+      // 3. senza il parametro: i box all'inizio della pagina, prima di qualsiasi
+      //    titolo, compaiono sempre (riassumono l'argomento: "Il Sole in breve" e
+      //    simili); più avanti restano fuori solo i box "L'argomento in breve" di
+      //    tipo approfondimento (azzurri), che stanno subito sotto il titolo che
+      //    riassumono; tutti gli altri entrano.
+      var scelta = box.getAttribute('data-menu');
+      if (scelta === 'no') return;
+      if (scelta !== 'si') {
+        var primoTitolo = content.querySelector('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
+        var inTesta = !primoTitolo || (box.compareDocumentPosition(primoTitolo) & Node.DOCUMENT_POSITION_FOLLOWING);
+        if (!inTesta && tipo !== 'definizione' &&
             testo.toLowerCase().replace(/\u2019/g, "'") === "l'argomento in breve") return;
       }
 
