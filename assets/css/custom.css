@@ -2089,3 +2089,12 @@ li.toc-commenti {
   font-weight: 600;
   color: #ff7b7b;
 }
+
+/* Box nel pannello (definizioni e approfondimenti resi visibili) allineati a
+   sinistra con i titoli di primo livello, anche quando stanno dentro un
+   paragrafo, e con la stessa dimensione dei caratteri */
+.indice-trattini__pannello ul ul li.toc-box-entry > a,
+.indice-trattini__pannello ul ul li.toc-box-entry > a:visited {
+  padding-left: 0.6rem;
+  font-size: 0.9rem;
+}
