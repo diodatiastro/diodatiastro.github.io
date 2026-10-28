@@ -2098,3 +2098,121 @@ li.toc-commenti {
   padding-left: 0.6rem;
   font-size: 0.9rem;
 }
+
+/* Riquadro per scrivere un commento (Waline) in chiaro, come il menu dei
+   paragrafi: fondo giallo chiaro e testo scuro, per invitare a scrivere */
+#waline .wl-panel {
+  --waline-color: #16204a;
+  --waline-bg-color: #fffdf6;
+  --waline-bg-color-light: #f6eccb;
+  --waline-bg-color-hover: #f1e6bb;
+  --waline-border-color: #d9c98f;
+  --waline-light-grey: #6f6a58;
+  --waline-dark-grey: #4a4636;
+  --waline-theme-color: #2b4fb3;
+  --waline-active-color: #c8601c;
+  --waline-white: #ffffff;
+  --waline-info-bg-color: #f6eccb;
+  --waline-info-color: #6f6a58;
+  background: #fcf4d6;
+  border: 1px solid #e3d6a6;
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  color: #16204a;
+}
+
+#waline .wl-panel .wl-header {
+  border-bottom: 1px dashed #d9c98f;
+}
+
+#waline .wl-panel .wl-header label {
+  color: #4a4636;
+  font-weight: 600;
+}
+
+#waline .wl-panel .wl-header input,
+#waline .wl-panel .wl-editor {
+  color: #16204a;
+  background: #fffdf6;
+}
+
+#waline .wl-panel .wl-editor {
+  margin: 0.5rem;
+  width: calc(100% - 1rem);
+  border: 1px solid #e3d6a6;
+  border-radius: 8px;
+}
+
+#waline .wl-panel .wl-editor::placeholder,
+#waline .wl-panel .wl-header input::placeholder {
+  color: #8a8268;
+}
+
+#waline .wl-panel .wl-editor:focus {
+  outline: none;
+  border-color: #2b4fb3;
+  box-shadow: 0 0 0 3px rgba(43, 79, 179, 0.18);
+}
+
+/* Pulsante "Invia" pieno, blu, ben visibile */
+#waline .wl-panel .wl-btn.primary {
+  background: #2b4fb3;
+  border-color: #2b4fb3;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+#waline .wl-panel .wl-btn.primary:hover {
+  background: #1f3c8f;
+  border-color: #1f3c8f;
+}
+
+/* Campi Nome ed Email in giallo chiarissimo, un tono più chiaro del fondo
+   del riquadro; pulsante "Accedi" arancio */
+#waline .wl-panel .wl-header input {
+  background: #fefae8;
+}
+
+#waline .wl-panel .wl-header-item {
+  background: #fefae8;
+}
+
+#waline .wl-panel .wl-header label {
+  background: transparent;
+}
+
+#waline .wl-panel .wl-btn:not(.primary) {
+  background: #e07a2e;
+  border-color: #e07a2e;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+#waline .wl-panel .wl-btn:not(.primary):hover {
+  background: #c8601c;
+  border-color: #c8601c;
+}
+
+/* Etichetta "Autore" accanto al nome nelle risposte dell'autore del sito:
+   pieno arancio scuro con la scritta chiara, ben visibile sul fondo scuro */
+#waline .wl-card .wl-badge {
+  padding: 0.05em 0.5em;
+  border: none;
+  border-radius: 4px;
+  background: #c8601c;
+  color: #fff8ec;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Niente browser e sistema operativo sotto il nome di chi commenta:
+   nessuna utilità per il lettore e un'impressione di tracciamento */
+#waline .wl-meta {
+  display: none;
+}
+
+/* Niente distintivo a stella sull'avatar dell'autore: basta l'etichetta "Autore" */
+#waline .wl-user .administrator-icon,
+#waline .wl-user .verified-icon {
+  display: none;
+}
