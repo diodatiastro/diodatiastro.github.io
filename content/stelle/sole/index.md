@@ -1,5 +1,5 @@
 +++
-title = "Sole"
+title = "Il Sole"
 subtitle = "Tutti i numeri della nostra stella"
 date = "2026-08-17"
 draft = false

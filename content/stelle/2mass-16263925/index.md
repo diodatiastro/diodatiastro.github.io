@@ -6,7 +6,8 @@ draft = false
 tags = ["nana bruna", "subnana", "classe L", "alone galattico", "metallicità"]
 copertina = "immagini/2mass1626-rappresentazione-artistica.jpg"
 inEvidenza = true
-ordineEvidenza = 2
+ordineEvidenza = 3
+righePrima = 2
 +++
 
 {{< katex />}}
