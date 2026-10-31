@@ -120,10 +120,10 @@ Durante l’espansione avviene il contrario. Gli elettroni si ricombinano con gl
 Tutte le Cefeidi si trovano raggruppate in una precisa regione del diagramma H-R, il grafico che classifica le stelle in base alla luminosità e al colore, chiamata striscia di instabilità. La striscia è delimitata da un margine verso il lato blu del diagramma, dove ci sono le stelle più calde, e da un margine verso il lato rosso, dove ci sono le stelle più fredde. Una Cefeide attraversa la striscia più volte nel corso della sua evoluzione. Il primo attraversamento avviene subito dopo la fase principale della vita della stella ed è molto rapido; il secondo e il terzo, durante la fusione dell’elio, sono molto più lenti. Per questo la velocità con cui cambia il periodo è considerata un indizio di quale attraversamento sia in corso.
 
 {{< figura 
-src="immagini/striscia-instabilita.png" 
+src="immagini/striscia-instabilita.jpg" 
 width="550px" 
 alt="Diagramma H-R con la striscia di instabilità delle Cefeidi." 
-caption="Le righe tratteggiate in questo diagramma H-R delimitano la striscia di instabilità (*instability strip*), che le variabili Cefeidi come Polaris attraversano più volte in quella fase della loro evoluzione caratterizzata da periodiche variazioni di luminosità e temperatura. Crediti: Portland Community College"
+caption="Le righe tratteggiate in questo diagramma H-R delimitano la striscia di instabilità, che le variabili Cefeidi come Polaris attraversano più volte in quella fase della loro evoluzione caratterizzata da periodiche variazioni di luminosità e temperatura. Crediti: Portland Community College (modificato)"
 >}}
 
 Un’ulteriore complicazione è data dal modo di pulsazione, che può essere paragonato alla vibrazione di uno strumento musicale. Una parte delle Cefeidi pulsa con il tono fondamentale: un’unica vibrazione che dura quanto il ciclo di variazione della stella. Ma altre Cefeidi, per continuare con l’analogia musicale, risuonano nei toni armonici, come una corda di violino che suoni uno dei suoi armonici invece della nota fondamentale: il periodo di pulsazione è allora più breve, in un rapporto preciso con quello che avrebbe il tono fondamentale. Anche una Cefeide che pulsa in un tono armonico mostra un solo ciclo: il modo di pulsazione si deduce indirettamente, dalla luminosità della stella o dalla forma della sua curva di luce e di velocità radiale.
