@@ -2216,3 +2216,71 @@ li.toc-commenti {
 #waline .wl-user .verified-icon {
   display: none;
 }
+
+/* ==========================================================================
+   Sezione Dizionario: sfondo rosso scuro invece del blu-notte
+   Serve a far capire subito al lettore che, seguendo un link da un articolo
+   sulle stelle, è passato a un'altra sezione del sito.
+   Un rosso con la stessa luminosità percepita del blu-notte sembrava quasi
+   nero: questi rossi sono un po' più luminosi e molto più saturi.
+   Le variabili derivate (--body-background, --gray-100, --gray-200) vanno
+   ridefinite anche loro, perché in :root sono già state risolte sui blu.
+   ========================================================================== */
+
+body.book-type-dizionario {
+  --night:         #320305; /* rosso scuro ma riconoscibile come rosso (blu del catalogo: #0a0e1a); prima prova #190a09, poi #370406 */
+  --night-deep:    #4c1010; /* blu #171e3c */
+  --line:          #521d1b; /* blu #1e2740 */
+  --surface:       #521615; /* blu #1c2542 */
+  --surface-line:  #7e302d; /* blu #34406e */
+
+  --body-background: var(--night);
+  --gray-100:        var(--night-deep);
+  --gray-200:        var(--line);
+}
+
+/* Lettere nei cerchi dell'indice del dizionario: l'azzurro dei link stonava
+   sul fondo rosso; un rosa cipria chiaro resta nella stessa famiglia di
+   colori e si distingue bene dall'oro usato al passaggio del mouse. */
+body.book-type-dizionario .book-page a.dz-salto,
+body.book-type-dizionario .book-page a.dz-salto:visited {
+  color: #f2c4b4;
+}
+
+body.book-type-dizionario .book-page a.dz-salto:hover {
+  color: var(--stellar-gold);
+}
+
+/* Lettera nel cerchio che apre ogni gruppo di voci: un rosso vivo, diverso
+   dal rosa delle lettere-link in cima alla pagina. È un po' schiarito
+   rispetto al rosso puro per staccarsi dal fondo bordeaux del cerchio. */
+body.book-type-dizionario .dz-intestazione .hc-iniziale {
+  color: #ff4a3d;
+  /* Copia nera della lettera, spostata in basso a destra, come ombra */
+  text-shadow: 2px 2px 0 #000;
+}
+
+/* Riquadri delle voci nell'indice del dizionario: fondo un po' più chiaro
+   (#4c1010 → #5c1614) e bordo giallo-oro al passaggio del mouse */
+body.book-type-dizionario .book-page a.dz-voce,
+body.book-type-dizionario .book-page a.dz-voce:visited {
+  background: #5c1614;
+}
+
+body.book-type-dizionario .book-page a.dz-voce:hover {
+  border-color: var(--stellar-gold);
+}
+
+/* Freccia di ritorno all'inizio della pagina dopo ogni gruppo: gialla,
+   rosso vivo al passaggio del mouse */
+body.book-type-dizionario .markdown .dz-su a,
+body.book-type-dizionario .markdown .dz-su a:visited {
+  color: var(--stellar-gold);
+  text-decoration: none;
+}
+
+body.book-type-dizionario .markdown .dz-su a:hover {
+  color: #ff4a3d;
+  text-decoration: underline;
+  text-decoration-color: #ff4a3d;
+}
