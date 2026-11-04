@@ -171,8 +171,8 @@ Il destino di una stella dipende soprattutto dalla massa con cui è nata. Le ste
 {{< figura 
 src="immagini/heic1310a.jpg" 
 width="" 
-alt="La nebulosa planetaria Messier 57, nota anche Nebulosa Anello, situata nella costellazione della Lira, è il prodotto transitorio dell'espulsione degli strati più esterni di una stella morente." 
-caption="La nebulosa planetaria Messier 57, nota anche Nebulosa Anello, situata nella costellazione della Lira, è il prodotto transitorio dell'espulsione degli strati più esterni di una stella morente. La nebulosa è destinata a dissolversi entro circa diecimila anni. Ciò che resta della stella è una nana bianca, un oggetto compatto grande più o meno come la Terra, che brilla per il calore residuo rimasto intrappolato al suo interno. Crediti: NASA, ESA, C. Robert O'Dell"
+alt="La nebulosa planetaria Messier 57, nota anche come Nebulosa Anello, situata nella costellazione della Lira, è il prodotto transitorio dell'espulsione degli strati più esterni di una stella morente." 
+caption="La nebulosa planetaria Messier 57, nota anche come Nebulosa Anello, situata nella costellazione della Lira, è il prodotto transitorio dell'espulsione degli strati più esterni di una stella morente. La nebulosa è destinata a dissolversi entro circa diecimila anni. Ciò che resta della stella è una nana bianca, un oggetto compatto grande più o meno come la Terra, che brilla per il calore residuo rimasto intrappolato al suo interno. Crediti: NASA, ESA, C. Robert O'Dell"
 >}}
 
 Le stelle con massa iniziale superiore a circa $8$ masse solari terminano invece la loro vita con il **collasso** del nucleo di ferro, che avviene in una frazione di secondo. Nella maggior parte dei casi ciò produce una **supernova**: gli strati esterni vengono espulsi violentemente nello spazio, arricchendolo degli elementi prodotti dalla stella, e il nucleo collassato diventa una **stella di neutroni**, un oggetto di $10\text{-}13$ chilometri di raggio con una massa superiore a quella del Sole. In altri casi il nucleo diventa un **buco nero**.
