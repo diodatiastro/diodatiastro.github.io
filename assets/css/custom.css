@@ -522,6 +522,12 @@ html, body {
 .info-box--approfondimento .info-box__label::before {
   content: "✦";
 }
+
+/* Il titolo dell'approfondimento usa lo stesso oro della definizione;
+   bordo e sfondo del box restano blu */
+.info-box--approfondimento .info-box__label {
+  color: var(--stellar-gold);
+}
 /* ==========================================================================
    Correzione sommario (TOC) — voci con corsivo/grassetto spezzate
    ========================================================================== */
