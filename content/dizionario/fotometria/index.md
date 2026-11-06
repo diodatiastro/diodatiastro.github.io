@@ -16,7 +16,7 @@ In astrofisica, la fotometria è il complemento perfetto della [spettroscopia]({
 
 ## Filtri e sensori
 
-Le misure fotometriche vengono effettuate attraverso **filtri** che isolano intervalli specifici dello spettro elettromagnetico. Il sistema più diffuso è il sistema **UBV** di Johnson-Morgan, che definisce bande standardizzate nell'ultravioletto, nel visibile e nell'infrarosso. Storicamente praticata con metodi visivi e poi fotografici, la fotometria moderna si avvale di **rivelatori CCD e CMOS** ad alta sensibilità, capaci di misure di precisione dell'ordine del millesimo di magnitudine.
+Le misure fotometriche vengono effettuate attraverso **filtri** che isolano intervalli specifici dello spettro elettromagnetico. Il sistema più diffuso è il sistema **UBV** di Johnson-Morgan, che definisce tre bande standardizzate nell'ultravioletto vicino, nel blu e nel visibile; in seguito Johnson lo estese verso il rosso e il vicino infrarosso con le bande R e I. Storicamente praticata con metodi visivi e poi fotografici, la fotometria moderna si avvale di **rivelatori CCD e CMOS** ad alta sensibilità, capaci di misure di precisione dell'ordine del millesimo di magnitudine.
 
 {{< figura 
 src="immagini/piano-focale-kepler.jpg" 
@@ -31,5 +31,5 @@ La fotometria è impiegata in numerosi ambiti dell'astronomia e dell'astrofisica
 - **classificazione stellare** (determinazione di temperatura, luminosità e tipo spettrale);
 - **stelle variabili** (identificazione e studio di pulsazioni, eruzioni e altri fenomeni periodici o transienti);
 - **esopianeti** (rilevamento di transiti planetari attraverso la misura dell'attenuazione periodica della luce stellare);
-- **distanze cosmiche** (utilizzo di candele standard come le Cefeidi e le supernovae di tipo Ia, di cui è nota la luminosità assoluta);
+- **distanze cosmiche** (utilizzo di candele standard come le Cefeidi e le supernove di tipo Ia, di cui è nota la luminosità assoluta);
 - **galassie e cosmologia** (misura della luminosità totale e della distribuzione di brillanza superficiale di galassie lontane).

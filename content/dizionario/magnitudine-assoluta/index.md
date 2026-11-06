@@ -50,6 +50,6 @@ La magnitudine assoluta è uno strumento fondamentale per:
 
 * **confrontare** la luminosità intrinseca di oggetti a distanze diverse;
 * **classificare** le stelle nel diagramma di Hertzsprung-Russell, dove magnitudine assoluta e temperatura superficiale definiscono la posizione evolutiva di una stella;
-* **misurare distanze cosmiche**, sfruttando oggetti di magnitudine assoluta nota (*candele standard*) come le Cefeidi o le supernovae di tipo Ia.
+* **misurare distanze cosmiche**, sfruttando oggetti di magnitudine assoluta nota (*candele standard*) come le Cefeidi o le supernove di tipo Ia.
 
 [^1]: Nel Sistema Solare (per pianeti, comete e asteroidi) si usa una scala diversa. La magnitudine assoluta per questi corpi non si calcola a $10$ parsec, ma viene definita come la luminosità che l'oggetto avrebbe se si trovasse idealmente a $1$ unità astronomica $(\mathrm{au})$ sia dal Sole che dalla Terra, con un [angolo di fase]({{< relref "/dizionario/angolo-di-fase/" >}}) pari a zero (cioè completamente illuminato).
