@@ -19,6 +19,17 @@
 
     <div class="topbar-ricerca">
       {{ partial "docs/search" . }}
+      {{- /* Pulsante ? accanto alla casella: al passaggio del mouse, al tocco o
+           con il tasto Tab mostra le istruzioni per la ricerca */}}
+      <div class="ricerca-aiuto">
+        <button type="button" class="ricerca-aiuto-pulsante" aria-label="Come funziona la ricerca" aria-expanded="false" aria-controls="ricerca-aiuto-testo">?</button>
+        <div class="ricerca-aiuto-testo" id="ricerca-aiuto-testo" role="tooltip">
+          <p class="ricerca-aiuto-titolo">Come funziona la ricerca</p>
+          <p><strong>Senza virgolette:</strong> <span class="ricerca-aiuto-esempio">stella polare</span> trova le pagine che contengono tutte le parole digitate, anche separate tra loro o come parte di parole più lunghe; <span class="ricerca-aiuto-esempio">polare</span>, per esempio, trova anche 'dipolare' e 'popolare'.</p>
+          <p><strong>Tra virgolette doppie:</strong> <span class="ricerca-aiuto-esempio">"polare"</span> o <span class="ricerca-aiuto-esempio">"stella polare"</span> trovano solo la forma esatta digitata: parole o frasi intere, vicine e nello stesso ordine.</p>
+          <p>Maiuscole e minuscole sono indifferenti.</p>
+        </div>
+      </div>
     </div>
 
     {{- if partial "docs/toc-show" . }}
@@ -28,6 +39,23 @@
     {{- end }}
   </div>
 </header>
+<script>
+  /* Istruzioni per la ricerca: oltre che al passaggio del mouse si aprono e si
+     chiudono con un clic o un tocco sul pulsante ?; si chiudono anche con un
+     clic altrove o con il tasto Esc */
+  (function () {
+    var aiuto = document.querySelector(".ricerca-aiuto");
+    if (!aiuto) return;
+    var pulsante = aiuto.querySelector(".ricerca-aiuto-pulsante");
+    function imposta(aperto) {
+      aiuto.classList.toggle("aperto", aperto);
+      pulsante.setAttribute("aria-expanded", aperto ? "true" : "false");
+    }
+    pulsante.addEventListener("click", function () { imposta(!aiuto.classList.contains("aperto")); });
+    document.addEventListener("click", function (e) { if (!aiuto.contains(e.target)) imposta(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") imposta(false); });
+  })();
+</script>
 {{- if partial "docs/toc-show" . }}
 <script>
   /* Sugli schermi stretti il sommario si apre come un pannello sotto la barra:

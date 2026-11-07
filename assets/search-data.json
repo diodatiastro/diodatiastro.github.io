@@ -1,0 +1,47 @@
+{{- /*
+  Copia di themes/hugo-book/assets/search-data.json. Differenza: il testo delle
+  pagine non è più $page.Plain ma viene ricavato dall'HTML della pagina dopo
+  alcune pulizie, perché la ricerca del sito (assets/search.js) possa mostrare
+  sotto ogni risultato una frase leggibile:
+  - i numeri di richiamo delle note e le frecce di ritorno sono tolti (prima
+    restavano attaccati alla parola precedente, es. "dipolare10");
+  - le etichette generiche dei riquadri (Definizione, Approfondimento) sono
+    tolte; i titoli personalizzati dei riquadri diventano righe a sé, marcate
+    con # come i titoli dei paragrafi;
+  - ogni paragrafo, titolo, didascalia, voce di elenco ecc. finisce su una riga
+    propria (prima didascalie e paragrafi potevano saldarsi tra loro). Come
+    separatore si usa <br> e non un a capo, perché plainify trasforma gli a capo
+    in spazi e converte in a capo soltanto </p> e <br>;
+  - le entità HTML (es. &rsquo;) sono convertite nei caratteri veri;
+  - della pagina principale del dizionario resta solo il testo introduttivo,
+    senza l'indice delle voci, che ripeteva i testi delle voci stesse.
+*/ -}}
+[
+{{- $pages := where .Site.Pages "Kind" "in" (slice "page" "section") -}}
+{{- $pages = where $pages "Params.bookSearchExclude" "!=" true -}}
+{{/* Remove until we know why it does not work, see https://github.com/alex-shpak/hugo-book/issues/528 */}}
+{{/*- $pages = where $pages "Content" "not in" (slice nil "") -*/}}
+{{- $pages = where $pages "Content" "!=" "" -}}
+
+{{ range $index, $page := $pages }}
+{{- $html := string $page.Content -}}
+{{- $html = replaceRE `(?s)<nav class="dz-lettere".*$` "" $html -}}
+{{- $html = replaceRE `\s+` " " $html -}}
+{{- $html = replaceRE `<sup id="fnref:[^"]*">\s*<a [^>]*class="footnote-ref"[^>]*>[^<]*</a>\s*</sup>` "" $html -}}
+{{- $html = replaceRE `<a [^>]*class="footnote-backref"[^>]*>[^<]*</a>` "" $html -}}
+{{- $html = replaceRE `<div class="info-box__label">\s*(Definizione|Approfondimento)\s*</div>` "" $html -}}
+{{- $html = replaceRE `<div class="info-box__label">(.*?)</div>` "<br>$1#<br>" $html -}}
+{{- $html = replaceRE `(?i)</(p|h[1-6]|li|div|figcaption|figure|blockquote|td|th|tr|dt|dd|ul|ol|table|nav|section)>` "$0<br>" $html -}}
+{{- $html = replaceRE `(?i)<br\s*/?>` "<br>" $html -}}
+{{- $testo := $html | plainify | htmlUnescape -}}
+{{- $testo = replaceRE `[ \t]*\n\s*` "\n" $testo -}}
+{{- $testo = replaceRE `[ \t]{2,}` " " $testo | strings.TrimSpace -}}
+{{ if gt $index 0}},{{end}} {
+    "id": {{ $index }},
+    "href": "{{ $page.RelPermalink }}",
+    "title": {{ (partial "docs/title" $page) | jsonify }},
+    "section": {{ (partial "docs/title" $page.Parent) | default $.Site.Title | jsonify }},
+    "content": {{ $testo | jsonify }}
+}
+{{- end -}}
+]
