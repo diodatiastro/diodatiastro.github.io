@@ -9,4 +9,4 @@ bookHidden = true
 
 <img src="foto.jpg" alt="Foto dell'autore" class="author-photo" />
 
-Mi occupo di divulgazione scientifica dal 2009. Ho collaborato per vari anni con la rivista [Coelum Astronomia](https://www.coelum.com/) e scritto [molti articoli](https://medium.com/@md64) sulla piattaforma Medium, principalmente su temi di astronomia, astrofisica e matematica. *Le stelle più affascinanti del cielo* è il mio ultimo progetto.
+Mi occupo di divulgazione scientifica dal 2009. Ho collaborato per vari anni con la rivista [Coelum Astronomia](https://www.coelum.com/) e scritto oltre [mille articoli](https://medium.com/@md64) sulla piattaforma Medium, principalmente su temi di astronomia, astrofisica e matematica. *Le stelle più affascinanti del cielo* è il mio ultimo progetto.
