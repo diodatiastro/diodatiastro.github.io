@@ -7,8 +7,21 @@
 {{- /* "Tag" sopra il nome è un link alla pagina con tutti i tag (/tags/) */ -}}
 <h1 class="titolo-sezione">{{ with site.GetPage "/tags" }}<a class="titolo-tag-etichetta" href="{{ .RelPermalink }}" title="Tutti i tag">Tag</a>{{ else }}<span class="titolo-tag-etichetta">Tag</span>{{ end }} {{ .Data.Term }}</h1>
 {{- else if .Title -}}
-{{- /* Home, indici e pagina dei tag: titolo-sezione (con il filo sotto).
+{{- if .IsHome -}}
+{{- /* Home (catalogo delle stelle): sopra il titolo, al centro, i link "stelle" e "tag" alle due
+       pagine della sezione stelle senza accesso diretto dai riquadri:
+       l'elenco alfabetico delle stelle e tutti i tag */ -}}
+<nav class="home-sottolink" aria-label="Elenco delle stelle e tag">
+  {{- with site.GetPage "/elenco-stelle" }}
+  <a class="home-sottolink-elenco" href="{{ .RelPermalink }}" title="Tutte le stelle in ordine alfabetico">stelle</a>
+  {{- end }}
+  {{- with site.GetPage "/tags" }}
+  <a class="home-sottolink-tag" href="{{ .RelPermalink }}" title="Tutti i tag">tag</a>
+  {{- end }}
+</nav>
+{{- end -}}
+{{- /* Home, indici, pagina dei tag ed elenco delle stelle (titoloSezione = true): titolo-sezione (con il filo sotto).
        Articoli, capitoli e voci: titolo-pagina, stesso carattere e colore;
        il filo sotto c'è solo nelle voci del dizionario (vedi custom.css). */ -}}
-<h1 class="{{ if or .IsHome (eq .Kind "taxonomy") (and .IsSection (in (slice "/stelle" "/dizionario") .Path)) }}titolo-sezione{{ else }}titolo-pagina{{ end }}">{{ .Title }}</h1>
+<h1 class="{{ if or .IsHome (eq .Kind "taxonomy") .Params.titoloSezione (and .IsSection (in (slice "/stelle" "/dizionario") .Path)) }}titolo-sezione{{ else }}titolo-pagina{{ end }}">{{ .Title }}</h1>
 {{- end -}}

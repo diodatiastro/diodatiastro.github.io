@@ -1,0 +1,28 @@
+{{- /* Pagina /elenco-stelle/ (content/elenco-stelle.md): tutte le stelle del
+     catalogo, in ordine alfabetico, come etichette cliccabili sul modello della
+     pagina /tags/. Un saggio diviso in capitoli compare una sola volta, con il
+     link alla sua pagina indice. Nell'ordinamento si ignorano l'articolo iniziale
+     del titolo ("Il Sole" va sotto la S) e le maiuscole. Passando con il mouse
+     su un nome compare il sottotitolo dell'articolo. Niente colonna a destra. */ -}}
+{{ define "main" }}
+{{- $voci := slice -}}
+{{- with site.GetPage "/stelle" -}}
+  {{- range .Pages -}}
+    {{- $chiave := .Title | replaceRE `(?i)^(?:il|lo|la|i|gli|le)\s+|^l['’]` "" | lower -}}
+    {{- $voci = $voci | append (dict "chiave" $chiave "pagina" .) -}}
+  {{- end -}}
+{{- end }}
+<article class="markdown book-article">
+  <div class="tag-tutti">
+    {{- range sort $voci "chiave" }}
+    {{- with .pagina }}
+    <a class="hc-tag-voce" href="{{ .RelPermalink }}"{{ with .Params.subtitle }} title="{{ . }}"{{ end }}>{{ .Title }}</a>
+    {{- end }}
+    {{- end }}
+  </div>
+</article>
+{{ end }}
+
+{{- /* Niente colonna a destra (print "" serve solo a rendere non vuota la definizione,
+     altrimenti Go ignorerebbe la sostituzione) */ -}}
+{{ define "toc-container" }}{{ print "" }}{{ end }}
