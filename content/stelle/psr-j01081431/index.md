@@ -6,6 +6,7 @@ draft = false
 tags = ["stella di neutroni", "pulsar", "campo magnetico"]
 inEvidenza = true
 ordineEvidenza = 1
+copertina = "immagini/stella-di-neutroni-rappresentazione-artistica.webp"
 +++
 
 {{< katex />}}
