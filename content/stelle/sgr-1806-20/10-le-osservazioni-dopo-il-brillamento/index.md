@@ -133,7 +133,7 @@ Per completezza d'informazione, occorre riportare un dettaglio che nessuno ha an
 
 ## SGR 1806-20 scrutata dall'occhio a raggi X di Chandra
 
-L'8 febbraio 2005, quarantatré giorni dopo il brillamento, il telescopio spaziale Chandra, il più potente osservatorio per i raggi X, puntò SGR 1806-20 per $30\,000$ secondi, circa otto ore, con una modalità di osservazione pensata apposta per seguire rapide variazioni nel tempo delle emissioni della sorgente. Fu la prima osservazione a raggi X ad alta risoluzione dopo l'evento. Nanda Rea e colleghi [ne ricavarono](https://iopscience.iop.org/article/10.1086/431951) tre risultati controintuitivi.
+L'8 febbraio 2005, quarantatré giorni dopo il brillamento, il telescopio spaziale Chandra, l'osservatorio per i raggi X con la migliore risoluzione angolare, puntò SGR 1806-20 per $30\,000$ secondi, circa otto ore, con una modalità di osservazione pensata apposta per seguire rapide variazioni nel tempo delle emissioni della sorgente. Fu la prima osservazione a raggi X ad alta risoluzione dopo l'evento. Nanda Rea e colleghi [ne ricavarono](https://iopscience.iop.org/article/10.1086/431951) tre risultati controintuitivi.
 
 Il primo riguardava lo spettro: si era ammorbidito in modo significativo rispetto a prima del brillamento, cioè conteneva relativamente più fotoni a bassa energia. L'**indice fotonico**[^indifoto] era passato infatti da circa $1{,}2\,\text{-}\,1{,}6$ delle osservazioni pre-*flare* a circa $1{,}8$ dopo. Fu un cambiamento controintuitivo, perché sarebbe stato lecito attendersi, in linea di principio, che un evento capace di rilasciare un'energia così enorme avesse lasciato la sorgente più "dura", non più "morbida".
 
