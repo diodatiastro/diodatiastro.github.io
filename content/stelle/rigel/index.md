@@ -5,6 +5,7 @@ date = "2026-07-28"
 draft = false
 tags = ["supergigante blu", "classe B8 Ia", "sistema multiplo"]
 inEvidenza = false
+copertina="immagini/rigel-dss2.png"
 +++
 
 {{< katex />}}
