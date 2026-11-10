@@ -177,7 +177,7 @@ L’informazione veramente interessante si trova però nella didascalia che acco
 
 > Per mezzo di un meraviglioso adattamento del principio d’interferenza della luce, gli astronomi dell’Osservatorio del Monte Wilson in California sono stati in grado di misurare i **diametri angolari** di alcune stelle giganti. Essendo approssimativamente note le distanze, è stato possibile calcolare i loro diametri reali.
 
-Il testo citato fa riferimento a [un celebre esperimento](http://adsabs.harvard.edu/doi/10.1086/142603) condotto da Albert A. Michelson e da Francis G. Pease nel 1920, poco più di un secolo fa, nel corso del quale fu usato per la prima volta un interferometro per misurare il diametro angolare di una stella, Betelgeuse per l’appunto. Era il primo passo verso una determinazione realmente affidabile della grandezza della supergigante rossa.
+Il testo citato fa riferimento a [un celebre esperimento](https://scixplorer.org/abs/1921ApJ....53..249M/abstract) condotto da Albert A. Michelson e da Francis G. Pease nel 1920, poco più di un secolo fa, nel corso del quale fu usato per la prima volta un interferometro per misurare il diametro angolare di una stella, Betelgeuse per l’appunto. Era il primo passo verso una determinazione realmente affidabile della grandezza della supergigante rossa.
 
 ### L’esperimento di Michelson e Pease e il diametro angolare di Betelgeuse
 
@@ -262,12 +262,12 @@ Betelgeuse continua naturalmente a essere tenuta sotto stretta sorveglianza. Le 
 
 | Valore                           | Riferimento                                                                                        |
 | -------------------------------- | -------------------------------------------------------------------------------------------------- |
-| $43{,}76 \pm 0{,}12\,\text{mas}$ | [Perrin et al., 2004](https://ui.adsabs.harvard.edu/abs/2004A%26A...418..675P/abstract)            |
-| $44{,}31 \pm 0{,}12\,\text{mas}$ | [Haubois et al., 2009](https://ui.adsabs.harvard.edu/abs/2009A%26A...508..923H/abstract)           |
-| $43{,}6\,\text{mas}$             | [Chivassa et al., 2009](https://ui.adsabs.harvard.edu/abs/2009A%26A...506.1351C/abstract)          |
-| $43{,}56 \pm 0{,}06\,\text{mas}$ | [Ohnaka et al., 2009](https://ui.adsabs.harvard.edu/abs/2009A%26A...503..183O/abstract)            |
-| $42{,}49 \pm 0{,}06\,\text{mas}$ | [Ohnaka et al., 2011](https://ui.adsabs.harvard.edu/abs/2011A%26A...529A.163O/abstract)            |
-| $42{,}28 \pm 0{,}03\,\text{mas}$ | [Montargès et al. 2014](https://ui.adsabs.harvard.edu/abs/2014A%26A...572A..17M/abstract)          |
+| $43{,}76 \pm 0{,}12\,\text{mas}$ | [Perrin et al., 2004](https://scixplorer.org/abs/2004A%26A...418..675P/abstract)            |
+| $44{,}31 \pm 0{,}12\,\text{mas}$ | [Haubois et al., 2009](https://scixplorer.org/abs/2009A%26A...508..923H/abstract)           |
+| $43{,}6\,\text{mas}$             | [Chivassa et al., 2009](https://scixplorer.org/abs/2009A%26A...506.1351C/abstract)          |
+| $43{,}56 \pm 0{,}06\,\text{mas}$ | [Ohnaka et al., 2009](https://scixplorer.org/abs/2009A%26A...503..183O/abstract)            |
+| $42{,}49 \pm 0{,}06\,\text{mas}$ | [Ohnaka et al., 2011](https://scixplorer.org/abs/2011A%26A...529A.163O/abstract)            |
+| $42{,}28 \pm 0{,}03\,\text{mas}$ | [Montargès et al. 2014](https://scixplorer.org/abs/2014A%26A...572A..17M/abstract)          |
 | $43{,}15 \pm 0{,}50\,\text{mas}$ | [Montargès et al., 2016](https://www.aanda.org/articles/aa/abs/2016/04/aa27028-15/aa27028-15.html) |
 
 
@@ -290,7 +290,7 @@ Una supergigante rossa come Betelgeuse si trova in uno stadio evolutivo molto pi
 
 Si tratta perciò di una stella con un aspetto molto differente da quello del Sole e di ciò sono prova i numerosi studi che, nel corso degli ultimi decenni, sono stati pubblicati sulla base delle osservazioni compiute con i più potenti telescopi e interferometri del mondo.
 
-Già in uno [studio pubblicato nel 1990](http://adsabs.harvard.edu/abs/1990MNRAS.245P...7B), gli autori Buscher, Haniff, Baldwin e Warner avevano descritto la presenza di una caratteristica evidentemente asimmetrica sulla fotosfera di Betelgeuse, dopo aver osservato la stella con il telescopio William Herschel da $4{,}2$ metri, usato in modo da simulare un interferometro:
+Già in uno [studio pubblicato nel 1990](https://scixplorer.org/abs/1990MNRAS.245P...7B/abstract), gli autori Buscher, Haniff, Baldwin e Warner avevano descritto la presenza di una caratteristica evidentemente asimmetrica sulla fotosfera di Betelgeuse, dopo aver osservato la stella con il telescopio William Herschel da $4{,}2$ metri, usato in modo da simulare un interferometro:
 
 >Presentiamo immagini ad alta risoluzione del febbraio 1989 della supergigante-M Betelgeuse alle lunghezze d’onda di $633$, $700$ e $710\,\text{nm}$, realizzate usando il metodo del mascheramento non ridondante. A tutte queste lunghezze d’onda, c’è **l’inequivocabile evidenza di una caratteristica asimmetrica sulla superficie della stella**, che contribuisce per il $10–15$ per cento al flusso totale osservato. Ciò potrebbe essere dovuto al passaggio davanti al disco stellare di una vicina compagna o, più probabilmente, a moti di convezione su larga scala nell’atmosfera stellare.
 
@@ -626,7 +626,7 @@ In apertura di questa parte dedicata alla candidata compagna binaria di Betelgeu
 
 Betelgeuse B, al contrario, la stella vicina a Betelgeuse appena scoperta, è un oggetto realmente esistente, con un'orbita apparentemente stabile di circa sei anni e una massa ben maggiore di quella ipotizzata da Wheeler per la stella "divorata". Le due ipotesi restano dunque logicamente distinte, e in linea di principio potrebbero perfino coesistere: un sistema inizialmente triplo, in cui una componente sia stata inghiottita mentre un'altra sopravvive tuttora, non è impossibile. 
 
-Gli [studi più recenti](https://ui.adsabs.harvard.edu/abs/2025ApJ...978...50M/abstract) sulla natura dello LSP, tuttavia, propongono per l'anomala rotazione di Betelgeuse una spiegazione alternativa e più parsimoniosa: non una fusione avvenuta in un lontano passato con una stella oggi scomparsa, ma un'**interazione mareale** tuttora in corso con la compagna binaria, che trasferirebbe gradualmente momento angolare alla supergigante senza che sia mai avvenuta una vera fusione. Non esiste oggi un modo definitivo per scegliere tra le due ipotesi, ma la scoperta di una compagna visibile, se verrà confermata, rende quest'ultima spiegazione — quella che non richiede di postulare una terza stella ormai scomparsa — quantomeno la più economica dal punto di vista esplicativo. 
+Gli [studi più recenti](https://scixplorer.org/abs/2025ApJ...978...50M/abstract) sulla natura dello LSP, tuttavia, propongono per l'anomala rotazione di Betelgeuse una spiegazione alternativa e più parsimoniosa: non una fusione avvenuta in un lontano passato con una stella oggi scomparsa, ma un'**interazione mareale** tuttora in corso con la compagna binaria, che trasferirebbe gradualmente momento angolare alla supergigante senza che sia mai avvenuta una vera fusione. Non esiste oggi un modo definitivo per scegliere tra le due ipotesi, ma la scoperta di una compagna visibile, se verrà confermata, rende quest'ultima spiegazione — quella che non richiede di postulare una terza stella ormai scomparsa — quantomeno la più economica dal punto di vista esplicativo. 
 
 Fatta questa doverosa precisazione, eccoci pronti dunque ad affrontare quest'ultimo capitolo della complicata storia di Betelgeuse.
 
@@ -747,7 +747,7 @@ caption="La costellazione di Orione in un’immagine tratta dalla survey DSS2. B
 
 [^13]: Un’[unità astronomica]({{< relref "/dizionario/unita-astronomica/" >}}) equivale a poco meno di $150$ milioni di chilometri e rappresenta la distanza media tra la Terra e il Sole.
 
-[^14]: Secondo [uno studio](https://ui.adsabs.harvard.edu/abs/2018A%26A...609A..67K/abstract) di Pierre Kervella e altri autori, pubblicato nel 2018 su *Astronomy & Astrophysics*, la velocità di rotazione di Betelgeuse è nettamente inferiore a quella adottata nello studio guidato da Craig Wheeler. Kervella e colleghi indicano una velocità di rotazione equatoriale minima di $5{,}47 \pm 0{,}25\,\text{km/s}$ e un periodo di rotazione di $36 \pm 8$ anni terrestri. La velocità di rotazione adottata nello studio di Michelle Dolan e altri, di cui abbiamo parlato in precedenza, è in linea con tale valore. Si tratta comunque molto di più degli $0{,}1\,\text{km/s}$ che la teoria predice per una supergigante come Betelgeuse.
+[^14]: Secondo [uno studio](https://scixplorer.org/abs/2018A%26A...609A..67K/abstract) di Pierre Kervella e altri autori, pubblicato nel 2018 su *Astronomy & Astrophysics*, la velocità di rotazione di Betelgeuse è nettamente inferiore a quella adottata nello studio guidato da Craig Wheeler. Kervella e colleghi indicano una velocità di rotazione equatoriale minima di $5{,}47 \pm 0{,}25\,\text{km/s}$ e un periodo di rotazione di $36 \pm 8$ anni terrestri. La velocità di rotazione adottata nello studio di Michelle Dolan e altri, di cui abbiamo parlato in precedenza, è in linea con tale valore. Si tratta comunque molto di più degli $0{,}1\,\text{km/s}$ che la teoria predice per una supergigante come Betelgeuse.
 
 [^15]: Il massimo angolo formato tra il corpo principale (Betelgeuse) e quello secondario (la compagna binaria) con vertice nel punto di osservazione terrestre.
 

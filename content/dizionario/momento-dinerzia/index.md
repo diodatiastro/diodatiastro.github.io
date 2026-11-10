@@ -166,6 +166,6 @@ contro i $3{,}9\times10^{47}\,\text{kg}\,\text{m}^2$ dell'approssimazione a sfer
 
 [^2]: L'**ellissoide d'inerzia** è la rappresentazione geometrica del tensore d'inerzia, introdotta da Poinsot: per ogni direzione $\hat{n}$ passante per il punto considerato, si riporta un punto a distanza $1/\sqrt{I(\hat{n})}$​ lungo quella direzione; il luogo di tutti questi punti descrive un ellissoide, i cui tre assi coincidono con gli assi principali d'inerzia del corpo.
 
-[^schia]: Il valore di $0,3307$ corrisponde al **fattore di momento d'inerzia polare** della Terra, definito come $C/MR^2$ (dove $C$ è [il momento d'inerzia rispetto all'asse polare](https://ui.adsabs.harvard.edu/abs/1994AJ....108..711W/abstract), $M$ la massa e $R$ il raggio equatoriale).
+[^schia]: Il valore di $0,3307$ corrisponde al **fattore di momento d'inerzia polare** della Terra, definito come $C/MR^2$ (dove $C$ è [il momento d'inerzia rispetto all'asse polare](https://scixplorer.org/abs/1994AJ....108..711W/abstract), $M$ la massa e $R$ il raggio equatoriale).
 
 [^3]: L'approssimazione a sfera omogenea è più verosimile nel caso di oggetti compatti come le nane bianche e le stelle di neutroni.

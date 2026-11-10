@@ -35,7 +35,7 @@ Cerchiamo allora di conoscere meglio questa stella eccezionale, anche se — è 
 
 ## Una supergigante luminosa
 
-Quello che sappiamo per certo è che Deneb è una **supergigante** ad alta luminosità. Catalogata con il tipo spettrale **A2 Ia** [nel sistema di classificazione](http://adsabs.harvard.edu/abs/1973ARA%26A..11...29M) di Morgan e Keenan, è la stella-prototipo della sua classe: affinché una supergigante possa essere classificata con il medesimo tipo, deve esibire uno spettro che nel complesso sia sovrapponibile a quello di Deneb. Questo ruolo di archetipo della sua classe spettrale è valido ancora oggi.
+Quello che sappiamo per certo è che Deneb è una **supergigante** ad alta luminosità. Catalogata con il tipo spettrale **A2 Ia** [nel sistema di classificazione](https://scixplorer.org/abs/1973ARA%26A..11...29M/abstract) di Morgan e Keenan, è la stella-prototipo della sua classe: affinché una supergigante possa essere classificata con il medesimo tipo, deve esibire uno spettro che nel complesso sia sovrapponibile a quello di Deneb. Questo ruolo di archetipo della sua classe spettrale è valido ancora oggi.
 
 Il fatto che sia una supergigante ci dice anche che si tratta di una stella molto più massiccia del Sole e, soprattutto, altamente **evoluta**. Ciò vuol dire che è ormai uscita dalla sequenza principale, quella fase dell’evoluzione stellare nella quale si trovano invece il Sole, Vega e Altair, caratterizzata dall’uso dell’idrogeno contenuto nel nucleo stellare come combustibile per le reazioni di fusione termonucleare.
 
@@ -145,7 +145,7 @@ Qual è l’orientamento di Deneb, osservata dalla Terra? Una risposta a questa 
 
 ## Variabilità
 
-Per non farsi mancare nulla, la nostra supergigante è anche una **stella variabile**. L’escursione di luminosità è modesta, dell’ordine di $0,1$ magnitudini, ma il comportamento della stella è tutt’altro che regolare. Nel 1976 Leon Lucy analizzò le variazioni della velocità radiale di Deneb e [identificò](https://articles.adsabs.harvard.edu/pdf/1976ApJ...206..499L) $16$ possibili modi di pulsazione, con periodi compresi fra $6{,}9$ e $100{,}8$ giorni. Le osservazioni moderne hanno permesso di riconoscere con maggiore chiarezza la particolare natura intermittente di alcune di queste oscillazioni.
+Per non farsi mancare nulla, la nostra supergigante è anche una **stella variabile**. L’escursione di luminosità è modesta, dell’ordine di $0,1$ magnitudini, ma il comportamento della stella è tutt’altro che regolare. Nel 1976 Leon Lucy analizzò le variazioni della velocità radiale di Deneb e [identificò](https://scixplorer.org/abs/1976ApJ...206..499L/abstract) $16$ possibili modi di pulsazione, con periodi compresi fra $6{,}9$ e $100{,}8$ giorni. Le osservazioni moderne hanno permesso di riconoscere con maggiore chiarezza la particolare natura intermittente di alcune di queste oscillazioni.
 
 Le osservazioni più recenti hanno rivelato che Deneb manifesta oscillazioni quasi periodiche con un periodo di circa $12$ giorni, presumibilmente dovute a pulsazioni. Quando queste oscillazioni si manifestano con maggiore ampiezza, la luminosità della stella cresce e diminuisce seguendo una sequenza di diversi cicli di circa $12$ giorni; dopo alcuni cicli, però, le oscillazioni si attenuano fino quasi a scomparire.
 
