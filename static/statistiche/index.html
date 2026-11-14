@@ -65,13 +65,18 @@
   try {
     // elenco di percorsi e titoli generato da Hugo a ogni pubblicazione
     var elenco = await (await fetch("/statistiche/pagine.json", { cache: "no-store" })).json();
+    // conteggi chiesti al server Waline a gruppi di 20 pagine; le richieste
+    // partono tutte insieme, così l'attesa è quella della più lenta, non la somma
     var conteggi = {};
+    var gruppi = [];
     for (var i = 0; i < elenco.length; i += 20) {
-      var gruppo = elenco.slice(i, i + 20).map(function (x) { return x.path; });
+      gruppi.push(elenco.slice(i, i + 20).map(function (x) { return x.path; }));
+    }
+    await Promise.all(gruppi.map(async function (gruppo) {
       var r = await fetch(SERVER + "api/article?path=" + encodeURIComponent(gruppo.join(",")) + "&type=time&lang=it");
       var dati = (await r.json()).data || [];
       gruppo.forEach(function (p, j) { conteggi[p] = (dati[j] && dati[j].time) || 0; });
-    }
+    }));
     var righe = elenco.map(function (x) {
       var p = x.path;
       var sezione = p === "/" ? "home" : p.split("/")[1];
