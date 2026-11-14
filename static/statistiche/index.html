@@ -43,6 +43,7 @@
     <div><b id="totale">…</b>visite in tutto</div>
     <div><b id="visitate">…</b>pagine con almeno una visita</div>
     <div><b id="pagine">…</b>pagine nel sito</div>
+    <div id="box-sezione" hidden><b id="visite-sezione">…</b><span id="nome-sezione"></span></div>
   </div>
   <div class="filtri" id="filtri"></div>
   <p id="stato">Caricamento…</p>
@@ -119,10 +120,21 @@
       b.type = "button"; b.textContent = s; if (!k) b.className = "attivo";
       b.onclick = function () {
         filtri.querySelectorAll("button").forEach(function (x) { x.className = ""; });
-        b.className = "attivo"; filtro = s; pagina = 0; mostra();
+        b.className = "attivo"; filtro = s; pagina = 0; mostra(); riquadroSezione();
       };
       filtri.appendChild(b);
     });
+
+    // riquadro con le visite della sezione scelta: solo per le sezioni
+    // con più pagine (saggio, dizionario, stelle, tag), non per le pagine singole
+    function riquadroSezione() {
+      var box = document.getElementById("box-sezione");
+      var della = righe.filter(function (x) { return x.sezione === filtro; });
+      if (filtro === "tutte" || della.length < 2) { box.hidden = true; return; }
+      document.getElementById("visite-sezione").textContent = della.reduce(function (t, x) { return t + x.n; }, 0);
+      document.getElementById("nome-sezione").textContent = "visite in «" + filtro + "» (" + della.length + " pagine)";
+      box.hidden = false;
+    }
 
     mostra();
     stato.hidden = true;
