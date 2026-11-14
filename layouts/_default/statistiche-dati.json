@@ -1,13 +1,18 @@
 {{- /* Elenco delle pagine per /statistiche/: tutte quelle della sitemap,
-     più alcune escluse dalla sitemap ma da seguire lo stesso (extra).
+     più alcune escluse dalla sitemap ma da seguire lo stesso: quelle in extra
+     e le pagine dei singoli tag (/tags/nome-del-tag/), che nella pagina delle
+     statistiche finiscono sotto il filtro «tags» insieme a /tags/.
      Le pagine senza indirizzo (render = "never", es. content/stelle/_index.md,
      la vecchia home del catalogo) non vengono generate e restano fuori. */ -}}
 {{- $extra := slice "/elenco-stelle/" "/tags/" -}}
 {{- $pagine := slice -}}
 {{- range site.Pages -}}
   {{- $path := .RelPermalink -}}
-  {{- if and $path (in (slice "page" "section" "home" "taxonomy") .Kind) (or (not .Sitemap.Disable) (in $extra $path)) -}}
-    {{- $pagine = $pagine | append (dict "path" $path "title" (.Title | default site.Title)) -}}
+  {{- if and $path (in (slice "page" "section" "home" "taxonomy" "term") .Kind) (or (not .Sitemap.Disable) (in $extra $path) (eq .Kind "term")) -}}
+    {{- $titolo := .Title | default site.Title -}}
+    {{- /* per i tag, il nome come scritto negli articoli (Hugo ne fa le maiuscole) */ -}}
+    {{- if eq .Kind "term" }}{{ $titolo = printf "Tag: %s" .Data.Term }}{{ end -}}
+    {{- $pagine = $pagine | append (dict "path" $path "title" $titolo) -}}
   {{- end -}}
 {{- end -}}
 {{- $pagine | jsonify -}}
