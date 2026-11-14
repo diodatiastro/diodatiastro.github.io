@@ -1,7 +1,13 @@
+{{- /* Elenco delle pagine per /statistiche/: tutte quelle della sitemap,
+     più alcune escluse dalla sitemap ma da seguire lo stesso (extra).
+     Le pagine senza indirizzo (render = "never", es. content/stelle/_index.md,
+     la vecchia home del catalogo) non vengono generate e restano fuori. */ -}}
+{{- $extra := slice "/elenco-stelle/" "/tags/" -}}
 {{- $pagine := slice -}}
 {{- range site.Pages -}}
-  {{- if and (in (slice "page" "section" "home") .Kind) (not .Sitemap.Disable) -}}
-    {{- $pagine = $pagine | append (dict "path" .RelPermalink "title" (.Title | default site.Title)) -}}
+  {{- $path := .RelPermalink -}}
+  {{- if and $path (in (slice "page" "section" "home" "taxonomy") .Kind) (or (not .Sitemap.Disable) (in $extra $path)) -}}
+    {{- $pagine = $pagine | append (dict "path" $path "title" (.Title | default site.Title)) -}}
   {{- end -}}
 {{- end -}}
 {{- $pagine | jsonify -}}
