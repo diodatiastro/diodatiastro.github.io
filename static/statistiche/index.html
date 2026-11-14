@@ -30,11 +30,14 @@
   .pagine { display:flex; align-items:center; justify-content:center; gap:14px; margin:1.2rem 0 0; color:var(--muted); }
   .pagine button { font:inherit; background:var(--panel); color:var(--text); border:1px solid var(--line); border-radius:6px; padding:.35rem .9rem; cursor:pointer; }
   .pagine button:disabled { opacity:.35; cursor:default; }
+  .su { text-align:center; margin:1.6rem 0 0; }
+  .su a { color:var(--blue); text-decoration:none; }
+  .su a:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Statistiche delle visite</h1>
+  <h1 id="inizio">Statistiche delle visite</h1>
   <p class="nota">Una visita per pagina per sessione del browser, escluse le tue (#non-contarmi). Conteggio dal server Waline del sito, a partire dall'attivazione del contatore.</p>
   <div class="riepilogo">
     <div><b id="totale">…</b>visite in tutto</div>
@@ -52,6 +55,7 @@
     <span id="pagina-n"></span>
     <button type="button" id="succ">Successive ›</button>
   </div>
+  <p class="su"><a href="#inizio">↑ Torna a inizio pagina</a></p>
 </main>
 <script>
 (async function () {
