@@ -93,6 +93,8 @@
     var prec = document.getElementById("prec"), succ = document.getElementById("succ");
     var filtro = "tutte", pagina = 0;
 
+    // percorso da mostrare: lettere accentate al posto dei codici %C3%A0 ecc.
+    function leggibile(p) { try { return decodeURIComponent(p); } catch (e) { return p; } }
     function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
     function mostra() {
@@ -100,7 +102,7 @@
       var tot = Math.max(1, Math.ceil(scelte.length / PER_PAGINA));
       if (pagina >= tot) pagina = tot - 1;
       tbody.innerHTML = scelte.slice(pagina * PER_PAGINA, (pagina + 1) * PER_PAGINA).map(function (x) {
-        return '<tr' + (x.n ? '' : ' class="zero"') + '><td><a href="' + esc(x.p) + '">' + esc(x.p) + '</a><small>' + esc(x.titolo) + '</small></td><td class="n">' + x.n + '</td></tr>';
+        return '<tr' + (x.n ? '' : ' class="zero"') + '><td><a href="' + esc(x.p) + '">' + esc(leggibile(x.p)) + '</a><small>' + esc(x.titolo) + '</small></td><td class="n">' + x.n + '</td></tr>';
       }).join("");
       nav.hidden = tot < 2;
       document.getElementById("pagina-n").textContent = "pagina " + (pagina + 1) + " di " + tot;
