@@ -4,9 +4,6 @@ subtitle = "Una supergigante incostante ed enigmatica"
 date = "2026-10-28"
 draft = false
 tags = ["variabile Cefeide", "sistema multiplo", "classe F7 Ib", "supergigante gialla", "campo magnetico"]
-inEvidenza = true
-ordineEvidenza = 3
-righePrima = 2
 +++
 
 {{< katex />}}

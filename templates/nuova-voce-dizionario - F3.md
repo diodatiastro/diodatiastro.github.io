@@ -3,7 +3,7 @@ const titolo = await tp.system.prompt("Titolo della voce");
 
 if (!titolo) {
     new Notice("Creazione annullata");
-    await app.vault.trash(app.workspace.getActiveFile(), true);
+    await app.vault.trash(tp.config.target_file, true);
     return;
 }
 
@@ -23,7 +23,7 @@ const percorsoFile = `${cartella}/index`;
 // Controllo se esiste già
 if (await app.vault.adapter.exists(percorsoFile + ".md")) {
     new Notice("La voce esiste già: " + slug);
-    await app.vault.trash(app.workspace.getActiveFile(), true);
+    await app.vault.trash(tp.config.target_file, true);
     return;
 }
 

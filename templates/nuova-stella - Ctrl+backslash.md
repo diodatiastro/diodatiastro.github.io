@@ -3,7 +3,7 @@ const nome = await tp.system.prompt("Nome della stella");
 
 if (!nome) {
     new Notice("Creazione annullata");
-    await app.vault.trash(app.workspace.getActiveFile(), true);
+    await app.vault.trash(tp.config.target_file, true);
     return;
 }
 
@@ -24,7 +24,7 @@ const percorsoFile = `${percorso}/index`;
 // Controllo se esiste già
 if (await app.vault.adapter.exists(percorsoFile + ".md")) {
     new Notice("La voce esiste già: " + slug);
-    await app.vault.trash(app.workspace.getActiveFile(), true);
+    await app.vault.trash(tp.config.target_file, true);
     return;
 }
 

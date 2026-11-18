@@ -4,7 +4,7 @@ const baseFolder = app.vault.getAbstractFileByPath("materiali/dizionario");
 
 if (!baseFolder || !baseFolder.children) {
     new Notice("Cartella materiali/dizionario non trovata");
-    await app.vault.trash(app.workspace.getActiveFile(), true);
+    await app.vault.trash(tp.config.target_file, true);
     return;
 }
 
@@ -15,7 +15,7 @@ const sottocartelle = baseFolder.children
 
 if (sottocartelle.length === 0) {
     new Notice("Nessuna sottocartella trovata in materiali/dizionario");
-    await app.vault.trash(app.workspace.getActiveFile(), true);
+    await app.vault.trash(tp.config.target_file, true);
     return;
 }
 
@@ -23,7 +23,7 @@ const cartellaScelta = await tp.system.suggester(sottocartelle, sottocartelle, f
 
 if (!cartellaScelta) {
     new Notice("Creazione annullata");
-    await app.vault.trash(app.workspace.getActiveFile(), true);
+    await app.vault.trash(tp.config.target_file, true);
     return;
 }
 
@@ -31,7 +31,7 @@ const nomePagina = await tp.system.prompt("Nome della pagina");
 
 if (!nomePagina) {
     new Notice("Creazione annullata");
-    await app.vault.trash(app.workspace.getActiveFile(), true);
+    await app.vault.trash(tp.config.target_file, true);
     return;
 }
 
@@ -39,7 +39,7 @@ const nomePulito = nomePagina.trim().replace(/[\\/:*?"<>|]/g, "");
 
 if (!nomePulito) {
     new Notice("Nome non valido");
-    await app.vault.trash(app.workspace.getActiveFile(), true);
+    await app.vault.trash(tp.config.target_file, true);
     return;
 }
 
@@ -48,7 +48,7 @@ const percorsoFile = `materiali/dizionario/${cartellaScelta}/${nomePulito}`;
 // Controllo se esiste già
 if (await app.vault.adapter.exists(percorsoFile + ".md")) {
     new Notice("La pagina esiste già: " + nomePulito);
-    await app.vault.trash(app.workspace.getActiveFile(), true);
+    await app.vault.trash(tp.config.target_file, true);
     return;
 }
 
