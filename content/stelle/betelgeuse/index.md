@@ -9,13 +9,14 @@ inEvidenza = false
 
 {{< katex />}}
 
+Quello che segue è un lungo percorso attraverso ciò che sappiamo e ciò che ignoriamo di Betelgeuse e su tutte le incertezze che accompagnano il nostro sapere. Ogni tappa è autonoma, ma tutte insieme disegnano un ritratto accurato e fedele di questa stella straordinaria.
+
+
 {{< figura 
 src="immagini/vista-simulata.jpg" 
 alt="Una vista simulata di Betelgeuse" 
 caption="Una vista simulata di Betelgeuse. Crediti: Michele Diodati"
 >}}
-
-Quello che segue è un lungo percorso attraverso ciò che sappiamo e ciò che ignoriamo di Betelgeuse e su tutte le incertezze che accompagnano il nostro sapere. Ogni tappa è autonoma, ma tutte insieme disegnano un ritratto accurato e fedele di questa stella straordinaria.
 
 ## Il calo di luminosità più cospicuo da un secolo a questa parte
 
