@@ -62,7 +62,7 @@ Le particelle del plasma oscillano prevalentemente in direzione radiale e le ond
 
 Affinché le onde acustiche possano formare modi stazionari intrappolati all'interno della stella, è necessario che vengano *riflesse* quando raggiungono la superficie stellare. È la [fotosfera]({{< relref "/dizionario/fotosfera/" >}}) ad agire come barriera riflettente, ma solo per le onde con frequenza inferiore alla **frequenza di taglio acustico** (indicata con $\nu_{\text{cut-off}}$ o $\nu_{\text{ac}}$):
 $$\nu_{\text{cut-off}} \propto \frac{g}{\sqrt{T_{\text{eff}}}},$$
-dove $g$ è la gravità superficiale e $T_{\text{eff}}$ è la temperatura efficace della stella.
+dove $g$ è la gravità superficiale e $T_{\text{eff}}$ è la [temperatura efficace]({{< relref "/dizionario/temperatura-efficace/" >}}) della stella.
 
 Se la frequenza di un'onda acustica è **inferiore** a $\nu_{\text{cut-off}}$, la brusca caduta di densità alla fotosfera impedisce all'onda di propagarsi ulteriormente verso l'esterno: l'onda viene riflessa verso l'interno, rimanendo intrappolata nella cavità risonante stellare, dove genera un modo stazionario *p*. Se invece la frequenza **supera** $\nu_{\text{cut-off}}$, l'onda ha energia sufficiente per dissiparsi nell'atmosfera esterna (cromosfera e corona) come onda progressiva smorzata, senza contribuire allo spettro di risonanza della stella.
 

@@ -72,7 +72,7 @@ $$
 La costante solare è un parametro fondamentale in diversi settori della scienza e della tecnica. Serve, per esempio, in:
 
 - **climatologia**, per calcolare il bilancio energetico della Terra e l'effetto serra (la Terra riceve energia dal Sole e ne riemette una parte variabile nello spazio);
-- **astrofisica**, per determinare la luminosità del Sole e, insieme al raggio solare, la temperatura efficace della sua fotosfera;
+- **astrofisica**, per determinare la luminosità del Sole e, insieme al raggio solare, la [temperatura efficace]({{< relref "/dizionario/temperatura-efficace/" >}}) della sua fotosfera;
 - **ingegneria spaziale**, per progettare i pannelli solari dei satelliti e il controllo termico delle sonde.
 
 {{< figura 

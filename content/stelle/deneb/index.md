@@ -96,7 +96,7 @@ Schiller e Przybilla tracciarono inoltre una carta d’identità completa di Den
 
 ## Temperatura e luminosità
 
-Un altro dato essenziale nel comporre la carta d’identità di una stella è la **temperatura efficace**.
+Un altro dato essenziale nel comporre la carta d’identità di una stella è la [temperatura efficace]({{< relref "/dizionario/temperatura-efficace/" >}}).
 
 {{< figura 
 src="immagini/deneb06.jpg" 

@@ -53,7 +53,7 @@ Applicando la formula a tre tipi di stelle caratterizzati da temperature fotosfe
 | Sorgente | Temperatura | $\lambda_{max}$ | Banda |
 |---|---|---|---|
 | Stella di tipo O | $\approx 30\,000\;\mathrm{K}$ | $\approx 97\;\mathrm{nm}$ | ultravioletto lontano |
-| Sole | $\approx 5\,778\;\mathrm{K}$ | $\approx 502\;\mathrm{nm}$ | visibile (verde) |
+| Sole | $\approx 5\,772\;\mathrm{K}$ | $\approx 502\;\mathrm{nm}$ | visibile (verde) |
 | Stella di tipo M | $\approx 3\,000\;\mathrm{K}$ | $\approx 966\;\mathrm{nm}$ | vicino infrarosso |
 
 In sostanza, mentre la legge di Planck è la descrizione completa dello spettro di un corpo nero, la legge di Wien è lo strumento che serve per ricavare rapidamente il punto in cui l'emissione di radiazione termica è massima. Si tratta di una proprietà utilissima in astronomia, perché consente di stimare la temperatura superficiale di una stella semplicemente osservando il colore della sua radiazione.
@@ -72,7 +72,7 @@ $$
 L = 4\pi R^2 \sigma T^4
 $$
 
-Applicando la prima formula alla temperatura superficiale del Sole ($T \approx 5\,778\;\mathrm{K}$) si ottiene un flusso $j^* \approx 6{,}3 \times 10^7\;\mathrm{W/m^2}$. Applicando poi la seconda formula, con il raggio solare $R_\odot \approx 6{,}957 \times 10^8\;\mathrm{m}$, si ottiene la luminosità totale del Sole:
+Applicando la prima formula alla temperatura superficiale del Sole ($T \approx 5\,772\;\mathrm{K}$) si ottiene un flusso $j^* \approx 6{,}3 \times 10^7\;\mathrm{W/m^2}$. Applicando poi la seconda formula, con il raggio solare $R_\odot \approx 6{,}957 \times 10^8\;\mathrm{m}$, si ottiene la luminosità totale del Sole:
 
 $$
 L_\odot = 4\pi R_\odot^2 \sigma T^4 \approx 3{,}83 \times 10^{26}\;\mathrm{W},

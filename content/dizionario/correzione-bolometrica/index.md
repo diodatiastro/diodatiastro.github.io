@@ -26,7 +26,7 @@ Dato che la magnitudine bolometrica rappresenta il flusso *totale* (che è sempr
 
 ## I parametri che influiscono sulla correzione bolometrica
 
-Il valore $BC$ varia da stella a stella, a volte drasticamente[^3], in funzione di tre parametri fondamentali: la **temperatura efficace** ($T_{\text{eff}}$), la **gravità superficiale** e la **metallicità** dell'astro. In base alla temperatura, possiamo osservare tre comportamenti tipici:
+Il valore $BC$ varia da stella a stella, a volte drasticamente[^3], in funzione di tre parametri fondamentali: la [temperatura efficace]({{< relref "/dizionario/temperatura-efficace/" >}}) ($T_{\text{eff}}$), la **gravità superficiale** e la **metallicità** dell'astro. In base alla temperatura, possiamo osservare tre comportamenti tipici:
 
 1. **Stelle caldissime (tipi spettrale O, B).** Poiché il loro picco di emissione è spostato decisamente verso l'ultravioletto, la luce visibile è solo una piccola frazione del totale. Di conseguenza, la loro $BC$ è fortemente negativa. Per le stelle di tipo O può superare il valore di $-3{,}0$ o $-4{,}0$.
 

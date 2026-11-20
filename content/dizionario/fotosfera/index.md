@@ -16,7 +16,7 @@ Per capire perché la luce stellare proviene proprio dalla fotosfera, bisogna in
 
 Partiamo dal fatto che, all'interno di una stella, la materia è tanto più densa e calda quanto più ci si avvicina al nucleo. I [fotoni]({{< relref "/dizionario/fotone/" >}}) (i "pacchetti" di radiazione) prodotti dalle reazioni di fusione nucleare non viaggiano liberamente. Al contrario, interagiscono di continuo con le particelle cariche (elettroni, protoni, ioni) che incontrano sul loro cammino e vengono deviati, assorbiti e riemessi altrettanto di continuo. Questo processo si chiama **scattering**.
 
-Per essere più precisi, nel nucleo, le reazioni di fusione nucleare producono fotoni ad altissima energia (**raggi gamma**), ma questi, interagendo con la materia circostante, vengono rapidamente assorbiti e riemessi innumerevoli volte, trasferendo progressivamente la loro energia al plasma. A causa di questo processo di **termalizzazione**, l'energia originaria della fusione si trasforma in un flusso di fotoni con uno spettro che, alla fotosfera, corrisponde a quello di un corpo nero a circa $5\,700\; \mathrm{K}$.
+Per essere più precisi, nel nucleo, le reazioni di fusione nucleare producono fotoni ad altissima energia (**raggi gamma**), ma questi, interagendo con la materia circostante, vengono rapidamente assorbiti e riemessi innumerevoli volte, trasferendo progressivamente la loro energia al plasma. A causa di questo processo di **termalizzazione**, l'energia originaria della fusione si trasforma in un flusso di fotoni con uno spettro che, alla fotosfera, corrisponde a quello di un corpo nero a circa $5\,800\; \mathrm{K}$.
 
 In pratica, all'interno del Sole o di un altra stella, un fotone *non* viaggia in linea retta dal nucleo alla superficie. Fa un percorso a zig-zag, rimbalzando da una particella all'altra, come un ubriaco che tenta di uscire da un bar affollato. Possono volerci migliaia di anni, o addirittura milioni secondo alcuni calcoli, perché un fotone prodotto nel nucleo riesca a farsi strada fino alla superficie stellare. In realtà non è mai lo *stesso* fotone a compiere l'intero viaggio: è l'energia che, attraverso continui assorbimenti e riemissioni, si trasferisce gradualmente verso l'esterno, emergendo infine come luce visibile a energie molto inferiori rispetto ai raggi gamma originari.
 
@@ -36,7 +36,7 @@ Questa definizione formale mette in luce un aspetto cruciale: la profondità ott
 
 ## Definizione convenzionale di fotosfera
 
-La fotosfera è convenzionalmente definita come il luogo in cui la profondità ottica nella banda visibile è $\tau ≈ 2/3$. Questo è il livello in cui si calcola il **raggio stellare** e da cui proviene il flusso radiativo che determina la **temperatura efficace** della stella ($T_\text{eff}$), calcolata seconda la legge di Stefan-Boltzmann:
+La fotosfera è convenzionalmente definita come il luogo in cui la profondità ottica nella banda visibile è $\tau ≈ 2/3$. Questo è il livello in cui si calcola il **raggio stellare** e da cui proviene il flusso radiativo che determina la [temperatura efficace]({{< relref "/dizionario/temperatura-efficace/" >}}) della stella ($T_\text{eff}$), calcolata seconda la legge di Stefan-Boltzmann:
 
 $$L = 4\pi R^2 \sigma T^4_{eff}$$
 
@@ -87,7 +87,7 @@ La fotosfera del Sole ha diverse caratteristiche di rilievo dal punto di vista a
 
 ### Temperatura
 
-Alla base della fotosfera la temperatura è di circa $6\,600\,\mathrm{K}$. Scende rapidamente intorno a $4\,400\,\mathrm{K}$ alla sommità, cioè $500\,\mathrm{km}$ più in alto. La temperatura efficace del Sole $T_\text{eff}$, calcolata alla profondità ottica $\tau \approx 2/3$, è di circa $5\,770\,\mathrm{K}$ (con alcune fonti che riportano $5\,772\,\mathrm{K}$, altre $5\,777\,\mathrm{K}$ e altre ancora $5\,778\,\mathrm{K}$).
+Alla base della fotosfera la temperatura è di circa $6\,600\,\mathrm{K}$. Scende rapidamente intorno a $4\,400\,\mathrm{K}$ alla sommità, cioè $500\,\mathrm{km}$ più in alto. La temperatura efficace del Sole $T_\text{eff}$, calcolata alla profondità ottica $\tau \approx 2/3$, è di $5\,772\,\mathrm{K}$: è il valore nominale fissato dall'Unione Astronomica Internazionale nel 2015. In passato molte fonti riportavano $5\,777$ o $5\,778\,\mathrm{K}$.
 
 ### Granulazione
 

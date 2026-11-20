@@ -58,7 +58,7 @@ caption="Lo spettro di Alnilam nelle lunghezze d’onda della luce visibile. Cre
 
 | **Parametro**                                                                                  | **Valore**                           | **Note / Incertezze**                |
 | ---------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------ |
-| Temperatura efficace                                                                           | $28\,800\text{ K} \pm 2\,000\text{ K}$ | —                                    |
+| [Temperatura efficace]({{< relref "/dizionario/temperatura-efficace/" >}})                                                                           | $28\,800\text{ K} \pm 2\,000\text{ K}$ | —                                    |
 | Raggio                                                                                         | $31{,}3\text{ }R_\odot$              | $^{+8{,}2}_{-2{,}3}\text{ }R_\odot$  |
 | Massa [^3]                                                                                     | $35\text{ }M_\odot$                  | $^{+25}_{-8}\text{ }M_\odot$         |
 | Gravità superficiale [^4]                                                                      | $10\text{ m/s}^2$                    | —                                    |

@@ -43,7 +43,7 @@ Per ogni stella, la luminosità può essere calcolata a partire da due elementi 
 
 ## Come calcolare la luminosità di una stella
 
-Uno dei metodi più utilizzati per calcolare le luminosità stellari, basato sulla relazione fra questi due criteri, è la **Legge di Stefan-Boltzmann.** Essa approssima la superficie di una stella (la [fotosfera]({{< relref "/dizionario/fotosfera/" >}})) a un [corpo nero]({{< relref "/dizionario/corpo-nero/" >}}) sferico perfetto, la cui luminosità totale dipende direttamente dal raggio stellare $R$ e dalla temperatura efficace $T_{eff}$. La relazione è espressa dalla formula:
+Uno dei metodi più utilizzati per calcolare le luminosità stellari, basato sulla relazione fra questi due criteri, è la **Legge di Stefan-Boltzmann.** Essa approssima la superficie di una stella (la [fotosfera]({{< relref "/dizionario/fotosfera/" >}})) a un [corpo nero]({{< relref "/dizionario/corpo-nero/" >}}) sferico perfetto, la cui luminosità totale dipende direttamente dal raggio stellare $R$ e dalla [temperatura efficace]({{< relref "/dizionario/temperatura-efficace/" >}}) $T_{eff}$. La relazione è espressa dalla formula:
 
 $$
 L = 4\pi R^2 \sigma T_{eff}^4
@@ -74,19 +74,19 @@ $$
 Calcoliamo ora il rapporto tra le temperature di Sirio e del Sole:
 
 $$
-\frac{T}{T_\odot} = \frac{9900}{5778} = 1{,}713
+\frac{T}{T_\odot} = \frac{9900}{5772} = 1{,}715
 $$
 
 Calcoliamo poi la quarta potenza del risultato ottenuto:
 
 $$
-\left(\frac{T}{T_\odot}\right)^4 = (1{,}713)^4 = 8{,}618
+\left(\frac{T}{T_\odot}\right)^4 = (1{,}715)^4 = 8{,}651
 $$
 
 Moltiplichiamo infine il risultato delle due operazioni secondo quanto richiesto dalla formula:
 
 $$
-\frac{L_{Sirio}}{L_\odot} = 2{,}928 \times 8{,}618= 25{,}23
+\frac{L_{Sirio}}{L_\odot} = 2{,}928 \times 8{,}651= 25{,}33
 $$
 
 La legge di Stefan-Boltzmann ci dice, dunque, che Sirio è intrinsecamente circa $25$ volte più luminosa del Sole.
@@ -123,7 +123,7 @@ Infine ricaviamo il rapporto di luminosità con il Sole:
 
 $$\frac{L_{Sirio}}{L_\odot} = \frac{1{,}06 \times 10^{28}}{3{,}828 \times 10^{26}} \approx 27{,}6 \, L_\odot$$
 
-Il valore ottenuto - circa $27{,}6$ luminosità solari - è in buon accordo con quello calcolato usando la legge di Stefan-Boltzmann $(25,23\;L_\odot)$, leggermente superiore ma entro il margine di incertezza legato alla correzione bolometrica applicata, un valore che non è mai definito con precisione assoluta.
+Il valore ottenuto - circa $27{,}6$ luminosità solari - è in buon accordo con quello calcolato usando la legge di Stefan-Boltzmann $(25{,}33\;L_\odot)$, leggermente superiore ma entro il margine di incertezza legato alla correzione bolometrica applicata, un valore che non è mai definito con precisione assoluta.
 
 ## Altri metodi per calcolare le luminosità stellari
 

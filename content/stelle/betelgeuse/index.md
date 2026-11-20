@@ -47,7 +47,7 @@ caption="Una foto scattata il 22 dicembre 2019. Betelgeuse appare nettamente men
 
 Dalla metà di gennaio 2020 in poi, la velocità con cui la stella perdeva luce cominciò a ridursi, ma la diminuzione non si arrestò. Alla fine del mese [si registrò](http://www.astronomerstelegram.org/?read=13439) un nuovo record negativo, che non aveva precedenti da quando esistono misurazioni strumentali della luminosità stellare. La magnitudine visuale di Betelgeuse il 30 gennaio era giunta a $+1{,}614$, praticamente uguale a quella della blu **Bellatrix** ($m_V = +1{,}62$), che è di regola la terza stella più luminosa di Orione, dopo Rigel e, appunto, Betelgeuse.
 
-Rispetto a settembre 2019, la supergigante rossa aveva guadagnato circa $1$ magnitudine, il che significa che appariva all'epoca $2{,}5$ volte *meno* luminosa di cinque mesi prima. Il calo rispetto al suo massimo era ancora più elevato (circa $1{,}4$ magnitudini). Dai dati osservativi si ricavava anche che stava diventando *più fredda*. Rispetto a settembre 2019 la temperatura efficace era infatti diminuita di quasi $100$ gradi, passando da $3650\,\text{K}$ a $3565\,\text{K}$.
+Rispetto a settembre 2019, la supergigante rossa aveva guadagnato circa $1$ magnitudine, il che significa che appariva all'epoca $2{,}5$ volte *meno* luminosa di cinque mesi prima. Il calo rispetto al suo massimo era ancora più elevato (circa $1{,}4$ magnitudini). Dai dati osservativi si ricavava anche che stava diventando *più fredda*. Rispetto a settembre 2019 la [temperatura efficace]({{< relref "/dizionario/temperatura-efficace/" >}}) era infatti diminuita di quasi $100$ gradi, passando da $3650\,\text{K}$ a $3565\,\text{K}$.
 
 ### La ricerca delle cause
 
