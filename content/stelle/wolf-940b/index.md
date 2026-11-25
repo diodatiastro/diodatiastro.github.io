@@ -242,3 +242,10 @@ $$\rho = \frac{M}{\frac{4}{3}\pi R^3} = \frac{5{,}49 \times 10^{32}\ \text{g}}{\
 cioè circa $12$ volte la densità media del Sole. Lo stesso calcolo per Wolf 940B dà fra $35\ \text{g/cm}^3$, per la massa e il raggio corrispondenti all'età più giovane ($24$ masse di Giove e $0{,}097$ raggi solari), e $100\ \text{g/cm}^3$ per quelli corrispondenti all'età più avanzata ($45$ masse di Giove e $0{,}084$ raggi solari). La nana bruna ha una massa da sei a dodici volte minore di quella della stella, ma è da due a sei volte più densa: è un effetto della materia degenere, che nelle nane brune si comprime tanto più quanto maggiore è la massa. La gravità superficiale dei due oggetti, invece, è quasi la stessa, perché la massa maggiore della stella è compensata dal suo raggio circa tre volte più grande.
 
 Nelle righe della tabella dalla temperatura alla densità, i valori più bassi corrispondono all'età più giovane e quelli più alti all'età più avanzata. Gli studi successivi hanno dato temperature comprese fra circa $560$ e $640\ \text{K}$, a seconda del metodo: la stima più recente basata sulla luminosità è di $586 \pm 35\ \text{K}$ (Burgasser *et al.* 2025).
+
+{{< figura 
+src="immagini/wolf940b-in-cifre.png" 
+width="80%" 
+alt="Infografica con la nana rossa Wolf 940A, la nana bruna Wolf 940B e Giove disegnati in scala, accanto a un riquadro con i principali dati di Wolf 940B." 
+caption="Wolf 940B in sintesi. I tre corpi celesti sono disegnati in scala: il raggio della nana bruna è circa il $90\%$ di quello di Giove, mentre quello della nana rossa è quasi tre volte maggiore. Nel riquadro, i valori principali ricavati dagli studi citati nell'articolo. Elaborazione: Michele Diodati/Claude."
+>}}
