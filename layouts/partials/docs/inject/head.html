@@ -1,3 +1,7 @@
+{{- /* Verifica della proprietà del sito per follow.it (avvisi via email).
+     Serve solo nella home page, dove si trova il feed avvisi.xml. */ -}}
+{{ if .IsHome }}<meta name="follow.it-verification-code" content="uwjdleLmKSJ9DFtDZcF2"/>{{ end }}
+
 {{- /* Foglio di stile del sito. fingerprint aggiunge al nome del file un'impronta
      del contenuto (custom.<impronta>.css): a ogni modifica di assets/css/custom.css
      il nome cambia e i browser dei visitatori scaricano subito la versione nuova,

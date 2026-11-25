@@ -19,7 +19,7 @@ theme = 'hugo-book'
   # Iscrizione agli avvisi via email (follow.it): indirizzo "action" del modulo,
   # copiato dal codice del modulo d'iscrizione nel pannello di follow.it.
   # Finché è vuoto, il riquadro d'iscrizione non compare da nessuna parte.
-  iscrizioneAzione = ''
+  iscrizioneAzione = 'https://api.follow.it/subscription-form/U2U1dDhNTVA0aWoxQk83Z2JGRzBDSFNFR0pxRHpvc2RlSmM0cTNkcng2SWQybGkydS9TVmZ5MHpOS2Z2RVZUSGk4YkJHSWlKWE90R0NDUnFxYnVrSzVJL1ZMcEY2R29pcEtSVzVHNFNOR3hFWGRzUnV4ZEpNZWtHTVdZbkdIZkN8cS9nYWlPMnZwbS9PNmNWTGlwdnppaHE1NXZ3aXcvekdLcHdrRjVUQlo3MD0=/8'
 
 [markup]
   [markup.goldmark]
