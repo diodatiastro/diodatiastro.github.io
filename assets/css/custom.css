@@ -2487,3 +2487,87 @@ body.book-type-dizionario .markdown .dz-su a:hover {
   border-color: var(--halpha-pink);
   text-decoration: none;
 }
+
+/* ==========================================================================
+   Riquadro d'iscrizione agli avvisi via email (follow.it)
+   partials/iscrizione.html: in home fra le due righe del piè di pagina,
+   negli articoli e nelle voci a metà del testo (o dove c'è lo shortcode)
+   ========================================================================== */
+
+.iscrizione {
+  margin: 2.2rem auto;
+  padding: 1.2rem 1.4rem 1rem;
+  max-width: 40rem;
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-left: 4px solid var(--stellar-gold);
+  border-radius: var(--border-radius);
+  text-align: left;
+}
+
+.iscrizione--home {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.iscrizione p {
+  margin: 0 0 0.6rem;
+}
+
+.markdown .iscrizione-titolo,
+.iscrizione-titolo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--stellar-gold);
+}
+
+.iscrizione-testo {
+  color: var(--starlight);
+  font-size: 0.98rem;
+}
+
+.iscrizione-modulo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.4rem 0 0.8rem;
+}
+
+.iscrizione-modulo input[type="email"] {
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding: 0.55rem 0.8rem;
+  font-size: 1rem;
+  color: var(--starlight);
+  background: var(--night);
+  border: 1px solid var(--surface-line);
+  border-radius: 6px;
+}
+
+.iscrizione-modulo input[type="email"]:focus {
+  outline: 2px solid var(--nebula-blue);
+  outline-offset: 1px;
+}
+
+.iscrizione-modulo button {
+  flex: 0 0 auto;
+  padding: 0.55rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--night);
+  background: var(--stellar-gold);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.iscrizione-modulo button:hover {
+  background: color-mix(in srgb, var(--stellar-gold) 80%, white 20%);
+}
+
+.markdown .iscrizione-nota,
+.iscrizione-nota {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}

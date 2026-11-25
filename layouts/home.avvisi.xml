@@ -1,0 +1,65 @@
+{{- /*
+  Feed degli avvisi per l'iscrizione via email (follow.it): /avvisi.xml
+  Contiene solo i nuovi contenuti da segnalare ai lettori:
+  - gli articoli del catalogo, cioè le pagine figlie dirette di /stelle
+    (un saggio diviso in capitoli conta come un solo articolo: la sua pagina indice);
+  - le voci del dizionario.
+  Ogni avviso ha titolo, link e una riga di presentazione:
+  - per gli articoli, il sottotitolo (subtitle nel front matter);
+  - per le voci, il parametro description se c'è, altrimenti la prima frase
+    del box "definizione" (o, in mancanza del box, la prima frase del testo).
+  Il formato di uscita "avvisi" è definito in hugo.toml.
+*/ -}}
+{{- $pagine := slice -}}
+{{- with site.GetPage "/stelle" }}{{ $pagine = $pagine | append .Pages }}{{ end -}}
+{{- with site.GetPage "/dizionario" }}{{ $pagine = $pagine | append .RegularPages }}{{ end -}}
+{{- $pagine = first 40 (sort $pagine "Date" "desc") -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.Title }}: nuovi articoli e nuove voci del dizionario</title>
+    <link>{{ site.Home.Permalink }}</link>
+    <description>Avvisi dei nuovi articoli del catalogo delle stelle e delle nuove voci del Dizionario pratico di astronomia e astrofisica</description>
+    <language>it-it</language>
+    {{- with $pagine }}
+    <lastBuildDate>{{ (index . 0).Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{- end }}
+    <atom:link href="{{ .Permalink }}avvisi.xml" rel="self" type="application/rss+xml" />
+    {{- range $pagine }}
+    {{- $descr := "" }}
+    {{- $categoria := "Catalogo delle stelle" }}
+    {{- if eq .Section "dizionario" }}{{ $categoria = "Dizionario di astronomia" }}{{ end }}
+    {{- if .Params.subtitle }}
+      {{- $descr = .Params.subtitle }}
+    {{- else if .Params.description }}
+      {{- $descr = .Params.description }}
+    {{- else }}
+      {{- $testo := "" }}
+      {{- with findRESubmatch `(?s)\{\{%\s*box\s+tipo="definizione"[^%]*%\}\}(.*?)\{\{%\s*/box\s*%\}\}` .RawContent 1 }}
+        {{- $testo = index (index . 0) 1 }}
+      {{- else }}
+        {{- $testo = .RawContent }}
+      {{- end }}
+      {{- /* pulizia: shortcode, link markdown, note, formule */}}
+      {{- $testo = replaceRE `\{\{[<%].*?[>%]\}\}` "" $testo }}
+      {{- $testo = replaceRE `\[\^[^\]]+\]` "" $testo }}
+      {{- $testo = replaceRE `\[([^\]]+)\]\([^)]*\)` "$1" $testo }}
+      {{- $testo = replace $testo "{,}" "," }}
+      {{- $testo = replaceRE `\\[ ,;!]` " " $testo }}
+      {{- $testo = replace $testo "$" "" }}
+      {{- $testo = $testo | markdownify | plainify | htmlUnescape }}
+      {{- $testo = replaceRE `\s+` " " $testo | strings.TrimSpace }}
+      {{- with findRE `^.+?[.!?](\s|$)` $testo 1 }}{{ $testo = index . 0 }}{{ end }}
+      {{- $descr = strings.TrimSpace $testo }}
+    {{- end }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <guid>{{ .Permalink }}</guid>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <category>{{ $categoria }}</category>
+      <description>{{ $descr }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

@@ -16,6 +16,10 @@ theme = 'hugo-book'
   walineServer = 'https://diodatiastro-commenti.vercel.app'
   # Data degli articoli all'italiana (es. 12 agosto 2026): :date_long segue la lingua del sito
   BookDateFormat = ':date_long'
+  # Iscrizione agli avvisi via email (follow.it): indirizzo "action" del modulo,
+  # copiato dal codice del modulo d'iscrizione nel pannello di follow.it.
+  # Finché è vuoto, il riquadro d'iscrizione non compare da nessuna parte.
+  iscrizioneAzione = ''
 
 [markup]
   [markup.goldmark]
@@ -33,3 +37,16 @@ theme = 'hugo-book'
 
         [markup.goldmark.renderer]
           unsafe = true
+
+# Feed degli avvisi per follow.it (https://diodatiastro.github.io/avvisi.xml):
+# solo articoli del catalogo (un saggio conta come un solo articolo) e voci del
+# dizionario, ciascuno con titolo, sottotitolo (o prima frase della definizione) e link.
+# Il modello è in layouts/home.avvisi.xml.
+[outputFormats]
+  [outputFormats.avvisi]
+    mediaType = 'application/rss+xml'
+    baseName = 'avvisi'
+    rel = 'alternate'
+
+[outputs]
+  home = ['html', 'rss', 'avvisi']

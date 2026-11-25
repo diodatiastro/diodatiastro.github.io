@@ -1,1 +1,35 @@
 {{- /* Il link "Inizio pagina" è stato spostato in inject/footer.html, sotto i commenti. */ -}}
+{{- /* Riquadro d'iscrizione agli avvisi negli articoli, nei capitoli dei saggi e nelle
+       voci del dizionario che non hanno lo shortcode {{< iscrizione >}}: viene creato
+       qui, dopo il testo, e uno script lo sposta a metà pagina (vedi partials/iscrizione.html). */ -}}
+{{- $articolo := and .IsPage (in (slice "stelle" "dizionario") .Section) -}}
+{{- $indiceSaggio := and .IsSection (eq .Type "saggio") -}}
+{{- if and site.Params.iscrizioneAzione (or $articolo $indiceSaggio) (not (findRE `\{\{<\s*iscrizione` .RawContent 1)) -}}
+{{- partial "iscrizione.html" (dict "pagina" . "dove" "auto") -}}
+<script>
+window.addEventListener('load', function () {
+  var box = document.querySelector('.iscrizione--auto');
+  var testo = document.querySelector('.book-page article.markdown');
+  if (!box || !testo) return;
+  // Titoli di paragrafo diretti del testo (non quelli dentro box, note o figure)
+  var titoli = Array.prototype.filter.call(testo.querySelectorAll('h2'), function (h) {
+    return h.parentNode === testo;
+  });
+  var altezza = testo.offsetHeight;
+  var inizio = testo.getBoundingClientRect().top + window.scrollY;
+  var scelto = null, distanza = Infinity;
+  titoli.forEach(function (h) {
+    var pos = (h.getBoundingClientRect().top + window.scrollY - inizio) / altezza;
+    // solo fra il 25% e il 75% della pagina, il più vicino alla metà
+    if (pos < 0.25 || pos > 0.75) return;
+    var d = Math.abs(pos - 0.5);
+    if (d < distanza) { distanza = d; scelto = h; }
+  });
+  if (scelto) {
+    testo.insertBefore(box, scelto);
+  } else {
+    testo.appendChild(box);
+  }
+});
+</script>
+{{- end -}}

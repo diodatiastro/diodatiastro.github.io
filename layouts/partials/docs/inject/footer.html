@@ -1,3 +1,6 @@
+{{- /* In home, il riquadro d'iscrizione agli avvisi sta fra la riga del piè di pagina
+       e quella del link "Inizio pagina" (vedi partials/iscrizione.html) */ -}}
+{{- if .IsHome }}{{ partial "iscrizione.html" (dict "pagina" . "dove" "home") }}{{ end }}
 <div class="back-to-top">
   <a href="#" aria-label="Torna all'inizio della pagina">
     <span aria-hidden="true">↑</span> Inizio pagina
