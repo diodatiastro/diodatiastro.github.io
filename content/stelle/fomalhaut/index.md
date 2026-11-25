@@ -5,7 +5,7 @@ date = "2026-11-18"
 copertina="immagini/eso1216c.jpg"
 draft = false
 inEvidenza = true
-ordineEvidenza = 1
+ordineEvidenza = 2
 tags = ["sequenza principale", "classe A4V", "sistema multiplo", "disco di detriti", "esopianeti", "comete"]
 +++
 

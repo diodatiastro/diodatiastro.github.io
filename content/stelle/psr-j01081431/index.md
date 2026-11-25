@@ -4,9 +4,6 @@ subtitle = "Pulsar vecchia fa buon brodo"
 date = "2026-11-09"
 draft = false
 tags = ["stella di neutroni", "pulsar", "campo magnetico"]
-inEvidenza = true
-ordineEvidenza = 3
-righePrima = 2
 copertina = "immagini/stella-di-neutroni-rappresentazione-artistica.webp"
 +++
 
