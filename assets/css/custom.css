@@ -231,11 +231,13 @@ body {
 
 .markdown .footnote-ref,
 .markdown sup a {
-  /* Un giallo un po' più chiaro dell'oro standard, per distinguersi
-     più nettamente dal grassetto (che usa una miscela oro/arancio
-     più scura). Resta comunque un derivato dello stesso --stellar-gold,
-     non un colore nuovo estraneo alla palette. */
-  color: color-mix(in srgb, var(--stellar-gold) 82%, white 18%);
+  /* Rosso deciso (circa #e35a52), derivato dal rosso stellare di tipo M
+     appena schiarito con il bianco. Una prima prova più chiara (#e97f79)
+     somigliava troppo al rosa delle formule KaTeX. Prima era un oro schiarito, troppo simile al
+     grassetto (miscela oro/arancio): accanto a un termine in grassetto il
+     numero della nota si distingueva poco. Le note già visitate restano
+     azzurre (regola .book-page a:visited). */
+  color: color-mix(in srgb, var(--stellar-red) 90%, white 10%);
   font-weight: 600;
   text-decoration: none;
 }
