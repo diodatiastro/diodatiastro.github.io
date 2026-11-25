@@ -11,9 +11,15 @@ permissions:
   pages: write
   id-token: write
 
+# La compilazione e la pubblicazione stanno in due job separati, come raccomanda
+# la documentazione di actions/deploy-pages: il secondo parte solo quando il
+# pacchetto del sito caricato dal primo è del tutto disponibile. Con un job unico,
+# il 25 novembre 2026 la pubblicazione falliva perché non trovava il pacchetto.
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+    outputs:
+      indexnow: ${{ steps.indexnow.outputs.elenco }}
 
     steps:
       - name: Checkout
@@ -31,15 +37,32 @@ jobs:
         run: hugo --minify
 
       - name: Prepare IndexNow
-        run: python3 .github/scripts/indexnow.py prepara
+        id: indexnow
+        run: |
+          python3 .github/scripts/indexnow.py prepara
+          echo "elenco=$(python3 -c 'import json; print(json.dumps(json.load(open("indexnow-da-inviare.json"))))')" >> "$GITHUB_OUTPUT"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Deploy
         uses: actions/deploy-pages@v4
 
+      - name: Checkout script IndexNow
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+
       - name: Notify IndexNow
-        run: python3 .github/scripts/indexnow.py invia
+        env:
+          ELENCO: ${{ needs.build.outputs.indexnow }}
+        run: |
+          printf '%s' "${ELENCO:-[]}" > indexnow-da-inviare.json
+          python3 .github/scripts/indexnow.py invia
