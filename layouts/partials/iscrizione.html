@@ -14,8 +14,8 @@
 {{- if $azione -}}
 {{- $dove := .dove | default "manuale" -}}
 <aside class="iscrizione iscrizione--{{ $dove }}" aria-label="Iscrizione agli avvisi via email">
-  <p class="iscrizione-titolo">Ricevi gli aggiornamenti per email</p>
-  <p class="iscrizione-testo">Un breve avviso per ogni nuovo articolo del catalogo delle stelle e per ogni nuova voce del dizionario, con il link alla pagina. Niente altro.</p>
+  <p class="iscrizione-titolo">Iscriviti per rimanere aggiornato</p>
+  <p class="iscrizione-testo">Riceverai una email con un breve avviso ad ogni nuovo articolo pubblicato.</p>
   <form class="iscrizione-modulo" action="{{ $azione }}" method="post" target="_blank">
     <input type="email" name="email" required placeholder="Il tuo indirizzo email" aria-label="Il tuo indirizzo email" autocomplete="email">
     <button type="submit">Iscriviti</button>

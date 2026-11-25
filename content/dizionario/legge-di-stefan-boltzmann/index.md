@@ -1,5 +1,6 @@
 +++
 title = "Legge di Stefan-Boltzmann"
+description = "La legge di Stefan-Boltzmann stabilisce che la potenza irradiata da ogni metro quadrato della superficie di un corpo nero, sommata su tutte le lunghezze d'onda, è proporzionale alla quarta potenza della sua temperatura assoluta."
 date = "2026-11-20"
 draft = false
 +++

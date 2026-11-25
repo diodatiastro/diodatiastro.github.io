@@ -2495,14 +2495,19 @@ body.book-type-dizionario .markdown .dz-su a:hover {
    ========================================================================== */
 
 .iscrizione {
-  margin: 2.2rem auto;
-  padding: 1.2rem 1.4rem 1rem;
-  max-width: 40rem;
-  background: var(--surface);
-  border: 1px solid var(--surface-line);
-  border-left: 4px solid var(--stellar-gold);
-  border-radius: var(--border-radius);
-  text-align: left;
+  /* Verde-azzurro della riga [O III] dell'ossigeno ionizzato, che fa brillare
+     le nebulose planetarie: un colore diverso dall'oro della definizione e dal
+     blu dell'approfondimento, perché il riquadro non si confonda con i box */
+  --oiii-teal: #3fd0b6;
+  margin: 2rem auto;
+  padding: 0.85rem 1.1rem 0.7rem;
+  max-width: 30rem;
+  /* fondo fisso, non quello della sezione: nel dizionario la pagina è rossastra */
+  background: color-mix(in srgb, var(--oiii-teal) 12%, #0a0e1a);
+  border: 1px solid color-mix(in srgb, var(--oiii-teal) 65%, transparent);
+  border-radius: 10px;
+  box-shadow: 0 0 16px color-mix(in srgb, var(--oiii-teal) 16%, transparent);
+  text-align: center;
 }
 
 .iscrizione--home {
@@ -2511,63 +2516,67 @@ body.book-type-dizionario .markdown .dz-su a:hover {
 }
 
 .iscrizione p {
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.45rem;
 }
 
 .markdown .iscrizione-titolo,
 .iscrizione-titolo {
-  font-size: 1.15rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--stellar-gold);
 }
 
+.markdown .iscrizione-testo,
 .iscrizione-testo {
   color: var(--starlight);
-  font-size: 0.98rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 .iscrizione-modulo {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-  margin: 0.4rem 0 0.8rem;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.55rem 0 0.6rem;
 }
 
 .iscrizione-modulo input[type="email"] {
-  flex: 1 1 16rem;
+  flex: 1 1 13rem;
   min-width: 0;
-  padding: 0.55rem 0.8rem;
-  font-size: 1rem;
+  padding: 0.42rem 0.7rem;
+  font-size: 0.92rem;
   color: var(--starlight);
-  background: var(--night);
-  border: 1px solid var(--surface-line);
+  background: #0a0e1a;
+  border: 1px solid color-mix(in srgb, var(--oiii-teal) 45%, var(--surface-line));
   border-radius: 6px;
 }
 
 .iscrizione-modulo input[type="email"]:focus {
-  outline: 2px solid var(--nebula-blue);
+  outline: 2px solid var(--oiii-teal);
   outline-offset: 1px;
 }
 
 .iscrizione-modulo button {
   flex: 0 0 auto;
-  padding: 0.55rem 1.3rem;
-  font-size: 1rem;
+  padding: 0.42rem 1.1rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--night);
-  background: var(--stellar-gold);
+  background: var(--oiii-teal);
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
 .iscrizione-modulo button:hover {
-  background: color-mix(in srgb, var(--stellar-gold) 80%, white 20%);
+  background: color-mix(in srgb, var(--oiii-teal) 80%, white 20%);
 }
 
 .markdown .iscrizione-nota,
 .iscrizione-nota {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: 0.74rem;
+  line-height: 1.4;
   color: var(--muted);
 }

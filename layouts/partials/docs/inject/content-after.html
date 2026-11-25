@@ -9,7 +9,10 @@
 <script>
 window.addEventListener('load', function () {
   var box = document.querySelector('.iscrizione--auto');
-  var testo = document.querySelector('.book-page article.markdown');
+  // Nelle voci del dizionario il testo sta direttamente in article.markdown;
+  // negli articoli delle stelle è racchiuso in .book-post-content
+  var testo = document.querySelector('.book-page article.markdown .book-post-content') ||
+              document.querySelector('.book-page article.markdown');
   if (!box || !testo) return;
   // Titoli di paragrafo diretti del testo (non quelli dentro box, note o figure)
   var titoli = Array.prototype.filter.call(testo.querySelectorAll('h2'), function (h) {
