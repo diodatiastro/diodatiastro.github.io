@@ -105,8 +105,11 @@
         el: "#waline",
         serverURL: {{ $server }},
         path: {{ .RelPermalink }},
-        lang: "it",
+        {{- /* Testi di Waline in inglese nelle pagine della versione inglese */}}
+        lang: {{ if eq .Lang "en" }}"en"{{ else }}"it"{{ end }},
+        {{- if ne .Lang "en" }}
         locale: LOCALE_IT,
+        {{- end }}
         dark: true,
         emoji: ["https://unpkg.com/@waline/emojis@1.4.0/tw-emoji"],
         meta: ["nick", "mail"],

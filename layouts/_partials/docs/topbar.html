@@ -10,12 +10,27 @@
     </a>
 
     <nav class="topbar-link" aria-label="Sezioni del sito">
-      <a href="{{ site.Home.RelPermalink }}">Le stelle</a>
+      <a href="{{ site.Home.RelPermalink }}">{{ i18n "barraStelle" }}</a>
       {{- with site.GetPage "/dizionario" }}
       <span class="topbar-separatore" aria-hidden="true">|</span>
-      <a href="{{ .RelPermalink }}">Dizionario</a>
+      <a href="{{ .RelPermalink }}">{{ i18n "barraDizionario" }}</a>
       {{- end }}
     </nav>
+
+    {{- /* Cambio lingua, a sinistra della casella di ricerca: porta alla traduzione
+         della pagina corrente o, se la pagina non è tradotta, alla home dell'altra
+         lingua. Compare solo se il sito ha più di una lingua attiva: online la
+         versione inglese è disattivata (vedi hugo.toml), quindi il link non c'è. */}}
+    {{- if hugo.IsMultilingual }}
+    {{- $dest := "" }}{{ $lingua := "" }}
+    {{- range first 1 .Translations }}{{ $dest = .RelPermalink }}{{ $lingua = .Lang }}{{ end }}
+    {{- if not $dest }}{{ range first 1 site.Home.Translations }}{{ $dest = .RelPermalink }}{{ $lingua = .Lang }}{{ end }}{{ end }}
+    {{- with $dest }}
+    <div class="topbar-link topbar-lingua">
+      <a href="{{ . }}" hreflang="{{ $lingua }}" lang="{{ $lingua }}">{{ if eq $lingua "en" }}English{{ else }}Italiano{{ end }}</a>
+    </div>
+    {{- end }}
+    {{- end }}
 
     <div class="topbar-ricerca">
       {{ partial "docs/search" . }}

@@ -5,6 +5,29 @@ title = 'Le stelle più affascinanti del cielo'
 
 theme = 'hugo-book'
 
+# Versione inglese del sito (in preparazione).
+# Le traduzioni stanno accanto agli originali, nella stessa cartella:
+# index.md (italiano) e index.en.md (inglese); immagini e figure restano in comune.
+# Online la versione inglese è disattivata qui sotto (disableLanguages), quindi
+# la build di GitHub (ambiente "production") pubblica solo il sito italiano.
+# Il server locale (hugo server, ambiente "development") la riattiva con
+# config/development/hugo.toml: le pagine inglesi si vedono in locale su /en/.
+# Per pubblicarla, quando le traduzioni saranno complete, basterà togliere 'en'
+# da disableLanguages.
+disableLanguages = ['en']
+
+[languages]
+  [languages.it]
+    weight = 1
+    locale = 'it-it'
+    label = 'Italiano'
+    title = 'Le stelle più affascinanti del cielo'
+  [languages.en]
+    weight = 2
+    locale = 'en-us'
+    label = 'English'
+    title = 'The most fascinating stars in the sky'
+
 [taxonomies]
   tag = 'tags'
 

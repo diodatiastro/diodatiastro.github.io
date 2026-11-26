@@ -1,0 +1,9 @@
+# Testi fissi del sito in italiano, usati dai modelli con {{ i18n "chiave" }}.
+# Le stesse chiavi, tradotte, stanno in i18n/en.toml per la versione inglese.
+# Si aggiungono a quelle del tema (themes/hugo-book/i18n), che restano valide.
+
+[barraStelle]
+other = "Le stelle"
+
+[barraDizionario]
+other = "Dizionario"

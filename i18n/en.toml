@@ -1,0 +1,7 @@
+# Testi fissi della versione inglese del sito: stesse chiavi di i18n/it.toml.
+
+[barraStelle]
+other = "Stars"
+
+[barraDizionario]
+other = "Dictionary"

@@ -1,0 +1,10 @@
+# Impostazioni usate solo dal server locale (hugo server, ambiente "development"),
+# che si aggiungono a quelle di hugo.toml nella cartella principale.
+# Riattiva la versione inglese del sito, disattivata online: in locale le pagine
+# inglesi (i file index.en.md) si vedono su http://localhost:1313/en/
+disableLanguages = []
+
+# Finché non tutto è tradotto, una pagina inglese può rimandare (con relref) a una
+# voce del dizionario che in inglese non esiste ancora: in locale questo produce
+# solo un avviso nel terminale, invece di bloccare il server.
+refLinksErrorLevel = 'WARNING'

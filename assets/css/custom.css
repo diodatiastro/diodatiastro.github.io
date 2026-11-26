@@ -1331,6 +1331,16 @@ body {
   font-size: 1.1rem;
 }
 
+/* Cambio lingua (English / Italiano), subito a sinistra della casella di
+   ricerca: prende il posto del margine automatico che spinge la ricerca a destra */
+.topbar-lingua {
+  margin-left: auto;
+}
+
+.topbar-lingua + .topbar-ricerca {
+  margin-left: 0;
+}
+
 @media screen and (max-width: 36rem) {
   .topbar-link {
     gap: 0.5rem;
