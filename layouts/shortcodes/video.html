@@ -45,19 +45,20 @@
   </div>
   {{ else }}
   <video
-    {{ with .Get "poster" }}poster="{{ . }}"{{ end }}
+    {{ with .Get "poster" }}{{ $f := . }}{{ with $.Page.Resources.Get (path.Clean $f) }}{{ $f = .RelPermalink }}{{ end }}poster="{{ $f }}"{{ end }}
     {{ if ne (.Get "controls") "false" }}controls{{ end }}
     {{ if eq (.Get "autoplay") "true" }}autoplay{{ end }}
     loop muted playsinline
     {{ with .Get "width" }}style="max-width: {{ . }};"{{ end }}
   >
-    {{ with .Get "webm" }}<source src="{{ . }}" type="video/webm">{{ end }}
-    <source src="{{ .Get "src" }}" type="video/mp4">
+    {{ with .Get "webm" }}{{ $f := . }}{{ with $.Page.Resources.Get (path.Clean $f) }}{{ $f = .RelPermalink }}{{ end }}<source src="{{ $f }}" type="video/webm">{{ end }}
+    {{- $mp4 := .Get "src" }}{{ with .Get "src" }}{{ with $.Page.Resources.Get (path.Clean .) }}{{ $mp4 = .RelPermalink }}{{ end }}{{ end }}
+    <source src="{{ $mp4 }}" type="video/mp4">
   </video>
   {{ end }}
 <figcaption>
   {{ if ne (.Get "label") "false" }}
-    <strong>Figura {{ $counter }}</strong> —
+    <strong>{{ i18n "figura" }} {{ $counter }}</strong> —
   {{ end }}
   {{ .Get "caption" | markdownify }}
 </figcaption>

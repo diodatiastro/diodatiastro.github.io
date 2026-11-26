@@ -5,3 +5,7 @@ other = "Stars"
 
 [barraDizionario]
 other = "Dictionary"
+
+# Etichetta delle figure e dei video (shortcode figura e video)
+[figura]
+other = "Figure"
