@@ -1,7 +1,9 @@
 {{- /*
   Riquadro d'iscrizione agli avvisi via email (servizio follow.it).
   Parametro: dict "pagina" (la pagina) e "dove" ("home", "manuale", "auto").
-  - home:    in fondo alla home, fra le due righe orizzontali prima di "Inizio pagina"
+  - home:    in fondo alla home, fra le due righe orizzontali prima di "Inizio pagina";
+             ha id="iscrizione", così il link https://diodatiastro.github.io/#iscrizione,
+             da diffondere fuori dal sito, apre la home direttamente sul riquadro
              (richiamato da docs/inject/footer.html);
   - manuale: dove l'autore mette lo shortcode {{< iscrizione >}} nel testo;
   - auto:    articoli e voci senza lo shortcode; il riquadro viene creato dopo il testo
@@ -13,7 +15,7 @@
 {{- $azione := site.Params.iscrizioneAzione -}}
 {{- if $azione -}}
 {{- $dove := .dove | default "manuale" -}}
-<aside class="iscrizione iscrizione--{{ $dove }}" aria-label="Iscrizione agli avvisi via email">
+<aside class="iscrizione iscrizione--{{ $dove }}"{{ if eq $dove "home" }} id="iscrizione"{{ end }} aria-label="Iscrizione agli avvisi via email">
   <p class="iscrizione-titolo">Iscriviti per rimanere aggiornato</p>
   <p class="iscrizione-testo">Riceverai una email con un breve avviso ad ogni nuovo articolo pubblicato.</p>
   <form class="iscrizione-modulo" action="{{ $azione }}" method="post" target="_blank">

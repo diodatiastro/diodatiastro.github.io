@@ -2513,6 +2513,8 @@ body.book-type-dizionario .markdown .dz-su a:hover {
 .iscrizione--home {
   margin-top: 2rem;
   margin-bottom: 0;
+  /* con il link /#iscrizione la barra bianca in alto non copre il riquadro */
+  scroll-margin-top: 5rem;
 }
 
 .iscrizione p {
