@@ -1,10 +1,10 @@
 +++
 title = "Wolf 940B"
-subtitle = "Una nana bruna vicina, fredda ma non freddissima"
+subtitle = "Una nana bruna fredda e vicina, ideale per verificare i modelli teorici"
 date = "2026-11-25"
 copertina = "immagini/wolf940b-rappresentazione-artistica.jpg"
 draft = false
-tags = ["nana bruna", "classe T", "metallicità", "compagna substellare", "sistema binario", "benchmark"]
+tags = ["nana bruna", "tipo spettrale T8.5", "metallicità", "compagna substellare", "sistema binario", "benchmark"]
 inEvidenza = true
 ordineEvidenza = 1
 +++

@@ -1,10 +1,10 @@
 +++
 title = "Wolf 940B"
-subtitle = "A nearby brown dwarf, cold but not the coldest"
+subtitle = "A yardstick for the coldest brown dwarfs"
 date = "2026-11-25"
 copertina = "immagini/wolf940b-rappresentazione-artistica.jpg"
 draft = false
-tags = ["brown dwarf", "T dwarf", "metallicity", "substellar companion", "binary system", "benchmark"]
+tags = ["brown dwarf", "spectral type T8.5", "metallicity", "substellar companion", "binary system", "benchmark"]
 inEvidenza = true
 ordineEvidenza = 1
 +++
