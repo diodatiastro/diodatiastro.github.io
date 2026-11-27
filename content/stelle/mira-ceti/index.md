@@ -3,7 +3,7 @@ title = "Mira Ceti"
 subtitle = "La stella-proiettile dall’immensa scia"
 date = "2026-08-10"
 draft = false
-tags = ["gigante rossa", "classe M5e-M9e", "variabile Mira", "sistema binario", "nana bianca"]
+tags = ["gigante rossa", "tipo spettrale M5e-M9e", "variabile Mira", "sistema binario", "nana bianca"]
 inEvidenza = false
 +++
 
@@ -111,4 +111,4 @@ alt="La posizione di Mira (Omicron Ceti) nella costellazione della Balena"
 caption="La posizione di Mira (Omicron Ceti) nella costellazione della Balena. Crediti: IAU / Sky & Telescope."
 >}}
 
-[^1]: È giusto precisare che il grande aumento di luminosità _visibile_ di Mira non corrisponde a un pari aumento della sua luminosità bolometrica: quest'ultima varia solo di un fattore $2-3$ (circa una magnitudine) lungo il ciclo di pulsazione, contro le circa $1\,500$ volte osservate nel visibile. La maggior parte di questa differenza nasce dalla forte variazione dell'opacità molecolare dell'atmosfera (in particolare le bande del TiO), che a seconda della temperatura blocca o lascia passare la luce visibile in modo molto più marcato di quanto farebbe un semplice spostamento dello spettro con la temperatura.
+[^1]: È giusto precisare che il grande aumento di luminosità _visibile_ di Mira non corrisponde a un pari aumento della sua luminosità bolometrica: quest'ultima varia solo di un fattore $2\text{-}3$ (circa una magnitudine) lungo il ciclo di pulsazione, contro le circa $1\,500$ volte osservate nel visibile. La maggior parte di questa differenza nasce dalla forte variazione dell'opacità molecolare dell'atmosfera (in particolare le bande del TiO), che a seconda della temperatura blocca o lascia passare la luce visibile in modo molto più marcato di quanto farebbe un semplice spostamento dello spettro con la temperatura.

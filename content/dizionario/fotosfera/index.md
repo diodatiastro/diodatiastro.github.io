@@ -58,7 +58,7 @@ In sintesi, la profondità ottica è la grandezza che determina dove si trova, i
 
 Il Sole, essendo di gran lunga la stella più vicina alla Terra e l'unica di cui possiamo osservare la superficie con grandissimo dettaglio, è la palestra di studio ideale per analizzare la struttura della fotosfera.
 
-Questo strato fondamentale dell'atmosfera è estremamente sottile nella nostra stella. Ha una **profondità** di non più di $400-500\;\mathrm{km}$, una frazione di poco superiore allo $0{,}07\%$ del raggio solare, che è di circa $696\,000\;\mathrm{km}$. Il passaggio dalla zona di opacità a quella di trasparenza avviene, dunque, in modo netto in uno spazio ridottissimo rispetto alla grandezza totale della stella.
+Questo strato fondamentale dell'atmosfera è estremamente sottile nella nostra stella. Ha una **profondità** di non più di $400\text{-}500\;\mathrm{km}$, una frazione di poco superiore allo $0{,}07\%$ del raggio solare, che è di circa $696\,000\;\mathrm{km}$. Il passaggio dalla zona di opacità a quella di trasparenza avviene, dunque, in modo netto in uno spazio ridottissimo rispetto alla grandezza totale della stella.
 
 Un altro dato notevole è che la **densità** della fotosfera solare è bassissima rispetto a quella dell'atmosfera terrestre. I valori tipici sono riportati nella seguente tabella.
 
@@ -91,7 +91,7 @@ Alla base della fotosfera la temperatura è di circa $6\,600\,\mathrm{K}$. Scend
 
 ### Granulazione
 
-La fotosfera appare coperta da celle convettive dette *granuli*, larghe tipicamente $1000-2000\,\mathrm{km}$, con vita media di $8\text{-}10$ minuti. Ciascun granulo corrisponde a una cella di convezione: il plasma caldo risale dall'interno della stella verso il centro del granulo, si espande, si raffredda irradiando energia e ridiscende lungo i bordi, che appaiono pertanto più scuri.
+La fotosfera appare coperta da celle convettive dette *granuli*, larghe tipicamente $1000\text{-}2000\,\mathrm{km}$, con vita media di $8\text{-}10$ minuti. Ciascun granulo corrisponde a una cella di convezione: il plasma caldo risale dall'interno della stella verso il centro del granulo, si espande, si raffredda irradiando energia e ridiscende lungo i bordi, che appaiono pertanto più scuri.
 
 {{< figura 
 src="immagini/granulazione.jpg" 
@@ -182,9 +182,9 @@ In linea generale, per **qualsiasi stella**, la fotosfera è definita in modo an
 
 **Stelle calde e massicce** di tipo O, B: hanno fotosfere con temperature $>\; 30\,000\,\mathrm{K}$, densità molto basse (gas rarefatto) ma pressioni elevate per via dell'altissima temperatura, spesso paragonabili o superiori a quella della fotosfera solare.
 
-**Stelle come il Sole** (tipo G): $T\sim 5\,000 - 6\,000\,\mathrm{K}$, densità e pressione paragonabili a quelle del Sole.
+**Stelle come il Sole** (tipo G): $T\sim 5\,000\text{-}6\,000\,\mathrm{K}$, densità e pressione paragonabili a quelle del Sole.
 
-**Stelle fredde rosse** di tipo M: hanno $T\sim 2\,500 - 3\,500\,\mathrm{K}$ e fotosfere più estese e dense, spesso con molecole stabili come l'ossido di titanio (TiO) e l'ossido di vanadio (VO), che dominano lo spettro visibile.
+**Stelle fredde rosse** di tipo M: hanno $T\sim 2\,500\text{-}3\,500\,\mathrm{K}$ e fotosfere più estese e dense, spesso con molecole stabili come l'ossido di titanio (TiO) e l'ossido di vanadio (VO), che dominano lo spettro visibile.
 
 ### Giganti e supergiganti
 Hanno fotosfere molto estese e rarefatte con raggi che possono essere enormi (nell'ordine dei milioni di $\mathrm{km}$). Hanno bassa gravità superficiale, con temperature simili a quelle di stelle più piccole. La definizione di fotosfera diventa più sfumata a causa di estese regioni di transizione.
@@ -194,4 +194,4 @@ Hanno fotosfere estremamente sottili, con temperature superficiali anche maggior
 
 ### Stelle di neutroni
 
-L'assottigliamento della fotosfera raggiunge il suo estremo nelle stelle di neutroni. Pur avendo una massa di circa $1{,}4$ masse solari, il loro raggio è di appena $11-13\,\mathrm{km}$, il che si traduce in una gravità superficiale dell'ordine di $10^{11}$ volte quella terrestre. Lo strato fotosferico si riduce a spessori compresi tra pochi millimetri e poche decine di centimetri, a seconda della temperatura superficiale, che spazia tipicamente da alcune centinaia di migliaia di kelvin fino a milioni di kelvin. Un caso emblematico è la stella di neutroni al centro del resto di supernova Cassiopea A, la cui atmosfera, misurata dal telescopio spaziale Chandra, risultò spessa appena una decina di centimetri, con una temperatura di circa $2$ milioni di kelvin.
+L'assottigliamento della fotosfera raggiunge il suo estremo nelle stelle di neutroni. Pur avendo una massa di circa $1{,}4$ masse solari, il loro raggio è di appena $11\text{-}13\,\mathrm{km}$, il che si traduce in una gravità superficiale dell'ordine di $10^{11}$ volte quella terrestre. Lo strato fotosferico si riduce a spessori compresi tra pochi millimetri e poche decine di centimetri, a seconda della temperatura superficiale, che spazia tipicamente da alcune centinaia di migliaia di kelvin fino a milioni di kelvin. Un caso emblematico è la stella di neutroni al centro del resto di supernova Cassiopea A, la cui atmosfera, misurata dal telescopio spaziale Chandra, risultò spessa appena una decina di centimetri, con una temperatura di circa $2$ milioni di kelvin.

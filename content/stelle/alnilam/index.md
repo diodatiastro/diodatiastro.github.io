@@ -3,7 +3,7 @@ title = "Alnilam"
 subtitle = "La gemma più brillante della Cintura di Orione"
 date = "2026-08-04"
 draft = false
-tags = ["supergigante blu", "classe B0 Ia", "variabile Alfa Cygni"]
+tags = ["supergigante blu", "tipo spettrale B0 Ia", "variabile Alfa Cygni"]
 inEvidenza = false
 +++
 
@@ -45,7 +45,7 @@ Quale che sia l’età esatta di questo sottogruppo, è indubbio che le sue stel
 
 Alnilam non fa eccezione a questa regola universale. Secondo [uno studio](https://scixplorer.org/abs/1974A%26A....37..237L/abstract) pubblicato nel 1974 dall’astrofisico olandese Henny Lamers, l’astro centrale della Cintura di Orione ha un’età di $3$ o $4$ milioni di anni, ma è da considerarsi già una stella molto evoluta, che ha terminato la sua riserva di idrogeno nucleare e sta ora bruciando l’idrogeno contenuto in un guscio esterno al nucleo.
 
-Dal punto di vista della classificazione stellare, Alnilam appartiene alla classe **B0 Ia**, alla quale appartengono supergiganti blu tra le più calde e luminose in assoluto. L'assegnazione di Alnilam a questo tipo spettrale risale al 1953, anno della pubblicazione della [versione rivista e corretta](https://scixplorer.org/abs/1953ApJ...117..313J/abstract) dell’atlante degli spettri stellari del sistema di classificazione **Morgan-Keenan**, la cui prima versione risaliva a dieci anni prima. Lo spettro di Epsilon Orionis, cioè Alnilam, fu adottato nell’atlante del 1953 come lo standard di riferimento per le stelle di classe B0 Ia [^2]. A parte minori integrazioni, lo standard definito allora è tuttora in vigore, sicché la stella centrale della Cintura può essere considerata a buon diritto come l’archetipo[^mk-caveat] delle supergiganti di tipo B più luminose.
+Dal punto di vista della classificazione stellare, Alnilam appartiene alla classe **B0 Ia**, alla quale appartengono supergiganti blu tra le più calde e luminose in assoluto. L'assegnazione di Alnilam a questo tipo spettrale risale al 1953, anno della pubblicazione della [versione rivista e corretta](https://scixplorer.org/abs/1953ApJ...117..313J/abstract) dell’atlante degli spettri stellari del sistema di classificazione **Morgan-Keenan**, la cui prima versione risaliva a dieci anni prima. Lo spettro di Epsilon Orionis, cioè Alnilam, fu adottato nell’atlante del 1953 come lo standard di riferimento per le stelle di tipo spettrale B0 Ia [^2]. A parte minori integrazioni, lo standard definito allora è tuttora in vigore, sicché la stella centrale della Cintura può essere considerata a buon diritto come l’archetipo[^mk-caveat] delle supergiganti di tipo B più luminose.
 
 {{< figura 
 src="immagini/alnilam03.jpg" 

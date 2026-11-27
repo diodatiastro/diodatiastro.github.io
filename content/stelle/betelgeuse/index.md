@@ -3,7 +3,7 @@ title = "Betelgeuse"
 subtitle = "Vita morte e «miracoli» della supergigante rossa in Orione"
 date = "2026-08-01"
 draft = false
-tags = ["supergigante rossa", "classe M1-M2Ia-Iab", "variabile semiregolare"]
+tags = ["supergigante rossa", "tipo spettrale M1-M2Ia-Iab", "variabile semiregolare"]
 inEvidenza = false
 +++
 
@@ -28,7 +28,7 @@ Betelgeuse[^etim] è una delle stelle più facilmente riconoscibili del cielo pe
 
 ### Una variabile semiregolare
 
-Conosciuta e ammirata fin dall’antichità, è una delle stelle più osservate e studiate di tutti i tempi. Le misurazioni fotoelettriche della sua luminosità sono cominciate circa un secolo fa [^foto]. Con la loro superiore affidabilità rispetto alle osservazioni puramente visuali, esse hanno permesso di ricostruire con grande precisione i cicli di variazione di luminosità succedutisi nel corso degli anni. Betelgeuse è infatti una **variabile semiregolare**, con complesse oscillazioni dovute al vario sovrapporsi di almeno tre diversi periodi, uno della durata approssimativa di $\sim 200$ giorni, uno di $\sim 400$ giorni e l'ultimo di $\sim 2000-2200$ giorni, noto come LSP (*long secondary period*), spesso attribuito alla probabile presenza di una compagna invisibile.
+Conosciuta e ammirata fin dall’antichità, è una delle stelle più osservate e studiate di tutti i tempi. Le misurazioni fotoelettriche della sua luminosità sono cominciate circa un secolo fa [^foto]. Con la loro superiore affidabilità rispetto alle osservazioni puramente visuali, esse hanno permesso di ricostruire con grande precisione i cicli di variazione di luminosità succedutisi nel corso degli anni. Betelgeuse è infatti una **variabile semiregolare**, con complesse oscillazioni dovute al vario sovrapporsi di almeno tre diversi periodi, uno della durata approssimativa di $\sim 200$ giorni, uno di $\sim 400$ giorni e l'ultimo di $\sim 2000\text{-}2200$ giorni, noto come LSP (*long secondary period*), spesso attribuito alla probabile presenza di una compagna invisibile.
 
 Al massimo della luminosità, la supergigante rossa in Orione raggiunge una [magnitudine visuale]({{< relref "/dizionario/magnitudine-apparente/" >}}) intorno a $+0{,}3$. È allora la $6^a$ o $7^a$ stella più brillante del cielo. Al suo minimo, invece, la magnitudine visuale può salire fino a $+1{,}3$, il che la porta oltre il $20^{\circ}$ posto nell’elenco delle stelle più luminose visibili a occhio nudo.
 
@@ -259,7 +259,7 @@ alt="Le variazioni del diametro angolare di Betelgeuse, misurate tra il 1993 e i
 caption="Le variazioni del diametro angolare di Betelgeuse, misurate tra il 1993 e il 2009. I valori riportati nella tabella tengono conto dell’oscuramento al bordo del disco stellare. Crediti: The Astrophysical Journal 697 (2009) L127"
 >}}
 
-Betelgeuse continua naturalmente a essere tenuta sotto stretta sorveglianza. Le osservazioni compiute con diversi interferometri negli ultimi due decenni indicano che il diametro angolare al livello della fotosfera stellare si mantiene intorno a un valore di $42-43$ millesimi di secondo d’arco. Ecco di seguito un breve elenco dei diametri angolari misurati dai principali studi specialistici dedicati all’osservazione di Betelgeuse dal 2000 in poi:
+Betelgeuse continua naturalmente a essere tenuta sotto stretta sorveglianza. Le osservazioni compiute con diversi interferometri negli ultimi due decenni indicano che il diametro angolare al livello della fotosfera stellare si mantiene intorno a un valore di $42\text{-}43$ millesimi di secondo d’arco. Ecco di seguito un breve elenco dei diametri angolari misurati dai principali studi specialistici dedicati all’osservazione di Betelgeuse dal 2000 in poi:
 
 | Valore                           | Riferimento                                                                                        |
 | -------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -416,7 +416,7 @@ Uno dei dati più attendibili ricavati dalle simulazioni descritte nello studio 
 
 ### Massa e raggio
 
-Altri dati ricavati dalle simulazioni erano le stime della **massa iniziale** e **attuale** di Betelgeuse. La prima è compresa tra $18$ e $21$ masse solari, mentre la seconda tra $16{,}5$ e $19$ masse solari [^8]. Di queste, circa $6-7$ masse solari sono contenute nel nucleo di elio. Si tratta di valori sostanzialmente in buon accordo con i dati forniti da studi precedenti.
+Altri dati ricavati dalle simulazioni erano le stime della **massa iniziale** e **attuale** di Betelgeuse. La prima è compresa tra $18$ e $21$ masse solari, mentre la seconda tra $16{,}5$ e $19$ masse solari [^8]. Di queste, circa $6\text{-}7$ masse solari sono contenute nel nucleo di elio. Si tratta di valori sostanzialmente in buon accordo con i dati forniti da studi precedenti.
 
 Per quanto riguarda il **raggio** di Betelgeuse, le stime ricavate dalla vasta letteratura scientifica esistente variano - come abbiamo visto sopra - tra un minimo di $500$ e un massimo di $1\,100$ raggi solari. Le simulazioni astrosismiche eseguite da Joyce e colleghi posero, invece, un limite più stringente al raggio di Betelgeuse, che stimarono, con una precisione pari a $3\, \sigma$, in $764$ raggi solari, con un margine d’incertezza di $116$ raggi solari in più e $62$ in meno [^9]. Dato che il raggio solare misura $695\,700\,\text{km}$, $764$ raggi solari corrispondono a $531{,}5$ milioni di $\text{km}$ o $3{,}6$ volte la distanza media tra la Terra e il Sole. In altre parole, se Betelgeuse fosse al posto del Sole, il nostro pianeta si troverebbe nelle viscere della stella, e così anche Marte.
 
@@ -489,7 +489,7 @@ Di seguito l’elenco dei **principali parametri** di Betelgeuse definiti in que
 | massa attuale         | $19{,}4\,M_{\odot}$ ($3{,}86\times10^{31}\,\text{kg}$)                             |
 | perdita di massa      | $(2\pm1)\times10^{-6}\,M_{\odot}/\text{anno}$                                      |
 | gravità superficiale  | $0{,}3\,\text{cm/s}^2$                                                             |
-| età                   | $8-8{,}5$ milioni di anni                                                          |
+| età                   | $8\text{-}8{,}5$ milioni di anni                                                          |
 | fine prevista         | supernova di tipo II-P                                                             |
 
 L'elemento che risalta di più da questa tabella è la differenza di luminosità tra il valore calcolato nello studio pubblicato a ottobre 2020 da Joyce e colleghi, pari a $87\,000$ volte la luminosità solare, e quello molto più alto (circa $126\,000\, L_{\odot}$) ricavato da Dolan e colleghi. Un'ennesima dimostrazione di quanto siano imprecise e fluttuanti le informazioni che abbiamo su una stella così luminosa come Betelgeuse.

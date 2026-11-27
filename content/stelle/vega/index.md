@@ -3,7 +3,7 @@ title = "Vega"
 subtitle = "La stella zero"
 date = "2026-08-12"
 draft = false
-tags = ["sequenza principale", "classe A0V", "rotatore veloce", "oscuramento gravitazionale"]
+tags = ["sequenza principale", "tipo spettrale A0V", "rotatore veloce", "oscuramento gravitazionale"]
 inEvidenza = false
 +++
 
@@ -22,7 +22,7 @@ Vega, la quinta stella più brillante del cielo, usata in passato come riferimen
 
 ## Una stella oblata
 
-*Alfa Lyrae*, la brillantissima Vega, dista $25$ anni luce ($7{,}68$ parsec) dal Sistema Solare. Di un bel colore bianco, appartiene alla classe spettrale A0 e si trova sulla sequenza principale come il Sole. Ben visibile dall’emisfero settentrionale, forma insieme a [Deneb]({{< relref "/stelle/deneb/" >}}) e [Altair]({{< relref "/stelle/altair/" >}}) il cosiddetto Triangolo estivo, un asterismo facile da individuare a occhio nudo anche per gli osservatori più inesperti. 
+*Alfa Lyrae*, la brillantissima Vega, dista $25$ anni luce ($7{,}68$ parsec) dal Sistema Solare. Di un bel colore bianco, è di tipo spettrale A0 e si trova sulla sequenza principale come il Sole. Ben visibile dall’emisfero settentrionale, forma insieme a [Deneb]({{< relref "/stelle/deneb/" >}}) e [Altair]({{< relref "/stelle/altair/" >}}) il cosiddetto Triangolo estivo, un asterismo facile da individuare a occhio nudo anche per gli osservatori più inesperti. 
 
 Per la sua luminosità e il colore, Vega è stata utilizzata per molto tempo come riferimento standard nella scala logaritmica delle magnitudini, cioè come la stella sulla quale tarare il valore $0$ della scala.
 

@@ -4,7 +4,7 @@ subtitle = "Una supergigante incostante ed enigmatica"
 date = "2026-10-28"
 draft = false
 copertina="immagini/star-trails.jpg"
-tags = ["variabile Cefeide", "sistema multiplo", "classe F7 Ib", "supergigante gialla", "campo magnetico"]
+tags = ["variabile Cefeide", "sistema multiplo", "tipo spettrale F7 Ib", "supergigante gialla", "campo magnetico"]
 +++
 
 {{< katex />}}

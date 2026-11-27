@@ -6,7 +6,7 @@ copertina="immagini/eso1216c.jpg"
 draft = false
 inEvidenza = true
 ordineEvidenza = 2
-tags = ["sequenza principale", "classe A4V", "sistema multiplo", "disco di detriti", "esopianeti", "comete"]
+tags = ["sequenza principale", "tipo spettrale A4V", "sistema multiplo", "disco di detriti", "esopianeti", "comete"]
 +++
 
 {{< katex />}}

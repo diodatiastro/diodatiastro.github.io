@@ -3,7 +3,7 @@ title = "Rigel"
 subtitle = "La stella più luminosa entro 1.000 anni luce dalla Terra"
 date = "2026-07-28"
 draft = false
-tags = ["supergigante blu", "classe B8 Ia", "sistema multiplo"]
+tags = ["supergigante blu", "tipo spettrale B8 Ia", "sistema multiplo"]
 inEvidenza = false
 copertina="immagini/rigel-dss2.png"
 +++
@@ -38,7 +38,7 @@ In conclusione, possiamo affermare che Rigel dista grosso modo tra $850$ e $1\,0
 
 ## Luminosità
 
-Nel caso di Rigel, il valore più spesso citato per la luminosità bolometrica – cioè l'energia emessa in tutte le lunghezze d'onda – è $120\,000$ volte la luminosità solare. Questo dato è basato sulla distanza calcolata da Hipparcos. Se invece usiamo la parallasse ricavata da Gaia osservando i microspostamenti di deboli stelle compagne di Rigel, la luminosità sale fino a $160-170\,000$ volte quella del Sole. Entrambi i dati, tuttavia, non sono del tutto affidabili, per i motivi di saturazione dei sensori detti in precedenza. Usando come criterio dei modelli teorici basati sullo studio delle atmosfere stellari, si ottengono valori che vanno da $83\,000$ fino addirittura a $363\,000$ volte la luminosità del Sole.
+Nel caso di Rigel, il valore più spesso citato per la luminosità bolometrica – cioè l'energia emessa in tutte le lunghezze d'onda – è $120\,000$ volte la luminosità solare. Questo dato è basato sulla distanza calcolata da Hipparcos. Se invece usiamo la parallasse ricavata da Gaia osservando i microspostamenti di deboli stelle compagne di Rigel, la luminosità sale fino a $160\text{-}170\,000$ volte quella del Sole. Entrambi i dati, tuttavia, non sono del tutto affidabili, per i motivi di saturazione dei sensori detti in precedenza. Usando come criterio dei modelli teorici basati sullo studio delle atmosfere stellari, si ottengono valori che vanno da $83\,000$ fino addirittura a $363\,000$ volte la luminosità del Sole.
 
 {{< figura 
 src="immagini/rigel-dss2.png" 
@@ -78,7 +78,7 @@ Nel caso di Rigel siamo su un altro livello. Studi effettuati tra il 2006 e il 2
 
 $$7{,}6 \times 10^{-7}\ \ \text{e}\ \ 9{,}4 \times 10^{-7} \; M_{\odot}/\text{anno}$$
 
-È un tasso di perdita di massa circa $50$ milioni di volte maggiore di quello del nostro Sole. Nel periodo in cui è stato effettuato tale monitoraggio, Rigel ha scagliato nello spazio attraverso il suo vento stellare l'equivalente di circa il $25-31\%$ di una massa terrestre all'anno! I ricercatori calcolano, pertanto, che la massa iniziale di Rigel fosse di $24-27$ masse solari e che $3$ intere masse solari siano state finora emesse dalla stella attraverso il suo intensissimo vento di particelle cariche.
+È un tasso di perdita di massa circa $50$ milioni di volte maggiore di quello del nostro Sole. Nel periodo in cui è stato effettuato tale monitoraggio, Rigel ha scagliato nello spazio attraverso il suo vento stellare l'equivalente di circa il $25\text{-}31\%$ di una massa terrestre all'anno! I ricercatori calcolano, pertanto, che la massa iniziale di Rigel fosse di $24\text{-}27$ masse solari e che $3$ intere masse solari siano state finora emesse dalla stella attraverso il suo intensissimo vento di particelle cariche.
 
 ## Variabilità
 
@@ -130,7 +130,7 @@ caption="Rigel A, sulla destra, e le sue tre compagne racchiuse in un unico punt
 
 È sorprendente pensare che le tre stelle che accompagnano Rigel A nel suo viaggio galattico siano tutt'altro che stelle minori. Ciascuna di esse è più grande, più luminosa e più massiccia del Sole. La loro magnitudine apparente combinata le renderebbe teoricamente visibili a occhio nudo sotto cieli perfettamente scuri, ma il bagliore estremo della stella principale le oscura.
 
-Rigel Ba, Rigel Bb e Rigel C sono classificate tutte e tre come stelle di sequenza principale appartenenti alla classe spettrale **B9V**. Le caratteristiche tipiche di questa classe sono:
+Rigel Ba, Rigel Bb e Rigel C sono classificate tutte e tre come stelle di sequenza principale di tipo spettrale **B9V**. Le caratteristiche tipiche di queste stelle sono:
 
 - **temperatura** di circa $10\,300\,\text{K}$;
 - **colore** bianco-azzurro;
@@ -146,9 +146,9 @@ Va riportato per completezza che, nel 1878, Burnham scoprì una quinta stella ap
 
 ## Inospitalità del sistema stellare
 
-Le condizioni intorno a Rigel A sono talmente estreme da rendere difficile anche solo immaginare la possibilità che la supergigante possa avere pianeti abitati o abitabili, anche considerando il poco tempo che avrebbero avuto per formarsi (ricordiamo che la stella è già uscita dalla sequenza principale a un'età stimata di appena $7-9$ milioni di anni).
+Le condizioni intorno a Rigel A sono talmente estreme da rendere difficile anche solo immaginare la possibilità che la supergigante possa avere pianeti abitati o abitabili, anche considerando il poco tempo che avrebbero avuto per formarsi (ricordiamo che la stella è già uscita dalla sequenza principale a un'età stimata di appena $7\text{-}9$ milioni di anni).
 
-Le condizioni intorno alle tre stelle di classe B9V sarebbero di gran lunga migliori, ma non tanto da rendere probabile la presenza di pianeti abitati. Queste stelle hanno una vita media sulla sequenza principale di circa $500$ milioni di anni, un tempo probabilmente sufficiente per la nascita della vita su un pianeta dotato di condizioni di abitabilità. Ma la composizione del sistema, con una coppia molto stretta di binarie (Rigel Ba e Rigel Bb) orbitata da un'altra stella molto luminosa (Rigel C) a una distanza simile a quella di Plutone dal Sole, sarebbe un ostacolo forse insormontabile per la vita. Infatti, le interazioni gravitazionali all'interno del sistema nonché le variazioni e l'intensità del flusso di radiazioni proveniente dalle tre stelle sarebbero così violente da rendere poco probabile l'esistenza di una fascia di stabilità sufficientemente protetta dall'ambiente stellare, dove possa insediarsi un pianeta abitabile.
+Le condizioni intorno alle tre stelle di tipo spettrale B9V sarebbero di gran lunga migliori, ma non tanto da rendere probabile la presenza di pianeti abitati. Queste stelle hanno una vita media sulla sequenza principale di circa $500$ milioni di anni, un tempo probabilmente sufficiente per la nascita della vita su un pianeta dotato di condizioni di abitabilità. Ma la composizione del sistema, con una coppia molto stretta di binarie (Rigel Ba e Rigel Bb) orbitata da un'altra stella molto luminosa (Rigel C) a una distanza simile a quella di Plutone dal Sole, sarebbe un ostacolo forse insormontabile per la vita. Infatti, le interazioni gravitazionali all'interno del sistema nonché le variazioni e l'intensità del flusso di radiazioni proveniente dalle tre stelle sarebbero così violente da rendere poco probabile l'esistenza di una fascia di stabilità sufficientemente protetta dall'ambiente stellare, dove possa insediarsi un pianeta abitabile.
 
 {{< figura 
 src="immagini/ipotetico-paesaggio-pianeta-rigel-c.png" 
@@ -200,7 +200,7 @@ Affinché la Terra possa sopravvivere alla radiazione di Rigel, dovrebbe trovars
 
 Se la Terra si trovasse a $412\,\text{au}$ da Rigel, la luce stellare impiegherebbe ben $57$ ore per raggiungerci, a fronte degli otto minuti e mezzo che impiega la luce solare. L’esperienza visiva e biologica su un pianeta così distante da una stella tanto potente sarebbe completamente diversa da tutto ciò a cui siamo abituati.
 
-Rigel è, come abbiamo visto, una stella mastodontica, con un raggio circa $70-80$ volte maggiore di quello del Sole. Tuttavia, a causa della distanza, il suo disco ci apparirebbe nel cielo circa $5$ volte più piccolo di quello del Sole. E non lo vedremmo come una sfera definita, ma come un “punto” azzurro-biancastro incredibilmente concentrato e accecante. Le ombre sul paesaggio sarebbero geometricamente perfette, nette e prive di penombra.
+Rigel è, come abbiamo visto, una stella mastodontica, con un raggio circa $70\text{-}80$ volte maggiore di quello del Sole. Tuttavia, a causa della distanza, il suo disco ci apparirebbe nel cielo circa $5$ volte più piccolo di quello del Sole. E non lo vedremmo come una sfera definita, ma come un “punto” azzurro-biancastro incredibilmente concentrato e accecante. Le ombre sul paesaggio sarebbero geometricamente perfette, nette e prive di penombra.
 
 {{< figura 
 src="immagini/terra-illuminata-da-rigel.png" 

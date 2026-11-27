@@ -3,7 +3,7 @@ title = "Deneb"
 subtitle = "Una supergigante 200.000 volte più luminosa del Sole"
 date = "2026-08-07"
 draft = false
-tags = ["supergigante bianco-azzurra", "classe A2 Ia", "variabile Alfa Cygni"]
+tags = ["supergigante bianco-azzurra", "tipo spettrale A2 Ia", "variabile Alfa Cygni"]
 inEvidenza = false
 +++
 
