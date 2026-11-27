@@ -56,7 +56,7 @@ caption="Wolf 940A, the red dwarf, and Wolf 940B, the brown dwarf, in an infrare
 At the system's distance, $32$ arcseconds correspond to about $400$ [astronomical units]({{< relref "/dizionario/unita-astronomica/" >}}), but only as a separation projected on the plane of the sky. Allowing for the possible inclinations and eccentricities, the discoverers estimated that the brown dwarf orbits about $440$ astronomical units from the star, just under $66$ billion $\text{km}$, or $2.54$ light-days (for comparison, in November 2026, after almost $50$ years of travel, the Voyager 1 probe reached a distance of $1$ light-day from the Sun). According to their calculations, if the separation is indeed $440$ astronomical units, Wolf 940B takes about $18\,000$ years to orbit its companion. But these are estimates with a wide margin of uncertainty: the true distance most likely lies between $300$ and $800$ astronomical units and the period, accordingly, between $10\,000$ and $44\,000$ years. What we do know with reasonable confidence, from a high-resolution adaptive-optics image taken with the Keck II telescope, is that Wolf 940B is a single object, not a pair of brown dwarfs too close together to be resolved.
 
 {{< figura 
-src="immagini/wolf940b-keck-nirc2-2008.png" 
+src="immagini/wolf940b-keck-nirc2-2008-en.png" 
 width="60%" 
 alt="High-resolution infrared image: Wolf 940B is a small point source at the center of the field, with a few background stars; an enlarged inset shows the brown dwarf as a single, compact source." 
 caption="Wolf 940B imaged on November 3, 2008, with the NIRC2 infrared camera and adaptive optics on the Keck II telescope, through a filter centered at $1.59$ micrometers, within the *H* band. Six $60$-second exposures were combined, reaching a resolution of about a tenth of an arcsecond. In the enlarged inset, $2.5''$ wide, the brown dwarf appears as a single source. Wolf 940A is outside the field, $32''$ to the east. Credit: W. M. Keck Observatory, Keck Observatory Archive (KOA); processing: Michele Diodati/Claude"
@@ -117,7 +117,7 @@ caption="The infrared spectra of Jupiter and Wolf 940B are strikingly similar: i
 As early as 2009 the discoverers announced new observations with the Spitzer Space Telescope, which operated in the infrared at wavelengths inaccessible from the ground. In 2008, through a Director's Discretionary Time program, Spitzer had imaged Wolf 940B in four bands between $3.6$ and $8$ micrometers and had obtained its spectrum between $7.5$ and $14.2$ micrometers. The spectrum alone required more than five hours of exposure, so faint was the object. The images were [analyzed](https://doi.org/10.1088/0004-637X/710/2/1627) in a study devoted to a group of cold brown dwarfs, published in 2010 and led by Sandy Leggett of the Gemini Observatory. The colors of Wolf 940B indicated a metallicity equal to or slightly higher than the Sun's, which ruled out a metal-poor system.
 
 {{< figura 
-src="immagini/wolf940b-spitzer-irac-2008.png" 
+src="immagini/wolf940b-spitzer-irac-2008-en.png" 
 width="60%" 
 alt="Spitzer infrared image: Wolf 940B appears as an orange source at the center of the field, while on the left are the bright streaks of scattered light from Wolf 940A, which lay outside the imaged area." 
 caption="Wolf 940B imaged by the IRAC camera of the Spitzer Space Telescope in December 2008, at $3.6$ micrometers (blue) and $4.5$ micrometers (red). The brown dwarf appears orange because it emits much more radiation in the second band than in the first. Wolf 940A lay just outside the imaged field: its scattered light forms the bright streaks at the edge of the area covered by the observations. Credit: NASA/JPL-Caltech, IRSA (Spitzer Enhanced Imaging Products); processing: Michele Diodati/Claude"
@@ -165,7 +165,7 @@ In 2019 and 2021 the large censuses of brown dwarfs near the Sun carried out by 
 The most recent study to examine it in detail, [published](https://doi.org/10.3847/1538-4357/adb39f) by Burgasser and others in 2025, proposes a system for classifying T subdwarfs according to their metallicity. Wolf 940B is one of the T dwarf companions to stars of known metallicity used to calibrate the scheme, with a new spectrum, again obtained with the Magellan telescope. From the absolute magnitudes in the *J* band and in WISE's *W2* band the authors derived a temperature of $586 \pm 35\ \text{K}$. The best-fitting atmospheric model, by contrast, gave $636\ \text{K}$ and a supersolar metallicity. The difference between the two methods, still several tens of degrees, shows that the problem raised in 2009 remains very much open. Finally, the motion of Wolf 940 through the Galaxy, recalculated with measurements from the Gaia satellite, confirms that the system is most likely part of the Galactic thin disk, the population the Sun also belongs to.
 
 {{< figura 
-src="immagini/wolf940b-allwise-2010.png" 
+src="immagini/wolf940b-allwise-2010-en.png" 
 width="60%" 
 alt="WISE infrared image: Wolf 940A is a large overexposed white disk, Wolf 940B a faint orange smudge to its lower right." 
 caption="The Wolf 940 system in AllWISE images from the WISE space telescope, taken between 2010 and 2011 at $3.4$ micrometers (blue) and $4.6$ micrometers (red). Wolf 940A is the overexposed white disk; Wolf 940B is the faint orange smudge $32''$ west-southwest of the star. To make the brown dwarf visible the contrast has been stretched to the maximum, which also enhances the star's diffraction spikes and the irregularities of the background. Credit: NASA/JPL-Caltech/UCLA, IRSA (AllWISE); processing: Michele Diodati/Claude"
@@ -186,7 +186,7 @@ In 2009 David Pinfield, one of the discoverers of Wolf 940B, [pointed out](https
 A recent answer came in 2026. Souleymane Ouedraogo and other authors [searched](https://arxiv.org/abs/2607.20673) for substellar companions around $2\,103$ stars within $20$ parsecs of the Sun, comparing proper motions measured in WISE images taken in different years. The search is sensitive to cold brown dwarfs down to about $300\ \text{K}$ and at separations of up to $20\,000$ astronomical units from the star. Wolf 940B is among the companions recovered. Correcting for objects too faint to detect, the authors estimated that about $1\%$ of the stars near the Sun have a companion of $5$ to $80$ Jupiter masses at a separation of $1000$ to $20\,000$ astronomical units. The orbit of Wolf 940B is considerably tighter than that, but the estimate gives an idea of how rare systems like Wolf 940 are. Brown dwarf companions like Wolf 940B are few and, for that very reason, valuable.
 
 {{< figura 
-src="immagini/wolf940-mappa-cielo.png" 
+src="immagini/wolf940-mappa-cielo-en.png" 
 width="70%" 
 alt="Sky map with the constellation Aquarius and neighboring constellations, showing the position of Wolf 940 just south of the celestial equator." 
 caption="The position of Wolf 940 in the constellation Aquarius, marked by the red circle, just south of the celestial equator: about $5$ degrees west of Sadalmelik and $10$ degrees south of Enif, the brightest star in Pegasus. With a visual magnitude of $12.7$, the red dwarf can only be seen through a telescope; the brown dwarf, $32''$ away, can be detected only in the infrared. North is up, east is to the left. Map: Michele Diodati/Claude, using data from Olaf Frohn's d3-celestial project (Hipparcos catalog)."
@@ -244,7 +244,7 @@ that is, about $12$ times the mean density of the Sun. The same calculation for 
 In the table rows from temperature to density, the lowest values correspond to the youngest age and the highest to the oldest. Later studies have given temperatures between about $560$ and $640\ \text{K}$, depending on the method: the most recent luminosity-based estimate is $586 \pm 35\ \text{K}$ (Burgasser *et al.* 2025).
 
 {{< figura 
-src="immagini/wolf940b-in-cifre.png" 
+src="immagini/wolf940b-in-cifre-en.png" 
 width="80%" 
 alt="Infographic showing the red dwarf Wolf 940A, the brown dwarf Wolf 940B and Jupiter drawn to scale, next to a panel with the main data on Wolf 940B." 
 caption="Wolf 940B in brief. The three celestial bodies are drawn to scale: the radius of the brown dwarf is about $90\%$ of Jupiter's, while that of the red dwarf is almost three times larger. The panel lists the main values from the studies cited in the article. Graphic: Michele Diodati/Claude."
