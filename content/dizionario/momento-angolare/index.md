@@ -54,26 +54,26 @@ $$L = m\,v\,r$$
 
 Per apprezzare la crescita esponenziale del momento angolare, usiamo tre esempi di scala crescente. 
 
-Partiamo da qualcosa di piccolo. Una pallina da tennis di massa $m = 0,058\,\text{kg}$ attaccata a un filo lungo $r = 1,2\,\text{m}$ ruota a $\omega = 3{,}0\,\text{rad/s}$ su un piano orizzontale. Calcoliamo il momento angolare rispetto al centro di rotazione:
+Partiamo da qualcosa di piccolo. Una pallina da tennis di massa $m = 0{,}058\,\text{kg}$ attaccata a un filo lungo $r = 1{,}2\,\text{m}$ ruota a $\omega = 3{,}0\,\text{rad/s}$ su un piano orizzontale. Calcoliamo il momento angolare rispetto al centro di rotazione:
 $$
 \begin{aligned}
-  L &= m r^2 \omega = 0,058 \times (1,2)^2 \times 3,0 
+  L &= m r^2 \omega = 0{,}058 \times (1{,}2)^2 \times 3{,}0 
 \\
-  &= 0,058 \times 1,44 \times 3,0 
+  &= 0{,}058 \times 1{,}44 \times 3{,}0 
   \\
-  &= 0,25056 \,\text{kg\,m}^2\text{s}^{-1}
+  &= 0{,}25056 \,\text{kg\,m}^2\text{s}^{-1}
   \end{aligned}
   $$
 L'esempio ci permette anche di chiarire le **unità di misura** usate nel Sistema Internazionale (SI) per il momento angolare: $\text{kg}\,\text{m}^2\,\text{s}^{-1}$.
 
-Passiamo ora a qualcosa di più sostanzioso: un satellite artificiale con una massa di $500\ \mathrm{kg}$ percorre un'orbita circolare di $7\,000\ \mathrm{km}$ di raggio con una velocità di $7,5\ \mathrm{km/s}$.
+Passiamo ora a qualcosa di più sostanzioso: un satellite artificiale con una massa di $500\ \mathrm{kg}$ percorre un'orbita circolare di $7\,000\ \mathrm{km}$ di raggio con una velocità di $7{,}5\ \mathrm{km/s}$.
 
-Convertendo le unità nel SI, il raggio diventa $r = 7,0\times10^6\ \mathrm{m}$ e la velocità $v = 7,5\times10^3\ \mathrm{m/s}$. Svolgendo i calcoli, otteniamo:
+Convertendo le unità nel SI, il raggio diventa $r = 7{,}0\times10^6\ \mathrm{m}$ e la velocità $v = 7{,}5\times10^3\ \mathrm{m/s}$. Svolgendo i calcoli, otteniamo:
 $$  
 \begin{align}
-L &= 500 \times 7,5\times10^3 \times 7,0\times10^6  
+L &= 500 \times 7{,}5\times10^3 \times 7{,}0\times10^6  
 \\
-&= 2,625\times10^{13}\ \mathrm{kg\,m^2\,s^{-1}}. \end{align} 
+&= 2{,}625\times10^{13}\ \mathrm{kg\,m^2\,s^{-1}}. \end{align} 
 $$
 Si tratta di un numero enorme: oltre $26\,000$ miliardi di kg per metro quadro al secondo. La crescita del momento angolare è rapidissima, perché dipende dal prodotto di tre quantità (massa, velocità e distanza dal centro di rotazione) o dal quadrato della distanza se espresso in termini di velocità angolare $(L = m r^2 \omega)$.
 
@@ -179,7 +179,7 @@ Se l'[energia]({{< relref "/dizionario/energia/" >}}) è la grandezza che descri
 
 [^4]: [Modelli che includono questi effetti](https://scixplorer.org/abs/2005ApJ...626..350H/abstract) prevedono periodi di nascita più lunghi di circa un ordine di grandezza, nell'intervallo dei millisecondi anziché dei decimi di millisecondo: da progenitori di $15$, $20$ e $35$ masse solari si ottengono rispettivamente periodi iniziali di circa $11$, $7$ e $3\,\text{ms}$. Questi valori sono coerenti con i periodi di nascita dedotti osservativamente per le pulsar giovani conosciute, come la Pulsar del Granchio, nata con un periodo stimato di circa $19\,\text{ms}$.
 
-[^5]: $I/MR^2 \approx 0{,}35–0{,}4$, secondo le relazioni empiriche fra momento d'inerzia e compattezza per le equazioni di stato della materia nucleare.
+[^5]: $I/MR^2 \approx 0{,}35\text{-}0{,}4$, secondo le relazioni empiriche fra momento d'inerzia e compattezza per le equazioni di stato della materia nucleare.
 
 [^6]: Una **metrica**, in questo contesto, è l'espressione matematica che stabilisce come si misurano le distanze e gli intervalli di tempo nello spaziotempo curvato dalla gravità: è ciò che prende il posto, in relatività generale, della nozione euclidea di distanza. Una metrica "a simmetria assiale" è una metrica che non cambia se si ruota lo spazio attorno a un asse particolare (qui, l'asse di rotazione dell'oggetto centrale).
 

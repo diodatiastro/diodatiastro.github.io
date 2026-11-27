@@ -31,12 +31,12 @@ Per convenzione e comodità d'uso, lo spettro elettromagnetico è suddiviso nell
 
 |Tipo di radiazione|Lunghezza d'onda|Frequenza|Energia|Esempi in astronomia|
 |---|---|---|---|---|
-|Onde radio|$> 1$ m|$< 300$ MHz|Molto bassa|Pulsar; gas freddo|
-|Microonde|$1$ mm – $1$ m|$300$ MHz – $300$ GHz|Bassa|Fondo cosmico a microonde|
-|Infrarosso|$700$ nm – $1$ mm|$300$ GHz – $430$ THz|Medio-bassa|Stelle fredde; polveri; esopianeti|
-|Luce visibile|$400$ – $700$ nm|$430$ – $750$ THz|Media|Stelle come il Sole|
-|Ultravioletto (UV)|$10$ – $400$ nm|$750$ THz – $30$ PHz|Alta|Stelle calde; galassie giovani|
-|Raggi X|$0{,}01$ – $10$ nm|$30$ PHz – $30$ EHz|Molto alta|Buchi neri; resti di supernove|
-|Raggi gamma|$< 0{,}01$ nm|$> 30$ EHz|Estrema|Esplosioni di supernova; GRB|
+|Onde radio|$> 1\,\text{m}$|$< 300\,\text{MHz}$|Molto bassa|Pulsar; gas freddo|
+|Microonde|$1\,\text{mm}\text{-}1\,\text{m}$|$300\,\text{MHz}\text{-}300\,\text{GHz}$|Bassa|Fondo cosmico a microonde|
+|Infrarosso|$700\,\text{nm}\text{-}1\,\text{mm}$|$300\,\text{GHz}\text{-}430\,\text{THz}$|Medio-bassa|Stelle fredde; polveri; esopianeti|
+|Luce visibile|$400\text{-}700\,\text{nm}$|$430\text{-}750\,\text{THz}$|Media|Stelle come il Sole|
+|Ultravioletto (UV)|$10\text{-}400\,\text{nm}$|$750\,\text{THz}\text{-}30\,\text{PHz}$|Alta|Stelle calde; galassie giovani|
+|Raggi X|$0{,}01\text{-}10\,\text{nm}$|$30\,\text{PHz}\text{-}30\,\text{EHz}$|Molto alta|Buchi neri; resti di supernove|
+|Raggi gamma|$< 0{,}01\,\text{nm}$|$> 30\,\text{EHz}$|Estrema|Esplosioni di supernova; GRB|
 
 In astrofisica, lo studio dello spettro elettromagnetico nella sua totalità è di fondamentale importanza: i corpi celesti emettono radiazioni in quasi tutte le bande dello spettro e l'utilizzo di telescopi speciali (sensibili all'infrarosso, ai raggi X o alle onde radio) permette di osservare fenomeni cosmici altrimenti del tutto invisibili, come il calore delle polveri interstellari o l'energia estrema emessa attorno ai buchi neri.

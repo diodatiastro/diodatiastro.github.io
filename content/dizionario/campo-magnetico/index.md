@@ -59,11 +59,11 @@ Nel Sistema Internazionale (SI), l'**unità di misura** del campo magnetico è i
 
 | Sorgente | Intensità del campo magnetico |
 |---|---|
-| Campo magnetico terrestre (superficie) | $\approx 25$–$65\,\mu\mathrm{T}$ ($0{,}25$–$0{,}65\;\mathrm{G}$) |
+| Campo magnetico terrestre (superficie) | $\approx 25\text{-}65\,\mu\mathrm{T}$ ($0{,}25\text{-}0{,}65\;\mathrm{G}$) |
 | Magnete da frigo | $\approx 5\;\mathrm{mT}$ ($50\;\mathrm{G}$) |
-| Magnete al neodimio | $\approx 1$–$1{,}4\;\mathrm{T}$  (tra $10^4$ e $1{,}4 \times 10^4\;\mathrm{G}$) |
-| Campo magnetico solare (macchie) | $\approx 0{,}1$–$0{,}3\;\mathrm{T}$ (tra $10^3$ e $3 \times 10^3\;\mathrm{G}$) |
-| Buco nero supermassiccio (M87\*, Sgr A\*; stime EHT presso l'orizzonte) | $\approx 10^{-4}$–$10^{-2}\;\mathrm{T}$ (tra $1$ e $100\;\mathrm{G}$) |
+| Magnete al neodimio | $\approx 1\text{-}1{,}4\;\mathrm{T}$  (tra $10^4$ e $1{,}4 \times 10^4\;\mathrm{G}$) |
+| Campo magnetico solare (macchie) | $\approx 0{,}1\text{-}0{,}3\;\mathrm{T}$ (tra $10^3$ e $3 \times 10^3\;\mathrm{G}$) |
+| Buco nero supermassiccio (M87\*, Sgr A\*; stime EHT presso l'orizzonte) | $\approx 10^{-4}\text{-}10^{-2}\;\mathrm{T}$ (tra $1$ e $100\;\mathrm{G}$) |
 | Campo magnetico di una stella di neutroni tipica | $\approx 10^8\;\mathrm{T}$ ($10^{12}\;\mathrm{G}$) |
 | Campo magnetico di una magnetar | $\approx 10^{11}\;\mathrm{T}$ ($10^{15}\:\mathrm{G}$) |
 

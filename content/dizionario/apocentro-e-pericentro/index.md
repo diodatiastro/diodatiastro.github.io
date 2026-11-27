@@ -106,7 +106,7 @@ $$
 \frac{GM_{\odot}}{a} = \frac{1{,}32712440018 \times 10^{20}}{1{,}495978707 \times 10^{11}} \approx 8{,}87128 \times 10^8\,\text{m}^2/\text{s}^2
 $$
 
-Calcoliamo ora i due fattori legati all'eccentricità dell'orbita terrestre intorno al Sole ($e = 0,0167$):
+Calcoliamo ora i due fattori legati all'eccentricità dell'orbita terrestre intorno al Sole ($e = 0{,}0167$):
 
 $$
 \begin{aligned}
@@ -120,10 +120,10 @@ Eseguiamo infine i calcoli che ci daranno le due velocità orbitali cercate:
 $$
 \begin{aligned}
 v_{\text{peri}} &= \sqrt{8{,}87128 \times 10^8\ \text{m}^2/\text{s}^2 \times 1{,}03397} = \sqrt{9{,}17261 \times 10^8\ \text{m}^2/\text{s}^2} \\
-&\approx 3{,}02863 \times 10^4\ \text{m/s} \approx \textbf{30,29 km/s} 
+&\approx 3{,}02863 \times 10^4\ \text{m/s} \approx \textbf{30{,}29 km/s} 
 \\\\
 v_{\text{apo}} &= \sqrt{8{,}87128 \times 10^8\ \text{m}^2/\text{s}^2 \times 0{,}96715} = \sqrt{8{,}57981 \times 10^8\ \text{m}^2/\text{s}^2} \\
-&\approx 2{,}92917 \times 10^4\ \text{m/s} \approx \textbf{29,29 km/s}
+&\approx 2{,}92917 \times 10^4\ \text{m/s} \approx \textbf{29{,}29 km/s}
 \end{aligned}
 $$
 

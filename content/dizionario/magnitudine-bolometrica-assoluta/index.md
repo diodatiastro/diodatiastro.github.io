@@ -50,7 +50,7 @@ M_{\text{bol},\odot}
 \end{aligned}
 $$
 
-Il risultato finale approssimato a $+4,74$ è infatti il valore canonico della magnitudine bolometrica assoluta del Sole. Non si tratta di un caso. Il punto zero della scala è stato scelto dalla IAU proprio per fare in modo che l'applicazione al Sole della formula precedente fornisse il valore storicamente accettato all'interno della comunità astronomica per la magnitudine bolometrica assoluta solare.
+Il risultato finale approssimato a $+4{,}74$ è infatti il valore canonico della magnitudine bolometrica assoluta del Sole. Non si tratta di un caso. Il punto zero della scala è stato scelto dalla IAU proprio per fare in modo che l'applicazione al Sole della formula precedente fornisse il valore storicamente accettato all'interno della comunità astronomica per la magnitudine bolometrica assoluta solare.
 
 ## Una formula che semplifica i calcoli
 
@@ -60,7 +60,7 @@ $$
 M_{\text{bol}} = -2{,}5 \, \log_{10} \! \left( \frac{L}{L_\odot} \right) + 4{,}74
 $$
 
-Se applichiamo, per esempio, questa formula alla stella Altair, che ha una luminosità bolometrica intorno a $10,64$ luminosità solari, otteniamo una magnitudine bolometrica assoluta di circa $+2,17$:
+Se applichiamo, per esempio, questa formula alla stella Altair, che ha una luminosità bolometrica intorno a $10{,}64$ luminosità solari, otteniamo una magnitudine bolometrica assoluta di circa $+2{,}17$:
 
 $$\begin{aligned}
 M_{\text{bol}} &= -2{,}5 \, \log_{10}(10{,}64) + 4{,}74 \\[6pt]

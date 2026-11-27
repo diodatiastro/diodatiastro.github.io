@@ -158,7 +158,7 @@ Ciò vuol dire che la pressione di radiazione rappresenta solo circa lo $0{,}06\
 
 Per una stella di Wolf-Rayet le cose cambiano completamente. Si tratta di giganti molto massicce, brillantissime, giunte alle fasi finali della loro esistenza, che espellono enormi quantità di materia attraverso potentissimi venti stellari.
 
-Consideriamo come esempio rappresentativo della categoria una Wolf-Rayet da circa $20$–$25$ masse solari nella fase di fusione dell'elio. Poniamo una temperatura centrale intorno ai $200$ milioni di gradi, un valore plausibile per questa fase (il bruciamento dell'elio nelle stelle massicce si innesca tipicamente attorno a $10^8\,\text{K}$):
+Consideriamo come esempio rappresentativo della categoria una Wolf-Rayet da circa $20\text{-}25$ masse solari nella fase di fusione dell'elio. Poniamo una temperatura centrale intorno ai $200$ milioni di gradi, un valore plausibile per questa fase (il bruciamento dell'elio nelle stelle massicce si innesca tipicamente attorno a $10^8\,\text{K}$):
 
 $$
 T_c = 2{,}0 \times 10^8\ \mathrm{K}

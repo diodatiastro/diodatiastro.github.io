@@ -110,21 +110,21 @@ I = \frac{1}{12} M L^2 = \frac{1}{12} \times 3 \times 2^2 = 1\text{ kg}\cdot\tex
 $$
 Il valore ottenuto rappresenta l'inerzia dell'asta rispetto alle variazioni del suo moto rotatorio attorno all'asse considerato.
 
-Facciamo un calcolo analogo per un **cilindro pieno omogeneo** ($M = 2\text{ kg}$, $R = 0,5\text{ m}$), ruotato attorno al suo asse di simmetria longitudinale:
+Facciamo un calcolo analogo per un **cilindro pieno omogeneo** ($M = 2\text{ kg}$, $R = 0{,}5\text{ m}$), ruotato attorno al suo asse di simmetria longitudinale:
 $$
-I = \frac{1}{2} M R^2 = \frac{1}{2} \times 2 \times 0,5^2 = 0,25\text{ kg}\cdot\text{m}^2
+I = \frac{1}{2} M R^2 = \frac{1}{2} \times 2 \times 0{,}5^2 = 0{,}25\text{ kg}\cdot\text{m}^2
 $$
 Stavolta il momento d'inerzia è un quarto di quello dell'asta sottile, ma va tenuto presente che stiamo confrontando due corpi con geometria e asse di rotazione differenti.
 
-Calcoliamo infine il momento d'inerzia di una **sfera piena omogenea** ($M = 5\text{ kg}$, $R = 0,2\text{ m}$), che ruota attorno a un diametro passante per il centro:
+Calcoliamo infine il momento d'inerzia di una **sfera piena omogenea** ($M = 5\text{ kg}$, $R = 0{,}2\text{ m}$), che ruota attorno a un diametro passante per il centro:
 $$
-I = \frac{2}{5} M R^2 = \frac{2}{5} \times 5 \times 0,2^2 = 0,08\text{ kg}\cdot\text{m}^2
+I = \frac{2}{5} M R^2 = \frac{2}{5} \times 5 \times 0{,}2^2 = 0{,}08\text{ kg}\cdot\text{m}^2
 $$
 Nonostante la massa superiore agli altri due oggetti, il momento d'inerzia della sfera è nettamente inferiore, perché il raggio è molto minore (come illustrato nelle formule precedenti, $I$ scala con il quadrato del raggio).
 
 ## Qualche esempio astronomico
 
-Calcoliamo il momento d'inerzia della **Terra**. Le misure di precessione e schiacciamento danno un fattore di circa $0,33$ per gli assi principali terrestri[^schia], contro lo $0,4$ di una sfera omogenea. I valori di massa e raggio del pianeta sono:
+Calcoliamo il momento d'inerzia della **Terra**. Le misure di precessione e schiacciamento danno un fattore di circa $0{,}33$ per gli assi principali terrestri[^schia], contro lo $0{,}4$ di una sfera omogenea. I valori di massa e raggio del pianeta sono:
 $$M_\oplus = 5{,}972\times10^{24}\,\text{kg}\qquad \text{e}\qquad R_\oplus = 6\,371\,\text{km}$$
 Otteniamo dunque:
 $$I_\oplus = 0{,}3307 \times M_\oplus R_\oplus^2 \approx 8{,}0\times10^{37}\,\text{kg}\,\text{m}^2$$
@@ -134,7 +134,7 @@ Nel caso del **Sole** lo scarto è ancora più drastico, e di molto. [Modelli st
 $$
 I_\odot = 0{,}059 \times M_\odot R_\odot^2 \approx 5{,}7\times10^{46}\,\text{kg}\,\text{m}^2
 $$
-contro i $3{,}9\times10^{47}\,\text{kg}\,\text{m}^2$ dell'approssimazione a sfera omogenea. Il momento d'inerzia del Sole è circa $6,8$ volte minore del valore calcolato se fosse una sfera omogenea! La ragione di una differenza così grande è che circa metà della massa del Sole è concentrata in una regione molto piccola rispetto al raggio solare e quindi si trova a distanze relativamente piccole dall'asse di rotazione: un esempio efficace di quanto l'approssimazione a densità uniforme sia generalmente[^3] inadatta per un corpo stellare.
+contro i $3{,}9\times10^{47}\,\text{kg}\,\text{m}^2$ dell'approssimazione a sfera omogenea. Il momento d'inerzia del Sole è circa $6{,}8$ volte minore del valore calcolato se fosse una sfera omogenea! La ragione di una differenza così grande è che circa metà della massa del Sole è concentrata in una regione molto piccola rispetto al raggio solare e quindi si trova a distanze relativamente piccole dall'asse di rotazione: un esempio efficace di quanto l'approssimazione a densità uniforme sia generalmente[^3] inadatta per un corpo stellare.
 
 ## Campi di applicazione
 
@@ -166,6 +166,6 @@ contro i $3{,}9\times10^{47}\,\text{kg}\,\text{m}^2$ dell'approssimazione a sfer
 
 [^2]: L'**ellissoide d'inerzia** è la rappresentazione geometrica del tensore d'inerzia, introdotta da Poinsot: per ogni direzione $\hat{n}$ passante per il punto considerato, si riporta un punto a distanza $1/\sqrt{I(\hat{n})}$​ lungo quella direzione; il luogo di tutti questi punti descrive un ellissoide, i cui tre assi coincidono con gli assi principali d'inerzia del corpo.
 
-[^schia]: Il valore di $0,3307$ corrisponde al **fattore di momento d'inerzia polare** della Terra, definito come $C/MR^2$ (dove $C$ è [il momento d'inerzia rispetto all'asse polare](https://scixplorer.org/abs/1994AJ....108..711W/abstract), $M$ la massa e $R$ il raggio equatoriale).
+[^schia]: Il valore di $0{,}3307$ corrisponde al **fattore di momento d'inerzia polare** della Terra, definito come $C/MR^2$ (dove $C$ è [il momento d'inerzia rispetto all'asse polare](https://scixplorer.org/abs/1994AJ....108..711W/abstract), $M$ la massa e $R$ il raggio equatoriale).
 
 [^3]: L'approssimazione a sfera omogenea è più verosimile nel caso di oggetti compatti come le nane bianche e le stelle di neutroni.

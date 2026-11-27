@@ -27,10 +27,10 @@ La luminosità è uno dei parametri fondamentali per classificare e comprendere 
 Nel Sistema Internazionale (SI) la luminosità si misura in **watt** ($\mathrm{W}$), ovvero joule al secondo ($\mathrm{J/s}$). Nel sistema CGS si esprime invece in **erg** al secondo ($\mathrm{erg/s}$), dove $1\,\mathrm{erg}$ è uguale a $10^{-7}$ joule (ovvero $0{,}0000001\,\mathrm{J}$). In astrofisica, tuttavia, si utilizza quasi sempre come unità di riferimento la **luminosità solare** ($L_\odot$), definita come l'energia totale emessa dal Sole in un secondo:
 
 $$
-L_\odot \approx 3,828 \times 10^{26} \text{ W} = 3,828 \times 10^{33} \text{ erg/s}
+L_\odot \approx 3{,}828 \times 10^{26} \text{ W} = 3{,}828 \times 10^{33} \text{ erg/s}
 $$
 
-Si tratta di una quantità di energia enorme. Scritta per esteso, una luminosità solare equivale a $382\,800\,000\,000\,000\,000\,000\,000\,000\,\mathrm{W}$, cioè $382,8$ milioni di miliardi di miliardi di watt. Quasi incomprensibile per la mente umana, questo numero ci permette tuttavia di intuire quanto sia immensa l'energia irradiata da una stella come il Sole ogni secondo.
+Si tratta di una quantità di energia enorme. Scritta per esteso, una luminosità solare equivale a $382\,800\,000\,000\,000\,000\,000\,000\,000\,\mathrm{W}$, cioè $382{,}8$ milioni di miliardi di miliardi di watt. Quasi incomprensibile per la mente umana, questo numero ci permette tuttavia di intuire quanto sia immensa l'energia irradiata da una stella come il Sole ogni secondo.
 
 ## Relazione tra luminosità e massa stellare
 
@@ -52,7 +52,7 @@ $$
 dove $L$ è la luminosità in watt, $R$ è il raggio stellare in metri, $4\pi R^2$ è l'area della superficie della stella assunta come sferica, $\sigma$ (sigma) è la costante di Stefan-Boltzmann, pari a:
 
 $$
-5,6704 \times 10^{-8} \text{ W m}^{-2}\text{ K}^{-4}
+5{,}6704 \times 10^{-8} \text{ W m}^{-2}\text{ K}^{-4}
 $$
 
 e $T$ è la temperatura espressa in gradi kelvin. Questa equazione evidenzia come la luminosità sia estremamente sensibile alle variazioni di temperatura, crescendo con la quarta potenza di quest'ultima.
@@ -103,11 +103,11 @@ $$
 
 Possiamo applicare la legge del quadrato della distanza a Sirio, per cercare una conferma osservativa del valore calcolato con la legge di Stefan-Boltzmann.
 
-Sirio ha una magnitudine apparente visuale di $-1{,}46$. In base al tipo spettrale (A1V) e alla temperatura $(T_{eff} \approx 9\,900\,\mathrm{K})$, la correzione bolometrica $BC$ da applicare è approssimativamente $−0,30$. Sommando i due valori, si ottiene una magnitudine bolometrica apparente di $-1,76$. Da questo dato, attraverso calcoli che esulano dallo scopo di questo articolo, si ottiene il flusso di radiazione ricevuto da Sirio sulla Terra, che è:
+Sirio ha una magnitudine apparente visuale di $-1{,}46$. In base al tipo spettrale (A1V) e alla temperatura $(T_{eff} \approx 9\,900\,\mathrm{K})$, la correzione bolometrica $BC$ da applicare è approssimativamente $−0{,}30$. Sommando i due valori, si ottiene una magnitudine bolometrica apparente di $-1{,}76$. Da questo dato, attraverso calcoli che esulano dallo scopo di questo articolo, si ottiene il flusso di radiazione ricevuto da Sirio sulla Terra, che è:
 
 $$\approx 1{,}27 \times 10^{-7} \, \text{W/m}^2.$$
 
-La parallasse trigonometrica misurata dal satellite Hipparcos ci fornisce poi la distanza: $2,637$ parsec $(8,6$ anni luce$)$, corrispondente a $8,137 \times 10^{16}\,\mathrm{m}$. Possiamo ora finalmente applicare la formula che ci darà la luminosità di Sirio partendo dalla sua distanza e dal flusso apparente:
+La parallasse trigonometrica misurata dal satellite Hipparcos ci fornisce poi la distanza: $2{,}637$ parsec $(8{,}6$ anni luce$)$, corrispondente a $8{,}137 \times 10^{16}\,\mathrm{m}$. Possiamo ora finalmente applicare la formula che ci darà la luminosità di Sirio partendo dalla sua distanza e dal flusso apparente:
 
 $$
 4\pi d^2 = 4\pi \times (8{,}137 \times 10^{16})^2 = 4\pi \times 6{,}621 \times 10^{33} = 8{,}319 \times 10^{34} \, \text{m}^2

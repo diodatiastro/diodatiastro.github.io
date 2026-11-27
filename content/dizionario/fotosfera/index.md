@@ -91,7 +91,7 @@ Alla base della fotosfera la temperatura è di circa $6\,600\,\mathrm{K}$. Scend
 
 ### Granulazione
 
-La fotosfera appare coperta da celle convettive dette *granuli*, larghe tipicamente $1000-2000\,\mathrm{km}$, con vita media di $8–10$ minuti. Ciascun granulo corrisponde a una cella di convezione: il plasma caldo risale dall'interno della stella verso il centro del granulo, si espande, si raffredda irradiando energia e ridiscende lungo i bordi, che appaiono pertanto più scuri.
+La fotosfera appare coperta da celle convettive dette *granuli*, larghe tipicamente $1000-2000\,\mathrm{km}$, con vita media di $8\text{-}10$ minuti. Ciascun granulo corrisponde a una cella di convezione: il plasma caldo risale dall'interno della stella verso il centro del granulo, si espande, si raffredda irradiando energia e ridiscende lungo i bordi, che appaiono pertanto più scuri.
 
 {{< figura 
 src="immagini/granulazione.jpg" 
@@ -141,7 +141,7 @@ Le righe di Fraunhofer sono osservabili prevalentemente nel visibile e nel vicin
 {{< figura 
 src="immagini/righe-di-fraunhofer.png" 
 alt="Righe di Fraunhofer nello spettro solare." 
-caption="Righe di Fraunhofer nello spettro solare. Tutte le righe rappresentano transizioni atomiche, tranne la riga $G$ attorno a $430–431\,\mathrm{nm}$, che è in realtà una banda molecolare dominata dal radicale $CH$, ma con contributi anche da righe del ferro ($Fe \,I$) e del titanio ($Ti\, II$)."
+caption="Righe di Fraunhofer nello spettro solare. Tutte le righe rappresentano transizioni atomiche, tranne la riga $G$ attorno a $430\text{-}431\,\mathrm{nm}$, che è in realtà una banda molecolare dominata dal radicale $CH$, ma con contributi anche da righe del ferro ($Fe \,I$) e del titanio ($Ti\, II$)."
 >}}
 
 Le righe di assorbimento e, in alcuni casi, le **righe di emissione** consentono di determinare numerose proprietà fisiche della **fotosfera stellare** e degli strati immediatamente superiori dell'atmosfera di una stella. Le informazioni ottenibili derivano dalla posizione, dall'intensità, dalla larghezza e dalla forma delle righe spettrali.

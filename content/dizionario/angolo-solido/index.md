@@ -45,7 +45,7 @@ $$
 Un angolo solido che corrisponde all'intera superficie di una sfera equivale a $4\pi$ steradianti (circa $12{,}57\;\mathrm{sr}$). Questo valore si ricava immediatamente dalla definizione di steradiante: poiché l'area totale di una sfera è $4\pi r^2$, dividendo per $r^2$ si ottiene appunto $4\pi$[^1]:
 
 $$
-\Omega={4\pi r^2 \over r^2}=4\pi\approx 12,57\;\mathrm{sr}
+\Omega={4\pi r^2 \over r^2}=4\pi\approx 12{,}57\;\mathrm{sr}
 $$
 
 Il cono che sottende un angolo solido di $1\;\mathrm{sr}$ ha un semi-angolo $\theta$ di circa $32{,}8^{\circ}$, corrispondente a un'apertura angolare (angolo al vertice) di circa $65{,}5^{\circ}$.
@@ -54,11 +54,11 @@ La tabella seguente riporta alcuni valori notevoli di angoli solidi.
 
 | Regione | Forma esatta | Valore approssimato |
 |---|---|---|
-| Sfera intera | $4\pi\;\mathrm{sr}$ | $\approx 12,57\;\mathrm{sr}$ |
-| Emisfero | $2\pi\;\mathrm{sr}$ | $\approx 6,28\;\mathrm{sr}$ |
-| Cono di semi-apertura $60^{\circ}$ | $\pi\;\mathrm{sr}$ | $\approx 3,14\;\mathrm{sr}$ |
-| Cono di semi-apertura $30^{\circ}$ | $\pi(2 - \sqrt{3})\;\mathrm{sr}$ | $\approx 0,842\;\mathrm{sr}$ |
-| Cono di semi-apertura $1^{\circ}$ | $2\pi(1 - \cos 1°)\;\mathrm{sr}$ | $\approx 9,6 \times 10^{-4}\;\mathrm{sr}$ |
+| Sfera intera | $4\pi\;\mathrm{sr}$ | $\approx 12{,}57\;\mathrm{sr}$ |
+| Emisfero | $2\pi\;\mathrm{sr}$ | $\approx 6{,}28\;\mathrm{sr}$ |
+| Cono di semi-apertura $60^{\circ}$ | $\pi\;\mathrm{sr}$ | $\approx 3{,}14\;\mathrm{sr}$ |
+| Cono di semi-apertura $30^{\circ}$ | $\pi(2 - \sqrt{3})\;\mathrm{sr}$ | $\approx 0{,}842\;\mathrm{sr}$ |
+| Cono di semi-apertura $1^{\circ}$ | $2\pi(1 - \cos 1°)\;\mathrm{sr}$ | $\approx 9{,}6 \times 10^{-4}\;\mathrm{sr}$ |
 | Cono di semi-apertura $\theta$ | $2\pi(1 - \cos \theta)\;\mathrm{sr}$ | — |
 
 ## Casi semplici per calcolare $\Omega$
@@ -83,7 +83,7 @@ in cui $\cos\theta$ è la correzione per l'inclinazione di $dA$ rispetto alla di
 
 ## Un esempio pratico: il calcolo dell'angolo solido sotteso dal Sole
 
-Vale la pena di notare che gli oggetti celesti che vediamo abitualmente nel cielo hanno angoli solidi che rappresentano frazioni minuscole di uno steradiante. La Luna, vista dalla Terra, per esempio, sottende un angolo solido $\Omega$ dell'ordine di $6,5 \times 10^{-5}\;\mathrm{sr}$, cioè $6{,}5$ *centomillesimi* di steradiante. Il Sole sottende più o meno lo stesso angolo solido.
+Vale la pena di notare che gli oggetti celesti che vediamo abitualmente nel cielo hanno angoli solidi che rappresentano frazioni minuscole di uno steradiante. La Luna, vista dalla Terra, per esempio, sottende un angolo solido $\Omega$ dell'ordine di $6{,}5 \times 10^{-5}\;\mathrm{sr}$, cioè $6{,}5$ *centomillesimi* di steradiante. Il Sole sottende più o meno lo stesso angolo solido.
 
 Per angoli solidi molto piccoli come questi, vale la seguente **approssimazione**, che semplifica di molto i calcoli:
 
@@ -97,10 +97,10 @@ $$
 1 - \cos \theta \approx {\theta^2\over 2}.
 $$
 
-Sapendo che il raggio angolare del Sole visto dalla Terra è circa $0,00465$ radianti ($16$ minuti d'arco), possiamo applicare la formula approssimata per ottenere rapidamente $\Omega$:
+Sapendo che il raggio angolare del Sole visto dalla Terra è circa $0{,}00465$ radianti ($16$ minuti d'arco), possiamo applicare la formula approssimata per ottenere rapidamente $\Omega$:
 
 $$
-\theta^2=(4,65\times10^{-3})^2=2,16\times10^{-5}
+\theta^2=(4{,}65\times10^{-3})^2=2{,}16\times10^{-5}
 $$
 
 da cui segue:
@@ -109,11 +109,11 @@ $$
 \begin{aligned}
 \Omega
 &\approx
-\pi \times 2,16\times10^{-5}
+\pi \times 2{,}16\times10^{-5}
 \\
 \Omega
 &\approx
-6,8\times10^{-5}\ \mathrm{sr}
+6{,}8\times10^{-5}\ \mathrm{sr}
 \end{aligned}
 $$
 
@@ -132,11 +132,11 @@ $$
 \approx
 \pi
 \left(
-\frac{6,96\times10^8}
-{1,496\times10^{11}}
+\frac{6{,}96\times10^8}
+{1{,}496\times10^{11}}
 \right)^2
 \approx
-6,8\times10^{-5}\ \mathrm{sr}
+6{,}8\times10^{-5}\ \mathrm{sr}
 $$
 
 cioè lo stesso angolo solido trovato a partire dal diametro angolare apparente.
@@ -197,12 +197,12 @@ Da questo confronto ricaviamo, innanzitutto, che Sirio occupa nel cielo un angol
 
 Naturalmente, il Sole ci appare così grande rispetto a Sirio solo perché è vicinissimo in termini astronomici. Ma la grandezza apparente del Sole nel cielo perde quasi di significato, se confrontiamo l'angolo solido del Sole con l'intera volta celeste.
 
-Dato che la sfera celeste corrisponde approssimativamente a $12,57\;\mathrm{sr}$, possiamo facilmente calcolare a quale frazione del cielo equivale l'angolo solido del Sole. Il risultato è questo:
+Dato che la sfera celeste corrisponde approssimativamente a $12{,}57\;\mathrm{sr}$, possiamo facilmente calcolare a quale frazione del cielo equivale l'angolo solido del Sole. Il risultato è questo:
 
 $$
 \frac{\Omega_\odot}{4\pi}\approx
-\frac{6,8\times10^{-5}}{12,57}
-\approx 5,4\times10^{-6}
+\frac{6{,}8\times10^{-5}}{12{,}57}
+\approx 5{,}4\times10^{-6}
 $$
 
 La frazione di cielo occupata dal Sole è pari allo $0{,}00054\%$ della sfera celeste. Comprensibilmente il Sole ci appare enorme rispetto a qualsiasi altra stella, ma in realtà copre appena poco più di *cinque milionesimi* dell'intera volta celeste.

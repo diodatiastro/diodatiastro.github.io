@@ -59,7 +59,7 @@ Inoltre, poiché $\Phi(\alpha) \le 1$ per $\alpha > 0\,^\circ$, il termine $-2{,
 
 Poiché non esiste una funzione di fase universale valida per tutti i corpi, nella pratica astronomica vengono adottati modelli empirici (come il sistema $H$-$G$ di Bowell o il sistema $H$-$G_1$-$G_2$) che descrivono la forma della curva mediante uno o più parametri, introdotti a partire dal 1985 e poi più volte modificati.
 
-Uno di questi è il parametro $G$ (*slope parameter*), tipicamente compreso tra $0$ e $1$, sebbene in alcuni casi particolari possa assumere valori negativi. Valori alti di $G$ indicano superfici brillanti e riflettenti come ghiaccio e regolite fresca, con una caduta lenta della luminosità all'aumentare di $\alpha$. Valori bassi caratterizzano, invece, superfici scure e molto dipendenti dalla geometria. Per gli asteroidi di tipo C (molto scuri) si ha tipicamente $G \approx 0{,}05$–$0{,}15$, per quelli di tipo S, $G \approx 0{,}20$–$0{,}30$.
+Uno di questi è il parametro $G$ (*slope parameter*), tipicamente compreso tra $0$ e $1$, sebbene in alcuni casi particolari possa assumere valori negativi. Valori alti di $G$ indicano superfici brillanti e riflettenti come ghiaccio e regolite fresca, con una caduta lenta della luminosità all'aumentare di $\alpha$. Valori bassi caratterizzano, invece, superfici scure e molto dipendenti dalla geometria. Per gli asteroidi di tipo C (molto scuri) si ha tipicamente $G \approx 0{,}05\text{-}0{,}15$, per quelli di tipo S, $G \approx 0{,}20\text{-}0{,}30$.
 
 ## Un esempio pratico
 
@@ -69,7 +69,7 @@ $$H = 15{,}0 - 1{,}3 = 13{,}7$$
 
 Se un altro asteroide ha $H = 12{,}0$, sapremo immediatamente che, a parità di distanza e angolo di fase, il secondo è intrinsecamente più grande o più riflettente del primo.
 
-Ecco alcuni dati numerici concreti, relativi a un asteroide di albedo medio-bassa (tipo C o S), con $H \approx 15{,}0$ mag a diversi angoli di fase. I valori sono calcolati direttamente dal modello $H$-$G$ con $G = 0{,}15$, in modo che $\Phi(\alpha)$ e la magnitudine siano mutualmente consistenti. In tabella, $H(\alpha)$ indica la **magnitudine ridotta**: la magnitudine apparente che l'asteroide mostrerebbe se si trovasse a $r=\Delta=1\,\mathrm{au}$ (cioè depurata della sola componente geometrica di distanza) ma osservato al reale angolo di fase $\alpha$. La **magnitudine assoluta** $H$ non è altro che il caso particolare $H = H(0)$, cioè il valore che $H(\alpha)$ assume quando $\alpha = 0\,^\circ$:
+Ecco alcuni dati numerici concreti, relativi a un asteroide di albedo medio-bassa (tipo C o S), con $H \approx 15{,}0\,\text{mag}$ a diversi angoli di fase. I valori sono calcolati direttamente dal modello $H$-$G$ con $G = 0{,}15$, in modo che $\Phi(\alpha)$ e la magnitudine siano mutualmente consistenti. In tabella, $H(\alpha)$ indica la **magnitudine ridotta**: la magnitudine apparente che l'asteroide mostrerebbe se si trovasse a $r=\Delta=1\,\mathrm{au}$ (cioè depurata della sola componente geometrica di distanza) ma osservato al reale angolo di fase $\alpha$. La **magnitudine assoluta** $H$ non è altro che il caso particolare $H = H(0)$, cioè il valore che $H(\alpha)$ assume quando $\alpha = 0\,^\circ$:
 
 | α (gradi) | Φ(α) | Correzione (mag) | H(α) |
 |:---------:|:----:|:-----------------:|:----:|

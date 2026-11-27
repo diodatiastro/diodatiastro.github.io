@@ -87,21 +87,21 @@ Per ottenere la distanza di Alfa Centauri, dobbiamo considerare un immaginario t
 
 $$ \text{Distanza Alfa Centauri} = \frac{1\ \text{au}}{\tan(\alpha)} \tag{4} $$
 
-Prima di svolgere il calcolo, dobbiamo però trasformare la misura dell’angolo di parallasse da secondi d’arco in **radianti** [^2], che è l’unità di misura degli angoli da utilizzare in questo tipo di operazioni trigonometriche. La trasformazione restituisce un valore di $3,602 \times 10^{-6}$ radianti, cioè $3,6$ *milionesimi* di radiante, a testimonianza del fatto che gli angoli di parallasse sono veramente minuscoli [^3]. Il calcolo da svolgere diventa dunque:
+Prima di svolgere il calcolo, dobbiamo però trasformare la misura dell’angolo di parallasse da secondi d’arco in **radianti** [^2], che è l’unità di misura degli angoli da utilizzare in questo tipo di operazioni trigonometriche. La trasformazione restituisce un valore di $3{,}602 \times 10^{-6}$ radianti, cioè $3{,}6$ *milionesimi* di radiante, a testimonianza del fatto che gli angoli di parallasse sono veramente minuscoli [^3]. Il calcolo da svolgere diventa dunque:
 
-$$ \text{Distanza Alfa Centauri} = \frac{1\ \text{au}}{\tan(3,602 \times 10^{-6})} \tag{5} $$
+$$ \text{Distanza Alfa Centauri} = \frac{1\ \text{au}}{\tan(3{,}602 \times 10^{-6})} \tag{5} $$
 
 {{< figura 
 src="immagini/un-radiante.jpg" 
 alt="descrizione immagine" 
-caption="Un angolo di $1$ radiante corrisponde approssimativamente a $57,3^{\circ}$. Fonte: Wikimedia"
+caption="Un angolo di $1$ radiante corrisponde approssimativamente a $57{,}3^{\circ}$. Fonte: Wikimedia"
 >}}
 
 Il risultato è $277\,624$ unità astronomiche: la coppia binaria formata da Alfa Centauri A e B dista da noi quasi $280\,000$ volte la distanza media tra la Terra e il Sole. È un abisso di spazio che equivale a $4{,}153 \times 10^{13}\,\text{km}$, cioè poco più di $41\,500$ miliardi di chilometri!
 
 ## L'anno luce
 
-Poiché maneggiare numeri così grandi è poco pratico, si usa solitamente esprimere simili distanze in anni luce. Un **anno luce** è la distanza percorsa dalla luce nel vuoto in un anno e corrisponde a $63\,241$ unità astronomiche o $9,461 \times 10^{12}\,\text{km}$, cioè $9\,461$ miliardi di $\text{km}$. Trasformando le unità astronomiche in anni luce, otteniamo infine che Alfa Centauri dista $4{,}39$ anni luce dalla Terra. Ed ecco come, dalla misura dell’angolo di parallasse di una stella, siamo arrivati rapidamente a ricavare la sua distanza.
+Poiché maneggiare numeri così grandi è poco pratico, si usa solitamente esprimere simili distanze in anni luce. Un **anno luce** è la distanza percorsa dalla luce nel vuoto in un anno e corrisponde a $63\,241$ unità astronomiche o $9{,}461 \times 10^{12}\,\text{km}$, cioè $9\,461$ miliardi di $\text{km}$. Trasformando le unità astronomiche in anni luce, otteniamo infine che Alfa Centauri dista $4{,}39$ anni luce dalla Terra. Ed ecco come, dalla misura dell’angolo di parallasse di una stella, siamo arrivati rapidamente a ricavare la sua distanza.
 
 ## Il peso delle incertezze
 
@@ -111,8 +111,8 @@ Trasformiamo in primo luogo i due valori in radianti. Otteniamo per l'angolo pi�
 
 $$
 \begin{aligned}
-\text{Distanza max Alfa Cen.} &= \frac{1\ \text{au}}{\tan(3,5959 \times 10^{-6})} \\
-\text{Distanza min Alfa Cen.} &= \frac{1\ \text{au}}{\tan(3,6085 \times 10^{-6})}  
+\text{Distanza max Alfa Cen.} &= \frac{1\ \text{au}}{\tan(3{,}5959 \times 10^{-6})} \\
+\text{Distanza min Alfa Cen.} &= \frac{1\ \text{au}}{\tan(3{,}6085 \times 10^{-6})}  
 \end{aligned} \tag{6}
 $$
 
@@ -134,7 +134,7 @@ $$ \tan(\alpha) \approx \alpha \tag{7} $$
 
 Per avere un errore dell’$1\%$ usando una simile approssimazione, occorre che l’angolo di parallasse sia pari a $0{,}173031$ radianti cioè a $9^{\circ}$: è un valore decine di migliaia di volte maggiore della maggiore delle parallassi stellari, ragion per cui possiamo adoperare tranquillamente questa semplificazione per calcolare la distanza di qualsiasi stella di cui sia nota la parallasse. Nel caso di Alfa Centauri, per esempio, il calcolo si semplifica nel modo seguente:
 
-$$ \text{Distanza Alfa Centauri} = \frac{1\ \text{au}}{3,602 \times 10^{-6}} \tag{8} $$
+$$ \text{Distanza Alfa Centauri} = \frac{1\ \text{au}}{3{,}602 \times 10^{-6}} \tag{8} $$
 
 Eseguendo la divisione, otteniamo $277\,624$ unità astronomiche, cioè esattamente lo stesso valore ottenuto con l’operazione $(5)$, in cui l’unità astronomica era stata divisa per la tangente all’angolo di parallasse.
 
@@ -144,19 +144,19 @@ $$ \frac{\text{lato opposto}}{\text{lato adiacente}} = \alpha \tag{9} $$
 
 Poiché la misura dell’angolo $\alpha$ che si ottiene eseguendo l’operazione è in radianti, possiamo anche scrivere questa uguaglianza nel modo seguente:
 
-$$ \frac{\text{lato opposto}}{\text{lato adiacente}} = \frac{\alpha}{57,2958^\circ} \tag{10} $$
+$$ \frac{\text{lato opposto}}{\text{lato adiacente}} = \frac{\alpha}{57{,}2958^\circ} \tag{10} $$
 
-In questo caso l’angolo di parallasse $\alpha$ si intende espresso in secondi d’arco, come frazione di $1$ radiante, la cui misura corrisponde appunto a poco meno di $57,3^{\circ}$.
+In questo caso l’angolo di parallasse $\alpha$ si intende espresso in secondi d’arco, come frazione di $1$ radiante, la cui misura corrisponde appunto a poco meno di $57{,}3^{\circ}$.
 
 Il valore che a noi interessa ottenere è però la distanza della stella di cui conosciamo l’angolo di parallasse. Ci interessa cioè ricavare la misura del lato adiacente ad $\alpha$. A tal fine, dalla formula $(10)$ ricaviamo che:
 
-$$ \text{lato adiacente} = \frac{(\text{lato opposto})(57,2958^\circ)} {\alpha} \tag{11} $$
+$$ \text{lato adiacente} = \frac{(\text{lato opposto})(57{,}2958^\circ)} {\alpha} \tag{11} $$
 
 Poniamo ora il caso che l’angolo di parallasse $\alpha$ sia esattamente uguale a $1$ secondo d’arco. Poiché il lato opposto di questo immaginario triangolo rettangolo spaziale è il raggio dell’orbita terrestre, cioè l’unità astronomica, e poiché $1$ secondo d’arco è pari a $1/3600$ di grado, possiamo riscrivere la $(11)$ nel modo seguente:
 
-$$ \text{lato adiacente} = \frac{(149\,600\,000\ \text{km})(57,29578^\circ)} {(1/3600)^\circ} \tag{12} $$
+$$ \text{lato adiacente} = \frac{(149\,600\,000\ \text{km})(57{,}29578^\circ)} {(1/3600)^\circ} \tag{12} $$
 
-La misura del lato adiacente del triangolo, cioè la distanza che otteniamo svolgendo i calcoli, è pari, approssimando un po’, a $3,086 \times 10^{13}\,\text{km}$, cioè $30\,860$ miliardi di km. È l’equivalente di $206\,265$ unità astronomiche o $3,262$ anni luce.
+La misura del lato adiacente del triangolo, cioè la distanza che otteniamo svolgendo i calcoli, è pari, approssimando un po’, a $3{,}086 \times 10^{13}\,\text{km}$, cioè $30\,860$ miliardi di km. È l’equivalente di $206\,265$ unità astronomiche o $3{,}262$ anni luce.
 
 {{< figura 
 src="immagini/un-parsec.png" 
@@ -174,7 +174,7 @@ $$ \text{Distanza stella} = \frac{1}{\alpha} \tag{13} $$
 
 Per avere una conferma della validità dell’operazione, applichiamo la formula ad Alfa Centauri, la cui parallasse è, come ormai sappiamo, $743\,\text{mas}$, cioè $0{,}743$ secondi d’arco:
 
-$$ \text{Distanza Alfa Centauri} = \frac{1}{0,743} \tag{14} $$
+$$ \text{Distanza Alfa Centauri} = \frac{1}{0{,}743} \tag{14} $$
 
 Il risultato della divisione, leggermente arrotondato, è $1{,}346$ parsec.
 
@@ -182,7 +182,7 @@ Vediamo adesso se la distanza così ottenuta corrisponde a quella che avevamo ca
 
 Se vogliamo infine conoscere la distanza di una stella in anni luce, basta moltiplicare la distanza in parsec per il fattore di conversione $3{,}262$:
 
-$$ \text{Distanza Alfa Cen. in anni luce} = 1,346 \times 3,262 = 4,39 \tag{15} $$
+$$ \text{Distanza Alfa Cen. in anni luce} = 1{,}346 \times 3{,}262 = 4{,}39 \tag{15} $$
 
 Anche in questo caso, ovviamente, il valore ottenuto corrisponde a quello che avevamo calcolato in precedenza, trasformando le unità astronomiche in anni luce.
 
@@ -192,13 +192,13 @@ alt="La parallasse della nana rossa TRAPPIST-1 misurata dal satellite Gaia con i
 caption="La parallasse della nana rossa TRAPPIST-1 misurata dal satellite Gaia con il relativo margine di errore."
 >}}
 
-A questo punto possiamo divertirci a calcolare la distanza di qualsiasi stella applicando la formula $(13)$. Abbiamo a disposizione lo sterminato archivio del satellite **Gaia**, dal quale possiamo attingere i valori di oltre 1 miliardo di parallassi stellari misurate a partire dal 2013 [^6]. Dalla [pagina di accoglienza](https://gea.esac.esa.int/archive/) del database, premendo il pulsante “Search” arriviamo alla maschera di ricerca. Inseriamo per esempio il nome della stella **TRAPPIST-1**, una nana rossa intorno alla quale sono stati scoperti ben sette pianeti di dimensioni simili alla Terra. Il database di Gaia ci restituisce un valore di $80,45124261077767\,\text{mas}$ (millesimi di secondo d’arco) per l’angolo di parallasse di questa stella.
+A questo punto possiamo divertirci a calcolare la distanza di qualsiasi stella applicando la formula $(13)$. Abbiamo a disposizione lo sterminato archivio del satellite **Gaia**, dal quale possiamo attingere i valori di oltre 1 miliardo di parallassi stellari misurate a partire dal 2013 [^6]. Dalla [pagina di accoglienza](https://gea.esac.esa.int/archive/) del database, premendo il pulsante “Search” arriviamo alla maschera di ricerca. Inseriamo per esempio il nome della stella **TRAPPIST-1**, una nana rossa intorno alla quale sono stati scoperti ben sette pianeti di dimensioni simili alla Terra. Il database di Gaia ci restituisce un valore di $80{,}45124261077767\,\text{mas}$ (millesimi di secondo d’arco) per l’angolo di parallasse di questa stella.
 
 Prima di svolgere la divisione che ci fornirà la distanza di TRAPPIST-1 dobbiamo trasformare i millesimi di secondo d’arco in secondi d’arco. Nel farlo, eliminiamo anche un bel po’ di decimali. Il calcolo da svolgere è dunque il seguente:
 
-$$ \text{Distanza TRAPPIST-1} = \frac{1}{0,08045} \tag{16} $$
+$$ \text{Distanza TRAPPIST-1} = \frac{1}{0{,}08045} \tag{16} $$
 
-Eseguendo la divisione otteniamo una distanza di $12,43$ parsec, pari a $40,55$ anni luce. L’angolo di parallasse misurato da Gaia ci dice che la distanza di questa stella è un po’ maggiore di quella riportata nello [studio scientifico](https://www.nature.com/articles/nature17448) che descrive la scoperta del sistema planetario ($12,1 \pm 0,1$ parsec).
+Eseguendo la divisione otteniamo una distanza di $12{,}43$ parsec, pari a $40{,}55$ anni luce. L’angolo di parallasse misurato da Gaia ci dice che la distanza di questa stella è un po’ maggiore di quella riportata nello [studio scientifico](https://www.nature.com/articles/nature17448) che descrive la scoperta del sistema planetario ($12{,}1 \pm 0{,}1$ parsec).
 
 {{< figura 
 src="immagini/trappist-1.jpg" 
@@ -234,7 +234,7 @@ Molti secoli dopo, nel 1718, Edmond Halley, studiando i cataloghi stellari di To
 
 ### Aberrazione della luce, nutazione e altri fenomeni che complicano la misura delle parallassi stellari
 
-Altre scoperte fondamentali si devono al reverendo [James Bradley](https://en.wikipedia.org/wiki/James_Bradley), un astronomo inglese che dedicò anni di studio e osservazioni al tentativo infruttuoso di misurare la parallasse di alcune stelle. Studiando i cambiamenti di posizione di Gamma Draconis, una stella nella costellazione del Dragone, Bradley pervenne tra il 1725 e il 1728 alla spiegazione di un fenomeno ottico che era già stato osservato da altri a partire dalla fine del ‘600, ma non aveva ancora trovato, prima di lui, un chiarimento soddisfacente. Il fenomeno è l'**aberrazione della luce** ed è prodotto dal moto della Terra rispetto alla direzione di provenienza della luce stellare. In sostanza, a causa del moto orbitale terrestre, che varia in velocità e direzione nel corso dell’anno, le stelle variano conseguentemente la loro posizione nel cielo, descrivendo una piccola ellisse, il cui asse maggiore misura $40,5$ secondi d’arco (molto più di qualsiasi angolo di parallasse), mentre la lunghezza dell’asse minore dipende dalla declinazione delle stelle, cioè dalla loro altezza sull’eclittica.
+Altre scoperte fondamentali si devono al reverendo [James Bradley](https://en.wikipedia.org/wiki/James_Bradley), un astronomo inglese che dedicò anni di studio e osservazioni al tentativo infruttuoso di misurare la parallasse di alcune stelle. Studiando i cambiamenti di posizione di Gamma Draconis, una stella nella costellazione del Dragone, Bradley pervenne tra il 1725 e il 1728 alla spiegazione di un fenomeno ottico che era già stato osservato da altri a partire dalla fine del ‘600, ma non aveva ancora trovato, prima di lui, un chiarimento soddisfacente. Il fenomeno è l'**aberrazione della luce** ed è prodotto dal moto della Terra rispetto alla direzione di provenienza della luce stellare. In sostanza, a causa del moto orbitale terrestre, che varia in velocità e direzione nel corso dell’anno, le stelle variano conseguentemente la loro posizione nel cielo, descrivendo una piccola ellisse, il cui asse maggiore misura $40{,}5$ secondi d’arco (molto più di qualsiasi angolo di parallasse), mentre la lunghezza dell’asse minore dipende dalla declinazione delle stelle, cioè dalla loro altezza sull’eclittica.
 
 {{< figura 
 src="immagini/tabella.jpg" 
@@ -279,7 +279,7 @@ alt="I valori delle parallassi stellari pubblicati da Struve, Henderson e Bessel
 caption="I valori delle parallassi stellari pubblicati da Struve, Henderson e Bessel tra il 1838 e il 1839."
 >}}
 
-L’invenzione della fotografia determinò, intorno alla fine del 19° secolo, un netto progresso nella precisione e nel numero delle parallassi stellari misurate. Nel 1910 erano note le parallassi di $365$ stelle. Nel 1935 il numero era già salito a $7\,534$. Ma il vero salto, sia dal punto di vista qualitativo che quantitativo, si è avuto con la messa in orbita di satelliti dedicati specificamente a misurazioni astrometriche. Il primo fu Hipparcos, la cui missione durò dal 1989 al 1993. In quei quattro anni il satellite misurò la parallasse di $118\,000$ stelle con alta precisione (cioè con errori non superiori generalmente al $10–20\%$) e quella di $2{,}5$ milioni di altre stelle con precisione leggermente inferiore.
+L’invenzione della fotografia determinò, intorno alla fine del 19° secolo, un netto progresso nella precisione e nel numero delle parallassi stellari misurate. Nel 1910 erano note le parallassi di $365$ stelle. Nel 1935 il numero era già salito a $7\,534$. Ma il vero salto, sia dal punto di vista qualitativo che quantitativo, si è avuto con la messa in orbita di satelliti dedicati specificamente a misurazioni astrometriche. Il primo fu Hipparcos, la cui missione durò dal 1989 al 1993. In quei quattro anni il satellite misurò la parallasse di $118\,000$ stelle con alta precisione (cioè con errori non superiori generalmente al $10\text{-}20\%$) e quella di $2{,}5$ milioni di altre stelle con precisione leggermente inferiore.
 
 Dal 2013 al 2025 è durata la missione del successore di Hipparcos, il **satellite Gaia** dell'agenzia spaziale europea ESA: lanciato il 19 dicembre 2013, ha concluso la fase di scansione del cielo il 15 gennaio 2025. Nei suoi undici anni di attività, Gaia ha misurato le parallassi di oltre un miliardo di stelle, con errori inferiori al millesimo di secondo d'arco. È un'eredità enorme per gli astronomi di oggi e del futuro, che possono conoscere finalmente, grazie a Gaia, la distanza delle stelle.
 

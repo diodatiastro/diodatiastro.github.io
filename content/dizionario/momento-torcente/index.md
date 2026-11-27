@@ -116,7 +116,7 @@ Consideriamo una stella di neutroni con massa:
 $$
 M=1{,}4\,M_\odot,
 $$
-un valore tipico per questo tipo di oggetti, il cui raggio fisico è dell’ordine di $10\text{–}12\ \mathrm{km}$, cioè circa $10^4\ \mathrm{m}$.  Assumiamo inoltre un tasso di accrescimento:
+un valore tipico per questo tipo di oggetti, il cui raggio fisico è dell’ordine di $10\text{-}12\ \mathrm{km}$, cioè circa $10^4\ \mathrm{m}$.  Assumiamo inoltre un tasso di accrescimento:
 $$
 \dot M=10^{-9}\,M_\odot\,\mathrm{anno^{-1}},
 $$

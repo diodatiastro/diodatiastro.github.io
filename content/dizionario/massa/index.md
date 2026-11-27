@@ -66,7 +66,7 @@ Il Sole, dunque, *non* è un'entità elementare: è una struttura composta, il c
 
 Esiste peraltro una misura molto precisa della massa del Sole:
 $$
-M_{\odot}\simeq 1,9885 \times 10^{30}\,\text{kg}
+M_{\odot}\simeq 1{,}9885 \times 10^{30}\,\text{kg}
 $$
 Ma che cos'è, dunque, questa "massa del Sole"? Abbiamo visto più sopra che, nel caso delle particelle elementari, la massa, insieme allo spin, è un **invariante** (un invariante di Casimir), cioè una proprietà intrinseca che le caratterizza in modo univoco, definendo la loro stessa natura: gli elettroni come elettroni, i quark come quark. Ma questa nozione di massa non è applicabile a un sistema *legato e composito* come il Sole. La massa di un sistema composito non è la semplice somma delle masse dei suoi costituenti, ma è *l'energia totale del sistema nel proprio sistema di riferimento a riposo, divisa per la velocità della luce al quadrato* $c^2$.
 
@@ -131,7 +131,7 @@ Se il principio di equivalenza è vero, cioè se $m_g = m_i$ per ogni corpo, il 
 
 Come dimostrazione, applichiamo i numeri all'esempio teorico descritto sopra, usando il valore medio dell'accelerazione di gravità alla superficie terrestre, pari a $GM/r^2 \approx 9{,}8\,\text{m}/\text{s}^2$:
 
-- per un corpo da $10\,\text{kg}$: $F = 10 \cdot 9,8 = 98\,\text{N} \rightarrow a = 98/10 = 9{,}8\,\text{m}/\text{s}^2$
+- per un corpo da $10\,\text{kg}$: $F = 10 \cdot 9{,}8 = 98\,\text{N} \rightarrow a = 98/10 = 9{,}8\,\text{m}/\text{s}^2$
 - per un corpo da $100\,\text{kg}$: $F = 100 \cdot 9{,}8 = 980\,\text{N} \rightarrow a = 980/100 = 9{,}8\,\text{m}/\text{s}^2$
 
 Le forze differiscono di un fattore dieci, ma l'accelerazione risultante è la stessa[^terza].

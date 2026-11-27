@@ -112,7 +112,7 @@ Il suo contributo originale sta però in un argomento fisico diverso e complemen
 
 [^limite]: È la luminosità oltre la quale la [pressione di radiazione]({{< relref "/dizionario/pressione-di-radiazione/" >}}) supera la gravità della stella e ne spinge via il plasma degli strati più esterni.
 
-[^eddington-ns]: Paczyński si riferiva a una stella di neutroni tipica, con una massa di $1{,}4$ masse solari e un raggio di $10$ km, circondata da un plasma con la normale opacità alla radiazione, quella dovuta alla diffusione sugli elettroni liberi. Per un oggetto del genere il limite di Eddington è di circa $2\times10^{38}\,\text{erg}/\text{s}$, quasi $50\,000$ volte la luminosità del Sole.
+[^eddington-ns]: Paczyński si riferiva a una stella di neutroni tipica, con una massa di $1{,}4$ masse solari e un raggio di $10\,\text{km}$, circondata da un plasma con la normale opacità alla radiazione, quella dovuta alla diffusione sugli elettroni liberi. Per un oggetto del genere il limite di Eddington è di circa $2\times10^{38}\,\text{erg}/\text{s}$, quasi $50\,000$ volte la luminosità del Sole.
 
 La sua idea era questa: in un campo magnetico così intenso, la materia della stella di neutroni diventa più trasparente del normale alla radiazione, la lascia passare più facilmente, invece di assorbirla o disperderla come farebbe in un campo magnetico meno intenso[^ciclo]. Grazie a questa maggiore trasparenza, la stella riesce a raggiungere una luminosità migliaia di volte superiore al limite di Eddington.
 

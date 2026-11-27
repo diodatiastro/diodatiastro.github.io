@@ -158,7 +158,7 @@ $$
 F_{\text{assorbito}} = 340 \times (1 - 0{,}30) \approx 238\;\text{ W}/\text{m}^2
 $$
 
-Questo è il valore che si usa per calcolare la **temperatura di equilibrio** della Terra (circa $255\;\mathrm{K}$, ovvero $–18\;^{\circ}\mathrm{C}$), confrontando l'*energia assorbita* con quella che il pianeta riemette nello spazio sotto forma di **radiazione infrarossa**. È proprio il famoso fattore $1/4$, combinato con l'albedo, a determinare la temperatura di base del nostro pianeta, su cui poi si innesta l'**effetto serra** che lo rende abitabile.
+Questo è il valore che si usa per calcolare la **temperatura di equilibrio** della Terra (circa $255\;\mathrm{K}$, ovvero $-18\;^{\circ}\mathrm{C}$), confrontando l'*energia assorbita* con quella che il pianeta riemette nello spazio sotto forma di **radiazione infrarossa**. È proprio il famoso fattore $1/4$, combinato con l'albedo, a determinare la temperatura di base del nostro pianeta, su cui poi si innesta l'**effetto serra** che lo rende abitabile.
 
 ## Tabella riassuntiva dei parametri analizzati
 

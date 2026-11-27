@@ -128,9 +128,9 @@ $$n=\frac{360^{\circ}}{90118}\approx 0{,}0039947^{\circ} \;\text{al giorno}$$
 
 Ora abbiamo tutti gli elementi per calcolare l’anomalia media al 7 luglio 2026:
 
-$$M = M_0 + (n \cdot \Delta t) = 53{,}93394^{\circ} + (0,0039947^{\circ} \times 28) \approx \mathbf{54,0458^{\circ}}$$
+$$M = M_0 + (n \cdot \Delta t) = 53{,}93394^{\circ} + (0{,}0039947^{\circ} \times 28) \approx \mathbf{54{,}0458^{\circ}}$$
 
-Per chi si fosse perso nei calcoli, abbiamo aggiunto al valore di $M$ riportato nel database della IAU, indicato nell’equazione con $M_0$, le frazioni di grado di moto medio percorse da Plutone nei 28 giorni trascorsi dal 9 giugno 2026. L’anomalia media $M$ odierna è dunque approssimativamente pari a $54,0458^{\circ}$.
+Per chi si fosse perso nei calcoli, abbiamo aggiunto al valore di $M$ riportato nel database della IAU, indicato nell’equazione con $M_0$, le frazioni di grado di moto medio percorse da Plutone nei 28 giorni trascorsi dal 9 giugno 2026. L’anomalia media $M$ odierna è dunque approssimativamente pari a $54{,}0458^{\circ}$.
 
 Siamo arrivati al punto in cui possiamo applicare l’equazione di Keplero per ricavare l’anomalia eccentrica, ma, prima di procedere, dobbiamo convertire l’anomalia media da gradi in radianti, in modo da poter confrontare un numero puro ($e \sin E$) con un altro numero puro (l’anomalia media espressa in radianti [^3] ):
 
@@ -142,21 +142,21 @@ $$E_{n+1} =M+e \sin E_n$$
 
 Come prima ipotesi, proviamo a vedere se $E$ può essere uguale a $M$:
 
-$$\begin{aligned} E_1 &= 0,94328 + 0,247652 \cdot \sin(0,94328) \\ &= 0,94328 + 0,247652 \cdot 0,80953 \approx \mathbf{1,14376 \text{ rad}} \end{aligned}$$
+$$\begin{aligned} E_1 &= 0{,}94328 + 0{,}247652 \cdot \sin(0{,}94328) \\ &= 0{,}94328 + 0{,}247652 \cdot 0{,}80953 \approx \mathbf{1{,}14376 \text{ rad}} \end{aligned}$$
 
 Nella seconda iterazione, ripetiamo il calcolo, sostituendo $E_1$ alla prima ipotesi (il numero tra parentesi):
 
-$$\begin{aligned} E_2 &= 0,94328 + 0,247652 \cdot \sin(1,14376) \\ &= 0,94328 + 0,247652 \cdot 0,91024 \approx \mathbf{1,16870 \text{ rad}} \end{aligned}$$
+$$\begin{aligned} E_2 &= 0{,}94328 + 0{,}247652 \cdot \sin(1{,}14376) \\ &= 0{,}94328 + 0{,}247652 \cdot 0{,}91024 \approx \mathbf{1{,}16870 \text{ rad}} \end{aligned}$$
 
 Continuiamo il ciclo di iterazioni in base allo stesso principio:
 
-$$\begin{aligned} E_3 &= 0,94328 + 0,247652 \cdot \sin(1,16870) \\ &= 0,94328 + 0,247652 \cdot 0,92015 \approx \mathbf{1,17115 \text{ rad}} \end{aligned}$$
+$$\begin{aligned} E_3 &= 0{,}94328 + 0{,}247652 \cdot \sin(1{,}16870) \\ &= 0{,}94328 + 0{,}247652 \cdot 0{,}92015 \approx \mathbf{1{,}17115 \text{ rad}} \end{aligned}$$
 
 Alla quarta iterazione notiamo che i valori di $E$ stanno convergendo rapidamente verso un punto preciso:
 
 $$E_4 = 0{,}94328 + 0{,}247652 \cdot \sin(1{,}17115) \approx \mathbf{1{,}17139 \text{ rad}}$$
 
-Possiamo fermarci a $\approx \mathbf{1,1714}$ **radianti**, perché ogni successiva iterazione aumenterebbe la precisione solo di pochi decimali. Ora, per comodità visiva, riconvertiamo il risultato in gradi:
+Possiamo fermarci a $\approx \mathbf{1{,}1714}$ **radianti**, perché ogni successiva iterazione aumenterebbe la precisione solo di pochi decimali. Ora, per comodità visiva, riconvertiamo il risultato in gradi:
 
 $$1{,}1714 \times \frac{180}{\pi} \approx \mathbf{67{,}11^\circ}$$
 
@@ -166,29 +166,29 @@ $$\tan \left(\frac{\nu}{2}\right)=\sqrt{\frac{1+e}{1-e}\cdot} \tan \left(\frac{E
 
 Cominciamo col risolvere la radice quadrata basata sull’eccentricità:
 
-$$\sqrt{\frac{1+0,247652}{1-0,247652}} = \sqrt{\frac{1,247652}{0,752348}} = \sqrt{1,65834} \approx \mathbf{1,28776}$$
+$$\sqrt{\frac{1+0{,}247652}{1-0{,}247652}} = \sqrt{\frac{1{,}247652}{0{,}752348}} = \sqrt{1{,}65834} \approx \mathbf{1{,}28776}$$
 
 Passiamo ora al calcolo della tangente di $E\over 2$. Dal passo precedente sappiamo che:
 
-$${E\over2} = {67,11^\circ \over 2} = 33,555^\circ$$
+$${E\over2} = {67{,}11^\circ \over 2} = 33{,}555^\circ$$
 
 Da cui segue:
 
-$$\tan(33,555^\circ) \approx \mathbf{0,66329}$$
+$$\tan(33{,}555^\circ) \approx \mathbf{0{,}66329}$$
 
 Non ci resta che moltiplicare i due fattori:
 
-$$\tan\left(\frac{\nu}{2}\right) = 1,28776 \times 0,66329 \approx \mathbf{0,85416}$$
+$$\tan\left(\frac{\nu}{2}\right) = 1{,}28776 \times 0{,}66329 \approx \mathbf{0{,}85416}$$
 
 A questo punto troviamo l'arcotangente per isolare $\nu\over 2$:
 
-$$\frac{\nu}{2} = \arctan(0,85416) \approx 40,50^\circ$$
+$$\frac{\nu}{2} = \arctan(0{,}85416) \approx 40{,}50^\circ$$
 
 Siamo all'ultimo passaggio. Portiamo $2$ al secondo membro dell’equazione e moltiplichiamo per $2$ per avere l'angolo finale:
 
-$$\nu = 40,50^\circ \times 2 = \mathbf{81,00^\circ}$$
+$$\nu = 40{,}50^\circ \times 2 = \mathbf{81{,}00^\circ}$$
 
-Grazie a questa lunga sequenza di calcoli, abbiamo estratto alla fine il dato geometrico puro: alla data in cui questo articolo è stato scritto **(7 luglio 2026)** l’anomalia vera di Plutone è di circa $\mathbf{81,00^\circ}$ [^4]. Significa che Plutone, nel suo lunghissimo viaggio di oltre $246$ anni intorno al Sole, ha superato il perielio - evento che sappiamo accadde esattamente il 5 settembre 1989 - e da allora è progredito lungo la sua ellisse orbitale di un angolo effettivo di $81^\circ$ rispetto alla direzione del suo punto di massimo avvicinamento al Sole.
+Grazie a questa lunga sequenza di calcoli, abbiamo estratto alla fine il dato geometrico puro: alla data in cui questo articolo è stato scritto **(7 luglio 2026)** l’anomalia vera di Plutone è di circa $\mathbf{81{,}00^\circ}$ [^4]. Significa che Plutone, nel suo lunghissimo viaggio di oltre $246$ anni intorno al Sole, ha superato il perielio - evento che sappiamo accadde esattamente il 5 settembre 1989 - e da allora è progredito lungo la sua ellisse orbitale di un angolo effettivo di $81^\circ$ rispetto alla direzione del suo punto di massimo avvicinamento al Sole.
 
 È degna di nota l’enorme differenza tra anomalia media ed anomalia vera, dovuta alla seconda legge di Keplero: se l’orbita fosse stata circolare, Plutone oggi si troverebbe a $\mathbf{54{,}04^\circ}$ dal perielio. Poiché invece l’orbita è molto eccentrica e Plutone si sta muovendo nella prima parte dell’orbita, dove è più vicino al Sole e quindi corre più velocemente, l’anomalia vera è drasticamente maggiore di quella media!
 

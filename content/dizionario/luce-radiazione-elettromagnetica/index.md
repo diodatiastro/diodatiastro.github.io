@@ -18,13 +18,13 @@ La seguente tabella illustra i **colori**, le lunghezze d'onda, le frequenze e l
 
 | Colore | Lunghezza d'onda (nm) | Frequenza (THz) | Energia (eV) |
 |--------|----------------------|----------------|--------------|
-| Rosso | $\sim 625–750$ | $\sim400–480$ | $\sim1,65–1,98$ |
-| Arancione | $\sim590–625$ | $\sim480–510$ | $\sim1,98–2,10$ |
-| Giallo | $\sim565–590$ | $\sim510–530$ | $\sim2,10–2,19$ |
-| Verde | $\sim500–565$ | $\sim530–600$ | $\sim2,19–2,48$ |
-| Ciano | $\sim485–500$ | $\sim600–620$ | $\sim2,48–2,56$ |
-| Blu | $\sim440–485$ | $\sim620–680$ | $\sim2,56–2,82$ |
-| Violetto | $\sim380–440$ | $\sim680–790$ | $\sim2,82–3,26$ |
+| Rosso | $\sim 625\text{-}750$ | $\sim400\text{-}480$ | $\sim1{,}65\text{-}1{,}98$ |
+| Arancione | $\sim590\text{-}625$ | $\sim480\text{-}510$ | $\sim1{,}98\text{-}2{,}10$ |
+| Giallo | $\sim565\text{-}590$ | $\sim510\text{-}530$ | $\sim2{,}10\text{-}2{,}19$ |
+| Verde | $\sim500\text{-}565$ | $\sim530\text{-}600$ | $\sim2{,}19\text{-}2{,}48$ |
+| Ciano | $\sim485\text{-}500$ | $\sim600\text{-}620$ | $\sim2{,}48\text{-}2{,}56$ |
+| Blu | $\sim440\text{-}485$ | $\sim620\text{-}680$ | $\sim2{,}56\text{-}2{,}82$ |
+| Violetto | $\sim380\text{-}440$ | $\sim680\text{-}790$ | $\sim2{,}82\text{-}3{,}26$ |
 
 In senso più ampio, il termine "luce" viene usato spesso in astronomia e astrofisica come sinonimo di **radiazione elettromagnetica** in generale, indipendentemente dalla frequenza. In questa accezione estesa possiamo parlare, per esempio, di **luce ultravioletta** (UV) o di **luce infrarossa** (IR), anche se questi tipi di radiazione hanno lunghezze d'onda che i nostri occhi non possono percepire.
 

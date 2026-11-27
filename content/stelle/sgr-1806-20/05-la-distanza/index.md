@@ -108,7 +108,7 @@ Il terzo argomento era l'**improbabilità** di una vicinanza angolare puramente 
 
 Gli autori notarono, inoltre, che l'ammasso contiene anche una stella di Wolf-Rayet[^wolf] molto evoluta (la stella B dell'immagine seguente), e che sia questa sia la magnetar rappresentano stadi evolutivi successivi rispetto a LBV 1806-20. È una situazione compatibile con un ammasso che ha generato stelle massicce in epoche diverse. Come ulteriore contesto favorevole all'idea riportarono il fatto che anche SGR 1900+14 risulta associata a un ammasso di stelle massicce, il che suggeriva che il legame fra SGR e ammassi di questo tipo non fosse un caso isolato.
 
-[^wolf]: Le stelle di **Wolf-Rayet** sono stelle che nascono con almeno $20$-$25$ volte la massa del Sole. Le vediamo a uno stadio avanzato della loro evoluzione, in cui hanno ormai esaurito l'idrogeno nel nucleo e stanno espellendo violentemente i loro strati esterni sotto forma di forti venti stellari. Questo processo porta in superficie i prodotti della fusione nucleare: prima l'elio e l'azoto, poi il carbonio e l'ossigeno.
+[^wolf]: Le stelle di **Wolf-Rayet** sono stelle che nascono con almeno $20\text{-}25$ volte la massa del Sole. Le vediamo a uno stadio avanzato della loro evoluzione, in cui hanno ormai esaurito l'idrogeno nel nucleo e stanno espellendo violentemente i loro strati esterni sotto forma di forti venti stellari. Questo processo porta in superficie i prodotti della fusione nucleare: prima l'elio e l'azoto, poi il carbonio e l'ossigeno.
 
 {{< figura 
 src="../immagini/cl1806-20.png" 

@@ -25,7 +25,7 @@ Indicata solitamente con $p_V$, è il rapporto tra la luminosità apparente di u
 
 È la misura più utilizzata in **fotometria astronomica**. È utile per stimare le dimensioni o la composizione superficiale di oggetti distanti come gli asteroidi o le comete. Calcolando l'albedo a diverse lunghezze d'onda (infrarosso, visibile, ultravioletto), gli scienziati possono dedurre la composizione chimica e la struttura della superficie del corpo osservato: se è rocciosa, ghiacciata, sabbiosa, o ricoperta di metalli.
 
-L'albedo geometrica può assumere talvolta valori maggiori di $1$, poiché alcuni materiali o atmosfere diffondono la luce preferenzialmente nella direzione della sorgente luminosa (fenomeno di *backscattering*). Per esempio, l'albedo geometrica di Encelado nel visibile è circa $1,4$.
+L'albedo geometrica può assumere talvolta valori maggiori di $1$, poiché alcuni materiali o atmosfere diffondono la luce preferenzialmente nella direzione della sorgente luminosa (fenomeno di *backscattering*). Per esempio, l'albedo geometrica di Encelado nel visibile è circa $1{,}4$.
 
 ## Albedo sferica
 
@@ -129,9 +129,9 @@ Leggendo questa tabella viene naturale chiedersi quale sia l'albedo del pianeta.
 
 Qui entra in gioco la stella che illumina il corpo di cui vorremmo ricavare l'albedo di Bond, cioè l'energia totale che riceve ma *non assorbe*. Le stelle non emettono la stessa quantità di energia in tutte le lunghezze d'onda. Il Sole, ad esempio, emette moltissima radiazione nel visibile (il che spiega anche perché i nostri occhi sono adattati a quel tipo di luce), emette meno nell'ultravioletto (UV), ma parecchio nel vicino infrarosso. Se ci limitassimo a fare una semplice media aritmetica dei valori nella tabella, otterremmo un risultato inaffidabile:
 
-$$\frac{0,90+0,20+0,10}{3}=0,40$$
+$$\frac{0{,}90+0{,}20+0{,}10}{3}=0{,}40$$
 
-Un'albedo totale di $0,40$ non tiene conto del fatto che il Sole emette pochissima energia nell'UV. L'albedo sferica di $0,90$ nell'UV incide poco sul bilancio energetico reale, ma moltissimo sulla media aritmetica. Ecco perché in radiometria il calcolo dell'albedo di Bond si basa sulla **media pesata** dei valori suddivisi per lunghezze d'onda e non sulla media aritmetica.
+Un'albedo totale di $0{,}40$ non tiene conto del fatto che il Sole emette pochissima energia nell'UV. L'albedo sferica di $0{,}90$ nell'UV incide poco sul bilancio energetico reale, ma moltissimo sulla media aritmetica. Ecco perché in radiometria il calcolo dell'albedo di Bond si basa sulla **media pesata** dei valori suddivisi per lunghezze d'onda e non sulla media aritmetica.
 
 Il concetto è che bisogna *pesare* ogni lunghezza d'onda con l'energia realmente emessa dal Sole in quella finestra dello spettro. La formula è la seguente:
 
@@ -142,7 +142,7 @@ $$
 In questa formula, $A_B$ è l'albedo di Bond, cioè un numero compreso tra $0$ e $1$. $A_s(\lambda)$ è l'albedo sferica alla lunghezza d'onda $\lambda$. Il suo significato fisico è "Se arriva energia proprio a questa lunghezza d'onda, quale frazione viene riflessa?" Si tratta di una funzione. Potrebbe essere, ad esempio:
 
 $$
-A_s(450\;\text{nm})=0,62\quad \text{o}\quad A_s(700\;\text{nm})=0,18
+A_s(450\;\text{nm})=0{,}62\quad \text{o}\quad A_s(700\;\text{nm})=0{,}18
 $$
 
 $F_{\odot}(\lambda)$ è il flusso spettrale della stella. Esprime quanta energia arriva per ogni intervallo di lunghezza d'onda. L'unità tipica è:
@@ -163,7 +163,7 @@ $$
 A_s(\lambda)\, F_\odot(\lambda)
 $$
 
-ha un significato fisico intuitivo: è la potenza riflessa a quella data lunghezza d'onda. Per esempio, se sul corpo analizzato arrivano $100\;\text{W/m}^2$ nella banda del visibile e la relativa albedo vale $0,30$, vuol dire che per quel valore di $\lambda$ vengono riflessi $30\;\text{W/m}^2$.
+ha un significato fisico intuitivo: è la potenza riflessa a quella data lunghezza d'onda. Per esempio, se sul corpo analizzato arrivano $100\;\text{W/m}^2$ nella banda del visibile e la relativa albedo vale $0{,}30$, vuol dire che per quel valore di $\lambda$ vengono riflessi $30\;\text{W/m}^2$.
 
 L'integrale al **numeratore** somma tutta l'energia riflessa su tutte le lunghezze d'onda:
 

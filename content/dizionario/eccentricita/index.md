@@ -23,10 +23,10 @@ $$
 A titolo di esempio, applichiamo la formula all’orbita terrestre, usando i dati noti per il semiasse maggiore dell’orbita $a$, che corrisponde all’unità astronomica ($\text{au}$), e il semiasse minore dell’orbita $b$, entrambi espressi in km:
 
 $$
-e_{\text{Terra}} = \sqrt{1 - \frac{{(\approx 149\,577\,000)}^2}{{(\approx 149\,598\,000)}^2}}\approx 0,01675
+e_{\text{Terra}} = \sqrt{1 - \frac{{(\approx 149\,577\,000)}^2}{{(\approx 149\,598\,000)}^2}}\approx 0{,}01675
 $$
 
-Il risultato ottenuto è in ottimo accordo con il valore canonico di **$0,0167$**.
+Il risultato ottenuto è in ottimo accordo con il valore canonico di **$0{,}0167$**.
 
 Un dato rimarchevole che emerge dai dati usati per questo calcolo è che l’orbita terrestre è una circonferenza quasi perfetta: la differenza tra i due semiassi, lunghi quasi 150 milioni di km, è infatti di appena **$21\,000\;\mathrm{km}$**.
 
@@ -42,17 +42,17 @@ In pratica, $c$ si ottiene applicando il teorema di Pitagora alle misure dei due
 
 $$
 e_{\text{Terra}}=  \frac{c}{a} = \frac{\sqrt{(149\,598\,000) 
-^2 - (149\,577\,000)^2}}{149\,598\,000}\approx 0,01675
+^2 - (149\,577\,000)^2}}{149\,598\,000}\approx 0{,}01675
 $$
 
-Otteniamo lo stesso risultato del calcolo precedente, $e \approx 0,01675$, con in più la determinazione della distanza focale $c$, che per l’orbita terrestre, è uguale a:
+Otteniamo lo stesso risultato del calcolo precedente, $e \approx 0{,}01675$, con in più la determinazione della distanza focale $c$, che per l’orbita terrestre, è uguale a:
 
 $$
 c\approx\sqrt{(149\,598\,000) 
 ^2 - (149\,577\,000)^2}\approx 2\,507\,000\;\mathrm{km}
 $$
 
-Tale risultato indica che il fuoco occupato dal Sole nell’orbita terrestre dista poco più di $2,5$ milioni di $\text{km}$ dal centro esatto dell’ellisse orbitale. Ciò spiega anche la differenza tra la distanza della Terra dal Sole all’afelio e quella al perielio. La prima, infatti, si ottiene _sommando_ al semiasse maggiore dell’orbita $a$ ($149\,598\,000\;\mathrm{km}$) la distanza focale del Sole, la seconda _sottraendo_ al medesimo semiasse $a$ la distanza focale del Sole:
+Tale risultato indica che il fuoco occupato dal Sole nell’orbita terrestre dista poco più di $2{,}5$ milioni di $\text{km}$ dal centro esatto dell’ellisse orbitale. Ciò spiega anche la differenza tra la distanza della Terra dal Sole all’afelio e quella al perielio. La prima, infatti, si ottiene _sommando_ al semiasse maggiore dell’orbita $a$ ($149\,598\,000\;\mathrm{km}$) la distanza focale del Sole, la seconda _sottraendo_ al medesimo semiasse $a$ la distanza focale del Sole:
 
 $$
 \begin{aligned}
@@ -73,10 +73,10 @@ $$
 Anche qui, usiamo i dati della Terra per un calcolo esemplificativo:
 
 $$
-e_{\text{Terra}} = \frac{152\,105\,000 - 147\,091\,000}{{152\,105\,000 + 147\,091\,000}}\approx 0,01675
+e_{\text{Terra}} = \frac{152\,105\,000 - 147\,091\,000}{{152\,105\,000 + 147\,091\,000}}\approx 0{,}01675
 $$
 
-Otteniamo anche in questo caso un valore di $e$ perfettamente in linea con il dato ufficiale citato in letteratura ($e = 0,0167$).
+Otteniamo anche in questo caso un valore di $e$ perfettamente in linea con il dato ufficiale citato in letteratura ($e = 0{,}0167$).
 
 Il valore di $e$ determina univocamente il tipo di traiettoria di un corpo nello spazio:
 
@@ -101,7 +101,7 @@ Il valore di $e$ determina univocamente il tipo di traiettoria di un corpo nello
 
 **$e > 1$: traiettoria iperbolica**. È un’orbita aperta tipica degli oggetti interstellari come _‘Oumuamua_ e _Borisov_. È il tipo di traiettoria seguita da corpi che attraversano il Sistema Solare ad una velocità talmente elevata che la gravità solare non è in grado di catturarli.
 
-{{< figura src="immagini/traiettoria-iperbolica.svg" alt="Un oggetto in allontanamento dal corpo centrale lungo una traiettoria iperbolica" caption="Un esempio reale di traiettoria iperbolica è stata quella seguita dall'oggetto interstellare 1I/2017 U1 ('Oumuamua), scoperto nel 2017, che attraversò il Sistema Solare con un'eccentricità di circa $1,19$ prima di allontanarsi per sempre verso lo spazio interstellare." >}}
+{{< figura src="immagini/traiettoria-iperbolica.svg" alt="Un oggetto in allontanamento dal corpo centrale lungo una traiettoria iperbolica" caption="Un esempio reale di traiettoria iperbolica è stata quella seguita dall'oggetto interstellare 1I/2017 U1 ('Oumuamua), scoperto nel 2017, che attraversò il Sistema Solare con un'eccentricità di circa $1{,}19$ prima di allontanarsi per sempre verso lo spazio interstellare." >}}
 
 ## I vincoli fisici dell'eccentricità
 
@@ -115,6 +115,6 @@ dove $\mu$[^costante] è la costante gravitazionale standard del corpo centrale.
 
 Va notato che, per effetto delle perturbazioni gravitazionali e, nel caso di Mercurio, della relatività generale, l'eccentricità e l'orientamento dell'orbita possono variare lentamente nel tempo (precessione degli apsidi).
 
-In sintesi, un’eccentricità elevata implica che il corpo subirà variazioni cinematiche e termiche estreme nel corso della sua rivoluzione: la sua velocità orbitale oscillerà drasticamente tra il valore massimo all’apocentro e quello minimo al pericentro, in accordo con la seconda legge di Keplero. Un esempio è la cometa di Halley, la cui eccentricità è **$0,9671$**, un valore prossimo a $1$.
+In sintesi, un’eccentricità elevata implica che il corpo subirà variazioni cinematiche e termiche estreme nel corso della sua rivoluzione: la sua velocità orbitale oscillerà drasticamente tra il valore massimo all’apocentro e quello minimo al pericentro, in accordo con la seconda legge di Keplero. Un esempio è la cometa di Halley, la cui eccentricità è **$0{,}9671$**, un valore prossimo a $1$.
 
 [^costante]: $\mu = GM$, in cui $G$ è la costante di gravitazione universale e $M$, nel caso di corpi del Sistema Solare, la massa del Sole.

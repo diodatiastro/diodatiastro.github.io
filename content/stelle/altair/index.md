@@ -64,7 +64,7 @@ L'ipotesi che spiega la non uniforme distribuzione dell'intensità luminosa di A
 
 Detto in altre parole, quello che gli studi citati proponevano era un modello che spiega le caratteristiche osservate di Altair, descrivendola come una stella **oblata**, cioè dilatata all'equatore e schiacciata ai poli, a causa della sua rapidissima rotazione. La forza centrifuga, spingendo il materiale stellare lontano dall'asse di rotazione nella zona equatoriale, rende questa zona meno densa. La minore densità determina una minore pressione gravitazionale e, di conseguenza, un abbassamento della temperatura media nella regione. Una stella con un forte rigonfiamento equatoriale, come Altair, è insomma più brillante e calda ai poli che all'equatore, e ha una gravità maggiore ai poli che all'equatore.
 
-Una misura dello schiacciamento di Altair dovuto alla rapida rotazione era stata già fornita in [uno studio del 2001](https://iopscience.iop.org/article/10.1086/322340/fulltext/) pubblicato su *The Astrophysical Journal*. I risultati ottenuti erano basati su osservazioni effettuate per mezzo del PTI, *Palomar Testbed Interferometer*, un sistema meno potente del CHARA, costituito da telescopi da $40$ cm, separati da una distanza di $109$ metri.
+Una misura dello schiacciamento di Altair dovuto alla rapida rotazione era stata già fornita in [uno studio del 2001](https://iopscience.iop.org/article/10.1086/322340/fulltext/) pubblicato su *The Astrophysical Journal*. I risultati ottenuti erano basati su osservazioni effettuate per mezzo del PTI, *Palomar Testbed Interferometer*, un sistema meno potente del CHARA, costituito da telescopi da $40\,\text{cm}$, separati da una distanza di $109$ metri.
 
 {{< figura 
 src="immagini/altair05.jpg" 
@@ -86,7 +86,7 @@ Le misure da essi ricavate erano di $1{,}915 \pm 0{,}023$ raggi solari per il se
 src="immagini/altair06.jpg" 
 width="70%" 
 alt="Rendering in falsi colori della superficie di Altair. Le zone blu sono più calde, quelle rosse più fredde." 
-caption="Rendering in falsi colori della superficie di Altair. Le zone blu sono più calde ($8\,740$ K ai poli), quelle rosse più fredde ($6\,890$ K all'equatore). Crediti: D. M. Peterson et al. 2006 ApJ 636 1087 doi:10.1086/497981"
+caption="Rendering in falsi colori della superficie di Altair. Le zone blu sono più calde ($8\,740\,\text{K}$ ai poli), quelle rosse più fredde ($6\,890\,\text{K}$ all'equatore). Crediti: D. M. Peterson et al. 2006 ApJ 636 1087 doi:10.1086/497981"
 >}}
 
 ## Le immagini della superficie di Altair
@@ -159,7 +159,7 @@ alt="Le coordinate apicate sono le coordinate cartesiane utilizzate per descrive
 caption="Vista laterale di una stella appiattita. Le coordinate apicate sono le coordinate cartesiane utilizzate per descrivere il piano del cielo, così come visto dalla Terra. Crediti: K. Bouchaud et al. - A&A 633, A78 (2020)."
 >}}
 
-C'è anche una seconda differenza, più sottile, che riguarda il rapporto con la velocità di rottura. Lo studio del 2007 lo chiama $\omega/\omega_{\text{crit}}$. Lo studio del 2020 lo chiama invece $\Omega/\Omega_{\text{Kepler}}$ [^maius]. Non è solo una differenza di notazione: sono due grandezze concettualmente analoghe ma numericamente diverse, perché calcolate con modelli fisici diversi. Un modello più realistico come ESTER tende a stimare una velocità critica più alta di un modello alla Roche; è per questo che Altair può ruotare più velocemente in termini assoluti secondo il modello del 2020 ($314$ contro $285\,\text{km}/\text{s}$ "veri") pur restando, in proporzione, più lontana dal proprio limite di rottura ($74\%$ contro il $90$-$92\%$ del 2007): cambia il denominatore del rapporto, non solo il numeratore.
+C'è anche una seconda differenza, più sottile, che riguarda il rapporto con la velocità di rottura. Lo studio del 2007 lo chiama $\omega/\omega_{\text{crit}}$. Lo studio del 2020 lo chiama invece $\Omega/\Omega_{\text{Kepler}}$ [^maius]. Non è solo una differenza di notazione: sono due grandezze concettualmente analoghe ma numericamente diverse, perché calcolate con modelli fisici diversi. Un modello più realistico come ESTER tende a stimare una velocità critica più alta di un modello alla Roche; è per questo che Altair può ruotare più velocemente in termini assoluti secondo il modello del 2020 ($314$ contro $285\,\text{km}/\text{s}$ "veri") pur restando, in proporzione, più lontana dal proprio limite di rottura ($74\%$ contro il $90\text{-}92\%$ del 2007): cambia il denominatore del rapporto, non solo il numeratore.
 
 Una rotazione completa di Altair, secondo il modello del 2020, dura appena $7$ ore e $46$ minuti, calcolata correttamente sulla base della velocità equatoriale vera, non di quella proiettata. Si tratta di circa $1\,130\,000\,\text{km}/\text{h}$: definire questa stella un rotatore veloce non è davvero un'esagerazione!
 
