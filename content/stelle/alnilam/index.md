@@ -128,7 +128,7 @@ Per capirlo, bisogna tener conto del fatto che la luminosità percepita dall’o
 src="immagini/alnilam06.jpg" 
 width="" 
 alt="Il flusso di radiazione emesso da Alnilam nella regione dello spettro compresa tra l’ultravioletto e il vicino infrarosso. Il massimo del flusso si registra nella regione dell’ultravioletto nelle lunghezze d’onda tra $1000$ e $3000\,\mathring{\mathrm{A}}$." 
-caption="Il flusso di radiazione emesso da Alnilam nella regione dello spettro compresa tra l’ultravioletto e il vicino infrarosso. Il massimo del flusso si registra nella regione dell’ultravioletto nelle lunghezze d’onda tra $1000$ e $3000\,\mathring{\mathrm{A}}$. Crediti: 1974A&A….37..237L."
+caption="Il flusso di radiazione emesso da Alnilam nella regione dello spettro compresa tra l’ultravioletto e il vicino infrarosso. Il massimo del flusso si registra nella regione dell’ultravioletto nelle lunghezze d’onda tra $1000$ e $3000\,\mathring{\mathrm{A}}$. Crediti: 1974A&A….37..237L"
 >}}
 
 ## Perdita di massa

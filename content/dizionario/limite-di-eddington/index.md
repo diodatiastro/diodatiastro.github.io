@@ -96,7 +96,7 @@ Le **variabili luminose blu** (o LBV, dall'inglese *Luminous Blue Variables*), t
 {{< figura 
 src="immagini/wr124.jpg" 
 alt="La stella di Wolf-Rayet WR 124, ripresa dal JWST nel vicino e medio infrarosso nel 2023. La nebulosa che circonda la stella, chiamata M1-67, è stata prodotta da WR 124 nel corso di precedenti episodi eruttivi." 
-caption="La stella di Wolf-Rayet WR 124, ripresa dal JWST nel vicino e medio infrarosso nel 2023. La nebulosa che circonda la stella, chiamata M1-67, è stata prodotta da WR 124 nel corso di precedenti episodi eruttivi. Le stelle di Wolf-Rayet sono caratterizzate da potentissimi venti stellari che favoriscono l'espulsione di enormi quantità di materia dagli strati più esterni. Questi fenomeni di perdita di massa sono favoriti, tra le altre cose, dalla grande pressione di radiazione generata dall'intensissima luminosità tipica di questa particolare categoria di stelle. Crediti: NASA, ESA, CSA, STScI, Webb ERO Production Team."
+caption="La stella di Wolf-Rayet WR 124, ripresa dal JWST nel vicino e medio infrarosso nel 2023. La nebulosa che circonda la stella, chiamata M1-67, è stata prodotta da WR 124 nel corso di precedenti episodi eruttivi. Le stelle di Wolf-Rayet sono caratterizzate da potentissimi venti stellari che favoriscono l'espulsione di enormi quantità di materia dagli strati più esterni. Questi fenomeni di perdita di massa sono favoriti, tra le altre cose, dalla grande pressione di radiazione generata dall'intensissima luminosità tipica di questa particolare categoria di stelle. Crediti: NASA, ESA, CSA, STScI, Webb ERO Production Team"
 >}}
 
 ## Fattori che complicano la definizione del limite di Eddington

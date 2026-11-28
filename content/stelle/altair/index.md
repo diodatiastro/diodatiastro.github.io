@@ -156,7 +156,7 @@ La velocità proiettata osservata restò sostanzialmente la stessa misurata nel 
 src="immagini/altair10.jpg" 
 width="80%" 
 alt="Le coordinate apicate sono le coordinate cartesiane utilizzate per descrivere il piano del cielo, così come visto dalla Terra." 
-caption="Vista laterale di una stella appiattita. Le coordinate apicate sono le coordinate cartesiane utilizzate per descrivere il piano del cielo, così come visto dalla Terra. Crediti: K. Bouchaud et al. - A&A 633, A78 (2020)."
+caption="Vista laterale di una stella appiattita. Le coordinate apicate sono le coordinate cartesiane utilizzate per descrivere il piano del cielo, così come visto dalla Terra. Crediti: K. Bouchaud et al. - A&A 633, A78 (2020)"
 >}}
 
 C'è anche una seconda differenza, più sottile, che riguarda il rapporto con la velocità di rottura. Lo studio del 2007 lo chiama $\omega/\omega_{\text{crit}}$. Lo studio del 2020 lo chiama invece $\Omega/\Omega_{\text{Kepler}}$ [^maius]. Non è solo una differenza di notazione: sono due grandezze concettualmente analoghe ma numericamente diverse, perché calcolate con modelli fisici diversi. Un modello più realistico come ESTER tende a stimare una velocità critica più alta di un modello alla Roche; è per questo che Altair può ruotare più velocemente in termini assoluti secondo il modello del 2020 ($314$ contro $285\,\text{km}/\text{s}$ "veri") pur restando, in proporzione, più lontana dal proprio limite di rottura ($74\%$ contro il $90\text{-}92\%$ del 2007): cambia il denominatore del rapporto, non solo il numeratore.

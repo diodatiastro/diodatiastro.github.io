@@ -17,7 +17,7 @@ In questo articolo vedremo come il semplice concetto di parallasse[^par] – lo 
 {{< figura 
 src="immagini/luhman-16a-luhman-16b.jpg" 
 alt="Dodici immagini montate in sequenza della coppia di nane brune Luhman 16A e Luhman 16B, ripresa da Hubble tra il 2013 e il 2015." 
-caption="Dodici immagini montate in sequenza della coppia di nane brune Luhman 16A e Luhman 16B, ripresa da Hubble tra il 2013 e il 2015 (la sequenza si svolge da sinistra verso destra). A soli 6 anni luce di distanza da noi, questo sistema binario è così vicino che si distinguono perfettamente le ellissi formate dal riflesso del moto orbitale della Terra intorno al Sole, dalle quali si ricava l’angolo di parallasse dei due piccoli corpi celesti. Crediti: ESA/Hubble & NASA, L. Bedin et al."
+caption="Dodici immagini montate in sequenza della coppia di nane brune Luhman 16A e Luhman 16B, ripresa da Hubble tra il 2013 e il 2015 (la sequenza si svolge da sinistra verso destra). A soli 6 anni luce di distanza da noi, questo sistema binario è così vicino che si distinguono perfettamente le ellissi formate dal riflesso del moto orbitale della Terra intorno al Sole, dalle quali si ricava l’angolo di parallasse dei due piccoli corpi celesti. Crediti: ESA/Hubble & NASA, L. Bedin *et al.*"
 >}}
 
 ## Introduzione storica
@@ -121,7 +121,7 @@ Otteniamo una distanza minima di $277\,123$ unità astronomiche ($4{,}382$ anni 
 {{< figura 
 src="immagini/alfacentauri-ab.jpg" 
 alt="Alfa Centauri A e B riprese dal telescopio spaziale Hubble." 
-caption="Alfa Centauri A e B riprese dal telescopio spaziale Hubble. La separazione angolare tra le due stelle è di $17$ secondi d’arco, molto maggiore del loro angolo di parallasse. Crediti: ESA/Hubble & NASA."
+caption="Alfa Centauri A e B riprese dal telescopio spaziale Hubble. La separazione angolare tra le due stelle è di $17$ secondi d’arco, molto maggiore del loro angolo di parallasse. Crediti: ESA/Hubble & NASA"
 >}}
 
 ## Calcolare le distanze stellari in parsec

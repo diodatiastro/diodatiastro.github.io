@@ -127,7 +127,7 @@ Lo studio della fotosfera di stelle diverse dal Sole è ovviamente molto più co
 {{< figura 
 src="immagini/betelgeuse.jpg" 
 alt="La prima immagine diretta della superficie di una stella diversa dal Sole, la supergigante rossa Betelgeuse. Fu ripresa dal telescopio spaziale Hubble nel 1995." 
-caption="La prima immagine diretta della superficie di una stella diversa dal Sole, la supergigante rossa Betelgeuse. Fu ripresa dal telescopio spaziale Hubble nel 1995. L'immagine rivela un'atmosfera asimmetrica e una struttura enorme e molto brillante al di sotto del centro della stella, probabilmente una cella di convezione estesa per milioni di km. Crediti: A. Dupree (CfA), R. Gilliland (STScI), FOC, HST, NASA."
+caption="La prima immagine diretta della superficie di una stella diversa dal Sole, la supergigante rossa Betelgeuse. Fu ripresa dal telescopio spaziale Hubble nel 1995. L'immagine rivela un'atmosfera asimmetrica e una struttura enorme e molto brillante al di sotto del centro della stella, probabilmente una cella di convezione estesa per milioni di km. Crediti: A. Dupree (CfA), R. Gilliland (STScI), FOC, HST, NASA"
 >}}
 
 ## Spettroscopia e righe di Fraunhofer

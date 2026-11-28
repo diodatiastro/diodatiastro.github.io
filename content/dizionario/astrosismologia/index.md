@@ -74,7 +74,7 @@ Sono onde interne guidate dalla forza di galleggiamento (la spinta di Archimede)
 src="immagini/modip-modig.png" 
 width="" 
 alt="La differenza tra modi p e modi g." 
-caption="La differenza tra modi *p* e modi *g* e la loro diffusione nell'interno stellare. Crediti: Chat GPT."
+caption="La differenza tra modi *p* e modi *g* e la loro diffusione nell'interno stellare. Crediti: Chat GPT"
 >}}
 
 ### Modi *f* e modi misti

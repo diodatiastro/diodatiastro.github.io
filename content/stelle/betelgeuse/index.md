@@ -73,7 +73,7 @@ La pulsazione naturale della stella e i suoi potenti campi magnetici "eruttarono
 {{< figura 
 src="immagini/oscuramento.jpg" 
 alt="Immagini, scattate con lo strumento SPHERE del Very Large Telescope dell'ESO, che mostrano la superficie della supergigante rossa Betelgeuse durante il suo inedito calo di luminosità, avvenuto tra la fine del 2019 e l'inizio del 2020." 
-caption="Queste immagini, scattate con lo strumento SPHERE del Very Large Telescope dell'ESO, mostrano la superficie della supergigante rossa Betelgeuse durante il suo inedito calo di luminosità, avvenuto tra la fine del 2019 e l'inizio del 2020. L'immagine all'estrema sinistra, ripresa nel gennaio 2019, mostra la stella alla sua luminosità normale, mentre le immagini rimanenti (dicembre 2019, gennaio 2020 e marzo 2020) sono state tutte ottenute quando la luminosità della stella era notevolmente diminuita, specialmente nella sua regione meridionale. Crediti: ESO/M. Montargès et al."
+caption="Queste immagini, scattate con lo strumento SPHERE del Very Large Telescope dell'ESO, mostrano la superficie della supergigante rossa Betelgeuse durante il suo inedito calo di luminosità, avvenuto tra la fine del 2019 e l'inizio del 2020. L'immagine all'estrema sinistra, ripresa nel gennaio 2019, mostra la stella alla sua luminosità normale, mentre le immagini rimanenti (dicembre 2019, gennaio 2020 e marzo 2020) sono state tutte ottenute quando la luminosità della stella era notevolmente diminuita, specialmente nella sua regione meridionale. Crediti: ESO/M. Montargès *et al.*"
 >}}
 
 A conferma di questa spiegazione, le osservazioni interferometriche mostrarono un oscuramento *asimmetrico*, più marcato nell'emisfero sud della stella. A causa della perdita di materiale dalla regione della macchia calda, sulla fotosfera comparve anche un'area più fredda, visibile come una macchia scura lungo la linea di vista. In conclusione, il calo di luminosità osservato a cavallo tra il 2019 e il 2020 fu il risultato combinato di due effetti concomitanti: un vero e proprio raffreddamento locale della superficie stellare _e_ l'oscuramento da parte di polveri di nuova formazione.
@@ -327,7 +327,7 @@ Grazie alla potenza di Hubble, fu possibile rilevare intorno a Betelgeuse la pre
 src="immagini/cromosfera.jpg" 
 width="65%"
 alt="La cromosfera di Betelgeuse osservata da Hubble nell’ultravioletto." 
-caption="La cromosfera di Betelgeuse osservata da Hubble nell’ultravioletto. I vari riquadri mostrano differenti manipolazioni dei dati. Il cerchio nero sovrapposto all’immagine della stella, visibile nei riquadri F e L, rappresenta le dimensioni della fotosfera di Betelgeuse osservata nella luce visibile. Crediti: The Astrophysical Journal, 463:L29L32, 1996."
+caption="La cromosfera di Betelgeuse osservata da Hubble nell’ultravioletto. I vari riquadri mostrano differenti manipolazioni dei dati. Il cerchio nero sovrapposto all’immagine della stella, visibile nei riquadri F e L, rappresenta le dimensioni della fotosfera di Betelgeuse osservata nella luce visibile. Crediti: The Astrophysical Journal, 463:L29L32, 1996"
 >}}
 
 ### Un’atmosfera immensamente estesa
@@ -340,7 +340,7 @@ Il diametro medio dell’atmosfera stellare ripresa nel lontano ultravioletto er
 src="immagini/stis.jpg" 
 width="70%"
 alt="L’atmosfera estesa di Betelgeuse ripresa nel lontano ultravioletto dallo strumento STIS del telescopio spaziale Hubble." 
-caption="L’atmosfera estesa di Betelgeuse ripresa nel lontano ultravioletto dallo strumento STIS del telescopio spaziale Hubble. Il disco bianco corrisponde al diametro della stella osservato nella luce visibile. Per acquisire quest’immagine, le capacità di Hubble erano state spinte fino al limite massimo. La risoluzione raggiunta era sufficiente per scorgere una moneta da $10$ centesimi dalla distanza di quasi $100\,\text{km}$. Crediti: The First Far Ultraviolet Image of Alpha Orionis (Betelgeuse, HD 39801)."
+caption="L’atmosfera estesa di Betelgeuse ripresa nel lontano ultravioletto dallo strumento STIS del telescopio spaziale Hubble. Il disco bianco corrisponde al diametro della stella osservato nella luce visibile. Per acquisire quest’immagine, le capacità di Hubble erano state spinte fino al limite massimo. La risoluzione raggiunta era sufficiente per scorgere una moneta da $10$ centesimi dalla distanza di quasi $100\,\text{km}$. Crediti: The First Far Ultraviolet Image of Alpha Orionis (Betelgeuse, HD 39801)"
 >}}
 
 L’immagine acquisita da Hubble nel lontano ultravioletto confermava la **disomogeneità** dell’atmosfera di Betelgeuse. Vi apparivano due grandi regioni più luminose della media ed era evidente la completa mancanza di simmetria sferica.
@@ -371,7 +371,7 @@ Betelgeuse fu osservata con ALMA il 9 novembre 2015 per $75$ minuti nella banda 
 src="immagini/alma.jpg" 
 width="80%"
 alt="Betelgeuse osservata nelle lunghezze d’onda submillimetriche con l’interferometro ALMA. Risalta chiaramente la forma asimmetrica della stella." 
-caption="Betelgeuse osservata nelle lunghezze d’onda submillimetriche con l’interferometro ALMA. Risalta chiaramente la forma asimmetrica della stella. Crediti: ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella."
+caption="Betelgeuse osservata nelle lunghezze d’onda submillimetriche con l’interferometro ALMA. Risalta chiaramente la forma asimmetrica della stella. Crediti: ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella"
 >}}
 
 ALMA aveva ripreso l’**atmosfera estesa** della supergigante rossa, cioè il livello esterno alla fotosfera, comprendente la cromosfera.
@@ -537,7 +537,7 @@ Insomma, la fine violenta di Betelgeuse _non costituirà un pericolo_ per la v
 {{< figura 
 src="immagini/supernova.jpg" 
 alt="Una simulazione dell'esplosione di supernova di Betelgeuse." 
-caption="L’esplosione di supernova di Betelgeuse rilascerà circa $2{,}0\times10^{46}$ joule in neutrini e $2{,}0\times10^{44}$ joule di energia cinetica. Giusto per avere un termine di paragone, l’energia irradiata dal Sole è pari a $3{,}8\times10^{26}$ joule al secondo. Crediti: Michele Diodati."
+caption="L’esplosione di supernova di Betelgeuse rilascerà circa $2{,}0\times10^{46}$ joule in neutrini e $2{,}0\times10^{44}$ joule di energia cinetica. Giusto per avere un termine di paragone, l’energia irradiata dal Sole è pari a $3{,}8\times10^{26}$ joule al secondo. Crediti: Michele Diodati"
 >}}
 
 ## Come fa a ruotare così velocemente?
@@ -568,7 +568,7 @@ Un’ulteriore possibilità è che noi stiamo osservando oggi Betelgeuse proprio
 src="immagini/inclinazione.jpg" 
 width="75%"
 alt="L’inclinazione e il verso di rotazione di Betelgeuse rispetto a un osservatore terrestre. I dati furono ricavati da osservazioni spettroscopiche compiute dal telescopio spaziale Hubble nel marzo 1995." 
-caption="L’inclinazione e il verso di rotazione di Betelgeuse rispetto a un osservatore terrestre. I dati furono ricavati da osservazioni spettroscopiche compiute dal telescopio spaziale Hubble nel marzo 1995. Assumendo un’inclinazione di $20^{\circ}$, gli autori dello studio calcolarono che Betelgeuse ruota all’equatore con una velocità di $14{,}6\,\text{km/s}$. Ciò corrispondeva a un periodo di rotazione di $17$ anni, ponendo il raggio della stella pari a $770$ raggi solari. Crediti: The Astronomical Journal, 116, 5, pp. 2501–2512."
+caption="L’inclinazione e il verso di rotazione di Betelgeuse rispetto a un osservatore terrestre. I dati furono ricavati da osservazioni spettroscopiche compiute dal telescopio spaziale Hubble nel marzo 1995. Assumendo un’inclinazione di $20^{\circ}$, gli autori dello studio calcolarono che Betelgeuse ruota all’equatore con una velocità di $14{,}6\,\text{km/s}$. Ciò corrispondeva a un periodo di rotazione di $17$ anni, ponendo il raggio della stella pari a $770$ raggi solari. Crediti: The Astronomical Journal, 116, 5, pp. 2501–2512"
 >}}
 
 ### Una precisazione sulla velocità di rotazione
@@ -597,7 +597,7 @@ A tal proposito, esiste un’immagine di Betelgeuse pubblicata nel 2013, acqui
 src="immagini/ondadurto.jpg" 
 width="80%"
 alt="L'onda d'urto che precede il moto di Betelegeuse nell'ambiente circumstellare." 
-caption="L'onda d'urto che precede il moto di Betelegeuse nell'ambiente circumstellare. Crediti: ESA/Herschel/PACS/L. Decin et al."
+caption="L'onda d'urto che precede il moto di Betelegeuse nell'ambiente circumstellare. Crediti: ESA/Herschel/PACS/L. Decin *et al.*"
 >}}
 
 L’arco è stato interpretato finora come un’**onda d’urto** prodotta dal **vento stellare** di Betelgeuse, che comprime il gas e le polveri diffuse nel mezzo interstellare mentre la stella avanza percorrendo la sua orbita galattica. Ma Wheeler e il suo team proposero un’ipotesi alternativa: l’arco potrebbe essere piuttosto l’effetto visibile del “pasto” compiuto da Betelgeuse ai danni di una sfortunata compagna binaria. Quell'arco sarebbe formato, cioè, dalla materia degli strati esterni stellari sparata via all’atto della fusione, materia allontanatasi nel frattempo fino a raggiungere la distanza alla quale l’arco è stato osservato dal telescopio spaziale Herschel. Ipotizzando una velocità di espulsione intorno a $10\,\text{km/s}$, l’arco di detriti si troverebbe nella posizione attuale, se la fusione tra le due stelle fosse avvenuta circa $100\,000$ anni fa.
@@ -607,7 +607,7 @@ Più internamente all’arco visibile sulla sinistra, l’immagine mostra anche 
 {{< figura 
 src="immagini/cannibale.gif" 
 alt="Una simulazione dello scenario ipotizzato da Craig Wheeler e colleghi. Una stella simile al Sole viene ingoiata dalla supergigante rossa Betelgeuse. La fusione tra le due stelle produce l’espulsione violenta di una grande nube di detriti. " 
-caption="Una simulazione dello scenario ipotizzato da Craig Wheeler e colleghi. Una stella simile al Sole viene ingoiata dalla supergigante rossa Betelgeuse. La fusione tra le due stelle produce l’espulsione violenta di una grande nube di detriti. Crediti: Michele Diodati / Universe Sandbox²."
+caption="Una simulazione dello scenario ipotizzato da Craig Wheeler e colleghi. Una stella simile al Sole viene ingoiata dalla supergigante rossa Betelgeuse. La fusione tra le due stelle produce l’espulsione violenta di una grande nube di detriti. Crediti: Michele Diodati / Universe Sandbox²"
 >}}
 
 In entrambi i casi, resta non spiegata un’altra caratteristica visibile nell’immagine di Herschel: una sorta di “muro” orizzontale di gas e polveri che appare sulla sinistra del grande arco. Potrebbe trattarsi di materia interstellare che non ha nulla a che fare con Betelgeuse e che appare lì solo per uno scherzo della prospettiva, essendo in realtà più vicina (o più lontana) dalla Terra rispetto alla stella. Non lo sappiamo, come non sappiamo se l’ipotesi di Wheeler corrisponda oppure no a ciò che è realmente accaduto.
@@ -641,7 +641,7 @@ Le cose cominciarono a cambiare con la pubblicazione a luglio 2025 di uno [studi
 src="immagini/bet-b-boh.jpg" 
 width="80%"
 alt="Un grafico in colori arbitrari che mostra Betelgeuse al centro e la posizione della candidata compagna (indicata dalla freccia)." 
-caption="Un grafico in colori arbitrari che mostra Betelgeuse al centro e la posizione della candidata compagna (indicata dalla freccia), separata di $52\,\text{mas}$ dalla supergigante, con un angolo di posizione di $115^{\circ}$. Crediti:  Steve B. Howell _et al_ 2025 ApJL 988 L47."
+caption="Un grafico in colori arbitrari che mostra Betelgeuse al centro e la posizione della candidata compagna (indicata dalla freccia), separata di $52\,\text{mas}$ dalla supergigante, con un angolo di posizione di $115^{\circ}$. Crediti:  Steve B. Howell _et al_ 2025 ApJL 988 L47"
 >}}
 
 ### Una prova più chiara, quasi innegabile
@@ -666,7 +666,7 @@ Dando per buona una distanza di $168$ parsec, in accordo con lo studio di Joyce 
 src="immagini/bet-b.jpg" 
 width="80%"
 alt="La più nitida immagine finora ottenuta di Betelgeuse B, acquisita con lo strumento SPHERE del Very Large Telescope dell'ESO il 6 dicembre 2024. Il cerchio centrale indica le dimensioni di Betelgeuse, la cui luminosità è stata sottratta dall'immagine per rendere visibile la compagna." 
-caption="La più nitida immagine finora ottenuta di Betelgeuse B, acquisita con lo strumento SPHERE del Very Large Telescope dell'ESO il 6 dicembre 2024. Il cerchio centrale indica le dimensioni di Betelgeuse, la cui luminosità è stata sottratta dall'immagine per rendere visibile la compagna. Crediti: ESO/M. Montargès et al."
+caption="La più nitida immagine finora ottenuta di Betelgeuse B, acquisita con lo strumento SPHERE del Very Large Telescope dell'ESO il 6 dicembre 2024. Il cerchio centrale indica le dimensioni di Betelgeuse, la cui luminosità è stata sottratta dall'immagine per rendere visibile la compagna. Crediti: ESO/M. Montargès *et al.*"
 >}}
 
 Di certo Betelgeuse B non è una stella fortunata, se è realmente la compagna binaria della supergigante. Quando, infatti, Betelgeuse diventerà una supernova, la compagna sarà investita in pieno da un oceano di radiazioni ionizzanti (UV, raggi X, raggi gamma) emesse alla velocità della luce. Poi, dopo solo qualche ora, arriverà il flusso inarrestabile di particelle cariche emesso dalla stella morente a una frazione significativa della velocità della luce: un vento densissimo di gas e plasma in grado di erodere gli strati esterni della stella, con effetti potenzialmente devastanti.

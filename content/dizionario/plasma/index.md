@@ -71,7 +71,7 @@ Nella formula, il termine esponenziale $e^{-\chi_i/(k_BT)}$ è quello che conta 
 {{< figura 
 src="immagini/corona-solare.jpg" 
 alt="Una fotografia della corona solare acquisita il 21 agosto 2017 durante un'eclisse solare totale." 
-caption="Una fotografia della corona solare acquisita il 21 agosto 2017 durante un'eclisse solare totale. Sono ben visibili gli effetti dei campi magnetici sul plasma coronale. Crediti: Miloslav Druckmüller, Peter Aniol, Shadia Habbal/NASA Goddard, Joy Ng."
+caption="Una fotografia della corona solare acquisita il 21 agosto 2017 durante un'eclisse solare totale. Sono ben visibili gli effetti dei campi magnetici sul plasma coronale. Crediti: Miloslav Druckmüller, Peter Aniol, Shadia Habbal/NASA Goddard, Joy Ng"
 >}}
 
 [^1]: La versione qui riportata della formula è una versione semplificata in cui il rapporto dei **pesi statistici** $g_{i+1}/g_i$​ degli stati ionici coinvolti - dell'ordine dell'unità - è stato omesso.

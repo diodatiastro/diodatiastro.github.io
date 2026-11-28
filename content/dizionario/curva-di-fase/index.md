@@ -76,7 +76,7 @@ A questo punto interviene la modellizzazione matematica, per trovare una **funzi
 {{< figura 
 src="immagini/curva-di-fase.jpg" 
 alt="Curve di fase fotometriche di sei asteroidi con i fit H, G1, G2." 
-caption="Le curve di fase fotometriche con i fit $H$, $G_1$, $G_2$ per gli asteroidi (55) Pandora, (95) Arethusa, (731) Sorga, (245) Vera, (596) Scheila e (1251) Hedera. A scopo illustrativo, le curve di fase sono presentate su una scala di magnitudine relativa con offset di $0{,}5$ magnitudini. Crediti: J. Martikainen et al. A&A 649, A98 (2021)."
+caption="Le curve di fase fotometriche con i fit $H$, $G_1$, $G_2$ per gli asteroidi (55) Pandora, (95) Arethusa, (731) Sorga, (245) Vera, (596) Scheila e (1251) Hedera. A scopo illustrativo, le curve di fase sono presentate su una scala di magnitudine relativa con offset di $0{,}5$ magnitudini. Crediti: J. Martikainen et al. A&A 649, A98 (2021)"
 >}}
 
 Tutto questo processo ha ovviamente dei limiti, come quasi tutto nella scienza (e non solo). Per ottenere la miglior curva di fase possibile, bisogna disporre di molte osservazioni e, possibilmente, lungo un'ampia escursione dell'angolo di fase. Ma qui entra in gioco l'orbita del corpo osservato. Ci sono oggetti, come gli asteroidi Troiani, per i quali l'escursione dell'angolo di fase non supera mai gli $11^{\circ}$ circa. Altri asteroidi, invece, rimangono per molto tempo confinati in un piccolo angolo di fase e poi sfrecciano rapidamente coprendo un lungo arco in poche notti. Insomma, la bontà dei dati finali ottenuti con le curve e le funzioni di fase dipendono molto anche da quanto la natura, in questo caso le orbite dei corpi celesti, è disposta a collaborare.

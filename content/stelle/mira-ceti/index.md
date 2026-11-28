@@ -56,7 +56,7 @@ La coppia sta attraversando la costellazione della Balena (_Cetus_) a una dista
 src="immagini/mira07.jpg" 
 width="70%" 
 alt="Nel 1995 il telescopio spaziale Hubble, con la sua potenza, riuscì a cogliere come oggetti distinti Mira A (in alto a destra), dalla sua compagna binaria Mira B (in alto a sinistra). " 
-caption="Nel 1995 il telescopio spaziale Hubble, con la sua potenza, [riuscì a cogliere](https://iopscience.iop.org/article/10.1086/310704) come oggetti distinti Mira A (in alto a destra), dalla sua compagna binaria Mira B (in alto a sinistra). Le due stelle sono separate da soli $0{,}6$ secondi d'arco, che corrispondono a circa $70$ volte la distanza tra la Terra e il Sole. Intorno a Mira B si è già formato un piccolo disco di accrescimento, alimentato dal materiale che le arriva dalla compagna: un disco protoplanetario di seconda mano, capace forse di generare un giorno nuovi pianeti attorno a questa coppia di stelle morenti. Crediti: Margarita Karovska (Harvard-Smithsonian Center for Astrophysics), and NASA/ESA."
+caption="Nel 1995 il telescopio spaziale Hubble, con la sua potenza, [riuscì a cogliere](https://iopscience.iop.org/article/10.1086/310704) come oggetti distinti Mira A (in alto a destra), dalla sua compagna binaria Mira B (in alto a sinistra). Le due stelle sono separate da soli $0{,}6$ secondi d'arco, che corrispondono a circa $70$ volte la distanza tra la Terra e il Sole. Intorno a Mira B si è già formato un piccolo disco di accrescimento, alimentato dal materiale che le arriva dalla compagna: un disco protoplanetario di seconda mano, capace forse di generare un giorno nuovi pianeti attorno a questa coppia di stelle morenti. Crediti: Margarita Karovska (Harvard-Smithsonian Center for Astrophysics), and NASA/ESA"
 >}}
 
 ## Un arco di materia da Mira A a Mira B
@@ -108,7 +108,7 @@ In ogni caso, e inevitabilmente, la scoperta della coda di Mira suscitò una gra
 src="immagini/mira06.jpg" 
 width="70%" 
 alt="La posizione di Mira (Omicron Ceti) nella costellazione della Balena" 
-caption="La posizione di Mira (Omicron Ceti) nella costellazione della Balena. Crediti: IAU / Sky & Telescope."
+caption="La posizione di Mira (Omicron Ceti) nella costellazione della Balena. Crediti: IAU / Sky & Telescope"
 >}}
 
 [^1]: È giusto precisare che il grande aumento di luminosità _visibile_ di Mira non corrisponde a un pari aumento della sua luminosità bolometrica: quest'ultima varia solo di un fattore $2\text{-}3$ (circa una magnitudine) lungo il ciclo di pulsazione, contro le circa $1\,500$ volte osservate nel visibile. La maggior parte di questa differenza nasce dalla forte variazione dell'opacità molecolare dell'atmosfera (in particolare le bande del TiO), che a seconda della temperatura blocca o lascia passare la luce visibile in modo molto più marcato di quanto farebbe un semplice spostamento dello spettro con la temperatura.

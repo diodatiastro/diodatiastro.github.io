@@ -24,7 +24,7 @@ Un esempio celebre dell'importanza della spettroscopia è la scoperta dell'eleme
 {{< figura 
 src="immagini/spettro-solare.png" 
 alt="Spettro ad alta risoluzione della luce proveniente dal Sole, che mostra la regione visibile dello spettro elettromagnetico. Le righe di assorbimento sono chiaramente visibili come sottili bande nere." 
-caption="Spettro ad alta risoluzione della luce proveniente dal Sole, che mostra la regione visibile dello spettro elettromagnetico. Le righe di assorbimento sono chiaramente visibili come sottili bande nere. La lunghezza d'onda aumenta da sinistra a destra lungo ciascuna striscia e dal basso verso l'alto. Ciascuna delle $50$ strisce orizzontali copre $6$ nanometri, per uno spettro completo che abbraccia l'intervallo visibile da $400$ a $700$ nanometri. Crediti: N.A. Sharp/KPNO/NOIRLab/NSO/NSF/AURA."
+caption="Spettro ad alta risoluzione della luce proveniente dal Sole, che mostra la regione visibile dello spettro elettromagnetico. Le righe di assorbimento sono chiaramente visibili come sottili bande nere. La lunghezza d'onda aumenta da sinistra a destra lungo ciascuna striscia e dal basso verso l'alto. Ciascuna delle $50$ strisce orizzontali copre $6$ nanometri, per uno spettro completo che abbraccia l'intervallo visibile da $400$ a $700$ nanometri. Crediti: N.A. Sharp/KPNO/NOIRLab/NSO/NSF/AURA"
 >}}
 
 ## Classificazione degli spettri

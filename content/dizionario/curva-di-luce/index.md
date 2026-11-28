@@ -41,7 +41,7 @@ In quei dieci giorni Algol ha compiuto tre cicli completi, e la misura cade poco
 src="immagini/algol-tess-lightcurve.png" 
 width="70%" 
 alt="La curva di luce di Algol, con il suo periodo di 2,867 giorni, registrata durante novembre 2019 dal telescopio spaziale della NASA TESS." 
-caption="La curva di luce di Algol, con il suo periodo di $2{,}867$ giorni, registrata durante novembre 2019 dal telescopio spaziale della NASA TESS. Il minimo più profondo è dato dal passaggio della stella più fioca davanti a quella più luminosa. Il minimo secondario, a metà tra due minimi profondi, è dato dal passaggio della stella più debole dietro quella più brillante. Crediti: Warrickball, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Algol_TESS_lightcurve.png)."
+caption="La curva di luce di Algol, con il suo periodo di $2{,}867$ giorni, registrata durante novembre 2019 dal telescopio spaziale della NASA TESS. Il minimo più profondo è dato dal passaggio della stella più fioca davanti a quella più luminosa. Il minimo secondario, a metà tra due minimi profondi, è dato dal passaggio della stella più debole dietro quella più brillante. Crediti: Warrickball, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Algol_TESS_lightcurve.png)"
 >}}
 
 Il periodo di Algol era già noto da tempo. Quando, invece, una stella variabile è stata appena scoperta, il periodo è proprio ciò che si cerca. Di solito le misure sono sparse, interrotte dal giorno, dal maltempo e dalla stagione, per cui ciascuna notte di osservazione coglie solo un frammento di ciclo. Si calcola allora la fase di ogni misura con molti periodi di prova. Con il periodo giusto ogni misura viene associata alla fase corrispondente al punto del ciclo in cui la stella si trovava davvero e i punti raccolti in cicli diversi si dispongono lungo una curva netta. Con un periodo sbagliato le fasi non corrispondono e i punti si disperdono nel grafico. Scegliere il periodo che produce la curva più ordinata è uno dei modi più semplici per trovare il periodo di una stella variabile. Questo tipo di fase, che misura il tempo all'interno di un ciclo, non ha nulla a che vedere con l'angolo di fase, che è invece una grandezza geometrica.
@@ -74,7 +74,7 @@ Dopo il 1945 il fotomoltiplicatore[^fotomoltiplicatore] sostituì la lastra come
 src="immagini/fotomoltiplicatore.jpg"
 width="60%"
 alt="Un fotomoltiplicatore RCA di tipo 1P21 del 1948, con lo zoccolo e il cavo per il collegamento a un fotometro."
-caption="Un fotomoltiplicatore RCA di tipo 1P21, prodotto nel 1948, con lo zoccolo e il cavo per collegarlo a un fotometro. È lo stesso tipo di tubo su cui Johnson e Morgan basarono il sistema UBV. Crediti: Michael L. Umbricht / Ladd Observatory, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it), via Wikimedia Commons."
+caption="Un fotomoltiplicatore RCA di tipo 1P21, prodotto nel 1948, con lo zoccolo e il cavo per collegarlo a un fotometro. È lo stesso tipo di tubo su cui Johnson e Morgan basarono il sistema UBV. Crediti: Michael L. Umbricht / Ladd Observatory, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it), via Wikimedia Commons"
 >}}
 
 ## Che cosa racconta una curva di luce

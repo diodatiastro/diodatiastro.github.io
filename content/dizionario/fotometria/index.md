@@ -21,7 +21,7 @@ Le misure fotometriche vengono effettuate attraverso **filtri** che isolano inte
 {{< figura 
 src="immagini/piano-focale-kepler.webp" 
 alt="I 42 CCD sul piano focale del telescopio spaziale Kepler, lanciato dalla NASA nel 2009." 
-caption="I 42 CCD sul piano focale del telescopio spaziale Kepler, lanciato dalla NASA nel 2009, consentivano di misurare variazioni nella luminosità delle stelle osservate nell'ordine di poche parti per milione. Crediti: NASA/Kepler mission."
+caption="I 42 CCD sul piano focale del telescopio spaziale Kepler, lanciato dalla NASA nel 2009, consentivano di misurare variazioni nella luminosità delle stelle osservate nell'ordine di poche parti per milione. Crediti: NASA/Kepler mission"
 >}}
 
 ## Ambiti di applicazione
