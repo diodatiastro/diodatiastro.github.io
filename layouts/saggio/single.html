@@ -1,14 +1,18 @@
 {{ define "main" }}
 <article class="markdown book-post">
 
+  {{/* Riga "Saggio · Capitolo N di M" con il pulsante «Condividi» a destra */}}
+  <div class="riga-condividi riga-condividi--capitolo">
   {{ with .Parent }}
     <p class="book-subtitle saggio-capitolo">
       <a href="{{ .RelPermalink }}">{{ .Title }}</a> · Capitolo {{ $.Weight }} di {{ len .Pages }}
     </p>
   {{ end }}
+  {{ partial "condividi.html" (dict "pagina" . "dove" "inizio") }}
+  </div>
 
   <div class="book-post-content markdown-inner">
-    {{- .Content -}}
+    {{- partial "contenuto-condividi.html" (dict "pagina" .) -}}
   </div>
 
 </article>

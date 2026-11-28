@@ -8,15 +8,9 @@
   {{ partial "docs/post-meta" . }}
 
   <div class="book-post-content markdown-inner">
-    {{/* L'indice dei capitoli va dopo l'introduzione ma prima delle note */}}
-    {{- $indice := partial "docs/saggio-indice" . -}}
-    {{- $note := "<div class=\"footnotes\"" -}}
-    {{- if strings.Contains .Content $note -}}
-      {{- replace .Content $note (print $indice $note) | safeHTML -}}
-    {{- else -}}
-      {{- .Content -}}
-      {{- $indice -}}
-    {{- end }}
+    {{/* L'indice dei capitoli va dopo l'introduzione ma prima delle note,
+         seguito dal pulsante «Condividi» finale */}}
+    {{- partial "contenuto-condividi.html" (dict "pagina" . "prima" (partial "docs/saggio-indice" .)) -}}
   </div>
 
 </article>

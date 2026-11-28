@@ -1,0 +1,14 @@
+{{- /* Testo della pagina con il pulsante «Condividi» finale inserito prima
+     delle note a piè di pagina (o in fondo, se la pagina non ha note).
+     Si chiama con (dict "pagina" . "prima" $html): "prima" è facoltativo ed è
+     HTML da mettere subito prima del pulsante (l'indice dei capitoli nella
+     pagina indice del saggio). */ -}}
+{{- $p := .pagina -}}
+{{- $finale := print (.prima | default "") (partial "condividi.html" (dict "pagina" $p "dove" "fine")) -}}
+{{- $note := "<div class=\"footnotes\"" -}}
+{{- if strings.Contains $p.Content $note -}}
+{{- replace $p.Content $note (print $finale $note) 1 | safeHTML -}}
+{{- else -}}
+{{- $p.Content -}}
+{{- $finale | safeHTML -}}
+{{- end -}}

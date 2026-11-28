@@ -23,5 +23,14 @@
 {{- /* Home, indici, pagina dei tag ed elenco delle stelle (titoloSezione = true): titolo-sezione (con il filo sotto).
        Articoli, capitoli e voci: titolo-pagina, stesso carattere e colore;
        il filo sotto c'è solo nelle voci del dizionario (vedi custom.css). */ -}}
+{{- /* Voci del dizionario: il pulsante «Condividi» sta sulla riga del titolo, a destra;
+       con un titolo su più righe si allinea all'ultima, sopra il filo */ -}}
+{{- if and .IsPage (eq .Section "dizionario") }}
+<div class="riga-condividi riga-condividi--titolo">
 <h1 class="{{ if or .IsHome (eq .Kind "taxonomy") .Params.titoloSezione (and .IsSection (in (slice "/stelle" "/dizionario") .Path)) }}titolo-sezione{{ else }}titolo-pagina{{ end }}">{{ .Title }}</h1>
+{{ partial "condividi.html" (dict "pagina" . "dove" "inizio") }}
+</div>
+{{- else }}
+<h1 class="{{ if or .IsHome (eq .Kind "taxonomy") .Params.titoloSezione (and .IsSection (in (slice "/stelle" "/dizionario") .Path)) }}titolo-sezione{{ else }}titolo-pagina{{ end }}">{{ .Title }}</h1>
+{{- end }}
 {{- end -}}

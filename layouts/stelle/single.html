@@ -8,7 +8,7 @@
   {{ partial "docs/post-meta" . }}
 
   <div class="book-post-content markdown-inner">
-    {{- .Content -}}
+    {{- partial "contenuto-condividi.html" (dict "pagina" .) -}}
   </div>
 
 </article>

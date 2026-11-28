@@ -2611,3 +2611,164 @@ body.book-type-dizionario .markdown .dz-su a:hover {
   line-height: 1.4;
   color: var(--muted);
 }
+
+
+/* ==========================================================================
+   Pulsante «Condividi» (layouts/partials/condividi.html)
+   Discreto, sul modello del Post: icona e parola, senza riquadro; il clic
+   apre un piccolo menu con Facebook, X, LinkedIn, WhatsApp, email e copia
+   del link. Due pulsanti per pagina, in cima e alla fine del testo (prima
+   delle note), allineati al margine destro del testo, in contrappunto al
+   titolo e al sottotitolo allineati a sinistra.
+   ========================================================================== */
+
+.condividi {
+  position: relative;
+  display: flex;
+}
+
+/* Pulsante in cima: su una riga che c'è già, a destra (data negli articoli,
+   "Capitolo N di M" nei capitoli del saggio, titolo nelle voci del dizionario),
+   così non aggiunge spazio fra titolo e testo */
+.condividi--inizio {
+  margin-left: auto;
+  flex: none;
+}
+
+.book-post-date {
+  flex-wrap: wrap;
+}
+
+.riga-condividi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+/* Voci del dizionario: il filo passa dal titolo all'intera riga, sotto il
+   pulsante; con un titolo lungo il pulsante si allinea all'ultima riga */
+.riga-condividi--titolo {
+  align-items: flex-end;
+  margin-bottom: 1.25rem;
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid var(--line);
+}
+
+.book-kind-page.book-type-dizionario .riga-condividi--titolo h1.titolo-pagina {
+  flex: 1 1 20rem;
+  margin: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.riga-condividi--titolo .condividi--inizio {
+  /* alla stessa altezza dell'ultima riga del titolo */
+  margin-bottom: 0.2rem;
+}
+
+/* Capitoli del saggio: il sottotitolo porta con sé il margine negativo */
+.riga-condividi--capitolo {
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
+.riga-condividi--capitolo .book-subtitle {
+  margin: 0 !important;
+}
+
+/* Pulsante finale: centrato, staccato dall'ultimo paragrafo del testo */
+.condividi--fine {
+  justify-content: center;
+  margin: 2.5rem 0 1rem;
+}
+
+.condividi-pulsante {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  /* Bianco caldo del testo e della data, pieno (senza la trasparenza della
+     prima versione). Provati e scartati: verde-azzurro [O III], troppi colori
+     fra sfondi e testo; bianco pieno, eccessivo */
+  color: var(--starlight);
+}
+
+.condividi-pulsante:hover,
+.condividi-pulsante[aria-expanded="true"] {
+  color: var(--stellar-gold);
+}
+
+.condividi-icona {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.condividi-menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  text-align: left;
+  z-index: 50;
+  min-width: 11rem;
+  padding: 0.35rem;
+  /* stesso fondo del riquadro d'iscrizione (verde-azzurro [O III] su blu-notte),
+     fisso in tutte e due le sezioni; bordo nella stessa tinta, più tenue */
+  --oiii-teal: #3fd0b6;
+  background: color-mix(in srgb, var(--oiii-teal) 12%, #0a0e1a);
+  border: 1px solid color-mix(in srgb, var(--oiii-teal) 40%, transparent);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.condividi-menu[hidden] {
+  display: none;
+}
+
+.book-page .condividi-voce,
+.book-page .condividi-voce:visited {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  text-align: left;
+  text-decoration: none;
+  color: var(--starlight);
+}
+
+.book-page .condividi-voce:hover {
+  background: color-mix(in srgb, var(--oiii-teal) 22%, #0a0e1a);
+  color: var(--stellar-gold);
+}
+
+.condividi-voce svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+
+/* Niente quadratino dei link esterni nelle voci del menu */
+.markdown .condividi-menu a.condividi-voce[href]::after {
+  content: none;
+}
+
+/* Sotto il pulsante finale, centrato, anche il menu è centrato */
+.condividi--fine .condividi-menu {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}

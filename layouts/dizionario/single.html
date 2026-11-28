@@ -1,0 +1,8 @@
+{{- /* Voci del dizionario: come il modello di base (baseof.html), ma con il
+     pulsante «Condividi» alla fine del testo, prima delle note. Il pulsante
+     in cima sta in docs/inject/content-before.html. */ -}}
+{{ define "main" }}
+  <article class="markdown book-article">
+    {{- partial "contenuto-condividi.html" (dict "pagina" .) -}}
+  </article>
+{{ end }}

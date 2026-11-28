@@ -11,3 +11,13 @@ other = "Dizionario"
 # Etichetta delle figure e dei video (shortcode figura e video)
 [figura]
 other = "Figura"
+
+# Pulsante di condivisione (partials/condividi.html)
+[condividi]
+other = "Condividi"
+
+[copiaLink]
+other = "Copia link"
+
+[linkCopiato]
+other = "Link copiato"
