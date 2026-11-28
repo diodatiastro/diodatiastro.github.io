@@ -26,32 +26,10 @@
     {{- end }}
     <atom:link href="{{ .Permalink }}avvisi.xml" rel="self" type="application/rss+xml" />
     {{- range $pagine }}
-    {{- $descr := "" }}
+    {{- /* riga di presentazione: partials/descrizione.html */}}
+    {{- $descr := partial "descrizione.html" . }}
     {{- $categoria := "Catalogo delle stelle" }}
     {{- if eq .Section "dizionario" }}{{ $categoria = "Dizionario di astronomia" }}{{ end }}
-    {{- if .Params.subtitle }}
-      {{- $descr = .Params.subtitle }}
-    {{- else if .Params.description }}
-      {{- $descr = .Params.description }}
-    {{- else }}
-      {{- $testo := "" }}
-      {{- with findRESubmatch `(?s)\{\{%\s*box\s+tipo="definizione"[^%]*%\}\}(.*?)\{\{%\s*/box\s*%\}\}` .RawContent 1 }}
-        {{- $testo = index (index . 0) 1 }}
-      {{- else }}
-        {{- $testo = .RawContent }}
-      {{- end }}
-      {{- /* pulizia: shortcode, link markdown, note, formule */}}
-      {{- $testo = replaceRE `\{\{[<%].*?[>%]\}\}` "" $testo }}
-      {{- $testo = replaceRE `\[\^[^\]]+\]` "" $testo }}
-      {{- $testo = replaceRE `\[([^\]]+)\]\([^)]*\)` "$1" $testo }}
-      {{- $testo = replace $testo "{,}" "," }}
-      {{- $testo = replaceRE `\\[ ,;!]` " " $testo }}
-      {{- $testo = replace $testo "$" "" }}
-      {{- $testo = $testo | markdownify | plainify | htmlUnescape }}
-      {{- $testo = replaceRE `\s+` " " $testo | strings.TrimSpace }}
-      {{- with findRE `^.+?[.!?](\s|$)` $testo 1 }}{{ $testo = index . 0 }}{{ end }}
-      {{- $descr = strings.TrimSpace $testo }}
-    {{- end }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>

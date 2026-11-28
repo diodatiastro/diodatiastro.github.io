@@ -1,0 +1,51 @@
+{{- /* Metadati per l'anteprima dei link (Facebook, LinkedIn, X, WhatsApp e
+     motori di ricerca), al posto del partial interno opengraph.html di Hugo,
+     che usava come descrizione l'inizio grezzo del testo (con #, $ e numeri
+     delle note):
+     - descrizione: partial descrizione.html (sottotitolo, description o
+       prima frase della definizione); sulle pagine senza testo proprio, la
+       descrizione del sito;
+     - immagine: quella indicata nel front matter con anteprima = "immagini/…"
+       oppure, se manca, la prima figura della pagina (shortcode figura),
+       ritagliata a 1200 × 630 pixel, il formato delle anteprime dei social. */ -}}
+{{- $descr := partial "descrizione.html" . -}}
+{{- if not $descr }}{{ $descr = or .Description site.Params.description site.Title }}{{ end -}}
+<meta name="description" content="{{ $descr }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ $descr }}">
+<meta property="og:locale" content="{{ replace (site.Language.Locale | default "it-it") "-" "_" }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+{{- if .IsPage }}
+{{- with .Date }}
+<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
+{{- end }}
+{{- $img := false -}}
+{{- $candidate := slice -}}
+{{- with .Params.anteprima }}{{ $candidate = $candidate | append . }}{{ end -}}
+{{- with .RawContent -}}
+  {{- range findRESubmatch `\{\{<\s*figura[^>]*?src="([^"]+)"` . 5 }}{{ $candidate = $candidate | append (index . 1) }}{{ end -}}
+{{- end -}}
+{{- range $candidate -}}
+  {{- if not $img -}}
+    {{- with $.Resources.Get (path.Clean .) -}}
+      {{- if in (slice "image/jpeg" "image/png" "image/webp") .MediaType.Type -}}
+        {{- /* un file illeggibile (es. estensione .jpg su un altro formato)
+             non blocca la compilazione: si passa alla figura successiva */ -}}
+        {{- with try (.Fill "1200x630 Center jpg q80") -}}
+          {{- if not .Err }}{{ $img = .Value }}{{ end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- with $img }}
+<meta property="og:image" content="{{ .Permalink }}">
+<meta property="og:image:width" content="{{ .Width }}">
+<meta property="og:image:height" content="{{ .Height }}">
+<meta name="twitter:card" content="summary_large_image">
+{{- else }}
+<meta name="twitter:card" content="summary">
+{{- end }}

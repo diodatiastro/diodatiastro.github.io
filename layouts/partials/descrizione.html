@@ -1,0 +1,37 @@
+{{- /* Breve descrizione in testo semplice di una pagina, senza formule, note,
+     shortcode né titoli di paragrafo. La usano il feed degli avvisi
+     (home.avvisi.xml) e l'anteprima dei link condivisi sui social e su
+     WhatsApp (anteprima.html):
+     - articoli e saggi: il sottotitolo (subtitle nel front matter);
+     - altrimenti il parametro description, se c'è;
+     - altrimenti la prima frase del box "definizione" (voci del dizionario)
+       o, in mancanza del box, la prima frase del testo. */ -}}
+{{- $descr := "" -}}
+{{- if .Params.subtitle -}}
+  {{- $descr = .Params.subtitle -}}
+{{- else if .Params.description -}}
+  {{- $descr = .Params.description -}}
+{{- else if .RawContent -}}
+  {{- $testo := "" -}}
+  {{- with findRESubmatch `(?s)\{\{%\s*box\s+tipo="definizione"[^%]*%\}\}(.*?)\{\{%\s*/box\s*%\}\}` .RawContent 1 -}}
+    {{- $testo = index (index . 0) 1 -}}
+  {{- else -}}
+    {{- $testo = .RawContent -}}
+  {{- end -}}
+  {{- /* pulizia: shortcode (anche su più righe), titoli di paragrafo, testi
+       delle note, richiami alle note, link markdown, formule */ -}}
+  {{- $testo = replaceRE `(?s)\{\{[<%].*?[>%]\}\}` "" $testo -}}
+  {{- $testo = replaceRE `(?m)^#+\s.*$` "" $testo -}}
+  {{- $testo = replaceRE `(?m)^\[\^[^\]]+\]:.*$` "" $testo -}}
+  {{- $testo = replaceRE `\[\^[^\]]+\]` "" $testo -}}
+  {{- $testo = replaceRE `\[([^\]]+)\]\([^)]*\)` "$1" $testo -}}
+  {{- $testo = replace $testo "{,}" "," -}}
+  {{- $testo = replaceRE `\\(text|mathrm)\{([^}]*)\}` "$2" $testo -}}
+  {{- $testo = replaceRE `\\[ ,;!]` " " $testo -}}
+  {{- $testo = replace $testo "$" "" -}}
+  {{- $testo = $testo | markdownify | plainify | htmlUnescape -}}
+  {{- $testo = replaceRE `\s+` " " $testo | strings.TrimSpace -}}
+  {{- with findRE `^.+?[.!?](\s|$)` $testo 1 }}{{ $testo = index . 0 }}{{ end -}}
+  {{- $descr = strings.TrimSpace $testo -}}
+{{- end -}}
+{{- return $descr -}}
